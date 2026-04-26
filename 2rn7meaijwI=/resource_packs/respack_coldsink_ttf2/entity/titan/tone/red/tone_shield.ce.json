@@ -1,0 +1,35 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:tone_shield_red",
+      "animations": {
+        "spawn": "animation.tone_titan.shield_spawn"
+      },
+      "scripts": {
+        "animate": [
+          "spawn"
+        ]
+      },
+      "particle_effects": {
+        "tone_shield_mid": "titan:tone_shield_mid",
+        "tone_shield_left_in": "titan:tone_shield_left_in",
+        "tone_shield_right_in": "titan:tone_shield_right_in",
+        "tone_shield_left_out": "titan:tone_shield_left_out",
+        "tone_shield_right_out": "titan:tone_shield_right_out"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/empty"
+      },
+      "geometry": {
+        "default": "geometry.tone_shield"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

@@ -1,0 +1,181 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:legion_titan_ai",
+      "animations": {
+        "health_bar": "animation.health_bar_5",
+        "health_bar_danger": "animation.health_bar_5_danger",
+        "titan_loading_fire.particle": "animation.titan_loading_fire.particle",
+        "titan_look_rotate": "animation.titan_look_rotate",
+        "titan_weapon_back_yes": "animation.titan_weapon_back_yes",
+        "titan_weapon_back_no": "animation.titan_weapon_back_no",
+        "c.titan_damage_fire": "controller.animation.titan_damage_fire",
+        "damage_fire_1": "animation.legion_titan.damage_fire_1",
+        "damage_fire_2": "animation.legion_titan.damage_fire_2",
+        "damage_fire_3": "animation.legion_titan.damage_fire_3",
+        "damage_fire_4": "animation.legion_titan.damage_fire_4",
+
+        "titan_ai_terminate": "controller.animation.titan_ai_terminate",
+        "terminate_1": "animation.legion_titan.terminate_1",
+        "terminate_2": "animation.legion_titan.terminate_2",
+
+        "c.legion_titan_ai.arm": "controller.animation.legion_titan_ai.arm",
+        "c.legion_titan_ai.leg": "controller.animation.legion_titan_ai.leg",
+        "c.legion_titan_ai.weapon_back": "controller.animation.legion_titan_ai.weapon_back",
+        "c.legion_titan_ai.particle": "controller.animation.legion_titan_ai.particle",
+
+        "legion_titan.loading": "animation.legion_titan.loading",
+        "legion_titan.loading_fast": "animation.legion_titan.loading_fast",
+        "legion_titan.loaded": "animation.legion_titan.loaded",
+        "legion_titan.standing": "animation.legion_titan.standing",
+        "legion_titan.idle.leg": "animation.legion_titan.idle.leg",
+        "legion_titan.walk.leg": "animation.legion_titan.walk.leg",
+        "legion_titan.move.leg": "animation.legion_titan.move.leg",
+        "legion_titan.spurt.leg": "animation.legion_titan.spurt.leg",
+        "legion_titan.idle.arm": "animation.legion_titan.idle.arm",
+        "legion_titan.fire": "animation.legion_titan.fire",
+        "legion_titan.fire_after": "animation.legion_titan.fire_after",
+        "legion_titan.particle": "animation.legion_titan.particle",
+        "legion_titan.particle_core": "animation.legion_titan.particle_core",
+        "legion_titan.melee": "animation.legion_titan.melee",
+        "legion_titan.power": "animation.legion_titan.power",
+        "legion_titan.change": "animation.legion_titan.change",
+        "legion_titan.shield_spawn": "animation.legion_titan.shield_spawn",
+        "c.legion_titan.shield": "controller.animation.legion_titan.shield"
+      },
+      "particle_effects": {
+        "titan_loading_around": "titan:titan_loading_around",
+        "titan_loading_break": "titan:titan_loading_break",
+        "titan_load_shield_blue": "titan:titan_load_shield_blue",
+        "titan_load_shield_red": "titan:titan_load_shield_red",
+        "titan_damage_fire_1": "titan:titan_damage_fire_1",
+        "titan_damage_fire_2": "titan:titan_damage_fire_2",
+        "titan_damage_fire_3": "titan:titan_damage_fire_3",
+        "titan_damage_fire_4": "titan:titan_damage_fire_4",
+        "titan_spurt_jet": "titan:titan_spurt_jet",
+
+        "legion_fire": "coldsink:legion_fire",
+        "legion_fire_core": "coldsink:legion_fire_core",
+        "legion_boom": "coldsink:legion_boom"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.random_choices = math.random(0, 100);"
+        ],
+        "initialize": [
+          "v.health_last = q.max_health;" // 白条过渡
+        ],
+        "animate": [
+          "c.legion_titan_ai.particle",
+          "c.legion_titan.shield",
+          {
+            "c.legion_titan_ai.weapon_back": "q.property('titan:action') == 0 || (q.property('titan:action') > 10 && q.property('titan:action') < 98)"
+          },
+          {
+            "c.titan_damage_fire": "!q.is_riding"
+          },
+          {
+            "titan_look_rotate": "q.property('titan:action') == 0 || (q.property('titan:action') > 10 && q.property('titan:action') < 98)"
+          },
+          {
+            "c.legion_titan_ai.arm": "q.property('titan:action') == 0 || (q.property('titan:action') > 10 && q.property('titan:action') < 98)"
+          },
+          {
+            "c.legion_titan_ai.leg": "!q.is_riding && q.property('titan:action') == 0 || (q.property('titan:action') > 10 && q.property('titan:action') < 98)"
+          },
+          {
+            "health_bar": "q.health > 2500 && q.property('titan:show_health')"
+          },
+          {
+            "health_bar_danger": "q.health <= 2500 && q.property('titan:show_health')"
+          },
+          {
+            "legion_titan.loading": "q.property('titan:action') == 1"
+          },
+          {
+            "legion_titan.loading_fast": "q.property('titan:action') == 5"
+          },
+          {
+            "titan_loading_fire.particle": "q.property('titan:action') == 1 || q.property('titan:action') == 5"
+          },
+          {
+            "legion_titan.loaded": "q.property('titan:action') == 2"
+          },
+          {
+            "legion_titan.standing": "q.property('titan:action') == 4"
+          },
+          "titan_ai_terminate"
+        ]
+      },
+      "materials": {
+        "default": "entity_alphatest",
+        "blend": "entity_alphablend",
+        "netease_entity_metallic": "netease_entity_alphablend_metallic",
+        "netease_bloom_light_entity": "demo_bloom_entity"
+      },
+      "textures": {
+        "legion_titan": "textures/entity/titan/legion/legion_titan",
+        "legion_titan_light": "textures/entity/titan/legion/legion_titan_light",
+        "legion_titan_light_blue": "textures/entity/titan/legion/legion_titan_light_blue",
+        "legion_titan_light_red": "textures/entity/titan/legion/legion_titan_light_red",
+        "legion_titan_1": "textures/entity/titan/legion/legion_titan_1",
+        "legion_titan_2": "textures/entity/titan/legion/legion_titan_2",
+        "legion_titan_3": "textures/entity/titan/legion/legion_titan_3",
+        "legion_titan_4": "textures/entity/titan/legion/legion_titan_4",
+        "legion_titan_5": "textures/entity/titan/legion/legion_titan_5",
+        "legion_titan_6": "textures/entity/titan/legion/legion_titan_6",
+        "legion_titan_7": "textures/entity/titan/legion/legion_titan_7",
+        "legion_titan_8": "textures/entity/titan/legion/legion_titan_8",
+        "titan_load_shield_blue": "textures/entity/titan/titan_load_shield_blue",
+        "titan_load_shield_red": "textures/entity/titan/titan_load_shield_red",
+        "health_bar": "textures/entity/titan/health_bar_team",
+        "legion_shield": "textures/entity/titan/legion/legion_shield",
+        "pilot_player": "textures/entity/steve"
+      },
+      "geometry": {
+        "legion_titan": "geometry.legion_titan",
+        "legion_titan_light": "geometry.legion_titan_light",
+        "health_bar_blue": "geometry.health_bar_5_blue",
+        "health_bar_danger_blue": "geometry.health_bar_5_danger_blue",
+        "health_bar_red": "geometry.health_bar_5_red",
+        "health_bar_danger_red": "geometry.health_bar_5_danger_red",
+        "legion_shield": "geometry.legion_shield",
+        "pilot_player": "geometry.pilot_player"
+      },
+      "render_controllers": [
+        {
+          "controller.render.legion_titan_ai": "!q.is_riding && q.property('titan:action') != 3 && !(q.property('titan:action') > 5 && q.property('titan:action') < 10)"
+        },
+        {
+          "controller.render.legion_titan_light_blue": "!q.is_riding && q.property('titan:action') != 3 && !(q.property('titan:action') > 5 && q.property('titan:action') < 10) && q.property('titan:team') == 1"
+        },
+        {
+          "controller.render.legion_titan_light_red": "!q.is_riding && q.property('titan:action') != 3 && !(q.property('titan:action') > 5 && q.property('titan:action') < 10) && q.property('titan:team') == 2"
+        },
+        {
+          "controller.render.health_bar_blue": "q.health > 2500 && q.property('titan:team') == 1 && q.property('titan:action') != 1 && q.property('titan:show_health')"
+        },
+        {
+          "controller.render.health_bar_danger_blue": "q.health <= 2500 && q.property('titan:team') == 1 && q.property('titan:show_health')"
+        },
+        {
+          "controller.render.health_bar_red": "q.health > 2500 && q.property('titan:team') == 2 && q.property('titan:action') != 1 && q.property('titan:show_health')"
+        },
+        {
+          "controller.render.health_bar_danger_red": "q.health <= 2500 && q.property('titan:team') == 2 && q.property('titan:show_health')"
+        },
+        {
+          "controller.render.legion_shield": "q.is_saddled"
+        },
+        // 被处决时渲染铁驭
+        {
+          "controller.render.pilot_player_ai": "q.property('titan:action') == 10"
+        }
+      ],
+      "spawn_egg": {
+        "texture": "legion_titan_icon"
+      }
+    }
+  }
+}

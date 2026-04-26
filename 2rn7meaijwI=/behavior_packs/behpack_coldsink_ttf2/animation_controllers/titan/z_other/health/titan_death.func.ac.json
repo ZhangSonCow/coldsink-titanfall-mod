@@ -1,0 +1,82 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.titan_death.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "be_dead": "!q.is_alive || q.health <= 0"
+            }
+          ]
+        },
+        "be_dead": {
+          "transitions": [
+            {
+              "death_has_rider": "q.is_riding"
+            },
+            {
+              "death_no_rider": "!q.is_riding"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @a[r=64] death_check 1",
+            "/scoreboard players operation @e[tag=team_blue] death_check = @s[tag=team_red] death_check",
+            "/scoreboard players operation @e[tag=team_red] death_check = @s[tag=team_blue] death_check",
+            "/execute @s[tag=team_blue] ~~~ execute @e[tag=team_red] ~~~ scoreboard players operation @s death_check -= @s titan_self",
+            "/execute @s[tag=team_red] ~~~ execute @e[tag=team_blue] ~~~ scoreboard players operation @s death_check -= @s titan_self",
+
+            "/execute @e[scores={death_check=0},family=player,c=1] ~~~ execute @s[tag=call_by_player] ~~~ tag @p[tag=is_titan,y=8,c=1] add is_killer",
+            "/execute @e[scores={death_check=0},family=player,c=1] ~~~ tag @s[tag=!call_by_player] add is_killer",
+            "/execute @s[tag=team_blue,tag=call_by_player] ~~~ tellraw @a {\"rawtext\":[{\"text\":\"§l§c\"},{\"selector\":\"@e[tag=is_killer,tag=team_red,c=1]\"},{\"text\":\" §f[消灭] §b\"},{\"selector\":\"@p[tag=is_pilot,scores={titan_check=0},tag=team_blue]\"},{\"text\":\"的泰坦\"}]}",
+            "/execute @s[tag=team_red,tag=call_by_player] ~~~ tellraw @a {\"rawtext\":[{\"text\":\"§l§b\"},{\"selector\":\"@e[tag=is_killer,tag=team_blue,c=1]\"},{\"text\":\" §f[消灭] §c\"},{\"selector\":\"@p[tag=is_pilot,scores={titan_check=0},tag=team_red]\"},{\"text\":\"的泰坦\"}]}",
+            "/execute @s[tag=team_blue,tag=!call_by_player] ~~~ tellraw @a {\"rawtext\":[{\"text\":\"§l§c\"},{\"selector\":\"@e[tag=is_killer,tag=team_red,c=1]\"},{\"text\":\" §f[消灭] §b\"},{\"selector\":\"@s\"}]}",
+            "/execute @s[tag=team_red,tag=!call_by_player] ~~~ tellraw @a {\"rawtext\":[{\"text\":\"§l§b\"},{\"selector\":\"@e[tag=is_killer,tag=team_blue,c=1]\"},{\"text\":\" §f[消灭] §c\"},{\"selector\":\"@s\"}]}",
+            "/execute @s[tag=team_blue] ~~~ event entity @e[tag=is_killer,tag=team_red,c=1] kill_other_titan",
+            "/execute @s[tag=team_red] ~~~ event entity @e[tag=is_killer,tag=team_blue,c=1] kill_other_titan",
+            "/tag @e remove is_killer",
+          
+            "/particle titan:titan_death_boom_1 ~~~",
+            "/particle titan:titan_death_boom_2 ~~~",
+            "/particle titan:titan_death_boom_3 ~~~",
+            "/playsound titan_death_boom @a[scores={death_check=!0},r=64]",
+
+            // 若为地图使用，则泰坦死亡后触发加分命令
+            "/execute @s[tag=team_blue] ~~~ execute @p[tag=maper,tag=!no_game] ~~~ setblock 303 -60 1313 redstone_block",
+            "/execute @s[tag=team_red] ~~~ execute @p[tag=maper,tag=!no_game] ~~~ setblock 305 -60 1313 redstone_block"
+          ],
+          "on_exit": [
+            // 若为玩家召唤的泰坦，则死亡时给主人去除拥有泰坦的状态
+            "/execute @s[tag=call_by_player] ~~~ function titan/titan_check_belong",
+            "/execute @s[tag=call_by_player] ~~~ execute @a[tag=is_pilot] ~~~ scoreboard players operation @s titan_check -= @s titan_self",
+            "/execute @s[tag=call_by_player] ~~~ event entity @a[tag=is_pilot,scores={titan_check=0}] has_titan_no",
+            "/execute @s[tag=call_by_player] ~~~ event entity @a[tag=is_pilot,scores={titan_check=0}] set_core_0"
+          ]
+        },
+        "death_has_rider": {
+          "on_entry": [
+            "/execute @p[tag=is_titan,r=8] ~~~ function pilot/get_all_item",
+            "/event entity @p[tag=is_titan,r=8] drive_titan_no",
+            "/event entity @p[tag=is_titan,r=8] exit_titan_drive",
+            "/tag @p[tag=is_titan,r=8] add titan_dead",
+            "/kill @p[tag=is_titan,r=8]",
+            "/execute @s[type=coldsink:ion_titan] ~~~ event entity @e[type=coldsink:ion_ride,r=8,c=1] godie",
+            "/execute @s[type=coldsink:tone_titan] ~~~ event entity @e[type=coldsink:tone_ride,r=8,c=1] godie",
+            "/execute @s[type=coldsink:northstar_titan] ~~~ event entity @e[type=coldsink:northstar_ride,r=8,c=1] godie",
+            "/execute @s[type=coldsink:ronin_titan] ~~~ event entity @e[type=coldsink:ronin_ride,r=8,c=1] godie",
+            "/execute @s[type=coldsink:scorch_titan] ~~~ event entity @e[type=coldsink:scorch_ride,r=8,c=1] godie",
+            "/execute @s[type=coldsink:legion_titan] ~~~ event entity @e[type=coldsink:legion_ride,r=8,c=1] godie",
+            "/execute @s[type=coldsink:monarch_titan] ~~~ event entity @e[type=coldsink:monarch_ride,r=8,c=1] godie",
+            "/event entity @s godie"
+          ]
+        },
+        "death_no_rider": {
+          "on_entry": [
+            "/event entity @s godie"
+          ]
+        }
+      }
+    }
+  }
+}

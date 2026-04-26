@@ -1,0 +1,38 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.exit_cabin.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.5": [
+          "/tp @s ~~~ facing @p[tag=exit_cabin]"
+        ],
+        "1.5": [
+          "/event entity @p[tag=exit_cabin] titan_health_0",
+          "/event entity @p[tag=exit_cabin] titan_danger_no",
+          "/camera @p[tag=exit_cabin] clear",
+          "/inputpermission set @p[tag=exit_cabin] camera enabled",
+          "/inputpermission set @p[tag=exit_cabin] movement enabled",
+          "/event entity @p[tag=exit_cabin] player_hurt_yes",
+          "/event entity @p[tag=exit_cabin] set_action_0",
+          "/event entity @p[tag=exit_cabin] set_other_action_10",
+
+          "/execute @s[family=ion_titan] ~~~ playsound ion_auto_mode @p[tag=exit_cabin]",
+          "/execute @s[family=tone_titan] ~~~ playsound tone_auto_mode @p[tag=exit_cabin]",
+          "/execute @s[family=northstar_titan] ~~~ playsound northstar_auto_mode @p[tag=exit_cabin]",
+          "/execute @s[family=ronin_titan] ~~~ playsound ronin_auto_mode @p[tag=exit_cabin]",
+          "/execute @s[family=scorch_titan] ~~~ playsound scorch_auto_mode @p[tag=exit_cabin]",
+          "/execute @s[family=legion_titan] ~~~ playsound legion_auto_mode @p[tag=exit_cabin]",
+          "/execute @s[family=monarch_titan] ~~~ playsound monarch_auto_mode @p[tag=exit_cabin]",
+
+          "/tag @p[tag=exit_cabin] remove is_titan",
+          "/tag @p[tag=exit_cabin] remove exit_cabin",
+          "/event entity @s set_action_0",
+          "/event entity @s add_titan_ai_action",
+          "/event entity @s flash_titan_health"
+        ]
+      }
+    }
+  }
+}

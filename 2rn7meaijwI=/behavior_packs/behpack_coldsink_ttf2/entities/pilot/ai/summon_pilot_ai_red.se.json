@@ -1,0 +1,75 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:summon_pilot_ai_red",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "components": {
+      
+      "minecraft:health": {
+        "value": 1,
+        "max": 1,
+        "min": 1
+      },
+      "minecraft:collision_box": {
+        "height": 0.1,
+        "width": 0.0
+      },
+      "minecraft:ageable": {
+        "duration": 0.1,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:physics": {},
+      "minecraft:fire_immune": {},
+      "minecraft:type_family": {
+        "family": [ "tool" ]
+      },
+      "minecraft:navigation.walk": {
+        "can_sink": false
+      },
+      "minecraft:movement.basic": {}
+    },
+
+    "component_groups": {
+      
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "queue_command": {
+          "command": [
+            "summon coldsink:pilot_ai",
+            "event entity @e[type=coldsink:pilot_ai,r=8,c=1] team_red"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

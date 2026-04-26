@@ -1,0 +1,54 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.shield_bar_3_ai",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 14,
+				"visible_bounds_height": 22,
+				"visible_bounds_offset": [0, 3, 0]
+			},
+			"bones": [
+				{
+					"name": "shield_bar",
+					"pivot": [-0.075, 123.675, 12.48],
+					"cubes": [
+						{
+							"origin": [-13.575, 123.75, 11.98],
+							"size": [27, 3, 1],
+							"uv": {
+								"north": {"uv": [0, 10.4], "uv_size": [16, 0.68]},
+								"east": {"uv": [15.4, 3.92], "uv_size": [0.6, 1]},
+								"south": {"uv": [15.28, 4.04], "uv_size": [0.72, 0.84]},
+								"west": {"uv": [15.32, 4.08], "uv_size": [0.68, 1]},
+								"up": {"uv": [0, 6.16], "uv_size": [11, 1]},
+								"down": {"uv": [0, 7.12], "uv_size": [11, -1]}
+							}
+						}
+					]
+				},
+				{
+					"name": "damage",
+					"parent": "shield_bar",
+					"pivot": [13.575, 125.25, 12.38],
+					"cubes": [
+						{
+							"origin": [-13.425, 123.75, 11.88],
+							"size": [27, 3, 1],
+							"uv": {
+								"north": {"uv": [15.28, 4], "uv_size": [0.72, 0.84]},
+								"east": {"uv": [0, 4], "uv_size": [1, 1]},
+								"south": {"uv": [2.32, 3.96], "uv_size": [0.96, 0.84]},
+								"west": {"uv": [1, 4], "uv_size": [1, 1]},
+								"up": {"uv": [10.44, 3.76], "uv_size": [0.76, 1]},
+								"down": {"uv": [12.76, 4.4], "uv_size": [0.76, -1]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

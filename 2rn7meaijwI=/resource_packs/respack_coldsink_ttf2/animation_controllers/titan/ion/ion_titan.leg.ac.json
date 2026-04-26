@@ -1,0 +1,69 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ion_titan.leg": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "ion_titan.idle.leg"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "move": "q.is_stunned"
+            },
+            {
+              "spurt": "q.out_of_control"
+            },
+            {
+              "run": "q.is_sprinting && q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "move": {
+          "animations": [
+            "ion_titan.walk.leg"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "!q.is_stunned"
+            },
+            {
+              "run": "q.is_sprinting && q.property('titan:action') == 0"
+            },
+            {
+              "spurt": "q.out_of_control"
+            }
+          ]
+        },
+        "run": {
+          "animations": [
+            "ion_titan.move.leg"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "spurt": "q.out_of_control"
+            },
+            {
+              "default": "!q.is_sprinting || q.property('titan:action') != 0"
+            }
+          ]
+        },
+        "spurt": {
+          "animations": [
+            "ion_titan.spurt.leg"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "!q.out_of_control"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

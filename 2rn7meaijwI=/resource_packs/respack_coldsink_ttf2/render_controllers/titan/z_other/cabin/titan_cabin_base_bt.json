@@ -1,0 +1,15 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.titan_cabin_base_bt": {
+      "geometry": "geometry.titan_cabin_base",
+      "materials": [
+        {
+          "*": "material.netease_entity_metallic"
+        }
+      ],
+      "textures": [ "texture.titan_cabin_base_bt" ],
+      "is_hurt_color": {}
+    }
+  }
+}

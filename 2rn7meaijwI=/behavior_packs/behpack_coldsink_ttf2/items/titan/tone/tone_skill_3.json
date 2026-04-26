@@ -1,0 +1,27 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "coldsink:tone_skill_3",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.arrow"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "tone_skill_3",
+      "minecraft:display_name": {
+        "value": "§7【弹群核心】 §f向前发射大量导弹攻击目标"
+      },
+      "minecraft:use_modifiers": {
+        "use_duration": 99999,
+        "movement_modifier": 1
+      },
+      "minecraft:food": {
+        "can_always_eat": true
+      },
+      "minecraft:hand_equipped": false
+    }
+  }
+}

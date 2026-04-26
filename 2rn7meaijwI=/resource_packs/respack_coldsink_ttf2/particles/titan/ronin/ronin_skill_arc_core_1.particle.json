@@ -1,0 +1,57 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "titan:ronin_skill_arc_core_1",
+			"basic_render_parameters": {
+				"material": "particles_add",
+				"texture": "textures/particle/titan/ronin/arc1_ex"
+			}
+		},
+		"curves": {
+			"variable.size": {
+				"type": "linear",
+				"input": "v.particle_age",
+				"horizontal_range": "v.particle_lifetime",
+				"nodes": [0.07, 0.83, 1, 1, 1, 1, 1, 0.84, 0.21]
+			}
+		},
+		"components": {
+			"minecraft:emitter_local_space": {
+				"position": true,
+				"rotation": true
+			},
+			"minecraft:emitter_rate_instant": {
+				"num_particles": 1
+			},
+			"minecraft:emitter_lifetime_looping": {
+				"active_time": 0.2,
+				"sleep_time": 1
+			},
+			"minecraft:emitter_shape_sphere": {
+				"radius": 0.1,
+				"direction": ["math.random(-0.2,0.2)", "math.random(0,1)", "math.random(-0.2,0.2)"]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": 0.4
+			},
+			"minecraft:particle_initial_spin": {
+				"rotation": "Math.random(-10, 10)"
+			},
+			"minecraft:particle_initial_speed": "math.random(0.1,0.8)",
+			"minecraft:particle_appearance_billboard": {
+				"size": [2, "12*variable.size"],
+				"facing_camera_mode": "lookat_y",
+				"uv": {
+					"texture_width": 1000,
+					"texture_height": 500,
+					"uv": ["math.random_integer(0,7)*125", 0],
+					"uv_size": [125, 500]
+				}
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": [0.94118, 0.01569, 0.01569, 1]
+			}
+		}
+	}
+}

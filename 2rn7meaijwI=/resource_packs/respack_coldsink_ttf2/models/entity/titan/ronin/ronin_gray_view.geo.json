@@ -1,0 +1,35 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.ronin_gray_view",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 23,
+				"visible_bounds_height": 16,
+				"visible_bounds_offset": [0, 3, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 17, 6],
+					"cubes": [
+						{
+							"origin": [-150, -80, 82],
+							"size": [300, 240, 0],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [80, 50]},
+								"east": {"uv": [0, 0], "uv_size": [0, 50]},
+								"south": {"uv": [0, 50], "uv_size": [80, 50]},
+								"west": {"uv": [0, 0], "uv_size": [0, 50]},
+								"up": {"uv": [0, 0], "uv_size": [80, 0]},
+								"down": {"uv": [0, 0], "uv_size": [80, 0]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

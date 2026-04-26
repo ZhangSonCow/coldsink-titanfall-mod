@@ -1,0 +1,200 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:pilot_ai",
+      "materials": {
+        "default": "entity_alphatest",
+        "netease_entity_metallic": "netease_entity_alphablend_metallic",
+        "netease_bloom_light_entity": "demo_bloom_entity"
+      },
+      "particle_effects": {
+        "weapon_r201_fire.3st": "pilot:weapon_r201_fire.3st",
+        "weapon_charge_laser_powering.3st": "pilot:weapon_charge_laser_powering.3st",
+        "weapon_charge_laser": "pilot:weapon_charge_laser",
+        "battery_ordinary_jet": "pilot:battery_ordinary_jet",
+        "battery_powerful_jet": "pilot:battery_powerful_jet",
+        "battery_overload_jet": "pilot:battery_overload_jet"
+      },
+      "sound_effects": {
+        "pilot_melee_arm_1": "pilot_melee_arm_1",
+        "pilot_melee_arm_2": "pilot_melee_arm_2",
+        "pilot_melee_leg_1": "pilot_melee_leg_1",
+        "pilot_melee_leg_2": "pilot_melee_leg_2"
+      },
+      "animations": {
+        // 铁驭动画
+        "pilot_health_bar": "animation.pilot_health_bar",
+        "pilot_player.back_battery_1": "animation.pilot_player.back_battery_1",
+        "pilot_player.back_battery_2": "animation.pilot_player.back_battery_2",
+        "pilot_player.back_battery_3": "animation.pilot_player.back_battery_3",
+        "c.pilot_arm": "controller.animation.pilot_arm_ai",
+        "c.pilot_leg": "controller.animation.pilot_leg_ai",
+        "pilot_player.head_look": "animation.pilot_player.head_look",
+        "pilot_player.idle.arm": "animation.pilot_player.idle.arm",
+        "pilot_player.idle.leg": "animation.pilot_player.idle.leg",
+        "pilot_player.run.arm": "animation.pilot_player.run.arm",
+        "pilot_player.run.leg": "animation.pilot_player.run.leg",
+        "pilot_player.climb_right.arm": "animation.pilot_player.climb_right.arm",
+        "pilot_player.climb_right.leg": "animation.pilot_player.climb_right.leg",
+        "pilot_player.climb_left.arm": "animation.pilot_player.climb_left.arm",
+        "pilot_player.climb_left.leg": "animation.pilot_player.climb_left.leg",
+        "pilot_player.jump.arm": "animation.pilot_player.jump.arm",
+        "pilot_player.jump_left.leg": "animation.pilot_player.jump_left.leg",
+        "pilot_player.jump_right.leg": "animation.pilot_player.jump_right.leg",
+        "pilot_player.slide.arm": "animation.pilot_player.slide.arm",
+        "pilot_player.slide.leg": "animation.pilot_player.slide.leg",
+        "pilot_player.melee_arm_1.arm": "animation.pilot_player.melee_arm_1.arm",
+        "pilot_player.melee_arm_2.arm": "animation.pilot_player.melee_arm_2.arm",
+        "pilot_player.melee_leg_1.arm": "animation.pilot_player.melee_leg_1.arm",
+        "pilot_player.melee_leg_2.arm": "animation.pilot_player.melee_leg_2.arm",
+        "pilot_player.melee_leg_1.leg": "animation.pilot_player.melee_leg_1.leg",
+        "pilot_player.melee_leg_2.leg": "animation.pilot_player.melee_leg_2.leg",
+        "pilot_player.melee_slide.arm": "animation.pilot_player.melee_slide.arm",
+        "pilot_player.rodeo_enemy_battery": "animation.pilot_player.rodeo_enemy_battery",
+        "pilot_player.rodeo_enemy_grenade": "animation.pilot_player.rodeo_enemy_grenade",
+        "pilot_player.rodeo_friend_battery": "animation.pilot_player.rodeo_friend_battery",
+        "pilot_player.rodeo_friend_idle.leg": "animation.pilot_player.rodeo_friend_idle.leg",
+        // R201
+        "c.weapon_r201.3st": "controller.animation.weapon_r201_ai.3st",
+        "c.weapon_r201_action.3st": "controller.animation.weapon_r201_action_ai.3st",
+        "weapon_r201.idle.3st": "animation.pilot_player.weapon_r201.idle.3st",
+        "weapon_r201.fire.3st": "animation.pilot_player.weapon_r201.fire.3st",
+        "weapon_r201.run.3st": "animation.pilot_player.weapon_r201.run.3st",
+        "weapon_r201.run_fire.3st": "animation.pilot_player.weapon_r201.run_fire.3st",
+        "weapon_r201.climb.3st": "animation.pilot_player.weapon_r201.climb.3st",
+        "weapon_r201.slide.3st": "animation.pilot_player.weapon_r201.slide.3st",
+        // charge
+        "c.weapon_charge.3st": "controller.animation.weapon_charge_ai.3st",
+        "c.weapon_charge_action.3st": "controller.animation.weapon_charge_action_ai.3st",
+        "weapon_charge.idle": "animation.pilot_player.weapon_charge.idle",
+        "weapon_charge.idle.3st": "animation.pilot_player.weapon_charge.idle.3st",
+        "weapon_charge.fire.3st": "animation.pilot_player.weapon_charge.fire_ai.3st",
+        "weapon_charge.run.3st": "animation.pilot_player.weapon_charge.run.3st",
+        "weapon_charge.climb.3st": "animation.pilot_player.weapon_charge.climb.3st",
+        "weapon_charge.slide.3st": "animation.pilot_player.weapon_charge.slide.3st"
+      },
+      "scripts": {
+        "scale": "0.9375",
+        "pre_animation": [
+          "variable.random_choices = math.random(0, 100);",
+          "variable.pilot_no_idle = q.property('titan:other_action') == 3 || (q.property('pilot:rodeo_status') > 0 && q.property('pilot:rodeo_status') != 4);",
+          "variable.pilot_yes_idle = q.property('pilot:rodeo_status') == 0 || q.property('pilot:rodeo_status') == 4;"
+        ],
+        "animate": [
+          "pilot_health_bar",
+          {
+            "pilot_player.back_battery_1": "(q.modified_move_speed >= 0.5 || !q.is_on_ground) && q.property('pilot:has_battery') == 1 && q.property('pilot:rodeo_status') == 0"
+          },
+          {
+            "pilot_player.back_battery_2": "(q.modified_move_speed >= 0.5 || !q.is_on_ground) && q.property('pilot:has_battery') == 2 && q.property('pilot:rodeo_status') == 0"
+          },
+          {
+            "pilot_player.back_battery_3": "(q.modified_move_speed >= 0.5 || !q.is_on_ground) && q.property('pilot:has_battery') == 3 && q.property('pilot:rodeo_status') == 0"
+          },
+          {
+            "c.pilot_arm": "q.property('pilot:weapon') == 0 || v.pilot_no_idle"
+          },
+          "c.pilot_leg",
+          "pilot_player.head_look",
+          {
+            "c.weapon_r201.3st": "q.property('pilot:weapon') == 1 && !v.pilot_no_idle"
+          },
+          {
+            "c.weapon_r201_action.3st": "q.property('pilot:weapon') == 1 && !v.pilot_no_idle"
+          },
+          {
+            "c.weapon_charge.3st": "q.property('pilot:weapon') == 2 && !v.pilot_no_idle"
+          },
+          {
+            "c.weapon_charge_action.3st": "q.property('pilot:weapon') == 2 && !v.pilot_no_idle"
+          }
+        ]
+      },
+      "textures": {
+        "health_bar_team": "textures/entity/titan/health_bar_team",
+        // 铁驭
+        "battery_ordinary": "textures/entity/z_other/battery/battery_ordinary",
+        "battery_powerful": "textures/entity/z_other/battery/battery_powerful",
+        "battery_overload": "textures/entity/z_other/battery/battery_overload",
+        "battery_light": "textures/entity/z_other/battery/battery_light",
+        "pilot_hand_grenade": "textures/entity/pilot/pilot_hand_grenade",
+        "weapon_r201": "textures/entity/pilot/weapon/weapon_r201",
+        "weapon_charge": "textures/entity/pilot/weapon/weapon_charge",
+        // 分队标识
+        "team_blue": "textures/items/z_other/setting/team/team_blue_icon",
+        "team_red": "textures/items/z_other/setting/team/team_red_icon",
+        "default": "textures/entity/steve"
+      },
+      "geometry": {
+        // 铁驭
+        "pilot_player": "geometry.pilot_player",
+        "pilot_back_battery": "geometry.pilot_back_battery",
+        "pilot_back_battery_light": "geometry.pilot_back_battery_light",
+        "pilot_hand_battery": "geometry.pilot_hand_battery",
+        "pilot_hand_battery_light": "geometry.pilot_hand_battery_light",
+        "pilot_hand_grenade": "geometry.pilot_hand_grenade",
+        "weapon_r201": "geometry.weapon_r201",
+        "weapon_charge": "geometry.weapon_charge",
+        "pilot_health_bar_blue": "geometry.pilot_health_bar_blue",
+        "pilot_health_bar_red": "geometry.pilot_health_bar_red",
+        "default": "geometry.humanoid.custom"
+      },
+      "render_controllers": [
+        // 铁驭渲染
+        "controller.render.pilot_player",
+        // 铁驭武器
+        {
+          "controller.render.weapon_r201": "q.property('pilot:weapon') == 1 && q.property('titan:other_action') != 3 && v.pilot_yes_idle"
+        },
+        {
+          "controller.render.weapon_charge": "q.property('pilot:weapon') == 2 && q.property('titan:other_action') != 3 && v.pilot_yes_idle"
+        },
+        // 血条
+        {
+          "controller.render.pilot_health_bar_blue": "q.property('titan:team') == 1"
+        },
+        {
+          "controller.render.pilot_health_bar_red": "q.property('titan:team') == 2"
+        },
+        // 铁驭电池
+        {
+          "controller.render.pilot_back_battery_1": "q.property('pilot:has_battery') == 1 && (q.property('pilot:rodeo_status') == 0 || q.property('pilot:rodeo_status') == 2)"
+        },
+        {
+          "controller.render.pilot_back_battery_2": "q.property('pilot:has_battery') == 2"
+        },
+        {
+          "controller.render.pilot_back_battery_3": "q.property('pilot:has_battery') == 3"
+        },
+        {
+          "controller.render.pilot_back_battery_1_light": "q.property('pilot:has_battery') == 1 && (q.property('pilot:rodeo_status') == 0 || q.property('pilot:rodeo_status') == 2)"
+        },
+        {
+          "controller.render.pilot_back_battery_2_light": "q.property('pilot:has_battery') == 2"
+        },
+        {
+          "controller.render.pilot_back_battery_3_light": "q.property('pilot:has_battery') == 3"
+        },
+        {
+          "controller.render.pilot_hand_battery_1": "q.property('pilot:has_battery') == 1 && (q.property('pilot:rodeo_status') == 1 || q.property('pilot:rodeo_status') == 3)"
+        },
+        {
+          "controller.render.pilot_hand_battery_2": "q.property('pilot:has_battery') == 2 && (q.property('pilot:rodeo_status') == 1 || q.property('pilot:rodeo_status') == 3)"
+        },
+        {
+          "controller.render.pilot_hand_battery_1_light": "q.property('pilot:has_battery') == 1 && (q.property('pilot:rodeo_status') == 1 || q.property('pilot:rodeo_status') == 3)"
+        },
+        {
+          "controller.render.pilot_hand_battery_2_light": "q.property('pilot:has_battery') == 2 && (q.property('pilot:rodeo_status') == 1 || q.property('pilot:rodeo_status') == 3)"
+        },
+        {
+          "controller.render.pilot_hand_grenade": "q.property('pilot:rodeo_status') == 2"
+        }
+      ],
+      "spawn_egg": {
+        "texture": "pilot_icon_blue"
+      }
+    }
+  }
+}

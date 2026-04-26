@@ -1,0 +1,31 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:legion_boom_far_red",
+      "animations": {
+        "particle": "animation.locator.particle_delay"
+      },
+      "scripts": {
+        "animate": [
+          "particle"
+        ]
+      },
+      "particle_effects": {
+        "particle": "titan:legion_bullet_far"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/empty"
+      },
+      "geometry": {
+        "default": "geometry.locator"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

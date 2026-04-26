@@ -1,0 +1,70 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ion_titan_ai.leg": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "ion_titan.idle.leg"
+          ],
+          "transitions": [
+            {
+              "walk": "q.ground_speed > 1.0 && q.ground_speed < 8.0"
+            },
+            {
+              "flee": "q.variant == 2 && q.ground_speed > 1.0"
+            }
+          ],
+          "blend_transition": 0.5
+        },
+        "walk": {
+          "animations": [
+            "ion_titan.walk.leg"
+          ],
+          "transitions": [
+            {
+              "run": "q.ground_speed >= 8.0 && q.out_of_control"
+            },
+            {
+              "default": "q.ground_speed < 0.5"
+            },
+            {
+              "flee": "q.variant == 2 && q.ground_speed > 1.0"
+            }
+          ],
+          "blend_transition": 0.5
+        },
+        "run": {
+          "animations": [
+            "ion_titan.move.leg"
+          ],
+          "transitions": [
+            {
+              "default": "q.ground_speed < 0.5"
+            },
+            {
+              "flee": "q.variant == 2 && q.ground_speed > 1.0"
+            }
+          ],
+          "blend_transition": 0.5
+        },
+        "flee": {
+          "animations": [
+            "ion_titan.spurt.leg"
+          ],
+          "transitions": [
+            {
+              "default": "q.variant != 2"
+            }
+          ],
+          "blend_transition": 0.5,
+          "on_entry": [
+            "v.flee_degree = q.body_y_rotation;",
+            "v.damagetimer = 0;"
+          ]
+        }
+      }
+    }
+  }
+}

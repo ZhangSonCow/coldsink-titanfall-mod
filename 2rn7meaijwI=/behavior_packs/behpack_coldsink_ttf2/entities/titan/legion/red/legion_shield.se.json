@@ -1,0 +1,113 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:legion_shield_red",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "animations": {
+        "c.health": "controller.animation.legion_shield.func"
+      },
+      "scripts": {
+        "animate": [
+          "c.health"
+        ]
+      }
+    },
+
+    "components": {
+      
+      "minecraft:health": {
+        "value": 4500,
+        "max": 4500
+      },
+      "minecraft:collision_box": {
+        "height": 6.8,
+        "width": 0.1
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 1.5,
+            "height": 4,
+            "pivot": [ 0, 2, 2 ]
+          },
+          {
+            "width": 1.5,
+            "height": 4,
+            "pivot": [ 0, 2, -2 ]
+          },
+          {
+            "width": 3.5,
+            "height": 4,
+            "pivot": [ 0, 6, 0 ]
+          },
+          {
+            "width": 1.5,
+            "height": 3,
+            "pivot": [ 0, 5, 3 ]
+          },
+          {
+            "width": 1.5,
+            "height": 3,
+            "pivot": [ 0, 5, -3 ]
+          }
+        ]
+      },
+      "minecraft:physics": {},
+      "minecraft:fire_immune": {},
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "fall",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:ageable": {
+        "duration": 6,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:type_family": {
+        "family": [ "player", "legion_shield", "shield_entity", "particle_shield" ]
+      },
+      "minecraft:navigation.walk": {
+        "can_sink": false
+      },
+      "minecraft:movement.basic": {}
+      
+    },
+
+    "component_groups": {
+      
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "queue_command": {
+          "command": [
+						"tag @s add team_red"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

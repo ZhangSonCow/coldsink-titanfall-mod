@@ -1,0 +1,934 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:ion_titan_ai",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        // 0：闲置，1：降落中，2：落地待机，3：蹲姿登机，4：自然起身，5：曲速降落
+        // 6：前方登机、7后方登机、8上方登机、9出机、10被处决，98：处决1，99：处决2
+        // 11: 近战、12：开火、13：镭射、14：镭射后摇、15：核心、16：涡旋盾
+        "titan:action": {
+          "type": "int",
+          "range": [ 0, 100 ],
+          "default": 0,
+          "client_sync": true
+        },
+        "titan:team": {
+          "type": "int",
+          "range": [ 1, 2 ],
+          "default": 1,
+          "client_sync": true
+        },
+        "titan:show_health": {
+          "type": "bool",
+          "default": true,
+          "client_sync": true
+        }
+      },
+      "animations": {
+        "c.loading": "controller.animation.titan_loading_ctrl.func",
+        "loading": "animation.titan_loading.func",
+        "loading_fast": "animation.titan_loading_fast.func",
+        "loaded": "animation.titan_loaded.func",
+        "load_shield": "animation.titan_load_shield.func",
+        "standing": "animation.titan_standing.func",
+        "entry_loaded_titan": "animation.entry_loaded_titan.func",
+        "entry_stand_front": "animation.entry_stand_front.func",
+        "entry_stand_back": "animation.entry_stand_back.func",
+        "entry_stand_top": "animation.entry_stand_top.func",
+        "exit_cabin": "animation.exit_cabin.func",
+        
+        "c.death": "controller.animation.titan_death.func",
+        "c.be_danger": "controller.animation.titan_be_danger.func",
+
+        "c.titan_ai_move": "controller.animation.titan_ai_move.func",
+        "titan_ai_move_damage": "animation.titan_ai_move_damage.func",
+        "c.titan_knockback_resistance": "controller.animation.titan_knockback_resistance.func",
+        "titan_knockback_resistance": "animation.titan_knockback_resistance.func",
+
+        "c.ion_titan_ai_action": "controller.animation.ion_titan_ai_action.func",
+        "ion_ai_melee": "animation.ion_ai_melee.func",
+        "ion_ai_laser": "animation.ion_ai_laser.func",
+        "ion_ai_laser_after": "animation.ion_ai_laser_after.func",
+        "ion_ai_core": "animation.ion_ai_core.func",
+        "c.ion_ai_damage_defend_skill": "controller.animation.ion_ai_damage_defend_skill.func",
+        "ion_ai_shield": "animation.ion_ai_shield.func",
+        "ion_ai_shield_timer": "animation.ion_ai_shield_timer.func",
+
+        "c.titan_ai_terminate": "controller.animation.titan_ai_terminate.func",
+        "terminate_1": "animation.ion_ai_terminate_1.func",
+        "terminate_1_lock": "animation.ion_ai_terminate_1_lock.func",
+        "terminate_2": "animation.ion_ai_terminate_2.func",
+        "terminate_2_lock": "animation.ion_ai_terminate_2_lock.func",
+        "titan_by_terminate": "animation.titan_by_terminate.func"
+      },
+      "scripts": {
+        "animate": [ 
+          "c.loading",
+          "c.death",
+          "c.be_danger",
+          "c.titan_ai_move",
+          "c.titan_knockback_resistance",
+          {
+            "c.ion_titan_ai_action": "q.property('titan:action') == 0 || (q.property('titan:action') > 10 && q.property('titan:action') < 98)"
+          },
+          {
+            "c.ion_ai_damage_defend_skill": "q.out_of_control"
+          },
+          "c.titan_ai_terminate"
+        ]
+      }
+    },
+
+    "components": {
+      "minecraft:health": {
+        "value": 12500,
+        "max": 12500
+      },
+      "minecraft:collision_box": {
+        "height": 6.8,
+        "width": 0
+      },
+      "minecraft:rideable": {
+        "seat_count": 4,
+        "family_types": [ "ai_rider_tool", "titan_shield", "rodeo_ride_tool", "tone_target" ],
+        "seats": [
+          {
+            "position": [0, 0, 0],
+            "lock_rider_rotation": 1
+          },
+          {
+            "position": [0, 0, 0],
+            "lock_rider_rotation": 1
+          },
+          {
+            "position": [0, 0, 0],
+            "lock_rider_rotation": 1
+          },
+          {
+            "position": [0, 0, 0],
+            "lock_rider_rotation": 1
+          }
+        ]
+      },
+      "minecraft:physics": {},
+      "minecraft:jump.static": {},
+      "minecraft:movement.basic": {},
+      "minecraft:navigation.walk": {
+        "can_walk": true,
+        "can_pass_doors": true,
+        "is_amphibious": true
+      },
+      "minecraft:fire_immune": {},
+      // 防护盾卡无敌补丁
+      "minecraft:environment_sensor": {
+        "triggers": {
+          "filters": {
+            "all_of": [
+              {
+                "test": "rider_count",
+                "subject": "self",
+                "operator": "<",
+                "value": 2
+              },
+              {
+                "test": "has_tag",
+                "subject": "self",
+                "value": "titan_shield"
+              },
+              {
+                "test": "has_tag",
+                "subject": "self",
+                "operator": "!=",
+                "value": "titan_staic"
+              },
+              {
+                "test": "has_tag",
+                "subject": "self",
+                "operator": "!=",
+                "value": "terminate"
+              }
+            ]
+          },
+          "event": "turn_no_shield"
+        }
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 64.0,
+          "max_dropped_ticks": 5,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+
+
+    "component_groups": {
+        
+      "die": {
+        "minecraft:instant_despawn": {}
+      },
+      
+      "no_shield_box": {
+        "minecraft:type_family": {
+          "family": [ "titan", "titan_ai", "ai", "player", "ion_titan", "tiantu" ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "fall",
+              "deals_damage": false
+            },
+            // 防友伤
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "value": "team_blue"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "other",
+                      "value": "team_blue"
+                    }
+                  ]
+                }
+              },
+              "cause": "all",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "subject": "self",
+                      "value": "team_red"
+                    },
+                    {
+                      "test": "has_tag",
+                      "subject": "other",
+                      "value": "team_red"
+                    }
+                  ]
+                }
+              },
+              "cause": "all",
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:custom_hit_test": {
+          "hitboxes": [
+            {
+              "width": 1.5,
+              "height": 4,
+              "pivot": [1.5, 2, 0]
+            },
+            {
+              "width": 1.5,
+              "height": 4,
+              "pivot": [-1.5, 2, 0]
+            },
+            {
+              "width": 2.5,
+              "height": 4,
+              "pivot": [0, 5, 0]
+            },
+            {
+              "width": 1,
+              "height": 3,
+              "pivot": [1.5, 5, 0]
+            },
+            {
+              "width": 1,
+              "height": 3,
+              "pivot": [-1.5, 5, 0]
+            }
+          ]
+        }
+      },
+      "has_shield_box": {
+        "minecraft:type_family": {
+          "family": [ "titan", "titan_ai", "player", "ion_titan", "tiantu", "tool" ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "all",
+              "deals_damage": false
+            }
+          ]
+        }
+      },
+
+      // 击退抗性
+      "knockback_resistance_1": {
+        "minecraft:is_stunned": {},
+        "minecraft:knockback_resistance": {
+          "value": 1.0
+        }
+      },
+      "knockback_resistance_0": {
+        "minecraft:knockback_resistance": {
+          "value": 0.5
+        }
+      },
+
+      // 保持ai行动
+      "keep_ai_action": {
+        "minecraft:out_of_control": {},
+        // 追击靠近距离
+        "minecraft:target_nearby_sensor": {
+          "inside_range": 32,
+          "on_inside_range": {
+            "event": "turn_titan_state_normal",
+            "target": "self"
+          },
+          "outside_range": 32,
+          "on_outside_range": {
+            "event": "turn_titan_state_melee",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.look_at_player": {
+          "priority": 7,
+          "look_distance": 6,
+          "probability": 0.02
+        },
+        "minecraft:behavior.nearest_prioritized_attackable_target": {
+          "priority": 1,
+          "within_radius": 32,
+          "reselect_targets": true,
+          "must_see": false,
+          "must_see_forget_duration": 1.0,
+          "entity_types": [
+            // 玩家与泰坦
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "any_of": [
+                      {
+                        "all_of": [
+                          {
+                            "test": "has_tag",
+                            "subject": "self",
+                            "value": "team_blue"
+                          },
+                          {
+                            "test": "has_tag",
+                            "subject": "other",
+                            "operator": "!=",
+                            "value": "team_blue"
+                          }
+                        ]
+                      },
+                      {
+                        "all_of": [
+                          {
+                            "test": "has_tag",
+                            "subject": "self",
+                            "value": "team_red"
+                          },
+                          {
+                            "test": "has_tag",
+                            "subject": "other",
+                            "operator": "!=",
+                            "value": "team_red"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_tag",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "titan_staic"
+                  },
+                  {
+                    "test": "has_tag",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "terminate"
+                  }
+                ]
+              },
+              "max_dist": 512,
+              "priority": 1
+            },
+            // 怪物
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "monster"
+              },
+              "max_dist": 512,
+              "priority": 2
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": [ 5.0, 8.0 ],
+          "time_down_event": {
+            "event": "check_titan_ai_can_spurt",
+            "target": "self"
+          }
+        }
+      },
+      
+      // 0-常规模式
+      "titan_state_normal":{
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:behavior.random_stroll": {
+          "priority": 6,
+          "speed_multiplier": 1.0
+        },
+        "minecraft:movement": {
+          "value": 0.5
+        },
+        "minecraft:behavior.ranged_attack": {
+          "priority": 0,
+          "attack_interval": 999,
+          "burst_shots": 1,
+          "attack_radius": 128
+        },
+        "minecraft:shooter": {
+          "def": "arrow"
+        }
+      },
+
+      // 1-近战模式（靠近目标）
+      "titan_state_melee":{
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:movement": {
+          "value": 0.5
+        },
+        "minecraft:follow_range": {
+          "value": 512,
+          "max": 512
+        },
+        "minecraft:attack": {
+          "damage": 0
+        },
+        "minecraft:behavior.delayed_attack": {
+          "priority": 1,
+          "attack_duration": 0.5,
+          "hit_delay_pct": 1,
+          "reach_multiplier": 1,
+          "require_complete_path": false,
+          "track_target": true,
+          "y_max_head_rotation": 30
+        },
+        "minecraft:ageable": {
+          "duration": 3.0,
+          "grow_up": {
+            "event": "turn_titan_state_spurt",
+            "target": "self"
+          }
+        }
+      },
+
+      // 2-闪避模式
+      "titan_state_spurt":{
+        "minecraft:variant": {
+          "value": 2
+        },
+        "minecraft:movement": {
+          "value": 0.8
+        },
+        "minecraft:behavior.avoid_mob_type": {
+          "priority": 0,
+          "max_dist": 32,
+          "max_flee": 32,
+          "remove_target": false,
+          "entity_types": [
+            // 玩家、泰坦、电烟
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "any_of": [
+                      {
+                        "all_of": [
+                          {
+                            "test": "has_tag",
+                            "subject": "self",
+                            "value": "team_blue"
+                          },
+                          {
+                            "test": "has_tag",
+                            "subject": "other",
+                            "operator": "!=",
+                            "value": "team_blue"
+                          }
+                        ]
+                      },
+                      {
+                        "all_of": [
+                          {
+                            "test": "has_tag",
+                            "subject": "self",
+                            "value": "team_red"
+                          },
+                          {
+                            "test": "has_tag",
+                            "subject": "other",
+                            "operator": "!=",
+                            "value": "team_red"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "any_of": [
+                      {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "player"
+                      },
+                      {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "titan_elect_smoke"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "max_dist": 512,
+              "priority": 1
+            }
+          ]
+        },
+        "minecraft:ageable": {
+          "duration": 0.8,
+          "grow_up": {
+            "event": "turn_titan_state_normal",
+            "target": "self"
+          }
+        }
+      },
+      
+      "coldsink:titan_skin_1":{"minecraft:skin_id":{"value":1}},
+      "coldsink:titan_skin_2":{"minecraft:skin_id":{"value":2}},
+      "coldsink:titan_skin_3":{"minecraft:skin_id":{"value":3}},
+      "coldsink:titan_skin_4":{"minecraft:skin_id":{"value":4}},
+      "coldsink:titan_skin_5":{"minecraft:skin_id":{"value":5}},
+      "coldsink:titan_skin_6":{"minecraft:skin_id":{"value":6}},
+      "coldsink:titan_skin_7":{"minecraft:skin_id":{"value":7}},
+      "coldsink:titan_skin_8":{"minecraft:skin_id":{"value":8}}
+
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "no_shield_box",
+            "titan_state_normal",
+            "keep_ai_action",
+            "knockback_resistance_1"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "function titan/init",
+            "scoreboard objectives add ion_trap dummy ion_trap",
+            "scoreboard objectives add random_score dummy random_score",
+            "ride @s summon_rider coldsink:ion_rider_ai",
+            "tag @s add is_ion",
+            "tag @s add team_blue",
+            "event entity @s random_titan_skin"
+          ]
+        }
+      },
+      // 切到常规模式
+      "turn_titan_state_normal":{
+        "add": {
+          "component_groups": [
+            "titan_state_normal",
+            "keep_ai_action"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "titan_state_melee",
+            "titan_state_spurt"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "tag @s remove titan_ai_melee"
+          ]
+        }
+      },
+      // 切到近战模式
+      "turn_titan_state_melee":{
+        "add": {
+          "component_groups": [
+            "titan_state_melee",
+            "keep_ai_action"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "titan_state_normal",
+            "titan_state_spurt"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "event entity @s[tag=begin_melee,tag=!in_core] set_action_11",
+            "tag @s remove begin_melee",
+            "tag @s add titan_ai_melee"
+          ]
+        }
+      },
+      // 切到闪避模式
+      "turn_titan_state_spurt":{
+        "add": {
+          "component_groups": [
+            "titan_state_spurt"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "titan_state_normal",
+            "titan_state_melee",
+            "keep_ai_action"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "tag @s add titan_ai_spurt",
+            "tag @s add jump_charge_tiantu_ai",
+            "event entity @s remove_knockback_resistance"
+          ]
+        }
+      },
+      // 检测是否应该冲刺
+      "check_titan_ai_can_spurt": {
+        "queue_command": {
+          "command": [
+            "event entity @s[tag=is_moving,tag=!titan_ai_melee,tag=!no_spurt] turn_titan_state_spurt",
+            "execute @s[tag=is_moving,tag=!titan_ai_melee,tag=!no_spurt] ~~~ playsound titan_spurt_tiantu @a[r=64] ~~~"
+          ]
+        }
+      },
+      
+      // 随机皮肤
+      "random_titan_skin": {
+        "queue_command": {
+          "command": [
+            "scoreboard players random @s ion_skin 0 10",
+            "event entity @s[scores={ion_skin=1}] titan_skin_1",
+            "event entity @s[scores={ion_skin=2}] titan_skin_2",
+            "event entity @s[scores={ion_skin=3}] titan_skin_3",
+            "event entity @s[scores={ion_skin=4}] titan_skin_4",
+            "event entity @s[scores={ion_skin=5}] titan_skin_5",
+            "event entity @s[scores={ion_skin=6}] titan_skin_6",
+            "event entity @s[scores={ion_skin=7}] titan_skin_7",
+            "event entity @s[scores={ion_skin=8}] titan_skin_8"
+          ]
+        }
+      },
+      "titan_skin_1":{"add":{"component_groups":["coldsink:titan_skin_1"]}},
+      "titan_skin_2":{"add":{"component_groups":["coldsink:titan_skin_2"]}},
+      "titan_skin_3":{"add":{"component_groups":["coldsink:titan_skin_3"]}},
+      "titan_skin_4":{"add":{"component_groups":["coldsink:titan_skin_4"]}},
+      "titan_skin_5":{"add":{"component_groups":["coldsink:titan_skin_5"]}},
+      "titan_skin_6":{"add":{"component_groups":["coldsink:titan_skin_6"]}},
+      "titan_skin_7":{"add":{"component_groups":["coldsink:titan_skin_7"]}},
+      "titan_skin_8":{"add":{"component_groups":["coldsink:titan_skin_8"]}},
+
+      // 队伍
+      "team_blue":{
+        "set_property":{
+          "titan:team": 1
+        },
+        "queue_command": {
+          "command": [
+            "tag @s add team_blue",
+            "tag @s remove team_red",
+            "event entity @e[type=coldsink:ion_rider_ai,r=8,c=1] team_blue"
+          ]
+        }
+      },
+      "team_red":{
+        "set_property":{
+          "titan:team": 2
+        },
+        "queue_command": {
+          "command": [
+            "tag @s add team_red",
+            "tag @s remove team_blue",
+            "event entity @e[type=coldsink:ion_rider_ai,r=8,c=1] team_red"
+          ]
+        }
+      },
+      // 显示血条
+      "show_health_true":{
+        "set_property":{
+          "titan:show_health": true
+        }
+      },
+      "show_health_false":{
+        "set_property":{
+          "titan:show_health": false
+        }
+      },
+      // 训牛
+      "rodeo_summon_ride": {
+        "queue_command": {
+          "command": [
+            "ride @s summon_rider coldsink:rodeo_ride_tool_ion",
+            "ride @e[family=pilot,tag=rodeo_ride_self,r=16,c=1] start_riding @e[type=coldsink:rodeo_ride_tool_ion,r=16,c=1]",
+            "tag @e[family=pilot,tag=rodeo_ride_self,r=16,c=1] remove rodeo_ride_self"
+          ]
+        }
+      },
+      "energy_shoot_shield": {
+        "queue_command": {
+          "command": [
+            "ride @s[tag=!titan_shield] summon_rider coldsink:titan_shield_4",
+            "execute @s[tag=!titan_shield] ~~~ damage @e[type=coldsink:titan_shield_4,r=8,c=1] 1500 suicide",
+            "execute @s[tag=titan_shield] ~~~ effect @e[type=coldsink:titan_shield_4,r=8,c=1] instant_health 1 8 true"
+          ]
+        }
+      },
+
+      "turn_yes_shield": {
+        "remove": {
+          "component_groups": [
+            "no_shield_box"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "has_shield_box"
+          ]
+        }
+      },
+      "turn_no_shield": {
+        "remove": {
+          "component_groups": [
+            "has_shield_box"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "no_shield_box"
+          ]
+        }
+      },
+      // 击退抗性控制
+      "remove_knockback_resistance": {
+        "add": {
+          "component_groups": [
+            "knockback_resistance_0"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "knockback_resistance_1"
+          ]
+        }
+      },
+      "add_knockback_resistance": {
+        "add": {
+          "component_groups": [
+            "knockback_resistance_1"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "knockback_resistance_0"
+          ]
+        }
+      },
+      // 近战攻击
+      "ion_melee_damage_blue": {
+        "queue_command": {
+          "command": [
+            "summon coldsink:titan_blue_melee_roar ^^^5",
+
+            "tag @s add ion_melee_self",
+            "execute @s ^^^5 scoreboard players operation @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,r=8] death_check = @s titan_self",
+            "execute @s ^^^5 scoreboard players operation @e[tag=!team_blue,family=titan,tag=titan_danger,tag=!terminate,tag=!ronin_phase,r=8,c=1] terminate_check = @s titan_self",
+            "execute @s ^^^5 execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,r=8] ~~~ scoreboard players add @e[type=coldsink:ion_titan_ai,tag=ion_melee_self,c=1] titan_attack 500",
+            "execute @s ^^^5 execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,r=8,c=1] ~~~ event entity @e[type=coldsink:ion_titan_ai,tag=ion_melee_self,c=1] shoot_get_core",
+            "execute @s ^^^5 damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,r=8] 500 suicide entity @s",
+
+            "execute @s ^^^5 execute @e[tag=team_red,family=titan,tag=!terminate,tag=!ronin_phase,r=8,c=1] ~~~ execute @s[tag=titan_danger] ~~~ event entity @e[type=coldsink:ion_titan_ai,tag=ion_melee_self,c=1] set_action_98",
+            "tag @s remove ion_melee_self"
+          ]
+        }
+      },
+      "ion_melee_damage_red": {
+        "queue_command": {
+          "command": [
+            "summon coldsink:titan_red_melee_roar ^^^5",
+
+            "tag @s add ion_melee_self",
+            "execute @s ^^^5 scoreboard players operation @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=8] death_check = @s titan_self",
+            "execute @s ^^^5 scoreboard players operation @e[tag=!team_red,family=titan,tag=titan_danger,tag=!terminate,tag=!ronin_phase,r=8,c=1] terminate_check = @s titan_self",
+            "execute @s ^^^5 execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=8] ~~~ scoreboard players add @e[type=coldsink:ion_titan_ai,tag=ion_melee_self,c=1] titan_attack 500",
+            "execute @s ^^^5 execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=8,c=1] ~~~ event entity @e[type=coldsink:ion_titan_ai,tag=ion_melee_self,c=1] shoot_get_core",
+            "execute @s ^^^5 damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=8] 500 suicide entity @s",
+            
+            "execute @s ^^^5 execute @e[tag=team_blue,family=titan,tag=!terminate,tag=!ronin_phase,r=8,c=1] ~~~ execute @s[tag=titan_danger] ~~~ event entity @e[type=coldsink:ion_titan_ai,tag=ion_melee_self,c=1] set_action_98",
+            "tag @s remove ion_melee_self"
+          ]
+        }
+      },
+      // 获取核心值计算
+      "shoot_get_core": {
+        "queue_command": {
+          "command": [
+            "scoreboard players operation @s titan_attack_tem = @s titan_attack",
+            "scoreboard players operation @s titan_attack_tem /= normal_divisor titan_attack_tem",
+            "scoreboard players operation @s titan_core += @s titan_attack_tem",
+            "scoreboard players operation @s titan_attack %= normal_divisor titan_attack_tem",
+
+            "event entity @s[scores={titan_core=100..},tag=has_target,tag=!terminate] set_action_15",
+            "scoreboard players reset @s[scores={titan_core=100..},tag=has_target,tag=!terminate] titan_core",
+
+            "event entity @s[scores={titan_core=50..},tag=!titan_elesmoke_saied] titan_get_elesmoke"
+          ]
+        }
+      },
+      // 释放电子烟雾
+      "titan_get_elesmoke": {
+        "queue_command": {
+          "command": [
+            "execute @s[tag=team_blue] ~~~ summon coldsink:titan_elect_smoke_blue",
+            "execute @s[tag=team_red] ~~~ summon coldsink:titan_elect_smoke_red",
+            "scoreboard players operation @e[type=coldsink:titan_elect_smoke_blue,c=1] titan_self = @s[tag=team_blue] titan_self",
+            "scoreboard players operation @e[type=coldsink:titan_elect_smoke_red,c=1] titan_self = @s[tag=team_red] titan_self",
+            "tag @s add titan_elesmoke_saied"
+          ]
+        }
+      },
+
+      // 当前动作状态变化
+      "set_action_0":{"set_property":{"titan:action": 0}},
+      "set_action_1":{"set_property":{"titan:action": 1}},
+      "set_action_2":{"set_property":{"titan:action": 2}},
+      "set_action_3":{"set_property":{"titan:action": 3}},
+      "set_action_4":{"set_property":{"titan:action": 4}},
+      "set_action_5":{"set_property":{"titan:action": 5}},
+      "set_action_6":{"set_property":{"titan:action": 6}},
+      "set_action_7":{"set_property":{"titan:action": 7}},
+      "set_action_8":{"set_property":{"titan:action": 8}},
+      "set_action_9":{"set_property":{"titan:action": 9}},
+      "set_action_10":{"set_property":{"titan:action": 10},"queue_command":{"command":["event entity @s remove_titan_ai_action"]}},
+      "set_action_11":{"set_property":{"titan:action": 11}},
+      "set_action_12":{"set_property":{"titan:action": 12}},
+      "set_action_13":{"set_property":{"titan:action": 13}},
+      "set_action_14":{"set_property":{"titan:action": 14}},
+      "set_action_15":{"set_property":{"titan:action": 15}},
+      "set_action_16":{"set_property":{"titan:action": 16}},
+      "set_action_17":{"set_property":{"titan:action": 17}},
+      "set_action_18":{"set_property":{"titan:action": 18}},
+      "set_action_19":{"set_property":{"titan:action": 19}},
+      "set_action_20":{"set_property":{"titan:action": 20}},
+      "set_action_98":{"set_property":{"titan:action": 98},"queue_command":{"command":["event entity @s remove_titan_ai_action"]}},
+      "set_action_99":{"set_property":{"titan:action": 99},"queue_command":{"command":["event entity @s remove_titan_ai_action"]}},
+
+      // 控制泰坦 AI 行动能力
+      "add_titan_ai_action": {
+        "add": {
+          "component_groups": [
+            "keep_ai_action",
+            "titan_state_normal"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "event entity @s set_action_0",
+            "ride @s summon_rider coldsink:ion_rider_ai",
+            "execute @s[tag=team_red] ~~~ event entity @e[type=coldsink:ion_rider_ai,r=8,c=1] team_red"
+          ]
+        }
+      },
+      "remove_titan_ai_action": {
+        "remove": {
+          "component_groups": [
+            "keep_ai_action",
+            "titan_state_normal",
+            "titan_state_melee",
+            "titan_state_spurt"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "ride @e[type=coldsink:ion_rider_ai,r=8,c=1] stop_riding",
+            "execute @s[tag=in_core] ~~~ ride @e[type=coldsink:ion_rider_ai_core,r=8,c=1] stop_riding"
+          ]
+        }
+      },
+      // 击杀铁驭
+      "kill_other_pilot": {
+        "queue_command": {
+          "command": [
+						"scoreboard players add @s titan_attack 1000",
+						"event entity @s shoot_get_core"
+          ]
+        }
+      },
+      // 击杀泰坦
+      "kill_other_titan": {
+        "queue_command": {
+          "command": [
+						"scoreboard players add @s titan_attack 2000",
+						"event entity @s shoot_get_core"
+          ]
+        }
+      },
+
+      // 被处决
+      "kill_by_ion_1":{"queue_command":{"command":["event entity @s set_action_10","playanimation @s animation.ion_titan.kill_by_ion_1"]}},
+      "kill_by_ion_2":{"queue_command":{"command":["event entity @s set_action_10","playanimation @s animation.ion_titan.kill_by_ion_2"]}},
+      "kill_by_tone_1":{"queue_command":{"command":["event entity @s set_action_10","playanimation @s animation.ion_titan.kill_by_tone_1"]}},
+      "kill_by_tone_2":{"queue_command":{"command":["event entity @s set_action_10","playanimation @s animation.ion_titan.kill_by_tone_2"]}},
+      "kill_by_northstar_1":{"queue_command":{"command":["event entity @s set_action_10","playanimation @s animation.ion_titan.kill_by_northstar_1"]}},
+      "kill_by_northstar_2":{"queue_command":{"command":["event entity @s set_action_10","playanimation @s animation.ion_titan.kill_by_northstar_2"]}},
+      "kill_by_ronin_1":{"queue_command":{"command":["event entity @s set_action_10","playanimation @s animation.ion_titan.kill_by_ronin_1"]}},
+      "kill_by_ronin_2":{"queue_command":{"command":["event entity @s set_action_10","playanimation @s animation.ion_titan.kill_by_ronin_2"]}},
+      "kill_by_scorch_1":{"queue_command":{"command":["event entity @s set_action_10","playanimation @s animation.ion_titan.kill_by_scorch_1"]}},
+      "kill_by_scorch_2":{"queue_command":{"command":["event entity @s set_action_10","playanimation @s animation.ion_titan.kill_by_scorch_2"]}},
+      "kill_by_legion_1":{"queue_command":{"command":["event entity @s set_action_10","playanimation @s animation.ion_titan.kill_by_legion_1"]}},
+      "kill_by_legion_2":{"queue_command":{"command":["event entity @s set_action_10","playanimation @s animation.ion_titan.kill_by_legion_2"]}},
+      "kill_by_monarch_1":{"queue_command":{"command":["event entity @s set_action_10","playanimation @s animation.ion_titan.kill_by_monarch_1"]}},
+      "kill_by_monarch_2":{"queue_command":{"command":["event entity @s set_action_10","playanimation @s animation.ion_titan.kill_by_monarch_2"]}},
+
+      "godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

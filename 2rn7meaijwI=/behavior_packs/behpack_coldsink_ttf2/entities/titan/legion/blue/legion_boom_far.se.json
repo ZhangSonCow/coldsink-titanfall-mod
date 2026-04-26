@@ -1,0 +1,144 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:legion_boom_far_blue",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball",
+      "animations": {
+        "c.self": "controller.animation.throw_on_ground.func",
+        "self": "animation.legion_bullet_self.func"
+      },
+      "scripts": {
+        "animate": [ 
+          "c.self"
+        ]
+      }
+    },
+
+    "component_groups": {
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+			"minecraft:tick_world": {
+				"distance_to_players": 128,
+				"never_despawn": false,
+				"radius": 2
+			},
+      "minecraft:type_family": {
+        "family": [ "tool", "bullet" ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.5
+      },
+      "minecraft:ageable": {
+        "duration": 6,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:projectile": {
+        "anchor": 1,
+        "impact_damage": {
+          "damage": 0,
+          "knockback": false
+        },
+        "on_hit": {
+          "definition_event": {
+            "affect_projectile": true,
+            "event_trigger": {
+              "event": "boom"
+            }
+          },
+          "stick_in_ground": {
+            "shake_time": 1.0
+          }
+        },
+        "reflect_on_hurt": true,
+        "power": 9,
+        "angle_offset": 0,
+        "liquid_inertia": 1.0
+      },
+      "minecraft:physics": {},
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "events": {
+      "boom": {
+        "queue_command": {
+          "command": [
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] ~~~ execute @s[tag=ronin_defend] ~~~ tag @e[type=coldsink:legion_boom_far_blue,c=1] add get_1",
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] ~~~ execute @s[tag=ronin_defend_core] ~~~ tag @e[type=coldsink:legion_boom_far_blue,c=1] add get_2",
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] ~~~ execute @s[tag=titan_hard] ~~~ tag @e[type=coldsink:legion_boom_far_blue,c=1] add get_3",
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=10,c=1] ~~~ execute @s[family=!shield_entity] ~~~ tag @e[type=coldsink:legion_boom_far_blue,c=1] add get_core",
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=10,c=1] ~~~ tag @e[type=coldsink:legion_boom_far_blue,c=1] add get",
+
+            "execute @s[tag=get,tag=!get_1,tag=!get_2,tag=!get_3,tag=get_core] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] ~~~ scoreboard players add @e[type=coldsink:legion_boom_far_blue,c=1] titan_attack 200",
+            "execute @s[tag=get,tag=!get_1,tag=!get_2,tag=!get_3,tag=get_core] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=10] ~~~ scoreboard players add @e[type=coldsink:legion_boom_far_blue,c=1] titan_attack 1800",
+            "execute @s[tag=get_1,tag=get_core] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] ~~~ scoreboard players add @e[type=coldsink:legion_boom_far_blue,c=1] titan_attack 60",
+            "execute @s[tag=get_1,tag=get_core] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=10] ~~~ scoreboard players add @e[type=coldsink:legion_boom_far_blue,c=1] titan_attack 540",
+            "execute @s[tag=get_2,tag=get_core] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] ~~~ scoreboard players add @e[type=coldsink:legion_boom_far_blue,c=1] titan_attack 20",
+            "execute @s[tag=get_2,tag=get_core] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=10] ~~~ scoreboard players add @e[type=coldsink:legion_boom_far_blue,c=1] titan_attack 180",
+            "execute @s[tag=get_3,tag=get_core] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] ~~~ scoreboard players add @e[type=coldsink:legion_boom_far_blue,c=1] titan_attack 160",
+            "execute @s[tag=get_3,tag=get_core] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=10] ~~~ scoreboard players add @e[type=coldsink:legion_boom_far_blue,c=1] titan_attack 1440",
+
+            "execute @s[tag=get] ~~~ scoreboard players operation @a[tag=is_legion,tag=team_blue] skill_check_1 = @s titan_self",
+            "execute @s[tag=get] ~~~ execute @a[tag=is_legion,tag=team_blue] ~~~ scoreboard players operation @s skill_check_1 -= @s titan_self",
+            "execute @s[tag=get] ~~~ scoreboard players operation @a[tag=is_legion,tag=team_blue,scores={skill_check_1=0}] titan_attack += @s titan_attack",
+            "execute @s[tag=get] ~~~ event entity @a[tag=is_legion,tag=team_blue,scores={skill_check_1=0}] shoot_get_core",
+            // 贴脸远程Q-自伤
+            // "execute @s[tag=get] ~~~ execute @a[tag=is_legion,tag=team_blue,scores={skill_check_1=0}] ~~~ execute @e[type=coldsink:legion_titan,tag=team_blue,r=5,c=1] ~~~ damage @s[tag=!titan_shield] 1800 suicide entity @s",
+            // "execute @s[tag=get] ~~~ execute @a[tag=is_legion,tag=team_blue,scores={skill_check_1=0}] ~~~ execute @e[type=coldsink:legion_titan,tag=team_blue,r=5,c=1] ~~~ execute @s[tag=titan_shield] ~~~ damage @e[family=titan_shield,tag=team_blue,r=8,c=1] 1800 suicide entity @s",
+
+            "execute @s[tag=get] ~~-5~ scoreboard players operation @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=10] death_check = @p[tag=is_legion,tag=team_blue,scores={skill_check_1=0}] titan_self",
+            "execute @s[tag=get,tag=!get_1,tag=!get_2,tag=!get_3] ~~-5~ damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] 200 suicide entity @s",
+            "execute @s[tag=get_1] ~~-5~ damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] 60 suicide entity @s",
+            "execute @s[tag=get_2] ~~-5~ damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] 20 suicide entity @s",
+            "execute @s[tag=get_3] ~~-5~ damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] 160 suicide entity @s",
+            "execute @s[tag=get] ~~-5~ damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=10,tag=!ronin_defending,tag=!titan_hard] 1800 suicide entity @s",
+            "execute @s[tag=get] ~~-5~ damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=10,tag=ronin_defend] 540 suicide entity @s",
+            "execute @s[tag=get] ~~-5~ damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=10,tag=ronin_defend_core] 180 suicide entity @s",
+            "execute @s[tag=get] ~~-5~ damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=10,tag=titan_hard] 1440 suicide entity @s",
+            "execute @s[tag=get] ~~-5~ event entity @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=10] defend_damage_transform",
+            "kill @s[tag=get]"
+          ]
+        }
+      },
+      "beOnGround": {
+        "queue_command": {
+          "command": [
+            "event entity @s[tag=!done] boom",
+            "tag @s add done",
+            "event entity @s godie"
+          ]
+        }
+      },
+      "down": {
+        "queue_command": {
+          "command": [
+            "summon coldsink:ion_get_bullet_red",
+            "event entity @s godie"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

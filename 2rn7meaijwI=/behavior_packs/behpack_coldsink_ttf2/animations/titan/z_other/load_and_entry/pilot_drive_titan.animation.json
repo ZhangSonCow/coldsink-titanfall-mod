@@ -1,0 +1,14 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.pilot_drive_titan.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.1": [
+          "/event entity @s pilot_drive_titan"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+
+    "controller.render.team_display_blue.1st": {
+      "geometry": "geometry.team_display.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.team_blue" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    
+    "controller.render.team_display_red.1st": {
+      "geometry": "geometry.team_display.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.team_red" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+    
+  }
+}

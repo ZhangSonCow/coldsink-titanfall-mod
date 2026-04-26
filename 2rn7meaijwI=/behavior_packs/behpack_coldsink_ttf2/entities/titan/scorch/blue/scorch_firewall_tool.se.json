@@ -1,0 +1,119 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:scorch_firewall_tool_blue",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "animations": {
+        "c.self": "controller.animation.titan_bullet_self.func",
+        "self": "animation.scorch_bullet_self.func"
+      },
+      "scripts": {
+        "animate": [ 
+          "c.self"
+        ]
+      }
+    },
+    "component_groups": {
+      "godie": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+			"minecraft:tick_world": {
+				"distance_to_players": 128,
+				"never_despawn": false,
+				"radius": 2
+			},
+      "minecraft:type_family": {
+        "family": [ "tool", "ground" ]
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:collision_box": {
+          "width": 0.0,
+          "height": 0.0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:ageable": {
+        "duration": 2.4,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:timer": {
+        "time": 0.01,
+        "time_down_event": {
+          "event": "count",
+          "target": "self"
+        }
+      },
+      "minecraft:health": {
+        "value": 2,
+        "max": 2,
+        "min": 1
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "queue_command": {
+          "command": [
+            "tp @s ~~~ facing @e[family=scorch_titan,c=1]"
+          ]
+        }
+      },
+      "count": {
+        "queue_command": {
+          "command": [
+            "scoreboard players set @s slip_bool 0",
+						"execute @s ~~~ detect ^^0.5^-1 air -1 scoreboard players add @s slip_bool 1",
+						"execute @s ~~~ detect ^^1.5^-1 air -1 scoreboard players add @s slip_bool 2",
+            "event entity @s[scores={slip_bool=..1}] godie",
+						"tp @s[scores={slip_bool=2}] ~~1~",
+						"execute @s ~~~ detect ^^^-1 air -1 tp @s ^^^-1",
+						"execute @s ~~~ detect ~~-1~ air -1 tp @s ~~-1~",
+
+            "scoreboard players add @s scorch_bullet 1",
+            "event entity @s[scores={scorch_bullet=5..}] firewall",
+            "scoreboard players reset @s[scores={scorch_bullet=5..}] scorch_bullet",
+
+            // 被强力粒子屏障阻断
+            "execute @e[type=coldsink:tone_shield_red,r=5] ~~~ event entity @e[type=coldsink:scorch_firewall_tool_blue,r=5] godie"
+          ]
+        }
+      },
+      "firewall": {
+        "queue_command": {
+          "command": [
+            "summon coldsink:scorch_firewall_blue ~~0.8~",
+            "scoreboard players operation @e[type=coldsink:scorch_firewall_blue,c=1] titan_self = @s titan_self"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "godie"
+          ]
+        }
+      }
+    }
+  }
+}

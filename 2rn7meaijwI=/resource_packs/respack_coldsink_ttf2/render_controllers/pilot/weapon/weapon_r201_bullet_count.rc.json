@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.weapon_r201_bullet_count_blue": {
+      "geometry": "geometry.weapon_r201_bullet_count",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.ui_number_blue" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    "controller.render.weapon_r201_bullet_count_orange": {
+      "geometry": "geometry.weapon_r201_bullet_count",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.ui_number_orange" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    "controller.render.weapon_r201_bullet_count_red": {
+      "geometry": "geometry.weapon_r201_bullet_count",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.ui_number_red" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

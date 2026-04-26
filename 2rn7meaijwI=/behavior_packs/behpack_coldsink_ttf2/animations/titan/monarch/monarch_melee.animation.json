@@ -1,0 +1,33 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.monarch_melee.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          // "/camerashake add @s[tag=!wy_game] 1.5 0.5 rotational",
+          "/scoreboard players random @s random_score 1 3",
+          "/execute @s[scores={random_score=1}] ~~~ playsound titan_melee @a[r=64] ~~~ 3 0.8 3",
+          "/execute @s[scores={random_score=2}] ~~~ playsound titan_melee @a[r=64] ~~~ 3 1 3",
+          "/execute @s[scores={random_score=3}] ~~~ playsound titan_melee @a[r=64] ~~~ 3 1.2 3"
+        ],
+        "0.2": [
+          "/execute @s[tag=team_blue] ^^^5 event entity @e[tag=!team_blue,family=titan,r=8] remove_knockback_resistance",
+          "/execute @s[tag=team_red] ^^^5 event entity @e[tag=!team_red,family=titan,r=8] remove_knockback_resistance"
+        ],
+        "0.3": [
+          "/execute @s[tag=team_blue] ~~~ summon coldsink:titan_blue_melee_roar ^^^5",
+          "/execute @s[tag=team_red] ~~~ summon coldsink:titan_red_melee_roar ^^^5"
+        ],
+        "0.45": [
+          "/event entity @s[tag=team_blue] monarch_melee_damage_blue",
+          "/event entity @s[tag=team_red] monarch_melee_damage_red"
+        ],
+        "0.8": [
+          "/event entity @s[tag=!terminate] set_action_0"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.legion_skill_2.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "1.0": [
+          "/tag @s add change_mode",
+
+          "/tag @s[tag=!legion_range_mode] remove change_mode",
+          "/execute @s[tag=!legion_range_mode] ~~~ playsound legion_skill_2_to_far @a[r=64] ~~~",
+          "/event entity @s[tag=!legion_range_mode] set_powering_1",
+          "/title @s[tag=!legion_range_mode] actionbar §f已切换 §c【远程模式】",
+          "/tag @s[tag=!legion_range_mode] add legion_range_mode",
+
+          "/execute @s[tag=change_mode,tag=legion_range_mode] ~~~ playsound legion_skill_2_to_near @a[r=64] ~~~",
+          "/event entity @s[tag=change_mode,tag=legion_range_mode] set_powering_0",
+          "/title @s[tag=change_mode,tag=legion_range_mode] actionbar §f已切换 §7【近程模式】",
+          "/tag @s[tag=change_mode,tag=legion_range_mode] remove legion_range_mode",
+          "/tag @s remove change_mode",
+
+          "/event entity @s set_action_0"
+        ]
+      }
+    }
+  }
+}

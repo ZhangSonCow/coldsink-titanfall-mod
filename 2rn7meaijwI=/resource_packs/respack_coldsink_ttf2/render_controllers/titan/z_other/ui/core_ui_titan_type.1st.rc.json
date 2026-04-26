@@ -1,0 +1,29 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.core_ui_titan_type.1st": {
+      "arrays": {
+        "textures": {
+          "Array.core": [
+            "Texture.core_type_ion",
+            "Texture.core_type_tone",
+            "Texture.core_type_northstar",
+            "Texture.core_type_ronin",
+            "Texture.core_type_scorch",
+            "Texture.core_type_legion",
+            "Texture.core_type_monarch"
+          ]
+        }
+      },
+      "geometry": "geometry.core_ui_titan_type.1st",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "Array.core[ q.variant - 1 ]" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

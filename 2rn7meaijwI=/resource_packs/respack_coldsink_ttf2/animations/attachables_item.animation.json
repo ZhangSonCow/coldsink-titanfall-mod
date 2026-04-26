@@ -1,0 +1,25 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.kid_1st": {
+			"loop": true,
+			"bones": {
+				"rightitem": {
+					"rotation": [10.9, 62.5, -60],
+					"position": [-7.9, 1.85, -5],
+					"scale": 0.68
+				}
+			}
+		},
+		"animation.kid_3rd": {
+			"loop": true,
+			"bones": {
+				"rightitem": {
+					"rotation": [35, 0.81, -4.83],
+					"position": [-0.01, -1.065, -6.83],
+					"scale": 0.935
+				}
+			}
+		}
+	}
+}

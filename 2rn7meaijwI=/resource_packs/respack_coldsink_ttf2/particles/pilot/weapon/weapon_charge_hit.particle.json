@@ -1,0 +1,63 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "pilot:weapon_charge_hit",
+			"basic_render_parameters": {
+				"material": "particles_add",
+				"texture": "textures/particle/dot_cube"
+			}
+		},
+		"curves": {
+			"variable.size1": {
+				"type": "bezier",
+				"input": "v.particle_age",
+				"horizontal_range": "v.particle_lifetime",
+				"nodes": [1, 1, 1, 0]
+			},
+			"variable.alpha1": {
+				"type": "linear",
+				"input": "v.particle_age",
+				"horizontal_range": "v.particle_lifetime",
+				"nodes": [0.54, 1, 1, 0.9, 0.68, 0.41, 0]
+			}
+		},
+		"components": {
+			"minecraft:emitter_rate_instant": {
+				"num_particles": 40
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 1
+			},
+			"minecraft:emitter_shape_point": {
+				"offset": [0, -0.8, 0]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": "math.random(0.2, 0.5)"
+			},
+			"minecraft:particle_initial_speed": "math.random(3,8)",
+			"minecraft:particle_motion_dynamic": {
+				"linear_acceleration": [0, -8, 0],
+				"linear_drag_coefficient": 2
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": ["(2*variable.particle_random_1)*variable.size1", "(0.5*variable.particle_random_1)*variable.size1"],
+				"facing_camera_mode": "lookat_direction",
+				"uv": {
+					"texture_width": 16,
+					"texture_height": 16,
+					"uv": [0, 0],
+					"uv_size": [16, 16]
+				}
+			},
+			"minecraft:particle_motion_collision": {
+				"collision_drag": 0.1,
+				"coefficient_of_restitution": 1,
+				"collision_radius": 0.1
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": [0.8, 0.8, 0.3, "v.alpha1*1"]
+			}
+		}
+	}
+}

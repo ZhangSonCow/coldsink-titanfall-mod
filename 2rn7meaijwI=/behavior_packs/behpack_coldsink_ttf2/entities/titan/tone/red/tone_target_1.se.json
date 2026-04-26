@@ -1,0 +1,105 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:tone_target_1_red",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      
+      "target_up": {
+        "minecraft:transformation": {
+          "into": "coldsink:tone_target_2_red"
+        }
+      },
+
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+			// "minecraft:tick_world": {
+			// 	"distance_to_players": 128,
+			// 	"never_despawn": false,
+			// 	"radius": 2
+			// },
+      "minecraft:type_family": {
+        "family": [ "tone_target", "tone_target_red", "tool" ]
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:collision_box": {
+          "width": 0.0,
+          "height": 0.0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:ageable": {
+        "duration": 18,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:health": {
+        "value": 2,
+        "max": 2,
+        "min": 1
+      },
+      "minecraft:despawn": {
+        "filters": {
+          "all_of": [
+            {
+              "all_of": [
+                {
+                  "test": "is_riding",
+                  "subject": "self",
+                  "operator": "!="
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+    "events": {
+      "target_up": {
+        "add": {
+          "component_groups": [
+            "target_up"
+          ]
+        }
+      },
+      "godie": {
+        "queue_command": {
+          "command": [
+            "scoreboard players reset @e[tag=!team_red,family=titan,scores={tone_target=1},r=8,c=1] tone_target",
+            "event entity @s real_godie"
+          ]
+        }
+      },
+      "real_godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

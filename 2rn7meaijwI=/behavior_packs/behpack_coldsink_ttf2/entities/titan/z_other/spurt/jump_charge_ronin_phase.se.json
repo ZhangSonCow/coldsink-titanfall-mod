@@ -1,0 +1,101 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:jump_charge_ronin_phase",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "die": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": true
+        }
+      },
+      "roar": {
+        "minecraft:behavior.knockback_roar": {
+          "priority": 1,
+          "duration": 0.1,
+          "attack_time": 0.1,
+          "knockback_damage": 0,
+          "knockback_range": 9,
+          "knockback_height_cap": 0,
+          "knockback_horizontal_strength": 16,
+          "knockback_vertical_strength": 3,
+          "knockback_filters": {
+            "all_of": [
+              {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "=",
+                "value": "titan_ride"
+              },
+              {
+                "test": "has_tag",
+                "subject": "other",
+                "operator": "=",
+                "value": "jump_charge_ronin_phase"
+              }
+            ]
+          },
+          "damage_filters": {
+            "all_of": [
+              {
+                "test": "has_tag",
+                "subject": "other",
+                "operator": "=",
+                "value": "none_have_this"
+              }
+            ]
+          },
+          "on_roar_end": {
+            "event": "godie"
+          },
+          "cooldown_time": 0.1
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tool" ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      }
+
+      //behavivors
+
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "roar"
+          ]
+        }
+      },
+      "godie": {
+        "queue_command": {
+          "command": [
+            "effect @e[type=coldsink:ronin_ride,tag=jump_charge_ronin_phase,c=1] speed 4 8 true",
+            "tag @e[type=coldsink:ronin_ride,tag=jump_charge_ronin_phase,c=1] remove jump_charge_ronin_phase",
+            "event entity @s real_godie"
+          ]
+        }
+      },
+      "real_godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

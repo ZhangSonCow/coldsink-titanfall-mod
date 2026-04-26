@@ -1,0 +1,65 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.legion_fire_pre.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.8": [
+          "/event entity @s[tag=!wy_game] set_action_3",
+          "/event entity @s[tag=keep_fire,tag=!legion_range_mode,tag=wy_game] set_action_3",
+          "/event entity @s[tag=keep_fire,tag=legion_range_mode,tag=wy_game] set_action_3_sp",
+          "/event entity @s[tag=!keep_fire,tag=wy_game] set_action_12",
+          "/event entity @s[tag=!weapon_fire] set_action_0"
+        ]
+      }
+    },
+    "animation.legion_fire.func": {
+      "loop": true,
+      "animation_length": 0.12,
+      "timeline": {
+        "0.0": [
+          "/event entity @s[scores={legion_bullet=1..},tag=!legion_range_mode,tag=!in_core] legion_fire_near",
+          "/event entity @s[scores={legion_bullet=1..},tag=!legion_range_mode,tag=!in_core,tag=team_blue] legion_fire_near_blue",
+          "/event entity @s[scores={legion_bullet=1..},tag=!legion_range_mode,tag=!in_core,tag=team_red] legion_fire_near_red",
+
+          "/event entity @s[scores={legion_bullet=2..},tag=legion_range_mode,tag=!in_core] legion_fire_far",
+          "/event entity @s[scores={legion_bullet=2..},tag=legion_range_mode,tag=!in_core,tag=team_blue] legion_fire_far_blue",
+          "/event entity @s[scores={legion_bullet=2..},tag=legion_range_mode,tag=!in_core,tag=team_red] legion_fire_far_red",
+          
+          "/event entity @s[scores={legion_bullet=1..},tag=in_core] legion_fire_core",
+          "/event entity @s[scores={legion_bullet=1..},tag=in_core,tag=team_blue] legion_fire_core_blue",
+          "/event entity @s[scores={legion_bullet=1..},tag=in_core,tag=team_red] legion_fire_core_red"
+        ],
+        "0.08": [
+          "/event entity @s[scores={legion_bullet=..0},tag=!legion_range_mode] set_action_12",
+          "/event entity @s[scores={legion_bullet=..1},tag=legion_range_mode] set_action_12",
+          "/event entity @s[tag=!weapon_fire] set_action_12"
+        ]
+      }
+    },
+    "animation.legion_reload.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.1": [
+          "/camerashake add @s 0.15 0.4 rotational"
+        ],
+        "0.7": [
+          "/camerashake add @s 0.3 0.3 rotational"
+        ],
+        "2.0": [
+          "/camerashake add @s 0.5 0.3 rotational"
+        ],
+        "3.45": [
+          "/camerashake add @s 0.25 0.8 rotational"
+        ],
+        "4.5": [
+          "/event entity @s set_action_0",
+          "/scoreboard players set @s[tag=is_titan] legion_bullet 100",
+          "/event entity @s[tag=is_titan] set_weapon_100"
+        ]
+      }
+    }
+  }
+}

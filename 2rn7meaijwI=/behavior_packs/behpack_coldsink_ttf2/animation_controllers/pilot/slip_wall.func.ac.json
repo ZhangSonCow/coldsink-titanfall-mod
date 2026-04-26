@@ -1,0 +1,56 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.slip_wall.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "slip_wall": "q.is_tamed && !q.is_riding && q.variant == 0"
+            }
+          ]
+        },
+        "slip_wall": {
+          "animations": [
+            "slip_wall"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_tamed || q.variant > 0"
+            },
+            {
+              "leave_wall": "q.is_jumping"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add slip_leave_chance",
+            "/effect @s[tag=!wy_game] speed 1 5 true",
+            "/effect @s slow_falling 1 0 true"
+          ],
+          "on_exit": [
+            "/effect @s[tag=!wy_game] speed 0 6 true",
+            "/effect @s speed 99999 2 true",
+            "/effect @s slow_falling 0 1 true"
+          ]
+        },
+        "leave_wall": {
+          "transitions": [
+            {
+              "default": "!q.is_jumping && !q.is_tamed"
+            }
+          ],
+          "on_entry": [
+            "/tag @s[tag=slip_leave_chance] add leave_wall_self",
+            "/execute @s[tag=slip_leave_chance] ~~~ summon coldsink:leave_wall_tool",
+            "/event entity @s[tag=slip_leave_chance] set_action_51",
+            "/tag @s remove slip_leave_chance"
+          ],
+          "on_exit": [
+            "/tag @s remove jump_over"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ion_titan_ai_action.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "melee": "q.property('titan:action') == 11"
+            },
+            {
+              "fire": "q.property('titan:action') == 12"
+            },
+            {
+              "laser": "q.property('titan:action') == 13"
+            },
+            {
+              "core": "q.property('titan:action') == 15"
+            },
+            {
+              "shield": "q.property('titan:action') == 16"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=team_blue] ~~~ event entity @e[type=coldsink:ion_rider_ai,tag=team_blue,r=8,c=1] turn_rider_state_normal",
+            "/execute @s[tag=team_red] ~~~ event entity @e[type=coldsink:ion_rider_ai,tag=team_red,r=8,c=1] turn_rider_state_normal"
+          ]
+        },
+        "melee": {
+          "animations": [
+            "ion_ai_melee"
+          ],
+          "transitions": [
+            {
+              "core": "q.property('titan:action') == 15"
+            },
+            {
+              "default": "q.property('titan:action') != 11"
+            }
+          ]
+        },
+        "fire": {
+          "transitions": [
+            {
+              "core": "q.property('titan:action') == 15"
+            },
+            {
+              "default": "q.property('titan:action') != 12"
+            }
+          ]
+        },
+        "laser": {
+          "animations": [
+            "ion_ai_laser"
+          ],
+          "transitions": [
+            {
+              "core": "q.property('titan:action') == 15"
+            },
+            {
+              "laser_after": "q.property('titan:action') != 13"
+            }
+          ],
+          "on_entry": [
+            "/playsound ion_skill_1_powering @a[r=64] ~~~"
+          ],
+          "on_exit": [
+            "/stopsound @a[r=32] ion_skill_1_powering",
+						"/playsound ion_skill_1_fire @a[r=64] ~~~",
+            "/execute @s[tag=team_blue] ~~~ event entity @e[type=coldsink:ion_rider_ai,tag=team_blue,r=8,c=1] turn_bullet_weapon_blue",
+            "/execute @s[tag=team_blue] ~~~ event entity @e[type=coldsink:ion_rider_ai,tag=team_red,r=8,c=1] turn_bullet_weapon_red"
+          ]
+        },
+        "laser_after": {
+          "animations": [
+            "ion_ai_laser_after"
+          ],
+          "transitions": [
+            {
+              "core": "q.property('titan:action') == 15"
+            },
+            {
+              "default": "q.property('titan:action') != 14"
+            }
+          ]
+        },
+        "core": {
+          "animations": [
+            "ion_ai_core"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ],
+          "on_entry": [
+            "/playsound ion_core_begin @a[r=64] ~~~",
+            "/playsound ion_skill_3 @a[r=64] ~~~",
+            "/tag @s add no_spurt",
+            "/tag @s add in_core",
+            "/ride @e[type=coldsink:ion_rider_ai,r=8,c=1] stop_riding"
+          ],
+          "on_exit": [
+            "/tag @s remove no_spurt",
+            "/tag @s remove in_core",
+            "/ride @e[type=coldsink:ion_rider_ai_core,r=8,c=1] stop_riding",
+            "/ride @s summon_rider coldsink:ion_rider_ai"
+          ]
+        },
+        "shield": {
+          "animations": [
+            "ion_ai_shield",
+            "ion_ai_shield_timer"
+          ],
+          "transitions": [
+            {
+              "core": "q.property('titan:action') == 15"
+            },
+            {
+              "default": "q.property('titan:action') != 16"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add energy_shield",
+            "/playsound ion_skill_0 @a[r=64] ~~~"
+          ],
+          "on_exit": [
+            "/execute @s[tag=team_blue] ^^^5 tp @e[type=coldsink:ion_get_bullet_blue,r=16] ^^^5",
+            "/execute @s[tag=team_blue] ^^^3 event entity @e[type=coldsink:ion_get_bullet_blue,r=8] back",
+            "/execute @s[tag=team_blue] ^^^5 tp @e[type=coldsink:ion_get_missile_blue,r=16] ^^^5",
+            "/execute @s[tag=team_blue] ^^^3 event entity @e[type=coldsink:ion_get_missile_blue,r=8] back",
+            "/execute @s[tag=team_red] ^^^5 tp @e[type=coldsink:ion_get_bullet_red,r=16] ^^^5",
+            "/execute @s[tag=team_red] ^^^3 event entity @e[type=coldsink:ion_get_bullet_red,r=8] back",
+            "/execute @s[tag=team_red] ^^^5 tp @e[type=coldsink:ion_get_missile_red,r=16] ^^^5",
+            "/execute @s[tag=team_red] ^^^3 event entity @e[type=coldsink:ion_get_missile_red,r=8] back",
+            "/tag @s remove energy_shield",
+            "/stopsound @a[r=32] ion_skill_0"
+          ]
+        }
+      }
+    }
+  }
+}

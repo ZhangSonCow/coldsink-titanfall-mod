@@ -1,0 +1,180 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.monarch_titan_ai.arm": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "monarch_titan.idle.arm"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "melee": "q.property('titan:action') == 11"
+            },
+            {
+              "fire": "q.property('titan:action') == 12"
+            },
+            {
+              "fire_arc": "q.property('titan:action') == 13"
+            },
+            {
+              "fire_final": "q.property('titan:action') == 14"
+            },
+            {
+              "fire_arc_final": "q.property('titan:action') == 15"
+            },
+            {
+              "missile": "q.property('titan:action') == 16"
+            },
+            {
+              "reflash": "q.property('titan:action') == 17"
+            },
+            {
+              "reflash_fast": "q.property('titan:action') == 18"
+            },
+            {
+              "energy": "q.property('titan:action') == 19"
+            },
+            {
+              "missile_final_powering": "q.property('titan:action') == 21"
+            }
+          ]
+        },
+        "melee": {
+          "animations": [
+            "monarch_titan.melee"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 11"
+            }
+          ]
+        },
+        "fire": {
+          "animations": [
+            "monarch_titan.fire"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 12"
+            }
+          ]
+        },
+        "fire_arc": {
+          "animations": [
+            "monarch_titan.fire_arc"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 13"
+            }
+          ]
+        },
+        "fire_final": {
+          "animations": [
+            "monarch_titan.fire_final"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 14"
+            }
+          ]
+        },
+        "fire_arc_final": {
+          "animations": [
+            "monarch_titan.fire_arc_final"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 15"
+            }
+          ]
+        },
+        "missile": {
+          "animations": [
+            "monarch_titan.missile"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 16"
+            }
+          ]
+        },
+        "reflash": {
+          "animations": [
+            "monarch_titan.reflash"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 17"
+            }
+          ]
+        },
+        "reflash_fast": {
+          "animations": [
+            "monarch_titan.reflash_fast"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 18"
+            }
+          ]
+        },
+        "energy": {
+          "animations": [
+            "monarch_titan.energy"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "energy_after": "q.property('titan:action') != 19"
+            }
+          ]
+        },
+        "energy_after": {
+          "animations": [
+            "monarch_titan.energy_after"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 20"
+            }
+          ]
+        },
+        "missile_final_powering": {
+          "animations": [
+            "monarch_titan.missile_final_powering"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "missile_final": "q.property('titan:action') != 21"
+            }
+          ]
+        },
+        "missile_final": {
+          "animations": [
+            "monarch_titan.missile_final"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 22"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

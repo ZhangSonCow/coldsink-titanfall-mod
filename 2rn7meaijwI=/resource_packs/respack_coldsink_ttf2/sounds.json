@@ -1,0 +1,167 @@
+{
+  "entity_sounds": {
+    "entities": {
+      // pilot
+      "coldsink:sliding_ride_tool": {
+        "events": {
+          "step": "empty",
+          "fall.big": "empty",
+          "fall.small": "empty"
+        }
+      },
+      // titan
+      "coldsink:ion_titan": {
+        "events": {
+          "hurt": "empty",
+          "step": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:tone_titan": {
+        "events": {
+          "hurt": "empty",
+          "step": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:northstar_titan": {
+        "events": {
+          "hurt": "empty",
+          "step": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:ronin_titan": {
+        "events": {
+          "hurt": "empty",
+          "step": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:scorch_titan": {
+        "events": {
+          "hurt": "empty",
+          "step": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:legion_titan": {
+        "events": {
+          "hurt": "empty",
+          "step": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:monarch_titan": {
+        "events": {
+          "hurt": "empty",
+          "step": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:ion_titan_ai": {
+        "events": {
+          "hurt": "empty",
+          "step": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:tone_titan_ai": {
+        "events": {
+          "hurt": "empty",
+          "step": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:northstar_titan_ai": {
+        "events": {
+          "hurt": "empty",
+          "step": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:ronin_titan_ai": {
+        "events": {
+          "hurt": "empty",
+          "step": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:scorch_titan_ai": {
+        "events": {
+          "hurt": "empty",
+          "step": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:legion_titan_ai": {
+        "events": {
+          "hurt": "empty",
+          "step": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:monarch_titan_ai": {
+        "events": {
+          "hurt": "empty",
+          "step": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:titan_shield_3": {
+        "events": {
+          "hurt": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:titan_shield_4": {
+        "events": {
+          "hurt": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:titan_shield_5": {
+        "events": {
+          "hurt": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:titan_shield_6": {
+        "events": {
+          "hurt": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:titan_shield_7": {
+        "events": {
+          "hurt": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:tone_shield_blue": {
+        "events": {
+          "hurt": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:tone_shield_red": {
+        "events": {
+          "hurt": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:legion_shield_blue": {
+        "events": {
+          "hurt": "empty",
+          "death": "empty"
+        }
+      },
+      "coldsink:legion_shield_red": {
+        "events": {
+          "hurt": "empty",
+          "death": "empty"
+        }
+      }
+    }
+  }
+}

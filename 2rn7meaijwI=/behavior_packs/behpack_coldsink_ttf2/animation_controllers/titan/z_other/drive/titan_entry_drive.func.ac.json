@@ -1,0 +1,56 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.titan_entry_drive.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "driving": "q.is_riding"
+            }
+          ]
+        },
+        "driving": {
+          "transitions": [
+            {
+              "default": "!q.is_riding"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add has_rider",
+            "/function titan/titan_check_belong",
+            "/execute @p[tag=is_pilot,scores={titan_check=0}] ~~~ execute @s[hasitem={item=coldsink:battery_ordinary_item,location=slot.armor.legs}] ~~~ execute @e[family=titan,r=8,c=1] ~~~ function titan/get_battery_ordinary",
+            "/execute @p[tag=is_pilot,scores={titan_check=0}] ~~~ scoreboard players add @s[hasitem={item=coldsink:battery_ordinary_item,location=slot.armor.legs}] titan_attack 4000",
+            "/execute @p[tag=is_pilot,scores={titan_check=0}] ~~~ event entity @s[hasitem={item=coldsink:battery_ordinary_item,location=slot.armor.legs}] shoot_get_core",
+            "/execute @p[tag=is_pilot,scores={titan_check=0}] ~~~ event entity @s[hasitem={item=coldsink:battery_ordinary_item,location=slot.armor.legs}] titan_shield_0",
+            "/execute @p[tag=is_pilot,scores={titan_check=0}] ~~~ execute @s[hasitem={item=coldsink:battery_ordinary_item,location=slot.armor.legs}] ~~~ playsound titan_get_battery @a[r=64] ~~~",
+            "/execute @p[tag=is_pilot,scores={titan_check=0}] ~~~ event entity @s[hasitem={item=coldsink:battery_ordinary_item,location=slot.armor.legs}] set_particle_3",
+            "/execute @p[tag=is_pilot,scores={titan_check=0}] ~~~ execute @s[hasitem={item=coldsink:battery_powerful_item,location=slot.armor.legs}] ~~~ execute @e[family=titan,r=8,c=1] ~~~ function titan/get_battery_powerful",
+            "/execute @p[tag=is_pilot,scores={titan_check=0}] ~~~ scoreboard players add @s[hasitem={item=coldsink:battery_powerful_item,location=slot.armor.legs}] titan_attack 4000",
+            "/execute @p[tag=is_pilot,scores={titan_check=0}] ~~~ event entity @s[hasitem={item=coldsink:battery_powerful_item,location=slot.armor.legs}] shoot_get_core",
+            "/execute @p[tag=is_pilot,scores={titan_check=0}] ~~~ event entity @s[hasitem={item=coldsink:battery_powerful_item,location=slot.armor.legs}] titan_shield_0",
+            "/execute @p[tag=is_pilot,scores={titan_check=0}] ~~~ execute @s[hasitem={item=coldsink:battery_powerful_item,location=slot.armor.legs}] ~~~ playsound titan_get_battery @a[r=64] ~~~",
+            "/execute @p[tag=is_pilot,scores={titan_check=0}] ~~~ event entity @s[hasitem={item=coldsink:battery_powerful_item,location=slot.armor.legs}] set_particle_3",
+            "/clear @p[tag=is_pilot,scores={titan_check=0}] coldsink:battery_ordinary_item",
+            "/clear @p[tag=is_pilot,scores={titan_check=0}] coldsink:battery_powerful_item",
+            "/event entity @s flash_titan_health",
+            "/execute @s[tag=titan_danger] ~~~ event entity @p[tag=is_pilot,scores={titan_check=0}] titan_danger_yes",
+            "/execute @s[tag=titan_shield] ~~~ event entity @e[family=titan_shield,r=8,c=1] flash_titan_shield",
+            "/execute @s[tag=!titan_shield] ~~~ event entity @p[tag=is_pilot,scores={titan_check=0}] titan_shield_26",
+            "/execute @s[type=coldsink:ion_titan] ~~~ event entity @p[tag=is_pilot,scores={titan_check=0}] drive_titan_ion",
+            "/execute @s[type=coldsink:tone_titan] ~~~ event entity @p[tag=is_pilot,scores={titan_check=0}] drive_titan_tone",
+            "/execute @s[type=coldsink:northstar_titan] ~~~ event entity @p[tag=is_pilot,scores={titan_check=0}] drive_titan_northstar",
+            "/execute @s[type=coldsink:ronin_titan] ~~~ event entity @p[tag=is_pilot,scores={titan_check=0}] drive_titan_ronin",
+            "/execute @s[type=coldsink:scorch_titan] ~~~ event entity @p[tag=is_pilot,scores={titan_check=0}] drive_titan_scorch",
+            "/execute @s[type=coldsink:legion_titan] ~~~ event entity @p[tag=is_pilot,scores={titan_check=0}] drive_titan_legion",
+            "/execute @s[type=coldsink:monarch_titan] ~~~ event entity @p[tag=is_pilot,scores={titan_check=0}] drive_titan_monarch"
+          ],
+          "on_exit": [
+            "/tag @s remove has_rider"
+          ]
+        }
+      }
+    }
+  }
+}

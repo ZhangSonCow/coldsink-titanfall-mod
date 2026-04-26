@@ -1,0 +1,28 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:scorch_trap_throw_red",
+      "animations": {
+        "fly": "animation.scorch_titan.trap_throw"
+      },
+      "scripts": {
+        "animate": [
+          "fly"
+        ]
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/titan/scorch/scorch_trap"
+      },
+      "geometry": {
+        "default": "geometry.scorch_trap"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

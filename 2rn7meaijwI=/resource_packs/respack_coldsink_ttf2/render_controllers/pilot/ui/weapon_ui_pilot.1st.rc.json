@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.weapon_ui_r201.1st": {
+      "geometry": "geometry.weapon_ui_titan_type.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "Texture.weapon_r201_ui" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    "controller.render.weapon_ui_charge.1st": {
+      "geometry": "geometry.weapon_ui_titan_type.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "Texture.weapon_charge_ui" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

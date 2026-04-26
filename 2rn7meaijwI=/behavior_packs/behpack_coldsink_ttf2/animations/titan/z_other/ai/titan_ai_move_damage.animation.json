@@ -1,0 +1,17 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.titan_ai_move_damage.func": {
+      "loop": true,
+      "animation_length": 0.8,
+      "timeline": {
+        "0.5": [
+          "/execute @s[tag=team_blue] ~~-5~ scoreboard players operation @e[tag=!team_blue,family=!titan,r=4.5] death_check = @s titan_self",
+          "/execute @s[tag=team_red] ~~-5~ scoreboard players operation @e[tag=!team_red,family=!titan,r=4.5] death_check = @s titan_self",
+          "/execute @s[tag=team_blue] ~~-5~ damage @e[tag=!team_blue,family=!titan,family=!tool,type=!item,type=!xp_orb,r=4.5] 400 suicide entity @s",
+          "/execute @s[tag=team_red] ~~-5~ damage @e[tag=!team_red,family=!titan,family=!tool,type=!item,type=!xp_orb,r=4.5] 400 suicide entity @s"
+        ]
+      }
+    }
+  }
+}

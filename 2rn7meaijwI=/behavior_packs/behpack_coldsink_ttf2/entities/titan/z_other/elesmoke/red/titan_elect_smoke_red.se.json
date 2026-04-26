@@ -1,0 +1,103 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:titan_elect_smoke_red",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "godie": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+			"minecraft:tick_world": {
+				"distance_to_players": 128,
+				"never_despawn": false,
+				"radius": 2
+			},
+      "minecraft:type_family": {
+        "family": [ "tool", "titan_elect_smoke" ]
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:collision_box": {
+          "width": 0.0,
+          "height": 0.0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:ageable": {
+        "duration": 8,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:timer": {
+        "time": 0.5,
+        "time_down_event": {
+          "event": "count",
+          "target": "self"
+        }
+      },
+      "minecraft:health": {
+        "value": 2,
+        "max": 2,
+        "min": 1
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "queue_command": {
+          "command": [
+            "particle titan:elesmoke_normal ~~-5~",
+            "particle titan:elesmoke_arc ~~10~"
+          ]
+        }
+      },
+      "count": {
+        "queue_command": {
+          "command": [
+            "execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12] ~~~ scoreboard players add @e[type=coldsink:titan_elect_smoke_red,r=12] titan_attack 150",
+            "execute @s[scores={titan_attack=1..}] ~~~ scoreboard players operation @e[tag=is_titan,tag=team_red] elesmoke_check = @s titan_self",
+            "execute @s[scores={titan_attack=1..}] ~~~ execute @e[tag=is_titan,tag=team_red] ~~~ scoreboard players operation @s elesmoke_check -= @s titan_self",
+            "execute @s[scores={titan_attack=1..}] ~~~ scoreboard players operation @e[tag=is_titan,scores={elesmoke_check=0},tag=team_red] titan_attack += @s titan_attack",
+            "execute @s[scores={titan_attack=1..}] ~~~ event entity @e[tag=is_titan,scores={elesmoke_check=0},tag=team_red] shoot_get_core",
+            "scoreboard players reset @s titan_attack",
+
+            "scoreboard players operation @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12] death_check = @s titan_self",
+            "damage @e[tag=!is_pilot,tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12] 150 suicide entity @s",
+
+            // 反训牛铁驭伤害
+            "damage @e[tag=!team_red,tag=is_pilot,r=12] 8 suicide entity @s",
+
+            "particle titan:elesmoke_arc ~~-3.6~"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "godie"
+          ]
+        }
+      }
+    }
+  }
+}

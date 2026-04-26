@@ -1,0 +1,102 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.entry_northstar_cabin": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "entry_loaded": "q.property('titan:action') == 130"
+            },
+            {
+              "entry_front": "q.property('titan:action') == 132"
+            },
+            {
+              "entry_back": "q.property('titan:action') == 133"
+            },
+            {
+              "entry_top": "q.property('titan:action') == 134"
+            },
+            {
+              "exit_cabin": "q.property('titan:action') == 135"
+            }
+          ]
+        },
+        "entry_loaded": {
+          "animations": [
+            "northstar_titan.loaded",
+            "northstar_titan.pilot_entry_loaded"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "standing": "q.property('titan:action') == 131"
+            }
+          ]
+        },
+        "standing": {
+          "animations": [
+            "northstar_titan.standing",
+            "northstar_titan.pilot_entry_standing"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "entry_front": {
+          "animations": [
+            "northstar_titan.entry_stand_front",
+            "northstar_titan.pilot_entry_front"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "entry_back": {
+          "animations": [
+            "northstar_titan.entry_stand_back",
+            "northstar_titan.pilot_entry_back"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "entry_top": {
+          "animations": [
+            "northstar_titan.entry_stand_top",
+            "northstar_titan.pilot_entry_top"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "exit_cabin": {
+          "animations": [
+            "northstar_titan.exit_cabin",
+            "northstar_titan.pilot_exit_cabin"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

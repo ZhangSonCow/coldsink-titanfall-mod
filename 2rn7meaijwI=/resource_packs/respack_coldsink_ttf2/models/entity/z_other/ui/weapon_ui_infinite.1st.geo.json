@@ -1,0 +1,42 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.weapon_ui_infinite.1st",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [0, 1.75, 0]
+			},
+			"bones": [
+				{
+					"name": "skillBox",
+					"pivot": [-2.2, 22.45, 9.5],
+					"rotation": [0, -90, 0]
+				},
+				{
+					"name": "weapon_ui",
+					"parent": "skillBox",
+					"pivot": [-1.07875, 21.95688, 9.455],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.36, 9.11],
+							"size": [-0.05291, 0.18, 0.4],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [0, 12], "uv_size": [8.625, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

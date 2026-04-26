@@ -1,0 +1,93 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.weapon_charge_ai.3st": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "weapon_charge.idle.3st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "run": "q.modified_move_speed >= 0.5 && q.is_on_ground && q.property('titan:other_action') == 0"
+            },
+            {
+              "climb": "q.property('titan:action') == 3 || q.property('titan:action') == 4"
+            },
+            {
+              "slide": "q.property('titan:action') == 5"
+            }
+          ]
+        },
+        "run": {
+          "animations": [
+            "weapon_charge.run.3st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.modified_move_speed < 0.5 || !q.is_on_ground || q.property('titan:other_action') != 0"
+            },
+            {
+              "climb": "q.property('titan:action') == 3 || q.property('titan:action') == 4"
+            },
+            {
+              "slide": "q.property('titan:action') == 5"
+            }
+          ]
+        },
+        "climb": {
+          "animations": [
+            "weapon_charge.climb.3st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 3 && q.property('titan:action') != 4"
+            }
+          ]
+        },
+        "slide": {
+          "animations": [
+            "weapon_charge.slide.3st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 5"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.weapon_charge_action_ai.3st": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "weapon_charge.idle"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "fire": "q.property('titan:other_action') == 1"
+            }
+          ]
+        },
+        "fire": {
+          "animations": [
+            "weapon_charge.fire.3st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:other_action') == 0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:ronin_ai_bullet_red",
+      "animations": {
+        "particle_double": "animation.locator.particle_double"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "particle_double": "q.variant == 0"
+          }
+        ]
+      },
+      "particle_effects": {
+        "particle": "titan:ronin_bullet"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/empty"
+      },
+      "geometry": {
+        "default": "geometry.locator"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

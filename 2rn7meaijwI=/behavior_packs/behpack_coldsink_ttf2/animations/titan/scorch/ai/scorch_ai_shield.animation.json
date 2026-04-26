@@ -1,0 +1,48 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.scorch_ai_shield.func": {
+      "loop": true,
+      "animation_length": 0.2,
+      "timeline": {
+        "0.0": [
+          "/execute @s[tag=team_blue] ^^^3 scoreboard players operation @e[family=!tool,type=!item,type=!xp_orb,tag=!team_blue,r=8] death_check = @s titan_self",
+          "/execute @s[tag=team_blue] ^^^3 damage @e[family=!tool,type=!item,type=!xp_orb,tag=!team_blue,r=8] 200 suicide entity @s",
+          "/execute @s[tag=team_blue] ^^^3 execute @e[family=!tool,type=!item,type=!xp_orb,tag=!team_blue,r=8] ~~~ scoreboard players add @e[family=scorch_titan,tag=team_blue,c=1] titan_attack 200",
+          "/execute @s[tag=team_blue] ^^^3 execute @e[family=!tool,type=!item,type=!xp_orb,tag=!team_blue,r=8] ~~~ event entity @e[family=scorch_titan,tag=team_blue,c=1] shoot_get_core",
+          "/execute @s[tag=team_blue] ^^^5 event entity @e[family=bullet,tag=!team_blue,r=10] godie",
+          
+          "/execute @s[tag=team_red] ^^^3 scoreboard players operation @e[family=!tool,type=!item,type=!xp_orb,tag=!team_red,r=8] death_check = @s titan_self",
+          "/execute @s[tag=team_red] ^^^3 damage @e[family=!tool,type=!item,type=!xp_orb,tag=!team_red,r=8] 200 suicide entity @s",
+          "/execute @s[tag=team_red] ^^^3 execute @e[family=!tool,type=!item,type=!xp_orb,tag=!team_red,r=8] ~~~ scoreboard players add @e[family=scorch_titan,tag=team_red,c=1] titan_attack 200",
+          "/execute @s[tag=team_red] ^^^3 execute @e[family=!tool,type=!item,type=!xp_orb,tag=!team_red,r=8] ~~~ event entity @e[family=scorch_titan,tag=team_red,c=1] shoot_get_core",
+          "/execute @s[tag=team_red] ^^^5 event entity @e[family=bullet,tag=!team_red,r=10] godie"
+        ]
+      }
+    },
+    "animation.scorch_ai_shield_timer.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players random @s random_score 1 5"
+        ],
+        "2.0": [
+          "/execute @s[scores={random_score=1}] ~~~ event entity @e[type=coldsink:scorch_rider_ai,r=8,c=1] turn_rider_state_normal"
+        ],
+        "2.8": [
+          "/execute @s[scores={random_score=2}] ~~~ event entity @e[type=coldsink:scorch_rider_ai,r=8,c=1] turn_rider_state_normal"
+        ],
+        "3.6": [
+          "/execute @s[scores={random_score=3}] ~~~ event entity @e[type=coldsink:scorch_rider_ai,r=8,c=1] turn_rider_state_normal"
+        ],
+        "4.2": [
+          "/execute @s[scores={random_score=4}] ~~~ event entity @e[type=coldsink:scorch_rider_ai,r=8,c=1] turn_rider_state_normal"
+        ],
+        "5.0": [
+          "/event entity @e[type=coldsink:scorch_rider_ai,r=8,c=1] turn_rider_state_normal"
+        ]
+      }
+    }
+  }
+}

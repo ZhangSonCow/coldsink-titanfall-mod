@@ -1,0 +1,299 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.pilot_melee.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.3": [
+          "/tag @s add pilot_melee_self",
+          "/execute @s[tag=team_blue] ^^3^ scoreboard players operation @e[tag=!team_blue,family=!titan,family=!tool,type=!item,type=!xp_orb,r=5] death_check = @s titan_self",
+          "/execute @s[tag=team_red] ^^3^ scoreboard players operation @e[tag=!team_red,family=!titan,family=!tool,type=!item,type=!xp_orb,r=5] death_check = @s titan_self",
+          "/execute @s[tag=team_blue] ^^3^ execute @e[tag=!team_blue,family=!titan,family=!tool,type=!item,type=!xp_orb,r=5] ~~~ scoreboard players add @p[tag=pilot_melee_self] pilot_attack 20",
+          "/execute @s[tag=team_red] ^^3^ execute @e[tag=!team_red,family=!titan,family=!tool,type=!item,type=!xp_orb,r=5] ~~~ scoreboard players add @p[tag=pilot_melee_self] pilot_attack 20",
+          "/execute @s[tag=team_blue] ^^3^ execute @e[tag=!team_blue,family=!titan,family=!tool,type=!item,type=!xp_orb,r=5,c=1] ~~~ event entity @p[tag=pilot_melee_self] pilot_shoot_get_core",
+          "/execute @s[tag=team_red] ^^3^ execute @e[tag=!team_red,family=!titan,family=!tool,type=!item,type=!xp_orb,r=5,c=1] ~~~ event entity @p[tag=pilot_melee_self] pilot_shoot_get_core",
+          "/tag @s remove pilot_melee_self",
+
+          "/execute @s[tag=team_blue] ^^3^ damage @e[tag=!team_blue,family=!titan,family=!tool,type=!item,type=!xp_orb,r=5] 20 suicide entity @s",
+          "/execute @s[tag=team_red] ^^3^ damage @e[tag=!team_red,family=!titan,family=!tool,type=!item,type=!xp_orb,r=5] 20 suicide entity @s"
+        ],
+        "0.75": [
+          "/event entity @s[tag=!pilot_handle_weapon] set_other_action_0",
+          "/event entity @s[tag=pilot_handle_weapon] set_other_action_10"
+        ]
+      }
+    },
+    "animation.check_titan_around.func": {
+      "loop": true,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/tag @s remove titan_around",
+          "/execute @e[family=titan,tag=!titan_falling,r=10] ~~~ tag @a[tag=is_pilot,tag=!is_titan,tag=!exit_cabin,r=10] add titan_around"
+          // 受击防倾斜
+          // "/camerashake add @s[tag=!titan_around,tag=!pre_jump,tag=!is_slip_wall] 0.000000001 1 rotational"
+        ]
+      }
+    },
+    "animation.check_titan_follow.func": {
+      "loop": true,
+      "animation_length": 1.0,
+      "timeline": {
+        "0.0": [
+          "/execute @s[tag=titan_player_0] ~~~ event entity @e[family=titan,tag=titan_player_0,tag=!titan_staic,tag=!is_follow,rm=16] turn_titan_state_follow",
+          "/execute @s[tag=titan_player_0] ~~~ event entity @e[family=titan,tag=titan_player_0,tag=!titan_staic,tag=is_follow,r=16] turn_titan_state_normal",
+          "/execute @s[tag=titan_player_1] ~~~ event entity @e[family=titan,tag=titan_player_1,tag=!titan_staic,tag=!is_follow,rm=16] turn_titan_state_follow",
+          "/execute @s[tag=titan_player_1] ~~~ event entity @e[family=titan,tag=titan_player_1,tag=!titan_staic,tag=is_follow,r=16] turn_titan_state_normal",
+          "/execute @s[tag=titan_player_2] ~~~ event entity @e[family=titan,tag=titan_player_2,tag=!titan_staic,tag=!is_follow,rm=16] turn_titan_state_follow",
+          "/execute @s[tag=titan_player_2] ~~~ event entity @e[family=titan,tag=titan_player_2,tag=!titan_staic,tag=is_follow,r=16] turn_titan_state_normal",
+          "/execute @s[tag=titan_player_3] ~~~ event entity @e[family=titan,tag=titan_player_3,tag=!titan_staic,tag=!is_follow,rm=16] turn_titan_state_follow",
+          "/execute @s[tag=titan_player_3] ~~~ event entity @e[family=titan,tag=titan_player_3,tag=!titan_staic,tag=is_follow,r=16] turn_titan_state_normal",
+          "/execute @s[tag=titan_player_4] ~~~ event entity @e[family=titan,tag=titan_player_4,tag=!titan_staic,tag=!is_follow,rm=16] turn_titan_state_follow",
+          "/execute @s[tag=titan_player_4] ~~~ event entity @e[family=titan,tag=titan_player_4,tag=!titan_staic,tag=is_follow,r=16] turn_titan_state_normal",
+          "/execute @s[tag=titan_player_5] ~~~ event entity @e[family=titan,tag=titan_player_5,tag=!titan_staic,tag=!is_follow,rm=16] turn_titan_state_follow",
+          "/execute @s[tag=titan_player_5] ~~~ event entity @e[family=titan,tag=titan_player_5,tag=!titan_staic,tag=is_follow,r=16] turn_titan_state_normal",
+          "/execute @s[tag=titan_player_6] ~~~ event entity @e[family=titan,tag=titan_player_6,tag=!titan_staic,tag=!is_follow,rm=16] turn_titan_state_follow",
+          "/execute @s[tag=titan_player_6] ~~~ event entity @e[family=titan,tag=titan_player_6,tag=!titan_staic,tag=is_follow,r=16] turn_titan_state_normal",
+          "/execute @s[tag=titan_player_7] ~~~ event entity @e[family=titan,tag=titan_player_7,tag=!titan_staic,tag=!is_follow,rm=16] turn_titan_state_follow",
+          "/execute @s[tag=titan_player_7] ~~~ event entity @e[family=titan,tag=titan_player_7,tag=!titan_staic,tag=is_follow,r=16] turn_titan_state_normal",
+          "/execute @s[tag=titan_player_8] ~~~ event entity @e[family=titan,tag=titan_player_8,tag=!titan_staic,tag=!is_follow,rm=16] turn_titan_state_follow",
+          "/execute @s[tag=titan_player_8] ~~~ event entity @e[family=titan,tag=titan_player_8,tag=!titan_staic,tag=is_follow,r=16] turn_titan_state_normal",
+          "/execute @s[tag=titan_player_9] ~~~ event entity @e[family=titan,tag=titan_player_9,tag=!titan_staic,tag=!is_follow,rm=16] turn_titan_state_follow",
+          "/execute @s[tag=titan_player_9] ~~~ event entity @e[family=titan,tag=titan_player_9,tag=!titan_staic,tag=is_follow,r=16] turn_titan_state_normal"
+        ]
+      }
+    },
+    "animation.over_titan_follow.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "1.0": [
+          "/execute @s[tag=titan_player_0] ~~~ event entity @e[family=titan,tag=titan_player_0] turn_titan_state_normal",
+          "/execute @s[tag=titan_player_1] ~~~ event entity @e[family=titan,tag=titan_player_1] turn_titan_state_normal",
+          "/execute @s[tag=titan_player_2] ~~~ event entity @e[family=titan,tag=titan_player_2] turn_titan_state_normal",
+          "/execute @s[tag=titan_player_3] ~~~ event entity @e[family=titan,tag=titan_player_3] turn_titan_state_normal",
+          "/execute @s[tag=titan_player_4] ~~~ event entity @e[family=titan,tag=titan_player_4] turn_titan_state_normal",
+          "/execute @s[tag=titan_player_5] ~~~ event entity @e[family=titan,tag=titan_player_5] turn_titan_state_normal",
+          "/execute @s[tag=titan_player_6] ~~~ event entity @e[family=titan,tag=titan_player_6] turn_titan_state_normal",
+          "/execute @s[tag=titan_player_7] ~~~ event entity @e[family=titan,tag=titan_player_7] turn_titan_state_normal",
+          "/execute @s[tag=titan_player_8] ~~~ event entity @e[family=titan,tag=titan_player_8] turn_titan_state_normal",
+          "/execute @s[tag=titan_player_9] ~~~ event entity @e[family=titan,tag=titan_player_9] turn_titan_state_normal"
+        ]
+      }
+    },
+    "animation.pilot_timer_core.func": {
+      "loop": true,
+      "animation_length": 2.0,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players add @s[scores={pilot_core=..99},tag=!is_titan,tag=!has_titan,tag=!no_game] pilot_core 1",
+          "/event entity @s[tag=!is_titan,tag=!has_titan,tag=!no_game] add_core_1",
+          "/event entity @s[scores={pilot_core=100..},tag=!is_titan,tag=!pilot_core_saied,tag=!has_titan,tag=!pilot_fight,tag=!no_game] pilot_core_full"
+        ]
+      }
+    },
+    "animation.check_slip_wall.func": {
+      "loop": true,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players set @s slip_bool 1",
+          "/execute @s[tag=pre_jump] ~~~ detect ^1^^ air 0 execute @s ~~~ detect ^-1^^ air 0 scoreboard players set @s slip_bool 0",
+          "/execute @s[tag=pre_jump] ~~~ detect ^1^1^ air 0 execute @s ~~~ detect ^-1^1^ air 0 scoreboard players set @s slip_bool 0",
+          "/execute @s ~~~ detect ~~~ water -1 scoreboard players set @s slip_bool 0",
+          "/execute @s[scores={slip_bool=1},tag=pre_jump,tag=!is_slip_wall] ~~~ detect ^-1^^ air 0 event entity @s begin_slip_wall_left",
+          "/execute @s[scores={slip_bool=1},tag=pre_jump,tag=!is_slip_wall] ~~~ detect ^1^^ air 0 event entity @s begin_slip_wall_right",
+          "/tag @s[scores={slip_bool=1},tag=pre_jump] add is_slip_wall",
+          "/event entity @s[scores={slip_bool=0}] over_slip_wall",
+          "/event entity @s[scores={slip_bool=0},tag=is_slip_wall] set_action_0",
+          "/tag @s[scores={slip_bool=0}] remove is_slip_wall"
+        ]
+      }
+    },
+    "animation.slip_wall.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/effect @s[tag=!wy_game] speed 1 5 true",
+          "/effect @s slow_falling 1 0 true",
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "0.1": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "0.2": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "0.3": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "0.4": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "0.5": [
+          "/effect @s[tag=!wy_game] speed 1 5 true",
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "0.6": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "0.7": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "1": [
+          "/effect @s[tag=!wy_game] speed 1 5 true",
+          "/effect @s slow_falling 1 0 true",
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "0.9": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "1.0": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "1.1": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "1.2": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "1.3": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "1.4": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "1.5": [
+          "/effect @s[tag=!wy_game] speed 1 5 true",
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "1.6": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "1.7": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "1.8": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "1.9": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "2.0": [
+          "/effect @s[tag=!wy_game] speed 1 5 true",
+          "/effect @s slow_falling 1 0 true",
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "2.1": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "2.2": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "2.3": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "2.4": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "2.5": [
+          "/effect @s[tag=!wy_game] speed 1 5 true",
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "2.6": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "2.7": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "2.8": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "2.9": [
+          "/summon coldsink:slip_wall_tool ^^^-0.1"
+        ],
+        "3.0": [
+          "/event entity @s over_slip_wall"
+        ]
+      }
+    },
+    "animation.sliding_tool_down.func": {
+      "loop": true,
+      "animation_length": 0.01,
+      "timeline": {
+        "0.0": [
+          "/execute @s ~~~ detect ~~-0.5~ air -1 tp @s ~~-0.5~",
+          "/execute @s ~~~ detect ~~-0.5~ air -1 tp @s ~~-0.5~",
+          "/execute @s ~~~ detect ~~-1~ water -1 event entity @s godie",
+          "/execute @s ~~~ detect ~~-1~ lava -1 event entity @s godie"
+        ]
+      }
+    },
+    "animation.sliding_tool.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/tp @s ~~~ facing @e[family=pilot,tag=begin_slide_self,c=1]",
+          "/tag @e[family=pilot,tag=begin_slide_self,c=1] add sliding_self",
+          "/tag @e[family=pilot,tag=begin_slide_self,c=1] remove begin_slide_self",
+          "/ride @e[family=pilot,tag=sliding_self,c=1] start_riding @s",
+          "/tag @e[family=pilot,tag=sliding_self,c=1] remove sliding_self"
+        ],
+        "0.100": [ "/event entity @s sliding_tp" ],
+        "0.110": [ "/event entity @s sliding_tp" ],
+        "0.122": [ "/event entity @s sliding_tp" ],
+        "0.137": [ "/event entity @s sliding_tp" ],
+        "0.154": [ "/event entity @s sliding_tp" ],
+        "0.173": [ "/event entity @s sliding_tp" ],
+        "0.194": [ "/event entity @s sliding_tp" ],
+        "0.217": [ "/event entity @s sliding_tp" ],
+        "0.242": [ "/event entity @s sliding_tp" ],
+        "0.269": [ "/event entity @s sliding_tp" ],
+        "0.298": [ "/event entity @s sliding_tp" ],
+        "0.329": [ "/event entity @s sliding_tp" ],
+        "0.362": [ "/event entity @s sliding_tp" ],
+        "0.397": [ "/event entity @s sliding_tp" ],
+        "0.434": [ "/event entity @s sliding_tp" ],
+        "0.473": [ "/event entity @s sliding_tp" ],
+        "0.514": [ "/event entity @s sliding_tp" ],
+        "0.557": [ "/event entity @s sliding_tp" ],
+        "0.602": [ "/event entity @s sliding_tp" ],
+        "0.649": [ "/event entity @s sliding_tp" ],
+        "0.698": [ "/event entity @s sliding_tp" ],
+        "0.749": [ "/event entity @s sliding_tp" ],
+        "0.802": [ "/event entity @s sliding_tp" ],
+        "0.857": [ "/event entity @s sliding_tp" ],
+        "0.914": [ "/event entity @s sliding_tp" ],
+        "0.973": [ "/event entity @s sliding_tp" ],
+        "1.034": [ "/event entity @s sliding_tp" ],
+        "1.097": [ "/event entity @s sliding_tp" ],
+        "1.162": [ "/event entity @s sliding_tp" ],
+        "1.229": [ "/event entity @s sliding_tp" ],
+        "1.298": [ "/event entity @s sliding_tp" ],
+        "1.369": [ "/event entity @s sliding_tp" ],
+        "1.442": [ "/event entity @s sliding_tp" ],
+        "1.517": [ "/event entity @s sliding_tp" ],
+        "1.594": [ "/event entity @s sliding_tp" ],
+        "1.673": [ "/event entity @s sliding_tp" ],
+        "1.754": [ "/event entity @s sliding_tp" ],
+        "1.837": [ "/event entity @s sliding_tp" ],
+        "1.922": [ "/event entity @s sliding_tp" ],
+        "2.009": [ "/event entity @s sliding_tp" ],
+        "2.098": [ "/event entity @s sliding_tp" ],
+        "2.189": [ "/event entity @s sliding_tp" ],
+        "2.282": [ "/event entity @s sliding_tp" ],
+        "2.377": [ "/event entity @s sliding_tp" ],
+        "2.474": [ "/event entity @s sliding_tp" ],
+        "2.573": [ "/event entity @s sliding_tp" ],
+        "2.674": [ "/event entity @s sliding_tp" ],
+        "2.777": [ "/event entity @s sliding_tp" ],
+        "2.882": [ "/event entity @s sliding_tp" ],
+        "2.989": [ "/event entity @s sliding_tp" ],
+        "3.000": [ "/event entity @s godie" ]
+      }
+    }
+  }
+}

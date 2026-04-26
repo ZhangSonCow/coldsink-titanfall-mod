@@ -1,0 +1,246 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:ion_rider_ai_core",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tool", "ai_rider_tool" ]
+      },
+      "minecraft:health": {
+        "value": 1,
+        "max": 1,
+        "min": 1
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "height": 1,
+        "width": 0
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:follow_range": {
+        "value": 512,
+        "max": 512
+      },
+      "minecraft:physics": {},
+      "minecraft:jump.static": {},
+      "minecraft:movement.basic": {},
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:navigation.walk": {
+        "can_walk": true,
+        "can_pass_doors": true,
+        "is_amphibious": true
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7,
+        "look_distance": 6,
+        "probability": 0.02
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 64.0,
+          "max_dropped_ticks": 5,
+          "use_motion_prediction_hints": true
+        }
+      },
+      "minecraft:despawn": {
+        "filters": {
+          "all_of": [
+            {
+              "all_of": [
+                {
+                  "test": "is_riding",
+                  "subject": "self",
+                  "operator": "!="
+                }
+              ]
+            }
+          ]
+        }
+      },
+      // 索敌
+      "minecraft:behavior.nearest_prioritized_attackable_target": {
+        "priority": 1,
+        "within_radius": 128,
+        "reselect_targets": true,
+        "must_see": true,
+        "must_see_forget_duration": 1.0,
+        "entity_types": [
+          // 玩家与泰坦
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "any_of": [
+                    {
+                      "all_of": [
+                        {
+                          "test": "has_tag",
+                          "subject": "self",
+                          "value": "team_blue"
+                        },
+                        {
+                          "test": "has_tag",
+                          "subject": "other",
+                          "operator": "!=",
+                          "value": "team_blue"
+                        }
+                      ]
+                    },
+                    {
+                      "all_of": [
+                        {
+                          "test": "has_tag",
+                          "subject": "self",
+                          "value": "team_red"
+                        },
+                        {
+                          "test": "has_tag",
+                          "subject": "other",
+                          "operator": "!=",
+                          "value": "team_red"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "titan_staic"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "terminate"
+                }
+              ]
+            },
+            "max_dist": 512,
+            "priority": 1
+          },
+          // 怪物
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "monster"
+            },
+            "max_dist": 512,
+            "priority": 2
+          }
+        ]
+      },
+      "minecraft:behavior.ranged_attack": {
+        "priority": 0,
+        "attack_interval": 0.05,
+        "burst_shots": 1,
+        "attack_radius": 128
+      }
+    },
+
+
+    "component_groups": {
+        
+      "die": {
+        "minecraft:instant_despawn": {}
+      },
+      // 核心子弹
+      "bullet_core_blue": {
+        "minecraft:shooter": {
+          "def": "coldsink:ion_ai_bullet_blue<bullet_core>"
+        }
+      },
+      "bullet_core_red": {
+        "minecraft:shooter": {
+          "def": "coldsink:ion_ai_bullet_red<bullet_core>"
+        }
+      }
+
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "bullet_core_blue"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "tag @s add team_blue",
+            "execute @e[family=ion_titan,r=8,c=1] ~~~ execute @s[tag=team_red] ~~~ event entity @e[type=coldsink:ion_rider_ai_core,r=8,c=1] team_red"
+          ]
+        }
+      },
+      // 队伍
+      "team_blue":{
+        "add": {
+          "component_groups": [
+            "bullet_core_blue"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "bullet_core_red"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "tag @s add team_blue",
+            "tag @s remove team_red"
+          ]
+        }
+      },
+      "team_red":{
+        "add": {
+          "component_groups": [
+            "bullet_core_red"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "bullet_core_blue"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "tag @s add team_red",
+            "tag @s remove team_blue"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

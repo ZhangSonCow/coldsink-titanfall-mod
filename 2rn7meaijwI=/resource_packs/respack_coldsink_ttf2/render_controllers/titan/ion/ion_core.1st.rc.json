@@ -1,0 +1,16 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.ion_core.1st": {
+      "geometry": "geometry.ion_core.1st",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "texture.ion_core" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

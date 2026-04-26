@@ -1,0 +1,79 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "titan:titan_loading_break",
+			"basic_render_parameters": {
+				"material": "particles_blend",
+				"texture": "textures/particle/titan/newsmoke1"
+			}
+		},
+		"curves": {
+			"variable.alpha": {
+				"type": "linear",
+				"input": "v.particle_age",
+				"horizontal_range": "v.particle_lifetime",
+				"nodes": [0.86, 1, 1, 1, 0.93, 0.77, 0]
+			},
+			"variable.color2": {
+				"type": "linear",
+				"input": "v.particle_age",
+				"horizontal_range": "v.particle_lifetime",
+				"nodes": [0, 1, 1, 1, 1]
+			}
+		},
+		"components": {
+			"minecraft:emitter_rate_instant": {
+				"num_particles": 120
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 2
+			},
+			"minecraft:emitter_lifetime_events": {
+				"creation_event": ["event1", "event2"]
+			},
+			"minecraft:emitter_shape_disc": {
+				"offset": [0, 2, 0],
+				"radius": "math.random(2,3)",
+				"surface_only": true,
+				"direction": "outwards"
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": "Math.random(3, 4)"
+			},
+			"minecraft:particle_initial_spin": {
+				"rotation": "math.random(0,359)",
+				"rotation_rate": "math.random(-10,10)"
+			},
+			"minecraft:particle_initial_speed": "Math.random(80, 100)",
+			"minecraft:particle_motion_dynamic": {
+				"linear_drag_coefficient": 5
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": [2, 2],
+				"facing_camera_mode": "rotate_xyz",
+				"uv": {
+					"texture_width": 2,
+					"texture_height": 2,
+					"uv": ["math.floor(variable.particle_random_3*2)", "math.floor(variable.particle_random_4*2)"],
+					"uv_size": [1, 1]
+				}
+			},
+			"minecraft:particle_motion_collision": {
+				"coefficient_of_restitution": 1,
+				"collision_radius": 0.01
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": {
+					"interpolant": "v.particle_age / v.particle_lifetime",
+					"gradient": {
+						"0.0": "#7AFFF4DB",
+						"0.07": "#7DFF7C00",
+						"0.14": "#75232323",
+						"1.0": "#001F1F1F"
+					}
+				}
+			}
+		}
+	}
+}

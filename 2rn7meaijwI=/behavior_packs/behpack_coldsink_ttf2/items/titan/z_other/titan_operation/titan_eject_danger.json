@@ -1,0 +1,27 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "coldsink:titan_eject_danger",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.arrow"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "titan_eject",
+      "minecraft:display_name": {
+        "value": "§c【自毁弹射】 §f长按立即以自我毁灭"
+      },
+      "minecraft:use_modifiers": {
+        "use_duration": 99999,
+        "movement_modifier": 1
+      },
+      "minecraft:food": {
+        "can_always_eat": true
+      },
+      "minecraft:hand_equipped": false
+    }
+  }
+}

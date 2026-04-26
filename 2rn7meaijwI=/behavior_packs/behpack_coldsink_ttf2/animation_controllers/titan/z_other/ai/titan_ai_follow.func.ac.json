@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.titan_ai_follow.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "follow": "q.variant == 3"
+            }
+          ]
+        },
+        "follow": {
+          "transitions": [
+            {
+              "default": "q.variant != 3"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add is_follow"
+          ],
+          "on_exit": [
+            "/tag @s remove is_follow"
+          ]
+        }
+      }
+    }
+  }
+}

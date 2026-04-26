@@ -1,0 +1,16 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.spurt_bar_3_yellow": {
+      "geometry": "geometry.spurt_bar_3_yellow",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "texture.spurt_bar" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

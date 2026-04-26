@@ -1,0 +1,50 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.scorch_terminate": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "terminate_1": "q.property('titan:action') == 156"
+            },
+            {
+              "terminate_2": "q.property('titan:action') == 157"
+            },
+            {
+              "by_other_terminate": "q.property('titan:action') == 158"
+            }
+          ]
+        },
+        "terminate_1": {
+          "animations": [
+            "scorch_titan.terminate_1"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "terminate_2": {
+          "animations": [
+            "scorch_titan.terminate_2"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "by_other_terminate": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

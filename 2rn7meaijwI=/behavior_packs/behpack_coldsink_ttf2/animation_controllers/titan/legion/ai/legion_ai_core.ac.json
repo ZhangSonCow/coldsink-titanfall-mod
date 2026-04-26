@@ -1,0 +1,47 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.legion_ai_core.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "skill": "q.is_sheared"
+            }
+          ]
+        },
+        "skill": {
+          "animations": [
+            "legion_ai_core"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_sheared"
+            }
+          ],
+          "on_entry": [
+            "/playsound legion_skill_3_entry @a[r=64] ~~~",
+            "/playsound legion_core_begin @a[r=64] ~~~",
+            "/tag @e[type=coldsink:legion_rider_ai,r=8,c=1] add in_core",
+            "/execute @s[tag=team_blue] ~~~ event entity @e[type=coldsink:legion_rider_ai,tag=team_blue,r=8,c=1] turn_bullet_core_blue",
+            "/execute @s[tag=team_red] ~~~ event entity @e[type=coldsink:legion_rider_ai,tag=team_red,r=8,c=1] turn_bullet_core_red",
+            "/execute @s[tag=team_blue] ~~~ event entity @e[type=coldsink:legion_rider_ai,tag=team_blue,r=8,c=1] turn_rider_target_core",
+            "/execute @s[tag=team_red] ~~~ event entity @e[type=coldsink:legion_rider_ai,tag=team_red,r=8,c=1] turn_rider_target_core"
+          ],
+          "on_exit": [
+            "/playsound legion_skill_3_exit @a[r=64] ~~~",
+            "/event entity @s clear_titan_sheared",
+            "/tag @e[type=coldsink:legion_rider_ai,r=8,c=1] remove in_core",
+            "/execute @s[tag=team_blue] ~~~ execute @e[type=coldsink:legion_rider_ai,tag=team_blue,r=8,c=1] ~~~ event entity @s[tag=!legion_range_mode] turn_bullet_weapon_near_blue",
+            "/execute @s[tag=team_red] ~~~ execute @e[type=coldsink:legion_rider_ai,tag=team_red,r=8,c=1] ~~~ event entity @s[tag=!legion_range_mode] turn_bullet_weapon_near_red",
+            "/execute @s[tag=team_blue] ~~~ execute @e[type=coldsink:legion_rider_ai,tag=team_blue,r=8,c=1] ~~~ event entity @s[tag=legion_range_mode] turn_bullet_weapon_far_blue",
+            "/execute @s[tag=team_red] ~~~ execute @e[type=coldsink:legion_rider_ai,tag=team_red,r=8,c=1] ~~~ event entity @s[tag=legion_range_mode] turn_bullet_weapon_far_red",
+            "/execute @s[tag=team_blue] ~~~ event entity @e[type=coldsink:legion_rider_ai,tag=team_blue,r=8,c=1] turn_rider_target_normal",
+            "/execute @s[tag=team_red] ~~~ event entity @e[type=coldsink:legion_rider_ai,tag=team_red,r=8,c=1] turn_rider_target_normal"
+          ]
+        }
+      }
+    }
+  }
+}

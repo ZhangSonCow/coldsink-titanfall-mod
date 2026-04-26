@@ -1,0 +1,28 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:npc_steve_red",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "animations": {
+        "bob": "animation.player.bob"
+      },
+      "scripts": {
+        "animate": [
+          "bob"
+        ]
+      },
+      "textures": {
+        "default": "textures/entity/z_other/tool/npc_steve_red"
+      },
+      "geometry": {
+        "default": "geometry.humanoid.custom"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

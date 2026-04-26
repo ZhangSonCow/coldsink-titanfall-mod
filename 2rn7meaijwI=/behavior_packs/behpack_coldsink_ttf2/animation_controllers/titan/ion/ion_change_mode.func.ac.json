@@ -1,0 +1,64 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ion_change_mode.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "idle": "q.variant == 1 && q.is_item_name_any('slot.hotbar', 0, 'coldsink:ion_weapon')"
+            }
+          ]
+        },
+        "idle": {
+          "transitions": [
+            {
+              "check": "q.variant == 1 && !q.is_item_name_any('slot.hotbar', 0, 'coldsink:ion_weapon') && q.property('titan:weapon_value') != 0"
+            }
+          ]
+        },
+        "check": {
+          "transitions": [
+            {
+              "default": "q.variant != 1"
+            },
+            {
+              "normal": "q.variant == 1 && !q.property('titan:weapon_aim')"
+            },
+            {
+              "divide": "q.variant == 1 && q.property('titan:weapon_aim')"
+            }
+          ],
+          "on_entry": [
+            "/kill @e[type=item,c=1]",
+            "/tag @s[tag=!wy_game] remove weapon_aim"
+          ]
+        },
+        "normal": {
+          "transitions": [
+            {
+              "default": "q.is_item_name_any('slot.hotbar', 0, 'coldsink:ion_weapon')"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[tag=!wy_game] weapon_aim_yes",
+            "/replaceitem entity @s[scores={ion_bullet=1..},tag=!wy_game] slot.hotbar 0 coldsink:ion_weapon"
+          ]
+        },
+        "divide": {
+          "transitions": [
+            {
+              "default": "q.is_item_name_any('slot.hotbar', 0, 'coldsink:ion_weapon')"
+            }
+          ],
+          "on_entry": [
+            "/tag @s[tag=!wy_game] add weapon_aim",
+            "/event entity @s[tag=!wy_game] weapon_aim_no",
+            "/replaceitem entity @s[scores={ion_bullet=1..},tag=!wy_game] slot.hotbar 0 coldsink:ion_weapon"
+          ]
+        }
+      }
+    }
+  }
+}

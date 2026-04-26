@@ -1,0 +1,44 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.entry_loaded_titan.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "1.5": [
+          "/function titan/titan_check_belong",
+          "/tp @s ~~~ ~ 0",
+          "/camera @p[tag=is_pilot,scores={titan_check=0}] set minecraft:free ease 1 linear pos ^8^4^-5 facing @e[family=titan,c=1]"
+        ],
+        "2.0": [
+          "/function titan/titan_check_belong",
+          "/execute @s[type=coldsink:ion_titan] ~~~ event entity @p[tag=is_pilot,scores={titan_check=0}] set_action_111",
+          "/execute @s[type=coldsink:tone_titan] ~~~ event entity @p[tag=is_pilot,scores={titan_check=0}] set_action_121",
+          "/execute @s[type=coldsink:northstar_titan] ~~~ event entity @p[tag=is_pilot,scores={titan_check=0}] set_action_131",
+          "/execute @s[type=coldsink:ronin_titan] ~~~ event entity @p[tag=is_pilot,scores={titan_check=0}] set_action_141",
+          "/execute @s[type=coldsink:scorch_titan] ~~~ event entity @p[tag=is_pilot,scores={titan_check=0}] set_action_151",
+          "/execute @s[type=coldsink:legion_titan] ~~~ event entity @p[tag=is_pilot,scores={titan_check=0}] set_action_161",
+          "/execute @s[type=coldsink:monarch_titan] ~~~ event entity @p[tag=is_pilot,scores={titan_check=0}] set_action_171"
+        ],
+        "2.5": [
+          "/function titan/titan_check_belong",
+          "/camera @p[tag=is_pilot,scores={titan_check=0}] set minecraft:free ease 1 out_quad pos ~~5~ facing ~~5~"
+        ],
+        "3.0": [
+          "/function titan/titan_check_belong",
+          "/camera @p[tag=is_pilot,scores={titan_check=0}] fade time 0.25 0.5 0.25 color 0 0 0"
+        ],
+        "3.5": [
+          "/function titan/titan_check_belong",
+          "/tag @s remove titan_staic",
+          "/camera @p[tag=is_pilot,scores={titan_check=0}] clear",
+          "/inputpermission set @p[tag=is_pilot,scores={titan_check=0}] camera enabled",
+          "/inputpermission set @p[tag=is_pilot,scores={titan_check=0}] movement enabled",
+          "/event entity @s summon_ride_tool",
+          "/event entity @s set_action_0",
+          "/event entity @s turn_no_shield"
+        ]
+      }
+    }
+  }
+}

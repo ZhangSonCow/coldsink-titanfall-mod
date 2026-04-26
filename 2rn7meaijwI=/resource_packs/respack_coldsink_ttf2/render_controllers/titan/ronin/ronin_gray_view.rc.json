@@ -1,0 +1,15 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.ronin_gray_view": {
+      "geometry": "geometry.ronin_gray_view",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "texture.ronin_gray_view" ],
+      "is_hurt_color": {}
+    }
+  }
+}

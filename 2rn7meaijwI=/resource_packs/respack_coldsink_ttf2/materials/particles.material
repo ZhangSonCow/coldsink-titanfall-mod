@@ -1,0 +1,26 @@
+{
+  "materials": {
+    "version": "1.0.0",
+    "nacal_particles_newblend:particles_base": {
+
+      "+defines": [ "ENABLE_FOG" ],
+      "+states": [
+        "Blending",
+        "DisableCulling"
+      ],
+      "depthFunc": "Always",
+      "blendDst": "One"
+    },
+    "nacal_particles_newadd:nacal_particles_newblend": {
+      "blendSrc": "SourceAlpha",
+      "blendDst": "One"
+    },
+    "nacal_add_depth:particles_add": {
+      "depthFunc": "Always",
+      "blendDst": "One"
+    },
+    "nacal_blend_depth:particles_blend": {
+      "depthFunc": "Always"
+    }
+  }
+}

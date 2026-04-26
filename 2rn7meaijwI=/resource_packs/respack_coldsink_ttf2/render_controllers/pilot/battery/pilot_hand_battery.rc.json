@@ -1,0 +1,48 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.pilot_hand_battery_1": {
+      "geometry": "geometry.pilot_hand_battery",
+      "materials": [
+        {
+          "*": "material.netease_entity_metallic"
+        }
+      ],
+      "textures": [ "texture.battery_ordinary" ],
+      "is_hurt_color": {}
+    },
+    "controller.render.pilot_hand_battery_2": {
+      "geometry": "geometry.pilot_hand_battery",
+      "materials": [
+        {
+          "*": "material.netease_entity_metallic"
+        }
+      ],
+      "textures": [ "texture.battery_powerful" ],
+      "is_hurt_color": {}
+    },
+
+    "controller.render.pilot_hand_battery_1_light": {
+      "geometry": "geometry.pilot_hand_battery_light",
+      "materials": [
+        {
+          "*": "material.netease_bloom_light_entity"
+        }
+      ],
+      "textures": [ "texture.battery_ordinary", "texture.battery_light" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    "controller.render.pilot_hand_battery_2_light": {
+      "geometry": "geometry.pilot_hand_battery_light",
+      "materials": [
+        {
+          "*": "material.netease_bloom_light_entity"
+        }
+      ],
+      "textures": [ "texture.battery_powerful", "texture.battery_light" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

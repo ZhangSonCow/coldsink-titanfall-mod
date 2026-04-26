@@ -1,0 +1,106 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.pilot_rodeo_titan.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "rodeo_enemy_battery": "q.property('pilot:rodeo_status') == 1"
+            },
+            {
+              "rodeo_enemy_grenade": "q.property('pilot:rodeo_status') == 2"
+            },
+            {
+              "rodeo_friend_battery": "q.property('pilot:rodeo_status') == 3"
+            },
+            {
+              "rodeo_friend_idle": "q.property('pilot:rodeo_status') == 4"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s player_hurt_yes",
+            "/tag @s remove is_rodeo",
+            "/tag @s remove pilot_rodeo",
+            "/tag @s remove jump_over"
+          ],
+          "on_exit": [
+            "/event entity @s set_action_0",
+            "/event entity @s set_other_action_0",
+            "/event entity @s player_hurt_no",
+            "/tag @s add is_rodeo",
+            "/tag @s add pilot_rodeo"
+          ]
+        },
+        "rodeo_enemy_battery": {
+          "animations": [
+            "rodeo_enemy_battery"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('pilot:rodeo_status') != 1"
+            }
+          ],
+          "on_entry": [
+            "/ride @s[type=coldsink:pilot_ai] evict_riders"
+          ],
+          "on_exit": [
+            "/tag @s add rodeo_leave_self",
+            "/summon coldsink:rodeo_leave_tool ~~7.2~",
+            "/ride @s[type=coldsink:pilot_ai] summon_rider coldsink:pilot_rider_ai"
+          ]
+        },
+        "rodeo_enemy_grenade": {
+          "animations": [
+            "rodeo_enemy_grenade"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('pilot:rodeo_status') != 2"
+            }
+          ],
+          "on_entry": [
+            "/ride @s[type=coldsink:pilot_ai] evict_riders"
+          ],
+          "on_exit": [
+            "/tag @s add rodeo_leave_self",
+            "/summon coldsink:rodeo_leave_tool ~~7.2~",
+            "/ride @s[type=coldsink:pilot_ai] summon_rider coldsink:pilot_rider_ai"
+          ]
+        },
+        "rodeo_friend_battery": {
+          "animations": [
+            "rodeo_friend_battery"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('pilot:rodeo_status') != 3"
+            }
+          ],
+          "on_entry": [
+            "/ride @s[type=coldsink:pilot_ai] evict_riders"
+          ],
+          "on_exit": [
+            "/ride @s[type=coldsink:pilot_ai] summon_rider coldsink:pilot_rider_ai"
+          ]
+        },
+        "rodeo_friend_idle": {
+          "animations": [
+            "rodeo_friend_idle",
+            "pilot_ai_rodeo_idle_leave"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('pilot:rodeo_status') != 4"
+            }
+          ],
+          "on_exit": [
+            "/execute @s[tag=team_blue] ~~-7~ execute @e[family=titan,family=!tool,type=!item,type=!xp_orb,tag=team_blue,c=1] ~~~ execute @s[tag=has_rider] ~~~ tellraw @p[tag=in_titan,tag=team_blue] {\"rawtext\":[{\"text\":\"§b友方铁驭 §f\"},{\"selector\":\"@e[family=pilot,tag=is_rodeo,tag=team_blue,r=8,c=1]\"},{\"rawtext\":[{\"text\":\"§b 离机\"}]}",
+            "/execute @s[tag=team_red] ~~-7~ execute @e[family=titan,family=!tool,type=!item,type=!xp_orb,tag=team_red,c=1] ~~~ execute @s[tag=has_rider] ~~~ tellraw @p[tag=in_titan,tag=team_red] {\"rawtext\":[{\"text\":\"§b友方铁驭 §f\"},{\"selector\":\"@e[family=pilot,tag=is_rodeo,tag=team_red,r=8,c=1]\"},{\"rawtext\":[{\"text\":\"§b 离机\"}]}"
+          ]
+        }
+      }
+    }
+  }
+}

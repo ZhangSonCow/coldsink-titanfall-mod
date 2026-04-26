@@ -1,0 +1,143 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:northstar_core_3_blue",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball",
+      "animations": {
+        "c.self": "controller.animation.titan_bullet_self.func",
+        "self": "animation.northstar_bullet_self.func"
+      },
+      "scripts": {
+        "animate": [ 
+          "c.self"
+        ]
+      }
+    },
+
+    "component_groups": {
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+			"minecraft:tick_world": {
+				"distance_to_players": 128,
+				"never_despawn": false,
+				"radius": 2
+			},
+      "minecraft:type_family": {
+        "family": [ "tool", "bullet" ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.5
+      },
+      "minecraft:ageable": {
+        "duration": 4,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:projectile": {
+        "anchor": 1,
+        // "offset": [0, 1.5, 8],
+        "on_hit": {
+          "impact_damage": {
+            // "damage": 300,
+            "knockback": false,
+            "destroy_on_hit": false
+          },
+          "definition_event": {
+            "affect_projectile": true,
+            "affect_shooter": false,
+            "affect_target": false,
+            "affect_splash_area": false,
+            "event_trigger": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "on_ground",
+                    "operator": "!=",
+                    "subject": "self"
+                  }
+                ]
+              },
+              "event": "shot_tar",
+              "target": "self"
+            }
+          },
+          "stick_in_ground": {
+            "shake_time": 1
+          }
+        },
+        "power": 7,
+        "gravity": 0.00,
+        "angle_offset": 0,
+        "liquid_inertia": 1,
+        "stop_on_hurt": false,
+        "uncertainty_base": 18.0
+      },
+      "minecraft:physics": {},
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "events": {
+      "shot_tar": {
+        "queue_command": {
+          "command": [
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_blue,family=titan,tag=!energy_shield,r=10,c=1] ~~~ tag @e[type=coldsink:northstar_core_3_blue,c=1] add get",
+
+            "execute @s[tag=get,tag=!done] ~~~ scoreboard players operation @a[tag=is_northstar,tag=team_blue] skill_check_3 = @s titan_self",
+            "execute @s[tag=get,tag=!done] ~~~ execute @a[tag=is_northstar,tag=team_blue] ~~~ scoreboard players operation @s skill_check_3 -= @s titan_self",
+
+            "execute @s[tag=get,tag=!done] ~~~ scoreboard players operation @e[tag=!team_blue,family=titan,tag=!energy_shield,r=10] death_check = @p[tag=is_northstar,tag=team_blue,scores={skill_check_3=0}] titan_self",
+            "execute @s[tag=get,tag=!done] ~~~ damage @e[tag=!team_blue,family=titan,tag=!energy_shield,r=10,tag=!ronin_defending,tag=!titan_hard] 600 suicide entity @s",
+            "execute @s[tag=get,tag=!done] ~~~ damage @e[tag=!team_blue,family=titan,tag=!energy_shield,r=10,tag=ronin_defend] 180 suicide entity @s",
+            "execute @s[tag=get,tag=!done] ~~~ damage @e[tag=!team_blue,family=titan,tag=!energy_shield,r=10,tag=ronin_defend_core] 60 suicide entity @s",
+            "execute @s[tag=get,tag=!done] ~~~ damage @e[tag=!team_blue,family=titan,tag=!energy_shield,r=10,tag=titan_hard] 480 suicide entity @s",
+            
+            // 破盾伤害
+            "execute @s[tag=get,tag=!done] ~~-5~ damage @e[family=shield_entity,family=!titan_shield,tag=!team_blue,r=10,c=1] 600 suicide entity @s",
+
+            "execute @s[tag=get,tag=!done] ~~~ particle titan:northstar_core_boom ~~~",
+            "event entity @s[tag=get,tag=!done] godie",
+            "tag @s[tag=get,tag=!done] add done"
+          ]
+        }
+      },
+      "down": {
+        "queue_command": {
+          "command": [
+            "summon coldsink:ion_get_missile_red",
+            "event entity @s real_godie"
+          ]
+        }
+      },
+      "godie": {
+        "queue_command": {
+          "command": [
+            "particle titan:northstar_core_boom ~~~",
+            "event entity @s real_godie"
+          ]
+        }
+      },
+      "real_godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

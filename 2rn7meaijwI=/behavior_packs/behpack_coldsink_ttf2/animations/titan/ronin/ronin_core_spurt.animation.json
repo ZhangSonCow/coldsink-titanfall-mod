@@ -1,0 +1,15 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ronin_core_spurt.func": {
+      "loop": true,
+      "animation_length": 0.5,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players remove @s[scores={spurt_time=1..}] spurt_time 1",
+          "/event entity @s remove_spurt_1"
+        ]
+      }
+    }
+  }
+}

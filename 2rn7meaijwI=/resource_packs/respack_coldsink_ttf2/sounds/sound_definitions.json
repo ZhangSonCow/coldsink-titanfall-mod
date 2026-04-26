@@ -1,0 +1,3543 @@
+{
+  "format_version": "1.18.0",
+  "sound_definitions": {
+    // common
+    "empty": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/tip/empty",
+          "stream": false
+        }
+      ]
+    },
+    "skill_cooldown_over": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/tip/skill_cooldown_over",
+          "stream": false
+        }
+      ]
+    },
+    "kill_target_ding": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/tip/kill_target_ding",
+          "stream": false
+        }
+      ]
+    },
+    // all titan
+    "titan_falling": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/titan_falling",
+          "stream": false
+        }
+      ]
+    },
+    "titan_falling_fast": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/titan_falling_fast",
+          "stream": false
+        }
+      ]
+    },
+    "titan_death_boom": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/titan_death_boom",
+          "stream": false
+        }
+      ]
+    },
+    "titan_step_1": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/titan_step_1",
+          "stream": false
+        }
+      ]
+    },
+    "titan_step_2": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/titan_step_2",
+          "stream": false
+        }
+      ]
+    },
+    "titan_step_3": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/titan_step_3",
+          "stream": false
+        }
+      ]
+    },
+    "titan_step_4": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/titan_step_4",
+          "stream": false
+        }
+      ]
+    },
+    "titan_spurt_tiantu.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/titan_spurt_tiantu",
+          "stream": false
+        }
+      ]
+    },
+    "titan_spurt_tiantu": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/titan_spurt_tiantu",
+          "stream": false
+        }
+      ]
+    },
+    "titan_spurt_youxia.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/titan_spurt_youxia",
+          "stream": false
+        }
+      ]
+    },
+    "titan_spurt_youxia": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/titan_spurt_youxia",
+          "stream": false
+        }
+      ]
+    },
+    "titan_spurt_juyao.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/titan_spurt_juyao",
+          "stream": false
+        }
+      ]
+    },
+    "titan_spurt_juyao": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/titan_spurt_juyao",
+          "stream": false
+        }
+      ]
+    },
+    "titan_melee": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/titan_melee",
+          "stream": false
+        }
+      ]
+    },
+    "titan_melee_impact": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/titan_melee_impact",
+          "stream": false
+        }
+      ]
+    },
+    // battery
+    "pilot_pickup_battery": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/z_other/battery/pilot_pickup_battery",
+          "stream": false
+        }
+      ]
+    },
+    "rodeo_friend_battery": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/z_other/battery/rodeo_friend_battery",
+          "stream": false
+        }
+      ]
+    },
+    "titan_get_battery": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/z_other/battery/titan_get_battery",
+          "stream": false
+        }
+      ]
+    },
+    "titan_lose_battery": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/z_other/battery/titan_lose_battery",
+          "stream": false
+        }
+      ]
+    },
+    "pilot_grenade_boom": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/pilot/pilot_grenade_boom",
+          "stream": false
+        }
+      ]
+    },
+    // ion
+    "ion_fire": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/ion_fire",
+          "stream": false
+        }
+      ]
+    },
+    "ion_reload": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/ion_reload",
+          "stream": false
+        }
+      ]
+    },
+    "ion_reload.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/ion_reload",
+          "stream": false
+        }
+      ]
+    },
+    "ion_skill_0": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/ion_skill_0",
+          "stream": false
+        }
+      ]
+    },
+    "ion_skill_1_powering": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/ion_skill_1_powering",
+          "stream": false
+        }
+      ]
+    },
+    "ion_skill_1_powering.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/ion_skill_1_powering",
+          "stream": false
+        }
+      ]
+    },
+    "ion_skill_1_fire": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/ion_skill_1_fire",
+          "stream": false
+        }
+      ]
+    },
+    "ion_skill_2": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/ion_skill_2",
+          "stream": false
+        }
+      ]
+    },
+    "ion_skill_3": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/ion_skill_3",
+          "stream": false
+        }
+      ]
+    },
+    "ion_skill_3.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/ion_skill_3",
+          "stream": false
+        }
+      ]
+    },
+    "ion_core_online": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_core_online",
+          "stream": false
+        }
+      ]
+    },
+    "ion_core_begin": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_core_begin",
+          "stream": false
+        }
+      ]
+    },
+    "ion_core_begin.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_core_begin",
+          "stream": false
+        }
+      ]
+    },
+    "ion_core_end": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_core_end",
+          "stream": false
+        }
+      ]
+    },
+    "ion_entry_cabin_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_entry_cabin_1",
+          "stream": false
+        }
+      ]
+    },
+    "ion_entry_cabin_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_entry_cabin_2",
+          "stream": false
+        }
+      ]
+    },
+    "ion_entry_cabin_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_entry_cabin_3",
+          "stream": false
+        }
+      ]
+    },
+    "ion_entry_cabin_4": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_entry_cabin_4",
+          "stream": false
+        }
+      ]
+    },
+    "ion_entry_cabin_5": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_entry_cabin_5",
+          "stream": false
+        }
+      ]
+    },
+    "ion_entry_cabin_6": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_entry_cabin_6",
+          "stream": false
+        }
+      ]
+    },
+    "ion_entry_cabin_7": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_entry_cabin_7",
+          "stream": false
+        }
+      ]
+    },
+    "ion_entry_cabin_8": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_entry_cabin_8",
+          "stream": false
+        }
+      ]
+    },
+    "ion_entry_cabin_9": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_entry_cabin_9",
+          "stream": false
+        }
+      ]
+    },
+    "ion_entry_cabin_10": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_entry_cabin_10",
+          "stream": false
+        }
+      ]
+    },
+    "ion_entry_cabin_11": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_entry_cabin_11",
+          "stream": false
+        }
+      ]
+    },
+    "ion_kill_target_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_kill_target_1",
+          "stream": false
+        }
+      ]
+    },
+    "ion_kill_target_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_kill_target_2",
+          "stream": false
+        }
+      ]
+    },
+    "ion_kill_target_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_kill_target_3",
+          "stream": false
+        }
+      ]
+    },
+    "ion_kill_target_4": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_kill_target_4",
+          "stream": false
+        }
+      ]
+    },
+    "ion_kill_target_5": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_kill_target_5",
+          "stream": false
+        }
+      ]
+    },
+    "ion_kill_target_6": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_kill_target_6",
+          "stream": false
+        }
+      ]
+    },
+    "ion_kill_target_7": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_kill_target_7",
+          "stream": false
+        }
+      ]
+    },
+    "ion_kill_target_8": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_kill_target_8",
+          "stream": false
+        }
+      ]
+    },
+    "ion_suggest_eject": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_suggest_eject",
+          "stream": false
+        }
+      ]
+    },
+    "ion_auto_mode": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_auto_mode",
+          "stream": false
+        }
+      ]
+    },
+    "ion_open_follow": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_open_follow",
+          "stream": false
+        }
+      ]
+    },
+    "ion_open_defend": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/says/ion_open_defend",
+          "stream": false
+        }
+      ]
+    },
+    // tone
+    "tone_fire": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/tone_fire",
+          "stream": false
+        }
+      ]
+    },
+    "tone_reload": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/tone_reload",
+          "stream": false
+        }
+      ]
+    },
+    "tone_reload.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/tone_reload",
+          "stream": false
+        }
+      ]
+    },
+    "tone_target_pre": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/tone_target_pre",
+          "stream": false
+        }
+      ]
+    },
+    "tone_target_lock": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/tone_target_lock",
+          "stream": false
+        }
+      ]
+    },
+    "tone_skill_0": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/tone_skill_0",
+          "stream": false
+        }
+      ]
+    },
+    "tone_skill_1": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/tone_skill_1",
+          "stream": false
+        }
+      ]
+    },
+    "tone_skill_2": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/tone_skill_2",
+          "stream": false
+        }
+      ]
+    },
+    "tone_skill_3": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/tone_skill_3",
+          "stream": false
+        }
+      ]
+    },
+    "tone_core_online": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_core_online",
+          "stream": false
+        }
+      ]
+    },
+    "tone_core_begin": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_core_begin",
+          "stream": false
+        }
+      ]
+    },
+    "tone_core_begin.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_core_begin",
+          "stream": false
+        }
+      ]
+    },
+    "tone_core_end": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_core_end",
+          "stream": false
+        }
+      ]
+    },
+    "tone_entry_cabin_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_entry_cabin_1",
+          "stream": false
+        }
+      ]
+    },
+    "tone_entry_cabin_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_entry_cabin_2",
+          "stream": false
+        }
+      ]
+    },
+    "tone_entry_cabin_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_entry_cabin_3",
+          "stream": false
+        }
+      ]
+    },
+    "tone_entry_cabin_4": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_entry_cabin_4",
+          "stream": false
+        }
+      ]
+    },
+    "tone_entry_cabin_5": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_entry_cabin_5",
+          "stream": false
+        }
+      ]
+    },
+    "tone_entry_cabin_6": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_entry_cabin_6",
+          "stream": false
+        }
+      ]
+    },
+    "tone_entry_cabin_7": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_entry_cabin_7",
+          "stream": false
+        }
+      ]
+    },
+    "tone_entry_cabin_8": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_entry_cabin_8",
+          "stream": false
+        }
+      ]
+    },
+    "tone_entry_cabin_9": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_entry_cabin_9",
+          "stream": false
+        }
+      ]
+    },
+    "tone_entry_cabin_10": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_entry_cabin_10",
+          "stream": false
+        }
+      ]
+    },
+    "tone_entry_cabin_11": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_entry_cabin_11",
+          "stream": false
+        }
+      ]
+    },
+    "tone_kill_target_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_kill_target_1",
+          "stream": false
+        }
+      ]
+    },
+    "tone_kill_target_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_kill_target_2",
+          "stream": false
+        }
+      ]
+    },
+    "tone_kill_target_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_kill_target_3",
+          "stream": false
+        }
+      ]
+    },
+    "tone_kill_target_4": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_kill_target_4",
+          "stream": false
+        }
+      ]
+    },
+    "tone_kill_target_5": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_kill_target_5",
+          "stream": false
+        }
+      ]
+    },
+    "tone_kill_target_6": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_kill_target_6",
+          "stream": false
+        }
+      ]
+    },
+    "tone_kill_target_7": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_kill_target_7",
+          "stream": false
+        }
+      ]
+    },
+    "tone_suggest_eject": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_suggest_eject",
+          "stream": false
+        }
+      ]
+    },
+    "tone_auto_mode": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_auto_mode",
+          "stream": false
+        }
+      ]
+    },
+    "tone_open_follow": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_open_follow",
+          "stream": false
+        }
+      ]
+    },
+    "tone_open_defend": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/says/tone_open_defend",
+          "stream": false
+        }
+      ]
+    },
+    // northstar
+    "northstar_fire": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/northstar_fire",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_reload": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/northstar_reload",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_reload.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/northstar_reload",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_powering": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/northstar_powering",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_powering.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/northstar_powering",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_skill_0": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/northstar_skill_0",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_trap_land": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/northstar_trap_land",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_skill_1": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/northstar_skill_1",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_skill_1_boom": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/northstar_skill_1_boom",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_skill_2": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/northstar_skill_2",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_skill_2.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/northstar_skill_2",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_skill_2_load": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/northstar_skill_2_load",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_skill_3": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/northstar_skill_3",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_skill_3.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/northstar_skill_3",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_core_online": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_core_online",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_core_begin": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_core_begin",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_core_begin.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_core_begin",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_core_end": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_core_end",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_entry_cabin_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_entry_cabin_1",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_entry_cabin_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_entry_cabin_2",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_entry_cabin_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_entry_cabin_3",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_entry_cabin_4": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_entry_cabin_4",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_entry_cabin_5": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_entry_cabin_5",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_entry_cabin_6": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_entry_cabin_6",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_entry_cabin_7": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_entry_cabin_7",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_entry_cabin_8": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_entry_cabin_8",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_entry_cabin_9": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_entry_cabin_9",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_entry_cabin_10": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_entry_cabin_10",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_entry_cabin_11": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_entry_cabin_11",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_kill_target_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_kill_target_1",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_kill_target_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_kill_target_2",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_kill_target_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_kill_target_3",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_kill_target_4": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_kill_target_4",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_kill_target_5": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_kill_target_5",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_kill_target_6": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_kill_target_6",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_kill_target_7": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_kill_target_7",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_kill_target_8": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_kill_target_8",
+          "stream": false
+        }
+      ]
+    },
+    "shoot_target_titan": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/shoot_target_titan",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_suggest_eject": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_suggest_eject",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_auto_mode": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_auto_mode",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_open_follow": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_open_follow",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_open_defend": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/says/northstar_open_defend",
+          "stream": false
+        }
+      ]
+    },
+    // ronin
+    "ronin_fire": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/ronin_fire",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_reload": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/ronin_reload",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_reload.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/ronin_reload",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_sword": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/ronin_sword",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_sword_impact_titan": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/ronin_sword_impact_titan",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_defend_impact": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/ronin_defend_impact",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_skill_1": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/ronin_skill_1",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_skill_2_entry": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/ronin_skill_2_entry",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_skill_3_entry": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/ronin_skill_3_entry",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_skill_3_exit": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/ronin_skill_3_exit",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_core_online": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_core_online",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_core_begin": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_core_begin",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_core_begin.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_core_begin",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_core_end": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_core_end",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_entry_cabin_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_entry_cabin_1",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_entry_cabin_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_entry_cabin_2",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_entry_cabin_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_entry_cabin_3",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_entry_cabin_4": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_entry_cabin_4",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_entry_cabin_5": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_entry_cabin_5",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_entry_cabin_6": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_entry_cabin_6",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_entry_cabin_7": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_entry_cabin_7",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_entry_cabin_8": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_entry_cabin_8",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_entry_cabin_9": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_entry_cabin_9",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_entry_cabin_10": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_entry_cabin_10",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_entry_cabin_11": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_entry_cabin_11",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_kill_target_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_kill_target_1",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_kill_target_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_kill_target_2",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_kill_target_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_kill_target_3",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_kill_target_4": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_kill_target_4",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_kill_target_5": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_kill_target_5",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_kill_target_6": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_kill_target_6",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_kill_target_7": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_kill_target_7",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_kill_target_8": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_kill_target_8",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_suggest_eject": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_suggest_eject",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_auto_mode": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_auto_mode",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_open_follow": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_open_follow",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_open_defend": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/says/ronin_open_defend",
+          "stream": false
+        }
+      ]
+    },
+    // scorch
+    "scorch_fire": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/scorch_fire",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_fire.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/scorch_fire",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_reload": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/scorch_reload",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_reload.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/scorch_reload",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_skill_0": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/scorch_skill_0",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_skill_0.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/scorch_skill_0",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_skill_1": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/scorch_skill_1",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_trap_spawn": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/scorch_trap_spawn",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_trap_smoke": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/scorch_trap_smoke",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_skill_3": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/scorch_skill_3",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_core_online": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_core_online",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_core_begin": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_core_begin",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_core_begin.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_core_begin",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_core_end": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_core_end",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_entry_cabin_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_entry_cabin_1",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_entry_cabin_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_entry_cabin_2",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_entry_cabin_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_entry_cabin_3",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_entry_cabin_4": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_entry_cabin_4",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_entry_cabin_5": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_entry_cabin_5",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_entry_cabin_6": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_entry_cabin_6",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_entry_cabin_7": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_entry_cabin_7",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_entry_cabin_8": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_entry_cabin_8",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_entry_cabin_9": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_entry_cabin_9",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_entry_cabin_10": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_entry_cabin_10",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_entry_cabin_11": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_entry_cabin_11",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_kill_target_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_kill_target_1",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_kill_target_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_kill_target_2",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_kill_target_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_kill_target_3",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_kill_target_4": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_kill_target_4",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_kill_target_5": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_kill_target_5",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_kill_target_6": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_kill_target_6",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_kill_target_7": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_kill_target_7",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_kill_target_8": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_kill_target_8",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_suggest_eject": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_suggest_eject",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_auto_mode": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_auto_mode",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_open_follow": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_open_follow",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_open_defend": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/says/scorch_open_defend",
+          "stream": false
+        }
+      ]
+    },
+    // legion
+    "legion_fire": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/legion_fire",
+          "stream": false
+        }
+      ]
+    },
+    "legion_reload": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/legion_reload",
+          "stream": false
+        }
+      ]
+    },
+    "legion_reload.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/legion_reload",
+          "stream": false
+        }
+      ]
+    },
+    "legion_skill_1_pre": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/legion_skill_1_pre",
+          "stream": false
+        }
+      ]
+    },
+    "legion_skill_1_near": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/legion_skill_1_near",
+          "stream": false
+        }
+      ]
+    },
+    "legion_skill_1_far": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/legion_skill_1_far",
+          "stream": false
+        }
+      ]
+    },
+    "legion_skill_2_to_near": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/legion_skill_2_to_near",
+          "stream": false
+        }
+      ]
+    },
+    "legion_skill_2_to_far": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/legion_skill_2_to_far",
+          "stream": false
+        }
+      ]
+    },
+    "legion_skill_3_entry": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/legion_skill_3_entry",
+          "stream": false
+        }
+      ]
+    },
+    "legion_skill_3_exit": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/legion_skill_3_exit",
+          "stream": false
+        }
+      ]
+    },
+    "legion_core_online": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_core_online",
+          "stream": false
+        }
+      ]
+    },
+    "legion_core_begin": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_core_begin",
+          "stream": false
+        }
+      ]
+    },
+    "legion_core_begin.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_core_begin",
+          "stream": false
+        }
+      ]
+    },
+    "legion_core_end": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_core_end",
+          "stream": false
+        }
+      ]
+    },
+    "legion_entry_cabin_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_entry_cabin_1",
+          "stream": false
+        }
+      ]
+    },
+    "legion_entry_cabin_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_entry_cabin_2",
+          "stream": false
+        }
+      ]
+    },
+    "legion_entry_cabin_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_entry_cabin_3",
+          "stream": false
+        }
+      ]
+    },
+    "legion_entry_cabin_4": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_entry_cabin_4",
+          "stream": false
+        }
+      ]
+    },
+    "legion_entry_cabin_5": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_entry_cabin_5",
+          "stream": false
+        }
+      ]
+    },
+    "legion_entry_cabin_6": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_entry_cabin_6",
+          "stream": false
+        }
+      ]
+    },
+    "legion_entry_cabin_7": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_entry_cabin_7",
+          "stream": false
+        }
+      ]
+    },
+    "legion_entry_cabin_8": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_entry_cabin_8",
+          "stream": false
+        }
+      ]
+    },
+    "legion_entry_cabin_9": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_entry_cabin_9",
+          "stream": false
+        }
+      ]
+    },
+    "legion_entry_cabin_10": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_entry_cabin_10",
+          "stream": false
+        }
+      ]
+    },
+    "legion_entry_cabin_11": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_entry_cabin_11",
+          "stream": false
+        }
+      ]
+    },
+    "legion_kill_target_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_kill_target_1",
+          "stream": false
+        }
+      ]
+    },
+    "legion_kill_target_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_kill_target_2",
+          "stream": false
+        }
+      ]
+    },
+    "legion_kill_target_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_kill_target_3",
+          "stream": false
+        }
+      ]
+    },
+    "legion_kill_target_4": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_kill_target_4",
+          "stream": false
+        }
+      ]
+    },
+    "legion_kill_target_5": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_kill_target_5",
+          "stream": false
+        }
+      ]
+    },
+    "legion_kill_target_6": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_kill_target_6",
+          "stream": false
+        }
+      ]
+    },
+    "legion_kill_target_7": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_kill_target_7",
+          "stream": false
+        }
+      ]
+    },
+    "legion_kill_target_8": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_kill_target_8",
+          "stream": false
+        }
+      ]
+    },
+    "legion_suggest_eject": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_suggest_eject",
+          "stream": false
+        }
+      ]
+    },
+    "legion_auto_mode": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_auto_mode",
+          "stream": false
+        }
+      ]
+    },
+    "legion_open_follow": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_open_follow",
+          "stream": false
+        }
+      ]
+    },
+    "legion_open_defend": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/says/legion_open_defend",
+          "stream": false
+        }
+      ]
+    },
+    // monarch
+    "monarch_fire": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/monarch_fire",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_fire_arc": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/monarch_fire_arc",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_reload": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/monarch_reload",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_reload.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/monarch_reload",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_reload_fast": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/monarch_reload_fast",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_reload_fast.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/monarch_reload_fast",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_skill_0_powering": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/monarch_skill_0_powering",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_skill_0_powering.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/monarch_skill_0_powering",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_skill_0_fire": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/monarch_skill_0_fire",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_skill_1": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/monarch_skill_1",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_skill_1_final": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/monarch_skill_1_final",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_skill_2": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/monarch_skill_2",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_skill_2_fast": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/monarch_skill_2_fast",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_skill_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/monarch_skill_3",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_core_online": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_core_online",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_core_begin": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_core_begin",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_core_begin.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_core_begin",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_upgrade_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_upgrade_1",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_upgrade_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_upgrade_2",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_upgrade_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_upgrade_3",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_upgrade_final": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_upgrade_final",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_entry_cabin_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_entry_cabin_1",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_entry_cabin_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_entry_cabin_2",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_entry_cabin_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_entry_cabin_3",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_entry_cabin_4": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_entry_cabin_4",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_entry_cabin_5": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_entry_cabin_5",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_entry_cabin_6": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_entry_cabin_6",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_entry_cabin_7": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_entry_cabin_7",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_entry_cabin_8": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_entry_cabin_8",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_entry_cabin_9": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_entry_cabin_9",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_entry_cabin_10": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_entry_cabin_10",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_entry_cabin_11": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_entry_cabin_11",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_kill_target_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_kill_target_1",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_kill_target_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_kill_target_2",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_kill_target_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_kill_target_3",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_kill_target_4": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_kill_target_4",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_kill_target_5": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_kill_target_5",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_kill_target_6": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_kill_target_6",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_suggest_eject": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_suggest_eject",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_auto_mode": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_auto_mode",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_open_follow": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_open_follow",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_open_defend": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/says/monarch_open_defend",
+          "stream": false
+        }
+      ]
+    },
+
+    // 驾驶舱进出音效
+
+    "tiantu_entry_cabin_loaded": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/z_other/cabin/tiantu_entry_cabin_loaded",
+          "stream": false
+        }
+      ]
+    },
+    "tiantu_entry_cabin_front": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/z_other/cabin/tiantu_entry_cabin_front",
+          "stream": false
+        }
+      ]
+    },
+    "tiantu_entry_cabin_back": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/z_other/cabin/tiantu_entry_cabin_back",
+          "stream": false
+        }
+      ]
+    },
+    "tiantu_entry_cabin_top": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/z_other/cabin/tiantu_entry_cabin_top",
+          "stream": false
+        }
+      ]
+    },
+    "tiantu_exit_cabin": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/z_other/cabin/tiantu_exit_cabin",
+          "stream": false
+        }
+      ]
+    },
+    "youxia_entry_cabin_loaded": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/z_other/cabin/youxia_entry_cabin_loaded",
+          "stream": false
+        }
+      ]
+    },
+    "youxia_entry_cabin_front": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/z_other/cabin/youxia_entry_cabin_front",
+          "stream": false
+        }
+      ]
+    },
+    "youxia_entry_cabin_back": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/z_other/cabin/youxia_entry_cabin_back",
+          "stream": false
+        }
+      ]
+    },
+    "youxia_entry_cabin_top": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/z_other/cabin/youxia_entry_cabin_top",
+          "stream": false
+        }
+      ]
+    },
+    "youxia_exit_cabin": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/z_other/cabin/youxia_exit_cabin",
+          "stream": false
+        }
+      ]
+    },
+    "juyao_entry_cabin_loaded": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/z_other/cabin/juyao_entry_cabin_loaded",
+          "stream": false
+        }
+      ]
+    },
+    "juyao_entry_cabin_front": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/z_other/cabin/juyao_entry_cabin_front",
+          "stream": false
+        }
+      ]
+    },
+    "juyao_entry_cabin_back": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/z_other/cabin/juyao_entry_cabin_back",
+          "stream": false
+        }
+      ]
+    },
+    "juyao_entry_cabin_top": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/z_other/cabin/juyao_entry_cabin_top",
+          "stream": false
+        }
+      ]
+    },
+    "juyao_exit_cabin": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/z_other/cabin/juyao_exit_cabin",
+          "stream": false
+        }
+      ]
+    },
+
+    // 处决音效-泰坦
+
+    "ion_terminate_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/ion_terminate_1",
+          "stream": false
+        }
+      ]
+    },
+    "ion_terminate_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ion/ion_terminate_2",
+          "stream": false
+        }
+      ]
+    },
+    "tone_terminate_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/tone_terminate_1",
+          "stream": false
+        }
+      ]
+    },
+    "tone_terminate_1_empty": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/tone_terminate_1_empty",
+          "stream": false
+        }
+      ]
+    },
+    "tone_terminate_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/tone/tone_terminate_2",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_terminate_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/northstar_terminate_1",
+          "stream": false
+        }
+      ]
+    },
+    "northstar_terminate_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/northstar/northstar_terminate_2",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_terminate_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/ronin_terminate_1",
+          "stream": false
+        }
+      ]
+    },
+    "ronin_terminate_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/ronin/ronin_terminate_2",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_terminate_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/scorch_terminate_1",
+          "stream": false
+        }
+      ]
+    },
+    "scorch_terminate_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/scorch/scorch_terminate_2",
+          "stream": false
+        }
+      ]
+    },
+    "legion_terminate_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/legion_terminate_1",
+          "stream": false
+        }
+      ]
+    },
+    "legion_terminate_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/legion/legion_terminate_2",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_terminate_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/monarch_terminate_1",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_terminate_1_empty": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/monarch_terminate_1_empty",
+          "stream": false
+        }
+      ]
+    },
+    "monarch_terminate_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/titan/monarch/monarch_terminate_2",
+          "stream": false
+        }
+      ]
+    },
+
+    // pilot
+
+    "pilot_jump_one": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/pilot/pilot_jump_one",
+          "stream": false
+        }
+      ]
+    },
+    "pilot_jump_one.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/pilot/pilot_jump_one",
+          "stream": false
+        }
+      ]
+    },
+    "pilot_jump_two": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/pilot/pilot_jump_two",
+          "stream": false
+        }
+      ]
+    },
+    "pilot_jump_two.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/pilot/pilot_jump_two",
+          "stream": false
+        }
+      ]
+    },
+    "pilot_melee_arm_1": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/pilot/pilot_melee_arm_1",
+          "stream": false
+        }
+      ]
+    },
+    "pilot_melee_arm_2": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/pilot/pilot_melee_arm_2",
+          "stream": false
+        }
+      ]
+    },
+    "pilot_melee_leg_1": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/pilot/pilot_melee_leg_1",
+          "stream": false
+        }
+      ]
+    },
+    "pilot_melee_leg_2": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/pilot/pilot_melee_leg_2",
+          "stream": false
+        }
+      ]
+    },
+
+    // R201
+    "weapon_r201_fire": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/pilot/weapon/weapon_r201_fire",
+          "stream": false
+        }
+      ]
+    },
+    "weapon_r201_reload": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/pilot/weapon/weapon_r201_reload",
+          "stream": false
+        }
+      ]
+    },
+    "weapon_r201_reload.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/pilot/weapon/weapon_r201_reload",
+          "stream": false
+        }
+      ]
+    },
+
+    // 电能步枪
+    "weapon_charge_powering": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/pilot/weapon/weapon_charge_powering",
+          "stream": false
+        }
+      ]
+    },
+    "weapon_charge_powering.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/pilot/weapon/weapon_charge_powering",
+          "stream": false
+        }
+      ]
+    },
+    "weapon_charge_fire": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/pilot/weapon/weapon_charge_fire",
+          "stream": false
+        }
+      ]
+    },
+    "weapon_charge_fire.self": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/pilot/weapon/weapon_charge_fire",
+          "stream": false
+        }
+      ]
+    },
+
+    // 游戏音乐
+    "begin_game_bgm": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/begin_game_bgm",
+          "stream": false
+        }
+      ]
+    },
+    "end_game_bgm": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/end_game_bgm",
+          "stream": false
+        }
+      ]
+    },
+
+    // 阵营语音-蓝队
+    "team_blue_ready_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_ready_1",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_ready_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_ready_2",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_begin": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_begin",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_attack_titan": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_attack_titan",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_titan_ready": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_titan_ready",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_titan_fall": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_titan_fall",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_kill_pilot_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_kill_pilot_1",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_kill_pilot_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_kill_pilot_2",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_kill_pilot_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_kill_pilot_3",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_kill_pilot_4": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_kill_pilot_4",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_kill_pilot_5": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_kill_pilot_5",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_kill_titan_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_kill_titan_1",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_kill_titan_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_kill_titan_2",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_kill_titan_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_kill_titan_3",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_kill_titan_4": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_kill_titan_4",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_kill_titan_5": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_kill_titan_5",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_leading_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_leading_1",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_leading_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_leading_2",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_leading_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_leading_3",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_backward_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_backward_1",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_backward_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_backward_2",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_backward_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_backward_3",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_win_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_win_1",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_win_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_win_2",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_lose_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_lose_1",
+          "stream": false
+        }
+      ]
+    },
+    "team_blue_lose_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_blue_lose_2",
+          "stream": false
+        }
+      ]
+    },
+    // 阵营语音-红队
+    "team_red_ready_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_ready_1",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_ready_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_ready_2",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_begin": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_begin",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_attack_titan": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_attack_titan",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_titan_ready": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_titan_ready",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_titan_fall": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_titan_fall",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_kill_pilot_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_kill_pilot_1",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_kill_pilot_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_kill_pilot_2",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_kill_pilot_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_kill_pilot_3",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_kill_pilot_4": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_kill_pilot_4",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_kill_pilot_5": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_kill_pilot_5",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_kill_titan_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_kill_titan_1",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_kill_titan_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_kill_titan_2",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_kill_titan_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_kill_titan_3",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_kill_titan_4": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_kill_titan_4",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_kill_titan_5": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_kill_titan_5",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_leading_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_leading_1",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_leading_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_leading_2",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_leading_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_leading_3",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_backward_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_backward_1",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_backward_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_backward_2",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_backward_3": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_backward_3",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_win_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_win_1",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_win_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_win_2",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_lose_1": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_lose_1",
+          "stream": false
+        }
+      ]
+    },
+    "team_red_lose_2": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/game/team_red_lose_2",
+          "stream": false
+        }
+      ]
+    }
+  }
+}

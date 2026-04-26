@@ -1,0 +1,200 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    // 天图-走路
+    "animation.titan_walk_sound_tiantu.func": {
+      "loop": true,
+      "animation_length": 3.2,
+      "timeline": {
+        "0.5": [
+          "/playsound titan_step_1 @s ~~~"
+        ],
+        "1.3": [
+          "/playsound titan_step_2 @s ~~~"
+        ],
+        "2.1": [
+          "/playsound titan_step_3 @s ~~~"
+        ],
+        "2.9": [
+          "/playsound titan_step_4 @s ~~~"
+        ]
+      }
+    },
+    "animation.titan_walk_damage_tiantu.func": {
+      "loop": true,
+      "animation_length": 0.8,
+      "timeline": {
+        "0.5": [
+          "/execute @s[tag=team_blue] ~~-5~ scoreboard players operation @e[tag=!team_blue,family=!tool,r=4.5] death_check = @s titan_self",
+          "/execute @s[tag=team_red] ~~-5~ scoreboard players operation @e[tag=!team_red,family=!tool,r=4.5] death_check = @s titan_self",
+          "/execute @s[tag=team_blue] ~~-5~ damage @e[tag=!team_blue,family=!titan,family=!tool,type=!item,type=!xp_orb,r=4.5] 400 suicide entity @s",
+          "/execute @s[tag=team_red] ~~-5~ damage @e[tag=!team_red,family=!titan,family=!tool,type=!item,type=!xp_orb,r=4.5] 400 suicide entity @s"
+        ]
+      }
+    },
+    // 天图-奔跑
+    "animation.titan_run_sound_tiantu.func": {
+      "loop": true,
+      "animation_length": 2.4,
+      "timeline": {
+        "0.0": [
+          "/effect @e[family=titan_ride,r=8,c=1] speed 3 2 true"
+        ],
+        "0.2": [
+          "/playsound titan_step_1 @s ~~~"
+        ],
+        "0.8": [
+          "/playsound titan_step_2 @s ~~~"
+        ],
+        "1.4": [
+          "/playsound titan_step_3 @s ~~~"
+        ],
+        "2.0": [
+          "/playsound titan_step_4 @s ~~~"
+        ]
+      }
+    },
+    "animation.titan_run_damage_tiantu.func": {
+      "loop": true,
+      "animation_length": 0.6,
+      "timeline": {
+        "0.4": [
+          "/execute @s[tag=team_blue] ~~-5~ scoreboard players operation @e[tag=!team_blue,family=!tool,r=4.5] death_check = @s titan_self",
+          "/execute @s[tag=team_red] ~~-5~ scoreboard players operation @e[tag=!team_red,family=!tool,r=4.5] death_check = @s titan_self",
+          "/execute @s[tag=team_blue] ~~-5~ damage @e[tag=!team_blue,family=!titan,family=!tool,type=!item,type=!xp_orb,r=4.5] 400 suicide entity @s",
+          "/execute @s[tag=team_red] ~~-5~ damage @e[tag=!team_red,family=!titan,family=!tool,type=!item,type=!xp_orb,r=4.5] 400 suicide entity @s"
+        ]
+      }
+    },
+    // 游侠-走路
+    "animation.titan_walk_sound_youxia.func": {
+      "loop": true,
+      "animation_length": 3.2,
+      "timeline": {
+        "0.5": [
+          "/playsound titan_step_1 @s ~~~"
+        ],
+        "1.3": [
+          "/playsound titan_step_2 @s ~~~"
+        ],
+        "2.1": [
+          "/playsound titan_step_3 @s ~~~"
+        ],
+        "2.9": [
+          "/playsound titan_step_4 @s ~~~"
+        ]
+      }
+    },
+    "animation.titan_walk_damage_youxia.func": {
+      "loop": true,
+      "animation_length": 0.8,
+      "timeline": {
+        "0.5": [
+          "/execute @s[tag=team_blue] ~~-5~ scoreboard players operation @e[tag=!team_blue,family=!tool,r=4] death_check = @s titan_self",
+          "/execute @s[tag=team_red] ~~-5~ scoreboard players operation @e[tag=!team_red,family=!tool,r=4] death_check = @s titan_self",
+          "/execute @s[tag=team_blue] ~~-5~ damage @e[tag=!team_blue,family=!titan,family=!tool,type=!item,type=!xp_orb,r=4] 300 suicide entity @s",
+          "/execute @s[tag=team_red] ~~-5~ damage @e[tag=!team_red,family=!titan,family=!tool,type=!item,type=!xp_orb,r=4] 300 suicide entity @s"
+        ]
+      }
+    },
+    // 游侠-奔跑
+    "animation.titan_run_sound_youxia.func": {
+      "loop": true,
+      "animation_length": 2.4,
+      "timeline": {
+        "0.0": [
+          "/effect @e[family=titan_ride,r=8,c=1] speed 3 2 true"
+        ],
+        "0.2": [
+          "/playsound titan_step_1 @s ~~~"
+        ],
+        "0.8": [
+          "/playsound titan_step_2 @s ~~~"
+        ],
+        "1.4": [
+          "/playsound titan_step_3 @s ~~~"
+        ],
+        "2.0": [
+          "/playsound titan_step_4 @s ~~~"
+        ]
+      }
+    },
+    "animation.titan_run_damage_youxia.func": {
+      "loop": true,
+      "animation_length": 0.6,
+      "timeline": {
+        "0.4": [
+          "/execute @s[tag=team_blue] ~~-5~ scoreboard players operation @e[tag=!team_blue,family=!tool,r=4] death_check = @s titan_self",
+          "/execute @s[tag=team_red] ~~-5~ scoreboard players operation @e[tag=!team_red,family=!tool,r=4] death_check = @s titan_self",
+          "/execute @s[tag=team_blue] ~~-5~ damage @e[tag=!team_blue,family=!titan,family=!tool,type=!item,type=!xp_orb,r=4] 300 suicide entity @s",
+          "/execute @s[tag=team_red] ~~-5~ damage @e[tag=!team_red,family=!titan,family=!tool,type=!item,type=!xp_orb,r=4] 300 suicide entity @s"
+        ]
+      }
+    },
+    // 巨妖-走路
+    "animation.titan_walk_sound_juyao.func": {
+      "loop": true,
+      "animation_length": 3.2,
+      "timeline": {
+        "0.5": [
+          "/playsound titan_step_1 @s ~~~"
+        ],
+        "1.3": [
+          "/playsound titan_step_2 @s ~~~"
+        ],
+        "2.1": [
+          "/playsound titan_step_3 @s ~~~"
+        ],
+        "2.9": [
+          "/playsound titan_step_4 @s ~~~"
+        ]
+      }
+    },
+    "animation.titan_walk_damage_juyao.func": {
+      "loop": true,
+      "animation_length": 0.8,
+      "timeline": {
+        "0.5": [
+          "/execute @s[tag=team_blue] ~~-5~ scoreboard players operation @e[tag=!team_blue,family=!tool,r=5] death_check = @s titan_self",
+          "/execute @s[tag=team_red] ~~-5~ scoreboard players operation @e[tag=!team_red,family=!tool,r=5] death_check = @s titan_self",
+          "/execute @s[tag=team_blue] ~~-5~ damage @e[tag=!team_blue,family=!titan,family=!tool,type=!item,type=!xp_orb,r=5] 500 suicide entity @s",
+          "/execute @s[tag=team_red] ~~-5~ damage @e[tag=!team_red,family=!titan,family=!tool,type=!item,type=!xp_orb,r=5] 500 suicide entity @s"
+        ]
+      }
+    },
+    // 巨妖-奔跑
+    "animation.titan_run_sound_juyao.func": {
+      "loop": true,
+      "animation_length": 2.4,
+      "timeline": {
+        "0.0": [
+          "/effect @e[family=titan_ride,r=8,c=1] speed 3 2 true"
+        ],
+        "0.2": [
+          "/playsound titan_step_1 @s ~~~"
+        ],
+        "0.8": [
+          "/playsound titan_step_2 @s ~~~"
+        ],
+        "1.4": [
+          "/playsound titan_step_3 @s ~~~"
+        ],
+        "2.0": [
+          "/playsound titan_step_4 @s ~~~"
+        ]
+      }
+    },
+    "animation.titan_run_damage_juyao.func": {
+      "loop": true,
+      "animation_length": 0.6,
+      "timeline": {
+        "0.4": [
+          "/execute @s[tag=team_blue] ~~-5~ scoreboard players operation @e[tag=!team_blue,family=!tool,r=5] death_check = @s titan_self",
+          "/execute @s[tag=team_red] ~~-5~ scoreboard players operation @e[tag=!team_red,family=!tool,r=5] death_check = @s titan_self",
+          "/execute @s[tag=team_blue] ~~-5~ damage @e[tag=!team_blue,family=!titan,family=!tool,type=!item,type=!xp_orb,r=5] 500 suicide entity @s",
+          "/execute @s[tag=team_red] ~~-5~ damage @e[tag=!team_red,family=!titan,family=!tool,type=!item,type=!xp_orb,r=5] 500 suicide entity @s"
+        ]
+      }
+    }
+  }
+}

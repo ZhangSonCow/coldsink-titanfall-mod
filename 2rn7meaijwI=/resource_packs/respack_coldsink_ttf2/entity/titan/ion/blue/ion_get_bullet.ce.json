@@ -1,0 +1,28 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:ion_get_bullet_blue",
+      "animations": {
+        "rotate": "animation.ion_get_bullet.rotate"
+      },
+      "scripts": {
+        "animate": [
+          "rotate"
+        ]
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/titan/ion/ion_get_bullet"
+      },
+      "geometry": {
+        "default": "geometry.ion_get_bullet"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

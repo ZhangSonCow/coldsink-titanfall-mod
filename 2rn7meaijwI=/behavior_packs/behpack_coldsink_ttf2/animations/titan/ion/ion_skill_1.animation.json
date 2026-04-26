@@ -1,0 +1,35 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ion_skill_1.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "3.0": [
+          "/event entity @s set_action_13"
+        ]
+      }
+    },
+    "animation.ion_skill_1_pre.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.2": [
+          "/event entity @s set_action_12"
+        ]
+      }
+    },
+    "animation.ion_skill_1_after.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/camerashake add @s 0.1 0.3 rotational"
+        ],
+        "1.0": [
+          "/event entity @s set_action_0"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.energy_bar.1st",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 8,
+				"visible_bounds_height": 9,
+				"visible_bounds_offset": [0, 0.5, 0]
+			},
+			"bones": [
+				{
+					"name": "cabin",
+					"pivot": [-1.3382, 29.8285, 9.0625]
+				},
+				{
+					"name": "energy_bar",
+					"parent": "cabin",
+					"pivot": [-6.2711, 26.73649, 10.5659],
+					"rotation": [0, 0, -36.5],
+					"cubes": [
+						{
+							"origin": [-6.43815, 24.79513, 10.6659],
+							"size": [0.3341, 3.88271, 0],
+							"uv": {
+								"north": {"uv": [25, 0], "uv_size": [7, 32]},
+								"east": {"uv": [6, 10], "uv_size": [1, 4]},
+								"south": {"uv": [7, 10], "uv_size": [1, 4]},
+								"west": {"uv": [11, 4], "uv_size": [1, 4]},
+								"up": {"uv": [17, 10], "uv_size": [1, 1]},
+								"down": {"uv": [11, 18], "uv_size": [1, -1]}
+							}
+						}
+					]
+				},
+				{
+					"name": "energy_fill",
+					"parent": "energy_bar",
+					"pivot": [-6.2711, 24.83649, 10.6559],
+					"cubes": [
+						{
+							"origin": [-6.43815, 24.79513, 10.6559],
+							"size": [0.3341, 3.88271, 0],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [7, 32]},
+								"east": {"uv": [6, 10], "uv_size": [1, 4]},
+								"south": {"uv": [7, 10], "uv_size": [1, 4]},
+								"west": {"uv": [11, 4], "uv_size": [1, 4]},
+								"up": {"uv": [17, 10], "uv_size": [1, 1]},
+								"down": {"uv": [11, 18], "uv_size": [1, -1]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

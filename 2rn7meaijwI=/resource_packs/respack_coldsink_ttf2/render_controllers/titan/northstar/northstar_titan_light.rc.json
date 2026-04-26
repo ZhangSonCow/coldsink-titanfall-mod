@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.northstar_titan_light_blue": {
+      "geometry": "geometry.northstar_titan_light",
+      "materials": [
+        {
+          "*": "material.netease_bloom_light_entity"
+        }
+      ],
+      "textures": [ "texture.northstar_titan_light_blue", "texture.northstar_titan_light" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    "controller.render.northstar_titan_light_red": {
+      "geometry": "geometry.northstar_titan_light",
+      "materials": [
+        {
+          "*": "material.netease_bloom_light_entity"
+        }
+      ],
+      "textures": [ "texture.northstar_titan_light_red", "texture.northstar_titan_light" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

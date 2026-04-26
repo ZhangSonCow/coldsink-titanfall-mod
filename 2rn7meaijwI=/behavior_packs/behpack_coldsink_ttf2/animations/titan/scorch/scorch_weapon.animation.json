@@ -1,0 +1,36 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.scorch_fire.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/event entity @s[scores={scorch_bullet=1..},tag=team_blue] scorch_fire_blue",
+          "/event entity @s[scores={scorch_bullet=1..},tag=team_red] scorch_fire_red",
+          "/event entity @s[scores={scorch_bullet=1..}] scorch_fire"
+        ],
+        "1.0": [
+          "/event entity @s set_action_0"
+        ]
+      }
+    },
+    "animation.scorch_reload.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.4": [
+          "/camerashake add @s 0.2 0.2 rotational"
+        ],
+        "1.4": [
+          "/camerashake add @s 0.5 0.3 rotational"
+        ],
+        "2.5": [
+          "/event entity @s set_action_0",
+          "/scoreboard players set @s[tag=is_titan] scorch_bullet 1",
+          "/event entity @s[tag=is_titan] set_weapon_1"
+        ]
+      }
+    }
+  }
+}

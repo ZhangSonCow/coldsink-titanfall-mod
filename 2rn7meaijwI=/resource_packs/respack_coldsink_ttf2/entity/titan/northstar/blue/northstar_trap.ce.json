@@ -1,0 +1,28 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:northstar_trap_blue",
+      "animations": {
+        "get": "animation.northstar_titan.trap_get_no_top"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "get": "q.is_sheared"
+          }
+        ]
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/titan/northstar/northstar_trap"
+      },
+      "geometry": {
+        "default": "geometry.northstar_trap"
+      },
+      "render_controllers": [ "controller.render.default" ]
+    }
+  }
+}

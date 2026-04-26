@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.monarch_titan.1st": {
+      "arrays": {
+        "textures": {
+          "Array.skin": [
+            "Texture.monarch_titan",
+            "Texture.monarch_titan_1",
+            "Texture.monarch_titan_2",
+            "Texture.monarch_titan_3",
+            "Texture.monarch_titan_4",
+            "Texture.monarch_titan_5",
+            "Texture.monarch_titan_6",
+            "Texture.monarch_titan_7",
+            "Texture.monarch_titan_8"
+          ]
+        }
+      },
+      "geometry": "geometry.monarch_titan.1st",
+      "materials": [
+        {
+          "*": "material.netease_entity_metallic"
+        }
+      ],
+      "textures": [ "Array.skin[ query.skin_id ]" ],
+      "is_hurt_color": {}
+    }
+  }
+}

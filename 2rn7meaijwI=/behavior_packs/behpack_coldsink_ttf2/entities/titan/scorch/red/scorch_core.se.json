@@ -1,0 +1,147 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:scorch_core_red",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "animations": {
+        "c.self": "controller.animation.titan_bullet_self.func",
+        "self": "animation.scorch_bullet_self.func"
+      },
+      "scripts": {
+        "animate": [ 
+          "c.self"
+        ]
+      }
+    },
+    "component_groups": {
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+			"minecraft:tick_world": {
+				"distance_to_players": 128,
+				"never_despawn": false,
+				"radius": 2
+			},
+      "minecraft:type_family": {
+        "family": [ "tool", "ground" ]
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:collision_box": {
+          "width": 0.0,
+          "height": 0.0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:ageable": {
+        "duration": 1.4,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:timer": {
+        "time": 0.02,
+        "time_down_event": {
+          "event": "count",
+          "target": "self"
+        }
+      },
+      "minecraft:health": {
+        "value": 2,
+        "max": 2,
+        "min": 1
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+    "events": {
+      "count": {
+        "queue_command": {
+          "command": [
+            "scoreboard players set @s slip_bool 0",
+						"execute @s ~~~ detect ^^0.5^-1 air -1 scoreboard players add @s slip_bool 1",
+						"execute @s ~~~ detect ^^1.5^-1 air -1 scoreboard players add @s slip_bool 2",
+            "event entity @s[scores={slip_bool=..1}] godie",
+						"tp @s[scores={slip_bool=2}] ~~1~",
+						"execute @s ~~~ detect ^^^-1 air -1 tp @s ^^^-1",
+						"execute @s ~~~ detect ^^^-1 air -1 tp @s ^^^-1",
+						"execute @s ~~~ detect ^^^-1 air -1 tp @s ^^^-1",
+						"execute @s ~~~ detect ~~-1~ air -1 tp @s ~~-1~",
+
+            "scoreboard players add @s scorch_bullet 1",
+            "event entity @s[scores={scorch_bullet=8..}] firecore",
+            "scoreboard players reset @s[scores={scorch_bullet=8..}] scorch_bullet"
+          ]
+        }
+      },
+      "firecore": {
+        "queue_command": {
+          "command": [
+            "scoreboard players operation @e[tag=is_scorch,tag=team_red] skill_check_3 = @s titan_self",
+            "execute @e[tag=is_scorch,tag=team_red] ~~~ scoreboard players operation @s skill_check_3 -= @s titan_self",
+            "scoreboard players operation @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,tag=!scorch_core_done,r=12] death_check = @e[tag=is_scorch,tag=team_red,scores={skill_check_3=0},c=1] titan_self",
+            "execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12] ~~~ playanimation @e[tag=is_scorch,tag=team_red,scores={skill_check_3=0},c=1] animation.feedback_star.1st.zoom",
+
+            "damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,tag=!ronin_defending,tag=!titan_hard,tag=!scorch_core_done,r=12] 4500 suicide entity @e[tag=is_scorch,tag=team_red,scores={skill_check_3=0},c=1]",
+            "damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,tag=ronin_defend,tag=!scorch_core_done,r=12] 1350 suicide entity @e[tag=is_scorch,tag=team_red,scores={skill_check_3=0},c=1]",
+            "damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,tag=ronin_defend_core,tag=!scorch_core_done,r=12] 450 suicide entity @e[tag=is_scorch,tag=team_red,scores={skill_check_3=0},c=1]",
+            "damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,tag=titan_hard,tag=!scorch_core_done,r=12] 3600 suicide entity @e[tag=is_scorch,tag=team_red,scores={skill_check_3=0},c=1]",
+            "event entity @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,tag=ronin_defending,tag=!scorch_core_done,r=12] defend_damage_transform",
+            "tag @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12] add scorch_core_done",
+            "event entity @e[type=coldsink:scorch_trap_red,tag=!done,r=12] be_fire_boom",
+
+            "particle titan:scorch_core_fire_1 ~~~",
+            "particle titan:scorch_core_fire_2 ~~~",
+            "particle titan:scorch_core_fire_3 ~~~",
+            "particle titan:scorch_core_fire_4 ~~~",
+            "particle titan:scorch_core_fire_1 ^5^^",
+            "particle titan:scorch_core_fire_2 ^5^^",
+            "particle titan:scorch_core_fire_3 ^5^^",
+            "particle titan:scorch_core_fire_4 ^5^^",
+            "particle titan:scorch_core_fire_1 ^-5^^",
+            "particle titan:scorch_core_fire_2 ^-5^^",
+            "particle titan:scorch_core_fire_3 ^-5^^",
+            "particle titan:scorch_core_fire_4 ^-5^^",
+
+            // 瞬破粒子盾
+            "kill @e[family=particle_shield,tag=!team_red,r=12]",
+            // 对枪盾军团伤害补丁
+            "damage @e[tag=!team_red,family=legion_titan,tag=legion_shield,tag=!scorch_core_done,r=12] 4500 suicide entity @e[tag=is_scorch,tag=team_red,scores={skill_check_3=0},c=1]"
+          ]
+        }
+      },
+      "godie": {
+        "queue_command": {
+          "command": [
+            "tag @e[tag=scorch_core_done] remove scorch_core_done",
+            "event entity @s real_godie"
+          ]
+        }
+      },
+      "real_godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

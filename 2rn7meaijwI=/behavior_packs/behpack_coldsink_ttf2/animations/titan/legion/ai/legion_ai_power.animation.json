@@ -1,0 +1,23 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.legion_ai_power.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.6": [
+          "/execute @s[tag=!legion_range_mode,tag=team_blue] ^^^5 event entity @e[tag=!team_blue,family=titan,r=16] remove_knockback_resistance",
+          "/execute @s[tag=!legion_range_mode,tag=team_red] ^^^5 event entity @e[tag=!team_red,family=titan,r=16] remove_knockback_resistance"
+        ],
+        "0.7": [
+          "/execute @s[tag=!legion_range_mode,tag=team_blue] ~~~ summon coldsink:legion_boom_knock_blue ^^^5",
+          "/execute @s[tag=!legion_range_mode,tag=team_red] ~~~ summon coldsink:legion_boom_knock_red ^^^5"
+        ],
+        "1.3": [
+          "/event entity @s set_action_0",
+          "/event entity @e[type=coldsink:legion_rider_ai,r=8,c=1] turn_titan_state_normal"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "coldsink:elect_smoke",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.arrow"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 64,
+      "minecraft:icon": "elect_smoke",
+      "minecraft:display_name": {
+        "value": "§b【电子烟雾】 §f释放伤害电烟 （反训牛措施）"
+      },
+      "minecraft:use_modifiers": {
+        "use_duration": 99999,
+        "movement_modifier": 1
+      },
+      "minecraft:food": {
+        "can_always_eat": true
+      },
+      "minecraft:cooldown": {
+        "category": "elect_smoke",
+        "duration": 1.5
+      },
+      "minecraft:hand_equipped": false
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.northstar_titan_particle": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "particle": "q.property('titan:action') == 3 && q.property('titan:weapon_value') > 0"
+            }
+          ]
+        },
+        "particle": {
+          "animations": [
+            "northstar_titan.particle"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 3 || q.property('titan:weapon_value') == 0"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.northstar_titan_particle.1st": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "particle": "q.property('titan:action') == 3 && q.property('titan:weapon_value') > 0"
+            }
+          ]
+        },
+        "particle": {
+          "animations": [
+            "northstar_titan.particle.1st"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 3 || q.property('titan:weapon_value') == 0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

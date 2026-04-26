@@ -1,0 +1,92 @@
+item.itemLock.popupNotice.cantMove= 
+
+tile.coldsink:black_hiden_block.name=黑色无碰撞方块
+tile.coldsink:common_light_block.name=冷式方块灯
+tile.coldsink:half_top_light_block.name=冷式顶部半砖灯
+tile.coldsink:layer_top_light_block.name=冷式顶部片层灯
+
+item.spawn_egg.entity.coldsink:give_pilot_helmet_tool.name=点地获取 铁驭头盔
+item.spawn_egg.entity.coldsink:give_weapon_r201_tool.name=点地获取 R201
+item.spawn_egg.entity.coldsink:give_weapon_charge_tool.name=点地获取 电笔
+
+item.spawn_egg.entity.coldsink:battery_ordinary.name=放置 普通电池
+item.spawn_egg.entity.coldsink:battery_powerful.name=放置 强力电池
+item.spawn_egg.entity.coldsink:battery_overload.name=放置 过载电池
+
+action.hint.exit.coldsink:sliding_ride_tool= 
+action.hint.exit.coldsink:ion_ride= 
+action.hint.exit.coldsink:tone_ride= 
+action.hint.exit.coldsink:northstar_ride= 
+action.hint.exit.coldsink:ronin_ride= 
+action.hint.exit.coldsink:scorch_ride= 
+action.hint.exit.coldsink:legion_ride= 
+action.hint.exit.coldsink:monarch_ride= 
+action.hint.exit.coldsink:rodeo_ride_tool_ion=§l§b开展训牛术中
+action.hint.exit.coldsink:rodeo_ride_tool_tone=§l§b开展训牛术中
+action.hint.exit.coldsink:rodeo_ride_tool_northstar=§l§b开展训牛术中
+action.hint.exit.coldsink:rodeo_ride_tool_ronin=§l§b开展训牛术中
+action.hint.exit.coldsink:rodeo_ride_tool_scorch=§l§b开展训牛术中
+action.hint.exit.coldsink:rodeo_ride_tool_legion=§l§b开展训牛术中
+action.hint.exit.coldsink:rodeo_ride_tool_monarch=§l§b开展训牛术中
+
+entity.coldsink:ion_titan.name=离子泰坦
+entity.coldsink:tone_titan.name=强力泰坦
+entity.coldsink:northstar_titan.name=北极星泰坦
+entity.coldsink:ronin_titan.name=浪人泰坦
+entity.coldsink:scorch_titan.name=烈焰泰坦
+entity.coldsink:legion_titan.name=军团泰坦
+entity.coldsink:monarch_titan.name=帝王泰坦
+
+entity.coldsink:ion_titan_ai.name=离子泰坦AI
+entity.coldsink:tone_titan_ai.name=强力泰坦AI
+entity.coldsink:northstar_titan_ai.name=北极星泰坦AI
+entity.coldsink:ronin_titan_ai.name=浪人泰坦AI
+entity.coldsink:scorch_titan_ai.name=烈焰泰坦AI
+entity.coldsink:legion_titan_ai.name=军团泰坦AI
+entity.coldsink:monarch_titan_ai.name=帝王泰坦AI
+
+item.spawn_egg.entity.coldsink:ion_titan.name=生成 离子泰坦-静态
+item.spawn_egg.entity.coldsink:tone_titan.name=生成 强力泰坦-静态
+item.spawn_egg.entity.coldsink:northstar_titan.name=生成 北极星泰坦-静态
+item.spawn_egg.entity.coldsink:ronin_titan.name=生成 浪人泰坦-静态
+item.spawn_egg.entity.coldsink:scorch_titan.name=生成 烈焰泰坦-静态
+item.spawn_egg.entity.coldsink:legion_titan.name=生成 军团泰坦-静态
+item.spawn_egg.entity.coldsink:monarch_titan.name=生成 帝王泰坦-静态
+
+item.spawn_egg.entity.coldsink:ion_titan_ai_summon_blue.name=生成 §b离子泰坦AI-蓝队
+item.spawn_egg.entity.coldsink:ion_titan_ai_summon_red.name=生成 §c离子泰坦AI-红队
+item.spawn_egg.entity.coldsink:tone_titan_ai_summon_blue.name=生成 §b强力泰坦AI-蓝队
+item.spawn_egg.entity.coldsink:tone_titan_ai_summon_red.name=生成 §c强力泰坦AI-红队
+item.spawn_egg.entity.coldsink:northstar_titan_ai_summon_blue.name=生成 §b北极星泰坦AI-蓝队
+item.spawn_egg.entity.coldsink:northstar_titan_ai_summon_red.name=生成 §c北极星泰坦AI-红队
+item.spawn_egg.entity.coldsink:ronin_titan_ai_summon_blue.name=生成 §b浪人泰坦AI-蓝队
+item.spawn_egg.entity.coldsink:ronin_titan_ai_summon_red.name=生成 §c浪人泰坦AI-红队
+item.spawn_egg.entity.coldsink:scorch_titan_ai_summon_blue.name=生成 §b烈焰泰坦AI-蓝队
+item.spawn_egg.entity.coldsink:scorch_titan_ai_summon_red.name=生成 §c烈焰泰坦AI-红队
+item.spawn_egg.entity.coldsink:legion_titan_ai_summon_blue.name=生成 §b军团泰坦AI-蓝队
+item.spawn_egg.entity.coldsink:legion_titan_ai_summon_red.name=生成 §c军团泰坦AI-红队
+item.spawn_egg.entity.coldsink:monarch_titan_ai_summon_blue.name=生成 §b帝王泰坦AI-蓝队
+item.spawn_egg.entity.coldsink:monarch_titan_ai_summon_red.name=生成 §c帝王泰坦AI-红队
+
+entity.coldsink:pilot_ai.name=铁驭AI
+entity.coldsink:pilot_rider_ai.name=铁驭AI
+item.spawn_egg.entity.coldsink:pilot_ai.name=生成 §b铁驭AI-蓝队
+item.spawn_egg.entity.coldsink:summon_pilot_ai_red.name=生成 §c铁驭AI-红队
+
+entity.coldsink:ion_trap_blue=镭射绊线
+entity.coldsink:ion_trap_red=镭射绊线
+entity.tone_trace_missile_blue=追踪导弹
+entity.tone_trace_missile_red=追踪导弹
+entity.northstar_missile_boom_blue=集束飞弹
+entity.northstar_missile_boom_red=集束飞弹
+entity.ronin_arc_blue=电弧波
+entity.ronin_arc_red=电弧波
+entity.ronin_arc_core_blue=电弧波
+entity.ronin_arc_core_red=电弧波
+entity.coldsink:scorch_trap_blue=铝热陷阱
+entity.coldsink:scorch_trap_red=铝热陷阱
+entity.monarch_trace_missile_blue=多目标飞弹
+entity.monarch_trace_missile_red=多目标飞弹
+
+coldsink:pilot_weapon=铁驭武器
+coldsink:call_titan_item=泰坦召唤物

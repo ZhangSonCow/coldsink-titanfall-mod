@@ -1,0 +1,25 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.northstar_skill_1.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/playsound northstar_skill_1 @a[r=64] ~~~"
+        ],
+        "0.3": [
+          "/camerashake add @s 0.1 0.2 rotational"
+        ],
+        "0.4": [
+          "/event entity @s[tag=team_blue] northstar_skill_1_shoot_blue",
+          "/event entity @s[tag=team_red] northstar_skill_1_shoot_red",
+          "/event entity @s set_cooldown_1_8"
+        ],
+        "0.75": [
+          "/event entity @s set_action_0"
+        ]
+      }
+    }
+  }
+}

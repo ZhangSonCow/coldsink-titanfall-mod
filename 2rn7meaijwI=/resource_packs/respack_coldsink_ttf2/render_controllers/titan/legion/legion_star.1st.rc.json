@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.legion_weapon_star.1st": {
+      "geometry": "geometry.legion_weapon_star.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.titan_weapon_star" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    "controller.render.legion_weapon_far_star.1st": {
+      "geometry": "geometry.legion_weapon_far_star.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.titan_weapon_star" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    "controller.render.legion_power_far_star.1st": {
+      "geometry": "geometry.legion_power_far_star.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.titan_weapon_star" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

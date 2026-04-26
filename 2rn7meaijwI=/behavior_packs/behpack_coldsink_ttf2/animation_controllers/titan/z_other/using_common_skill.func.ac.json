@@ -1,0 +1,149 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.using_common_skill_0.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "tone": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:tone_skill_0') && q.property('titan:skill_cooldown_0') == 0"
+            },
+            {
+              "northstar": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:northstar_skill_0') && q.property('titan:skill_cooldown_0') == 0"
+            },
+            {
+              "legion": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_skill_0') && q.property('titan:skill_cooldown_0') == 0"
+            }
+          ]
+        },
+        "tone": {
+          "transitions": [
+            {
+              "default": "q.property('titan:skill_cooldown_0') == 0"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s tone_key_Mid_in"
+          ]
+        },
+        "northstar": {
+          "transitions": [
+            {
+              "default": "q.property('titan:skill_cooldown_0') == 0"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s northstar_key_Mid_in"
+          ]
+        },
+        "legion": {
+          "transitions": [
+            {
+              "default": "q.property('titan:skill_cooldown_0') == 0"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s legion_key_Mid_in"
+          ]
+        }
+      }
+    },
+    "controller.animation.using_common_skill_2.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ion": "q.property('titan:skill_cooldown_0') <= 130 && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ion_skill_2') && q.property('titan:skill_cooldown_2') == 0"
+            },
+            {
+              "northstar": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:northstar_skill_2') && q.property('titan:skill_cooldown_2') == 0 && !q.is_sheared"
+            },
+            {
+              "ronin": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_skill_2') && q.property('titan:skill_cooldown_2') == 0"
+            },
+            {
+              "scorch": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:scorch_skill_2') && q.property('titan:skill_cooldown_2') <= 15"
+            }
+          ]
+        },
+        "ion": {
+          "transitions": [
+            {
+              "default": "q.property('titan:skill_cooldown_0') == 0"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s ion_key_G_in"
+          ]
+        },
+        "northstar": {
+          "transitions": [
+            {
+              "default": "q.property('titan:skill_cooldown_0') == 0"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s northstar_key_G_in"
+          ]
+        },
+        "ronin": {
+          "transitions": [
+            {
+              "default": "q.property('titan:skill_cooldown_0') == 0"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s ronin_key_G_in"
+          ]
+        },
+        "scorch": {
+          "transitions": [
+            {
+              "default": "q.property('titan:skill_cooldown_0') == 0 && !q.is_using_item"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s scorch_key_G_in"
+          ]
+        }
+      }
+    },
+    "controller.animation.using_common_skill_3.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "legion": "q.property('titan:core_value') == 100 && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_skill_3')"
+            },
+            {
+              "monarch": "q.property('titan:core_value') == 100 && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_skill_3')"
+            }
+          ]
+        },
+        "legion": {
+          "transitions": [
+            {
+              "default": "q.property('titan:core_value') == 0"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s legion_key_V_in"
+          ]
+        },
+        "monarch": {
+          "transitions": [
+            {
+              "default": "q.property('titan:core_value') == 0"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s monarch_key_V_in"
+          ]
+        }
+      }
+    }
+  }
+}

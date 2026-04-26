@@ -1,0 +1,375 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ronin_titan_1st": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "run_core": "q.property('titan:action') == 1 && !q.is_saddled"
+            },
+            {
+              "fire": "q.property('titan:action') == 3"
+            },
+            {
+              "reload": "q.property('titan:action') == 4"
+            },
+            {
+              "melee_1": "q.property('titan:action') == 5 && q.property('titan:ronin_defend') == 1 && !q.is_sheared"
+            },
+            {
+              "melee_2": "q.property('titan:action') == 5 && q.property('titan:ronin_defend') == 2 && !q.is_sheared"
+            },
+            {
+              "melee_3": "q.property('titan:action') == 5 && q.property('titan:ronin_defend') == 3 && !q.is_sheared"
+            },
+            {
+              "melee_core_1": "q.property('titan:action') == 5 && q.property('titan:ronin_defend') == 1"
+            },
+            {
+              "melee_core_2": "q.property('titan:action') == 5 && q.property('titan:ronin_defend') == 2"
+            },
+            {
+              "melee_core_3": "q.property('titan:action') == 5 && q.property('titan:ronin_defend') == 3"
+            },
+            {
+              "arc_core_pre": "q.property('titan:action') == 11 && q.is_sheared"
+            },
+            {
+              "arc_pre": "q.property('titan:action') == 11"
+            },
+            {
+              "defend_pre": "q.property('titan:action') == 14"
+            },
+            {
+              "core_begin": "q.property('titan:action') == 17"
+            },
+            {
+              "spurt": "q.out_of_control && q.property('titan:action') == 0 && !q.is_sheared"
+            },
+            {
+              "run": "q.is_sprinting && q.property('titan:action') == 0 && !q.is_sheared"
+            },
+            {
+              "run_core": "q.is_sprinting && q.property('titan:action') == 0 && q.is_sheared"
+            }
+          ]
+        },
+        "run": {
+          "animations": [
+            "ronin_titan.move.1st"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "core_begin": "q.property('titan:action') == 17"
+            },
+            {
+              "run_core": "q.is_sheared"
+            },
+            {
+              "default": "!q.is_sprinting || q.out_of_control || q.property('titan:action') != 0"
+            }
+          ]
+        },
+        "run_core": {
+          "animations": [
+            "ronin_titan.move_melee.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "!q.is_sprinting || q.property('titan:action') != 0 || !q.is_sheared"
+            }
+          ]
+        },
+        "spurt": {
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "!q.out_of_control || q.property('titan:action') != 0"
+            }
+          ]
+        },
+        "fire": {
+          "animations": [
+            "ronin_titan.fire.1st"
+          ],
+          "blend_transition": 0.2,
+          "transitions": [
+            {
+              "reload": "q.property('titan:action') == 4 || (q.property('titan:weapon_value') == 0 && q.property('titan:action') == 0)"
+            },
+            {
+              "default": "q.property('titan:action') != 3"
+            }
+          ]
+        },
+        "reload": {
+          "animations": [
+            "ronin_titan.reload.1st"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 4 && !(q.property('titan:action') == 3 && q.property('titan:weapon_value') == 0)"
+            }
+          ]
+        },
+        "melee_1": {
+          "animations": [
+            "ronin_titan.melee_1.1st"
+          ],
+          "blend_transition": 0.5,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0 || q.property('titan:ronin_defend') != 1"
+            }
+          ]
+        },
+        "melee_2": {
+          "animations": [
+            "ronin_titan.melee_2.1st"
+          ],
+          "blend_transition": 0.5,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0 || q.property('titan:ronin_defend') != 2"
+            }
+          ]
+        },
+        "melee_3": {
+          "animations": [
+            "ronin_titan.melee_3.1st"
+          ],
+          "blend_transition": 0.5,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0 || q.property('titan:ronin_defend') != 3"
+            }
+          ]
+        },
+        "melee_core_1": {
+          "animations": [
+            "ronin_titan.melee_core_1.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0 || q.property('titan:ronin_defend') != 1"
+            }
+          ]
+        },
+        "melee_core_2": {
+          "animations": [
+            "ronin_titan.melee_core_2.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0 || q.property('titan:ronin_defend') != 2"
+            }
+          ]
+        },
+        "melee_core_3": {
+          "animations": [
+            "ronin_titan.melee_core_3.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0 || q.property('titan:ronin_defend') != 3"
+            }
+          ]
+        },
+        "arc_pre": {
+          "animations": [
+            "ronin_titan.arc_pre.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "arc": "q.property('titan:action') == 12"
+            }
+          ]
+        },
+        "arc": {
+          "animations": [
+            "ronin_titan.arc.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "arc_after": "q.property('titan:action') == 13"
+            },
+            {
+              "melee_1": "q.property('titan:action') == 5 && q.property('titan:ronin_defend') == 1"
+            },
+            {
+              "melee_2": "q.property('titan:action') == 5 && q.property('titan:ronin_defend') == 2"
+            },
+            {
+              "melee_3": "q.property('titan:action') == 5 && q.property('titan:ronin_defend') == 3"
+            }
+          ]
+        },
+        "arc_after": {
+          "animations": [
+            "ronin_titan.arc_after.1st"
+          ],
+          "blend_transition": 0.5,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 13"
+            }
+          ]
+        },
+        "arc_core_pre": {
+          "animations": [
+            "ronin_titan.arc_pre.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "arc_core": "q.property('titan:action') == 12"
+            }
+          ]
+        },
+        "arc_core": {
+          "animations": [
+            "ronin_titan.arc.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "arc_core_after": "q.property('titan:action') == 13"
+            },
+            {
+              "melee_core_1": "q.property('titan:action') == 5 && q.property('titan:ronin_defend') == 1"
+            },
+            {
+              "melee_core_2": "q.property('titan:action') == 5 && q.property('titan:ronin_defend') == 2"
+            },
+            {
+              "melee_core_3": "q.property('titan:action') == 5 && q.property('titan:ronin_defend') == 3"
+            }
+          ]
+        },
+        "arc_core_after": {
+          "animations": [
+            "ronin_titan.arc_core_after.1st"
+          ],
+          "blend_transition": 0.5,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 13"
+            }
+          ]
+        },
+        "defend_pre": {
+          "animations": [
+            "ronin_titan.defend_pre.1st"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "defend_1": "q.property('titan:action') == 15"
+            }
+          ]
+        },
+        "defend_1": {
+          "animations": [
+            "ronin_titan.defend_1.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "defend_after": "q.property('titan:action') == 16 || q.property('titan:action') == 0"
+            },
+            {
+              "defend_2": "q.property('titan:ronin_defend') == 2"
+            },
+            {
+              "defend_3": "q.property('titan:ronin_defend') == 3"
+            }
+          ]
+        },
+        "defend_2": {
+          "animations": [
+            "ronin_titan.defend_2.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "defend_after": "q.property('titan:action') == 16 || q.property('titan:action') == 0"
+            },
+            {
+              "defend_1": "q.property('titan:ronin_defend') == 1"
+            },
+            {
+              "defend_3": "q.property('titan:ronin_defend') == 3"
+            }
+          ]
+        },
+        "defend_3": {
+          "animations": [
+            "ronin_titan.defend_3.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "defend_after": "q.property('titan:action') == 16 || q.property('titan:action') == 0"
+            },
+            {
+              "defend_1": "q.property('titan:ronin_defend') == 1"
+            },
+            {
+              "defend_2": "q.property('titan:ronin_defend') == 2"
+            }
+          ]
+        },
+        "defend_after": {
+          "animations": [
+            "ronin_titan.defend_after.1st"
+          ],
+          "blend_transition": 0.5,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 16"
+            }
+          ]
+        },
+        "core_begin": {
+          "blend_transition": 0,
+          "transitions": [
+            {
+              "core_pre": "q.property('titan:action') == 17"
+            }
+          ]
+        },
+        "core_pre": {
+          "animations": [
+            "ronin_titan.core.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 17"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

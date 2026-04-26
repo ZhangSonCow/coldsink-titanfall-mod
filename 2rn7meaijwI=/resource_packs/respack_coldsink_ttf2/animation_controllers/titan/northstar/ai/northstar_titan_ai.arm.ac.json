@@ -1,0 +1,86 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.northstar_titan_ai.arm": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "northstar_titan.idle.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "melee": "q.property('titan:action') == 11"
+            },
+            {
+              "powering": "q.property('titan:action') == 12"
+            },
+            {
+              "missile": "q.property('titan:action') == 13"
+            },
+            {
+              "core": "q.property('titan:action') == 15"
+            }
+          ]
+        },
+        "melee": {
+          "animations": [
+            "northstar_titan.melee"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 11"
+            }
+          ]
+        },
+        "powering": {
+          "animations": [
+            "northstar_titan.idle.arm",
+            "northstar_titan.rotate"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "fired": "q.property('titan:action') != 12"
+            }
+          ]
+        },
+        "fired": {
+          "animations": [
+            "northstar_titan.fire"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 13"
+            }
+          ]
+        },
+        "missile": {
+          "animations": [
+            "northstar_titan.missile"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 14"
+            }
+          ]
+        },
+        "core": {
+          "animations": [
+            "northstar_titan.core"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

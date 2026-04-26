@@ -1,0 +1,447 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.weapon_ui_value.1st",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "skillBox",
+					"pivot": [-2.2, 22.45, 9.5],
+					"rotation": [0, -90, 0]
+				},
+				{
+					"name": "weapon_ui",
+					"parent": "skillBox",
+					"pivot": [-1.07875, 21.95688, 9.455]
+				},
+				{
+					"name": "weapon_unit_0",
+					"parent": "weapon_ui",
+					"pivot": [-1.07875, 21.95688, 9.455],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.29985, 9.01771],
+							"size": [-0.05291, 0.285, 0.285],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [0, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "weapon_unit_1",
+					"parent": "weapon_ui",
+					"pivot": [-1.07875, 21.95688, 9.455],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.29985, 9.01771],
+							"size": [-0.05291, 0.285, 0.285],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [4, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "weapon_unit_2",
+					"parent": "weapon_ui",
+					"pivot": [-1.07875, 21.95688, 9.455],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.29985, 9.01771],
+							"size": [-0.05291, 0.285, 0.285],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [8, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "weapon_unit_3",
+					"parent": "weapon_ui",
+					"pivot": [-1.07875, 21.95688, 9.455],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.29985, 9.01771],
+							"size": [-0.05291, 0.285, 0.285],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [12, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "weapon_unit_4",
+					"parent": "weapon_ui",
+					"pivot": [-1.07875, 21.95688, 9.455],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.29985, 9.01771],
+							"size": [-0.05291, 0.285, 0.285],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [0, 4], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "weapon_unit_5",
+					"parent": "weapon_ui",
+					"pivot": [-1.07875, 21.95688, 9.455],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.29985, 9.01771],
+							"size": [-0.05291, 0.285, 0.285],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [4, 4], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "weapon_unit_6",
+					"parent": "weapon_ui",
+					"pivot": [-1.07875, 21.95688, 9.455],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.29985, 9.01771],
+							"size": [-0.05291, 0.285, 0.285],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [8, 4], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "weapon_unit_7",
+					"parent": "weapon_ui",
+					"pivot": [-1.07875, 21.95688, 9.455],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.29985, 9.01771],
+							"size": [-0.05291, 0.285, 0.285],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [12, 4], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "weapon_unit_8",
+					"parent": "weapon_ui",
+					"pivot": [-1.07875, 21.95688, 9.455],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.29985, 9.01771],
+							"size": [-0.05291, 0.285, 0.285],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [0, 8], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "weapon_unit_9",
+					"parent": "weapon_ui",
+					"pivot": [-1.07875, 21.95688, 9.455],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.29985, 9.01771],
+							"size": [-0.05291, 0.285, 0.285],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [4, 8], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "weapon_decade_0",
+					"parent": "weapon_ui",
+					"pivot": [-1.07875, 21.95688, 9.68],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.29985, 9.2927],
+							"size": [-0.05291, 0.285, 0.285],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [0, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "weapon_decade_1",
+					"parent": "weapon_ui",
+					"pivot": [-1.07875, 21.95688, 9.68],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.29985, 9.2927],
+							"size": [-0.05291, 0.285, 0.285],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [4, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "weapon_decade_2",
+					"parent": "weapon_ui",
+					"pivot": [-1.07875, 21.95688, 9.68],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.29985, 9.2927],
+							"size": [-0.05291, 0.285, 0.285],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [8, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "weapon_decade_3",
+					"parent": "weapon_ui",
+					"pivot": [-1.07875, 21.95688, 9.68],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.29985, 9.2927],
+							"size": [-0.05291, 0.285, 0.285],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [12, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "weapon_decade_4",
+					"parent": "weapon_ui",
+					"pivot": [-1.07875, 21.95688, 9.68],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.29985, 9.2927],
+							"size": [-0.05291, 0.285, 0.285],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [0, 4], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "weapon_decade_5",
+					"parent": "weapon_ui",
+					"pivot": [-1.07875, 21.95688, 9.68],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.29985, 9.2927],
+							"size": [-0.05291, 0.285, 0.285],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [4, 4], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "weapon_decade_6",
+					"parent": "weapon_ui",
+					"pivot": [-1.07875, 21.95688, 9.68],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.29985, 9.2927],
+							"size": [-0.05291, 0.285, 0.285],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [8, 4], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "weapon_decade_7",
+					"parent": "weapon_ui",
+					"pivot": [-1.07875, 21.95688, 9.68],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.29985, 9.2927],
+							"size": [-0.05291, 0.285, 0.285],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [12, 4], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "weapon_decade_8",
+					"parent": "weapon_ui",
+					"pivot": [-1.07875, 21.95688, 9.68],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.29985, 9.2927],
+							"size": [-0.05291, 0.285, 0.285],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [0, 8], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "weapon_decade_9",
+					"parent": "weapon_ui",
+					"pivot": [-1.07875, 21.95688, 9.68],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.29985, 9.2927],
+							"size": [-0.05291, 0.285, 0.285],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [4, 8], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "weapon_hundred_1",
+					"parent": "weapon_ui",
+					"pivot": [-1.07875, 21.95688, 9.68],
+					"cubes": [
+						{
+							"origin": [-2.13135, 22.29985, 9.56771],
+							"size": [-0.05291, 0.285, 0.285],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [4, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

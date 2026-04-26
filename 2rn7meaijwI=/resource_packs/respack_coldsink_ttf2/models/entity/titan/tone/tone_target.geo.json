@@ -1,0 +1,63 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.tone_target",
+				"texture_width": 600,
+				"texture_height": 200,
+				"visible_bounds_width": 29,
+				"visible_bounds_height": 44,
+				"visible_bounds_offset": [0, 18, 0]
+			},
+			"bones": [
+				{
+					"name": "tone_target",
+					"pivot": [0, 80, 32]
+				},
+				{
+					"name": "target_1",
+					"parent": "tone_target",
+					"pivot": [0, 80, 32],
+					"cubes": [
+						{
+							"origin": [-16, 64, 32],
+							"size": [32, 32, 0],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [200, 200]}
+							}
+						}
+					]
+				},
+				{
+					"name": "target_2",
+					"parent": "tone_target",
+					"pivot": [0, 80, 32],
+					"cubes": [
+						{
+							"origin": [-16, 64, 32],
+							"size": [32, 32, 0],
+							"uv": {
+								"north": {"uv": [200, 0], "uv_size": [200, 200]}
+							}
+						}
+					]
+				},
+				{
+					"name": "target_3",
+					"parent": "tone_target",
+					"pivot": [0, 80, 32],
+					"cubes": [
+						{
+							"origin": [-16, 64, 32],
+							"size": [32, 32, 0],
+							"uv": {
+								"north": {"uv": [400, 0], "uv_size": [200, 200]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,348 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.pilot_arm": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "pilot_player.idle.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "weapon_idle": "v.pilot_handle_weapon"
+            },
+            {
+              "walk": "!q.is_sprinting && q.modified_move_speed >= 0.5 && q.is_on_ground && q.property('titan:action') == 0"
+            },
+            {
+              "sneak": "q.is_sneaking && q.is_on_ground"
+            },
+            {
+              "run": "q.is_sprinting && q.modified_move_speed >= 0.5 && q.is_on_ground && q.property('titan:action') == 0"
+            },
+            {
+              "jump": "q.property('titan:action') == 51 && !v.pilot_handle_weapon"
+            },
+            {
+              "jump_two": "q.property('titan:action') == 52 && !v.pilot_handle_weapon"
+            },
+            {
+              "climb_left": "q.property('titan:action') == 53 && !v.pilot_handle_weapon"
+            },
+            {
+              "climb_right": "q.property('titan:action') == 54 && !v.pilot_handle_weapon"
+            },
+            {
+              "slide": "q.property('titan:action') == 55 && !v.pilot_handle_weapon"
+            },
+            {
+              "melee": "q.property('titan:other_action') == 3 && !q.is_tamed"
+            },
+            {
+              "rodeo": "q.property('pilot:rodeo_status') > 0 && q.property('pilot:rodeo_status') != 4"
+            }
+          ]
+        },
+        "weapon_idle": {
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "!v.pilot_handle_weapon"
+            },
+            {
+              "weapon_run": "q.is_sprinting && q.modified_move_speed >= 0.5 && q.is_on_ground && q.property('titan:action') == 0"
+            },
+            {
+              "jump": "q.property('titan:action') == 51 && !v.pilot_handle_weapon"
+            },
+            {
+              "jump_two": "q.property('titan:action') == 52 && !v.pilot_handle_weapon"
+            },
+            {
+              "climb_left": "q.property('titan:action') == 53 && !v.pilot_handle_weapon"
+            },
+            {
+              "climb_right": "q.property('titan:action') == 54 && !v.pilot_handle_weapon"
+            },
+            {
+              "slide": "q.property('titan:action') == 55 && !v.pilot_handle_weapon"
+            },
+            {
+              "melee": "q.property('titan:other_action') == 3 && !q.is_tamed"
+            },
+            {
+              "rodeo": "q.property('pilot:rodeo_status') > 0"
+            }
+          ]
+        },
+        "walk": {
+          "animations": [
+            "pilot_player.walk.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.modified_move_speed < 0.5 || q.property('titan:action') != 0"
+            },
+            {
+              "run": "q.is_sprinting && q.modified_move_speed >= 0.5 && q.is_on_ground && q.property('titan:action') == 0"
+            },
+            {
+              "melee": "q.property('titan:other_action') == 3 && !q.is_tamed"
+            },
+            {
+              "rodeo": "q.property('pilot:rodeo_status') > 0"
+            }
+          ]
+        },
+        "sneak": {
+          "animations": [
+            "pilot_player.sneak.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "!q.is_sneaking || !q.is_on_ground"
+            },
+            {
+              "sneak_walk": "q.modified_move_speed >= 0.3"
+            },
+            {
+              "melee": "q.property('titan:other_action') == 3 && !q.is_tamed"
+            },
+            {
+              "rodeo": "q.property('pilot:rodeo_status') > 0"
+            }
+          ]
+        },
+        "sneak_walk": {
+          "animations": [
+            "pilot_player.sneak_walk.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "!q.is_sneaking || !q.is_on_ground"
+            },
+            {
+              "sneak": "q.modified_move_speed < 0.3"
+            },
+            {
+              "melee": "q.property('titan:other_action') == 3 && !q.is_tamed"
+            },
+            {
+              "rodeo": "q.property('pilot:rodeo_status') > 0"
+            }
+          ]
+        },
+        "run": {
+          "animations": [
+            "pilot_player.run.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.modified_move_speed < 0.5 || q.property('titan:action') != 0 || !q.is_on_ground"
+            },
+            {
+              "melee": "q.property('titan:other_action') == 3 && !q.is_tamed"
+            },
+            {
+              "rodeo": "q.property('pilot:rodeo_status') > 0"
+            }
+          ]
+        },
+        "weapon_run": {
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.modified_move_speed < 0.5 || q.property('titan:action') != 0"
+            },
+            {
+              "melee": "q.property('titan:other_action') == 3 && !q.is_tamed"
+            },
+            {
+              "rodeo": "q.property('pilot:rodeo_status') > 0"
+            }
+          ]
+        },
+        "jump": {
+          "animations": [
+            "pilot_player.jump.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "jump_two": "q.property('titan:action') == 52"
+            },
+            {
+              "default": "q.property('titan:action') != 51 && q.is_on_ground"
+            },
+            {
+              "climb_left": "q.property('titan:action') == 53"
+            },
+            {
+              "climb_right": "q.property('titan:action') == 54"
+            },
+            {
+              "melee": "q.property('titan:other_action') == 3 && !q.is_tamed"
+            },
+            {
+              "rodeo": "q.property('pilot:rodeo_status') > 0"
+            }
+          ]
+        },
+        "jump_two": {
+          "animations": [
+            "pilot_player.jump.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 52 && q.is_on_ground"
+            },
+            {
+              "climb_left": "q.property('titan:action') == 53"
+            },
+            {
+              "climb_right": "q.property('titan:action') == 54"
+            },
+            {
+              "melee": "q.property('titan:other_action') == 3 && !q.is_tamed"
+            },
+            {
+              "rodeo": "q.property('pilot:rodeo_status') > 0"
+            }
+          ]
+        },
+        "climb_left": {
+          "animations": [
+            "pilot_player.climb_left.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 53"
+            }
+          ]
+        },
+        "climb_right": {
+          "animations": [
+            "pilot_player.climb_right.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 54"
+            }
+          ]
+        },
+        "slide": {
+          "animations": [
+            "pilot_player.slide.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 55"
+            },
+            {
+              "melee": "q.property('titan:other_action') == 3 && !q.is_tamed"
+            },
+            {
+              "rodeo": "q.property('pilot:rodeo_status') > 0"
+            }
+          ]
+        },
+        "melee": {
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "melee_slide": "q.is_riding"
+            },
+            {
+              "melee_arm_1": "q.is_on_ground && v.random_choices > 30"
+            },
+            {
+              "melee_arm_2": "q.is_on_ground && v.random_choices <= 30"
+            },
+            {
+              "melee_leg_1": "!q.is_on_ground && v.random_choices > 30"
+            },
+            {
+              "melee_leg_2": "!q.is_on_ground && v.random_choices <= 30"
+            },
+            {
+              "default": "q.property('titan:other_action') != 3"
+            }
+          ]
+        },
+        "melee_slide": {
+          "animations": [
+            "pilot_player.melee_slide.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:other_action') != 3"
+            }
+          ]
+        },
+        "melee_arm_1": {
+          "animations": [
+            "pilot_player.melee_arm_1.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:other_action') != 3"
+            }
+          ]
+        },
+        "melee_arm_2": {
+          "animations": [
+            "pilot_player.melee_arm_2.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:other_action') != 3"
+            }
+          ]
+        },
+        "melee_leg_1": {
+          "animations": [
+            "pilot_player.melee_leg_1.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:other_action') != 3"
+            }
+          ]
+        },
+        "melee_leg_2": {
+          "animations": [
+            "pilot_player.melee_leg_2.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:other_action') != 3"
+            }
+          ]
+        },
+        "rodeo": {
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('pilot:rodeo_status') == 0 || q.property('pilot:rodeo_status') == 4"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.monarch_ai_reflash_cooldown.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "skill": "q.is_saddled"
+            }
+          ]
+        },
+        "skill": {
+          "animations": [
+            "monarch_ai_reflash_cooldown"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_saddled"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add reflash_cd"
+          ],
+          "on_exit": [
+            "/tag @s remove reflash_cd"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,459 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.titan_drive_type.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ion": "q.is_riding && q.variant == 1"
+            },
+            {
+              "tone": "q.is_riding && q.variant == 2"
+            },
+            {
+              "northstar": "q.is_riding && q.variant == 3"
+            },
+            {
+              "ronin": "q.is_riding && q.variant == 4"
+            },
+            {
+              "scorch": "q.is_riding && q.variant == 5"
+            },
+            {
+              "legion": "q.is_riding && q.variant == 6"
+            },
+            {
+              "monarch": "q.is_riding && q.variant == 7"
+            }
+          ],
+          // 离机
+          "on_entry": [
+            "/event entity @s titan_shield_26",
+            "/event entity @s set_core_0",
+            "/event entity @s set_weapon_0",
+            "/event entity @s set_cooldown_0_0",
+            "/event entity @s set_cooldown_1_0",
+            "/event entity @s set_cooldown_2_0",
+            "/event entity @s pilot_exit_titan",
+            "/event entity @s drive_titan_no",
+            "/event entity @s titan_exit_moving",
+            "/event entity @s clear_titan_saddled",
+            "/event entity @s clear_titan_sheared",
+            "/event entity @s weapon_aim_no",
+            "/effect @s slowness 0 5 true",
+            "/effect @s instant_health 0 11 true",
+            "/effect @s saturation 0 11 true",
+            "/execute @s[tag=is_titan] ~~~ function pilot/get_all_item",
+            "/tag @s remove is_titan",
+            "/tag @s remove in_core",
+            "/tag @s remove keep_melee",
+            "/tag @s remove titan_core_saied",
+            "/tag @s remove pilot_core_saied",
+            "/tag @s remove monarch_core_11",
+            "/tag @s remove monarch_core_12",
+            "/tag @s remove monarch_core_13",
+            "/tag @s remove monarch_core_21",
+            "/tag @s remove monarch_core_22",
+            "/tag @s remove monarch_core_23",
+            "/tag @s remove monarch_core_31",
+            "/tag @s remove monarch_core_32",
+            "/tag @s remove monarch_core_33",
+            "/execute @e[family=titan,r=8,c=1] ~~~ scoreboard players set @s[scores={titan_core=101..}] titan_core 100",
+            "/scoreboard players reset @s elesmoke_number",
+            "/event entity @s set_charge_sp_0",
+            "/hud @s reset",
+
+            // 刷新显示UI核心值
+            "/execute @s[tag=!titan_fight] ~~~ function pilot/flash_titan_health_core"
+          ],
+          // 登机
+          "on_exit": [
+            "/scoreboard players set @s spurt_time 0",
+            "/event entity @s set_spurt_0",
+            "/playanimation @s[tag=!fight_leave] animation.titan_cabin.open_glass",
+            "/scoreboard players operation @s titan_self = @e[family=titan,r=8,c=1] titan_self",
+            "/scoreboard players set @s titan_core 0",
+            "/scoreboard players operation @s titan_core = @e[family=titan,r=8,c=1] titan_core",
+            "/scoreboard players operation @s tem_core = @s titan_core",
+            "/event entity @s flash_tem_core",
+            "/tag @s remove scorch_firewall",
+            "/tag @s remove in_core",
+            "/event entity @s pilot_entry_titan",
+            "/event entity @s set_action_0",
+            "/event entity @s titan_exit_moving",
+            "/event entity @s weapon_aim_no",
+            "/effect @s clear",
+            "/effect @s instant_health 99999 10 true",
+            "/effect @s saturation 99999 10 true",
+            "/tag @s add is_titan",
+            "/tag @s add titan_idle",
+            "/scoreboard players operation @s elesmoke_number = @e[family=titan,r=8,c=1] elesmoke_number",
+            "/replaceitem entity @s[tag=!wy_game] slot.hotbar 3 coldsink:no_elect_smoke 1 0 {\"item_lock\":{\"mode\":\"lock_in_slot\"}}",
+            "/replaceitem entity @s[scores={elesmoke_number=1},tag=!wy_game] slot.hotbar 3 coldsink:elect_smoke 1 0 {\"item_lock\":{\"mode\":\"lock_in_slot\"}}",
+            "/replaceitem entity @s[scores={elesmoke_number=2},tag=!wy_game] slot.hotbar 3 coldsink:elect_smoke 2 0 {\"item_lock\":{\"mode\":\"lock_in_slot\"}}",
+            "/replaceitem entity @s[scores={elesmoke_number=3},tag=!wy_game] slot.hotbar 3 coldsink:elect_smoke 3 0 {\"item_lock\":{\"mode\":\"lock_in_slot\"}}",
+            "/replaceitem entity @s[scores={elesmoke_number=4},tag=!wy_game] slot.hotbar 3 coldsink:elect_smoke 4 0 {\"item_lock\":{\"mode\":\"lock_in_slot\"}}",
+            "/replaceitem entity @s[scores={elesmoke_number=5..},tag=!wy_game] slot.hotbar 3 coldsink:elect_smoke 5 0 {\"item_lock\":{\"mode\":\"lock_in_slot\"}}",
+            "/event entity @s set_charge_0",
+            "/event entity @s[scores={elesmoke_number=1}] set_charge_sp_1",
+            "/event entity @s[scores={elesmoke_number=2}] set_charge_sp_2",
+            "/event entity @s[scores={elesmoke_number=3}] set_charge_sp_3",
+            "/event entity @s[scores={elesmoke_number=4}] set_charge_sp_4",
+            "/event entity @s[scores={elesmoke_number=5..}] set_charge_sp_5",
+            "/hud @s hide",
+            "/hud @s reset touch_controls",
+            "/hud @s[tag=!wy_game] reset hotbar",
+            "/hud @s[tag=!wy_game] reset item_text",
+            "/camera @s clear",
+            "/inputpermission set @s camera enabled",
+            "/inputpermission set @s movement enabled",
+            "/tag @s remove pilot_melee",
+            "/tag @s remove keep_melee",
+            "/tag @s remove weapon_fire",
+            "/tag @s remove keep_fire",
+            "/tag @s remove keep_skill_q",
+            "/tag @s remove keep_skill_g",
+            "/tag @s remove keep_skill_mid",
+            "/tag @s remove keep_skill_v"
+          ]
+        },
+        "ion": {
+          "animations": [ "ion_energy", "pilot_drive_titan" ],
+          "transitions": [
+            {
+              "default": "!q.is_riding"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add is_ion",
+            "/scoreboard players set @s ion_bullet 40",
+            "/event entity @s set_weapon_40",
+            "/tag @s remove ion_limit_1",
+            "/tag @s remove ion_limit_2",
+            "/execute @s[tag=!wy_game] ~~~ function titan/ion/get_all_item",
+            "/scoreboard players random @s random_score 1 11",
+            "/playsound ion_entry_cabin_1 @s[scores={random_score=1},tag=!titan_fight]",
+            "/playsound ion_entry_cabin_2 @s[scores={random_score=2},tag=!titan_fight]",
+            "/playsound ion_entry_cabin_3 @s[scores={random_score=3},tag=!titan_fight]",
+            "/playsound ion_entry_cabin_4 @s[scores={random_score=4},tag=!titan_fight]",
+            "/playsound ion_entry_cabin_5 @s[scores={random_score=5},tag=!titan_fight]",
+            "/playsound ion_entry_cabin_6 @s[scores={random_score=6},tag=!titan_fight]",
+            "/playsound ion_entry_cabin_7 @s[scores={random_score=7},tag=!titan_fight]",
+            "/playsound ion_entry_cabin_8 @s[scores={random_score=8},tag=!titan_fight]",
+            "/playsound ion_entry_cabin_9 @s[scores={random_score=9},tag=!titan_fight]",
+            "/playsound ion_entry_cabin_10 @s[scores={random_score=10},tag=!titan_fight]",
+            "/playsound ion_entry_cabin_11 @s[scores={random_score=11},tag=!titan_fight]",
+            "/title @s[tag=fight_leave,tag=!terminate] actionbar §l§c该模式不可离机",
+            "/tag @s remove fight_leave"
+          ],
+          "on_exit": [
+            "/camera @s[tag=!titan_dead,tag=!titan_fight] fade time 0 0.5 0.3 color 0 0 0",
+            "/execute @s[tag=!titan_dead,tag=!titan_fight] ~~~ execute @e[family=ion_titan,c=1] ~~~ camera @p set minecraft:free pos ^^5^8 facing @e[family=ion_titan,c=1]",
+            "/execute @s[tag=!titan_dead,tag=!titan_fight] ~~~ event entity @e[family=ion_titan,r=8,c=1] set_action_9",
+            "/execute @s[tag=!titan_dead,tag=!titan_fight] ~~~ playsound tiantu_exit_cabin @a[r=12]",
+            "/inputpermission set @s[tag=!titan_dead,tag=!titan_fight] camera disabled",
+            "/inputpermission set @s[tag=!titan_dead,tag=!titan_fight] movement disabled",
+            "/event entity @s[tag=!titan_dead,tag=!titan_fight] set_action_115",
+            "/tag @s[tag=!titan_dead,tag=!titan_fight] add exit_cabin",
+            "/tag @s remove titan_dead",
+            "/tag @s remove is_ion",
+            "/tag @s remove ion_divide",
+            "/tag @s[tag=titan_fight] add fight_leave",
+            "/execute @s[tag=titan_fight,tag=!terminate] ~~~ event entity @e[type=coldsink:ion_titan,r=8,c=1] summon_ride_tool",
+            "/stopsound @s ion_skill_1_powering.self"
+          ]
+        },
+        "tone": {
+          "animations": [ "pilot_drive_titan" ],
+          "transitions": [
+            {
+              "default": "!q.is_riding"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add is_tone",
+            "/scoreboard players set @s tone_bullet 12",
+            "/event entity @s set_weapon_12",
+            "/execute @s[tag=!wy_game] ~~~ function titan/tone/get_all_item",
+            "/scoreboard players random @s random_score 1 11",
+            "/playsound tone_entry_cabin_1 @s[scores={random_score=1},tag=!titan_fight]",
+            "/playsound tone_entry_cabin_2 @s[scores={random_score=2},tag=!titan_fight]",
+            "/playsound tone_entry_cabin_3 @s[scores={random_score=3},tag=!titan_fight]",
+            "/playsound tone_entry_cabin_4 @s[scores={random_score=4},tag=!titan_fight]",
+            "/playsound tone_entry_cabin_5 @s[scores={random_score=5},tag=!titan_fight]",
+            "/playsound tone_entry_cabin_6 @s[scores={random_score=6},tag=!titan_fight]",
+            "/playsound tone_entry_cabin_7 @s[scores={random_score=7},tag=!titan_fight]",
+            "/playsound tone_entry_cabin_8 @s[scores={random_score=8},tag=!titan_fight]",
+            "/playsound tone_entry_cabin_9 @s[scores={random_score=9},tag=!titan_fight]",
+            "/playsound tone_entry_cabin_10 @s[scores={random_score=10},tag=!titan_fight]",
+            "/playsound tone_entry_cabin_11 @s[scores={random_score=11},tag=!titan_fight]",
+            "/title @s[tag=fight_leave,tag=!terminate] actionbar §l§c该模式不可离机",
+            "/tag @s remove fight_leave"
+          ],
+          "on_exit": [
+            "/camera @s[tag=!titan_dead,tag=!titan_fight] fade time 0 0.5 0.3 color 0 0 0",
+            "/execute @s[tag=!titan_dead,tag=!titan_fight] ~~~ execute @e[family=tone_titan,c=1] ~~~ camera @p set minecraft:free pos ^^5^8 facing @e[family=tone_titan,c=1]",
+            "/execute @s[tag=!titan_dead,tag=!titan_fight] ~~~ event entity @e[family=tone_titan,r=8,c=1] set_action_9",
+            "/execute @s[tag=!titan_dead,tag=!titan_fight] ~~~ playsound tiantu_exit_cabin @a[r=12]",
+            "/inputpermission set @s[tag=!titan_dead,tag=!titan_fight] camera disabled",
+            "/inputpermission set @s[tag=!titan_dead,tag=!titan_fight] movement disabled",
+            "/event entity @s[tag=!titan_dead,tag=!titan_fight] set_action_125",
+            "/tag @s[tag=!titan_dead,tag=!titan_fight] add exit_cabin",
+            "/tag @s remove titan_dead",
+            "/tag @s remove is_tone",
+            "/tag @s[tag=titan_fight] add fight_leave",
+            "/execute @s[tag=titan_fight,tag=!terminate] ~~~ event entity @e[type=coldsink:tone_titan,r=8,c=1] summon_ride_tool"
+          ]
+        },
+        "northstar": {
+          "animations": [ "pilot_drive_titan" ],
+          "transitions": [
+            {
+              "default": "!q.is_riding"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add is_northstar",
+            "/scoreboard players set @s northstar_bullet 6",
+            "/scoreboard players set @s northstar_power 1",
+            "/event entity @s set_weapon_6",
+            "/execute @s[tag=!wy_game] ~~~ function titan/northstar/get_all_item",
+            "/event entity @s set_powering_0",
+            "/scoreboard players random @s random_score 1 11",
+            "/playsound northstar_entry_cabin_1 @s[scores={random_score=1},tag=!titan_fight]",
+            "/playsound northstar_entry_cabin_2 @s[scores={random_score=2},tag=!titan_fight]",
+            "/playsound northstar_entry_cabin_3 @s[scores={random_score=3},tag=!titan_fight]",
+            "/playsound northstar_entry_cabin_4 @s[scores={random_score=4},tag=!titan_fight]",
+            "/playsound northstar_entry_cabin_5 @s[scores={random_score=5},tag=!titan_fight]",
+            "/playsound northstar_entry_cabin_6 @s[scores={random_score=6},tag=!titan_fight]",
+            "/playsound northstar_entry_cabin_7 @s[scores={random_score=7},tag=!titan_fight]",
+            "/playsound northstar_entry_cabin_8 @s[scores={random_score=8},tag=!titan_fight]",
+            "/playsound northstar_entry_cabin_9 @s[scores={random_score=9},tag=!titan_fight]",
+            "/playsound northstar_entry_cabin_10 @s[scores={random_score=10},tag=!titan_fight]",
+            "/playsound northstar_entry_cabin_11 @s[scores={random_score=11},tag=!titan_fight]",
+            "/title @s[tag=fight_leave,tag=!terminate] actionbar §l§c该模式不可离机",
+            "/tag @s remove fight_leave"
+          ],
+          "on_exit": [
+            "/camera @s[tag=!titan_dead,tag=!titan_fight] fade time 0 0.5 0.3 color 0 0 0",
+            "/execute @s[tag=!titan_dead,tag=!titan_fight] ~~~ execute @e[family=northstar_titan,c=1] ~~~ camera @p set minecraft:free pos ^^5^8 facing @e[family=northstar_titan,c=1]",
+            "/execute @s[tag=!titan_dead,tag=!titan_fight] ~~~ event entity @e[family=northstar_titan,r=8,c=1] set_action_9",
+            "/execute @s[tag=!titan_dead,tag=!titan_fight] ~~~ playsound youxia_exit_cabin @a[r=12]",
+            "/inputpermission set @s[tag=!titan_dead,tag=!titan_fight] camera disabled",
+            "/inputpermission set @s[tag=!titan_dead,tag=!titan_fight] movement disabled",
+            "/event entity @s[tag=!titan_dead,tag=!titan_fight] set_action_135",
+            "/tag @s[tag=!titan_dead,tag=!titan_fight] add exit_cabin",
+            "/tag @s remove titan_dead",
+            "/tag @s remove northstar_fly",
+            "/tag @s remove is_northstar",
+            "/tag @s[tag=titan_fight] add fight_leave",
+            "/execute @s[tag=titan_fight,tag=!terminate] ~~~ event entity @e[type=coldsink:northstar_titan,r=8,c=1] summon_ride_tool",
+            "/stopsound @s northstar_powering.self"
+          ]
+        },
+        "ronin": {
+          "animations": [ "pilot_drive_titan" ],
+          "transitions": [
+            {
+              "default": "!q.is_riding"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add is_ronin",
+            "/scoreboard players set @s ronin_bullet 4",
+            "/event entity @s set_weapon_4",
+            "/event entity @s set_cooldown_0_0",
+            "/execute @s[tag=!wy_game] ~~~ function titan/ronin/get_all_item",
+            "/scoreboard players random @s random_score 1 11",
+            "/playsound ronin_entry_cabin_1 @s[scores={random_score=1},tag=!titan_fight]",
+            "/playsound ronin_entry_cabin_2 @s[scores={random_score=2},tag=!titan_fight]",
+            "/playsound ronin_entry_cabin_3 @s[scores={random_score=3},tag=!titan_fight]",
+            "/playsound ronin_entry_cabin_4 @s[scores={random_score=4},tag=!titan_fight]",
+            "/playsound ronin_entry_cabin_5 @s[scores={random_score=5},tag=!titan_fight]",
+            "/playsound ronin_entry_cabin_6 @s[scores={random_score=6},tag=!titan_fight]",
+            "/playsound ronin_entry_cabin_7 @s[scores={random_score=7},tag=!titan_fight]",
+            "/playsound ronin_entry_cabin_8 @s[scores={random_score=8},tag=!titan_fight]",
+            "/playsound ronin_entry_cabin_9 @s[scores={random_score=9},tag=!titan_fight]",
+            "/playsound ronin_entry_cabin_10 @s[scores={random_score=10},tag=!titan_fight]",
+            "/playsound ronin_entry_cabin_11 @s[scores={random_score=11},tag=!titan_fight]",
+            "/title @s[tag=fight_leave,tag=!terminate] actionbar §l§c该模式不可离机",
+            "/tag @s remove fight_leave"
+          ],
+          "on_exit": [
+            "/camera @s[tag=!titan_dead,tag=!titan_fight] fade time 0 0.5 0.3 color 0 0 0",
+            "/execute @s[tag=!titan_dead,tag=!titan_fight] ~~~ execute @e[family=ronin_titan,c=1] ~~~ camera @p set minecraft:free pos ^^5^8 facing @e[family=ronin_titan,c=1]",
+            "/execute @s[tag=!titan_dead,tag=!titan_fight] ~~~ event entity @e[family=ronin_titan,r=8,c=1] set_action_9",
+            "/execute @s[tag=!titan_dead,tag=!titan_fight] ~~~ playsound youxia_exit_cabin @a[r=12]",
+            "/inputpermission set @s[tag=!titan_dead,tag=!titan_fight] camera disabled",
+            "/inputpermission set @s[tag=!titan_dead,tag=!titan_fight] movement disabled",
+            "/event entity @s[tag=!titan_dead,tag=!titan_fight] set_action_145",
+            "/tag @s[tag=!titan_dead,tag=!titan_fight] add exit_cabin",
+            "/tag @s remove titan_dead",
+            "/tag @s remove ronin_phase",
+            "/tag @s remove is_ronin",
+            "/tag @s[tag=titan_fight] add fight_leave",
+            "/execute @s[tag=titan_fight,tag=!terminate] ~~~ event entity @e[type=coldsink:ronin_titan,r=8,c=1] summon_ride_tool"
+          ]
+        },
+        "scorch": {
+          "animations": [ "scorch_energy", "pilot_drive_titan" ],
+          "transitions": [
+            {
+              "default": "!q.is_riding"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add is_scorch",
+            "/scoreboard players set @s scorch_bullet 1",
+            "/event entity @s set_weapon_1",
+            "/execute @s[tag=!wy_game] ~~~ function titan/scorch/get_all_item",
+            "/scoreboard players random @s random_score 1 11",
+            "/playsound scorch_entry_cabin_1 @s[scores={random_score=1},tag=!titan_fight]",
+            "/playsound scorch_entry_cabin_2 @s[scores={random_score=2},tag=!titan_fight]",
+            "/playsound scorch_entry_cabin_3 @s[scores={random_score=3},tag=!titan_fight]",
+            "/playsound scorch_entry_cabin_4 @s[scores={random_score=4},tag=!titan_fight]",
+            "/playsound scorch_entry_cabin_5 @s[scores={random_score=5},tag=!titan_fight]",
+            "/playsound scorch_entry_cabin_6 @s[scores={random_score=6},tag=!titan_fight]",
+            "/playsound scorch_entry_cabin_7 @s[scores={random_score=7},tag=!titan_fight]",
+            "/playsound scorch_entry_cabin_8 @s[scores={random_score=8},tag=!titan_fight]",
+            "/playsound scorch_entry_cabin_9 @s[scores={random_score=9},tag=!titan_fight]",
+            "/playsound scorch_entry_cabin_10 @s[scores={random_score=10},tag=!titan_fight]",
+            "/playsound scorch_entry_cabin_11 @s[scores={random_score=11},tag=!titan_fight]",
+            "/title @s[tag=fight_leave,tag=!terminate] actionbar §l§c该模式不可离机",
+            "/tag @s remove fight_leave"
+          ],
+          "on_exit": [
+            "/camera @s[tag=!titan_dead,tag=!titan_fight] fade time 0 0.5 0.3 color 0 0 0",
+            "/execute @s[tag=!titan_dead,tag=!titan_fight] ~~~ execute @e[family=scorch_titan,c=1] ~~~ camera @p set minecraft:free pos ^^5^8 facing @e[family=scorch_titan,c=1]",
+            "/execute @s[tag=!titan_dead,tag=!titan_fight] ~~~ event entity @e[family=scorch_titan,r=8,c=1] set_action_9",
+            "/execute @s[tag=!titan_dead,tag=!titan_fight] ~~~ playsound juyao_exit_cabin @a[r=12]",
+            "/inputpermission set @s[tag=!titan_dead,tag=!titan_fight] camera disabled",
+            "/inputpermission set @s[tag=!titan_dead,tag=!titan_fight] movement disabled",
+            "/event entity @s[tag=!titan_dead,tag=!titan_fight] set_action_155",
+            "/tag @s[tag=!titan_dead,tag=!titan_fight] add exit_cabin",
+            "/tag @s remove titan_dead",
+            "/tag @s remove is_scorch",
+            "/tag @s[tag=titan_fight] add fight_leave",
+            "/execute @s[tag=titan_fight,tag=!terminate] ~~~ event entity @e[type=coldsink:scorch_titan,r=8,c=1] summon_ride_tool"
+          ]
+        },
+        "legion": {
+          "animations": [ "pilot_drive_titan" ],
+          "transitions": [
+            {
+              "default": "!q.is_riding"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add is_legion",
+            "/tag @s remove legion_ready",
+            "/scoreboard players set @s legion_bullet 100",
+            "/event entity @s set_weapon_100",
+            "/execute @s[tag=!wy_game] ~~~ function titan/legion/get_all_item",
+            "/event entity @s set_powering_0",
+            "/scoreboard players random @s random_score 1 11",
+            "/playsound legion_entry_cabin_1 @s[scores={random_score=1},tag=!titan_fight]",
+            "/playsound legion_entry_cabin_2 @s[scores={random_score=2},tag=!titan_fight]",
+            "/playsound legion_entry_cabin_3 @s[scores={random_score=3},tag=!titan_fight]",
+            "/playsound legion_entry_cabin_4 @s[scores={random_score=4},tag=!titan_fight]",
+            "/playsound legion_entry_cabin_5 @s[scores={random_score=5},tag=!titan_fight]",
+            "/playsound legion_entry_cabin_6 @s[scores={random_score=6},tag=!titan_fight]",
+            "/playsound legion_entry_cabin_7 @s[scores={random_score=7},tag=!titan_fight]",
+            "/playsound legion_entry_cabin_8 @s[scores={random_score=8},tag=!titan_fight]",
+            "/playsound legion_entry_cabin_9 @s[scores={random_score=9},tag=!titan_fight]",
+            "/playsound legion_entry_cabin_10 @s[scores={random_score=10},tag=!titan_fight]",
+            "/playsound legion_entry_cabin_11 @s[scores={random_score=11},tag=!titan_fight]",
+            "/title @s[tag=fight_leave,tag=!terminate] actionbar §l§c该模式不可离机",
+            "/tag @s remove fight_leave"
+          ],
+          "on_exit": [
+            "/camera @s[tag=!titan_dead,tag=!titan_fight] fade time 0 0.5 0.3 color 0 0 0",
+            "/execute @s[tag=!titan_dead,tag=!titan_fight] ~~~ execute @e[family=legion_titan,c=1] ~~~ camera @p set minecraft:free pos ^^5^8 facing @e[family=legion_titan,c=1]",
+            "/execute @s[tag=!titan_dead,tag=!titan_fight] ~~~ event entity @e[family=legion_titan,r=8,c=1] set_action_9",
+            "/execute @s[tag=!titan_dead,tag=!titan_fight] ~~~ playsound juyao_exit_cabin @a[r=12]",
+            "/inputpermission set @s[tag=!titan_dead,tag=!titan_fight] camera disabled",
+            "/inputpermission set @s[tag=!titan_dead,tag=!titan_fight] movement disabled",
+            "/event entity @s[tag=!titan_dead,tag=!titan_fight] set_action_165",
+            "/tag @s[tag=!titan_dead,tag=!titan_fight] add exit_cabin",
+            "/tag @s remove titan_dead",
+            "/tag @s remove is_legion",
+            "/tag @s remove legion_range_mode",
+            "/tag @s[tag=titan_fight] add fight_leave",
+            "/execute @s[tag=titan_fight,tag=!terminate] ~~~ event entity @e[type=coldsink:legion_titan,r=8,c=1] summon_ride_tool"
+          ]
+        },
+        "monarch": {
+          "animations": [ "monarch_skill_1_final_cooldown", "pilot_drive_titan" ],
+          "transitions": [
+            {
+              "default": "!q.is_riding"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add is_monarch",
+            "/scoreboard players set @s monarch_bullet 40",
+            "/event entity @s set_weapon_40",
+            "/execute @s[tag=!wy_game] ~~~ function titan/monarch/get_all_item",
+            "/tag @s add monarch_entry_self",
+            "/execute @e[type=coldsink:monarch_titan,c=1] ~~~ execute @s[tag=monarch_core_11] ~~~ tag @p[tag=monarch_entry_self] add monarch_core_11",
+            "/execute @e[type=coldsink:monarch_titan,c=1] ~~~ execute @s[tag=monarch_core_11] ~~~ scoreboard players set @p[tag=monarch_entry_self] monarch_bullet 50",
+            "/execute @e[type=coldsink:monarch_titan,c=1] ~~~ execute @s[tag=monarch_core_11] ~~~ event entity @p[tag=monarch_entry_self] set_weapon_50",
+            "/execute @e[type=coldsink:monarch_titan,c=1] ~~~ execute @s[tag=monarch_core_12] ~~~ tag @p[tag=monarch_entry_self] add monarch_core_12",
+            "/execute @e[type=coldsink:monarch_titan,c=1] ~~~ execute @s[tag=monarch_core_13] ~~~ tag @p[tag=monarch_entry_self] add monarch_core_13",
+            "/execute @e[type=coldsink:monarch_titan,c=1] ~~~ execute @s[tag=monarch_core_21] ~~~ tag @p[tag=monarch_entry_self] add monarch_core_21",
+            "/execute @e[type=coldsink:monarch_titan,c=1] ~~~ execute @s[tag=monarch_core_22] ~~~ tag @p[tag=monarch_entry_self] add monarch_core_22",
+            "/execute @e[type=coldsink:monarch_titan,c=1] ~~~ execute @s[tag=monarch_core_23] ~~~ tag @p[tag=monarch_entry_self] add monarch_core_23",
+            "/execute @e[type=coldsink:monarch_titan,c=1] ~~~ execute @s[tag=monarch_core_31] ~~~ tag @p[tag=monarch_entry_self] add monarch_core_31",
+            "/execute @e[type=coldsink:monarch_titan,c=1] ~~~ execute @s[tag=monarch_core_31] ~~~ event entity @p[tag=monarch_entry_self] set_missile_12",
+            "/execute @e[type=coldsink:monarch_titan,c=1] ~~~ execute @s[tag=monarch_core_31] ~~~ replaceitem entity @p[tag=monarch_entry_self,tag=!wy_game] slot.hotbar 8 coldsink:monarch_skill_1_final 1 0 {\"item_lock\":{\"mode\":\"lock_in_slot\"}}",
+            "/execute @e[type=coldsink:monarch_titan,c=1] ~~~ execute @s[tag=monarch_core_32] ~~~ tag @p[tag=monarch_entry_self] add monarch_core_32",
+            "/execute @e[type=coldsink:monarch_titan,c=1] ~~~ execute @s[tag=monarch_core_32] ~~~ event entity @p[tag=monarch_entry_self] add_titan_sheared",
+            "/execute @e[type=coldsink:monarch_titan,c=1] ~~~ execute @s[tag=monarch_core_33] ~~~ tag @p[tag=monarch_entry_self] add monarch_core_33",
+            "/tag @s remove monarch_entry_self",
+            "/scoreboard players random @s random_score 1 11",
+            "/playsound monarch_entry_cabin_1 @s[scores={random_score=1},tag=!titan_fight]",
+            "/playsound monarch_entry_cabin_2 @s[scores={random_score=2},tag=!titan_fight]",
+            "/playsound monarch_entry_cabin_3 @s[scores={random_score=3},tag=!titan_fight]",
+            "/playsound monarch_entry_cabin_4 @s[scores={random_score=4},tag=!titan_fight]",
+            "/playsound monarch_entry_cabin_5 @s[scores={random_score=5},tag=!titan_fight]",
+            "/playsound monarch_entry_cabin_6 @s[scores={random_score=6},tag=!titan_fight]",
+            "/playsound monarch_entry_cabin_7 @s[scores={random_score=7},tag=!titan_fight]",
+            "/playsound monarch_entry_cabin_8 @s[scores={random_score=8},tag=!titan_fight]",
+            "/playsound monarch_entry_cabin_9 @s[scores={random_score=9},tag=!titan_fight]",
+            "/playsound monarch_entry_cabin_10 @s[scores={random_score=10},tag=!titan_fight]",
+            "/playsound monarch_entry_cabin_11 @s[scores={random_score=11},tag=!titan_fight]",
+            "/title @s[tag=fight_leave,tag=!terminate] actionbar §l§c该模式不可离机",
+            "/tag @s remove fight_leave"
+          ],
+          "on_exit": [
+            "/camera @s[tag=!titan_dead,tag=!titan_fight] fade time 0 0.5 0.3 color 0 0 0",
+            "/execute @s[tag=!titan_dead,tag=!titan_fight] ~~~ execute @e[family=monarch_titan,c=1] ~~~ camera @p set minecraft:free pos ^^5^8 facing @e[family=monarch_titan,c=1]",
+            "/execute @s[tag=!titan_dead,tag=!titan_fight] ~~~ event entity @e[family=monarch_titan,r=8,c=1] set_action_9",
+            "/execute @s[tag=!titan_dead,tag=!titan_fight] ~~~ playsound tiantu_exit_cabin @a[r=12]",
+            "/inputpermission set @s[tag=!titan_dead,tag=!titan_fight] camera disabled",
+            "/inputpermission set @s[tag=!titan_dead,tag=!titan_fight] movement disabled",
+            "/event entity @s[tag=!titan_dead,tag=!titan_fight] set_action_175",
+            "/tag @s[tag=!titan_dead,tag=!titan_fight] add exit_cabin",
+            "/tag @s remove titan_dead",
+            "/tag @s remove is_monarch",
+            "/tag @s remove monarch_core_11",
+            "/tag @s remove monarch_core_12",
+            "/tag @s remove monarch_core_13",
+            "/tag @s remove monarch_core_21",
+            "/tag @s remove monarch_core_22",
+            "/tag @s remove monarch_core_23",
+            "/tag @s remove monarch_core_31",
+            "/tag @s remove monarch_core_32",
+            "/tag @s remove monarch_core_33",
+            "/event entity @s clear_titan_sheared",
+            "/tag @s[tag=titan_fight] add fight_leave",
+            "/execute @s[tag=titan_fight,tag=!terminate] ~~~ event entity @e[type=coldsink:monarch_titan,r=8,c=1] summon_ride_tool",
+            "/stopsound @s monarch_skill_0_powering.self"
+          ]
+        }
+      }
+    }
+  }
+}

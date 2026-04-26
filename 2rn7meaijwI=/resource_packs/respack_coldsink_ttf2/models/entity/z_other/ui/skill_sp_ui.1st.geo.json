@@ -1,0 +1,117 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.skill_sp_ui.1st",
+				"texture_width": 8,
+				"texture_height": 8,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "skillBox",
+					"pivot": [-7, 23.9, 9.7],
+					"rotation": [0, -90, 0]
+				},
+				{
+					"name": "skill_sp",
+					"parent": "skillBox",
+					"pivot": [-5.705, 22.8925, 8.44],
+					"cubes": [
+						{
+							"origin": [-7.00845, 23.2898, 7.58028],
+							"size": [-0.05055, 0.5, 0.8],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [0, 1], "uv_size": [1.25, 0.75]}
+							}
+						}
+					]
+				},
+				{
+					"name": "cooldown_sp",
+					"parent": "skill_sp",
+					"pivot": [-7.04375, 15.16, 7.98028],
+					"cubes": [
+						{
+							"origin": [-7.01847, 15.2898, 7.58028],
+							"size": [-0.05055, 0.5, 0.8],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [2, 0], "uv_size": [0.5, 0.5]},
+								"east": {"uv": [0, 0], "uv_size": [1.25, 0.75]},
+								"south": {"uv": [1, 2], "uv_size": [0.5, 0.5]},
+								"west": {"uv": [0, 1], "uv_size": [1, 0.5]},
+								"up": {"uv": [1, 0], "uv_size": [0.5, 1]},
+								"down": {"uv": [1, 2], "uv_size": [0.5, -1]}
+							}
+						}
+					]
+				},
+				{
+					"name": "charge_sp_2",
+					"parent": "skill_sp",
+					"pivot": [-7.04375, 15.5398, 7.48028],
+					"cubes": [
+						{
+							"origin": [-7.01847, 15.3, 7.5],
+							"size": [-0.05055, 0.5, 0],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [7.75, 0], "uv_size": [0.25, 2.75]}
+							}
+						}
+					]
+				},
+				{
+					"name": "charge_sp_3",
+					"parent": "skill_sp",
+					"pivot": [-7.04375, 15.5398, 7.48028],
+					"cubes": [
+						{
+							"origin": [-7.01847, 15.3, 7.5],
+							"size": [-0.05055, 0.5, 0],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [7.75, 0], "uv_size": [0.25, 4.25]}
+							}
+						}
+					]
+				},
+				{
+					"name": "charge_sp_4",
+					"parent": "skill_sp",
+					"pivot": [-7.04375, 15.5398, 7.48028],
+					"cubes": [
+						{
+							"origin": [-7.01847, 15.3, 7.5],
+							"size": [-0.05055, 0.5, 0],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [7.75, 0], "uv_size": [0.25, 5.75]}
+							}
+						}
+					]
+				},
+				{
+					"name": "charge_sp_5",
+					"parent": "skill_sp",
+					"pivot": [-7.04375, 15.5398, 7.48028],
+					"cubes": [
+						{
+							"origin": [-7.01847, 15.3, 7.5],
+							"size": [-0.05055, 0.5, 0],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [7.75, 0], "uv_size": [0.25, 7.25]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

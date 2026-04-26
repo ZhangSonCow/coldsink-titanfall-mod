@@ -1,0 +1,16 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.skill_3_ui_key.1st": {
+      "geometry": "geometry.skill_3_ui_key.1st",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "texture.skill_ui_key" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

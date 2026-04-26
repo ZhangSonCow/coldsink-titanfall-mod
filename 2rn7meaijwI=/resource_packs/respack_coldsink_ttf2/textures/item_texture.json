@@ -1,0 +1,643 @@
+{
+  "resource_pack_name": "coldsink",
+  "texture_name": "atlas.items",
+  "texture_data": {
+
+    "barrier": {
+      "textures": "textures/items/barrier"
+    },
+    
+    // other
+
+    "no_battery": {
+      "textures": "textures/items/z_other/battery/no_battery"
+    },
+    "battery_ordinary": {
+      "textures": "textures/items/z_other/battery/battery_ordinary"
+    },
+    "battery_powerful": {
+      "textures": "textures/items/z_other/battery/battery_powerful"
+    },
+    "battery_overload": {
+      "textures": "textures/items/z_other/battery/battery_overload"
+    },
+    "battery_ordinary_item": {
+      "textures": "textures/items/z_other/battery/battery_ordinary_item"
+    },
+    "battery_powerful_item": {
+      "textures": "textures/items/z_other/battery/battery_powerful_item"
+    },
+    "battery_overload_item": {
+      "textures": "textures/items/z_other/battery/battery_overload_item"
+    },
+    "pilot_icon_blue": {
+      "textures": "textures/items/pilot/pilot_icon_blue"
+    },
+    "pilot_icon_red": {
+      "textures": "textures/items/pilot/pilot_icon_red"
+    },
+
+    // team
+
+    "setting_choose_team": {
+      "textures": "textures/items/z_other/setting/team/setting_choose_team"
+    },
+    "team_blue_icon": {
+      "textures": "textures/items/z_other/setting/team/team_blue_icon"
+    },
+    "team_red_icon": {
+      "textures": "textures/items/z_other/setting/team/team_red_icon"
+    },
+
+    // pilot
+
+    "pilot_helmet": {
+      "textures": "textures/items/pilot/pilot_helmet"
+    },
+    "pilot_entry_titan": {
+      "textures": "textures/items/pilot/pilot_entry_titan"
+    },
+    "pilot_melee": {
+      "textures": "textures/items/pilot/pilot_melee"
+    },
+    "change_icon": {
+      "textures": "textures/items/pilot/change_icon"
+    },
+    "setting": {
+      "textures": "textures/items/setting"
+    },
+    "weapon_r201": {
+      "textures": "textures/items/pilot/weapon/weapon_r201"
+    },
+    "weapon_charge": {
+      "textures": "textures/items/pilot/weapon/weapon_charge"
+    },
+    
+    // titan
+
+    "titan_eject": {
+      "textures": "textures/items/titan/titan_eject"
+    },
+    "elect_smoke": {
+      "textures": "textures/items/titan/elect_smoke"
+    },
+    "ion_call_item": {
+      "textures": "textures/items/titan/ion/ion_icon"
+    },
+    "ion_titan_icon": {
+      "textures": "textures/items/titan/ion/ion_icon"
+    },
+    "ion_titan_icon_blue": {
+      "textures": "textures/items/titan/ion/ion_icon_blue"
+    },
+    "ion_titan_icon_red": {
+      "textures": "textures/items/titan/ion/ion_icon_red"
+    },
+    "ion_weapon": {
+      "textures": "textures/items/titan/ion/ion_weapon"
+    },
+    "ion_melee": {
+      "textures": "textures/items/titan/fist_melee"
+    },
+    "ion_skill_0": {
+      "textures": "textures/items/titan/ion/ion_skill_0"
+    },
+    "ion_skill_1": {
+      "textures": "textures/items/titan/ion/ion_skill_1"
+    },
+    "ion_skill_2": {
+      "textures": "textures/items/titan/ion/ion_skill_2"
+    },
+    "ion_skill_3": {
+      "textures": "textures/items/titan/ion/ion_skill_3"
+    },
+
+    "tone_call_item": {
+      "textures": "textures/items/titan/tone/tone_icon"
+    },
+    "tone_titan_icon": {
+      "textures": "textures/items/titan/tone/tone_icon"
+    },
+    "tone_titan_icon_blue": {
+      "textures": "textures/items/titan/tone/tone_icon_blue"
+    },
+    "tone_titan_icon_red": {
+      "textures": "textures/items/titan/tone/tone_icon_red"
+    },
+    "tone_weapon": {
+      "textures": "textures/items/titan/tone/tone_weapon"
+    },
+    "tone_melee": {
+      "textures": "textures/items/titan/fist_melee"
+    },
+    "tone_skill_0": {
+      "textures": "textures/items/titan/tone/tone_skill_0"
+    },
+    "tone_skill_1": {
+      "textures": "textures/items/titan/tone/tone_skill_1"
+    },
+    "tone_skill_2": {
+      "textures": "textures/items/titan/tone/tone_skill_2"
+    },
+    "tone_skill_3": {
+      "textures": "textures/items/titan/tone/tone_skill_3"
+    },
+
+    "northstar_call_item": {
+      "textures": "textures/items/titan/northstar/northstar_icon"
+    },
+    "northstar_titan_icon": {
+      "textures": "textures/items/titan/northstar/northstar_icon"
+    },
+    "northstar_titan_icon_blue": {
+      "textures": "textures/items/titan/northstar/northstar_icon_blue"
+    },
+    "northstar_titan_icon_red": {
+      "textures": "textures/items/titan/northstar/northstar_icon_red"
+    },
+    "northstar_weapon": {
+      "textures": "textures/items/titan/northstar/northstar_weapon"
+    },
+    "northstar_melee": {
+      "textures": "textures/items/titan/fist_melee"
+    },
+    "northstar_skill_0": {
+      "textures": "textures/items/titan/northstar/northstar_skill_0"
+    },
+    "northstar_skill_1": {
+      "textures": "textures/items/titan/northstar/northstar_skill_1"
+    },
+    "northstar_skill_2": {
+      "textures": "textures/items/titan/northstar/northstar_skill_2"
+    },
+    "northstar_skill_3": {
+      "textures": "textures/items/titan/northstar/northstar_skill_3"
+    },
+
+    "ronin_call_item": {
+      "textures": "textures/items/titan/ronin/ronin_icon"
+    },
+    "ronin_titan_icon": {
+      "textures": "textures/items/titan/ronin/ronin_icon"
+    },
+    "ronin_titan_icon_blue": {
+      "textures": "textures/items/titan/ronin/ronin_icon_blue"
+    },
+    "ronin_titan_icon_red": {
+      "textures": "textures/items/titan/ronin/ronin_icon_red"
+    },
+    "ronin_weapon": {
+      "textures": "textures/items/titan/ronin/ronin_weapon"
+    },
+    "ronin_melee": {
+      "textures": "textures/items/titan/ronin/ronin_melee"
+    },
+    "ronin_skill_0": {
+      "textures": "textures/items/titan/ronin/ronin_skill_0"
+    },
+    "ronin_skill_1": {
+      "textures": "textures/items/titan/ronin/ronin_skill_1"
+    },
+    "ronin_skill_2": {
+      "textures": "textures/items/titan/ronin/ronin_skill_2"
+    },
+    "ronin_skill_3": {
+      "textures": "textures/items/titan/ronin/ronin_skill_3"
+    },
+    
+    "scorch_call_item": {
+      "textures": "textures/items/titan/scorch/scorch_icon"
+    },
+    "scorch_titan_icon": {
+      "textures": "textures/items/titan/scorch/scorch_icon"
+    },
+    "scorch_titan_icon_blue": {
+      "textures": "textures/items/titan/scorch/scorch_icon_blue"
+    },
+    "scorch_titan_icon_red": {
+      "textures": "textures/items/titan/scorch/scorch_icon_red"
+    },
+    "scorch_weapon": {
+      "textures": "textures/items/titan/scorch/scorch_weapon"
+    },
+    "scorch_melee": {
+      "textures": "textures/items/titan/fist_melee"
+    },
+    "scorch_skill_0": {
+      "textures": "textures/items/titan/scorch/scorch_skill_0"
+    },
+    "scorch_skill_1": {
+      "textures": "textures/items/titan/scorch/scorch_skill_1"
+    },
+    "scorch_skill_2": {
+      "textures": "textures/items/titan/scorch/scorch_skill_2"
+    },
+    "scorch_skill_3": {
+      "textures": "textures/items/titan/scorch/scorch_skill_3"
+    },
+    
+    "legion_call_item": {
+      "textures": "textures/items/titan/legion/legion_icon"
+    },
+    "legion_titan_icon": {
+      "textures": "textures/items/titan/legion/legion_icon"
+    },
+    "legion_titan_icon_blue": {
+      "textures": "textures/items/titan/legion/legion_icon_blue"
+    },
+    "legion_titan_icon_red": {
+      "textures": "textures/items/titan/legion/legion_icon_red"
+    },
+    "legion_weapon": {
+      "textures": "textures/items/titan/legion/legion_weapon"
+    },
+    "legion_melee": {
+      "textures": "textures/items/titan/fist_melee"
+    },
+    "legion_skill_0": {
+      "textures": "textures/items/titan/legion/legion_skill_0"
+    },
+    "legion_skill_1": {
+      "textures": "textures/items/titan/legion/legion_skill_1"
+    },
+    "legion_skill_2": {
+      "textures": "textures/items/titan/legion/legion_skill_2"
+    },
+    "legion_skill_3": {
+      "textures": "textures/items/titan/legion/legion_skill_3"
+    },
+    
+    "monarch_call_item": {
+      "textures": "textures/items/titan/monarch/monarch_icon"
+    },
+    "monarch_titan_icon": {
+      "textures": "textures/items/titan/monarch/monarch_icon"
+    },
+    "monarch_titan_icon_blue": {
+      "textures": "textures/items/titan/monarch/monarch_icon_blue"
+    },
+    "monarch_titan_icon_red": {
+      "textures": "textures/items/titan/monarch/monarch_icon_red"
+    },
+    "monarch_weapon": {
+      "textures": "textures/items/titan/monarch/monarch_weapon"
+    },
+    "monarch_melee": {
+      "textures": "textures/items/titan/fist_melee"
+    },
+    "monarch_skill_0": {
+      "textures": "textures/items/titan/monarch/monarch_skill_0"
+    },
+    "monarch_skill_1": {
+      "textures": "textures/items/titan/monarch/monarch_skill_1"
+    },
+    "monarch_skill_2": {
+      "textures": "textures/items/titan/monarch/monarch_skill_2"
+    },
+    "monarch_skill_3": {
+      "textures": "textures/items/titan/monarch/monarch_skill_3"
+    },
+    "monarch_core_11": {
+      "textures": "textures/items/titan/monarch/monarch_core_11"
+    },
+    "monarch_core_12": {
+      "textures": "textures/items/titan/monarch/monarch_core_12"
+    },
+    "monarch_core_13": {
+      "textures": "textures/items/titan/monarch/monarch_core_13"
+    },
+    "monarch_core_21": {
+      "textures": "textures/items/titan/monarch/monarch_core_21"
+    },
+    "monarch_core_22": {
+      "textures": "textures/items/titan/monarch/monarch_core_22"
+    },
+    "monarch_core_23": {
+      "textures": "textures/items/titan/monarch/monarch_core_23"
+    },
+    "monarch_core_31": {
+      "textures": "textures/items/titan/monarch/monarch_core_31"
+    },
+    "monarch_core_32": {
+      "textures": "textures/items/titan/monarch/monarch_core_32"
+    },
+    "monarch_core_33": {
+      "textures": "textures/items/titan/monarch/monarch_core_33"
+    },
+
+    // titan equip
+    
+    "titan_com_equip_1": {
+      "textures": "textures/items/titan/z_other/equip/titan_com_equip_1"
+    },
+    "titan_com_equip_2": {
+      "textures": "textures/items/titan/z_other/equip/titan_com_equip_2"
+    },
+    "titan_com_equip_3": {
+      "textures": "textures/items/titan/z_other/equip/titan_com_equip_3"
+    },
+    "titan_com_equip_4": {
+      "textures": "textures/items/titan/z_other/equip/titan_com_equip_4"
+    },
+    "titan_com_equip_5": {
+      "textures": "textures/items/titan/z_other/equip/titan_com_equip_5"
+    },
+    "titan_com_equip_6": {
+      "textures": "textures/items/titan/z_other/equip/titan_com_equip_6"
+    },
+    "ion_equip_1": {
+      "textures": "textures/items/titan/z_other/equip/ion_equip_1"
+    },
+    "ion_equip_2": {
+      "textures": "textures/items/titan/z_other/equip/ion_equip_2"
+    },
+    "ion_equip_3": {
+      "textures": "textures/items/titan/z_other/equip/ion_equip_3"
+    },
+    "ion_equip_4": {
+      "textures": "textures/items/titan/z_other/equip/ion_equip_4"
+    },
+    "ion_equip_5": {
+      "textures": "textures/items/titan/z_other/equip/ion_equip_5"
+    },
+    "tone_equip_1": {
+      "textures": "textures/items/titan/z_other/equip/tone_equip_1"
+    },
+    "tone_equip_2": {
+      "textures": "textures/items/titan/z_other/equip/tone_equip_2"
+    },
+    "tone_equip_3": {
+      "textures": "textures/items/titan/z_other/equip/tone_equip_3"
+    },
+    "tone_equip_4": {
+      "textures": "textures/items/titan/z_other/equip/tone_equip_4"
+    },
+    "tone_equip_5": {
+      "textures": "textures/items/titan/z_other/equip/tone_equip_5"
+    },
+    "northstar_equip_1": {
+      "textures": "textures/items/titan/z_other/equip/northstar_equip_1"
+    },
+    "northstar_equip_2": {
+      "textures": "textures/items/titan/z_other/equip/northstar_equip_2"
+    },
+    "northstar_equip_3": {
+      "textures": "textures/items/titan/z_other/equip/northstar_equip_3"
+    },
+    "northstar_equip_4": {
+      "textures": "textures/items/titan/z_other/equip/northstar_equip_4"
+    },
+    "northstar_equip_5": {
+      "textures": "textures/items/titan/z_other/equip/northstar_equip_5"
+    },
+    "ronin_equip_1": {
+      "textures": "textures/items/titan/z_other/equip/ronin_equip_1"
+    },
+    "ronin_equip_2": {
+      "textures": "textures/items/titan/z_other/equip/ronin_equip_2"
+    },
+    "ronin_equip_3": {
+      "textures": "textures/items/titan/z_other/equip/ronin_equip_3"
+    },
+    "ronin_equip_4": {
+      "textures": "textures/items/titan/z_other/equip/ronin_equip_4"
+    },
+    "ronin_equip_5": {
+      "textures": "textures/items/titan/z_other/equip/ronin_equip_5"
+    },
+    "scorch_equip_1": {
+      "textures": "textures/items/titan/z_other/equip/scorch_equip_1"
+    },
+    "scorch_equip_2": {
+      "textures": "textures/items/titan/z_other/equip/scorch_equip_2"
+    },
+    "scorch_equip_3": {
+      "textures": "textures/items/titan/z_other/equip/scorch_equip_3"
+    },
+    "scorch_equip_4": {
+      "textures": "textures/items/titan/z_other/equip/scorch_equip_4"
+    },
+    "scorch_equip_5": {
+      "textures": "textures/items/titan/z_other/equip/scorch_equip_5"
+    },
+    "legion_equip_1": {
+      "textures": "textures/items/titan/z_other/equip/legion_equip_1"
+    },
+    "legion_equip_2": {
+      "textures": "textures/items/titan/z_other/equip/legion_equip_2"
+    },
+    "legion_equip_3": {
+      "textures": "textures/items/titan/z_other/equip/legion_equip_3"
+    },
+    "legion_equip_4": {
+      "textures": "textures/items/titan/z_other/equip/legion_equip_4"
+    },
+    "legion_equip_5": {
+      "textures": "textures/items/titan/z_other/equip/legion_equip_5"
+    },
+    "monarch_equip_1": {
+      "textures": "textures/items/titan/z_other/equip/monarch_equip_1"
+    },
+    "monarch_equip_2": {
+      "textures": "textures/items/titan/z_other/equip/monarch_equip_2"
+    },
+    "monarch_equip_3": {
+      "textures": "textures/items/titan/z_other/equip/monarch_equip_3"
+    },
+    "monarch_equip_4": {
+      "textures": "textures/items/titan/z_other/equip/monarch_equip_4"
+    },
+
+    // titan skin
+
+    "ion_skin_0": {
+      "textures": "textures/items/titan/z_other/skin/ion_skin_0"
+    },
+    "ion_skin_1": {
+      "textures": "textures/items/titan/z_other/skin/ion_skin_1"
+    },
+    "ion_skin_2": {
+      "textures": "textures/items/titan/z_other/skin/ion_skin_2"
+    },
+    "ion_skin_3": {
+      "textures": "textures/items/titan/z_other/skin/ion_skin_3"
+    },
+    "ion_skin_4": {
+      "textures": "textures/items/titan/z_other/skin/ion_skin_4"
+    },
+    "ion_skin_5": {
+      "textures": "textures/items/titan/z_other/skin/ion_skin_5"
+    },
+    "ion_skin_6": {
+      "textures": "textures/items/titan/z_other/skin/ion_skin_6"
+    },
+    "ion_skin_7": {
+      "textures": "textures/items/titan/z_other/skin/ion_skin_7"
+    },
+    "ion_skin_8": {
+      "textures": "textures/items/titan/z_other/skin/ion_skin_8"
+    },
+    "tone_skin_0": {
+      "textures": "textures/items/titan/z_other/skin/tone_skin_0"
+    },
+    "tone_skin_1": {
+      "textures": "textures/items/titan/z_other/skin/tone_skin_1"
+    },
+    "tone_skin_2": {
+      "textures": "textures/items/titan/z_other/skin/tone_skin_2"
+    },
+    "tone_skin_3": {
+      "textures": "textures/items/titan/z_other/skin/tone_skin_3"
+    },
+    "tone_skin_4": {
+      "textures": "textures/items/titan/z_other/skin/tone_skin_4"
+    },
+    "tone_skin_5": {
+      "textures": "textures/items/titan/z_other/skin/tone_skin_5"
+    },
+    "tone_skin_6": {
+      "textures": "textures/items/titan/z_other/skin/tone_skin_6"
+    },
+    "tone_skin_7": {
+      "textures": "textures/items/titan/z_other/skin/tone_skin_7"
+    },
+    "tone_skin_8": {
+      "textures": "textures/items/titan/z_other/skin/tone_skin_8"
+    },
+    "northstar_skin_0": {
+      "textures": "textures/items/titan/z_other/skin/northstar_skin_0"
+    },
+    "northstar_skin_1": {
+      "textures": "textures/items/titan/z_other/skin/northstar_skin_1"
+    },
+    "northstar_skin_2": {
+      "textures": "textures/items/titan/z_other/skin/northstar_skin_2"
+    },
+    "northstar_skin_3": {
+      "textures": "textures/items/titan/z_other/skin/northstar_skin_3"
+    },
+    "northstar_skin_4": {
+      "textures": "textures/items/titan/z_other/skin/northstar_skin_4"
+    },
+    "northstar_skin_5": {
+      "textures": "textures/items/titan/z_other/skin/northstar_skin_5"
+    },
+    "northstar_skin_6": {
+      "textures": "textures/items/titan/z_other/skin/northstar_skin_6"
+    },
+    "northstar_skin_7": {
+      "textures": "textures/items/titan/z_other/skin/northstar_skin_7"
+    },
+    "northstar_skin_8": {
+      "textures": "textures/items/titan/z_other/skin/northstar_skin_8"
+    },
+    "ronin_skin_0": {
+      "textures": "textures/items/titan/z_other/skin/ronin_skin_0"
+    },
+    "ronin_skin_1": {
+      "textures": "textures/items/titan/z_other/skin/ronin_skin_1"
+    },
+    "ronin_skin_2": {
+      "textures": "textures/items/titan/z_other/skin/ronin_skin_2"
+    },
+    "ronin_skin_3": {
+      "textures": "textures/items/titan/z_other/skin/ronin_skin_3"
+    },
+    "ronin_skin_4": {
+      "textures": "textures/items/titan/z_other/skin/ronin_skin_4"
+    },
+    "ronin_skin_5": {
+      "textures": "textures/items/titan/z_other/skin/ronin_skin_5"
+    },
+    "ronin_skin_6": {
+      "textures": "textures/items/titan/z_other/skin/ronin_skin_6"
+    },
+    "ronin_skin_7": {
+      "textures": "textures/items/titan/z_other/skin/ronin_skin_7"
+    },
+    "ronin_skin_8": {
+      "textures": "textures/items/titan/z_other/skin/ronin_skin_8"
+    },
+    "scorch_skin_0": {
+      "textures": "textures/items/titan/z_other/skin/scorch_skin_0"
+    },
+    "scorch_skin_1": {
+      "textures": "textures/items/titan/z_other/skin/scorch_skin_1"
+    },
+    "scorch_skin_2": {
+      "textures": "textures/items/titan/z_other/skin/scorch_skin_2"
+    },
+    "scorch_skin_3": {
+      "textures": "textures/items/titan/z_other/skin/scorch_skin_3"
+    },
+    "scorch_skin_4": {
+      "textures": "textures/items/titan/z_other/skin/scorch_skin_4"
+    },
+    "scorch_skin_5": {
+      "textures": "textures/items/titan/z_other/skin/scorch_skin_5"
+    },
+    "scorch_skin_6": {
+      "textures": "textures/items/titan/z_other/skin/scorch_skin_6"
+    },
+    "scorch_skin_7": {
+      "textures": "textures/items/titan/z_other/skin/scorch_skin_7"
+    },
+    "scorch_skin_8": {
+      "textures": "textures/items/titan/z_other/skin/scorch_skin_8"
+    },
+    "legion_skin_0": {
+      "textures": "textures/items/titan/z_other/skin/legion_skin_0"
+    },
+    "legion_skin_1": {
+      "textures": "textures/items/titan/z_other/skin/legion_skin_1"
+    },
+    "legion_skin_2": {
+      "textures": "textures/items/titan/z_other/skin/legion_skin_2"
+    },
+    "legion_skin_3": {
+      "textures": "textures/items/titan/z_other/skin/legion_skin_3"
+    },
+    "legion_skin_4": {
+      "textures": "textures/items/titan/z_other/skin/legion_skin_4"
+    },
+    "legion_skin_5": {
+      "textures": "textures/items/titan/z_other/skin/legion_skin_5"
+    },
+    "legion_skin_6": {
+      "textures": "textures/items/titan/z_other/skin/legion_skin_6"
+    },
+    "legion_skin_7": {
+      "textures": "textures/items/titan/z_other/skin/legion_skin_7"
+    },
+    "legion_skin_8": {
+      "textures": "textures/items/titan/z_other/skin/legion_skin_8"
+    },
+    "monarch_skin_0": {
+      "textures": "textures/items/titan/z_other/skin/monarch_skin_0"
+    },
+    "monarch_skin_1": {
+      "textures": "textures/items/titan/z_other/skin/monarch_skin_1"
+    },
+    "monarch_skin_2": {
+      "textures": "textures/items/titan/z_other/skin/monarch_skin_2"
+    },
+    "monarch_skin_3": {
+      "textures": "textures/items/titan/z_other/skin/monarch_skin_3"
+    },
+    "monarch_skin_4": {
+      "textures": "textures/items/titan/z_other/skin/monarch_skin_4"
+    },
+    "monarch_skin_5": {
+      "textures": "textures/items/titan/z_other/skin/monarch_skin_5"
+    },
+    "monarch_skin_6": {
+      "textures": "textures/items/titan/z_other/skin/monarch_skin_6"
+    },
+    "monarch_skin_7": {
+      "textures": "textures/items/titan/z_other/skin/monarch_skin_7"
+    },
+    "monarch_skin_8": {
+      "textures": "textures/items/titan/z_other/skin/monarch_skin_8"
+    }
+  }
+}

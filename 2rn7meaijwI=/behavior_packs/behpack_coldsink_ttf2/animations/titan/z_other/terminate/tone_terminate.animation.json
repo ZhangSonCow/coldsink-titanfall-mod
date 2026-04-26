@@ -1,0 +1,77 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+
+    "animation.tone_terminate_1.func": {
+      "loop": true,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/execute @s[tag=team_blue] ^^^5 tag @e[tag=team_red,family=titan,tag=titan_danger,c=1] add by_tone_blue",
+          "/execute @s[tag=team_red] ^^^5 tag @e[tag=team_blue,family=titan,tag=titan_danger,c=1] add by_tone_red",
+          "/execute @s[tag=team_blue] ^^^5 execute @e[tag=team_red,family=titan,tag=titan_danger,c=1] ~~~ tag @s[tag=has_rider] add dead_has_rider",
+          "/execute @s[tag=team_red] ^^^5 execute @e[tag=team_blue,family=titan,tag=titan_danger,c=1] ~~~ tag @s[tag=has_rider] add dead_has_rider",
+          "/execute @s[tag=team_blue] ^^^5 execute @e[tag=team_red,family=titan,tag=titan_danger,c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ tag @p[tag=is_titan,tag=team_red] add kill_by_tone_1",
+          "/execute @s[tag=team_red] ^^^5 execute @e[tag=team_blue,family=titan,tag=titan_danger,c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ tag @p[tag=is_titan,tag=team_blue] add kill_by_tone_1",
+          "/execute @s[tag=team_blue] ^^^5 execute @e[tag=team_red,family=titan,tag=titan_danger,c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ tag @p[tag=is_titan,tag=team_red] add terminate",
+          "/execute @s[tag=team_red] ^^^5 execute @e[tag=team_blue,family=titan,tag=titan_danger,c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ tag @p[tag=is_titan,tag=team_blue] add terminate",
+          "/execute @s[tag=team_blue] ^^^5 event entity @e[tag=by_tone_blue,c=1] kill_by_tone_1",
+          "/execute @s[tag=team_red] ^^^5 event entity @e[tag=by_tone_red,c=1] kill_by_tone_1",
+          "/execute @s[tag=team_blue] ^^^5 execute @e[tag=by_tone_blue,c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ event entity @p[tag=is_titan,tag=team_red] entry_kill_by_titan",
+          "/execute @s[tag=team_red] ^^^5 execute @e[tag=by_tone_red,c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ event entity @p[tag=is_titan,tag=team_blue] entry_kill_by_titan",
+
+          "/playsound tone_terminate_1 @a[r=16]",
+          "/tag @s add tone_kill_1",
+          "/execute @e[type=coldsink:tone_ride,c=1] ~~~ camera @p[tag=tone_kill_1] set minecraft:free pos ^-12^5^6 facing ^^5^8",
+          "/execute @s[tag=team_blue] ^^^5 execute @e[tag=by_tone_blue,r=16,c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ camera @p[tag=kill_by_tone_1,tag=team_red] set minecraft:free pos ^12^5^6 facing ^^5^8",
+          "/execute @s[tag=team_red] ^^^5 execute @e[tag=by_tone_red,r=16,c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ camera @p[tag=kill_by_tone_1,tag=team_blue] set minecraft:free pos ^12^5^6 facing ^^5^8"
+        ],
+        "2.5": [
+          "/camera @s fade time 0.5 0 0.25 color 0 0 0"
+        ],
+        "2.9": [
+          "/function titan/terminate_check_killer",
+          "/execute @e[family=titan,tag=by_tone_blue,scores={terminate_check=0},c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ event entity @p[tag=kill_by_tone_1,tag=team_red] exit_kill_by_titan",
+          "/execute @e[family=titan,tag=by_tone_red,scores={terminate_check=0},c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ event entity @p[tag=kill_by_tone_1,tag=team_blue] exit_kill_by_titan",
+          "/scoreboard players operation @e[family=titan,tag=by_tone_blue,scores={terminate_check=0},c=1] death_check = @s[tag=team_blue] titan_self",
+          "/scoreboard players operation @e[family=titan,tag=by_tone_red,scores={terminate_check=0},c=1] death_check = @s[tag=team_red] titan_self",
+          "/execute @s[tag=team_blue] ~~~ kill @e[family=titan,tag=by_tone_blue,scores={terminate_check=0},c=1]",
+          "/execute @s[tag=team_red] ~~~ kill @e[family=titan,tag=by_tone_red,scores={terminate_check=0},c=1]"
+        ],
+        "3.0": [
+          "/camera @s clear",
+          "/event entity @s set_action_0",
+          "/tag @s remove tone_kill_1"
+        ]
+      }
+    },
+    "animation.tone_terminate_1_lock.func": {
+      "loop": true,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/execute @s[tag=team_blue] ~~~ execute @e[type=coldsink:tone_ride,tag=team_blue,r=8,c=1] ^^^5 tp @e[tag=by_tone_blue,r=16,c=1] ^^^1 facing @e[type=coldsink:tone_ride,tag=team_blue,c=1]",
+          "/execute @s[tag=team_red] ~~~ execute @e[type=coldsink:tone_ride,tag=team_red,r=8,c=1] ^^^5 tp @e[tag=by_tone_red,r=16,c=1] ^^^1 facing @e[type=coldsink:tone_ride,tag=team_red,c=1]",
+          "/execute @s[tag=team_blue] ~~~ execute @e[type=coldsink:tone_ride,tag=team_blue,r=8,c=1] ~~~ tp @s ~~~",
+          "/execute @s[tag=team_red] ~~~ execute @e[type=coldsink:tone_ride,tag=team_red,r=8,c=1] ~~~ tp @s ~~~"
+        ]
+      }
+    },
+
+    "animation.tone_terminate_2.func": {
+      "loop": true,
+      "animation_length": 10.0,
+      "timeline": {
+        
+      }
+    },
+    "animation.tone_terminate_2_lock.func": {
+      "loop": true,
+      "animation_length": 0.1,
+      "timeline": {
+        
+      }
+    }
+
+  }
+}

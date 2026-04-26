@@ -1,0 +1,102 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.entry_scorch_cabin": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "entry_loaded": "q.property('titan:action') == 150"
+            },
+            {
+              "entry_front": "q.property('titan:action') == 152"
+            },
+            {
+              "entry_back": "q.property('titan:action') == 153"
+            },
+            {
+              "entry_top": "q.property('titan:action') == 154"
+            },
+            {
+              "exit_cabin": "q.property('titan:action') == 155"
+            }
+          ]
+        },
+        "entry_loaded": {
+          "animations": [
+            "scorch_titan.loaded",
+            "scorch_titan.pilot_entry_loaded"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "standing": "q.property('titan:action') == 151"
+            }
+          ]
+        },
+        "standing": {
+          "animations": [
+            "scorch_titan.standing",
+            "scorch_titan.pilot_entry_standing"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "entry_front": {
+          "animations": [
+            "scorch_titan.entry_stand_front",
+            "scorch_titan.pilot_entry_front"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "entry_back": {
+          "animations": [
+            "scorch_titan.entry_stand_back",
+            "scorch_titan.pilot_entry_back"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "entry_top": {
+          "animations": [
+            "scorch_titan.entry_stand_top",
+            "scorch_titan.pilot_entry_top"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "exit_cabin": {
+          "animations": [
+            "scorch_titan.exit_cabin",
+            "scorch_titan.pilot_exit_cabin"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

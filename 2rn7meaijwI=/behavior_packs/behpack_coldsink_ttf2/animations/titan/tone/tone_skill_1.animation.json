@@ -1,0 +1,88 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.tone_skill_1_check.func": {
+      "loop": true,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/execute @s[tag=team_blue] ~~~ execute @e[tag=!team_blue,family=titan,r=80,scores={tone_target=3..},c=1] ~~~ scoreboard players add count tone_trace 1",
+          "/execute @s[tag=team_blue] ~~~ scoreboard players operation @e[tag=!team_blue,family=titan,r=80,scores={tone_target=3..},c=1] tone_trace = count tone_trace",
+          "/execute @s[tag=team_blue] ~~~ execute @e[tag=!team_blue,family=titan,r=80,scores={tone_target=3..},c=1] ~~~ event entity @e[family=tone_target_blue,c=1] godie",
+          "/execute @s[tag=team_blue] ~~~ execute @e[tag=!team_blue,family=titan,r=80,scores={tone_target=3..},c=1] ~~~ execute @s[scores={tone_trace=30..}] ~~~ scoreboard players set count tone_trace 1",
+          "/execute @s[tag=team_blue] ~~~ execute @e[tag=!team_blue,family=titan,r=80,scores={tone_target=3..},c=1] ~~~ scoreboard players set @s[scores={tone_trace=30..}] tone_trace 1",
+          "/execute @s[tag=team_blue] ~~~ scoreboard players reset @e[tag=!team_blue,family=titan,r=80,scores={tone_target=3..},c=1] tone_target",
+          
+          "/execute @s[tag=team_red] ~~~ execute @e[tag=!team_red,family=titan,r=80,scores={tone_target=3..},c=1] ~~~ scoreboard players add count tone_trace 1",
+          "/execute @s[tag=team_red] ~~~ scoreboard players operation @e[tag=!team_red,family=titan,r=80,scores={tone_target=3..},c=1] tone_trace = count tone_trace",
+          "/execute @s[tag=team_red] ~~~ execute @e[tag=!team_red,family=titan,r=80,scores={tone_target=3..},c=1] ~~~ event entity @e[family=tone_target_red,c=1] godie",
+          "/execute @s[tag=team_red] ~~~ execute @e[tag=!team_red,family=titan,r=80,scores={tone_target=3..},c=1] ~~~ execute @s[scores={tone_trace=30..}] ~~~ scoreboard players set count tone_trace 1",
+          "/execute @s[tag=team_red] ~~~ execute @e[tag=!team_red,family=titan,r=80,scores={tone_target=3..},c=1] ~~~ scoreboard players set @s[scores={tone_trace=30..}] tone_trace 1",
+          "/execute @s[tag=team_red] ~~~ scoreboard players reset @e[tag=!team_red,family=titan,r=80,scores={tone_target=3..},c=1] tone_target",
+
+          "/scoreboard players remove @s tone_missile_st 1",
+          "/event entity @s[scores={tone_missile_st=0}] set_action_11"
+        ]
+      }
+    },
+    "animation.tone_skill_1.func": {
+      "loop": true,
+      "animation_length": 0.5,
+      "timeline": {
+        "0.0": [
+          "/execute @s[scores={tone_missile=1..}] ~~~ playsound tone_skill_1 @a[r=64] ~~~",
+          "/camerashake add @s[scores={tone_missile=1..}] 0.1 0.5 rotational",
+
+          "/scoreboard players add @s[scores={tone_missile=1..}] tone_trace_self 1",
+          "/scoreboard players set @s[scores={tone_trace_self=30..}] tone_trace_self 1",
+          "/scoreboard players remove @s[scores={tone_missile=0..}] tone_missile 1",
+          "/event entity @s[scores={tone_missile=..-1}] set_action_13"
+        ],
+        "0.15": [
+          "/execute @s[scores={tone_missile=0..},tag=team_blue] ~~~ summon coldsink:tone_trace_missile_blue ^-1.6^2.4^4.8",
+          "/execute @s[scores={tone_missile=0..},tag=team_blue] ~~~ scoreboard players operation @e[type=coldsink:tone_trace_missile_blue,tag=!gone,c=1] tone_trace = @s tone_trace_self",
+          "/execute @s[scores={tone_missile=0..},tag=team_blue] ~~~ tag @e[type=coldsink:tone_trace_missile_blue,tag=!gone,c=1] add gone",
+          "/execute @s[scores={tone_missile=0..},tag=team_red] ~~~ summon coldsink:tone_trace_missile_red ^-1.6^2.4^4.8",
+          "/execute @s[scores={tone_missile=0..},tag=team_red] ~~~ scoreboard players operation @e[type=coldsink:tone_trace_missile_red,tag=!gone,c=1] tone_trace = @s tone_trace_self",
+          "/execute @s[scores={tone_missile=0..},tag=team_red] ~~~ tag @e[type=coldsink:tone_trace_missile_red,tag=!gone,c=1] add gone"
+        ],
+        "0.3": [
+          "/execute @s[scores={tone_missile=0..},tag=team_blue] ~~~ summon coldsink:tone_trace_missile_blue ^-1.6^2.4^4.8",
+          "/execute @s[scores={tone_missile=0..},tag=team_blue] ~~~ scoreboard players operation @e[type=coldsink:tone_trace_missile_blue,tag=!gone,c=1] tone_trace = @s tone_trace_self",
+          "/execute @s[scores={tone_missile=0..},tag=team_blue] ~~~ tag @e[type=coldsink:tone_trace_missile_blue,tag=!gone,c=1] add gone",
+          "/execute @s[scores={tone_missile=0..},tag=team_red] ~~~ summon coldsink:tone_trace_missile_red ^-1.6^2.4^4.8",
+          "/execute @s[scores={tone_missile=0..},tag=team_red] ~~~ scoreboard players operation @e[type=coldsink:tone_trace_missile_red,tag=!gone,c=1] tone_trace = @s tone_trace_self",
+          "/execute @s[scores={tone_missile=0..},tag=team_red] ~~~ tag @e[type=coldsink:tone_trace_missile_red,tag=!gone,c=1] add gone"
+        ],
+        "0.45": [
+          "/execute @s[scores={tone_missile=0..},tag=team_blue] ~~~ summon coldsink:tone_trace_missile_blue ^-1.6^2.4^4.8",
+          "/execute @s[scores={tone_missile=0..},tag=team_blue] ~~~ scoreboard players operation @e[type=coldsink:tone_trace_missile_blue,tag=!gone,c=1] tone_trace = @s tone_trace_self",
+          "/execute @s[scores={tone_missile=0..},tag=team_blue] ~~~ tag @e[type=coldsink:tone_trace_missile_blue,tag=!gone,c=1] add last",
+          "/execute @s[scores={tone_missile=0..},tag=team_blue] ~~~ tag @e[type=coldsink:tone_trace_missile_blue,tag=!gone,c=1] add gone",
+          "/execute @s[scores={tone_missile=0..},tag=team_red] ~~~ summon coldsink:tone_trace_missile_red ^-1.6^2.4^4.8",
+          "/execute @s[scores={tone_missile=0..},tag=team_red] ~~~ scoreboard players operation @e[type=coldsink:tone_trace_missile_red,tag=!gone,c=1] tone_trace = @s tone_trace_self",
+          "/execute @s[scores={tone_missile=0..},tag=team_red] ~~~ tag @e[type=coldsink:tone_trace_missile_red,tag=!gone,c=1] add last",
+          "/execute @s[scores={tone_missile=0..},tag=team_red] ~~~ tag @e[type=coldsink:tone_trace_missile_red,tag=!gone,c=1] add gone"
+        ]
+      }
+    },
+    "animation.tone_skill_1_pre.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.2": [
+          "/event entity @s set_action_12"
+        ]
+      }
+    },
+    "animation.tone_skill_1_after.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.4": [
+          "/event entity @s set_action_0"
+        ]
+      }
+    }
+  }
+}

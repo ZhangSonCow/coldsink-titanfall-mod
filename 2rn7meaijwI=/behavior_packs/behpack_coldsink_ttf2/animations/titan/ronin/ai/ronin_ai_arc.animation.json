@@ -1,0 +1,39 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ronin_ai_arc.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players random @s random_score 1 5"
+        ],
+        "0.25": [
+          "/event entity @s[scores={random_score=1}] set_action_0"
+        ],
+        "0.5": [
+          "/event entity @s[scores={random_score=2}] set_action_0"
+        ],
+        "1.0": [
+          "/event entity @s[scores={random_score=3}] set_action_0"
+        ],
+        "1.5": [
+          "/event entity @s[scores={random_score=4}] set_action_0"
+        ],
+        "2.0": [
+          "/event entity @s set_action_0"
+        ]
+      }
+    },
+    "animation.ronin_ai_arc_after.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.75": [
+            "/execute @s[tag=team_blue] ~~~ event entity @e[type=coldsink:ronin_rider_ai,tag=team_blue,r=8,c=1] turn_rider_state_normal",
+            "/execute @s[tag=team_red] ~~~ event entity @e[type=coldsink:ronin_rider_ai,tag=team_red,r=8,c=1] turn_rider_state_normal"
+        ]
+      }
+    }
+  }
+}

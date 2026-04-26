@@ -1,0 +1,218 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ronin_titan_ai.arm": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "ronin_titan.idle.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "idle_sword": "q.is_sheared"
+            },
+            {
+              "melee": "q.property('titan:action') == 11"
+            },
+            {
+              "fire": "q.property('titan:action') == 12"
+            },
+            {
+              "arc": "q.property('titan:action') == 13"
+            },
+            {
+              "defend_1": "q.property('titan:action') == 15"
+            }
+          ]
+        },
+        "idle_sword": {
+          "animations": [
+            "ronin_titan.idle_sword.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "!q.is_sheared"
+            },
+            {
+              "melee_core_1": "q.property('titan:action') == 11 && v.random_choices <= 33"
+            },
+            {
+              "melee_core_2": "q.property('titan:action') == 11 && v.random_choices <= 66"
+            },
+            {
+              "melee_core_3": "q.property('titan:action') == 11 && v.random_choices <= 100"
+            },
+            {
+              "arc_core": "q.property('titan:action') == 13"
+            },
+            {
+              "defend_1": "q.property('titan:action') == 15"
+            }
+          ]
+        },
+        "melee": {
+          "animations": [
+            "ronin_titan.melee"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 11"
+            }
+          ]
+        },
+        "melee_core_1": {
+          "animations": [
+            "ronin_titan.melee_core_1"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "idle_sword": "q.property('titan:action') != 11"
+            }
+          ]
+        },
+        "melee_core_2": {
+          "animations": [
+            "ronin_titan.melee_core_2"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "idle_sword": "q.property('titan:action') != 11"
+            }
+          ]
+        },
+        "melee_core_3": {
+          "animations": [
+            "ronin_titan.melee_core_3"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "idle_sword": "q.property('titan:action') != 11"
+            }
+          ]
+        },
+        "fire": {
+          "animations": [
+            "ronin_titan.fire"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 12"
+            }
+          ]
+        },
+        "arc": {
+          "animations": [
+            "ronin_titan.arc"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "arc_after": "q.property('titan:action') != 13"
+            }
+          ]
+        },
+        "arc_after": {
+          "animations": [
+            "ronin_titan.arc_after"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 14"
+            }
+          ]
+        },
+        "arc_core": {
+          "animations": [
+            "ronin_titan.arc_core"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "arc_core_after": "q.property('titan:action') != 13"
+            }
+          ]
+        },
+        "arc_core_after": {
+          "animations": [
+            "ronin_titan.arc_core_after"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "idle_sword": "q.property('titan:action') != 14"
+            }
+          ]
+        },
+        "defend_1": {
+          "animations": [
+            "ronin_titan.defend_1"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 15 && !q.is_sheared"
+            },
+            {
+              "idle_sword": "q.property('titan:action') != 15 && q.is_sheared"
+            },
+            {
+              "defend_2": "q.is_ignited && v.random_choices <= 50"
+            },
+            {
+              "defend_3": "q.is_ignited && v.random_choices <= 100"
+            }
+          ]
+        },
+        "defend_2": {
+          "animations": [
+            "ronin_titan.defend_2"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 15 && !q.is_sheared"
+            },
+            {
+              "idle_sword": "q.property('titan:action') != 15 && q.is_sheared"
+            },
+            {
+              "defend_1": "q.is_ignited && v.random_choices <= 50"
+            },
+            {
+              "defend_3": "q.is_ignited && v.random_choices <= 100"
+            }
+          ]
+        },
+        "defend_3": {
+          "animations": [
+            "ronin_titan.defend_3"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 15 && !q.is_sheared"
+            },
+            {
+              "idle_sword": "q.property('titan:action') != 15 && q.is_sheared"
+            },
+            {
+              "defend_1": "q.is_ignited && v.random_choices <= 50"
+            },
+            {
+              "defend_2": "q.is_ignited && v.random_choices <= 100"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.titan_ride_move.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "move": "q.modified_move_speed >= 0.8"
+            }
+          ]
+        },
+        "move": {
+          "transitions": [
+            {
+              "default": "q.modified_move_speed < 0.8"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_entry_moving"
+          ],
+          "on_exit": [
+            "/event entity @p[tag=is_titan,r=8] titan_exit_moving",
+            "/effect @e[family=titan_ride,r=8,c=1] speed 0 2 true"
+          ]
+        }
+      }
+    }
+  }
+}

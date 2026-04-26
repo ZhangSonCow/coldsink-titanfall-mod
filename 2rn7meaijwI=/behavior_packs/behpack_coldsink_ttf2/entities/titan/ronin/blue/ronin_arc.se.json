@@ -1,0 +1,153 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:ronin_arc_blue",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "animations": {
+        "c.self": "controller.animation.titan_bullet_self.func",
+        "self": "animation.ronin_bullet_self.func"
+      },
+      "scripts": {
+        "animate": [ 
+          "c.self"
+        ]
+      }
+    },
+    "component_groups": {
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+			"minecraft:tick_world": {
+				"distance_to_players": 128,
+				"never_despawn": false,
+				"radius": 2
+			},
+      "minecraft:type_family": {
+        "family": [ "tool", "ground" ]
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:collision_box": {
+          "width": 0.0,
+          "height": 0.1
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:ageable": {
+        "duration": 2.0,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:timer": {
+        "time": 0.02,
+        "time_down_event": {
+          "event": "count",
+          "target": "self"
+        }
+      },
+      "minecraft:health": {
+        "value": 2,
+        "max": 2,
+        "min": 1
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "queue_command": {
+          "command": [
+            "tp @s ~~-3.8~ facing @e[family=ronin_titan,tag=team_blue,c=1]",
+            "event entity @s arc"
+          ]
+        }
+      },
+      "count": {
+        "queue_command": {
+          "command": [
+            "scoreboard players set @s slip_bool 0",
+						"execute @s ~~~ detect ^^0.5^-1 air -1 scoreboard players add @s slip_bool 1",
+						"execute @s ~~~ detect ^^1.5^-1 air -1 scoreboard players add @s slip_bool 2",
+            "event entity @s[scores={slip_bool=..1}] godie",
+						"tp @s[scores={slip_bool=2}] ~~1~",
+						"execute @s ~~~ detect ^^^-1 air -1 tp @s ^^^-1",
+						"execute @s ~~~ detect ~~-1~ air -1 tp @s ~~-1~",
+
+            "scoreboard players add @s ronin_bullet 1",
+            "event entity @s[scores={ronin_bullet=5..}] arc",
+            "scoreboard players reset @s[scores={ronin_bullet=5..}] ronin_bullet"
+          ]
+        }
+      },
+      "arc": {
+        "queue_command": {
+          "command": [
+            // 对枪盾军团伤害补丁
+            "execute @e[tag=!team_blue,family=legion_titan,tag=legion_shield,tag=!arc_attack,r=8] ~~~ scoreboard players add @e[type=coldsink:ronin_arc_blue,c=1] titan_attack 1000",
+            
+            "execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!arc_attack,r=8,tag=!ronin_defending,tag=!titan_hard] ~~~ scoreboard players add @e[type=coldsink:ronin_arc_blue,c=1] titan_attack 1000",
+            "execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!arc_attack,r=8,tag=ronin_defend] ~~~ scoreboard players add @e[type=coldsink:ronin_arc_blue,c=1] titan_attack 300",
+            "execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!arc_attack,r=8,tag=ronin_defend_core] ~~~ scoreboard players add @e[type=coldsink:ronin_arc_blue,c=1] titan_attack 100",
+            "execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!arc_attack,r=8,tag=titan_hard] ~~~ scoreboard players add @e[type=coldsink:ronin_arc_blue,c=1] titan_attack 800",
+            "execute @s[scores={titan_attack=1..}] ~~~ scoreboard players operation @e[tag=is_ronin,tag=team_blue] skill_check_1 = @s titan_self",
+            "execute @s[scores={titan_attack=1..}] ~~~ execute @e[tag=is_ronin,tag=team_blue] ~~~ scoreboard players operation @s skill_check_1 -= @s titan_self",
+            "execute @s[scores={titan_attack=1..}] ~~~ scoreboard players operation @e[tag=is_ronin,tag=team_blue,scores={skill_check_1=0}] titan_attack += @s titan_attack",
+            "execute @s[scores={titan_attack=1..}] ~~~ event entity @e[tag=is_ronin,tag=team_blue,scores={skill_check_1=0}] shoot_get_core",
+            "scoreboard players reset @s titan_attack",
+            
+            "scoreboard players operation @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!arc_attack,r=8] death_check = @e[tag=is_ronin,tag=team_blue,scores={skill_check_1=0},c=1] titan_self",
+            "damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!arc_attack,r=8,tag=!ronin_defending,tag=!titan_hard] 1000 suicide entity @e[tag=is_ronin,tag=team_blue,scores={skill_check_1=0},c=1]",
+            "damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!arc_attack,r=8,tag=ronin_defend] 300 suicide entity @e[tag=is_ronin,tag=team_blue,scores={skill_check_1=0},c=1]",
+            "damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!arc_attack,r=8,tag=ronin_defend_core] 100 suicide entity @e[tag=is_ronin,tag=team_blue,scores={skill_check_1=0},c=1]",
+            "damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!arc_attack,r=8,tag=titan_hard] 800 suicide entity @e[tag=is_ronin,tag=team_blue,scores={skill_check_1=0},c=1]",
+            "event entity @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!arc_attack,r=8,tag=ronin_defending] defend_damage_transform",
+            "effect @e[tag=!team_blue,tag=!arc_attack,r=8] slowness 4 1 true",
+            "tag @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,r=8] add arc_attack",
+            "particle titan:ronin_skill_arc_1 ~~0.8~",
+            "particle titan:ronin_skill_arc_2 ~~0.8~",
+            "particle titan:ronin_skill_arc_3 ~~0.8~",
+            "particle titan:ronin_skill_arc_4 ~~0.8~",
+
+            // 瞬破粒子盾
+            "kill @e[family=particle_shield,tag=!team_blue,r=8]",
+            // 对枪盾军团伤害补丁
+            "damage @e[tag=!team_blue,family=legion_titan,tag=legion_shield,tag=!arc_attack,r=8] 1000 suicide entity @e[tag=is_ronin,tag=team_blue,scores={skill_check_1=0},c=1]"
+          ]
+        }
+      },
+      "godie": {
+        "queue_command": {
+          "command": [
+            "tag @e[tag=arc_attack] remove arc_attack",
+            "event entity @s real_godie"
+          ]
+        }
+      },
+      "real_godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

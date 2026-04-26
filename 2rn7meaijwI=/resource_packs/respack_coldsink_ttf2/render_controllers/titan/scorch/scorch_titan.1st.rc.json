@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.scorch_titan.1st": {
+      "arrays": {
+        "textures": {
+          "Array.skin": [
+            "Texture.scorch_titan",
+            "Texture.scorch_titan_1",
+            "Texture.scorch_titan_2",
+            "Texture.scorch_titan_3",
+            "Texture.scorch_titan_4",
+            "Texture.scorch_titan_5",
+            "Texture.scorch_titan_6",
+            "Texture.scorch_titan_7",
+            "Texture.scorch_titan_8"
+          ]
+        }
+      },
+      "geometry": "geometry.scorch_titan.1st",
+      "materials": [
+        {
+          "*": "material.netease_entity_metallic"
+        }
+      ],
+      "textures": [ "Array.skin[ query.skin_id ]" ],
+      "is_hurt_color": {}
+    }
+  }
+}

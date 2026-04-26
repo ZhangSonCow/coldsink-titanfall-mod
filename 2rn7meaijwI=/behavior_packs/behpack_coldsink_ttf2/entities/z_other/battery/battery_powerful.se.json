@@ -1,0 +1,76 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:battery_powerful",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "godie": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tool", "battery" ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.5
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:timer": {
+        "time": 0.1,
+        "time_down_event": {
+          "event": "count",
+          "target": "self"
+        }
+      },
+      "minecraft:health": {
+        "value": 2,
+        "max": 2,
+        "min": 1
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+    "events": {
+      "count": {
+        "queue_command": {
+          "command": [
+            "title @p[tag=is_pilot,tag=!is_titan,tag=has_battery_good,r=1.6] actionbar §b最多携带一枚电池",
+            "title @p[tag=is_pilot,tag=!is_titan,tag=has_battery_bad,r=1.6] actionbar §b最多携带一枚电池",
+
+            "execute @s[tag=!get] ~~~ execute @p[tag=is_pilot,tag=!is_titan,tag=!has_battery_good,tag=!has_battery_bad,r=1.6] ~~~ tag @e[type=coldsink:battery_powerful,c=1] add get",
+            "execute @s[tag=get] ~~~ execute @p[tag=is_pilot,tag=!is_titan,tag=!has_battery_good,tag=!has_battery_bad,r=1.6] ~~~ playsound pilot_pickup_battery",
+            "execute @s[tag=get] ~~~ title @p[tag=is_pilot,tag=!is_titan,tag=!has_battery_good,tag=!has_battery_bad,r=1.6] actionbar §e已拾取电池",
+            "execute @s[tag=get] ~~~ replaceitem entity @p[tag=is_pilot,tag=!is_titan,tag=!has_battery_good,tag=!has_battery_bad,r=1.6] slot.armor.legs 0 coldsink:battery_powerful_item",
+            "execute @s[tag=get] ~~~ replaceitem entity @p[tag=is_pilot,tag=!is_titan,tag=!has_battery_good,tag=!has_battery_bad,tag=!wy_game,r=1.6] slot.hotbar 6 coldsink:battery_powerful_item 1 0 {\"item_lock\":{\"mode\":\"lock_in_slot\"}}",
+            "event entity @s[tag=get] godie"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "godie"
+          ]
+        }
+      }
+    }
+  }
+}

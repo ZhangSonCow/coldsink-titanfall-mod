@@ -1,0 +1,50 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ion_terminate": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "terminate_1": "q.property('titan:action') == 116"
+            },
+            {
+              "terminate_2": "q.property('titan:action') == 117"
+            },
+            {
+              "by_other_terminate": "q.property('titan:action') == 118"
+            }
+          ]
+        },
+        "terminate_1": {
+          "animations": [
+            "ion_titan.terminate_1"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "terminate_2": {
+          "animations": [
+            "ion_titan.terminate_2"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "by_other_terminate": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.northstar_ai_fly.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "northstar_ai_fly_trigger"
+          ],
+          "transitions": [
+            {
+              "skill": "q.is_saddled"
+            }
+          ]
+        },
+        "skill": {
+          "animations": [
+            "northstar_ai_fly"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_saddled && q.is_on_ground"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add northstar_fly"
+          ],
+          "on_exit": [
+            "/playsound northstar_skill_2_load @a[r=64] ~~~",
+            "/tag @s remove northstar_fly"
+          ]
+        }
+      }
+    }
+  }
+}

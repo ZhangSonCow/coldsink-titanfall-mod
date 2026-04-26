@@ -1,0 +1,131 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:sliding_ride_tool_ai",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "animations": {
+        "c.sliding": "controller.animation.sliding_tool.func",
+        "sliding_tool": "animation.sliding_tool.func",
+        "sliding_tool_down": "animation.sliding_tool_down.func"
+      },
+      "scripts": {
+        "animate": [
+          "c.sliding"
+        ]
+      }
+    },
+    "component_groups": {
+      "die": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "tool",
+          "sliding_ride"
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:health": {
+        "value": 1,
+        "max": 1,
+        "min": 1
+      },
+      "minecraft:collision_box": {
+        "height": 0.9,
+        "width": 0.6
+      },
+      "minecraft:ageable": {
+        "duration": 5,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:physics": {},
+      "minecraft:rideable": {
+        "seat_count": 1,
+        "family_types": [
+          "pilot_ai"
+        ],
+        "seats": [
+          {
+            "position": [
+              0,
+              -0.5,
+              0
+            ],
+            "rotate_rider_by": 0
+          }
+        ]
+      }
+      //behavivors
+    },
+    "events": {
+      "sliding_tp": {
+        "queue_command": {
+          "command": [
+            "scoreboard players set @s slip_bool 0",
+            "execute @s ~~~ detect ^^0.5^-1 air -1 scoreboard players add @s slip_bool 1",
+            "execute @s ~~~ detect ^^0.5^-1 short_grass -1 scoreboard players add @s slip_bool 1",
+            "execute @s ~~~ detect ^^0.5^-1 tall_grass -1 scoreboard players add @s slip_bool 1",
+            "execute @s ~~~ detect ^^0.5^-1 fern -1 scoreboard players add @s slip_bool 1",
+            "execute @s ~~~ detect ^^0.5^-1 large_fern -1 scoreboard players add @s slip_bool 1",
+            "execute @s ~~~ detect ^^1.5^-1 air -1 scoreboard players add @s slip_bool 2",
+            "execute @s ~~~ detect ^^1.5^-1 short_grass -1 scoreboard players add @s slip_bool 2",
+            "execute @s ~~~ detect ^^1.5^-1 tall_grass -1 scoreboard players add @s slip_bool 2",
+            "execute @s ~~~ detect ^^1.5^-1 fern -1 scoreboard players add @s slip_bool 2",
+            "execute @s ~~~ detect ^^1.5^-1 large_fern -1 scoreboard players add @s slip_bool 2",
+            "event entity @s[scores={slip_bool=0}] godie",
+            // 钻洞
+            "execute @s[scores={slip_bool=1}] ~~~ detect ^^0.5^-0.8 air -1 tp @s ^^^-0.8",
+            "execute @s[scores={slip_bool=1}] ~~~ detect ^^0.5^-0.8 short_grass -1 tp @s ^^^-0.8",
+            "execute @s[scores={slip_bool=1}] ~~~ detect ^^0.5^-0.8 tall_grass -1 tp @s ^^^-0.8",
+            "execute @s[scores={slip_bool=1}] ~~~ detect ^^0.5^-0.8 fern -1 tp @s ^^^-0.8",
+            "execute @s[scores={slip_bool=1}] ~~~ detect ^^0.5^-0.8 large_fern -1 tp @s ^^^-0.8",
+            // 爬坡
+            "tp @s[scores={slip_bool=2}] ~~1~",
+            "execute @s[scores={slip_bool=2}] ~~~ detect ^^0.5^-0.3 air -1 tp @s ^^^-0.3",
+            "execute @s[scores={slip_bool=2}] ~~~ detect ^^0.5^-0.3 short_grass -1 tp @s ^^^-0.3",
+            "execute @s[scores={slip_bool=2}] ~~~ detect ^^0.5^-0.3 tall_grass -1 tp @s ^^^-0.3",
+            "execute @s[scores={slip_bool=2}] ~~~ detect ^^0.5^-0.3 fern -1 tp @s ^^^-0.3",
+            "execute @s[scores={slip_bool=2}] ~~~ detect ^^0.5^-0.3 large_fern -1 tp @s ^^^-0.3",
+            // 爬坡滑铲
+            // 正常滑铲
+            "execute @s[scores={slip_bool=3}] ~~~ detect ^^0.5^-0.8 air -1 tp @s ^^^-0.8",
+            "execute @s[scores={slip_bool=3}] ~~~ detect ^^0.5^-0.8 short_grass -1 tp @s ^^^-0.8",
+            "execute @s[scores={slip_bool=3}] ~~~ detect ^^0.5^-0.8 tall_grass -1 tp @s ^^^-0.8",
+            "execute @s[scores={slip_bool=3}] ~~~ detect ^^0.5^-0.8 fern -1 tp @s ^^^-0.8",
+            "execute @s[scores={slip_bool=3}] ~~~ detect ^^0.5^-0.8 large_fern -1 tp @s ^^^-0.8"
+          ]
+        }
+      },
+      "godie": {
+        "queue_command": {
+          "command": [
+            "ride @s evict_riders",
+            "event entity @s real_godie"
+          ]
+        }
+      },
+      "real_godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

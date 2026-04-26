@@ -1,0 +1,181 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.monarch_titan_ai_action.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "melee": "q.property('titan:action') == 11"
+            },
+            {
+              "fire": "q.property('titan:action') >= 12 && q.property('titan:action') <= 15"
+            },
+            {
+              "missile": "q.property('titan:action') == 16"
+            },
+            {
+              "reflash": "q.property('titan:action') == 17"
+            },
+            {
+              "reflash_fast": "q.property('titan:action') == 18"
+            },
+            {
+              "energy": "q.property('titan:action') == 19"
+            },
+            {
+              "missile_final_powering": "q.property('titan:action') == 21"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=team_blue,tag=reflash_cd,tag=!can_reflash] ~~~ event entity @e[type=coldsink:monarch_rider_ai,tag=team_blue,r=8,c=1] turn_rider_state_normal",
+            "/execute @s[tag=team_red,tag=reflash_cd,tag=!can_reflash] ~~~ event entity @e[type=coldsink:monarch_rider_ai,tag=team_red,r=8,c=1] turn_rider_state_normal",
+            "/execute @s[tag=team_blue,tag=!reflash_cd,tag=!can_reflash,tag=pre_missile] ~~~ event entity @e[type=coldsink:monarch_rider_ai,tag=team_blue,r=8,c=1] turn_rider_state_reflash",
+            "/execute @s[tag=team_red,tag=!reflash_cd,tag=!can_reflash,tag=pre_missile] ~~~ event entity @e[type=coldsink:monarch_rider_ai,tag=team_red,r=8,c=1] turn_rider_state_reflash",
+            "/execute @s[tag=team_blue,tag=!reflash_cd,tag=!can_reflash,tag=pre_energy] ~~~ event entity @e[type=coldsink:monarch_rider_ai,tag=team_blue,r=8,c=1] turn_rider_state_reflash",
+            "/execute @s[tag=team_red,tag=!reflash_cd,tag=!can_reflash,tag=pre_energy] ~~~ event entity @e[type=coldsink:monarch_rider_ai,tag=team_red,r=8,c=1] turn_rider_state_reflash",
+            
+            "/execute @s[tag=team_blue,tag=can_reflash,tag=pre_missile,tag=!monarch_core_31,tag=has_target] ~~~ event entity @e[type=coldsink:monarch_rider_ai,tag=team_blue,r=8,c=1] turn_rider_state_missile",
+            "/execute @s[tag=team_red,tag=can_reflash,tag=pre_missile,tag=!monarch_core_31,tag=has_target] ~~~ event entity @e[type=coldsink:monarch_rider_ai,tag=team_red,r=8,c=1] turn_rider_state_missile",
+            "/execute @s[tag=team_blue,tag=can_reflash,tag=pre_missile,tag=monarch_core_31,tag=has_target] ~~~ event entity @e[type=coldsink:monarch_rider_ai,tag=team_blue,r=8,c=1] turn_rider_state_missile_final",
+            "/execute @s[tag=team_red,tag=can_reflash,tag=pre_missile,tag=monarch_core_31,tag=has_target] ~~~ event entity @e[type=coldsink:monarch_rider_ai,tag=team_red,r=8,c=1] turn_rider_state_missile_final",
+            "/execute @s[tag=team_blue,tag=can_reflash,tag=pre_energy] ~~~ event entity @e[type=coldsink:monarch_rider_ai,tag=team_blue,r=8,c=1] turn_rider_state_energy",
+            "/execute @s[tag=team_red,tag=can_reflash,tag=pre_energy] ~~~ event entity @e[type=coldsink:monarch_rider_ai,tag=team_red,r=8,c=1] turn_rider_state_energy",
+
+            "/execute @s[tag=team_blue,tag=can_reflash,tag=add_missile,tag=!monarch_core_31,tag=has_target] ~~~ event entity @e[type=coldsink:monarch_rider_ai,tag=team_blue,r=8,c=1] turn_rider_state_missile",
+            "/execute @s[tag=team_red,tag=can_reflash,tag=add_missile,tag=!monarch_core_31,tag=has_target] ~~~ event entity @e[type=coldsink:monarch_rider_ai,tag=team_red,r=8,c=1] turn_rider_state_missile",
+            "/execute @s[tag=team_blue,tag=can_reflash,tag=add_missile,tag=monarch_core_31,tag=has_target] ~~~ event entity @e[type=coldsink:monarch_rider_ai,tag=team_blue,r=8,c=1] turn_rider_state_missile_final",
+            "/execute @s[tag=team_red,tag=can_reflash,tag=add_missile,tag=monarch_core_31,tag=has_target] ~~~ event entity @e[type=coldsink:monarch_rider_ai,tag=team_red,r=8,c=1] turn_rider_state_missile_final",
+            "/execute @s[tag=team_blue,tag=can_reflash,tag=add_energy] ~~~ event entity @e[type=coldsink:monarch_rider_ai,tag=team_blue,r=8,c=1] turn_rider_state_energy",
+            "/execute @s[tag=team_red,tag=can_reflash,tag=add_energy] ~~~ event entity @e[type=coldsink:monarch_rider_ai,tag=team_red,r=8,c=1] turn_rider_state_energy",
+            
+            "/tag @s[tag=can_reflash] remove add_energy",
+            "/tag @s[tag=can_reflash] remove add_missile",
+            "/tag @s[tag=can_reflash,tag=pre_missile] add add_energy",
+            "/tag @s[tag=can_reflash,tag=pre_energy] add add_missile",
+            "/tag @s[tag=can_reflash] remove pre_missile",
+            "/tag @s[tag=can_reflash] remove pre_energy",
+            "/tag @s remove can_reflash"
+          ]
+        },
+        "melee": {
+          "animations": [
+            "monarch_ai_melee"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 11"
+            }
+          ]
+        },
+        "fire": {
+          "transitions": [
+            {
+              "default": "!(q.property('titan:action') >= 12 && q.property('titan:action') <= 15)"
+            }
+          ]
+        },
+        "missile": {
+          "animations": [
+            "monarch_ai_missile"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 16"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add pre_missile",
+            "/tag @s remove pre_energy"
+          ]
+        },
+        "reflash": {
+          "animations": [
+            "monarch_ai_reflash"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 17"
+            }
+          ]
+        },
+        "reflash_fast": {
+          "animations": [
+            "monarch_ai_reflash_fast"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 18"
+            }
+          ]
+        },
+        "energy": {
+          "animations": [
+            "monarch_ai_energy"
+          ],
+          "transitions": [
+            {
+              "energy_after": "q.property('titan:action') != 19"
+            }
+          ],
+          "on_entry": [
+            "/playsound monarch_skill_0_powering @a[r=64] ~~~",
+            "/tag @s add pre_energy",
+            "/tag @s remove pre_missile",
+
+            // 能量转换
+            "/tag @s[tag=monarch_core_13] add transform",
+            "/execute @s[tag=monarch_core_13] ~~~ ride @e[type=coldsink:monarch_rider_ai,r=8,c=1] stop_riding",
+            "/ride @s[tag=monarch_core_13] summon_rider coldsink:monarch_rider_ai_heal",
+            "/tag @s[tag=monarch_core_13] remove has_target"
+          ],
+          "on_exit": [
+            "/stopsound @a[r=32] monarch_skill_0_powering",
+						"/playsound monarch_skill_0_fire @a[r=64] ~~~",
+            "/execute @s[tag=team_blue,tag=!monarch_core_13] ~~~ event entity @e[type=coldsink:monarch_rider_ai,tag=team_blue,r=8,c=1] turn_bullet_weapon_common",
+            "/execute @s[tag=team_blue,tag=!monarch_core_13] ~~~ event entity @e[type=coldsink:monarch_rider_ai,tag=team_red,r=8,c=1] turn_bullet_weapon_common",
+
+            "/tag @s[tag=monarch_core_13] remove transform",
+            "/execute @s[tag=monarch_core_13] ~~~ ride @e[type=coldsink:monarch_rider_ai_heal,r=8,c=1] stop_riding",
+            "/ride @s[tag=monarch_core_13] summon_rider coldsink:monarch_rider_ai"
+          ]
+        },
+        "energy_after": {
+          "animations": [
+            "monarch_ai_energy_after"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 20"
+            }
+          ]
+        },
+        "missile_final_powering": {
+          "animations": [
+            "monarch_ai_missile_final_powering"
+          ],
+          "transitions": [
+            {
+              "missile_final": "q.property('titan:action') != 21"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add pre_missile",
+            "/tag @s remove pre_energy"
+          ]
+        },
+        "missile_final": {
+          "animations": [
+            "monarch_ai_missile_final"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 22"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

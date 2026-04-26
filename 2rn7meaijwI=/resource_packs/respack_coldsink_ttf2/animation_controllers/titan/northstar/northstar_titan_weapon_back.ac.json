@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.northstar_titan_weapon_back": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "titan_weapon_back_no"
+          ],
+          "blend_transition": 0,
+          "transitions": [
+            {
+              "weapon_back": "q.property('titan:action') == 5 || q.property('titan:action') == 13"
+            }
+          ]
+        },
+        "weapon_back": {
+          "animations": [
+            "titan_weapon_back_yes"
+          ],
+          "blend_transition": 0,
+          "transitions": [
+            {
+              "default": "!(q.property('titan:action') == 5 || q.property('titan:action') == 13)"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

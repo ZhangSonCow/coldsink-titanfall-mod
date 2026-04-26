@@ -1,0 +1,20 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "coldsink:no_battery",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.arrow"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "no_battery",
+      "minecraft:display_name": {
+        "value": "§7[无电池]"
+      },
+      "minecraft:hand_equipped": false
+    }
+  }
+}

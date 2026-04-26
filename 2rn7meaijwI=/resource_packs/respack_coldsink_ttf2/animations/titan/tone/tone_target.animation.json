@@ -1,0 +1,59 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.tone_target.facing": {
+			"loop": true,
+			"bones": {
+				"tone_target": {
+					"rotation": ["-(query.camera_rotation(0))", "query.rotation_to_camera(1) - query.body_y_rotation", 0],
+					"scale": "query.distance_from_camera > 8 ? (0.08*64*query.camera_distance_range_lerp(0,64)) : 0"
+				}
+			}
+		},
+		"animation.tone_target.zoom_1": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.1667,
+			"bones": {
+				"target_1": {
+					"scale": {
+						"0.0": [8, 8, 8],
+						"0.1667": [1, 1, 1]
+					}
+				},
+				"target_2": {
+					"scale": 0
+				},
+				"target_3": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.tone_target.zoom_2": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.1667,
+			"bones": {
+				"target_2": {
+					"scale": {
+						"0.0": [8, 8, 8],
+						"0.1667": [1, 1, 1]
+					}
+				},
+				"target_3": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.tone_target.zoom_3": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.1667,
+			"bones": {
+				"target_3": {
+					"scale": {
+						"0.0": [8, 8, 8],
+						"0.1667": [1, 1, 1]
+					}
+				}
+			}
+		}
+	}
+}

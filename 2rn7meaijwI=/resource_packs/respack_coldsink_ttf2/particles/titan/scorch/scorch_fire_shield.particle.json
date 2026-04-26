@@ -1,0 +1,69 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "titan:scorch_fire_shield",
+			"basic_render_parameters": {
+				"material": "particles_blend",
+				"texture": "textures/particle/titan/scorch/firedef4"
+			}
+		},
+		"curves": {
+			"variable.size": {
+				"type": "linear",
+				"input": "v.particle_age",
+				"horizontal_range": "v.particle_lifetime",
+				"nodes": [0, 0.37, 0.83, 0.96, 1]
+			},
+			"variable.alpha": {
+				"type": "linear",
+				"input": "v.particle_age",
+				"horizontal_range": "v.particle_lifetime",
+				"nodes": [1, 1, 0.84, 0, 0]
+			}
+		},
+		"components": {
+			"minecraft:emitter_local_space": {
+				"position": true,
+				"rotation": true,
+				"velocity": true
+			},
+			"minecraft:emitter_rate_steady": {
+				"spawn_rate": 9,
+				"max_particles": 100
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 1.2
+			},
+			"minecraft:emitter_shape_point": {
+				"offset": [0, 0.2, 0],
+				"direction": [0, -1, 0]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": 0.7,
+				"expiration_expression": "q.property('titan:action') != 13 && q.property('titan:action') != 15"
+			},
+			"minecraft:particle_initial_spin": {
+				"rotation": "math.random(-180, 180)",
+				"rotation_rate": "math.random(-30, 30)"
+			},
+			"minecraft:particle_initial_speed": 2,
+			"minecraft:particle_motion_dynamic": {
+				"linear_acceleration": [0, -2, 0]
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": ["3.2*variable.size", "3.2*variable.size"],
+				"facing_camera_mode": "emitter_transform_xz",
+				"uv": {
+					"texture_width": 512,
+					"texture_height": 512,
+					"uv": ["math.floor(v.particle_random_1*2)*256", "math.floor(v.particle_random_2*2)*256"],
+					"uv_size": [256, 256]
+				}
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": [1, 1, 1, "0.5*variable.alpha"]
+			}
+		}
+	}
+}

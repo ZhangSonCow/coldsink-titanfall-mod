@@ -1,0 +1,1002 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.titan_health_3.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "damage_no": "q.health == 10000"
+            },
+            {
+              "damage_1": "q.health <= 10000 && q.health > 9900"
+            },
+            {
+              "damage_2": "q.health <= 9900 && q.health > 9800"
+            },
+            {
+              "damage_3": "q.health <= 9800 && q.health > 9700"
+            },
+            {
+              "damage_4": "q.health <= 9700 && q.health > 9600"
+            },
+            {
+              "damage_5": "q.health <= 9600 && q.health > 9500"
+            },
+            {
+              "damage_6": "q.health <= 9500 && q.health > 9400"
+            },
+            {
+              "damage_7": "q.health <= 9400 && q.health > 9300"
+            },
+            {
+              "damage_8": "q.health <= 9300 && q.health > 9200"
+            },
+            {
+              "damage_9": "q.health <= 9200 && q.health > 9100"
+            },
+            {
+              "damage_10": "q.health <= 9100 && q.health > 9000"
+            },
+            {
+              "damage_11": "q.health <= 9000 && q.health > 8900"
+            },
+            {
+              "damage_12": "q.health <= 8900 && q.health > 8800"
+            },
+            {
+              "damage_13": "q.health <= 8800 && q.health > 8700"
+            },
+            {
+              "damage_14": "q.health <= 8700 && q.health > 8600"
+            },
+            {
+              "damage_15": "q.health <= 8600 && q.health > 8500"
+            },
+            {
+              "damage_16": "q.health <= 8500 && q.health > 8400"
+            },
+            {
+              "damage_17": "q.health <= 8400 && q.health > 8300"
+            },
+            {
+              "damage_18": "q.health <= 8300 && q.health > 8200"
+            },
+            {
+              "damage_19": "q.health <= 8200 && q.health > 8100"
+            },
+            {
+              "damage_20": "q.health <= 8100 && q.health > 8000"
+            },
+            {
+              "damage_21": "q.health <= 8000 && q.health > 7900"
+            },
+            {
+              "damage_22": "q.health <= 7900 && q.health > 7800"
+            },
+            {
+              "damage_23": "q.health <= 7800 && q.health > 7700"
+            },
+            {
+              "damage_24": "q.health <= 7700 && q.health > 7600"
+            },
+            {
+              "damage_25": "q.health <= 7600 && q.health > 7500"
+            },
+            {
+              "damage_26": "q.health <= 7500 && q.health > 7400"
+            },
+            {
+              "damage_27": "q.health <= 7400 && q.health > 7300"
+            },
+            {
+              "damage_28": "q.health <= 7300 && q.health > 7200"
+            },
+            {
+              "damage_29": "q.health <= 7200 && q.health > 7100"
+            },
+            {
+              "damage_30": "q.health <= 7100 && q.health > 7000"
+            },
+            {
+              "damage_31": "q.health <= 7000 && q.health > 6900"
+            },
+            {
+              "damage_32": "q.health <= 6900 && q.health > 6800"
+            },
+            {
+              "damage_33": "q.health <= 6800 && q.health > 6700"
+            },
+            {
+              "damage_34": "q.health <= 6700 && q.health > 6600"
+            },
+            {
+              "damage_35": "q.health <= 6600 && q.health > 6500"
+            },
+            {
+              "damage_36": "q.health <= 6500 && q.health > 6400"
+            },
+            {
+              "damage_37": "q.health <= 6400 && q.health > 6300"
+            },
+            {
+              "damage_38": "q.health <= 6300 && q.health > 6200"
+            },
+            {
+              "damage_39": "q.health <= 6200 && q.health > 6100"
+            },
+            {
+              "damage_40": "q.health <= 6100 && q.health > 6000"
+            },
+            {
+              "damage_41": "q.health <= 6000 && q.health > 5900"
+            },
+            {
+              "damage_42": "q.health <= 5900 && q.health > 5800"
+            },
+            {
+              "damage_43": "q.health <= 5800 && q.health > 5700"
+            },
+            {
+              "damage_44": "q.health <= 5700 && q.health > 5600"
+            },
+            {
+              "damage_45": "q.health <= 5600 && q.health > 5500"
+            },
+            {
+              "damage_46": "q.health <= 5500 && q.health > 5400"
+            },
+            {
+              "damage_47": "q.health <= 5400 && q.health > 5300"
+            },
+            {
+              "damage_48": "q.health <= 5300 && q.health > 5200"
+            },
+            {
+              "damage_49": "q.health <= 5200 && q.health > 5100"
+            },
+            {
+              "damage_50": "q.health <= 5100 && q.health > 5000"
+            },
+            {
+              "damage_51": "q.health <= 5000 && q.health > 4900"
+            },
+            {
+              "damage_52": "q.health <= 4900 && q.health > 4800"
+            },
+            {
+              "damage_53": "q.health <= 4800 && q.health > 4700"
+            },
+            {
+              "damage_54": "q.health <= 4700 && q.health > 4600"
+            },
+            {
+              "damage_55": "q.health <= 4600 && q.health > 4500"
+            },
+            {
+              "damage_56": "q.health <= 4500 && q.health > 4400"
+            },
+            {
+              "damage_57": "q.health <= 4400 && q.health > 4300"
+            },
+            {
+              "damage_58": "q.health <= 4300 && q.health > 4200"
+            },
+            {
+              "damage_59": "q.health <= 4200 && q.health > 4100"
+            },
+            {
+              "damage_60": "q.health <= 4100 && q.health > 4000"
+            },
+            {
+              "damage_61": "q.health <= 4000 && q.health > 3900"
+            },
+            {
+              "damage_62": "q.health <= 3900 && q.health > 3800"
+            },
+            {
+              "damage_63": "q.health <= 3800 && q.health > 3700"
+            },
+            {
+              "damage_64": "q.health <= 3700 && q.health > 3600"
+            },
+            {
+              "damage_65": "q.health <= 3600 && q.health > 3500"
+            },
+            {
+              "damage_66": "q.health <= 3500 && q.health > 3400"
+            },
+            {
+              "damage_67": "q.health <= 3400 && q.health > 3300"
+            },
+            {
+              "damage_68": "q.health <= 3300 && q.health > 3200"
+            },
+            {
+              "damage_69": "q.health <= 3200 && q.health > 3100"
+            },
+            {
+              "damage_70": "q.health <= 3100 && q.health > 3000"
+            },
+            {
+              "damage_71": "q.health <= 3000 && q.health > 2900"
+            },
+            {
+              "damage_72": "q.health <= 2900 && q.health > 2800"
+            },
+            {
+              "damage_73": "q.health <= 2800 && q.health > 2700"
+            },
+            {
+              "damage_74": "q.health <= 2700 && q.health > 2600"
+            },
+            {
+              "damage_75": "q.health <= 2600 && q.health > 2500"
+            }
+          ]
+        },
+        "damage_no": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || q.health != 10000"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_0"
+          ]
+        },
+        "damage_1": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 10000 && q.health > 9900)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_1"
+          ]
+        },
+        "damage_2": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 9900 && q.health > 9800)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_2"
+          ]
+        },
+        "damage_3": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 9800 && q.health > 9700)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_3"
+          ]
+        },
+        "damage_4": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 9700 && q.health > 9600)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_4"
+          ]
+        },
+        "damage_5": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 9600 && q.health > 9500)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_5"
+          ]
+        },
+        "damage_6": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 9500 && q.health > 9400)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_6"
+          ]
+        },
+        "damage_7": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 9400 && q.health > 9300)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_7"
+          ]
+        },
+        "damage_8": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 9300 && q.health > 9200)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_8"
+          ]
+        },
+        "damage_9": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 9200 && q.health > 9100)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_9"
+          ]
+        },
+        "damage_10": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 9100 && q.health > 9000)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_10"
+          ]
+        },
+        "damage_11": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 9000 && q.health > 8900)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_11"
+          ]
+        },
+        "damage_12": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 8900 && q.health > 8800)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_12"
+          ]
+        },
+        "damage_13": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 8800 && q.health > 8700)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_13"
+          ]
+        },
+        "damage_14": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 8700 && q.health > 8600)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_14"
+          ]
+        },
+        "damage_15": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 8600 && q.health > 8500)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_15"
+          ]
+        },
+        "damage_16": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 8500 && q.health > 8400)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_16"
+          ]
+        },
+        "damage_17": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 8400 && q.health > 8300)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_17"
+          ]
+        },
+        "damage_18": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 8300 && q.health > 8200)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_18"
+          ]
+        },
+        "damage_19": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 8200 && q.health > 8100)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_19"
+          ]
+        },
+        "damage_20": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 8100 && q.health > 8000)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_20"
+          ]
+        },
+        "damage_21": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 8000 && q.health > 7900)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_21"
+          ]
+        },
+        "damage_22": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 7900 && q.health > 7800)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_22"
+          ]
+        },
+        "damage_23": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 7800 && q.health > 7700)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_23"
+          ]
+        },
+        "damage_24": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 7700 && q.health > 7600)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_24"
+          ]
+        },
+        "damage_25": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 7600 && q.health > 7500)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_25"
+          ]
+        },
+        "damage_26": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 7500 && q.health > 7400)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_26"
+          ]
+        },
+        "damage_27": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 7400 && q.health > 7300)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_27"
+          ]
+        },
+        "damage_28": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 7300 && q.health > 7200)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_28"
+          ]
+        },
+        "damage_29": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 7200 && q.health > 7100)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_29"
+          ]
+        },
+        "damage_30": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 7100 && q.health > 7000)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_30"
+          ]
+        },
+        "damage_31": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 7000 && q.health > 6900)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_31"
+          ]
+        },
+        "damage_32": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 6900 && q.health > 6800)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_32"
+          ]
+        },
+        "damage_33": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 6800 && q.health > 6700)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_33"
+          ]
+        },
+        "damage_34": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 6700 && q.health > 6600)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_34"
+          ]
+        },
+        "damage_35": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 6600 && q.health > 6500)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_35"
+          ]
+        },
+        "damage_36": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 6500 && q.health > 6400)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_36"
+          ]
+        },
+        "damage_37": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 6400 && q.health > 6300)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_37"
+          ]
+        },
+        "damage_38": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 6300 && q.health > 6200)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_38"
+          ]
+        },
+        "damage_39": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 6200 && q.health > 6100)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_39"
+          ]
+        },
+        "damage_40": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 6100 && q.health > 6000)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_40"
+          ]
+        },
+        "damage_41": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 6000 && q.health > 5900)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_41"
+          ]
+        },
+        "damage_42": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 5900 && q.health > 5800)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_42"
+          ]
+        },
+        "damage_43": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 5800 && q.health > 5700)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_43"
+          ]
+        },
+        "damage_44": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 5700 && q.health > 5600)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_44"
+          ]
+        },
+        "damage_45": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 5600 && q.health > 5500)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_45"
+          ]
+        },
+        "damage_46": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 5500 && q.health > 5400)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_46"
+          ]
+        },
+        "damage_47": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 5400 && q.health > 5300)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_47"
+          ]
+        },
+        "damage_48": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 5300 && q.health > 5200)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_48"
+          ]
+        },
+        "damage_49": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 5200 && q.health > 5100)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_49"
+          ]
+        },
+        "damage_50": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 5100 && q.health > 5000)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_50"
+          ]
+        },
+        "damage_51": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 5000 && q.health > 4900)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_51"
+          ]
+        },
+        "damage_52": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 4900 && q.health > 4800)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_52"
+          ]
+        },
+        "damage_53": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 4800 && q.health > 4700)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_53"
+          ]
+        },
+        "damage_54": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 4700 && q.health > 4600)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_54"
+          ]
+        },
+        "damage_55": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 4600 && q.health > 4500)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_55"
+          ]
+        },
+        "damage_56": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 4500 && q.health > 4400)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_56"
+          ]
+        },
+        "damage_57": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 4400 && q.health > 4300)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_57"
+          ]
+        },
+        "damage_58": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 4300 && q.health > 4200)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_58"
+          ]
+        },
+        "damage_59": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 4200 && q.health > 4100)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_59"
+          ]
+        },
+        "damage_60": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 4100 && q.health > 4000)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_60"
+          ]
+        },
+        "damage_61": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 4000 && q.health > 3900)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_61"
+          ]
+        },
+        "damage_62": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 3900 && q.health > 3800)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_62"
+          ]
+        },
+        "damage_63": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 3800 && q.health > 3700)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_63"
+          ]
+        },
+        "damage_64": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 3700 && q.health > 3600)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_64"
+          ]
+        },
+        "damage_65": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 3600 && q.health > 3500)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_65"
+          ]
+        },
+        "damage_66": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 3500 && q.health > 3400)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_66"
+          ]
+        },
+        "damage_67": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 3400 && q.health > 3300)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_67"
+          ]
+        },
+        "damage_68": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 3300 && q.health > 3200)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_68"
+          ]
+        },
+        "damage_69": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 3200 && q.health > 3100)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_69"
+          ]
+        },
+        "damage_70": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 3100 && q.health > 3000)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_70"
+          ]
+        },
+        "damage_71": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 3000 && q.health > 2900)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_71"
+          ]
+        },
+        "damage_72": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 2900 && q.health > 2800)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_72"
+          ]
+        },
+        "damage_73": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 2800 && q.health > 2700)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_73"
+          ]
+        },
+        "damage_74": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 2700 && q.health > 2600)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_74"
+          ]
+        },
+        "damage_75": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !(q.health <= 2600 && q.health > 2500)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,r=8] titan_health_75"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+    "demo_bloom_base": {
+        "vertexShader": "shaders/uv_fullscreen.vertex",
+        "fragmentShader": "shaders/demo_bloom_base.fragment",
+        "vertexFields": [
+            {
+                "field": "Position"
+            },
+            {
+                "field": "UV0"
+            }
+        ],
+        "samplerStates": [
+            {
+                "samplerIndex": 0,
+                "textureWrap": "Clamp",
+                "textureFilter": "Bilinear"
+            }
+        ],
+        "states": [
+            "DisableDepthTest"
+        ],
+        "msaaSupport": "Both"
+    },
+    "demo_bloom_d:demo_bloom_base": {
+        "vertexShader": "shaders/uv_fullscreen.vertex",
+        "fragmentShader": "shaders/demo_bloom_d.fragment"
+    },
+    "demo_bloom_u:demo_bloom_base": {
+        "vertexShader": "shaders/uv_fullscreen.vertex",
+        "fragmentShader": "shaders/demo_bloom_u.fragment"
+    },
+    "demo_bloom_zend:demo_bloom_base": {
+        "vertexShader": "shaders/uv_fullscreen.vertex",
+        "fragmentShader": "shaders/demo_bloom_zend.fragment"
+    }
+}

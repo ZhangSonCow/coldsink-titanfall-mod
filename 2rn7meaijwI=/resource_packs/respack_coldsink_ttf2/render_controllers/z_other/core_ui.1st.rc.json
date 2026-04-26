@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.core_ui.1st": {"arrays": {
+        "textures": {
+          "Array.skin": [
+            "Texture.core_ui",
+            "Texture.core_ui_green",
+            "Texture.core_ui_orange"
+          ]
+        }
+      },
+      "geometry": "geometry.core_ui.1st",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "Array.skin[ q.variant > 0 ? 0 : q.property('pilot:has_titan') ]" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.pilot_weapon_turn.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "turn": "q.property('titan:other_action') == 10"
+            }
+          ]
+        },
+        "turn": {
+          "animations": [
+            "weapon_turn_timer"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:other_action') != 10"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

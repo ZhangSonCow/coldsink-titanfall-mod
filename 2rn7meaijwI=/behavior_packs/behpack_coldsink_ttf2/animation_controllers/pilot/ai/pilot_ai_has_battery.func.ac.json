@@ -1,0 +1,44 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.pilot_ai_has_battery.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "has_battery_good": "q.property('pilot:has_battery') == 1 || q.property('pilot:has_battery') == 2"
+            },
+            {
+              "has_battery_bad": "q.property('pilot:has_battery') == 3"
+            }
+          ],
+          "on_entry": [
+            "/tag @s remove has_battery_good",
+            "/tag @s remove has_battery_bad"
+          ]
+        },
+        "has_battery_good": {
+          "transitions": [
+            {
+              "default": "q.property('pilot:has_battery') == 0"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add has_battery_good"
+          ]
+        },
+        "has_battery_bad": {
+          "transitions": [
+            {
+              "default": "q.property('pilot:has_battery') == 0"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add has_battery_bad"
+          ]
+        }
+      }
+    }
+  }
+}

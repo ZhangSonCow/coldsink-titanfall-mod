@@ -1,0 +1,39 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:titan_loading_sign",
+      "scripts": {
+        "animate": [
+          "spawner1",
+          "spawner2",
+          "spawner3",
+          "spawner4"
+        ],
+        "initialize": [
+          "v.rotate_random = math.random(0,360);"
+        ]
+      },
+      "materials": {
+        "default": "emissive_additive_alpha_depth"
+      },
+      "textures": {
+        "default": "textures/entity/titan/titan_loading_sign_blue",
+        "sign_blue": "textures/entity/titan/titan_loading_sign_blue",
+        "sign_red": "textures/entity/titan/titan_loading_sign_red"
+      },
+      "geometry": {
+        "default": "geometry.titan_loading_sign"
+      },
+      "animations": {
+        "spawner1":"animation.titan_auto_spawner.rotate1",
+        "spawner2":"animation.titan_auto_spawner.rotate2",
+        "spawner3":"animation.titan_auto_spawner.rotate3",
+        "spawner4":"animation.titan_auto_spawner.rotate4"
+      },
+      "render_controllers": [
+        "controller.render.titan_loading_sign"
+      ]
+    }
+  }
+}

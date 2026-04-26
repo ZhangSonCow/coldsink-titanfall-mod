@@ -1,0 +1,102 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.entry_legion_cabin": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "entry_loaded": "q.property('titan:action') == 160"
+            },
+            {
+              "entry_front": "q.property('titan:action') == 162"
+            },
+            {
+              "entry_back": "q.property('titan:action') == 163"
+            },
+            {
+              "entry_top": "q.property('titan:action') == 164"
+            },
+            {
+              "exit_cabin": "q.property('titan:action') == 165"
+            }
+          ]
+        },
+        "entry_loaded": {
+          "animations": [
+            "legion_titan.loaded",
+            "legion_titan.pilot_entry_loaded"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "standing": "q.property('titan:action') == 161"
+            }
+          ]
+        },
+        "standing": {
+          "animations": [
+            "legion_titan.standing",
+            "legion_titan.pilot_entry_standing"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "entry_front": {
+          "animations": [
+            "legion_titan.entry_stand_front",
+            "legion_titan.pilot_entry_front"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "entry_back": {
+          "animations": [
+            "legion_titan.entry_stand_back",
+            "legion_titan.pilot_entry_back"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "entry_top": {
+          "animations": [
+            "legion_titan.entry_stand_top",
+            "legion_titan.pilot_entry_top"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "exit_cabin": {
+          "animations": [
+            "legion_titan.exit_cabin",
+            "legion_titan.pilot_exit_cabin"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

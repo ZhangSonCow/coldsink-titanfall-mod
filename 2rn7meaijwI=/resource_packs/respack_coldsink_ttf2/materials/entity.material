@@ -1,0 +1,123 @@
+{
+  "materials": {
+    "version": "1.0.0",
+    "demo_bloom_entity": {
+      "vertexShader": "shaders/entity.vertex",
+      "vrGeometryShader": "shaders/entity.geometry",
+      "fragmentShader": "shaders/_demo_bloom_entity.fragment",
+      "vertexFields": [
+          {
+              "field": "Position"
+          },
+          {
+              "field": "Color"
+          },
+          {
+              "field": "Normal"
+          },
+          {
+              "field": "UV0"
+          }
+      ],
+      "variants": [
+          {
+              "skinning": {
+                  "+defines": [
+                      "USE_SKINNING"
+                  ],
+                  "vertexFields": [
+                      {
+                          "field": "Position"
+                      },
+                      {
+                          "field": "BoneId0"
+                      },
+                      {
+                          "field": "Normal"
+                      },
+                      {
+                          "field": "UV0"
+                      }
+                  ]
+              }
+          },
+          {
+              "skinning_color": {
+                  "+defines": [
+                      "USE_SKINNING",
+                      "USE_OVERLAY"
+                  ],
+                  "+states": [
+                      // "Blending"
+                  ],
+                  "vertexFields": [
+                      {
+                          "field": "Position"
+                      },
+                      {
+                          "field": "BoneId0"
+                      },
+                      {
+                          "field": "Color"
+                      },
+                      {
+                          "field": "Normal"
+                      },
+                      {
+                          "field": "UV0"
+                      }
+                  ]
+              }
+          }
+      ],
+      "msaaSupport": "Both",
+      "+samplerStates": [
+          {
+              "samplerIndex": 0,
+              "textureWrap": "Repeat",
+              "textureFilter": "Point"
+          },
+          {
+              "samplerIndex": 1,
+              "textureWrap": "Repeat",
+              "textureFilter": "Point"
+          }
+      ],
+      "+defines": [
+          "USE_OVERLAY",
+          "ALPHA_TEST"
+      ],
+      "+states": [
+          // "Blending", # 关掉bloom，从而利用alpha通道传值
+          "DisableCulling"
+      ]
+    },
+    
+    "emissive_additive_alpha_depth:entity_emissive":{
+      "+states": [
+        "Blending",
+        "DisableCulling"
+      ],
+      "+defines": [
+        "USE_UV_ANIM"
+      ],
+      "-defines": [
+        "FANCY"
+      ],
+      "blendSrc": "SourceAlpha",
+      "blendDst": "One",
+      "depthFunc": "Always"
+    },
+
+    "new_blend:entity": {
+      "+states": [
+        "Blending",
+        "DisableCulling"
+      ],
+      "+defines": [
+        "USE_UV_ANIM"
+      ],
+      "msaaSupport": "Both"
+    }
+  }
+}

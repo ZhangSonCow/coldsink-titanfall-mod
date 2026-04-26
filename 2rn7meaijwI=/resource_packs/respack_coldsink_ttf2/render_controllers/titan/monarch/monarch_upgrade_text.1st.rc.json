@@ -1,0 +1,16 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.monarch_upgrade_text.1st": {
+      "geometry": "geometry.monarch_upgrade_text.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.monarch_upgrade_text" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

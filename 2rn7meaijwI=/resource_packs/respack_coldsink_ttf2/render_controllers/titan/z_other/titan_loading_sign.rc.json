@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.titan_loading_sign": {
+      "arrays": {
+        "textures": {
+          "Array.sign": [
+            "Texture.sign_blue",
+            "Texture.sign_red"
+          ]
+        }
+      },
+      "geometry": "geometry.default",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "Array.sign[ query.variant ]" ],
+      "is_hurt_color": {}
+    }
+  }
+}

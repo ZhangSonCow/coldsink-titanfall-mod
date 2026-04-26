@@ -1,0 +1,46 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.legion_skill_3.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "skill": "q.is_sheared"
+            }
+          ]
+        },
+        "skill": {
+          "animations": [
+            "legion_skill_3"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_sheared"
+            }
+          ],
+          "on_entry": [
+            "/playsound legion_skill_3_entry @a[r=64] ~~~",
+            "/tag @s add core_self",
+            "/playsound legion_core_begin @a[r=64] ~~~",
+            "/playsound legion_core_begin.self @s",
+            "/tag @s remove core_self",
+
+            "/tag @s remove titan_core_saied",
+            "/scoreboard players set @e[type=coldsink:legion_titan,c=1] titan_core 0",
+            "/scoreboard players set @s[scores={titan_core=101..}] titan_core 100",
+            "/tag @s add in_core"
+          ],
+          "on_exit": [
+            "/playsound legion_skill_3_exit @a[r=64] ~~~",
+            "/event entity @s clear_titan_sheared",
+            "/tag @s remove in_core",
+            "/playsound legion_core_end @s",
+            "/tag @s remove titan_elesmoke_saied"
+          ]
+        }
+      }
+    }
+  }
+}

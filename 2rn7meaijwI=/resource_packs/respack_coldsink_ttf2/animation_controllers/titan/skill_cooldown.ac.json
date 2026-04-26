@@ -1,0 +1,92 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.skill_0_cooldown": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "cooldown": "q.property('titan:skill_cooldown_0') > 0"
+            }
+          ]
+        },
+        "cooldown": {
+          "transitions": [
+            {
+              "over": "q.property('titan:skill_cooldown_0') == 0"
+            }
+          ]
+        },
+        "over": {
+          "animations": [
+            "cooldown_0_over.1st"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:skill_cooldown_0') > 0"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.skill_1_cooldown": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "cooldown": "q.property('titan:skill_cooldown_1') > 0"
+            }
+          ]
+        },
+        "cooldown": {
+          "transitions": [
+            {
+              "over": "q.property('titan:skill_cooldown_1') == 0 && !( q.variant == 1 && q.property('titan:skill_cooldown_0') > 90 )"
+            }
+          ]
+        },
+        "over": {
+          "animations": [
+            "cooldown_1_over.1st"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:skill_cooldown_1') > 0"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.skill_2_cooldown": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "cooldown": "q.property('titan:skill_cooldown_2') > 0"
+            }
+          ]
+        },
+        "cooldown": {
+          "transitions": [
+            {
+              "over": "q.property('titan:skill_cooldown_2') == 0 && !( q.variant == 1 && q.property('titan:skill_cooldown_0') > 130 )"
+            }
+          ]
+        },
+        "over": {
+          "animations": [
+            "cooldown_2_over.1st"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:skill_cooldown_2') > 0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

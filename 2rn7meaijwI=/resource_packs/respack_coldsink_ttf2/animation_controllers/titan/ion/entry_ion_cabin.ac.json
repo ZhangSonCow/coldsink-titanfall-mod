@@ -1,0 +1,102 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.entry_ion_cabin": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "entry_loaded": "q.property('titan:action') == 110"
+            },
+            {
+              "entry_front": "q.property('titan:action') == 112"
+            },
+            {
+              "entry_back": "q.property('titan:action') == 113"
+            },
+            {
+              "entry_top": "q.property('titan:action') == 114"
+            },
+            {
+              "exit_cabin": "q.property('titan:action') == 115"
+            }
+          ]
+        },
+        "entry_loaded": {
+          "animations": [
+            "ion_titan.loaded",
+            "ion_titan.pilot_entry_loaded"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "standing": "q.property('titan:action') == 111"
+            }
+          ]
+        },
+        "standing": {
+          "animations": [
+            "ion_titan.standing",
+            "ion_titan.pilot_entry_standing"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "entry_front": {
+          "animations": [
+            "ion_titan.entry_stand_front",
+            "ion_titan.pilot_entry_front"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "entry_back": {
+          "animations": [
+            "ion_titan.entry_stand_back",
+            "ion_titan.pilot_entry_back"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "entry_top": {
+          "animations": [
+            "ion_titan.entry_stand_top",
+            "ion_titan.pilot_entry_top"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "exit_cabin": {
+          "animations": [
+            "ion_titan.exit_cabin",
+            "ion_titan.pilot_exit_cabin"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

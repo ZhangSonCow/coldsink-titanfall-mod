@@ -1,0 +1,16 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.core_ui_value.1st": {
+      "geometry": "geometry.core_ui_value.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.ui_number" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

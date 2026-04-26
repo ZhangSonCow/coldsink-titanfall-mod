@@ -1,0 +1,56 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ronin_skill_3.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "skill_begin": "q.property('titan:action') == 17"
+            }
+          ]
+        },
+        "skill_begin": {
+          "transitions": [
+            {
+              "skill_pre": "q.property('titan:action') != 17"
+            }
+          ]
+        },
+        "skill_pre": {
+          "transitions": [
+            {
+              "skill": "q.is_sheared"
+            }
+          ]
+        },
+        "skill": {
+          "animations": [
+            "ronin_skill_3",
+            "ronin_core_spurt"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_sheared"
+            }
+          ],
+          "on_entry": [
+            "/replaceitem entity @s[tag=!wy_game] slot.hotbar 0 coldsink:ronin_melee 1 0 {\"item_lock\":{\"mode\":\"lock_in_slot\"}}",
+            "/tag @s remove titan_core_saied",
+            "/scoreboard players set @e[type=coldsink:ronin_titan,c=1] titan_core 0",
+            "/scoreboard players set @s[scores={titan_core=101..}] titan_core 100",
+            "/tag @s add in_core"
+          ],
+          "on_exit": [
+            "/replaceitem entity @s[tag=!wy_game] slot.hotbar 0 coldsink:ronin_weapon 1 0 {\"item_lock\":{\"mode\":\"lock_in_slot\"}}",
+            "/event entity @s clear_titan_sheared",
+            "/tag @s remove in_core",
+            "/playsound ronin_core_end @s",
+            "/tag @s remove titan_elesmoke_saied"
+          ]
+        }
+      }
+    }
+  }
+}

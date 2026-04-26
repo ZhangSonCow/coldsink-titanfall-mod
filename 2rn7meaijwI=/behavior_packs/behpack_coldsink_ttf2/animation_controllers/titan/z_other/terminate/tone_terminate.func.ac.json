@@ -1,0 +1,65 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.tone_terminate.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "terminate_1": "q.property('titan:action') == 126"
+            },
+            {
+              "terminate_2": "q.property('titan:action') == 127"
+            },
+            {
+              "by_other_terminate": "q.property('titan:action') == 128"
+            }
+          ],
+          "on_exit": [
+            "/event entity @s titan_terminate_begin"
+          ]
+        },
+        "terminate_1": {
+          "animations": [
+            "tone_terminate_1",
+            "tone_terminate_1_lock"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ],
+          "on_exit": [
+            "/event entity @s titan_terminate_end"
+          ]
+        },
+        "terminate_2": {
+          "animations": [
+            "tone_terminate_2",
+            "tone_terminate_2_lock"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ],
+          "on_exit": [
+            "/event entity @s titan_terminate_end"
+          ]
+        },
+        "by_other_terminate": {
+          "animations": [ "titan_by_terminate" ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ],
+          "on_exit": [
+            "/event entity @s titan_terminate_end"
+          ]
+        }
+      }
+    }
+  }
+}

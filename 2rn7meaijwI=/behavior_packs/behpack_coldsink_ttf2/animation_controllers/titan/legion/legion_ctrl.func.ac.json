@@ -1,0 +1,182 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.legion_ctrl.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "fire_after": "q.is_saddled"
+            },
+            {
+              "reload": "v.attack_time && !q.property('titan:weapon_aim') && q.property('titan:weapon_value') < 100 && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_weapon')"
+            },
+            {
+              "melee": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_melee')"
+            },
+            {
+              "fire_pre": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_weapon') && ( (q.property('titan:weapon_value') > 0 && q.property('titan:powering_time') == 0) || (q.property('titan:weapon_value') > 1 && q.property('titan:powering_time') == 1) )"
+            },
+            {
+              "power_pre": "q.property('titan:skill_cooldown_1') == 0 && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_skill_1')"
+            },
+            {
+              "change": "q.property('titan:skill_cooldown_2') == 0 && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_skill_2')"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[tag=titan_idle,tag=!titan_reload,tag=!terminate] set_action_0"
+          ]
+        },
+        "fire": {
+          "transitions": [
+            {
+              "fire_after": "!q.is_using_item && q.property('titan:action') != 4"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[scores={legion_bullet=1..},tag=!legion_range_mode] set_action_3",
+            "/event entity @s[scores={legion_bullet=2..},tag=legion_range_mode] set_action_3",
+            "/tag @s add keep_fire"
+          ],
+          "on_exit": [
+            "/event entity @s[tag=!titan_reload] set_action_0",
+            "/tag @s remove keep_fire"
+          ]
+        },
+        "reload": {
+          "transitions": [
+            {
+              "melee": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_melee')"
+            },
+            {
+              "fire_pre": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_weapon') && ( (q.property('titan:weapon_value') > 0 && q.property('titan:powering_time') == 0) || (q.property('titan:weapon_value') > 1 && q.property('titan:powering_time') == 1) )"
+            },
+            {
+              "power_pre": "q.property('titan:skill_cooldown_1') == 0 && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_skill_1')"
+            },
+            {
+              "change": "q.property('titan:skill_cooldown_2') == 0 && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_skill_2')"
+            },
+            {
+              "default": "q.property('titan:action') != 4"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[scores={legion_bullet=..99}] set_action_4"
+          ]
+        },
+        "melee": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 5"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[tag=!terminate] set_action_5",
+            "/tag @s add keep_melee"
+          ],
+          "on_exit": [
+            "/tag @s remove keep_melee"
+          ]
+        },
+        "fire_pre": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0 || !( q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_weapon') )"
+            },
+            {
+              "fire": "q.property('titan:action') == 3"
+            },
+            {
+              "fire_after": "q.property('titan:action') == 12"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_11"
+          ]
+        },
+        "fire_after": {
+          "transitions": [
+            {
+              "default": "q.is_sprinting || q.out_of_control"
+            },
+            {
+              "fire": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_weapon') && ( (q.property('titan:weapon_value') > 0 && q.property('titan:powering_time') == 0) || (q.property('titan:weapon_value') > 1 && q.property('titan:powering_time') == 1) )"
+            },
+            {
+              "reload": "( (q.property('titan:weapon_value') == 0 && q.property('titan:powering_time') == 0) || (q.property('titan:weapon_value') < 2 && q.property('titan:powering_time') == 1) ) || (v.attack_time && q.property('titan:weapon_value') < 100 && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_weapon'))"
+            },
+            {
+              "melee": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_melee') && !q.is_saddled"
+            },
+            {
+              "power": "q.property('titan:skill_cooldown_1') == 0 && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_skill_1')"
+            },
+            {
+              "change": "q.property('titan:skill_cooldown_2') == 0 && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_skill_2')"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_12"
+          ]
+        },
+        "power_pre": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "power": "q.property('titan:action') == 14"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_13",
+            "/tag @s add keep_skill_q"
+          ],
+          "on_exit": [
+            "/tag @s remove keep_skill_q"
+          ]
+        },
+        "power": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "power_after": "q.property('titan:action') == 15"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_14"
+          ]
+        },
+        "power_after": {
+          "transitions": [
+            {
+              "fire_after": "q.property('titan:action') != 15"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_15"
+          ]
+        },
+        "change": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 16"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_16",
+            "/tag @s add keep_skill_g"
+          ],
+          "on_exit": [
+            "/tag @s remove keep_skill_g"
+          ]
+        }
+      }
+    }
+  }
+}

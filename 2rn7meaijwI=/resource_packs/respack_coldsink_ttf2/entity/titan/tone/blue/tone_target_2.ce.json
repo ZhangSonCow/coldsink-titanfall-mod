@@ -1,0 +1,33 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:tone_target_2_blue",
+      "animations": {
+        "facing": "animation.tone_target.facing",
+        "zoom": "animation.tone_target.zoom_2"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.random_choices = math.random(0, 100);"
+        ],
+        "animate": [
+          "facing",
+          "zoom"
+        ]
+      },
+      "materials": {
+        "default": "emissive_additive_alpha_depth"
+      },
+      "textures": {
+        "default": "textures/entity/titan/tone/tone_target"
+      },
+      "geometry": {
+        "default": "geometry.tone_target"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

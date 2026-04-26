@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.northstar_weapon_star.1st": {
+      "geometry": "geometry.northstar_weapon_star.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.titan_weapon_star" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    "controller.render.northstar_missile_star.1st": {
+      "geometry": "geometry.circle_star.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.titan_weapon_star" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    "controller.render.northstar_missile_big_star.1st": {
+      "geometry": "geometry.titan_missile_big_star.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.titan_weapon_star" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

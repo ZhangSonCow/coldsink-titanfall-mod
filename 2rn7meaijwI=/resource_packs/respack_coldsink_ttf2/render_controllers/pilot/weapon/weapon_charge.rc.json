@@ -1,0 +1,15 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.weapon_charge": {
+      "geometry": "geometry.weapon_charge",
+      "materials": [
+        {
+          "*": "material.netease_entity_metallic"
+        }
+      ],
+      "textures": [ "texture.weapon_charge" ],
+      "is_hurt_color": {}
+    }
+  }
+}

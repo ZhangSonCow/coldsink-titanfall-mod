@@ -1,0 +1,307 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.monarch_ctrl.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "fire_arc_final": "(q.property('titan:monarch_now_level') > 2 && q.property('titan:monarch_core_one') == 1 && q.property('titan:monarch_core_three') == 3) && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_weapon') && q.property('titan:weapon_value') > 0"
+            },
+            {
+              "fire_final": "(q.property('titan:monarch_now_level') > 2 && q.property('titan:monarch_core_one') != 1 && q.property('titan:monarch_core_three') == 3) && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_weapon') && q.property('titan:weapon_value') > 0"
+            },
+            {
+              "fire_arc": "(q.property('titan:monarch_now_level') > 0 && q.property('titan:monarch_core_one') == 1) && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_weapon') && q.property('titan:weapon_value') > 0"
+            },
+            {
+              "fire_normal": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_weapon') && q.property('titan:weapon_value') > 0"
+            },
+            {
+              "reload": "(v.attack_time && !q.property('titan:weapon_aim') && ( ( !(q.property('titan:monarch_now_level') > 0 && q.property('titan:monarch_core_one') == 1) && q.property('titan:weapon_value') < 40) || (q.property('titan:monarch_now_level') > 0 && q.property('titan:monarch_core_one') == 1 && q.property('titan:weapon_value') < 50) ) && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_weapon'))"
+            },
+            {
+              "melee": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_melee')"
+            },
+            {
+              "missile_pre": "q.property('titan:skill_cooldown_1') == 0 && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_skill_1')"
+            },
+            {
+              "reflash_fast": "q.property('titan:monarch_now_level') > 1 && q.property('titan:monarch_core_one') == 1 && q.property('titan:skill_cooldown_2') == 0 && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_skill_2')"
+            },
+            {
+              "reflash": "q.property('titan:skill_cooldown_2') == 0 && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_skill_2')"
+            },
+            {
+              "energy_pre": "q.property('titan:skill_cooldown_0') == 0 && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_skill_0')"
+            },
+            {
+              "missile_final_pre": "( (q.property('titan:monarch_core_one') == 2 && q.property('titan:missile_number') > 0) || (q.property('titan:monarch_core_one') != 2 && q.property('titan:missile_number') > 6) ) && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_skill_1_final')"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[tag=titan_idle,tag=!titan_reload,tag=!terminate] set_action_0"
+          ]
+        },
+        "fire_normal": {
+          "transitions": [
+            {
+              "default": "!q.is_using_item"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[scores={monarch_bullet=1..}] set_action_11",
+            "/tag @s add keep_fire"
+          ],
+          "on_exit": [
+            "/event entity @s[tag=!titan_reload] set_action_0",
+            "/tag @s remove keep_fire"
+          ]
+        },
+        "fire_arc": {
+          "transitions": [
+            {
+              "default": "!q.is_using_item"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[scores={monarch_bullet=1..}] set_action_12",
+            "/tag @s add keep_fire"
+          ],
+          "on_exit": [
+            "/event entity @s[tag=!titan_reload] set_action_0",
+            "/tag @s remove keep_fire"
+          ]
+        },
+        "fire_final": {
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.property('titan:action') != 13"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[scores={monarch_bullet=1..}] set_action_13",
+            "/tag @s add keep_fire"
+          ],
+          "on_exit": [
+            "/event entity @s[tag=!titan_reload] set_action_0",
+            "/tag @s remove keep_fire"
+          ]
+        },
+        "fire_arc_final": {
+          "transitions": [
+            {
+              "default": "!q.is_using_item || q.property('titan:action') != 14"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[scores={monarch_bullet=1..}] set_action_14",
+            "/tag @s add keep_fire"
+          ],
+          "on_exit": [
+            "/event entity @s[tag=!titan_reload] set_action_0",
+            "/tag @s remove keep_fire"
+          ]
+        },
+        "reload": {
+          "transitions": [
+            {
+              "fire_arc_final": "(q.property('titan:monarch_now_level') > 2 && q.property('titan:monarch_core_one') == 1 && q.property('titan:monarch_core_three') == 3) && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_weapon') && q.property('titan:weapon_value') > 0"
+            },
+            {
+              "fire_final": "(q.property('titan:monarch_now_level') > 2 && q.property('titan:monarch_core_one') != 1 && q.property('titan:monarch_core_three') == 3) && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_weapon') && q.property('titan:weapon_value') > 0"
+            },
+            {
+              "fire_arc": "(q.property('titan:monarch_now_level') > 0 && q.property('titan:monarch_core_one') == 1) && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_weapon') && q.property('titan:weapon_value') > 0"
+            },
+            {
+              "fire_normal": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_weapon') && q.property('titan:weapon_value') > 0"
+            },
+            {
+              "melee": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_melee')"
+            },
+            {
+              "missile_pre": "q.property('titan:skill_cooldown_1') == 0 && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_skill_1')"
+            },
+            {
+              "reflash_fast": "q.property('titan:monarch_now_level') > 1 && q.property('titan:monarch_core_one') == 1 && q.property('titan:skill_cooldown_2') == 0 && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_skill_2')"
+            },
+            {
+              "reflash": "q.property('titan:skill_cooldown_2') == 0 && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_skill_2')"
+            },
+            {
+              "energy_pre": "q.property('titan:skill_cooldown_0') == 0 && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_skill_0')"
+            },
+            {
+              "missile_final_pre": "( (q.property('titan:monarch_core_one') == 2 && q.property('titan:missile_number') > 0) || (q.property('titan:monarch_core_one') != 2 && q.property('titan:missile_number') > 6) ) && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_skill_1_final')"
+            },
+            {
+              "default": "q.property('titan:action') != 4"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_4"
+          ]
+        },
+        "melee": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 5"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[tag=!terminate] set_action_5",
+            "/tag @s add keep_melee"
+          ],
+          "on_exit": [
+            "/tag @s remove keep_melee"
+          ]
+        },
+        "missile_pre": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "missile": "q.property('titan:action') == 16"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_15",
+            "/tag @s add keep_skill_q"
+          ],
+          "on_exit": [
+            "/tag @s remove keep_skill_q"
+          ]
+        },
+        "missile": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "missile_after": "q.property('titan:action') == 17"
+            }
+          ]
+        },
+        "missile_after": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 17"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_17"
+          ]
+        },
+        "reflash": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 18"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_18",
+            "/tag @s add keep_skill_g"
+          ],
+          "on_exit": [
+            "/tag @s remove keep_skill_g"
+          ]
+        },
+        "reflash_fast": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 19"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_19",
+            "/tag @s add keep_skill_g"
+          ],
+          "on_exit": [
+            "/tag @s remove keep_skill_g"
+          ]
+        },
+        "energy_pre": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "energy": "q.property('titan:action') == 21"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_20",
+            "/tag @s add keep_skill_mid"
+          ]
+        },
+        "energy": {
+          "transitions": [
+            {
+              "energy_after": "!q.is_using_item || q.property('titan:action') == 22"
+            }
+          ],
+          "on_exit": [
+            "/tag @s remove keep_skill_mid"
+          ]
+        },
+        "energy_after": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 22"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_22"
+          ]
+        },
+        "missile_final_pre": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "missile_final_powering": "q.property('titan:action') == 24"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_23",
+            "/tag @s add keep_skill_q"
+          ]
+        },
+        "missile_final_powering": {
+          "transitions": [
+            {
+              "missile_final": "!q.is_using_item"
+            }
+          ],
+          "on_exit": [
+            "/tag @s remove keep_skill_q"
+          ]
+        },
+        "missile_final": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "missile_final_after": "q.property('titan:action') == 26"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_25"
+          ]
+        },
+        "missile_final_after": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 26"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

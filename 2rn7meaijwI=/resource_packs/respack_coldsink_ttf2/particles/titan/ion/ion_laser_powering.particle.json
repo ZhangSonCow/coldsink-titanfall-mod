@@ -1,0 +1,63 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "titan:ion_laser_powering",
+			"basic_render_parameters": {
+				"material": "particles_add",
+				"texture": "textures/particle/titan/arc3"
+			}
+		},
+		"curves": {
+			"variable.alpha": {
+				"type": "linear",
+				"input": "v.particle_age",
+				"horizontal_range": "v.particle_lifetime",
+				"nodes": [0.3, 1, 1]
+			},
+			"variable.size": {
+				"type": "linear",
+				"input": "v.particle_age",
+				"horizontal_range": "v.particle_lifetime",
+				"nodes": [0.3, 1, 1]
+			}
+		},
+		"components": {
+			"minecraft:emitter_local_space": {
+				"position": true,
+				"rotation": false
+			},
+			"minecraft:emitter_rate_instant": {
+				"num_particles": 10
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 0.1
+			},
+			"minecraft:emitter_shape_point": {},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": 3,
+				"expiration_expression": "q.property('titan:action') != 12 && q.variant != 3"
+			},
+			"minecraft:particle_initial_spin": {
+				"rotation": "math.random(0,360)"
+			},
+			"minecraft:particle_initial_speed": "math.random(0.01,0.1)",
+			"minecraft:particle_motion_parametric": {
+				"rotation": "variable.particle_random_1 * 360 + (variable.particle_age * 100 * (variable.particle_random_2 - 0.5))"
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": ["0.8*variable.size", "0.8*variable.size"],
+				"facing_camera_mode": "rotate_xyz",
+				"uv": {
+					"texture_width": 250,
+					"texture_height": 250,
+					"uv": [0, 0],
+					"uv_size": [250, 250]
+				}
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": [0.5, 0.5, 0.1, "1*variable.alpha"]
+			}
+		}
+	}
+}

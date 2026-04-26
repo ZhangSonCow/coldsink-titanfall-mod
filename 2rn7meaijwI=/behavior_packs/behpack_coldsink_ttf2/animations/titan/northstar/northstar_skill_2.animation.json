@@ -1,0 +1,45 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.northstar_skill_2.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/event entity @s set_cooldown_2_14",
+          "/execute @s[tag=!in_core] ~~~ effect @e[type=coldsink:northstar_ride,c=1] levitation 1 36 true",
+          "/tag @s add self",
+          "/playsound northstar_skill_2 @a[tag=!self] ~~~",
+          "/playsound northstar_skill_2.self @s",
+          "/tag @s remove self"
+        ],
+        "0.5": [
+          "/effect @e[type=coldsink:northstar_ride,c=1] levitation 0 37 true",
+          "/effect @e[type=coldsink:northstar_ride,c=1] levitation 1 0 true",
+          "/effect @e[type=coldsink:northstar_ride,c=1] speed 3 8 true",
+          "/tag @s add northstar_fly"
+        ],
+        "1.5": [
+          "/effect @e[type=coldsink:northstar_ride,c=1] slow_falling 1 0 true"
+        ],
+        "1.6": [
+          "/effect @e[type=coldsink:northstar_ride,c=1] slow_falling 0 1 true",
+          "/effect @e[type=coldsink:northstar_ride,c=1] levitation 1 0 true"
+        ],
+        "2.6": [
+          "/effect @e[type=coldsink:northstar_ride,c=1] slow_falling 1 0 true"
+        ],
+        "2.7": [
+          "/effect @e[type=coldsink:northstar_ride,c=1] slow_falling 0 1 true",
+          "/effect @e[type=coldsink:northstar_ride,c=1] levitation 1 0 true"
+        ],
+        "3.7": [
+          "/tag @s remove northstar_fly"
+        ],
+        "4.7": [
+          "/event entity @s clear_titan_saddled"
+        ]
+      }
+    }
+  }
+}

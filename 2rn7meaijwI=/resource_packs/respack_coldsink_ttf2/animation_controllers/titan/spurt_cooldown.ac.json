@@ -1,0 +1,161 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.spurt_1_cooldown": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "cooldown_1": "q.property('titan:spurt_time') > 0"
+            }
+          ]
+        },
+        "cooldown_1": {
+          "transitions": [
+            {
+              "over_1": "q.property('titan:spurt_time') == 0"
+            }
+          ]
+        },
+        "over_1": {
+          "animations": [
+            "spurt_bar_1_light_1"
+          ],
+          "transitions": [
+            {
+              "cooldown_1": "q.property('titan:spurt_time') > 0"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.spurt_2_cooldown": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "cooldown_1": "q.property('titan:spurt_time') > 0"
+            }
+          ]
+        },
+        "cooldown_1": {
+          "transitions": [
+            {
+              "cooldown_2": "q.property('titan:spurt_time') > 6"
+            },
+            {
+              "over_1": "q.property('titan:spurt_time') == 0"
+            }
+          ]
+        },
+        "cooldown_2": {
+          "transitions": [
+            {
+              "over_2": "q.property('titan:spurt_time') < 7"
+            }
+          ]
+        },
+        "over_1": {
+          "animations": [
+            "spurt_bar_2_light_1"
+          ],
+          "transitions": [
+            {
+              "cooldown_1": "q.property('titan:spurt_time') > 0"
+            }
+          ]
+        },
+        "over_2": {
+          "animations": [
+            "spurt_bar_2_light_2"
+          ],
+          "transitions": [
+            {
+              "cooldown_1": "q.property('titan:spurt_time') > 6"
+            },
+            {
+              "over_1": "q.property('titan:spurt_time') == 0"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.spurt_3_cooldown": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "cooldown_1": "q.property('titan:spurt_time') > 0"
+            }
+          ]
+        },
+        "cooldown_1": {
+          "transitions": [
+            {
+              "cooldown_2": "q.property('titan:spurt_time') > 5"
+            },
+            {
+              "over_1": "q.property('titan:spurt_time') == 0"
+            }
+          ]
+        },
+        "cooldown_2": {
+          "transitions": [
+            {
+              "cooldown_3": "q.property('titan:spurt_time') > 10"
+            },
+            {
+              "over_2": "q.property('titan:spurt_time') < 6"
+            }
+          ]
+        },
+        "cooldown_3": {
+          "transitions": [
+            {
+              "over_3": "q.property('titan:spurt_time') < 11"
+            }
+          ]
+        },
+        "over_1": {
+          "animations": [
+            "spurt_bar_3_light_1"
+          ],
+          "transitions": [
+            {
+              "cooldown_1": "q.property('titan:spurt_time') > 0"
+            }
+          ]
+        },
+        "over_2": {
+          "animations": [
+            "spurt_bar_3_light_2"
+          ],
+          "transitions": [
+            {
+              "cooldown_1": "q.property('titan:spurt_time') > 5"
+            },
+            {
+              "over_1": "q.property('titan:spurt_time') == 0"
+            }
+          ]
+        },
+        "over_3": {
+          "animations": [
+            "spurt_bar_3_light_3"
+          ],
+          "transitions": [
+            {
+              "cooldown_1": "q.property('titan:spurt_time') > 10"
+            },
+            {
+              "over_2": "q.property('titan:spurt_time') < 6"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

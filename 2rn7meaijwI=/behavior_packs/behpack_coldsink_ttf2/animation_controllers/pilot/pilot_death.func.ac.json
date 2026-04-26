@@ -1,0 +1,93 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.pilot_death.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "alive": "q.is_alive"
+            }
+          ]
+        },
+        "alive": {
+          "animations": [
+            "check_titan_around",
+            "pilot_timer_core"
+          ],
+          "transitions": [
+            {
+              "default": "q.health <= 0 || !q.is_alive"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s entry_is_pilot",
+            "/event entity @s pilot_exit_titan",
+            "/event entity @s pilot_exit_rodeo",
+            "/event entity @s[tag=is_pilot,tag=!is_titan] drive_titan_no",
+            "/execute @s[tag=is_pilot] ~~~ function pilot/get_all_item",
+            "/event entity @s set_action_0",
+            "/event entity @s set_other_action_0",
+            "/event entity @s rodeo_status_0",
+            "/event entity @s set_cooldown_0_0",
+            "/event entity @s fix_player_action",
+            "/event entity @s titan_terminate_end",
+            "/tag @s remove is_titan",
+            "/tag @s remove exit_cabin",
+            "/tag @s remove pilot_death",
+            "/tag @s remove pilot_melee",
+            "/tag @s remove keep_melee",
+            "/tag @s remove weapon_fire",
+            "/tag @s remove keep_fire",
+            "/tag @s remove keep_skill_q",
+            "/tag @s remove keep_skill_g",
+            "/tag @s remove keep_skill_mid",
+            "/tag @s remove keep_skill_v"
+          ],
+          "on_exit": [
+            "/scoreboard players operation @e[tag=team_blue] death_check = @s[tag=team_red] death_check",
+            "/scoreboard players operation @e[tag=team_red] death_check = @s[tag=team_blue] death_check",
+            "/execute @s[tag=team_blue] ~~~ execute @e[tag=team_red] ~~~ scoreboard players operation @s death_check -= @s titan_self",
+            "/execute @s[tag=team_red] ~~~ execute @e[tag=team_blue] ~~~ scoreboard players operation @s death_check -= @s titan_self",
+
+            "/execute @e[scores={death_check=0},family=player,c=1] ~~~ execute @s[tag=call_by_player] ~~~ tag @p[tag=is_titan,y=8,c=1] add is_killer",
+            "/execute @e[scores={death_check=0},family=player,c=1] ~~~ tag @s[tag=!call_by_player] add is_killer",
+            "/execute @s[tag=team_blue,tag=!titan_fight] ~~~ tellraw @a {\"rawtext\":[{\"text\":\"§l§c\"},{\"selector\":\"@e[tag=is_killer,tag=team_red,c=1]\"},{\"text\":\" §f[消灭] §b\"},{\"selector\":\"@s\"}]}",
+            "/execute @s[tag=team_red,tag=!titan_fight] ~~~ tellraw @a {\"rawtext\":[{\"text\":\"§l§b\"},{\"selector\":\"@e[tag=is_killer,tag=team_blue,c=1]\"},{\"text\":\" §f[消灭] §c\"},{\"selector\":\"@s\"}]}",
+            "/execute @s[tag=team_blue] ~~~ event entity @e[tag=is_killer,tag=team_red,c=1] kill_other_pilot",
+            "/execute @s[tag=team_red] ~~~ event entity @e[tag=is_killer,tag=team_blue,c=1] kill_other_pilot",
+            "/tag @e remove is_killer",
+            "/tag @s add pilot_death",
+
+            // 复活补满子弹
+            "/scoreboard players set @s r201_bullet 30",
+            
+            // 复查是否已拥有泰坦
+            "/function pilot/check_has_titan",
+
+            // 掉落电池
+            "/execute @s[hasitem={item=coldsink:battery_ordinary_item,location=slot.armor.legs}] ~~~ summon coldsink:battery_ordinary",
+            "/execute @s[hasitem={item=coldsink:battery_powerful_item,location=slot.armor.legs}] ~~~ summon coldsink:battery_powerful",
+            "/execute @s[hasitem={item=coldsink:battery_overload_item,location=slot.armor.legs}] ~~~ summon coldsink:battery_overload",
+            "/replaceitem entity @s[hasitem={item=coldsink:battery_ordinary_item,location=slot.armor.legs}] slot.armor.legs 0 air",
+            "/replaceitem entity @s[hasitem={item=coldsink:battery_powerful_item,location=slot.armor.legs}] slot.armor.legs 0 air",
+            "/replaceitem entity @s[hasitem={item=coldsink:battery_overload_item,location=slot.armor.legs}] slot.armor.legs 0 air",
+            
+            "/title @s[tag=!pilot_fight] actionbar §l§e可在设置中更换泰坦",
+
+            // 若为地图使用，则铁驭玩家死亡后触发加分命令
+            "/execute @s[tag=maper,tag=!no_game,tag=team_blue] ~~~ setblock 303 -60 1321 redstone_block",
+            "/execute @s[tag=maper,tag=!no_game,tag=team_red] ~~~ setblock 305 -60 1321 redstone_block",
+
+            // 观战
+            "/gamemode spectator @s[tag=maper,tag=view_game]",
+            "/clear @s[tag=maper,tag=view_game]",
+            "/effect @s[tag=maper,tag=view_game] invisibility 99999 0 true",
+            "/tag @s[tag=maper] remove view_game"
+          ]
+        }
+      }
+    }
+  }
+}

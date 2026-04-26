@@ -1,0 +1,2314 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.titan_ai_health_core.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "damage_0": "(q.health / q.max_health) <= 1.0 && (q.health / q.max_health) > 0.99"
+            },
+            {
+              "damage_1": "(q.health / q.max_health) <= 0.99 && (q.health / q.max_health) > 0.98"
+            },
+            {
+              "damage_2": "(q.health / q.max_health) <= 0.98 && (q.health / q.max_health) > 0.97"
+            },
+            {
+              "damage_3": "(q.health / q.max_health) <= 0.97 && (q.health / q.max_health) > 0.96"
+            },
+            {
+              "damage_4": "(q.health / q.max_health) <= 0.96 && (q.health / q.max_health) > 0.95"
+            },
+            {
+              "damage_5": "(q.health / q.max_health) <= 0.95 && (q.health / q.max_health) > 0.94"
+            },
+            {
+              "damage_6": "(q.health / q.max_health) <= 0.94 && (q.health / q.max_health) > 0.93"
+            },
+            {
+              "damage_7": "(q.health / q.max_health) <= 0.93 && (q.health / q.max_health) > 0.92"
+            },
+            {
+              "damage_8": "(q.health / q.max_health) <= 0.92 && (q.health / q.max_health) > 0.91"
+            },
+            {
+              "damage_9": "(q.health / q.max_health) <= 0.91 && (q.health / q.max_health) > 0.90"
+            },
+            {
+              "damage_10": "(q.health / q.max_health) <= 0.90 && (q.health / q.max_health) > 0.89"
+            },
+            {
+              "damage_11": "(q.health / q.max_health) <= 0.89 && (q.health / q.max_health) > 0.88"
+            },
+            {
+              "damage_12": "(q.health / q.max_health) <= 0.88 && (q.health / q.max_health) > 0.87"
+            },
+            {
+              "damage_13": "(q.health / q.max_health) <= 0.87 && (q.health / q.max_health) > 0.86"
+            },
+            {
+              "damage_14": "(q.health / q.max_health) <= 0.86 && (q.health / q.max_health) > 0.85"
+            },
+            {
+              "damage_15": "(q.health / q.max_health) <= 0.85 && (q.health / q.max_health) > 0.84"
+            },
+            {
+              "damage_16": "(q.health / q.max_health) <= 0.84 && (q.health / q.max_health) > 0.83"
+            },
+            {
+              "damage_17": "(q.health / q.max_health) <= 0.83 && (q.health / q.max_health) > 0.82"
+            },
+            {
+              "damage_18": "(q.health / q.max_health) <= 0.82 && (q.health / q.max_health) > 0.81"
+            },
+            {
+              "damage_19": "(q.health / q.max_health) <= 0.81 && (q.health / q.max_health) > 0.80"
+            },
+            {
+              "damage_20": "(q.health / q.max_health) <= 0.80 && (q.health / q.max_health) > 0.79"
+            },
+            {
+              "damage_21": "(q.health / q.max_health) <= 0.79 && (q.health / q.max_health) > 0.78"
+            },
+            {
+              "damage_22": "(q.health / q.max_health) <= 0.78 && (q.health / q.max_health) > 0.77"
+            },
+            {
+              "damage_23": "(q.health / q.max_health) <= 0.77 && (q.health / q.max_health) > 0.76"
+            },
+            {
+              "damage_24": "(q.health / q.max_health) <= 0.76 && (q.health / q.max_health) > 0.75"
+            },
+            {
+              "damage_25": "(q.health / q.max_health) <= 0.75 && (q.health / q.max_health) > 0.74"
+            },
+            {
+              "damage_26": "(q.health / q.max_health) <= 0.74 && (q.health / q.max_health) > 0.73"
+            },
+            {
+              "damage_27": "(q.health / q.max_health) <= 0.73 && (q.health / q.max_health) > 0.72"
+            },
+            {
+              "damage_28": "(q.health / q.max_health) <= 0.72 && (q.health / q.max_health) > 0.71"
+            },
+            {
+              "damage_29": "(q.health / q.max_health) <= 0.71 && (q.health / q.max_health) > 0.70"
+            },
+            {
+              "damage_30": "(q.health / q.max_health) <= 0.70 && (q.health / q.max_health) > 0.69"
+            },
+            {
+              "damage_31": "(q.health / q.max_health) <= 0.69 && (q.health / q.max_health) > 0.68"
+            },
+            {
+              "damage_32": "(q.health / q.max_health) <= 0.68 && (q.health / q.max_health) > 0.67"
+            },
+            {
+              "damage_33": "(q.health / q.max_health) <= 0.67 && (q.health / q.max_health) > 0.66"
+            },
+            {
+              "damage_34": "(q.health / q.max_health) <= 0.66 && (q.health / q.max_health) > 0.65"
+            },
+            {
+              "damage_35": "(q.health / q.max_health) <= 0.65 && (q.health / q.max_health) > 0.64"
+            },
+            {
+              "damage_36": "(q.health / q.max_health) <= 0.64 && (q.health / q.max_health) > 0.63"
+            },
+            {
+              "damage_37": "(q.health / q.max_health) <= 0.63 && (q.health / q.max_health) > 0.62"
+            },
+            {
+              "damage_38": "(q.health / q.max_health) <= 0.62 && (q.health / q.max_health) > 0.61"
+            },
+            {
+              "damage_39": "(q.health / q.max_health) <= 0.61 && (q.health / q.max_health) > 0.60"
+            },
+            {
+              "damage_40": "(q.health / q.max_health) <= 0.60 && (q.health / q.max_health) > 0.59"
+            },
+            {
+              "damage_41": "(q.health / q.max_health) <= 0.59 && (q.health / q.max_health) > 0.58"
+            },
+            {
+              "damage_42": "(q.health / q.max_health) <= 0.58 && (q.health / q.max_health) > 0.57"
+            },
+            {
+              "damage_43": "(q.health / q.max_health) <= 0.57 && (q.health / q.max_health) > 0.56"
+            },
+            {
+              "damage_44": "(q.health / q.max_health) <= 0.56 && (q.health / q.max_health) > 0.55"
+            },
+            {
+              "damage_45": "(q.health / q.max_health) <= 0.55 && (q.health / q.max_health) > 0.54"
+            },
+            {
+              "damage_46": "(q.health / q.max_health) <= 0.54 && (q.health / q.max_health) > 0.53"
+            },
+            {
+              "damage_47": "(q.health / q.max_health) <= 0.53 && (q.health / q.max_health) > 0.52"
+            },
+            {
+              "damage_48": "(q.health / q.max_health) <= 0.52 && (q.health / q.max_health) > 0.51"
+            },
+            {
+              "damage_49": "(q.health / q.max_health) <= 0.51 && (q.health / q.max_health) > 0.50"
+            },
+            {
+              "damage_50": "(q.health / q.max_health) <= 0.50 && (q.health / q.max_health) > 0.49"
+            },
+            {
+              "damage_51": "(q.health / q.max_health) <= 0.49 && (q.health / q.max_health) > 0.48"
+            },
+            {
+              "damage_52": "(q.health / q.max_health) <= 0.48 && (q.health / q.max_health) > 0.47"
+            },
+            {
+              "damage_53": "(q.health / q.max_health) <= 0.47 && (q.health / q.max_health) > 0.46"
+            },
+            {
+              "damage_54": "(q.health / q.max_health) <= 0.46 && (q.health / q.max_health) > 0.45"
+            },
+            {
+              "damage_55": "(q.health / q.max_health) <= 0.45 && (q.health / q.max_health) > 0.44"
+            },
+            {
+              "damage_56": "(q.health / q.max_health) <= 0.44 && (q.health / q.max_health) > 0.43"
+            },
+            {
+              "damage_57": "(q.health / q.max_health) <= 0.43 && (q.health / q.max_health) > 0.42"
+            },
+            {
+              "damage_58": "(q.health / q.max_health) <= 0.42 && (q.health / q.max_health) > 0.41"
+            },
+            {
+              "damage_59": "(q.health / q.max_health) <= 0.41 && (q.health / q.max_health) > 0.40"
+            },
+            {
+              "damage_60": "(q.health / q.max_health) <= 0.40 && (q.health / q.max_health) > 0.39"
+            },
+            {
+              "damage_61": "(q.health / q.max_health) <= 0.39 && (q.health / q.max_health) > 0.38"
+            },
+            {
+              "damage_62": "(q.health / q.max_health) <= 0.38 && (q.health / q.max_health) > 0.37"
+            },
+            {
+              "damage_63": "(q.health / q.max_health) <= 0.37 && (q.health / q.max_health) > 0.36"
+            },
+            {
+              "damage_64": "(q.health / q.max_health) <= 0.36 && (q.health / q.max_health) > 0.35"
+            },
+            {
+              "damage_65": "(q.health / q.max_health) <= 0.35 && (q.health / q.max_health) > 0.34"
+            },
+            {
+              "damage_66": "(q.health / q.max_health) <= 0.34 && (q.health / q.max_health) > 0.33"
+            },
+            {
+              "damage_67": "(q.health / q.max_health) <= 0.33 && (q.health / q.max_health) > 0.32"
+            },
+            {
+              "damage_68": "(q.health / q.max_health) <= 0.32 && (q.health / q.max_health) > 0.31"
+            },
+            {
+              "damage_69": "(q.health / q.max_health) <= 0.31 && (q.health / q.max_health) > 0.30"
+            },
+            {
+              "damage_70": "(q.health / q.max_health) <= 0.30 && (q.health / q.max_health) > 0.29"
+            },
+            {
+              "damage_71": "(q.health / q.max_health) <= 0.29 && (q.health / q.max_health) > 0.28"
+            },
+            {
+              "damage_72": "(q.health / q.max_health) <= 0.28 && (q.health / q.max_health) > 0.27"
+            },
+            {
+              "damage_73": "(q.health / q.max_health) <= 0.27 && (q.health / q.max_health) > 0.26"
+            },
+            {
+              "damage_74": "(q.health / q.max_health) <= 0.26 && (q.health / q.max_health) > 0.25"
+            },
+            {
+              "damage_75": "(q.health / q.max_health) <= 0.25 && (q.health / q.max_health) > 0.24"
+            },
+            {
+              "damage_76": "(q.health / q.max_health) <= 0.24 && (q.health / q.max_health) > 0.23"
+            },
+            {
+              "damage_77": "(q.health / q.max_health) <= 0.23 && (q.health / q.max_health) > 0.22"
+            },
+            {
+              "damage_78": "(q.health / q.max_health) <= 0.22 && (q.health / q.max_health) > 0.21"
+            },
+            {
+              "damage_79": "(q.health / q.max_health) <= 0.21 && (q.health / q.max_health) > 0.20"
+            },
+            {
+              "damage_80": "(q.health / q.max_health) <= 0.20 && (q.health / q.max_health) > 0.19"
+            },
+            {
+              "damage_81": "(q.health / q.max_health) <= 0.19 && (q.health / q.max_health) > 0.18"
+            },
+            {
+              "damage_82": "(q.health / q.max_health) <= 0.18 && (q.health / q.max_health) > 0.17"
+            },
+            {
+              "damage_83": "(q.health / q.max_health) <= 0.17 && (q.health / q.max_health) > 0.16"
+            },
+            {
+              "damage_84": "(q.health / q.max_health) <= 0.16 && (q.health / q.max_health) > 0.15"
+            },
+            {
+              "damage_85": "(q.health / q.max_health) <= 0.15 && (q.health / q.max_health) > 0.14"
+            },
+            {
+              "damage_86": "(q.health / q.max_health) <= 0.14 && (q.health / q.max_health) > 0.13"
+            },
+            {
+              "damage_87": "(q.health / q.max_health) <= 0.13 && (q.health / q.max_health) > 0.12"
+            },
+            {
+              "damage_88": "(q.health / q.max_health) <= 0.12 && (q.health / q.max_health) > 0.11"
+            },
+            {
+              "damage_89": "(q.health / q.max_health) <= 0.11 && (q.health / q.max_health) > 0.10"
+            },
+            {
+              "damage_90": "(q.health / q.max_health) <= 0.10 && (q.health / q.max_health) > 0.09"
+            },
+            {
+              "damage_91": "(q.health / q.max_health) <= 0.09 && (q.health / q.max_health) > 0.08"
+            },
+            {
+              "damage_92": "(q.health / q.max_health) <= 0.08 && (q.health / q.max_health) > 0.07"
+            },
+            {
+              "damage_93": "(q.health / q.max_health) <= 0.07 && (q.health / q.max_health) > 0.06"
+            },
+            {
+              "damage_94": "(q.health / q.max_health) <= 0.06 && (q.health / q.max_health) > 0.05"
+            },
+            {
+              "damage_95": "(q.health / q.max_health) <= 0.05 && (q.health / q.max_health) > 0.04"
+            },
+            {
+              "damage_96": "(q.health / q.max_health) <= 0.04 && (q.health / q.max_health) > 0.03"
+            },
+            {
+              "damage_97": "(q.health / q.max_health) <= 0.03 && (q.health / q.max_health) > 0.02"
+            },
+            {
+              "damage_98": "(q.health / q.max_health) <= 0.02 && (q.health / q.max_health) > 0.01"
+            },
+            {
+              "damage_99": "(q.health / q.max_health) <= 0.01 && (q.health / q.max_health) > 0.00"
+            }
+          ]
+        },
+        "damage_0": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 1.00 && (q.health / q.max_health) > 0.99 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_100_empty",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_100_empty",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_100_empty",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_100_empty",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_100_empty",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_100_empty",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_100_empty",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_100_empty",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_100_empty",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_100_empty",
+            "/scoreboard players set @s titan_health 100"
+          ]
+        },
+        "damage_1": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.99 && (q.health / q.max_health) > 0.98 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_99",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_99",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_99",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_99",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_99",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_99",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_99",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_99",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_99",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_99",
+            "/scoreboard players set @s titan_health 99"
+          ]
+        },
+        "damage_2": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.98 && (q.health / q.max_health) > 0.97 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_98",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_98",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_98",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_98",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_98",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_98",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_98",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_98",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_98",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_98",
+            "/scoreboard players set @s titan_health 98"
+          ]
+        },
+        "damage_3": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.97 && (q.health / q.max_health) > 0.96 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_97",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_97",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_97",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_97",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_97",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_97",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_97",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_97",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_97",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_97",
+            "/scoreboard players set @s titan_health 97"
+          ]
+        },
+        "damage_4": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.96 && (q.health / q.max_health) > 0.95 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_96",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_96",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_96",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_96",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_96",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_96",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_96",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_96",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_96",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_96",
+            "/scoreboard players set @s titan_health 96"
+          ]
+        },
+        "damage_5": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.95 && (q.health / q.max_health) > 0.94 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_95",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_95",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_95",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_95",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_95",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_95",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_95",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_95",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_95",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_95",
+            "/scoreboard players set @s titan_health 95"
+          ]
+        },
+        "damage_6": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.94 && (q.health / q.max_health) > 0.93 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_94",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_94",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_94",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_94",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_94",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_94",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_94",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_94",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_94",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_94",
+            "/scoreboard players set @s titan_health 94"
+          ]
+        },
+        "damage_7": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.93 && (q.health / q.max_health) > 0.92 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_93",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_93",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_93",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_93",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_93",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_93",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_93",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_93",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_93",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_93",
+            "/scoreboard players set @s titan_health 93"
+          ]
+        },
+        "damage_8": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.92 && (q.health / q.max_health) > 0.91 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_92",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_92",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_92",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_92",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_92",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_92",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_92",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_92",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_92",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_92",
+            "/scoreboard players set @s titan_health 92"
+          ]
+        },
+        "damage_9": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.91 && (q.health / q.max_health) > 0.90 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_91",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_91",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_91",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_91",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_91",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_91",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_91",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_91",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_91",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_91",
+            "/scoreboard players set @s titan_health 91"
+          ]
+        },
+        "damage_10": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.90 && (q.health / q.max_health) > 0.89 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_90",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_90",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_90",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_90",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_90",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_90",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_90",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_90",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_90",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_90",
+            "/scoreboard players set @s titan_health 90"
+          ]
+        },
+        "damage_11": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.89 && (q.health / q.max_health) > 0.88 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_89",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_89",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_89",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_89",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_89",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_89",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_89",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_89",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_89",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_89",
+            "/scoreboard players set @s titan_health 89"
+          ]
+        },
+        "damage_12": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.88 && (q.health / q.max_health) > 0.87 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_88",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_88",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_88",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_88",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_88",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_88",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_88",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_88",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_88",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_88",
+            "/scoreboard players set @s titan_health 88"
+          ]
+        },
+        "damage_13": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.87 && (q.health / q.max_health) > 0.86 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_87",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_87",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_87",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_87",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_87",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_87",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_87",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_87",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_87",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_87",
+            "/scoreboard players set @s titan_health 87"
+          ]
+        },
+        "damage_14": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.86 && (q.health / q.max_health) > 0.85 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_86",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_86",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_86",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_86",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_86",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_86",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_86",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_86",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_86",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_86",
+            "/scoreboard players set @s titan_health 86"
+          ]
+        },
+        "damage_15": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.85 && (q.health / q.max_health) > 0.84 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_85",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_85",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_85",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_85",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_85",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_85",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_85",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_85",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_85",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_85",
+            "/scoreboard players set @s titan_health 85"
+          ]
+        },
+        "damage_16": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.84 && (q.health / q.max_health) > 0.83 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_84",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_84",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_84",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_84",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_84",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_84",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_84",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_84",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_84",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_84",
+            "/scoreboard players set @s titan_health 84"
+          ]
+        },
+        "damage_17": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.83 && (q.health / q.max_health) > 0.82 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_83",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_83",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_83",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_83",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_83",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_83",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_83",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_83",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_83",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_83",
+            "/scoreboard players set @s titan_health 83"
+          ]
+        },
+        "damage_18": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.82 && (q.health / q.max_health) > 0.81 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_82",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_82",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_82",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_82",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_82",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_82",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_82",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_82",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_82",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_82",
+            "/scoreboard players set @s titan_health 82"
+          ]
+        },
+        "damage_19": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.81 && (q.health / q.max_health) > 0.80 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_81",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_81",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_81",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_81",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_81",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_81",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_81",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_81",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_81",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_81",
+            "/scoreboard players set @s titan_health 81"
+          ]
+        },
+        "damage_20": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.80 && (q.health / q.max_health) > 0.79 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_80",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_80",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_80",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_80",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_80",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_80",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_80",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_80",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_80",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_80",
+            "/scoreboard players set @s titan_health 80"
+          ]
+        },
+        "damage_21": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.79 && (q.health / q.max_health) > 0.78 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_79",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_79",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_79",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_79",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_79",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_79",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_79",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_79",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_79",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_79",
+            "/scoreboard players set @s titan_health 79"
+          ]
+        },
+        "damage_22": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.78 && (q.health / q.max_health) > 0.77 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_78",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_78",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_78",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_78",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_78",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_78",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_78",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_78",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_78",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_78",
+            "/scoreboard players set @s titan_health 78"
+          ]
+        },
+        "damage_23": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.77 && (q.health / q.max_health) > 0.76 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_77",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_77",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_77",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_77",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_77",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_77",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_77",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_77",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_77",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_77",
+            "/scoreboard players set @s titan_health 77"
+          ]
+        },
+        "damage_24": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.76 && (q.health / q.max_health) > 0.75 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_76",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_76",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_76",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_76",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_76",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_76",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_76",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_76",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_76",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_76",
+            "/scoreboard players set @s titan_health 76"
+          ]
+        },
+        "damage_25": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.75 && (q.health / q.max_health) > 0.74 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_75",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_75",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_75",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_75",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_75",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_75",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_75",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_75",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_75",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_75",
+            "/scoreboard players set @s titan_health 75"
+          ]
+        },
+        "damage_26": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.74 && (q.health / q.max_health) > 0.73 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_74",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_74",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_74",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_74",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_74",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_74",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_74",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_74",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_74",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_74",
+            "/scoreboard players set @s titan_health 74"
+          ]
+        },
+        "damage_27": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.73 && (q.health / q.max_health) > 0.72 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_73",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_73",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_73",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_73",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_73",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_73",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_73",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_73",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_73",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_73",
+            "/scoreboard players set @s titan_health 73"
+          ]
+        },
+        "damage_28": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.72 && (q.health / q.max_health) > 0.71 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_72",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_72",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_72",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_72",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_72",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_72",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_72",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_72",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_72",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_72",
+            "/scoreboard players set @s titan_health 72"
+          ]
+        },
+        "damage_29": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.71 && (q.health / q.max_health) > 0.70 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_71",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_71",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_71",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_71",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_71",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_71",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_71",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_71",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_71",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_71",
+            "/scoreboard players set @s titan_health 71"
+          ]
+        },
+        "damage_30": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.70 && (q.health / q.max_health) > 0.69 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_70",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_70",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_70",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_70",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_70",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_70",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_70",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_70",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_70",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_70",
+            "/scoreboard players set @s titan_health 70"
+          ]
+        },
+        "damage_31": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.69 && (q.health / q.max_health) > 0.68 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_69",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_69",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_69",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_69",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_69",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_69",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_69",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_69",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_69",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_69",
+            "/scoreboard players set @s titan_health 69"
+          ]
+        },
+        "damage_32": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.68 && (q.health / q.max_health) > 0.67 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_68",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_68",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_68",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_68",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_68",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_68",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_68",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_68",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_68",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_68",
+            "/scoreboard players set @s titan_health 68"
+          ]
+        },
+        "damage_33": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.67 && (q.health / q.max_health) > 0.66 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_67",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_67",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_67",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_67",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_67",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_67",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_67",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_67",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_67",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_67",
+            "/scoreboard players set @s titan_health 67"
+          ]
+        },
+        "damage_34": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.66 && (q.health / q.max_health) > 0.65 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_66",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_66",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_66",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_66",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_66",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_66",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_66",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_66",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_66",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_66",
+            "/scoreboard players set @s titan_health 66"
+          ]
+        },
+        "damage_35": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.65 && (q.health / q.max_health) > 0.64 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_65",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_65",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_65",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_65",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_65",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_65",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_65",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_65",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_65",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_65",
+            "/scoreboard players set @s titan_health 65"
+          ]
+        },
+        "damage_36": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.64 && (q.health / q.max_health) > 0.63 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_64",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_64",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_64",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_64",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_64",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_64",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_64",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_64",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_64",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_64",
+            "/scoreboard players set @s titan_health 64"
+          ]
+        },
+        "damage_37": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.63 && (q.health / q.max_health) > 0.62 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_63",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_63",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_63",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_63",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_63",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_63",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_63",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_63",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_63",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_63",
+            "/scoreboard players set @s titan_health 63"
+          ]
+        },
+        "damage_38": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.62 && (q.health / q.max_health) > 0.61 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_62",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_62",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_62",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_62",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_62",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_62",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_62",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_62",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_62",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_62",
+            "/scoreboard players set @s titan_health 62"
+          ]
+        },
+        "damage_39": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.61 && (q.health / q.max_health) > 0.60 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_61",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_61",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_61",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_61",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_61",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_61",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_61",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_61",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_61",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_61",
+            "/scoreboard players set @s titan_health 61"
+          ]
+        },
+        "damage_40": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.60 && (q.health / q.max_health) > 0.59 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_60",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_60",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_60",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_60",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_60",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_60",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_60",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_60",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_60",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_60",
+            "/scoreboard players set @s titan_health 60"
+          ]
+        },
+        "damage_41": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.59 && (q.health / q.max_health) > 0.58 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_59",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_59",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_59",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_59",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_59",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_59",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_59",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_59",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_59",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_59",
+            "/scoreboard players set @s titan_health 59"
+          ]
+        },
+        "damage_42": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.58 && (q.health / q.max_health) > 0.57 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_57",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_57",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_57",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_57",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_57",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_57",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_57",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_57",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_57",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_57",
+            "/scoreboard players set @s titan_health 57"
+          ]
+        },
+        "damage_43": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.57 && (q.health / q.max_health) > 0.56 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_56",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_56",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_56",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_56",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_56",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_56",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_56",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_56",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_56",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_56",
+            "/scoreboard players set @s titan_health 56"
+          ]
+        },
+        "damage_44": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.56 && (q.health / q.max_health) > 0.55 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_56",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_56",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_56",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_56",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_56",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_56",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_56",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_56",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_56",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_56",
+            "/scoreboard players set @s titan_health 56"
+          ]
+        },
+        "damage_45": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.55 && (q.health / q.max_health) > 0.54 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_55",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_55",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_55",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_55",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_55",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_55",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_55",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_55",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_55",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_55",
+            "/scoreboard players set @s titan_health 55"
+          ]
+        },
+        "damage_46": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.54 && (q.health / q.max_health) > 0.53 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_54",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_54",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_54",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_54",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_54",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_54",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_54",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_54",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_54",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_54",
+            "/scoreboard players set @s titan_health 54"
+          ]
+        },
+        "damage_47": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.53 && (q.health / q.max_health) > 0.52 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_53",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_53",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_53",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_53",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_53",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_53",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_53",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_53",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_53",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_53",
+            "/scoreboard players set @s titan_health 53"
+          ]
+        },
+        "damage_48": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.52 && (q.health / q.max_health) > 0.51 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_52",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_52",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_52",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_52",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_52",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_52",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_52",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_52",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_52",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_52",
+            "/scoreboard players set @s titan_health 52"
+          ]
+        },
+        "damage_49": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.51 && (q.health / q.max_health) > 0.50 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_51",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_51",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_51",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_51",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_51",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_51",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_51",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_51",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_51",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_51",
+            "/scoreboard players set @s titan_health 51"
+          ]
+        },
+        "damage_50": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.50 && (q.health / q.max_health) > 0.49 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_50",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_50",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_50",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_50",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_50",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_50",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_50",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_50",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_50",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_50",
+            "/scoreboard players set @s titan_health 50"
+          ]
+        },
+        "damage_51": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.49 && (q.health / q.max_health) > 0.48 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_49",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_49",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_49",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_49",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_49",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_49",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_49",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_49",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_49",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_49",
+            "/scoreboard players set @s titan_health 49"
+          ]
+        },
+        "damage_52": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.48 && (q.health / q.max_health) > 0.47 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_48",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_48",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_48",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_48",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_48",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_48",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_48",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_48",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_48",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_48",
+            "/scoreboard players set @s titan_health 48"
+          ]
+        },
+        "damage_53": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.47 && (q.health / q.max_health) > 0.46 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_47",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_47",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_47",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_47",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_47",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_47",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_47",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_47",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_47",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_47",
+            "/scoreboard players set @s titan_health 47"
+          ]
+        },
+        "damage_54": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.46 && (q.health / q.max_health) > 0.45 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_46",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_46",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_46",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_46",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_46",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_46",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_46",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_46",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_46",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_46",
+            "/scoreboard players set @s titan_health 46"
+          ]
+        },
+        "damage_55": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.45 && (q.health / q.max_health) > 0.44 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_45",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_45",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_45",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_45",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_45",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_45",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_45",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_45",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_45",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_45",
+            "/scoreboard players set @s titan_health 45"
+          ]
+        },
+        "damage_56": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.44 && (q.health / q.max_health) > 0.43 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_44",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_44",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_44",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_44",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_44",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_44",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_44",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_44",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_44",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_44",
+            "/scoreboard players set @s titan_health 44"
+          ]
+        },
+        "damage_57": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.43 && (q.health / q.max_health) > 0.42 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_43",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_43",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_43",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_43",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_43",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_43",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_43",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_43",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_43",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_43",
+            "/scoreboard players set @s titan_health 43"
+          ]
+        },
+        "damage_58": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.42 && (q.health / q.max_health) > 0.41 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_42",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_42",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_42",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_42",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_42",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_42",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_42",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_42",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_42",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_42",
+            "/scoreboard players set @s titan_health 42"
+          ]
+        },
+        "damage_59": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.41 && (q.health / q.max_health) > 0.40 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_41",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_41",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_41",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_41",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_41",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_41",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_41",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_41",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_41",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_41",
+            "/scoreboard players set @s titan_health 41"
+          ]
+        },
+        "damage_60": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.40 && (q.health / q.max_health) > 0.39 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_40",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_40",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_40",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_40",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_40",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_40",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_40",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_40",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_40",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_40",
+            "/scoreboard players set @s titan_health 40"
+          ]
+        },
+        "damage_61": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.39 && (q.health / q.max_health) > 0.38 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_39",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_39",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_39",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_39",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_39",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_39",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_39",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_39",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_39",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_39",
+            "/scoreboard players set @s titan_health 39"
+          ]
+        },
+        "damage_62": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.38 && (q.health / q.max_health) > 0.37 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_38",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_38",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_38",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_38",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_38",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_38",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_38",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_38",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_38",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_38",
+            "/scoreboard players set @s titan_health 38"
+          ]
+        },
+        "damage_63": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.37 && (q.health / q.max_health) > 0.36 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_37",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_37",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_37",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_37",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_37",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_37",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_37",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_37",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_37",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_37",
+            "/scoreboard players set @s titan_health 37"
+          ]
+        },
+        "damage_64": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.36 && (q.health / q.max_health) > 0.35 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_36",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_36",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_36",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_36",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_36",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_36",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_36",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_36",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_36",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_36",
+            "/scoreboard players set @s titan_health 36"
+          ]
+        },
+        "damage_65": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.35 && (q.health / q.max_health) > 0.34 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_35",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_35",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_35",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_35",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_35",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_35",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_35",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_35",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_35",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_35",
+            "/scoreboard players set @s titan_health 35"
+          ]
+        },
+        "damage_66": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.34 && (q.health / q.max_health) > 0.33 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_34",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_34",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_34",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_34",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_34",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_34",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_34",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_34",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_34",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_34",
+            "/scoreboard players set @s titan_health 34"
+          ]
+        },
+        "damage_67": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.33 && (q.health / q.max_health) > 0.32 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_33",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_33",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_33",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_33",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_33",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_33",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_33",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_33",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_33",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_33",
+            "/scoreboard players set @s titan_health 33"
+          ]
+        },
+        "damage_68": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.32 && (q.health / q.max_health) > 0.31 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_32",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_32",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_32",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_32",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_32",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_32",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_32",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_32",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_32",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_32",
+            "/scoreboard players set @s titan_health 32"
+          ]
+        },
+        "damage_69": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.31 && (q.health / q.max_health) > 0.30 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_31",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_31",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_31",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_31",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_31",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_31",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_31",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_31",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_31",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_31",
+            "/scoreboard players set @s titan_health 31"
+          ]
+        },
+        "damage_70": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.30 && (q.health / q.max_health) > 0.29 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_30",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_30",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_30",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_30",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_30",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_30",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_30",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_30",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_30",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_30",
+            "/scoreboard players set @s titan_health 30"
+          ]
+        },
+        "damage_71": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.29 && (q.health / q.max_health) > 0.28 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_28",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_28",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_28",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_28",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_28",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_28",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_28",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_28",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_28",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_28",
+            "/scoreboard players set @s titan_health 28"
+          ]
+        },
+        "damage_72": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.28 && (q.health / q.max_health) > 0.27 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_28",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_28",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_28",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_28",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_28",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_28",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_28",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_28",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_28",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_28",
+            "/scoreboard players set @s titan_health 28"
+          ]
+        },
+        "damage_73": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.27 && (q.health / q.max_health) > 0.26 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_27",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_27",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_27",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_27",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_27",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_27",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_27",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_27",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_27",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_27",
+            "/scoreboard players set @s titan_health 27"
+          ]
+        },
+        "damage_74": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.26 && (q.health / q.max_health) > 0.25 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_26",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_26",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_26",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_26",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_26",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_26",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_26",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_26",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_26",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_26",
+            "/scoreboard players set @s titan_health 26"
+          ]
+        },
+        "damage_75": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.25 && (q.health / q.max_health) > 0.24 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_25",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_25",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_25",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_25",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_25",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_25",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_25",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_25",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_25",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_25",
+            "/scoreboard players set @s titan_health 25"
+          ]
+        },
+        "damage_76": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.24 && (q.health / q.max_health) > 0.23 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_24",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_24",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_24",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_24",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_24",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_24",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_24",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_24",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_24",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_24",
+            "/scoreboard players set @s titan_health 24"
+          ]
+        },
+        "damage_77": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.23 && (q.health / q.max_health) > 0.22 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_23",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_23",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_23",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_23",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_23",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_23",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_23",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_23",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_23",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_23",
+            "/scoreboard players set @s titan_health 23"
+          ]
+        },
+        "damage_78": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.22 && (q.health / q.max_health) > 0.21 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_22",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_22",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_22",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_22",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_22",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_22",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_22",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_22",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_22",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_22",
+            "/scoreboard players set @s titan_health 22"
+          ]
+        },
+        "damage_79": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.21 && (q.health / q.max_health) > 0.20 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_21",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_21",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_21",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_21",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_21",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_21",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_21",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_21",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_21",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_21",
+            "/scoreboard players set @s titan_health 21"
+          ]
+        },
+        "damage_80": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.20 && (q.health / q.max_health) > 0.19 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_20",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_20",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_20",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_20",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_20",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_20",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_20",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_20",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_20",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_20",
+            "/scoreboard players set @s titan_health 20"
+          ]
+        },
+        "damage_81": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.19 && (q.health / q.max_health) > 0.18 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_19",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_19",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_19",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_19",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_19",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_19",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_19",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_19",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_19",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_19",
+            "/scoreboard players set @s titan_health 19"
+          ]
+        },
+        "damage_82": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.18 && (q.health / q.max_health) > 0.17 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_18",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_18",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_18",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_18",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_18",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_18",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_18",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_18",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_18",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_18",
+            "/scoreboard players set @s titan_health 18"
+          ]
+        },
+        "damage_83": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.17 && (q.health / q.max_health) > 0.16 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_17",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_17",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_17",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_17",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_17",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_17",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_17",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_17",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_17",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_17",
+            "/scoreboard players set @s titan_health 17"
+          ]
+        },
+        "damage_84": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.16 && (q.health / q.max_health) > 0.15 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_16",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_16",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_16",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_16",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_16",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_16",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_16",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_16",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_16",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_16",
+            "/scoreboard players set @s titan_health 16"
+          ]
+        },
+        "damage_85": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.15 && (q.health / q.max_health) > 0.14 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_15",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_15",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_15",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_15",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_15",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_15",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_15",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_15",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_15",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_15",
+            "/scoreboard players set @s titan_health 15"
+          ]
+        },
+        "damage_86": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.14 && (q.health / q.max_health) > 0.13 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_14",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_14",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_14",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_14",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_14",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_14",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_14",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_14",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_14",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_14",
+            "/scoreboard players set @s titan_health 14"
+          ]
+        },
+        "damage_87": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.13 && (q.health / q.max_health) > 0.12 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_13",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_13",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_13",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_13",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_13",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_13",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_13",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_13",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_13",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_13",
+            "/scoreboard players set @s titan_health 13"
+          ]
+        },
+        "damage_88": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.12 && (q.health / q.max_health) > 0.11 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_12",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_12",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_12",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_12",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_12",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_12",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_12",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_12",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_12",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_12",
+            "/scoreboard players set @s titan_health 12"
+          ]
+        },
+        "damage_89": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.11 && (q.health / q.max_health) > 0.10 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_11",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_11",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_11",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_11",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_11",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_11",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_11",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_11",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_11",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_11",
+            "/scoreboard players set @s titan_health 11"
+          ]
+        },
+        "damage_90": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.10 && (q.health / q.max_health) > 0.09 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_10",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_10",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_10",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_10",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_10",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_10",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_10",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_10",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_10",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_10",
+            "/scoreboard players set @s titan_health 10"
+          ]
+        },
+        "damage_91": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.09 && (q.health / q.max_health) > 0.08 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_9",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_9",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_9",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_9",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_9",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_9",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_9",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_9",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_9",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_9",
+            "/scoreboard players set @s titan_health 9"
+          ]
+        },
+        "damage_92": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.08 && (q.health / q.max_health) > 0.07 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_8",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_8",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_8",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_8",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_8",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_8",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_8",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_8",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_8",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_8",
+            "/scoreboard players set @s titan_health 8"
+          ]
+        },
+        "damage_93": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.07 && (q.health / q.max_health) > 0.06 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_7",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_7",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_7",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_7",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_7",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_7",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_7",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_7",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_7",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_7",
+            "/scoreboard players set @s titan_health 7"
+          ]
+        },
+        "damage_94": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.06 && (q.health / q.max_health) > 0.05 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_6",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_6",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_6",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_6",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_6",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_6",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_6",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_6",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_6",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_6",
+            "/scoreboard players set @s titan_health 6"
+          ]
+        },
+        "damage_95": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.05 && (q.health / q.max_health) > 0.04 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_5",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_5",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_5",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_5",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_5",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_5",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_5",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_5",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_5",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_5",
+            "/scoreboard players set @s titan_health 5"
+          ]
+        },
+        "damage_96": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.04 && (q.health / q.max_health) > 0.03 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_4",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_4",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_4",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_4",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_4",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_4",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_4",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_4",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_4",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_4",
+            "/scoreboard players set @s titan_health 4"
+          ]
+        },
+        "damage_97": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.03 && (q.health / q.max_health) > 0.02 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_3",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_3",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_3",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_3",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_3",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_3",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_3",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_3",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_3",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_3",
+            "/scoreboard players set @s titan_health 3"
+          ]
+        },
+        "damage_98": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.02 && (q.health / q.max_health) > 0.01 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_2",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_2",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_2",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_2",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_2",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_2",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_2",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_2",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_2",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_2",
+            "/scoreboard players set @s titan_health 2"
+          ]
+        },
+        "damage_99": {
+          "transitions": [
+            {
+              "default": "q.is_ignited || !( (q.health / q.max_health) <= 0.01 && (q.health / q.max_health) > 0.00 )"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=titan_player_0] ~~~ event entity @p[tag=titan_player_0] set_core_1",
+            "/execute @s[tag=titan_player_1] ~~~ event entity @p[tag=titan_player_1] set_core_1",
+            "/execute @s[tag=titan_player_2] ~~~ event entity @p[tag=titan_player_2] set_core_1",
+            "/execute @s[tag=titan_player_3] ~~~ event entity @p[tag=titan_player_3] set_core_1",
+            "/execute @s[tag=titan_player_4] ~~~ event entity @p[tag=titan_player_4] set_core_1",
+            "/execute @s[tag=titan_player_5] ~~~ event entity @p[tag=titan_player_5] set_core_1",
+            "/execute @s[tag=titan_player_6] ~~~ event entity @p[tag=titan_player_6] set_core_1",
+            "/execute @s[tag=titan_player_7] ~~~ event entity @p[tag=titan_player_7] set_core_1",
+            "/execute @s[tag=titan_player_8] ~~~ event entity @p[tag=titan_player_8] set_core_1",
+            "/execute @s[tag=titan_player_9] ~~~ event entity @p[tag=titan_player_9] set_core_1",
+            "/scoreboard players set @s titan_health 1"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ronin_ai_core.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "skill": "q.is_sheared"
+            }
+          ]
+        },
+        "skill": {
+          "animations": [
+            "ronin_ai_core"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_sheared"
+            }
+          ],
+          "on_entry": [
+            "/playsound ronin_core_begin @a[r=64] ~~~",
+            "/tag @s add in_core",
+            "/tag @e[type=coldsink:ronin_rider_ai,r=8,c=1] add in_core",
+
+            "/tag @s[tag=ronin_defending] add ronin_defend_core",
+            "/tag @s remove ronin_defend"
+          ],
+          "on_exit": [
+            "/event entity @e[type=coldsink:ronin_rider_ai,r=8,c=1] turn_rider_state_normal",
+            "/event entity @s clear_titan_sheared",
+            "/tag @s remove in_core",
+            "/tag @e[type=coldsink:ronin_rider_ai,r=8,c=1] remove in_core"
+          ]
+        }
+      }
+    }
+  }
+}

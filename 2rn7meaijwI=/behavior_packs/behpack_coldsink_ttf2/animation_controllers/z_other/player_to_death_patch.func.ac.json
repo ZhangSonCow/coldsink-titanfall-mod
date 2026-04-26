@@ -1,0 +1,26 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.player_to_death_patch.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [ "titan_fight_leave_patch" ],
+          "transitions": [
+            {
+              "death": "q.property('titan:action') == 200"
+            }
+          ]
+        },
+        "death": {
+          "animations": [ "player_to_death_patch" ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 200"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

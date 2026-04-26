@@ -1,0 +1,28 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ronin_skill_2.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/effect @s blindness 1 0 true",
+          "/effect @s darkness 3 0 true"
+        ],
+        "0.5": [
+          "/effect @s blindness 1 0 true"
+        ],
+        "1.0": [
+          "/effect @s blindness 1 0 true"
+        ],
+        "1.5": [
+          "/effect @s blindness 1 0 true"
+        ],
+        "2.0": [
+          "/effect @s blindness 1 0 true",
+          "/event entity @s clear_titan_saddled"
+        ]
+      }
+    }
+  }
+}

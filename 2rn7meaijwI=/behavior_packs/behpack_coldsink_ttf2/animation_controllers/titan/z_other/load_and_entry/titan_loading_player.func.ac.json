@@ -1,0 +1,25 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.titan_loading_player.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "loading_player": "q.property('titan:loading_player')"
+            }
+          ]
+        },
+        "loading_player": {
+          "animations": [ "loading_fast_player" ],
+          "transitions": [
+            {
+              "default": "!q.property('titan:loading_player')"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

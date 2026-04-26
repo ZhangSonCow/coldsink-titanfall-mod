@@ -1,0 +1,42 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.weapon_charge_powering.func": {
+      "loop": true,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players add @s charge_bullet 1",
+          "/event entity @s add_powering_1",
+          "/event entity @s[scores={charge_bullet=13..}] set_other_action_2"
+        ]
+      }
+    },
+    "animation.weapon_charge_idle.func": {
+      "loop": true,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players remove @s[scores={charge_bullet=1..}] charge_bullet 1",
+          "/event entity @s remove_powering_1"
+        ]
+      }
+    },
+    "animation.weapon_charge_fire.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/event entity @s[tag=team_blue] weapon_charge_fire_blue",
+          "/event entity @s[tag=team_red] weapon_charge_fire_red",
+          "/event entity @s weapon_charge_fire",
+          "/scoreboard players set @s charge_bullet 0",
+          "/event entity @s set_powering_0"
+        ],
+        "0.8": [
+          "/event entity @s set_other_action_0"
+        ]
+      }
+    }
+  }
+}

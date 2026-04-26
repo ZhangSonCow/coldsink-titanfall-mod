@@ -1,0 +1,25 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.scorch_ai_core.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/effect @s slowness 2 10 true"
+        ],
+        "1.10": [
+          "/execute @s[tag=team_blue] ~~~ summon coldsink:scorch_core_blue ^^3.2^1",
+          "/execute @s[tag=team_blue] ~~~ execute @e[type=coldsink:scorch_core_blue,c=1] ~~~ tp @s ~~~ facing @e[family=scorch_titan,tag=in_core,c=1]",
+
+          "/execute @s[tag=team_red] ~~~ summon coldsink:scorch_core_red ^^3.2^1",
+          "/execute @s[tag=team_red] ~~~ execute @e[type=coldsink:scorch_core_red,c=1] ~~~ tp @s ~~~ facing @e[family=scorch_titan,tag=in_core,c=1]"
+        ],
+        "2.0": [
+          "/event entity @s set_action_0",
+          "/event entity @e[type=coldsink:scorch_rider_ai,r=8,c=1] turn_titan_state_normal"
+        ]
+      }
+    }
+  }
+}

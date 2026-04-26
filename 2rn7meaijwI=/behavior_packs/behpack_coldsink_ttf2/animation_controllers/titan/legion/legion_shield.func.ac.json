@@ -1,0 +1,160 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.legion_shield.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "death": "!q.is_alive || q.health <= 0"
+            },
+            {
+              "damage_1": "q.health <= 4000 && q.health > 3500"
+            },
+            {
+              "damage_2": "q.health <= 3500 && q.health > 3000"
+            },
+            {
+              "damage_3": "q.health <= 3000 && q.health > 2500"
+            },
+            {
+              "damage_4": "q.health <= 2500 && q.health > 2000"
+            },
+            {
+              "damage_5": "q.health <= 2000 && q.health > 1500"
+            },
+            {
+              "damage_6": "q.health <= 1500 && q.health > 1000"
+            },
+            {
+              "damage_7": "q.health <= 1000 && q.health > 500"
+            },
+            {
+              "damage_8": "q.health <= 500 && q.health > 0"
+            }
+          ]
+        },
+        "death": {
+          "on_entry": [
+            "/execute @e[family=legion_titan,r=8,c=1] ~~~ execute @s[tag=has_rider] ~~~ event entity @p[tag=is_legion,r=8] clear_titan_saddled",
+            "/execute @e[family=legion_titan,r=8,c=1] ~~~ event entity @s[tag=!has_rider] clear_titan_saddled",
+            "/event entity @s godie"
+          ]
+        },
+        "damage_1": {
+          "transitions": [
+            {
+              "death": "!q.is_alive || q.health <= 0"
+            },
+            {
+              "default": "!(q.health <= 4000 && q.health > 3500)"
+            }
+          ],
+          "on_entry": [
+            "/execute @e[family=legion_titan,r=8,c=1] ~~~ execute @s[tag=has_rider] ~~~ event entity @p[tag=is_legion,r=8] legion_shield_1",
+            "/execute @e[family=legion_titan,r=8,c=1] ~~~ event entity @s[tag=!has_rider] legion_shield_1"
+          ]
+        },
+        "damage_2": {
+          "transitions": [
+            {
+              "death": "!q.is_alive || q.health <= 0"
+            },
+            {
+              "default": "!(q.health <= 3500 && q.health > 3000)"
+            }
+          ],
+          "on_entry": [
+            "/execute @e[family=legion_titan,r=8,c=1] ~~~ execute @s[tag=has_rider] ~~~ event entity @p[tag=is_legion,r=8] legion_shield_2",
+            "/execute @e[family=legion_titan,r=8,c=1] ~~~ event entity @s[tag=!has_rider] legion_shield_2"
+          ]
+        },
+        "damage_3": {
+          "transitions": [
+            {
+              "death": "!q.is_alive || q.health <= 0"
+            },
+            {
+              "default": "!(q.health <= 3000 && q.health > 2500)"
+            }
+          ],
+          "on_entry": [
+            "/execute @e[family=legion_titan,r=8,c=1] ~~~ execute @s[tag=has_rider] ~~~ event entity @p[tag=is_legion,r=8] legion_shield_3",
+            "/execute @e[family=legion_titan,r=8,c=1] ~~~ event entity @s[tag=!has_rider] legion_shield_3"
+          ]
+        },
+        "damage_4": {
+          "transitions": [
+            {
+              "death": "!q.is_alive || q.health <= 0"
+            },
+            {
+              "default": "!(q.health <= 2500 && q.health > 2000)"
+            }
+          ],
+          "on_entry": [
+            "/execute @e[family=legion_titan,r=8,c=1] ~~~ execute @s[tag=has_rider] ~~~ event entity @p[tag=is_legion,r=8] legion_shield_4",
+            "/execute @e[family=legion_titan,r=8,c=1] ~~~ event entity @s[tag=!has_rider] legion_shield_4"
+          ]
+        },
+        "damage_5": {
+          "transitions": [
+            {
+              "death": "!q.is_alive || q.health <= 0"
+            },
+            {
+              "default": "!(q.health <= 2000 && q.health > 1500)"
+            }
+          ],
+          "on_entry": [
+            "/execute @e[family=legion_titan,r=8,c=1] ~~~ execute @s[tag=has_rider] ~~~ event entity @p[tag=is_legion,r=8] legion_shield_5",
+            "/execute @e[family=legion_titan,r=8,c=1] ~~~ event entity @s[tag=!has_rider] legion_shield_5"
+          ]
+        },
+        "damage_6": {
+          "transitions": [
+            {
+              "death": "!q.is_alive || q.health <= 0"
+            },
+            {
+              "default": "!(q.health <= 1500 && q.health > 1000)"
+            }
+          ],
+          "on_entry": [
+            "/execute @e[family=legion_titan,r=8,c=1] ~~~ execute @s[tag=has_rider] ~~~ event entity @p[tag=is_legion,r=8] legion_shield_6",
+            "/execute @e[family=legion_titan,r=8,c=1] ~~~ event entity @s[tag=!has_rider] legion_shield_6"
+          ]
+        },
+        "damage_7": {
+          "transitions": [
+            {
+              "death": "!q.is_alive || q.health <= 0"
+            },
+            {
+              "default": "!(q.health <= 1000 && q.health > 500)"
+            }
+          ],
+          "on_entry": [
+            "/execute @e[family=legion_titan,r=8,c=1] ~~~ execute @s[tag=has_rider] ~~~ event entity @p[tag=is_legion,r=8] legion_shield_7",
+            "/execute @e[family=legion_titan,r=8,c=1] ~~~ event entity @s[tag=!has_rider] legion_shield_7"
+          ]
+        },
+        "damage_8": {
+          "transitions": [
+            {
+              "death": "!q.is_alive || q.health <= 0"
+            },
+            {
+              "default": "!(q.health <= 500 && q.health > 0)"
+            }
+          ],
+          "on_entry": [
+            "/execute @e[family=legion_titan,r=8,c=1] ~~~ execute @s[tag=has_rider] ~~~ event entity @p[tag=is_legion,r=8] legion_shield_8",
+            "/execute @e[family=legion_titan,r=8,c=1] ~~~ event entity @s[tag=!has_rider] legion_shield_8"
+          ]
+        }
+      }
+    }
+  }
+}

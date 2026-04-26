@@ -1,0 +1,39 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.weapon_r201_fire.func": {
+      "loop": true,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/event entity @s[scores={r201_bullet=1..},tag=team_blue] weapon_r201_fire_blue",
+          "/event entity @s[scores={r201_bullet=1..},tag=team_red] weapon_r201_fire_red",
+          "/event entity @s[scores={r201_bullet=1..}] weapon_r201_fire",
+          "/event entity @s[scores={r201_bullet=..0}] set_other_action_2"
+        ]
+      }
+    },
+    "animation.weapon_r201_reload.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/tag @s add r201_self",
+          "/playsound weapon_r201_reload.self @s",
+          "/playsound weapon_r201_reload @a[tag=!r201_self,r=32] ~~~"
+        ],
+        "1.1": [
+          "/camerashake add @s[tag=!wy_game] 0.05 0.15 rotational"
+        ],
+        "1.55": [
+          "/camerashake add @s[tag=!wy_game] 0.03 0.3 rotational"
+        ],
+        "2.0": [
+          "/scoreboard players set @s r201_bullet 30",
+          "/event entity @s set_weapon_30",
+          "/event entity @s set_other_action_0"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.spurt_bar_1",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+				{
+					"name": "cabin",
+					"pivot": [-1.3382, 29.8285, 9.0625]
+				},
+				{
+					"name": "spurtBox",
+					"parent": "cabin",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "spurt_yes_1",
+					"parent": "spurtBox",
+					"pivot": [0, 25.0515, 10],
+					"cubes": [
+						{
+							"origin": [-1.125, 24.9875, 10],
+							"size": [2.25, 0.128, 0],
+							"uv": {
+								"north": {"uv": [0, 14.72], "uv_size": [128, 5.16]},
+								"east": {"uv": [3.84, 27.04], "uv_size": [1, 1]},
+								"south": {"uv": [0, 5.16], "uv_size": [16, 0.84]},
+								"west": {"uv": [9.32, 25.76], "uv_size": [1, 1]},
+								"up": {"uv": [0, 23.28], "uv_size": [11, 1]},
+								"down": {"uv": [0, 7.12], "uv_size": [11, -1]}
+							}
+						}
+					]
+				},
+				{
+					"name": "spurt_down_1",
+					"parent": "spurtBox",
+					"pivot": [-1.125, 25.0515, 10],
+					"cubes": [
+						{
+							"origin": [-1.125, 24.9875, 10],
+							"size": [2.25, 0.128, 0],
+							"uv": {
+								"north": {"uv": [0, 122.2], "uv_size": [128, 5.16]},
+								"east": {"uv": [3.84, 27.04], "uv_size": [1, 1]},
+								"south": {"uv": [0, 5.16], "uv_size": [16, 0.84]},
+								"west": {"uv": [9.32, 25.76], "uv_size": [1, 1]},
+								"up": {"uv": [0, 23.28], "uv_size": [11, 1]},
+								"down": {"uv": [0, 7.12], "uv_size": [11, -1]}
+							}
+						}
+					]
+				},
+				{
+					"name": "spurt_light_1",
+					"parent": "spurtBox",
+					"pivot": [0, 25.0515, 10],
+					"cubes": [
+						{
+							"origin": [-1.125, 24.9875, 0],
+							"size": [2.25, 0.128, 0],
+							"uv": {
+								"north": {"uv": [0, 72.28], "uv_size": [128, 5.16]},
+								"east": {"uv": [3.84, 27.04], "uv_size": [1, 1]},
+								"south": {"uv": [0, 5.16], "uv_size": [16, 0.84]},
+								"west": {"uv": [9.32, 25.76], "uv_size": [1, 1]},
+								"up": {"uv": [0, 23.28], "uv_size": [11, 1]},
+								"down": {"uv": [0, 7.12], "uv_size": [11, -1]}
+							}
+						}
+					]
+				},
+				{
+					"name": "spurt_no_1",
+					"parent": "spurtBox",
+					"pivot": [0, 25.0515, 10],
+					"cubes": [
+						{
+							"origin": [-1.125, 24.9875, 10.01],
+							"size": [2.25, 0.128, 0],
+							"uv": {
+								"north": {"uv": [124.16, 33.28], "uv_size": [3.84, 5.16]},
+								"east": {"uv": [3.84, 27.04], "uv_size": [1, 1]},
+								"south": {"uv": [0, 5.16], "uv_size": [16, 0.84]},
+								"west": {"uv": [9.32, 25.76], "uv_size": [1, 1]},
+								"up": {"uv": [0, 23.28], "uv_size": [11, 1]},
+								"down": {"uv": [0, 7.12], "uv_size": [11, -1]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

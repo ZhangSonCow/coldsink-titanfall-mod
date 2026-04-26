@@ -1,0 +1,66 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.titan_damage_fire": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "fire_1": "(q.health - 2500) / (q.max_health - 2500) <= 0.75 && (q.health - 2500) / (q.max_health - 2500) > 0.5"
+            },
+            {
+              "fire_2": "(q.health - 2500) / (q.max_health - 2500) <= 0.5 && (q.health - 2500) / (q.max_health - 2500) > 0.25"
+            },
+            {
+              "fire_3": "(q.health - 2500) / (q.max_health - 2500) <= 0.25 && q.health > 2500"
+            },
+            {
+              "fire_4": "q.health <= 2500"
+            }
+          ]
+        },
+        "fire_1": {
+          "animations": [
+            "damage_fire_1"
+          ],
+          "transitions": [
+            {
+              "default": "!( (q.health - 2500) / (q.max_health - 2500) <= 0.75 && (q.health - 2500) / (q.max_health - 2500) > 0.5 )"
+            }
+          ]
+        },
+        "fire_2": {
+          "animations": [
+            "damage_fire_2"
+          ],
+          "transitions": [
+            {
+              "default": "!( (q.health - 2500) / (q.max_health - 2500) <= 0.5 && (q.health - 2500) / (q.max_health - 2500) > 0.25 )"
+            }
+          ]
+        },
+        "fire_3": {
+          "animations": [
+            "damage_fire_3"
+          ],
+          "transitions": [
+            {
+              "default": "!( (q.health - 2500) / (q.max_health - 2500) <= 0.25 && q.health > 2500 )"
+            }
+          ]
+        },
+        "fire_4": {
+          "animations": [
+            "damage_fire_4"
+          ],
+          "transitions": [
+            {
+              "default": "q.health > 2500"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.pilot_bullet_self.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "tag": "q.is_alive"
+            }
+          ]
+        },
+        "tag": {
+          "animations": [
+            "self"
+          ]
+        }
+      }
+    }
+  }
+}

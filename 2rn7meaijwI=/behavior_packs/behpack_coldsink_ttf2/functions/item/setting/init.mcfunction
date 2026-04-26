@@ -1,0 +1,9 @@
+replaceitem entity @s slot.hotbar 0 coldsink:choose_titan_type 1 0 {"item_lock":{"mode":"lock_in_slot"}}
+replaceitem entity @s slot.hotbar 1 coldsink:choose_titan_skill 1 0 {"item_lock":{"mode":"lock_in_slot"}}
+replaceitem entity @s slot.hotbar 2 coldsink:choose_titan_upgrade 1 0 {"item_lock":{"mode":"lock_in_slot"}}
+replaceitem entity @s slot.hotbar 3 coldsink:choose_titan_skin 1 0 {"item_lock":{"mode":"lock_in_slot"}}
+replaceitem entity @s slot.hotbar 4 coldsink:setting_exit 1 0 {"item_lock":{"mode":"lock_in_slot"}}
+replaceitem entity @s slot.hotbar 5 coldsink:choose_pilot_type 1 0 {"item_lock":{"mode":"lock_in_slot"}}
+replaceitem entity @s slot.hotbar 6 coldsink:choose_pilot_weapon 1 0 {"item_lock":{"mode":"lock_in_slot"}}
+replaceitem entity @s slot.hotbar 7 coldsink:choose_pilot_skill 1 0 {"item_lock":{"mode":"lock_in_slot"}}
+replaceitem entity @s slot.hotbar 8 coldsink:choose_team 1 0 {"item_lock":{"mode":"lock_in_slot"}}

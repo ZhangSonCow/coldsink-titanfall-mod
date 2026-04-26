@@ -1,0 +1,242 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.weapon_charge.1st": {
+      "initial_state": "turn",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "turn": "q.property('titan:other_action') == 10 && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_charge')"
+            }
+          ]
+        },
+        "turn": {
+          "animations": [
+            "weapon_charge.turn.1st"
+          ],
+          "transitions": [
+            {
+              "idle": "q.property('titan:other_action') != 10"
+            }
+          ]
+        },
+        "idle": {
+          "animations": [
+            "weapon_charge.idle.1st",
+            "pilot_player.weapon_idle.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_charge')"
+            },
+            {
+              "run": "q.is_sprinting && q.is_on_ground && q.property('titan:other_action') == 0"
+            },
+            {
+              "climb": "q.property('titan:action') == 53 || q.property('titan:action') == 54"
+            },
+            {
+              "slide": "(q.property('titan:action') == 55 || q.is_sneaking)"
+            }
+          ]
+        },
+        "run": {
+          "animations": [
+            "weapon_charge.run.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_charge')"
+            },
+            {
+              "idle": "(!q.is_sprinting && !q.is_sneaking) || !q.is_on_ground || q.property('titan:other_action') != 0"
+            },
+            {
+              "climb": "q.property('titan:action') == 53 || q.property('titan:action') == 54"
+            },
+            {
+              "slide": "(q.property('titan:action') == 55 || q.is_sneaking)"
+            },
+            {
+              "idle": "q.property('titan:weapon_aim')"
+            }
+          ]
+        },
+        "climb": {
+          "animations": [
+            "weapon_charge.climb.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_charge')"
+            },
+            {
+              "idle": "q.property('titan:action') != 53 && q.property('titan:action') != 54"
+            }
+          ]
+        },
+        "slide": {
+          "animations": [
+            "weapon_charge.slide.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_charge')"
+            },
+            {
+              "idle": "q.property('titan:action') != 55 && !q.is_sneaking"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.weapon_charge_action.1st": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "weapon_charge.idle"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "powering": "q.property('titan:other_action') == 1"
+            }
+          ]
+        },
+        "powering": {
+          "animations": [
+            "weapon_charge.powering.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "fire": "q.property('titan:other_action') == 2"
+            },
+            {
+              "default": "q.property('titan:other_action') != 1"
+            }
+          ]
+        },
+        "fire": {
+          "animations": [
+            "weapon_charge.fire.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:other_action') == 0"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.weapon_charge.3st": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "weapon_charge.idle.3st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "run": "q.is_sprinting && q.is_on_ground && q.property('titan:other_action') == 0"
+            },
+            {
+              "climb": "q.property('titan:action') == 53 || q.property('titan:action') == 54"
+            },
+            {
+              "slide": "q.property('titan:action') == 55"
+            }
+          ]
+        },
+        "run": {
+          "animations": [
+            "weapon_charge.run.3st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "(!q.is_sprinting && !q.is_sneaking) || !q.is_on_ground || q.property('titan:other_action') != 0"
+            },
+            {
+              "climb": "q.property('titan:action') == 53 || q.property('titan:action') == 54"
+            },
+            {
+              "slide": "q.property('titan:action') == 55"
+            }
+          ]
+        },
+        "climb": {
+          "animations": [
+            "weapon_charge.climb.3st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 53 && q.property('titan:action') != 54"
+            }
+          ]
+        },
+        "slide": {
+          "animations": [
+            "weapon_charge.slide.3st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 55"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.weapon_charge_action.3st": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "weapon_charge.idle"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "powering": "q.property('titan:other_action') == 1"
+            }
+          ]
+        },
+        "powering": {
+          "animations": [
+            "weapon_charge.powering.3st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "fire": "q.property('titan:other_action') == 2"
+            },
+            {
+              "default": "q.property('titan:other_action') != 1"
+            }
+          ]
+        },
+        "fire": {
+          "animations": [
+            "weapon_charge.fire.3st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:other_action') == 0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

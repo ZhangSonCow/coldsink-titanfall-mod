@@ -1,0 +1,43 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.monarch_skill_2.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/playsound monarch_skill_2 @a[r=64] ~~~"
+        ],
+        "1.17": [
+          "/event entity @s set_cooldown_0_0",
+          "/event entity @s set_cooldown_1_0",
+          "/scoreboard players set @s spurt_time 0",
+          "/event entity @s set_spurt_0",
+          "/event entity @s set_missile_12",
+          "/event entity @s set_cooldown_2_17",
+          "/title @s actionbar §e技能已刷新",
+          "/event entity @s set_action_0"
+        ]
+      }
+    },
+    "animation.monarch_skill_2_fast.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/playsound monarch_skill_2_fast @a[r=64] ~~~"
+        ],
+        "0.58": [
+          "/event entity @s set_cooldown_0_0",
+          "/event entity @s set_cooldown_1_0",
+          "/scoreboard players set @s spurt_time 0",
+          "/event entity @s set_spurt_0",
+          "/event entity @s set_missile_12",
+          "/event entity @s set_cooldown_2_17",
+          "/title @s actionbar §e技能已刷新",
+          "/event entity @s set_action_0"
+        ]
+      }
+    }
+  }
+}

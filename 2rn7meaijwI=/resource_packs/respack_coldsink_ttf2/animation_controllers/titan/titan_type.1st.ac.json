@@ -1,0 +1,142 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.titan_type.1st": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "skill_0_cooldown_12.1st",
+            "skill_1_cooldown_2.1st",
+            "skill_2_cooldown_2.1st"
+          ],
+          "transitions": [
+            {
+              "ion": "q.variant == 1"
+            },
+            {
+              "tone": "q.variant == 2"
+            },
+            {
+              "northstar": "q.variant == 3"
+            },
+            {
+              "ronin": "q.variant == 4"
+            },
+            {
+              "scorch": "q.variant == 5"
+            },
+            {
+              "legion": "q.variant == 6"
+            },
+            {
+              "monarch": "q.variant == 7"
+            }
+          ]
+        },
+        "ion": {
+          "animations": [
+            "skill_0_cooldown_200.1st",
+            "skill_1_cooldown_2.1st",
+            "skill_2_cooldown_10.1st",
+            "energy_bar.1st",
+            "ion_ui_need_energy_1.1st",
+            "ion_ui_need_energy_2.1st"
+          ],
+          "transitions": [
+            {
+              "default": "q.variant == 0"
+            }
+          ]
+        },
+        "tone": {
+          "animations": [
+            "skill_0_cooldown_14.1st",
+            "skill_1_cooldown_2.1st",
+            "skill_2_cooldown_14.1st"
+          ],
+          "transitions": [
+            {
+              "default": "q.variant == 0"
+            }
+          ]
+        },
+        "northstar": {
+          "animations": [
+            "skill_0_cooldown_20.1st",
+            "skill_1_cooldown_8.1st",
+            "skill_2_cooldown_14.1st"
+          ],
+          "transitions": [
+            {
+              "default": "q.variant == 0"
+            }
+          ]
+        },
+        "ronin": {
+          "animations": [
+            "skill_0_cooldown_12.1st",
+            "skill_1_cooldown_10.1st",
+            "skill_2_cooldown_12.1st"
+          ],
+          "transitions": [
+            {
+              "default": "q.variant == 0"
+            }
+          ]
+        },
+        "scorch": {
+          "animations": [
+            "skill_0_cooldown_40.1st",
+            "skill_1_cooldown_10.1st",
+            "skill_2_cooldown_30.1st"
+          ],
+          "transitions": [
+            {
+              "default": "q.variant == 0"
+            }
+          ]
+        },
+        "legion": {
+          "animations": [
+            "skill_0_cooldown_14.1st",
+            "skill_1_cooldown_8.1st",
+            "skill_2_cooldown_2.1st"
+          ],
+          "transitions": [
+            {
+              "default": "q.variant == 0"
+            }
+          ]
+        },
+        "monarch": {
+          "animations": [
+            "skill_0_cooldown_12.1st",
+            "skill_1_cooldown_8.1st",
+            "skill_2_cooldown_17.1st"
+          ],
+          "transitions": [
+            {
+              "default": "q.variant == 0"
+            },
+            {
+              "monarch_final_missile": "q.property('titan:monarch_now_level') > 2 && q.property('titan:monarch_core_three') == 1"
+            }
+          ]
+        },
+        "monarch_final_missile": {
+          "animations": [
+            "skill_0_cooldown_12.1st",
+            "skill_1_cooldown_36.1st",
+            "skill_2_cooldown_17.1st"
+          ],
+          "transitions": [
+            {
+              "default": "q.variant == 0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

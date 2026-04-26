@@ -1,0 +1,75 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:kill_lead_item_tool",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "components": {
+      
+      "minecraft:health": {
+        "value": 1,
+        "max": 1,
+        "min": 1
+      },
+      "minecraft:collision_box": {
+        "height": 1.0,
+        "width": 0
+      },
+      "minecraft:ageable": {
+        "duration": 0.1,
+        "grow_up": {
+          "event": "pre_godie",
+          "target": "self"
+        }
+      },
+      "minecraft:physics": {},
+      "minecraft:fire_immune": {},
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:type_family": {
+        "family": [ "tool" ]
+      },
+      "minecraft:navigation.walk": {
+        "can_sink": false
+      },
+      "minecraft:movement.basic": {}
+      
+    },
+
+    "component_groups": {
+      
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+
+    },
+
+    "events": {
+      "pre_godie": {
+        "queue_command": {
+          "command": [
+            "kill @e[type=item,name=拴绳]",
+            "event entity @s godie"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

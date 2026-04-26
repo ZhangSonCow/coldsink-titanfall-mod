@@ -1,0 +1,22 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.titan_spurt_slide.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.5": [
+          "/event entity @s[tag=!moving_spurt,tag=!running_spurt] titan_exit_suprting"
+        ],
+        "1.0": [
+          "/event entity @s[tag=!running_spurt] titan_exit_suprting",
+          "/tag @s remove moving_spurt"
+        ],
+        "2.0": [
+          "/event entity @s titan_exit_suprting",
+          "/tag @s remove running_spurt"
+        ]
+      }
+    }
+  }
+}

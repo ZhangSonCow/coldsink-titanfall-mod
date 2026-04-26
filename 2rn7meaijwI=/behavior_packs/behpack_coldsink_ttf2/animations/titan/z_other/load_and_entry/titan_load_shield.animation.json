@@ -1,0 +1,25 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.titan_load_shield.func": {
+      "loop": true,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/execute @s[tag=team_blue] ~~~ scoreboard players operation @e[tag=!team_blue,r=10] death_check = @s titan_self",
+          "/execute @s[tag=team_blue] ~~~ damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,type=!player,r=10] 50 suicide entity @s",
+          "/execute @s[tag=team_blue] ~~~ damage @a[tag=!team_blue,r=10] 4 suicide entity @s",
+          "/execute @s[tag=team_blue] ~~~ title @a[tag=!team_blue,r=10] actionbar §c=== 远离敌方泰坦护罩 ===",
+          
+          "/execute @s[tag=team_red] ~~~ scoreboard players operation @e[tag=!team_red,r=10] death_check = @s titan_self",
+          "/execute @s[tag=team_red] ~~~ damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,type=!player,r=10] 50 suicide entity @s",
+          "/execute @s[tag=team_red] ~~~ damage @a[tag=!team_red,r=10] 4 suicide entity @s",
+          "/execute @s[tag=team_red] ~~~ title @a[tag=!team_red,r=10] actionbar §c=== 远离敌方泰坦护罩 ===",
+
+          "/event entity @e[family=bullet,r=10] godie",
+          "/event entity @e[family=missile,r=10] godie"
+        ]
+      }
+    }
+  }
+}

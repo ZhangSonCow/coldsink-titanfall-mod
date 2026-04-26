@@ -1,0 +1,171 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ronin_ctrl.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "fire": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_weapon') && q.property('titan:weapon_value') > 0"
+            },
+            {
+              "reload": "v.attack_time && !q.property('titan:weapon_aim') && q.property('titan:weapon_value') < 4 && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_weapon')"
+            },
+            {
+              "melee": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_melee')"
+            },
+            {
+              "arc_pre": "q.property('titan:skill_cooldown_1') == 0 && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_skill_1')"
+            },
+            {
+              "defend_pre": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_skill_0')"
+            },
+            {
+              "core_pre": "q.property('titan:core_value') == 100 && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_skill_3')"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[tag=titan_idle,tag=!titan_reload,tag=!terminate] set_action_0"
+          ]
+        },
+        "fire": {
+          "transitions": [
+            {
+              "default": "!q.is_using_item"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[scores={ronin_bullet=1..}] set_action_3",
+            "/tag @s add keep_fire"
+          ],
+          "on_exit": [
+            "/event entity @s[tag=!titan_reload] set_action_0",
+            "/tag @s remove keep_fire"
+          ]
+        },
+        "reload": {
+          "transitions": [
+            {
+              "fire": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_weapon') && q.property('titan:weapon_value') > 0"
+            },
+            {
+              "melee": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_melee')"
+            },
+            {
+              "arc_pre": "q.property('titan:skill_cooldown_1') == 0 && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_skill_1')"
+            },
+            {
+              "defend_pre": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_skill_0')"
+            },
+            {
+              "core_pre": "q.property('titan:core_value') == 100 && q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_skill_3')"
+            },
+            {
+              "default": "q.property('titan:action') != 4"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[scores={ronin_bullet=..3}] set_action_4"
+          ]
+        },
+        "melee": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 5"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[tag=!terminate] set_action_5",
+            "/tag @s add keep_melee"
+          ],
+          "on_exit": [
+            "/tag @s remove keep_melee"
+          ]
+        },
+        "arc_pre": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "arc": "q.property('titan:action') == 12"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_11",
+            "/tag @s add keep_skill_q"
+          ]
+        },
+        "arc": {
+          "transitions": [
+            {
+              "arc_after": "!q.is_using_item"
+            }
+          ],
+          "on_exit": [
+            "/tag @s remove keep_skill_q"
+          ]
+        },
+        "arc_after": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 13"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_13"
+          ]
+        },
+        "defend_pre": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "defend": "q.property('titan:action') == 15"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_14",
+            "/tag @s add keep_skill_mid"
+          ]
+        },
+        "defend": {
+          "transitions": [
+            {
+              "defend_after": "!q.is_using_item"
+            }
+          ],
+          "on_exit": [
+            "/tag @s remove keep_skill_mid"
+          ]
+        },
+        "defend_after": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 16"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_16"
+          ]
+        },
+        "core_pre": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 17"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_17",
+            "/tag @s add keep_skill_v"
+          ],
+          "on_exit": [
+            "/tag @s remove keep_skill_v"
+          ]
+        }
+      }
+    }
+  }
+}

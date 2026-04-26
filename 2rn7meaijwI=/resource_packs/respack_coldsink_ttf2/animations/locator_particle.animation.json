@@ -1,0 +1,124 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.locator.particle_delay": {
+			"loop": true,
+			"animation_length": 0.0167,
+			"start_delay": 0.2,
+			"particle_effects": {
+				"0.0": {
+					"effect": "particle",
+					"locator": "particle"
+				}
+			}
+		},
+		"animation.locator.particle_double_delay": {
+			"loop": true,
+			"animation_length": 0.0167,
+			"start_delay": 0.2,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "particle_1",
+						"locator": "particle"
+					},
+					{
+						"effect": "particle",
+						"locator": "particle"
+					}
+				]
+			}
+		},
+		"animation.locator.particle_down": {
+			"loop": true,
+			"animation_length": 0.0417,
+			"bones": {
+				"root": {
+					"position": [0, -12, 0]
+				}
+			}
+		},
+		"animation.locator.particle_double": {
+			"loop": true,
+			"animation_length": 0.0167,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "particle_1",
+						"locator": "particle"
+					},
+					{
+						"effect": "particle",
+						"locator": "particle"
+					}
+				]
+			}
+		},
+		"animation.locator.particle_double_1": {
+			"loop": true,
+			"animation_length": 0.0167,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "particle_3",
+						"locator": "particle"
+					},
+					{
+						"effect": "particle_2",
+						"locator": "particle"
+					}
+				]
+			}
+		},
+		"animation.locator.particle": {
+			"loop": true,
+			"animation_length": 0.0167,
+			"particle_effects": {
+				"0.0": {
+					"effect": "particle",
+					"locator": "particle"
+				}
+			}
+		},
+		"animation.locator.particle_1": {
+			"loop": true,
+			"animation_length": 0.0167,
+			"particle_effects": {
+				"0.0": {
+					"effect": "particle_1",
+					"locator": "particle"
+				}
+			}
+		},
+		"animation.locator.particle_2": {
+			"loop": true,
+			"animation_length": 0.0167,
+			"particle_effects": {
+				"0.0": {
+					"effect": "particle_2",
+					"locator": "particle"
+				}
+			}
+		},
+		"animation.locator.particle_3": {
+			"loop": true,
+			"animation_length": 0.0167,
+			"particle_effects": {
+				"0.0": {
+					"effect": "particle_3",
+					"locator": "particle"
+				}
+			}
+		},
+		"animation.locator.particle_4": {
+			"loop": true,
+			"animation_length": 0.0167,
+			"particle_effects": {
+				"0.0": {
+					"effect": "particle_4",
+					"locator": "particle"
+				}
+			}
+		}
+	}
+}

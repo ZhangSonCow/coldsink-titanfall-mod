@@ -1,0 +1,293 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.northstar_skill_3.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/execute @s[tag=!northstar_fly] ~~~ effect @e[type=coldsink:northstar_ride,c=1] levitation 1 36 true",
+          "/tag @s add self",
+          "/playsound northstar_skill_3 @a[tag=!self] ~~~",
+          "/playsound northstar_skill_3.self @s",
+          "/tag @s remove self"
+        ],
+        "1.0": [
+          "/effect @e[type=coldsink:northstar_ride,c=1] levitation 1 0 true",
+          "/effect @e[type=coldsink:northstar_ride,c=1] speed 3 8 true"
+        ],
+        "2.0": [
+          "/effect @e[type=coldsink:northstar_ride,c=1] slow_falling 1 0 true",
+          "/event entity @s[tag=team_blue] northstar_core_1_blue",
+          "/event entity @s[tag=team_red] northstar_core_1_red",
+          "/scoreboard players remove @s titan_core 10",
+          "/event entity @s remove_core_10",
+          "/camerashake add @s 0.2 0.5 rotational"
+        ],
+        "2.1": [
+          "/effect @e[type=coldsink:northstar_ride,c=1] slow_falling 0 1 true",
+          "/effect @e[type=coldsink:northstar_ride,c=1] levitation 1 0 true"
+        ],
+        "3.1": [
+          "/effect @e[type=coldsink:northstar_ride,c=1] slow_falling 1 0 true"
+        ],
+        "3.2": [
+          "/effect @e[type=coldsink:northstar_ride,c=1] slow_falling 0 1 true",
+          "/effect @e[type=coldsink:northstar_ride,c=1] levitation 1 0 true"
+        ],
+        "4.2": [
+          "/effect @e[type=coldsink:northstar_ride,c=1] slow_falling 1 0 true"
+        ],
+        "4.3": [
+          "/effect @e[type=coldsink:northstar_ride,c=1] slow_falling 0 1 true",
+          "/effect @e[type=coldsink:northstar_ride,c=1] levitation 1 0 true"
+        ],
+
+        // 导弹
+
+        "1.5": [
+          "/event entity @s[tag=team_blue] northstar_core_1_blue",
+          "/event entity @s[tag=team_red] northstar_core_1_red",
+          "/scoreboard players remove @s titan_core 10",
+          "/event entity @s remove_core_10",
+          "/camerashake add @s 0.2 0.5 rotational"
+        ],
+        "1.583": [
+          "/event entity @s[tag=team_blue] northstar_core_4_blue",
+          "/event entity @s[tag=team_red] northstar_core_4_red"
+        ],
+        "1.666": [
+          "/event entity @s[tag=team_blue] northstar_core_2_blue",
+          "/event entity @s[tag=team_red] northstar_core_2_red"
+        ],
+        "1.749": [
+          "/event entity @s[tag=team_blue] northstar_core_5_blue"
+        ],
+        "1.832": [
+          "/event entity @s[tag=team_blue] northstar_core_3_blue",
+          "/event entity @s[tag=team_red] northstar_core_3_red"
+        ],
+        "1.915": [
+          "/event entity @s[tag=team_blue] northstar_core_6_blue",
+          "/event entity @s[tag=team_red] northstar_core_6_red"
+        ],
+        
+        // "2.0": [
+        // ],
+        "2.083": [
+          "/event entity @s[tag=team_blue] northstar_core_4_blue",
+          "/event entity @s[tag=team_red] northstar_core_4_red"
+        ],
+        "2.166": [
+          "/event entity @s[tag=team_blue] northstar_core_2_blue",
+          "/event entity @s[tag=team_red] northstar_core_2_red"
+        ],
+        "2.249": [
+          "/event entity @s[tag=team_blue] northstar_core_5_blue",
+          "/event entity @s[tag=team_red] northstar_core_5_red"
+        ],
+        "2.332": [
+          "/event entity @s[tag=team_blue] northstar_core_3_blue",
+          "/event entity @s[tag=team_red] northstar_core_3_red"
+        ],
+        "2.415": [
+          "/event entity @s[tag=team_blue] northstar_core_6_blue",
+          "/event entity @s[tag=team_red] northstar_core_6_red"
+        ],
+
+        "2.5": [
+          "/event entity @s[tag=team_blue] northstar_core_1_blue",
+          "/event entity @s[tag=team_red] northstar_core_1_red",
+          "/scoreboard players remove @s titan_core 10",
+          "/event entity @s remove_core_10",
+          "/camerashake add @s 0.2 0.5 rotational"
+        ],
+        "2.583": [
+          "/event entity @s[tag=team_blue] northstar_core_4_blue",
+          "/event entity @s[tag=team_red] northstar_core_4_red"
+        ],
+        "2.666": [
+          "/event entity @s[tag=team_blue] northstar_core_2_blue",
+          "/event entity @s[tag=team_red] northstar_core_2_red"
+        ],
+        "2.749": [
+          "/event entity @s[tag=team_blue] northstar_core_5_blue"
+        ],
+        "2.832": [
+          "/event entity @s[tag=team_blue] northstar_core_3_blue",
+          "/event entity @s[tag=team_red] northstar_core_3_red"
+        ],
+        "2.915": [
+          "/event entity @s[tag=team_blue] northstar_core_6_blue",
+          "/event entity @s[tag=team_red] northstar_core_6_red"
+        ],
+
+        "3.0": [
+          "/event entity @s[tag=team_blue] northstar_core_4_blue",
+          "/event entity @s[tag=team_red] northstar_core_4_red",
+          "/scoreboard players remove @s titan_core 10",
+          "/event entity @s remove_core_10",
+          "/camerashake add @s 0.2 0.5 rotational"
+        ],
+        "3.083": [
+          "/event entity @s[tag=team_blue] northstar_core_4_blue",
+          "/event entity @s[tag=team_red] northstar_core_4_red"
+        ],
+        "3.166": [
+          "/event entity @s[tag=team_blue] northstar_core_2_blue",
+          "/event entity @s[tag=team_red] northstar_core_2_red"
+        ],
+        "3.249": [
+          "/event entity @s[tag=team_blue] northstar_core_5_blue"
+        ],
+        "3.332": [
+          "/event entity @s[tag=team_blue] northstar_core_3_blue",
+          "/event entity @s[tag=team_red] northstar_core_3_red"
+        ],
+        "3.415": [
+          "/event entity @s[tag=team_blue] northstar_core_6_blue",
+          "/event entity @s[tag=team_red] northstar_core_6_red"
+        ],
+
+        "3.5": [
+          "/event entity @s[tag=team_blue] northstar_core_1_blue",
+          "/event entity @s[tag=team_red] northstar_core_1_red",
+          "/scoreboard players remove @s titan_core 10",
+          "/event entity @s remove_core_10",
+          "/camerashake add @s 0.2 0.5 rotational"
+        ],
+        "3.583": [
+          "/event entity @s[tag=team_blue] northstar_core_4_blue",
+          "/event entity @s[tag=team_red] northstar_core_4_red"
+        ],
+        "3.666": [
+          "/event entity @s[tag=team_blue] northstar_core_2_blue",
+          "/event entity @s[tag=team_red] northstar_core_2_red"
+        ],
+        "3.749": [
+          "/event entity @s[tag=team_blue] northstar_core_5_blue"
+        ],
+        "3.832": [
+          "/event entity @s[tag=team_blue] northstar_core_3_blue",
+          "/event entity @s[tag=team_red] northstar_core_3_red"
+        ],
+        "3.915": [
+          "/event entity @s[tag=team_blue] northstar_core_6_blue",
+          "/event entity @s[tag=team_red] northstar_core_6_red"
+        ],
+
+        "4.0": [
+          "/event entity @s[tag=team_blue] northstar_core_4_blue",
+          "/event entity @s[tag=team_red] northstar_core_4_red",
+          "/scoreboard players remove @s titan_core 10",
+          "/event entity @s remove_core_10",
+          "/camerashake add @s 0.2 0.5 rotational"
+        ],
+        "4.083": [
+          "/event entity @s[tag=team_blue] northstar_core_4_blue",
+          "/event entity @s[tag=team_red] northstar_core_4_red"
+        ],
+        "4.166": [
+          "/event entity @s[tag=team_blue] northstar_core_2_blue",
+          "/event entity @s[tag=team_red] northstar_core_2_red"
+        ],
+        "4.249": [
+          "/event entity @s[tag=team_blue] northstar_core_5_blue"
+        ],
+        "4.332": [
+          "/event entity @s[tag=team_blue] northstar_core_3_blue",
+          "/event entity @s[tag=team_red] northstar_core_3_red"
+        ],
+        "4.415": [
+          "/event entity @s[tag=team_blue] northstar_core_6_blue",
+          "/event entity @s[tag=team_red] northstar_core_6_red"
+        ],
+
+        "4.5": [
+          "/event entity @s[tag=team_blue] northstar_core_1_blue",
+          "/event entity @s[tag=team_red] northstar_core_1_red",
+          "/scoreboard players remove @s titan_core 10",
+          "/event entity @s remove_core_10",
+          "/camerashake add @s 0.2 0.5 rotational"
+        ],
+        "4.583": [
+          "/event entity @s[tag=team_blue] northstar_core_4_blue",
+          "/event entity @s[tag=team_red] northstar_core_4_red"
+        ],
+        "4.666": [
+          "/event entity @s[tag=team_blue] northstar_core_2_blue",
+          "/event entity @s[tag=team_red] northstar_core_2_red"
+        ],
+        "4.749": [
+          "/event entity @s[tag=team_blue] northstar_core_5_blue"
+        ],
+        "4.832": [
+          "/event entity @s[tag=team_blue] northstar_core_3_blue",
+          "/event entity @s[tag=team_red] northstar_core_3_red"
+        ],
+        "4.915": [
+          "/event entity @s[tag=team_blue] northstar_core_6_blue",
+          "/event entity @s[tag=team_red] northstar_core_6_red"
+        ],
+
+        "5.0": [
+          "/event entity @s[tag=team_blue] northstar_core_4_blue",
+          "/event entity @s[tag=team_red] northstar_core_4_red",
+          "/scoreboard players remove @s titan_core 10",
+          "/event entity @s remove_core_10",
+          "/camerashake add @s 0.2 0.5 rotational"
+        ],
+        "5.083": [
+          "/event entity @s[tag=team_blue] northstar_core_4_blue",
+          "/event entity @s[tag=team_red] northstar_core_4_red"
+        ],
+        "5.166": [
+          "/event entity @s[tag=team_blue] northstar_core_2_blue",
+          "/event entity @s[tag=team_red] northstar_core_2_red"
+        ],
+        "5.249": [
+          "/event entity @s[tag=team_blue] northstar_core_5_blue"
+        ],
+        "5.332": [
+          "/event entity @s[tag=team_blue] northstar_core_3_blue",
+          "/event entity @s[tag=team_red] northstar_core_3_red"
+        ],
+        "5.415": [
+          "/event entity @s[tag=team_blue] northstar_core_6_blue",
+          "/event entity @s[tag=team_red] northstar_core_6_red"
+        ],
+        
+        "5.5": [
+          "/event entity @s[tag=team_blue] northstar_core_1_blue",
+          "/event entity @s[tag=team_red] northstar_core_1_red",
+          "/scoreboard players remove @s titan_core 10",
+          "/event entity @s remove_core_10",
+          "/camerashake add @s 0.2 0.5 rotational"
+        ],
+        "5.583": [
+          "/event entity @s[tag=team_blue] northstar_core_4_blue",
+          "/event entity @s[tag=team_red] northstar_core_4_red"
+        ],
+        "5.666": [
+          "/event entity @s[tag=team_blue] northstar_core_2_blue",
+          "/event entity @s[tag=team_red] northstar_core_2_red"
+        ],
+        "5.749": [
+          "/event entity @s[tag=team_blue] northstar_core_5_blue"
+        ],
+        "5.832": [
+          "/event entity @s[tag=team_blue] northstar_core_3_blue",
+          "/event entity @s[tag=team_red] northstar_core_3_red"
+        ],
+        "5.915": [
+          "/event entity @s[tag=team_blue] northstar_core_6_blue",
+          "/event entity @s[tag=team_red] northstar_core_6_red",
+          "/tag @s remove in_core",
+          "/scoreboard players set @s titan_core 0",
+          "/event entity @s set_core_0",
+          "/event entity @s set_action_0"
+        ]
+      }
+    }
+  }
+}

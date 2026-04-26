@@ -1,0 +1,60 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:npc_steve_blue",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "components": {
+      
+      "minecraft:health": {
+        "value": 20,
+        "max": 20,
+        "min": 1
+      },
+      "minecraft:collision_box": {
+        "height": 1.9,
+        "width": 0.6
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:physics": {},
+      "minecraft:fire_immune": {},
+      "minecraft:type_family": {
+        "family": [ "tool" ]
+      },
+      "minecraft:navigation.walk": {
+        "can_sink": false
+      },
+      "minecraft:movement.basic": {}
+    },
+
+    "component_groups": {
+      
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+
+    },
+
+    "events": {
+      "godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

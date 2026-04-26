@@ -1,0 +1,94 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ronin_titan_ai_action.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "melee": "q.property('titan:action') == 11"
+            },
+            {
+              "fire": "q.property('titan:action') == 12"
+            },
+            {
+              "arc": "q.property('titan:action') == 13"
+            },
+            {
+              "defend": "q.property('titan:action') == 15"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=team_blue] ~~~ event entity @e[type=coldsink:ronin_rider_ai,tag=team_blue,r=8,c=1] turn_rider_state_normal",
+            "/execute @s[tag=team_red] ~~~ event entity @e[type=coldsink:ronin_rider_ai,tag=team_red,r=8,c=1] turn_rider_state_normal"
+          ]
+        },
+        "melee": {
+          "animations": [
+            "ronin_ai_melee"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 11"
+            }
+          ]
+        },
+        "fire": {
+          "animations": [
+            "ronin_ai_fire"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 12"
+            }
+          ]
+        },
+        "arc": {
+          "animations": [
+            "ronin_ai_arc"
+          ],
+          "transitions": [
+            {
+              "arc_after": "q.property('titan:action') != 13"
+            }
+          ],
+          "on_exit": [
+            "/execute @s[tag=!ronin_phase] ~~~ playsound ronin_skill_1 @a[r=64] ~~~",
+            "/execute @s[tag=!in_core,tag=team_blue,tag=!ronin_phase] ~~~ summon coldsink:ronin_arc_blue ^^3.2^1.8",
+            "/execute @s[tag=in_core,tag=team_blue,tag=!ronin_phase] ~~~ summon coldsink:ronin_arc_core_blue ^^3.2^1.8",
+            "/execute @s[tag=!in_core,tag=team_red,tag=!ronin_phase] ~~~ summon coldsink:ronin_arc_red ^^3.2^1.8",
+            "/execute @s[tag=in_core,tag=team_red,tag=!ronin_phase] ~~~ summon coldsink:ronin_arc_core_red ^^3.2^1.8"
+          ]
+        },
+        "arc_after": {
+          "animations": [
+            "ronin_ai_arc_after"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 14"
+            }
+          ]
+        },
+        "defend": {
+          "animations": [
+            "ronin_ai_defend"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 15"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[tag=!in_core] entry_sword_defend",
+            "/event entity @s[tag=in_core] entry_sword_defend_core"
+          ],
+          "on_exit": [
+            "/event entity @s exit_sword_defend"
+          ]
+        }
+      }
+    }
+  }
+}

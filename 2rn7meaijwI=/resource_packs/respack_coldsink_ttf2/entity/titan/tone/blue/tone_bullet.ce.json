@@ -1,0 +1,31 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:tone_bullet_blue",
+      "animations": {
+        "particle": "animation.locator.particle_delay"
+      },
+      "scripts": {
+        "animate": [
+          "particle"
+        ]
+      },
+      "particle_effects": {
+        "particle": "titan:tone_bullet"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/empty"
+      },
+      "geometry": {
+        "default": "geometry.locator"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

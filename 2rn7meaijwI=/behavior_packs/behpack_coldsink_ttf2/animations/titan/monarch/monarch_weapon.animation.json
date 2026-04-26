@@ -1,0 +1,204 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.monarch_fire.func": {
+      "loop": true,
+      "animation_length": 0.12,
+      "timeline": {
+        "0.0": [
+          "/event entity @s[scores={monarch_bullet=1..},tag=team_blue] monarch_fire_blue",
+          "/event entity @s[scores={monarch_bullet=1..},tag=team_red] monarch_fire_red",
+          "/event entity @s[scores={monarch_bullet=1..}] monarch_fire"
+        ],
+        "0.08": [
+          "/event entity @s[scores={monarch_bullet=..0}] set_action_0",
+          "/event entity @s[tag=!weapon_fire] set_action_0"
+        ]
+      }
+    },
+    "animation.monarch_fire_arc.func": {
+      "loop": true,
+      "animation_length": 0.12,
+      "timeline": {
+        "0.0": [
+          "/event entity @s[scores={monarch_bullet=1..},tag=team_blue] monarch_fire_arc_blue",
+          "/event entity @s[scores={monarch_bullet=1..},tag=team_red] monarch_fire_arc_red",
+          "/event entity @s[scores={monarch_bullet=1..}] monarch_fire"
+        ],
+        "0.08": [
+          "/event entity @s[scores={monarch_bullet=..0}] set_action_0"
+        ]
+      }
+    },
+    "animation.monarch_reload.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.05": [
+          "/camerashake add @s[tag=monarch_core_21] 0.15 0.4 rotational"
+        ],
+        "0.15": [
+          "/camerashake add @s[tag=!monarch_core_21] 0.15 0.4 rotational"
+        ],
+        "1.0": [
+          "/camerashake add @s[tag=monarch_core_21] 0.4 0.25 rotational"
+        ],
+        "1.35": [
+          "/camerashake add @s[tag=!monarch_core_21] 0.5 0.3 rotational"
+        ],
+        "1.4": [
+          "/camerashake add @s[tag=monarch_core_21] 0.15 0.3 rotational"
+        ],
+        "1.9": [
+          "/camerashake add @s[tag=!monarch_core_21] 0.2 0.4 rotational"
+        ],
+        "2.0": [
+          "/event entity @s[tag=monarch_core_21] set_action_0",
+          "/scoreboard players set @s[tag=is_titan,tag=monarch_core_21] monarch_bullet 40",
+          "/event entity @s[tag=is_titan,tag=monarch_core_21] set_weapon_40"
+        ],
+        "2.5": [
+          "/event entity @s set_action_0",
+          "/scoreboard players set @s[tag=is_titan] monarch_bullet 40",
+          "/event entity @s[tag=is_titan] set_weapon_40"
+        ]
+      }
+    },
+    "animation.monarch_reload_arc.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.05": [
+          "/camerashake add @s[tag=monarch_core_21] 0.15 0.4 rotational"
+        ],
+        "0.15": [
+          "/camerashake add @s[tag=!monarch_core_21] 0.15 0.4 rotational"
+        ],
+        "1.0": [
+          "/camerashake add @s[tag=monarch_core_21] 0.4 0.25 rotational"
+        ],
+        "1.35": [
+          "/camerashake add @s[tag=!monarch_core_21] 0.5 0.3 rotational"
+        ],
+        "1.4": [
+          "/camerashake add @s[tag=monarch_core_21] 0.15 0.3 rotational"
+        ],
+        "1.9": [
+          "/camerashake add @s[tag=!monarch_core_21] 0.2 0.4 rotational"
+        ],
+        "2.0": [
+          "/event entity @s[tag=monarch_core_21] set_action_0",
+          "/scoreboard players set @s[tag=is_titan,tag=monarch_core_21] monarch_bullet 50",
+          "/event entity @s[tag=is_titan,tag=monarch_core_21] set_weapon_50"
+        ],
+        "2.5": [
+          "/event entity @s set_action_0",
+          "/scoreboard players set @s[tag=is_titan] monarch_bullet 50",
+          "/event entity @s[tag=is_titan] set_weapon_50"
+        ]
+      }
+    },
+    "animation.monarch_fire_final.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [ "/event entity @s monarch_fire_final" ],
+        "0.2": [ "/event entity @s monarch_fire_final" ],
+        "0.395": [ "/event entity @s monarch_fire_final" ],
+        "0.585": [ "/event entity @s monarch_fire_final" ],
+        "0.77": [ "/event entity @s monarch_fire_final" ],
+        "0.95": [ "/event entity @s monarch_fire_final" ],
+        "1.125": [ "/event entity @s monarch_fire_final" ],
+        "1.295": [ "/event entity @s monarch_fire_final" ],
+        "1.46": [ "/event entity @s monarch_fire_final" ],
+        "1.62": [ "/event entity @s monarch_fire_final" ],
+        "1.775": [ "/event entity @s monarch_fire_final" ],
+        "1.925": [ "/event entity @s monarch_fire_final" ],
+        "2.07": [ "/event entity @s monarch_fire_final" ],
+        "2.21": [ "/event entity @s monarch_fire_final" ],
+        "2.345": [ "/event entity @s monarch_fire_final" ],
+        "2.475": [ "/event entity @s monarch_fire_final" ],
+        "2.6": [ "/event entity @s monarch_fire_final" ],
+        "2.72": [ "/event entity @s monarch_fire_final" ],
+        "2.835": [ "/event entity @s monarch_fire_final" ],
+        "2.945": [ "/event entity @s monarch_fire_final" ],
+        "3.05": [ "/event entity @s monarch_fire_final" ],
+        "3.15": [ "/event entity @s monarch_fire_final" ],
+        "3.245": [ "/event entity @s monarch_fire_final" ],
+        "3.335": [ "/event entity @s monarch_fire_final" ],
+        "3.42": [ "/event entity @s monarch_fire_final" ],
+        "3.5": [ "/event entity @s monarch_fire_final" ],
+        "3.58": [ "/event entity @s monarch_fire_final" ],
+        "3.66": [ "/event entity @s monarch_fire_final" ],
+        "3.74": [ "/event entity @s monarch_fire_final" ],
+        "3.82": [ "/event entity @s monarch_fire_final" ],
+        "3.9": [ "/event entity @s monarch_fire_final" ],
+        "3.98": [ "/event entity @s monarch_fire_final" ],
+        "4.06": [ "/event entity @s monarch_fire_final" ],
+        "4.14": [ "/event entity @s monarch_fire_final" ],
+        "4.22": [ "/event entity @s monarch_fire_final" ],
+        "4.30": [ "/event entity @s monarch_fire_final" ],
+        "4.38": [ "/event entity @s monarch_fire_final" ],
+        "4.46": [ "/event entity @s monarch_fire_final" ],
+        "4.54": [ "/event entity @s monarch_fire_final" ],
+        "4.62": [ "/event entity @s monarch_fire_final" ]
+      }
+    },
+    "animation.monarch_fire_arc_final.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [ "/event entity @s monarch_fire_arc_final" ],
+        "0.2": [ "/event entity @s monarch_fire_arc_final" ],
+        "0.395": [ "/event entity @s monarch_fire_arc_final" ],
+        "0.585": [ "/event entity @s monarch_fire_arc_final" ],
+        "0.77": [ "/event entity @s monarch_fire_arc_final" ],
+        "0.95": [ "/event entity @s monarch_fire_arc_final" ],
+        "1.125": [ "/event entity @s monarch_fire_arc_final" ],
+        "1.295": [ "/event entity @s monarch_fire_arc_final" ],
+        "1.46": [ "/event entity @s monarch_fire_arc_final" ],
+        "1.62": [ "/event entity @s monarch_fire_arc_final" ],
+        "1.775": [ "/event entity @s monarch_fire_arc_final" ],
+        "1.925": [ "/event entity @s monarch_fire_arc_final" ],
+        "2.07": [ "/event entity @s monarch_fire_arc_final" ],
+        "2.21": [ "/event entity @s monarch_fire_arc_final" ],
+        "2.345": [ "/event entity @s monarch_fire_arc_final" ],
+        "2.475": [ "/event entity @s monarch_fire_arc_final" ],
+        "2.6": [ "/event entity @s monarch_fire_arc_final" ],
+        "2.72": [ "/event entity @s monarch_fire_arc_final" ],
+        "2.835": [ "/event entity @s monarch_fire_arc_final" ],
+        "2.945": [ "/event entity @s monarch_fire_arc_final" ],
+        "3.05": [ "/event entity @s monarch_fire_arc_final" ],
+        "3.15": [ "/event entity @s monarch_fire_arc_final" ],
+        "3.245": [ "/event entity @s monarch_fire_arc_final" ],
+        "3.335": [ "/event entity @s monarch_fire_arc_final" ],
+        "3.42": [ "/event entity @s monarch_fire_arc_final" ],
+        "3.5": [ "/event entity @s monarch_fire_arc_final" ],
+        "3.58": [ "/event entity @s monarch_fire_arc_final" ],
+        "3.66": [ "/event entity @s monarch_fire_arc_final" ],
+        "3.74": [ "/event entity @s monarch_fire_arc_final" ],
+        "3.82": [ "/event entity @s monarch_fire_arc_final" ],
+        "3.9": [ "/event entity @s monarch_fire_arc_final" ],
+        "3.98": [ "/event entity @s monarch_fire_arc_final" ],
+        "4.06": [ "/event entity @s monarch_fire_arc_final" ],
+        "4.14": [ "/event entity @s monarch_fire_arc_final" ],
+        "4.22": [ "/event entity @s monarch_fire_arc_final" ],
+        "4.30": [ "/event entity @s monarch_fire_arc_final" ],
+        "4.38": [ "/event entity @s monarch_fire_arc_final" ],
+        "4.46": [ "/event entity @s monarch_fire_arc_final" ],
+        "4.54": [ "/event entity @s monarch_fire_arc_final" ],
+        "4.62": [ "/event entity @s monarch_fire_arc_final" ],
+        "4.70": [ "/event entity @s monarch_fire_arc_final" ],
+        "4.78": [ "/event entity @s monarch_fire_arc_final" ],
+        "4.86": [ "/event entity @s monarch_fire_arc_final" ],
+        "4.94": [ "/event entity @s monarch_fire_arc_final" ],
+        "5.02": [ "/event entity @s monarch_fire_arc_final" ],
+        "5.10": [ "/event entity @s monarch_fire_arc_final" ],
+        "5.18": [ "/event entity @s monarch_fire_arc_final" ],
+        "5.26": [ "/event entity @s monarch_fire_arc_final" ],
+        "5.34": [ "/event entity @s monarch_fire_arc_final" ],
+        "5.42": [ "/event entity @s monarch_fire_arc_final" ]
+      }
+    }
+  }
+}

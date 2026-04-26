@@ -1,0 +1,120 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.skill_0_cooldown.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "cooldown": "q.property('titan:skill_cooldown_0') > 0"
+            }
+          ]
+        },
+        "cooldown": {
+          "animations": [
+            "cooldown_count_0"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:skill_cooldown_0') == 0"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[tag=!is_ion,tag=!is_scorch] skill_cooldown_0_yes"
+          ],
+          "on_exit": [
+            "/event entity @s[tag=!is_ion,tag=!is_scorch] skill_cooldown_0_no",
+            "/playsound skill_cooldown_over @s"
+          ]
+        }
+      }
+    },
+    "controller.animation.skill_1_cooldown.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "cooldown": "q.property('titan:skill_cooldown_1') > 0"
+            }
+          ]
+        },
+        "cooldown": {
+          "animations": [
+            "cooldown_count_1"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:skill_cooldown_1') == 0 && !( q.variant == 1 && q.property('titan:skill_cooldown_0') > 90 )"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[tag=!monarch_core_31] skill_cooldown_1_yes"
+          ],
+          "on_exit": [
+            "/event entity @s skill_cooldown_1_no",
+            "/playsound skill_cooldown_over @s"
+          ]
+        }
+      }
+    },
+    "controller.animation.skill_2_cooldown.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "cooldown": "q.property('titan:skill_cooldown_2') > 0"
+            }
+          ]
+        },
+        "cooldown": {
+          "animations": [
+            "cooldown_count_2"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:skill_cooldown_2') == 0 && !( q.variant == 1 && q.property('titan:skill_cooldown_0') > 130 )"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[tag=!is_scorch] skill_cooldown_2_yes"
+          ],
+          "on_exit": [
+            "/event entity @s[tag=!is_scorch] skill_cooldown_2_no",
+            "/playsound skill_cooldown_over @s"
+          ]
+        }
+      }
+    },
+    "controller.animation.skill_sp_cooldown.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "cooldown": "q.property('titan:skill_charge_sp') == 6"
+            }
+          ]
+        },
+        "cooldown": {
+          "animations": [
+            "cooldown_count_sp"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:skill_charge_sp') != 6"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add skill_cooldown_sp"
+          ],
+          "on_exit": [
+            "/tag @s remove skill_cooldown_sp"
+          ]
+        }
+      }
+    }
+  }
+}

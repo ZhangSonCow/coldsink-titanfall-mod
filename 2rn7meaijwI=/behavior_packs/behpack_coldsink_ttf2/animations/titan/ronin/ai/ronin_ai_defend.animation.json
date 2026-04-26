@@ -1,0 +1,29 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ronin_ai_defend.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players random @s random_score 1 5"
+        ],
+        "1.0": [
+          "/execute @s[scores={random_score=1}] ~~~ event entity @e[type=coldsink:scorch_rider_ai,r=8,c=1] turn_rider_state_normal"
+        ],
+        "2.0": [
+          "/execute @s[scores={random_score=2}] ~~~ event entity @e[type=coldsink:scorch_rider_ai,r=8,c=1] turn_rider_state_normal"
+        ],
+        "3.0": [
+          "/execute @s[scores={random_score=3}] ~~~ event entity @e[type=coldsink:scorch_rider_ai,r=8,c=1] turn_rider_state_normal"
+        ],
+        "4.0": [
+          "/execute @s[scores={random_score=4}] ~~~ event entity @e[type=coldsink:scorch_rider_ai,r=8,c=1] turn_rider_state_normal"
+        ],
+        "5.0": [
+          "/event entity @e[type=coldsink:scorch_rider_ai,r=8,c=1] turn_rider_state_normal"
+        ]
+      }
+    }
+  }
+}

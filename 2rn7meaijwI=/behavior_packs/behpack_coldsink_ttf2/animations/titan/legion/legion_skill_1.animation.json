@@ -1,0 +1,54 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.legion_skill_1_pre.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.5": [
+          "/event entity @s set_action_14"
+        ]
+      }
+    },
+    "animation.legion_skill_1.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.6": [
+          "/execute @s[tag=!legion_range_mode,tag=team_blue] ^^^5 event entity @e[tag=!team_blue,family=titan,r=16] remove_knockback_resistance",
+          "/execute @s[tag=!legion_range_mode,tag=team_red] ^^^5 event entity @e[tag=!team_red,family=titan,r=16] remove_knockback_resistance"
+        ],
+        "0.7": [
+          "/execute @s[tag=!legion_range_mode,tag=team_blue] ~~~ summon coldsink:legion_boom_knock_blue ^^^5",
+          "/execute @s[tag=!legion_range_mode,tag=team_red] ~~~ summon coldsink:legion_boom_knock_red ^^^5",
+          "/camerashake add @s[tag=!legion_range_mode] 0.2 0.3 rotational",
+          "/camerashake add @s[tag=legion_range_mode] 0.1 0.2 rotational"
+        ],
+        "0.8": [
+          "/execute @s[tag=!legion_range_mode] ~~~ playsound legion_skill_1_near @a[r=64] ~~~",
+          "/execute @s[tag=legion_range_mode] ~~~ playsound legion_skill_1_far @a[r=64] ~~~",
+          "/event entity @s[tag=!legion_range_mode,tag=team_blue] legion_boom_near_blue",
+          "/event entity @s[tag=!legion_range_mode,tag=team_red] legion_boom_near_red",
+          "/event entity @s[tag=legion_range_mode,tag=team_blue] legion_boom_far_blue",
+          "/event entity @s[tag=legion_range_mode,tag=team_red] legion_boom_far_red",
+          "/scoreboard players remove @s[tag=!in_core] legion_bullet 1",
+          "/event entity @s[tag=!in_core] remove_weapon_1",
+
+          "/event entity @s set_action_15"
+        ]
+      }
+    },
+    "animation.legion_skill_1_after.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.1": [
+          "/tag @s remove has_boom_near"
+        ],
+        "0.3": [
+          "/event entity @s set_action_12"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.monarch_star_ctrl": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "aim": "q.property('titan:weapon_aim') && !q.is_sprinting"
+            }
+          ]
+        },
+        "aim": {
+          "animations": [
+            "monarch_weapon_star.zoom"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "!q.property('titan:weapon_aim') || q.is_sprinting"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

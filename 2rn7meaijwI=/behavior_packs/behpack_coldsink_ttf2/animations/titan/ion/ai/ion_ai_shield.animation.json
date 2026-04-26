@@ -1,0 +1,39 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ion_ai_shield.func": {
+      "loop": true,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/execute @s ^^^5 execute @e[family=bullet,family=!empty_bullet,r=12] ~~~ tag @e[family=ion_titan,tag=energy_shield,c=1] add ion_get_bullet",
+          "/execute @s ^^^5 event entity @e[family=bullet,r=12] down"
+        ]
+      }
+    },
+    "animation.ion_ai_shield_timer.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players random @s random_score 1 5"
+        ],
+        "1.0": [
+          "/execute @s[scores={random_score=1}] ~~~ event entity @e[type=coldsink:ion_rider_ai,r=8,c=1] turn_rider_state_normal"
+        ],
+        "2.0": [
+          "/execute @s[scores={random_score=2}] ~~~ event entity @e[type=coldsink:ion_rider_ai,r=8,c=1] turn_rider_state_normal"
+        ],
+        "3.0": [
+          "/execute @s[scores={random_score=3}] ~~~ event entity @e[type=coldsink:ion_rider_ai,r=8,c=1] turn_rider_state_normal"
+        ],
+        "4.0": [
+          "/execute @s[scores={random_score=4}] ~~~ event entity @e[type=coldsink:ion_rider_ai,r=8,c=1] turn_rider_state_normal"
+        ],
+        "5.0": [
+          "/event entity @e[type=coldsink:ion_rider_ai,r=8,c=1] turn_rider_state_normal"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.ronin_titan_melee.1st": {
+      "arrays": {
+        "textures": {
+          "Array.skin": [
+            "Texture.ronin_titan",
+            "Texture.ronin_titan_1",
+            "Texture.ronin_titan_2",
+            "Texture.ronin_titan_3",
+            "Texture.ronin_titan_4",
+            "Texture.ronin_titan_5",
+            "Texture.ronin_titan_6",
+            "Texture.ronin_titan_7",
+            "Texture.ronin_titan_8"
+          ]
+        }
+      },
+      "geometry": "geometry.ronin_titan_melee.1st",
+      "materials": [
+        {
+          "*": "material.netease_entity_metallic"
+        }
+      ],
+      "textures": [ "Array.skin[ query.skin_id ]" ],
+      "is_hurt_color": {}
+    }
+  }
+}

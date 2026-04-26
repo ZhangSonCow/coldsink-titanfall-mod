@@ -1,0 +1,33 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:pilot_ai_bullet_red",
+      "animations": {
+        "particle_1": "animation.locator.particle_1"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "particle_1": "q.variant == 1"
+          }
+        ]
+      },
+      "particle_effects": {
+        "particle_1": "pilot:weapon_r201_bullet"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/empty"
+      },
+      "geometry": {
+        "default": "geometry.locator"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

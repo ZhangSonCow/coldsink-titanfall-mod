@@ -1,0 +1,19 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.legion_skill_3.func": {
+      "loop": true,
+      "animation_length": 0.12,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players remove @s titan_core 1",
+          "/event entity @s remove_core_1",
+          "/tag @s[scores={titan_core=..0}] remove in_core",
+          "/execute @s[scores={titan_core=..0}] ~~~ event entity @e[type=coldsink:legion_ride,c=1] exit_fire",
+          "/event entity @s[scores={titan_core=..0}] set_core_0",
+          "/event entity @s[scores={titan_core=..0}] clear_titan_sheared"
+        ]
+      }
+    }
+  }
+}

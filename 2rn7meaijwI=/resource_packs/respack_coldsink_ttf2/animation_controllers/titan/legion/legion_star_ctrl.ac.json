@@ -1,0 +1,60 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.legion_star_ctrl": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "near_power": "q.property('titan:powering_time') == 0 && q.property('titan:action') > 12 && q.property('titan:action') < 16"
+            },
+            {
+              "pre_far_fire": "q.property('titan:powering_time') == 1 && q.property('titan:action') == 11"
+            },
+            {
+              "far_fire": "q.property('titan:powering_time') == 1 && q.property('titan:action') == 3"
+            }
+          ]
+        },
+        "near_power": {
+          "animations": [
+            "legion_weapon_star.zoom"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "!(q.property('titan:action') > 12 && q.property('titan:action') < 16)"
+            }
+          ]
+        },
+        "pre_far_fire": {
+          "animations": [
+            "legion_weapon_far_star.zoom_pre"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "far_fire": "q.property('titan:action') == 3"
+            }
+          ]
+        },
+        "far_fire": {
+          "animations": [
+            "legion_weapon_far_star.zoom"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 3"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

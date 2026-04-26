@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.titan_player_run_spurt_patch.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "no_idle_run": "q.is_sprinting"
+            }
+          ]
+        },
+        "no_idle_run": {
+          "transitions": [
+            {
+              "default": "!q.is_sprinting"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s titan_exit_suprting"
+          ]
+        }
+      }
+    }
+  }
+}

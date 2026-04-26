@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+
+    "controller.render.skill_sp_elesmoke.1st": {
+      "geometry": "geometry.skill_sp_ui_type.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.skill_sp_elesmoke" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    
+    "controller.render.skill_sp_elesmoke_pro.1st": {
+      "geometry": "geometry.skill_sp_ui_type.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.monarch_core_22" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:tone_target_2_blue",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      
+      "target_up": {
+        "minecraft:transformation": {
+          "into": "coldsink:tone_target_3_blue"
+        }
+      },
+
+      "can_despawn": {
+        "minecraft:despawn": {
+          "filters": {
+            "all_of": [
+              {
+                "all_of": [
+                  {
+                    "test": "is_riding",
+                    "subject": "self",
+                    "operator": "!="
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+			// "minecraft:tick_world": {
+			// 	"distance_to_players": 128,
+			// 	"never_despawn": false,
+			// 	"radius": 2
+			// },
+      "minecraft:type_family": {
+        "family": [ "tone_target", "tone_target_blue", "tool" ]
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:collision_box": {
+          "width": 0.0,
+          "height": 0.0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:ageable": {
+        "duration": 18,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:timer": {
+        "time": 0.1,
+        "looping": false,
+        "time_down_event": {
+          "event": "can_despawn",
+          "target": "self"
+        }
+      },
+      "minecraft:health": {
+        "value": 2,
+        "max": 2,
+        "min": 1
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+    "events": {
+      "can_despawn": {
+        "add": {
+          "component_groups": [
+            "can_despawn"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "ride @s start_riding @e[tag=!team_blue,family=titan,c=1]"
+          ]
+        }
+      },
+      "target_up": {
+        "add": {
+          "component_groups": [
+            "target_up"
+          ]
+        }
+      },
+      "godie": {
+        "queue_command": {
+          "command": [
+            "scoreboard players reset @e[tag=!team_blue,family=titan,scores={tone_target=2},r=8,c=1] tone_target",
+            "event entity @s real_godie"
+          ]
+        }
+      },
+      "real_godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

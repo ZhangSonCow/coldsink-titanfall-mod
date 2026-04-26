@@ -1,0 +1,1589 @@
+{
+  "format_version": "1.18.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:player",
+      "materials": {
+        "default": "entity_alphatest",
+        "blend": "entity_alphablend",
+        "cape": "entity_alphatest",
+        "animated": "player_animated",
+        "netease_entity_metallic": "netease_entity_alphablend_metallic",
+        "netease_bloom_light_entity": "demo_bloom_entity"
+      },
+      "particle_effects": {
+        // titan
+        "cabin_core_1": "coldsink:cabin_core_1",
+        "cabin_core_2": "coldsink:cabin_core_2",
+        "cabin_shield_1": "coldsink:cabin_shield_1",
+        "cabin_battery_1": "coldsink:cabin_battery_1",
+        "cabin_battery_2": "coldsink:cabin_battery_2",
+
+        "titan_eye_blue_1": "titan:titan_eye_blue_1",
+        "titan_eye_blue_2": "titan:titan_eye_blue_2",
+        "titan_eye_red_1": "titan:titan_eye_red_1",
+        "titan_eye_red_2": "titan:titan_eye_red_2",
+        
+        "titan_damage_fire_1": "titan:titan_damage_fire_1",
+        "titan_damage_fire_2": "titan:titan_damage_fire_2",
+        "titan_damage_fire_3": "titan:titan_damage_fire_3",
+        "titan_damage_fire_4": "titan:titan_damage_fire_4",
+
+        "titan_spurt_jet": "titan:titan_spurt_jet",
+
+        "ion_fire": "coldsink:ion_fire",
+        "ion_vortex_shield": "titan:ion_vortex_shield",
+        "ion_vortex_shield_1st": "titan:ion_vortex_shield_1st",
+        "ion_laser_powering": "titan:ion_laser_powering",
+        "ion_laser": "titan:ion_laser",
+        "ion_core": "titan:ion_core",
+        "ion_reload_smoke": "titan:ion_reload_smoke",
+        "tone_fire": "coldsink:tone_fire",
+        "northstar_fire": "coldsink:northstar_fire",
+        "northstar_fly_jet": "titan:northstar_fly_jet",
+        "ronin_fire": "coldsink:ronin_fire",
+        "ronin_sword_in": "titan:ronin_sword_in",
+        "ronin_sword_out": "titan:ronin_sword_out",
+        "ronin_sword_in.1st": "titan:ronin_sword_in.1st",
+        "ronin_sword_out.1st": "titan:ronin_sword_out.1st",
+        "ronin_sword_core_in": "titan:ronin_sword_core_in",
+        "ronin_sword_core_out": "titan:ronin_sword_core_out",
+        "ronin_sword_core_in.1st": "titan:ronin_sword_core_in.1st",
+        "ronin_sword_core_out.1st": "titan:ronin_sword_core_out.1st",
+        "ronin_sword_arc": "titan:ronin_sword_arc",
+        "scorch_fire": "coldsink:scorch_fire",
+        "scorch_fire_shield": "titan:scorch_fire_shield",
+        "scorch_fire_shield_1st": "titan:scorch_fire_shield_1st",
+        "scorch_fire_shield_terminate": "titan:scorch_fire_shield_terminate",
+        "legion_fire": "coldsink:legion_fire",
+        "legion_fire_core": "coldsink:legion_fire_core",
+        "legion_boom": "coldsink:legion_boom",
+        "monarch_fire": "coldsink:monarch_fire",
+        "monarch_fire_arc": "coldsink:monarch_fire_arc",
+        "monarch_energy_powering": "titan:monarch_energy_powering",
+        "monarch_energy": "titan:monarch_energy",
+
+        // pilot
+        "weapon_r201_fire.1st": "pilot:weapon_r201_fire.1st",
+        "weapon_r201_fire.3st": "pilot:weapon_r201_fire.3st",
+        "weapon_charge_laser_powering.1st": "pilot:weapon_charge_laser_powering.1st",
+        "weapon_charge_laser_powering.3st": "pilot:weapon_charge_laser_powering.3st",
+        "weapon_charge_laser": "pilot:weapon_charge_laser",
+
+        "battery_ordinary_jet": "pilot:battery_ordinary_jet",
+        "battery_powerful_jet": "pilot:battery_powerful_jet",
+        "battery_overload_jet": "pilot:battery_overload_jet"
+      },
+      "sound_effects": {
+        "pilot_melee_arm_1": "pilot_melee_arm_1",
+        "pilot_melee_arm_2": "pilot_melee_arm_2",
+        "pilot_melee_leg_1": "pilot_melee_leg_1",
+        "pilot_melee_leg_2": "pilot_melee_leg_2"
+      },
+      "textures": {
+        "titan_cabin_black": "textures/entity/titan/titan_cabin_black",
+        "titan_cabin_danger": "textures/entity/titan/titan_cabin_danger",
+        "titan_cabin_base_normal": "textures/entity/titan/titan_cabin_base_normal",
+        "titan_cabin_base_bt": "textures/entity/titan/titan_cabin_base_bt",
+        "health_bar": "textures/entity/titan/health_bar.1st",
+        "health_bar_team": "textures/entity/titan/health_bar_team",
+        "spurt_bar": "textures/entity/titan/spurt_bar",
+        "titan_core_red_view": "textures/entity/titan/titan_core_red_view",
+        // ui
+        "titan_weapon_star": "textures/entity/z_other/ui/titan_weapon_star.1st",
+        "weapon_charge_star": "textures/entity/z_other/ui/weapon_charge_star.1st",
+        "feedback_star": "textures/entity/z_other/ui/feedback_star.1st",
+        "core_ui": "textures/entity/z_other/ui/core_ui.1st",
+        "core_ui_green": "textures/entity/z_other/ui/core_ui_green.1st",
+        "core_ui_orange": "textures/entity/z_other/ui/core_ui_orange.1st",
+        "ui_number": "textures/entity/z_other/ui/ui_number",
+        "ui_number_blue": "textures/entity/z_other/ui/ui_number_blue",
+        "ui_number_orange": "textures/entity/z_other/ui/ui_number_orange",
+        "ui_number_red": "textures/entity/z_other/ui/ui_number_red",
+        "skill_ui_back": "textures/entity/z_other/ui/skill_ui_back",
+        "skill_ui_key": "textures/entity/z_other/ui/skill_ui_key",
+        "energy_bar": "textures/entity/z_other/ui/energy_bar.1st",
+        "core_type_ion": "textures/items/titan/ion/ion_skill_3",
+        "core_type_tone": "textures/items/titan/tone/tone_skill_3",
+        "core_type_northstar": "textures/items/titan/northstar/northstar_skill_3",
+        "core_type_ronin": "textures/items/titan/ronin/ronin_skill_3",
+        "core_type_scorch": "textures/items/titan/scorch/scorch_skill_3",
+        "core_type_legion": "textures/items/titan/legion/legion_skill_3",
+        "core_type_monarch": "textures/items/titan/monarch/monarch_skill_3",
+        "skill_0_type_ion": "textures/items/titan/ion/ion_skill_0",
+        "skill_0_type_tone": "textures/items/titan/tone/tone_skill_0",
+        "skill_0_type_northstar": "textures/items/titan/northstar/northstar_skill_0",
+        "skill_0_type_ronin": "textures/items/titan/ronin/ronin_skill_0",
+        "skill_0_type_scorch": "textures/items/titan/scorch/scorch_skill_0",
+        "skill_0_type_legion": "textures/items/titan/legion/legion_skill_0",
+        "skill_0_type_monarch": "textures/items/titan/monarch/monarch_skill_0",
+        "skill_1_type_ion": "textures/items/titan/ion/ion_skill_1",
+        "skill_1_type_tone": "textures/items/titan/tone/tone_skill_1",
+        "skill_1_type_northstar": "textures/items/titan/northstar/northstar_skill_1",
+        "skill_1_type_ronin": "textures/items/titan/ronin/ronin_skill_1",
+        "skill_1_type_scorch": "textures/items/titan/scorch/scorch_skill_1",
+        "skill_1_type_legion": "textures/items/titan/legion/legion_skill_1",
+        "skill_1_type_monarch": "textures/items/titan/monarch/monarch_skill_1",
+        "skill_2_type_ion": "textures/items/titan/ion/ion_skill_2",
+        "skill_2_type_tone": "textures/items/titan/tone/tone_skill_2",
+        "skill_2_type_northstar": "textures/items/titan/northstar/northstar_skill_2",
+        "skill_2_type_ronin": "textures/items/titan/ronin/ronin_skill_2",
+        "skill_2_type_scorch": "textures/items/titan/scorch/scorch_skill_2",
+        "skill_2_type_legion": "textures/items/titan/legion/legion_skill_2",
+        "skill_2_type_monarch": "textures/items/titan/monarch/monarch_skill_2",
+        "skill_sp_battery_ordinary": "textures/entity/z_other/ui/battery_ordinary",
+        "skill_sp_battery_powerful": "textures/entity/z_other/ui/battery_powerful",
+        "skill_sp_battery_overload": "textures/entity/z_other/ui/battery_overload",
+        "skill_sp_elesmoke": "textures/items/titan/elect_smoke",
+        "weapon_titan_type_ion": "textures/items/titan/ion/ion_weapon_ui",
+        "weapon_titan_type_tone": "textures/items/titan/tone/tone_weapon_ui",
+        "weapon_titan_type_northstar": "textures/items/titan/northstar/northstar_weapon_ui",
+        "weapon_titan_type_ronin": "textures/items/titan/ronin/ronin_weapon_ui",
+        "weapon_titan_type_ronin_melee": "textures/items/titan/ronin/ronin_melee_ui",
+        "weapon_titan_type_scorch": "textures/items/titan/scorch/scorch_weapon_ui",
+        "weapon_titan_type_legion": "textures/items/titan/legion/legion_weapon_ui",
+        "weapon_titan_type_monarch": "textures/items/titan/monarch/monarch_weapon_ui",
+        "weapon_titan_monarch_arc": "textures/items/titan/monarch/monarch_weapon_arc_ui",
+        "weapon_titan_monarch_final": "textures/items/titan/monarch/monarch_weapon_final_ui",
+        "weapon_titan_monarch_arc_final": "textures/items/titan/monarch/monarch_weapon_arc_final_ui",
+        "monarch_core_11": "textures/items/titan/monarch/monarch_core_11",
+        "monarch_core_12": "textures/items/titan/monarch/monarch_core_12",
+        "monarch_core_13": "textures/items/titan/monarch/monarch_core_13",
+        "monarch_core_21": "textures/items/titan/monarch/monarch_core_21",
+        "monarch_core_22": "textures/items/titan/monarch/monarch_core_22",
+        "monarch_core_23": "textures/items/titan/monarch/monarch_core_23",
+        "monarch_core_31": "textures/items/titan/monarch/monarch_core_31",
+        "monarch_core_32": "textures/items/titan/monarch/monarch_core_32",
+        "monarch_core_33": "textures/items/titan/monarch/monarch_core_33",
+        "monarch_upgrade_text": "textures/entity/z_other/ui/monarch_upgrade_text",
+        "monarch_missile_powering": "textures/entity/z_other/ui/monarch_missile_powering",
+        "call_ion_icon": "textures/items/titan/ion/ion_icon",
+        "call_tone_icon": "textures/items/titan/tone/tone_icon",
+        "call_northstar_icon": "textures/items/titan/northstar/northstar_icon",
+        "call_ronin_icon": "textures/items/titan/ronin/ronin_icon",
+        "call_scorch_icon": "textures/items/titan/scorch/scorch_icon",
+        "call_legion_icon": "textures/items/titan/legion/legion_icon",
+        "call_monarch_icon": "textures/items/titan/monarch/monarch_icon",
+        // 泰坦
+        "ion_titan": "textures/entity/titan/ion/ion_titan",
+        "ion_titan_light": "textures/entity/titan/ion/ion_titan_light",
+        "ion_titan_light_blue": "textures/entity/titan/ion/ion_titan_light_blue",
+        "ion_titan_light_red": "textures/entity/titan/ion/ion_titan_light_red",
+        "ion_titan_1": "textures/entity/titan/ion/ion_titan_1",
+        "ion_titan_2": "textures/entity/titan/ion/ion_titan_2",
+        "ion_titan_3": "textures/entity/titan/ion/ion_titan_3",
+        "ion_titan_4": "textures/entity/titan/ion/ion_titan_4",
+        "ion_titan_5": "textures/entity/titan/ion/ion_titan_5",
+        "ion_titan_6": "textures/entity/titan/ion/ion_titan_6",
+        "ion_titan_7": "textures/entity/titan/ion/ion_titan_7",
+        "ion_titan_8": "textures/entity/titan/ion/ion_titan_8",
+        "ion_core": "textures/entity/titan/ion/ion_core",
+        "tone_titan": "textures/entity/titan/tone/tone_titan",
+        "tone_titan_light": "textures/entity/titan/tone/tone_titan_light",
+        "tone_titan_light_blue": "textures/entity/titan/tone/tone_titan_light_blue",
+        "tone_titan_light_red": "textures/entity/titan/tone/tone_titan_light_red",
+        "tone_titan_1": "textures/entity/titan/tone/tone_titan_1",
+        "tone_titan_2": "textures/entity/titan/tone/tone_titan_2",
+        "tone_titan_3": "textures/entity/titan/tone/tone_titan_3",
+        "tone_titan_4": "textures/entity/titan/tone/tone_titan_4",
+        "tone_titan_5": "textures/entity/titan/tone/tone_titan_5",
+        "tone_titan_6": "textures/entity/titan/tone/tone_titan_6",
+        "tone_titan_7": "textures/entity/titan/tone/tone_titan_7",
+        "tone_titan_8": "textures/entity/titan/tone/tone_titan_8",
+        "northstar_titan": "textures/entity/titan/northstar/northstar_titan",
+        "northstar_titan_light": "textures/entity/titan/northstar/northstar_titan_light",
+        "northstar_titan_light_blue": "textures/entity/titan/northstar/northstar_titan_light_blue",
+        "northstar_titan_light_red": "textures/entity/titan/northstar/northstar_titan_light_red",
+        "northstar_titan_1": "textures/entity/titan/northstar/northstar_titan_1",
+        "northstar_titan_2": "textures/entity/titan/northstar/northstar_titan_2",
+        "northstar_titan_3": "textures/entity/titan/northstar/northstar_titan_3",
+        "northstar_titan_4": "textures/entity/titan/northstar/northstar_titan_4",
+        "northstar_titan_5": "textures/entity/titan/northstar/northstar_titan_5",
+        "northstar_titan_6": "textures/entity/titan/northstar/northstar_titan_6",
+        "northstar_titan_7": "textures/entity/titan/northstar/northstar_titan_7",
+        "northstar_titan_8": "textures/entity/titan/northstar/northstar_titan_8",
+        "ronin_titan": "textures/entity/titan/ronin/ronin_titan",
+        "ronin_titan_light": "textures/entity/titan/ronin/ronin_titan_light",
+        "ronin_titan_light_blue": "textures/entity/titan/ronin/ronin_titan_light_blue",
+        "ronin_titan_light_red": "textures/entity/titan/ronin/ronin_titan_light_red",
+        "ronin_titan_1": "textures/entity/titan/ronin/ronin_titan_1",
+        "ronin_titan_2": "textures/entity/titan/ronin/ronin_titan_2",
+        "ronin_titan_3": "textures/entity/titan/ronin/ronin_titan_3",
+        "ronin_titan_4": "textures/entity/titan/ronin/ronin_titan_4",
+        "ronin_titan_5": "textures/entity/titan/ronin/ronin_titan_5",
+        "ronin_titan_6": "textures/entity/titan/ronin/ronin_titan_6",
+        "ronin_titan_7": "textures/entity/titan/ronin/ronin_titan_7",
+        "ronin_titan_8": "textures/entity/titan/ronin/ronin_titan_8",
+        "ronin_gray_view": "textures/entity/titan/ronin/ronin_gray_view",
+        "scorch_titan": "textures/entity/titan/scorch/scorch_titan",
+        "scorch_titan_light": "textures/entity/titan/scorch/scorch_titan_light",
+        "scorch_titan_light_blue": "textures/entity/titan/scorch/scorch_titan_light_blue",
+        "scorch_titan_light_red": "textures/entity/titan/scorch/scorch_titan_light_red",
+        "scorch_titan_1": "textures/entity/titan/scorch/scorch_titan_1",
+        "scorch_titan_2": "textures/entity/titan/scorch/scorch_titan_2",
+        "scorch_titan_3": "textures/entity/titan/scorch/scorch_titan_3",
+        "scorch_titan_4": "textures/entity/titan/scorch/scorch_titan_4",
+        "scorch_titan_5": "textures/entity/titan/scorch/scorch_titan_5",
+        "scorch_titan_6": "textures/entity/titan/scorch/scorch_titan_6",
+        "scorch_titan_7": "textures/entity/titan/scorch/scorch_titan_7",
+        "scorch_titan_8": "textures/entity/titan/scorch/scorch_titan_8",
+        "legion_titan": "textures/entity/titan/legion/legion_titan",
+        "legion_titan_light": "textures/entity/titan/legion/legion_titan_light",
+        "legion_titan_light_blue": "textures/entity/titan/legion/legion_titan_light_blue",
+        "legion_titan_light_red": "textures/entity/titan/legion/legion_titan_light_red",
+        "legion_titan_1": "textures/entity/titan/legion/legion_titan_1",
+        "legion_titan_2": "textures/entity/titan/legion/legion_titan_2",
+        "legion_titan_3": "textures/entity/titan/legion/legion_titan_3",
+        "legion_titan_4": "textures/entity/titan/legion/legion_titan_4",
+        "legion_titan_5": "textures/entity/titan/legion/legion_titan_5",
+        "legion_titan_6": "textures/entity/titan/legion/legion_titan_6",
+        "legion_titan_7": "textures/entity/titan/legion/legion_titan_7",
+        "legion_titan_8": "textures/entity/titan/legion/legion_titan_8",
+        "legion_shield": "textures/entity/titan/legion/legion_shield",
+        "monarch_titan": "textures/entity/titan/monarch/monarch_titan",
+        "monarch_titan_light": "textures/entity/titan/monarch/monarch_titan_light",
+        "monarch_titan_light_blue": "textures/entity/titan/monarch/monarch_titan_light_blue",
+        "monarch_titan_light_red": "textures/entity/titan/monarch/monarch_titan_light_red",
+        "monarch_titan_1": "textures/entity/titan/monarch/monarch_titan_1",
+        "monarch_titan_2": "textures/entity/titan/monarch/monarch_titan_2",
+        "monarch_titan_3": "textures/entity/titan/monarch/monarch_titan_3",
+        "monarch_titan_4": "textures/entity/titan/monarch/monarch_titan_4",
+        "monarch_titan_5": "textures/entity/titan/monarch/monarch_titan_5",
+        "monarch_titan_6": "textures/entity/titan/monarch/monarch_titan_6",
+        "monarch_titan_7": "textures/entity/titan/monarch/monarch_titan_7",
+        "monarch_titan_8": "textures/entity/titan/monarch/monarch_titan_8",
+        // 铁驭
+        "battery_ordinary": "textures/entity/z_other/battery/battery_ordinary",
+        "battery_powerful": "textures/entity/z_other/battery/battery_powerful",
+        "battery_overload": "textures/entity/z_other/battery/battery_overload",
+        "battery_light": "textures/entity/z_other/battery/battery_light",
+        "pilot_hand_grenade": "textures/entity/pilot/pilot_hand_grenade",
+        "weapon_r201": "textures/entity/pilot/weapon/weapon_r201",
+        "weapon_r201_ui": "textures/items/pilot/weapon/weapon_r201_ui",
+        "weapon_charge": "textures/entity/pilot/weapon/weapon_charge",
+        "weapon_charge_ui": "textures/items/pilot/weapon/weapon_charge_ui",
+        // 分队标识
+        "team_blue": "textures/items/z_other/setting/team/team_blue_icon",
+        "team_red": "textures/items/z_other/setting/team/team_red_icon",
+        "default": "textures/entity/steve",
+        "cape": "textures/entity/cape_invisible"
+      },
+      "geometry": {
+        "titan_cabin_frame": "geometry.titan_cabin_frame",
+        "titan_cabin_glass": "geometry.titan_cabin_glass",
+        "titan_cabin_danger": "geometry.titan_cabin_danger",
+        "titan_cabin_base": "geometry.titan_cabin_base",
+        "health_bar_3.1st": "geometry.health_bar_3.1st",
+        "health_bar_4.1st": "geometry.health_bar_4.1st",
+        "health_bar_5.1st": "geometry.health_bar_5.1st",
+        "health_bar_6.1st": "geometry.health_bar_6.1st",
+        "health_bar_7.1st": "geometry.health_bar_7.1st",
+        "health_bar_3_danger.1st": "geometry.health_bar_3_danger.1st",
+        "health_bar_4_danger.1st": "geometry.health_bar_4_danger.1st",
+        "health_bar_5_danger.1st": "geometry.health_bar_5_danger.1st",
+        "health_bar_6_danger.1st": "geometry.health_bar_6_danger.1st",
+        "health_bar_7_danger.1st": "geometry.health_bar_7_danger.1st",
+        "shield_bar_3.1st": "geometry.shield_bar_3.1st",
+        "shield_bar_4.1st": "geometry.shield_bar_4.1st",
+        "shield_bar_5.1st": "geometry.shield_bar_5.1st",
+        "shield_bar_6.1st": "geometry.shield_bar_6.1st",
+        "shield_bar_7.1st": "geometry.shield_bar_7.1st",
+        "spurt_bar_1": "geometry.spurt_bar_1",
+        "spurt_bar_2": "geometry.spurt_bar_2",
+        "spurt_bar_3": "geometry.spurt_bar_3",
+        "spurt_bar_3_yellow": "geometry.spurt_bar_3_yellow",
+        // ui
+        "feedback_star.1st": "geometry.feedback_star.1st",
+        "core_ui.1st": "geometry.core_ui.1st",
+        "core_ui_titan_type.1st": "geometry.core_ui_titan_type.1st",
+        "core_ui_value.1st": "geometry.core_ui_value.1st",
+        "skill_0_ui.1st": "geometry.skill_0_ui.1st",
+        "skill_0_ui_type.1st": "geometry.skill_0_ui_type.1st",
+        "skill_0_ui_key.1st": "geometry.skill_0_ui_key.1st",
+        "skill_1_ui.1st": "geometry.skill_1_ui.1st",
+        "skill_1_ui_type.1st": "geometry.skill_1_ui_type.1st",
+        "skill_1_ui_key.1st": "geometry.skill_1_ui_key.1st",
+        "skill_2_ui.1st": "geometry.skill_2_ui.1st",
+        "skill_2_ui_type.1st": "geometry.skill_2_ui_type.1st",
+        "skill_2_ui_key.1st": "geometry.skill_2_ui_key.1st",
+        "skill_sp_ui.1st": "geometry.skill_sp_ui.1st",
+        "skill_sp_ui_type.1st": "geometry.skill_sp_ui_type.1st",
+        "skill_sp_ui_key.1st": "geometry.skill_sp_ui_key.1st",
+        "skill_3_ui_key.1st": "geometry.skill_3_ui_key.1st",
+        "weapon_ui.1st": "geometry.weapon_ui.1st",
+        "weapon_ui_titan_type.1st": "geometry.weapon_ui_titan_type.1st",
+        "weapon_ui_value.1st": "geometry.weapon_ui_value.1st",
+        "weapon_ui_infinite.1st": "geometry.weapon_ui_infinite.1st",
+        "energy_bar.1st": "geometry.energy_bar.1st",
+        "monarch_upgrade_text.1st": "geometry.monarch_upgrade_text.1st",
+        "monarch_missile_powering.1st": "geometry.monarch_missile_powering.1st",
+        "circle_star.1st": "geometry.circle_star.1st",
+        "titan_missile_star.1st": "geometry.titan_missile_star.1st",
+        "titan_missile_big_star.1st": "geometry.titan_missile_big_star.1st",
+        // 泰坦
+        "ion_titan": "geometry.ion_titan",
+        "ion_titan_light": "geometry.ion_titan_light",
+        "ion_titan.1st": "geometry.ion_titan.1st",
+        "ion_core.1st": "geometry.ion_core.1st",
+        "ion_weapon_star.1st": "geometry.ion_weapon_star.1st",
+        "tone_titan": "geometry.tone_titan",
+        "tone_titan_light": "geometry.tone_titan_light",
+        "tone_titan.1st": "geometry.tone_titan.1st",
+        "tone_weapon_star.1st": "geometry.tone_weapon_star.1st",
+        "northstar_titan": "geometry.northstar_titan",
+        "northstar_titan_light": "geometry.northstar_titan_light",
+        "northstar_titan.1st": "geometry.northstar_titan.1st",
+        "northstar_weapon_star.1st": "geometry.northstar_weapon_star.1st",
+        "ronin_titan": "geometry.ronin_titan",
+        "ronin_titan_light": "geometry.ronin_titan_light",
+        "ronin_titan.1st": "geometry.ronin_titan.1st",
+        "ronin_titan_melee.1st": "geometry.ronin_titan_melee.1st",
+        "ronin_gray_view": "geometry.ronin_gray_view",
+        "ronin_weapon_star.1st": "geometry.ronin_weapon_star.1st",
+        "scorch_titan": "geometry.scorch_titan",
+        "scorch_titan_light": "geometry.scorch_titan_light",
+        "scorch_titan.1st": "geometry.scorch_titan.1st",
+        "scorch_weapon_star.1st": "geometry.scorch_weapon_star.1st",
+        "legion_titan": "geometry.legion_titan",
+        "legion_titan_light": "geometry.legion_titan_light",
+        "legion_titan.1st": "geometry.legion_titan.1st",
+        "legion_shield": "geometry.legion_shield",
+        "legion_shield.1st": "geometry.legion_shield.1st",
+        "legion_weapon_star.1st": "geometry.legion_weapon_star.1st",
+        "legion_weapon_far_star.1st": "geometry.legion_weapon_far_star.1st",
+        "legion_power_far_star.1st": "geometry.legion_power_far_star.1st",
+        "monarch_titan": "geometry.monarch_titan",
+        "monarch_titan_light": "geometry.monarch_titan_light",
+        "monarch_titan.1st": "geometry.monarch_titan.1st",
+        "monarch_weapon_star.1st": "geometry.monarch_weapon_star.1st",
+        // 铁驭
+        "pilot_player": "geometry.pilot_player",
+        "pilot_back_battery": "geometry.pilot_back_battery",
+        "pilot_back_battery_light": "geometry.pilot_back_battery_light",
+        "pilot_hand_battery": "geometry.pilot_hand_battery",
+        "pilot_hand_battery_light": "geometry.pilot_hand_battery_light",
+        "pilot_hand_grenade": "geometry.pilot_hand_grenade",
+        "weapon_r201": "geometry.weapon_r201",
+        "weapon_r201_bullet_count": "geometry.weapon_r201_bullet_count",
+        "weapon_r201_star.1st": "geometry.weapon_r201_star.1st",
+        "weapon_charge": "geometry.weapon_charge",
+        "weapon_charge_star.1st": "geometry.weapon_charge_star.1st",
+        "pilot_health_bar_blue": "geometry.pilot_health_bar_blue",
+        "pilot_health_bar_red": "geometry.pilot_health_bar_red",
+        // 分队标识
+        "team_display.1st": "geometry.team_display.1st",
+        "default": "geometry.humanoid.custom",
+        "cape": "geometry.cape"
+      },
+      "animations": {
+        // titan all
+        "cabin_radar": "animation.cabin_radar",
+        "cabin_walk": "animation.cabin_walk",
+        "cabin_run": "animation.cabin_run",
+        "c.cabin_move": "controller.animation.titan_cabin_move",
+        "titan_health_bar_3.1st": "animation.titan_health_bar_3.1st",
+        "titan_health_bar_4.1st": "animation.titan_health_bar_4.1st",
+        "titan_health_bar_5.1st": "animation.titan_health_bar_5.1st",
+        "titan_health_bar_6.1st": "animation.titan_health_bar_6.1st",
+        "titan_health_bar_7.1st": "animation.titan_health_bar_7.1st",
+        "titan_health_bar_danger.1st": "animation.titan_health_bar_danger.1st",
+        "titan_shield_bar.1st": "animation.titan_shield_bar.1st",
+        "spurt_bar_1": "animation.spurt_bar_1",
+        "c.spurt_1_cooldown": "controller.animation.spurt_1_cooldown",
+        "spurt_bar_1_light_1": "animation.spurt_bar_1_light_1",
+        "spurt_bar_2": "animation.spurt_bar_2",
+        "c.spurt_2_cooldown": "controller.animation.spurt_2_cooldown",
+        "spurt_bar_2_light_1": "animation.spurt_bar_2_light_1",
+        "spurt_bar_2_light_2": "animation.spurt_bar_2_light_2",
+        "spurt_bar_3": "animation.spurt_bar_3",
+        "c.spurt_3_cooldown": "controller.animation.spurt_3_cooldown",
+        "spurt_bar_3_light_1": "animation.spurt_bar_3_light_1",
+        "spurt_bar_3_light_2": "animation.spurt_bar_3_light_2",
+        "spurt_bar_3_light_3": "animation.spurt_bar_3_light_3",
+        "titan_postion_tiantu.fix": "animation.titan_postion_tiantu.fix",
+        "titan_postion_youxia.fix": "animation.titan_postion_youxia.fix",
+        "titan_postion_juyao.fix": "animation.titan_postion_juyao.fix",
+        "pilot_drive_postion.fix": "animation.pilot_drive_postion.fix",
+        "c.titan_type.1st": "controller.animation.titan_type.1st",
+        "c.titan_aim_zoom_ctrl": "controller.animation.titan_aim_zoom_ctrl",
+        "titan_aim_zoom.1st": "animation.titan_aim_zoom.1st",
+        "titan_aim_zoom_legion.1st": "animation.titan_aim_zoom_legion.1st",
+        "c.particle_play": "controller.animation.particle_play",
+        "titan_cabin_core.1st": "animation.titan_cabin_core.1st",
+        "titan_cabin_shield.1st": "animation.titan_cabin_shield.1st",
+        "titan_cabin_battery.1st": "animation.titan_cabin_battery.1st",
+        "titan_cabin_battery_delay.1st": "animation.titan_cabin_battery_delay.1st",
+        "titan_cabin_core_once.1st": "animation.titan_cabin_core_once.1st",
+        "titan_look_rotate": "animation.titan_look_rotate",
+        "titan_eye_blue_ion": "animation.titan_eye_blue_ion",
+        "titan_eye_red_ion": "animation.titan_eye_red_ion",
+        "titan_eye_blue_tone": "animation.titan_eye_blue_tone",
+        "titan_eye_red_tone": "animation.titan_eye_red_tone",
+        "titan_eye_blue_northstar": "animation.titan_eye_blue_northstar",
+        "titan_eye_red_northstar": "animation.titan_eye_red_northstar",
+        "titan_eye_blue_ronin": "animation.titan_eye_blue_ronin",
+        "titan_eye_red_ronin": "animation.titan_eye_red_ronin",
+        "titan_eye_blue_monarch": "animation.titan_eye_blue_monarch",
+        "titan_eye_red_monarch": "animation.titan_eye_red_monarch",
+        "titan_weapon_back_yes": "animation.titan_weapon_back_yes",
+        "titan_weapon_back_no": "animation.titan_weapon_back_no",
+        // ui
+        "titan_zoom_in_ui": "animation.titan_zoom_in_ui",
+        "pilot_ui_fixed.1st": "animation.pilot_ui_fixed.1st",
+        "core_ui.1st": "animation.core_ui.1st",
+        "core_ui_value.1st": "animation.core_ui_value.1st",
+        "weapon_ui_value.1st": "animation.weapon_ui_value.1st",
+        "skill_0_cooldown_12.1st": "animation.skill_0_cooldown_12.1st",
+        "skill_0_cooldown_14.1st": "animation.skill_0_cooldown_14.1st",
+        "skill_0_cooldown_20.1st": "animation.skill_0_cooldown_20.1st",
+        "skill_0_cooldown_40.1st": "animation.skill_0_cooldown_40.1st",
+        "skill_0_cooldown_200.1st": "animation.skill_0_cooldown_200.1st",
+        "skill_1_cooldown_2.1st": "animation.skill_1_cooldown_2.1st",
+        "skill_1_cooldown_8.1st": "animation.skill_1_cooldown_8.1st",
+        "skill_1_cooldown_10.1st": "animation.skill_1_cooldown_10.1st",
+        "skill_1_cooldown_36.1st": "animation.skill_1_cooldown_36.1st",
+        "skill_2_cooldown_2.1st": "animation.skill_2_cooldown_2.1st",
+        "skill_2_cooldown_10.1st": "animation.skill_2_cooldown_10.1st",
+        "skill_2_cooldown_12.1st": "animation.skill_2_cooldown_12.1st",
+        "skill_2_cooldown_14.1st": "animation.skill_2_cooldown_14.1st",
+        "skill_2_cooldown_17.1st": "animation.skill_2_cooldown_17.1st",
+        "skill_2_cooldown_30.1st": "animation.skill_2_cooldown_30.1st",
+        "skill_0_cooldown": "controller.animation.skill_0_cooldown",
+        "skill_1_cooldown": "controller.animation.skill_1_cooldown",
+        "skill_2_cooldown": "controller.animation.skill_2_cooldown",
+        "cooldown_0_over.1st": "animation.cooldown_0_over.1st",
+        "cooldown_1_over.1st": "animation.cooldown_1_over.1st",
+        "cooldown_2_over.1st": "animation.cooldown_2_over.1st",
+        "skill_charge_sp.1st": "animation.skill_charge_sp.1st",
+        "cooldown_sp_over.1st": "animation.cooldown_sp_over.1st",
+        "energy_bar.1st": "animation.energy_bar.1st",
+        "ion_ui_need_energy_1.1st": "animation.ion_ui_need_energy_1.1st",
+        "ion_ui_need_energy_2.1st": "animation.ion_ui_need_energy_2.1st",
+        "monarch_upgrade_text.1st": "animation.monarch_upgrade_text.1st",
+        "monarch_missile_powering.1st": "animation.monarch_missile_powering.1st",
+        // ion
+        "c.entry_ion_cabin": "controller.animation.entry_ion_cabin",
+        "ion_titan.loaded": "animation.ion_titan.loaded",
+        "ion_titan.standing": "animation.ion_titan.standing",
+        "ion_titan.pilot_entry_loaded": "animation.ion_titan.pilot_entry_loaded",
+        "ion_titan.pilot_entry_standing": "animation.ion_titan.pilot_entry_standing",
+        "ion_titan.entry_stand_front": "animation.ion_titan.entry_stand_front",
+        "ion_titan.pilot_entry_front": "animation.ion_titan.pilot_entry_front",
+        "ion_titan.entry_stand_back": "animation.ion_titan.entry_stand_back",
+        "ion_titan.pilot_entry_back": "animation.ion_titan.pilot_entry_back",
+        "ion_titan.entry_stand_top": "animation.ion_titan.entry_stand_top",
+        "ion_titan.pilot_entry_top": "animation.ion_titan.pilot_entry_top",
+        "ion_titan.exit_cabin": "animation.ion_titan.exit_cabin",
+        "ion_titan.pilot_exit_cabin": "animation.ion_titan.pilot_exit_cabin",
+        "c.ion_terminate": "controller.animation.ion_terminate",
+        "ion_titan.terminate_1": "animation.ion_titan.terminate_1",
+        "ion_titan.terminate_2": "animation.ion_titan.terminate_2",
+        "ion_weapon_star.zoom": "animation.ion_weapon_star.zoom",
+        "c.ion_titan.leg": "controller.animation.ion_titan.leg",
+        "ion_titan.idle.leg": "animation.ion_titan.idle.leg",
+        "ion_titan.walk.leg": "animation.ion_titan.walk.leg",
+        "ion_titan.move.leg": "animation.ion_titan.move.leg",
+        "ion_titan.spurt.leg": "animation.ion_titan.spurt.leg",
+        "c.ion_titan.arm": "controller.animation.ion_titan.arm",
+        "ion_titan.idle.arm": "animation.ion_titan.idle.arm",
+        "ion_titan.move.arm": "animation.ion_titan.move.arm",
+        "ion_titan.weapon_divide": "animation.ion_titan.weapon_divide",
+        "ion_titan.fire": "animation.ion_titan.fire",
+        "ion_titan.reload": "animation.ion_titan.reload",
+        "ion_titan.particle": "animation.ion_titan.particle",
+        "ion_titan.rotate": "animation.ion_titan.rotate",
+        "ion_titan.melee": "animation.ion_titan.melee",
+        "ion_titan.shield": "animation.ion_titan.shield",
+        "ion_titan.shield_pre": "animation.ion_titan.shield_pre",
+        "ion_titan.shield_after": "animation.ion_titan.shield_after",
+        "ion_titan.shield_back": "animation.ion_titan.shield_back",
+        "ion_titan.shield.particle": "animation.ion_titan.shield.particle",
+        "ion_titan.laser": "animation.ion_titan.laser",
+        "ion_titan.laser_pre": "animation.ion_titan.laser_pre",
+        "ion_titan.laser_after": "animation.ion_titan.laser_after",
+        "ion_titan.core_pre": "animation.ion_titan.core_pre",
+        "ion_titan.core": "animation.ion_titan.core",
+        "ion_titan.core_particle": "animation.ion_titan.core_particle",
+        "c.ion_titan_1st": "controller.animation.ion_titan_1st",
+        "ion_titan.move.1st": "animation.ion_titan.move.1st",
+        "ion_titan.fire.1st": "animation.ion_titan.fire.1st",
+        "ion_titan.reload.1st": "animation.ion_titan.reload.1st",
+        "ion_titan.particle.1st": "animation.ion_titan.particle.1st",
+        "ion_titan.melee.1st": "animation.ion_titan.melee.1st",
+        "ion_titan.shield.1st": "animation.ion_titan.shield.1st",
+        "ion_titan.shield_pre.1st": "animation.ion_titan.shield_pre.1st",
+        "ion_titan.shield_after.1st": "animation.ion_titan.shield_after.1st",
+        "ion_titan.shield_back.1st": "animation.ion_titan.shield_back.1st",
+        "ion_titan.shield.particle.1st": "animation.ion_titan.shield.particle.1st",
+        "ion_titan.laser.1st": "animation.ion_titan.laser.1st",
+        "ion_titan.laser_pre.1st": "animation.ion_titan.laser_pre.1st",
+        "ion_titan.laser_after.1st": "animation.ion_titan.laser_after.1st",
+        "ion_titan.core_pre.1st": "animation.ion_titan.core_pre.1st",
+        "ion_titan.core.1st": "animation.ion_titan.core.1st",
+        "c.ion_titan_weapon_mode": "controller.animation.ion_titan_weapon_mode",
+        "c.ion_titan_particle": "controller.animation.ion_titan_particle",
+        "c.ion_titan_particle.1st": "controller.animation.ion_titan_particle.1st",
+        "c.ion_titan_weapon_back": "controller.animation.ion_titan_weapon_back",
+        "c.ion_titan_damage_fire": "controller.animation.ion_titan_damage_fire",
+        "ion_titan.damage_fire_1": "animation.ion_titan.damage_fire_1",
+        "ion_titan.damage_fire_2": "animation.ion_titan.damage_fire_2",
+        "ion_titan.damage_fire_3": "animation.ion_titan.damage_fire_3",
+        "ion_titan.damage_fire_4": "animation.ion_titan.damage_fire_4",
+        // tone
+        "c.entry_tone_cabin": "controller.animation.entry_tone_cabin",
+        "tone_titan.loaded": "animation.tone_titan.loaded",
+        "tone_titan.standing": "animation.tone_titan.standing",
+        "tone_titan.pilot_entry_loaded": "animation.tone_titan.pilot_entry_loaded",
+        "tone_titan.pilot_entry_standing": "animation.tone_titan.pilot_entry_standing",
+        "tone_titan.entry_stand_front": "animation.tone_titan.entry_stand_front",
+        "tone_titan.pilot_entry_front": "animation.tone_titan.pilot_entry_front",
+        "tone_titan.entry_stand_back": "animation.tone_titan.entry_stand_back",
+        "tone_titan.pilot_entry_back": "animation.tone_titan.pilot_entry_back",
+        "tone_titan.entry_stand_top": "animation.tone_titan.entry_stand_top",
+        "tone_titan.pilot_entry_top": "animation.tone_titan.pilot_entry_top",
+        "tone_titan.exit_cabin": "animation.tone_titan.exit_cabin",
+        "tone_titan.pilot_exit_cabin": "animation.tone_titan.pilot_exit_cabin",
+        "c.tone_terminate": "controller.animation.tone_terminate",
+        "tone_titan.terminate_1": "animation.tone_titan.terminate_1",
+        "tone_titan.terminate_2": "animation.tone_titan.terminate_2",
+        "c.tone_star_ctrl": "controller.animation.tone_star_ctrl",
+        "tone_weapon_star.zoom": "animation.tone_weapon_star.zoom",
+        "c.tone_titan.leg": "controller.animation.tone_titan.leg",
+        "tone_titan.idle.leg": "animation.tone_titan.idle.leg",
+        "tone_titan.walk.leg": "animation.tone_titan.walk.leg",
+        "tone_titan.move.leg": "animation.tone_titan.move.leg",
+        "tone_titan.spurt.leg": "animation.tone_titan.spurt.leg",
+        "c.tone_titan.arm": "controller.animation.tone_titan.arm",
+        "tone_titan.idle.arm": "animation.tone_titan.idle.arm",
+        "tone_titan.move.arm": "animation.tone_titan.move.arm",
+        "tone_titan.fire": "animation.tone_titan.fire",
+        "tone_titan.reload": "animation.tone_titan.reload",
+        "tone_titan.particle": "animation.tone_titan.particle",
+        "tone_titan.melee": "animation.tone_titan.melee",
+        "tone_titan.missile": "animation.tone_titan.missile",
+        "tone_titan.missile_pre": "animation.tone_titan.missile_pre",
+        "tone_titan.missile_after": "animation.tone_titan.missile_after",
+        "tone_titan.sense": "animation.tone_titan.sense",
+        "tone_titan.core": "animation.tone_titan.core",
+        "tone_titan.core_pre": "animation.tone_titan.core_pre",
+        "tone_titan.core_after": "animation.tone_titan.core_after",
+        "c.tone_titan_1st": "controller.animation.tone_titan_1st",
+        "tone_titan.move.1st": "animation.tone_titan.move.1st",
+        "tone_titan.fire.1st": "animation.tone_titan.fire.1st",
+        "tone_titan.reload.1st": "animation.tone_titan.reload.1st",
+        "tone_titan.particle.1st": "animation.tone_titan.particle.1st",
+        "tone_titan.melee.1st": "animation.tone_titan.melee.1st",
+        "tone_titan.missile.1st": "animation.tone_titan.missile.1st",
+        "tone_titan.missile_pre.1st": "animation.tone_titan.missile_pre.1st",
+        "tone_titan.missile_after.1st": "animation.tone_titan.missile_after.1st",
+        "tone_titan.sense.1st": "animation.tone_titan.sense.1st",
+        "tone_titan.core.1st": "animation.tone_titan.core.1st",
+        "tone_titan.core_pre.1st": "animation.tone_titan.core_pre.1st",
+        "tone_titan.core_after.1st": "animation.tone_titan.core_after.1st",
+        "c.tone_titan_particle": "controller.animation.tone_titan_particle",
+        "c.tone_titan_particle.1st": "controller.animation.tone_titan_particle.1st",
+        "c.tone_titan_weapon_back": "controller.animation.tone_titan_weapon_back",
+        "c.tone_titan_damage_fire": "controller.animation.tone_titan_damage_fire",
+        "tone_titan.damage_fire_1": "animation.tone_titan.damage_fire_1",
+        "tone_titan.damage_fire_2": "animation.tone_titan.damage_fire_2",
+        "tone_titan.damage_fire_3": "animation.tone_titan.damage_fire_3",
+        "tone_titan.damage_fire_4": "animation.tone_titan.damage_fire_4",
+        // northstar
+        "c.entry_northstar_cabin": "controller.animation.entry_northstar_cabin",
+        "northstar_titan.loaded": "animation.northstar_titan.loaded",
+        "northstar_titan.standing": "animation.northstar_titan.standing",
+        "northstar_titan.pilot_entry_loaded": "animation.northstar_titan.pilot_entry_loaded",
+        "northstar_titan.pilot_entry_standing": "animation.northstar_titan.pilot_entry_standing",
+        "northstar_titan.entry_stand_front": "animation.northstar_titan.entry_stand_front",
+        "northstar_titan.pilot_entry_front": "animation.northstar_titan.pilot_entry_front",
+        "northstar_titan.entry_stand_back": "animation.northstar_titan.entry_stand_back",
+        "northstar_titan.pilot_entry_back": "animation.northstar_titan.pilot_entry_back",
+        "northstar_titan.entry_stand_top": "animation.northstar_titan.entry_stand_top",
+        "northstar_titan.pilot_entry_top": "animation.northstar_titan.pilot_entry_top",
+        "northstar_titan.exit_cabin": "animation.northstar_titan.exit_cabin",
+        "northstar_titan.pilot_exit_cabin": "animation.northstar_titan.pilot_exit_cabin",
+        "c.northstar_terminate": "controller.animation.northstar_terminate",
+        "northstar_titan.terminate_1": "animation.northstar_titan.terminate_1",
+        "northstar_titan.terminate_2": "animation.northstar_titan.terminate_2",
+        "c.northstar_star_ctrl": "controller.animation.northstar_star_ctrl",
+        "northstar_weapon_star.staic": "animation.northstar_weapon_star.staic",
+        "northstar_weapon_star.zoom": "animation.northstar_weapon_star.zoom",
+        "c.northstar_titan.leg": "controller.animation.northstar_titan.leg",
+        "northstar_titan.idle.leg": "animation.northstar_titan.idle.leg",
+        "northstar_titan.walk.leg": "animation.northstar_titan.walk.leg",
+        "northstar_titan.move.leg": "animation.northstar_titan.move.leg",
+        "northstar_titan.spurt.leg": "animation.northstar_titan.spurt.leg",
+        "northstar_titan.fly.leg": "animation.northstar_titan.fly.leg",
+        "c.northstar_titan.arm": "controller.animation.northstar_titan.arm",
+        "northstar_titan.idle.arm": "animation.northstar_titan.idle.arm",
+        "northstar_titan.move.arm": "animation.northstar_titan.move.arm",
+        "northstar_titan.pre_fire": "animation.northstar_titan.pre_fire",
+        "northstar_titan.fire": "animation.northstar_titan.fire",
+        "northstar_titan.reload": "animation.northstar_titan.reload",
+        "northstar_titan.particle": "animation.northstar_titan.particle",
+        "northstar_titan.rotate": "animation.northstar_titan.rotate",
+        "northstar_titan.melee": "animation.northstar_titan.melee",
+        "northstar_titan.missile": "animation.northstar_titan.missile",
+        "northstar_titan.core": "animation.northstar_titan.core",
+        "c.northstar_titan_1st": "controller.animation.northstar_titan_1st",
+        "northstar_titan.move.1st": "animation.northstar_titan.move.1st",
+        "northstar_titan.fire.1st": "animation.northstar_titan.fire.1st",
+        "northstar_titan.reload.1st": "animation.northstar_titan.reload.1st",
+        "northstar_titan.particle.1st": "animation.northstar_titan.particle.1st",
+        "northstar_titan.melee.1st": "animation.northstar_titan.melee.1st",
+        "northstar_titan.missile.1st": "animation.northstar_titan.missile.1st",
+        "northstar_titan.core.1st": "animation.northstar_titan.core.1st",
+        "c.northstar_titan_particle": "controller.animation.northstar_titan_particle",
+        "c.northstar_titan_particle.1st": "controller.animation.northstar_titan_particle.1st",
+        "northstar_titan.fly_jet": "animation.northstar_titan.fly_jet",
+        "c.northstar_titan_weapon_back": "controller.animation.northstar_titan_weapon_back",
+        "c.northstar_titan_damage_fire": "controller.animation.northstar_titan_damage_fire",
+        "northstar_titan.damage_fire_1": "animation.northstar_titan.damage_fire_1",
+        "northstar_titan.damage_fire_2": "animation.northstar_titan.damage_fire_2",
+        "northstar_titan.damage_fire_3": "animation.northstar_titan.damage_fire_3",
+        "northstar_titan.damage_fire_4": "animation.northstar_titan.damage_fire_4",
+        // ronin
+        "c.entry_ronin_cabin": "controller.animation.entry_ronin_cabin",
+        "ronin_titan.loaded": "animation.ronin_titan.loaded",
+        "ronin_titan.standing": "animation.ronin_titan.standing",
+        "ronin_titan.pilot_entry_loaded": "animation.ronin_titan.pilot_entry_loaded",
+        "ronin_titan.pilot_entry_standing": "animation.ronin_titan.pilot_entry_standing",
+        "ronin_titan.entry_stand_front": "animation.ronin_titan.entry_stand_front",
+        "ronin_titan.pilot_entry_front": "animation.ronin_titan.pilot_entry_front",
+        "ronin_titan.entry_stand_back": "animation.ronin_titan.entry_stand_back",
+        "ronin_titan.pilot_entry_back": "animation.ronin_titan.pilot_entry_back",
+        "ronin_titan.entry_stand_top": "animation.ronin_titan.entry_stand_top",
+        "ronin_titan.pilot_entry_top": "animation.ronin_titan.pilot_entry_top",
+        "ronin_titan.exit_cabin": "animation.ronin_titan.exit_cabin",
+        "ronin_titan.pilot_exit_cabin": "animation.ronin_titan.pilot_exit_cabin",
+        "c.ronin_terminate": "controller.animation.ronin_terminate",
+        "ronin_titan.terminate_1": "animation.ronin_titan.terminate_1",
+        "ronin_titan.terminate_2": "animation.ronin_titan.terminate_2",
+        "c.ronin_titan.leg": "controller.animation.ronin_titan.leg",
+        "ronin_titan.idle.leg": "animation.ronin_titan.idle.leg",
+        "ronin_titan.walk.leg": "animation.ronin_titan.walk.leg",
+        "ronin_titan.move.leg": "animation.ronin_titan.move.leg",
+        "ronin_titan.spurt.leg": "animation.ronin_titan.spurt.leg",
+        "c.ronin_titan.arm": "controller.animation.ronin_titan.arm",
+        "ronin_titan.idle.arm": "animation.ronin_titan.idle.arm",
+        "ronin_titan.move.arm": "animation.ronin_titan.move.arm",
+        "ronin_titan.fire": "animation.ronin_titan.fire",
+        "ronin_titan.reload": "animation.ronin_titan.reload",
+        "ronin_titan.particle": "animation.ronin_titan.particle",
+        "ronin_titan.idle_sword.arm": "animation.ronin_titan.idle_sword.arm",
+        "ronin_titan.melee": "animation.ronin_titan.melee",
+        "ronin_titan.melee_core_1": "animation.ronin_titan.melee_core_1",
+        "ronin_titan.melee_core_2": "animation.ronin_titan.melee_core_2",
+        "ronin_titan.melee_core_3": "animation.ronin_titan.melee_core_3",
+        "ronin_titan.defend_1": "animation.ronin_titan.defend_1",
+        "ronin_titan.defend_2": "animation.ronin_titan.defend_2",
+        "ronin_titan.defend_3": "animation.ronin_titan.defend_3",
+        "ronin_titan.defend_pre": "animation.ronin_titan.defend_pre",
+        "ronin_titan.defend_after": "animation.ronin_titan.defend_after",
+        "ronin_titan.defend_core_pre": "animation.ronin_titan.defend_core_pre",
+        "ronin_titan.defend_core_after": "animation.ronin_titan.defend_core_after",
+        "ronin_titan.arc": "animation.ronin_titan.arc",
+        "ronin_titan.arc_pre": "animation.ronin_titan.arc_pre",
+        "ronin_titan.arc_after": "animation.ronin_titan.arc_after",
+        "ronin_titan.arc_core": "animation.ronin_titan.arc_core",
+        "ronin_titan.arc_core_pre": "animation.ronin_titan.arc_core_pre",
+        "ronin_titan.arc_core_after": "animation.ronin_titan.arc_core_after",
+        "c.ronin_titan_1st": "controller.animation.ronin_titan_1st",
+        "ronin_titan.move.1st": "animation.ronin_titan.move.1st",
+        "ronin_titan.move_melee.1st": "animation.ronin_titan.move_melee.1st",
+        "ronin_titan.fire.1st": "animation.ronin_titan.fire.1st",
+        "ronin_titan.reload.1st": "animation.ronin_titan.reload.1st",
+        "ronin_titan.particle.1st": "animation.ronin_titan.particle.1st",
+        "ronin_titan.melee_1.1st": "animation.ronin_titan.melee_1.1st",
+        "ronin_titan.melee_2.1st": "animation.ronin_titan.melee_2.1st",
+        "ronin_titan.melee_3.1st": "animation.ronin_titan.melee_3.1st",
+        "ronin_titan.melee_core_1.1st": "animation.ronin_titan.melee_core_1.1st",
+        "ronin_titan.melee_core_2.1st": "animation.ronin_titan.melee_core_2.1st",
+        "ronin_titan.melee_core_3.1st": "animation.ronin_titan.melee_core_3.1st",
+        "ronin_titan.defend_1.1st": "animation.ronin_titan.defend_1.1st",
+        "ronin_titan.defend_2.1st": "animation.ronin_titan.defend_2.1st",
+        "ronin_titan.defend_3.1st": "animation.ronin_titan.defend_3.1st",
+        "ronin_titan.defend_pre.1st": "animation.ronin_titan.defend_pre.1st",
+        "ronin_titan.defend_after.1st": "animation.ronin_titan.defend_after.1st",
+        "ronin_titan.arc.1st": "animation.ronin_titan.arc.1st",
+        "ronin_titan.arc_pre.1st": "animation.ronin_titan.arc_pre.1st",
+        "ronin_titan.arc_after.1st": "animation.ronin_titan.arc_after.1st",
+        "ronin_titan.arc_core_after.1st": "animation.ronin_titan.arc_core_after.1st",
+        "ronin_titan.core.1st": "animation.ronin_titan.core.1st",
+        "ronin_titan.sword_arc.particle": "animation.ronin_titan.sword_arc.particle",
+        "ronin_titan.sword_arc.particle.1st": "animation.ronin_titan.sword_arc.particle.1st",
+        "c.ronin_titan.sword_arc.particle": "controller.animation.ronin_titan.sword_arc.particle",
+        "c.ronin_titan.sword_arc.particle.1st": "controller.animation.ronin_titan.sword_arc.particle.1st",
+        "c.ronin_titan_particle": "controller.animation.ronin_titan_particle",
+        "c.ronin_titan_particle.1st": "controller.animation.ronin_titan_particle.1st",
+        "c.ronin_titan_weapon_back": "controller.animation.ronin_titan_weapon_back",
+        "c.ronin_titan_damage_fire": "controller.animation.ronin_titan_damage_fire",
+        "ronin_titan.damage_fire_1": "animation.ronin_titan.damage_fire_1",
+        "ronin_titan.damage_fire_2": "animation.ronin_titan.damage_fire_2",
+        "ronin_titan.damage_fire_3": "animation.ronin_titan.damage_fire_3",
+        "ronin_titan.damage_fire_4": "animation.ronin_titan.damage_fire_4",
+        // scorch
+        "c.entry_scorch_cabin": "controller.animation.entry_scorch_cabin",
+        "scorch_titan.loaded": "animation.scorch_titan.loaded",
+        "scorch_titan.standing": "animation.scorch_titan.standing",
+        "scorch_titan.pilot_entry_loaded": "animation.scorch_titan.pilot_entry_loaded",
+        "scorch_titan.pilot_entry_standing": "animation.scorch_titan.pilot_entry_standing",
+        "scorch_titan.entry_stand_front": "animation.scorch_titan.entry_stand_front",
+        "scorch_titan.pilot_entry_front": "animation.scorch_titan.pilot_entry_front",
+        "scorch_titan.entry_stand_back": "animation.scorch_titan.entry_stand_back",
+        "scorch_titan.pilot_entry_back": "animation.scorch_titan.pilot_entry_back",
+        "scorch_titan.entry_stand_top": "animation.scorch_titan.entry_stand_top",
+        "scorch_titan.pilot_entry_top": "animation.scorch_titan.pilot_entry_top",
+        "scorch_titan.exit_cabin": "animation.scorch_titan.exit_cabin",
+        "scorch_titan.pilot_exit_cabin": "animation.scorch_titan.pilot_exit_cabin",
+        "c.scorch_terminate": "controller.animation.scorch_terminate",
+        "scorch_titan.terminate_1": "animation.scorch_titan.terminate_1",
+        "scorch_titan.terminate_2": "animation.scorch_titan.terminate_2",
+        "c.scorch_star_ctrl": "controller.animation.scorch_star_ctrl",
+        "scorch_weapon_star.zoom": "animation.scorch_weapon_star.zoom",
+        "c.scorch_titan.leg": "controller.animation.scorch_titan.leg",
+        "scorch_titan.idle.leg": "animation.scorch_titan.idle.leg",
+        "scorch_titan.walk.leg": "animation.scorch_titan.walk.leg",
+        "scorch_titan.move.leg": "animation.scorch_titan.move.leg",
+        "scorch_titan.spurt.leg": "animation.scorch_titan.spurt.leg",
+        "c.scorch_titan.arm": "controller.animation.scorch_titan.arm",
+        "scorch_titan.idle.arm": "animation.scorch_titan.idle.arm",
+        "scorch_titan.move.arm": "animation.scorch_titan.move.arm",
+        "scorch_titan.fire": "animation.scorch_titan.fire",
+        "scorch_titan.reload": "animation.scorch_titan.reload",
+        "scorch_titan.particle": "animation.scorch_titan.particle",
+        "scorch_titan.melee": "animation.scorch_titan.melee",
+        "scorch_titan.shield": "animation.scorch_titan.shield",
+        "scorch_titan.shield_pre": "animation.scorch_titan.shield_pre",
+        "scorch_titan.shield_after": "animation.scorch_titan.shield_after",
+        "scorch_titan.shield.particle": "animation.scorch_titan.shield.particle",
+        "scorch_titan.firewall": "animation.scorch_titan.firewall",
+        "scorch_titan.firewall_fix": "animation.scorch_titan.firewall_fix",
+        "scorch_titan.core": "animation.scorch_titan.core",
+        "scorch_titan.core_fix": "animation.scorch_titan.core_fix",
+        "c.scorch_titan_1st": "controller.animation.scorch_titan_1st",
+        "scorch_titan.move.1st": "animation.scorch_titan.move.1st",
+        "scorch_titan.fire.1st": "animation.scorch_titan.fire.1st",
+        "scorch_titan.reload.1st": "animation.scorch_titan.reload.1st",
+        "scorch_titan.particle.1st": "animation.scorch_titan.particle.1st",
+        "scorch_titan.melee.1st": "animation.scorch_titan.melee.1st",
+        "scorch_titan.shield.1st": "animation.scorch_titan.shield.1st",
+        "scorch_titan.shield_pre.1st": "animation.scorch_titan.shield_pre.1st",
+        "scorch_titan.shield_after.1st": "animation.scorch_titan.shield_after.1st",
+        "scorch_titan.shield.particle.1st": "animation.scorch_titan.shield.particle.1st",
+        "scorch_titan.firewall.1st": "animation.scorch_titan.firewall.1st",
+        "scorch_titan.core.1st": "animation.scorch_titan.core.1st",
+        "c.scorch_titan_particle": "controller.animation.scorch_titan_particle",
+        "c.scorch_titan_particle.1st": "controller.animation.scorch_titan_particle.1st",
+        "c.scorch_titan_weapon_back": "controller.animation.scorch_titan_weapon_back",
+        "c.scorch_titan_damage_fire": "controller.animation.scorch_titan_damage_fire",
+        "scorch_titan.damage_fire_1": "animation.scorch_titan.damage_fire_1",
+        "scorch_titan.damage_fire_2": "animation.scorch_titan.damage_fire_2",
+        "scorch_titan.damage_fire_3": "animation.scorch_titan.damage_fire_3",
+        "scorch_titan.damage_fire_4": "animation.scorch_titan.damage_fire_4",
+        // legion
+        "c.entry_legion_cabin": "controller.animation.entry_legion_cabin",
+        "legion_titan.loaded": "animation.legion_titan.loaded",
+        "legion_titan.standing": "animation.legion_titan.standing",
+        "legion_titan.pilot_entry_loaded": "animation.legion_titan.pilot_entry_loaded",
+        "legion_titan.pilot_entry_standing": "animation.legion_titan.pilot_entry_standing",
+        "legion_titan.entry_stand_front": "animation.legion_titan.entry_stand_front",
+        "legion_titan.pilot_entry_front": "animation.legion_titan.pilot_entry_front",
+        "legion_titan.entry_stand_back": "animation.legion_titan.entry_stand_back",
+        "legion_titan.pilot_entry_back": "animation.legion_titan.pilot_entry_back",
+        "legion_titan.entry_stand_top": "animation.legion_titan.entry_stand_top",
+        "legion_titan.pilot_entry_top": "animation.legion_titan.pilot_entry_top",
+        "legion_titan.exit_cabin": "animation.legion_titan.exit_cabin",
+        "legion_titan.pilot_exit_cabin": "animation.legion_titan.pilot_exit_cabin",
+        "c.legion_terminate": "controller.animation.legion_terminate",
+        "legion_titan.terminate_1": "animation.legion_titan.terminate_1",
+        "legion_titan.terminate_2": "animation.legion_titan.terminate_2",
+        "c.legion_star_ctrl": "controller.animation.legion_star_ctrl",
+        "legion_weapon_star.zoom": "animation.legion_weapon_star.zoom",
+        "legion_weapon_far_star.zoom": "animation.legion_weapon_far_star.zoom",
+        "legion_weapon_far_star.zoom_pre": "animation.legion_weapon_far_star.zoom_pre",
+        "c.legion_titan.leg": "controller.animation.legion_titan.leg",
+        "legion_titan.idle.leg": "animation.legion_titan.idle.leg",
+        "legion_titan.walk.leg": "animation.legion_titan.walk.leg",
+        "legion_titan.move.leg": "animation.legion_titan.move.leg",
+        "legion_titan.spurt.leg": "animation.legion_titan.spurt.leg",
+        "c.legion_titan.arm": "controller.animation.legion_titan.arm",
+        "legion_titan.idle.arm": "animation.legion_titan.idle.arm",
+        "legion_titan.move.arm": "animation.legion_titan.move.arm",
+        "legion_titan.fire": "animation.legion_titan.fire",
+        "legion_titan.fire_pre": "animation.legion_titan.fire_pre",
+        "legion_titan.fire_after": "animation.legion_titan.fire_after",
+        "legion_titan.reload": "animation.legion_titan.reload",
+        "legion_titan.particle": "animation.legion_titan.particle",
+        "legion_titan.particle_core": "animation.legion_titan.particle_core",
+        "legion_titan.melee": "animation.legion_titan.melee",
+        "legion_titan.power": "animation.legion_titan.power",
+        "legion_titan.power_pre": "animation.legion_titan.power_pre",
+        "legion_titan.change": "animation.legion_titan.change",
+        "legion_titan.shield_spawn": "animation.legion_titan.shield_spawn",
+        "c.legion_titan.shield": "controller.animation.legion_titan.shield",
+        "c.legion_titan_1st": "controller.animation.legion_titan_1st",
+        "legion_titan.default.1st": "animation.legion_titan.default.1st",
+        // "legion_titan.idle.1st": "animation.legion_titan.idle.1st",
+        "legion_titan.move.1st": "animation.legion_titan.move.1st",
+        "legion_titan.fire.1st": "animation.legion_titan.fire.1st",
+        "legion_titan.fire_pre.1st": "animation.legion_titan.fire_pre.1st",
+        "legion_titan.fire_after.1st": "animation.legion_titan.fire_after.1st",
+        "legion_titan.reload.1st": "animation.legion_titan.reload.1st",
+        "legion_titan.particle.1st": "animation.legion_titan.particle.1st",
+        "legion_titan.particle_core.1st": "animation.legion_titan.particle_core.1st",
+        "legion_titan.melee.1st": "animation.legion_titan.melee.1st",
+        "legion_titan.power.1st": "animation.legion_titan.power.1st",
+        "legion_titan.power_pre.1st": "animation.legion_titan.power_pre.1st",
+        "legion_titan.change.1st": "animation.legion_titan.change.1st",
+        "legion_titan.shield_spawn.1st": "animation.legion_titan.shield_spawn.1st",
+        "c.legion_titan.shield.1st": "controller.animation.legion_titan.shield.1st",
+        "c.legion_titan_particle": "controller.animation.legion_titan_particle",
+        "c.legion_titan_particle.1st": "controller.animation.legion_titan_particle.1st",
+        "c.legion_titan_weapon_back": "controller.animation.legion_titan_weapon_back",
+        "c.legion_titan_damage_fire": "controller.animation.legion_titan_damage_fire",
+        "legion_titan.damage_fire_1": "animation.legion_titan.damage_fire_1",
+        "legion_titan.damage_fire_2": "animation.legion_titan.damage_fire_2",
+        "legion_titan.damage_fire_3": "animation.legion_titan.damage_fire_3",
+        "legion_titan.damage_fire_4": "animation.legion_titan.damage_fire_4",
+        // monarch
+        "c.entry_monarch_cabin": "controller.animation.entry_monarch_cabin",
+        "monarch_titan.loaded": "animation.monarch_titan.loaded",
+        "monarch_titan.standing": "animation.monarch_titan.standing",
+        "monarch_titan.pilot_entry_loaded": "animation.monarch_titan.pilot_entry_loaded",
+        "monarch_titan.pilot_entry_standing": "animation.monarch_titan.pilot_entry_standing",
+        "monarch_titan.entry_stand_front": "animation.monarch_titan.entry_stand_front",
+        "monarch_titan.pilot_entry_front": "animation.monarch_titan.pilot_entry_front",
+        "monarch_titan.entry_stand_back": "animation.monarch_titan.entry_stand_back",
+        "monarch_titan.pilot_entry_back": "animation.monarch_titan.pilot_entry_back",
+        "monarch_titan.entry_stand_top": "animation.monarch_titan.entry_stand_top",
+        "monarch_titan.pilot_entry_top": "animation.monarch_titan.pilot_entry_top",
+        "monarch_titan.exit_cabin": "animation.monarch_titan.exit_cabin",
+        "monarch_titan.pilot_exit_cabin": "animation.monarch_titan.pilot_exit_cabin",
+        "c.monarch_terminate": "controller.animation.monarch_terminate",
+        "monarch_titan.terminate_1": "animation.monarch_titan.terminate_1",
+        "monarch_titan.terminate_2": "animation.monarch_titan.terminate_2",
+        "c.monarch_star_ctrl": "controller.animation.monarch_star_ctrl",
+        "monarch_weapon_star.zoom": "animation.monarch_weapon_star.zoom",
+        "monarch_titan.idle.arm": "animation.monarch_titan.idle.arm",
+        "monarch_titan.idle.leg": "animation.monarch_titan.idle.leg",
+        "monarch_titan.walk.leg": "animation.monarch_titan.walk.leg",
+        "monarch_titan.move.arm": "animation.monarch_titan.move.arm",
+        "monarch_titan.move.leg": "animation.monarch_titan.move.leg",
+        "monarch_titan.spurt.leg": "animation.monarch_titan.spurt.leg",
+        "monarch_titan.fire": "animation.monarch_titan.fire",
+        "monarch_titan.fire_arc": "animation.monarch_titan.fire_arc",
+        "monarch_titan.fire_final": "animation.monarch_titan.fire_final",
+        "monarch_titan.fire_arc_final": "animation.monarch_titan.fire_arc_final",
+        "monarch_titan.reload": "animation.monarch_titan.reload",
+        "monarch_titan.reload_fast": "animation.monarch_titan.reload_fast",
+        // "monarch_titan.particle": "animation.monarch_titan.particle",
+        "monarch_titan.melee": "animation.monarch_titan.melee",
+        "monarch_titan.energy": "animation.monarch_titan.energy",
+        "monarch_titan.energy_pre": "animation.monarch_titan.energy_pre",
+        "monarch_titan.energy_after": "animation.monarch_titan.energy_after",
+        "monarch_titan.missile": "animation.monarch_titan.missile",
+        "monarch_titan.missile_pre": "animation.monarch_titan.missile_pre",
+        "monarch_titan.missile_after": "animation.monarch_titan.missile_after",
+        "monarch_titan.missile_final_powering": "animation.monarch_titan.missile_final_powering",
+        "monarch_titan.missile_final": "animation.monarch_titan.missile_final",
+        "monarch_titan.reflash": "animation.monarch_titan.reflash",
+        "monarch_titan.reflash_fast": "animation.monarch_titan.reflash_fast",
+        "c.monarch_titan.arm": "controller.animation.monarch_titan.arm",
+        "c.monarch_titan.leg": "controller.animation.monarch_titan.leg",
+        "c.monarch_titan_1st": "controller.animation.monarch_titan_1st",
+        "monarch_titan.move.1st": "animation.monarch_titan.move.1st",
+        "monarch_titan.fire.1st": "animation.monarch_titan.fire.1st",
+        "monarch_titan.fire_arc.1st": "animation.monarch_titan.fire_arc.1st",
+        "monarch_titan.fire_final.1st": "animation.monarch_titan.fire_final.1st",
+        "monarch_titan.fire_arc_final.1st": "animation.monarch_titan.fire_arc_final.1st",
+        "monarch_titan.reload.1st": "animation.monarch_titan.reload.1st",
+        "monarch_titan.reload_fast.1st": "animation.monarch_titan.reload_fast.1st",
+        // "monarch_titan.particle.1st": "animation.monarch_titan.particle.1st",
+        "monarch_titan.melee.1st": "animation.monarch_titan.melee.1st",
+        "monarch_titan.energy.1st": "animation.monarch_titan.energy.1st",
+        "monarch_titan.energy_pre.1st": "animation.monarch_titan.energy_pre.1st",
+        "monarch_titan.energy_after.1st": "animation.monarch_titan.energy_after.1st",
+        "monarch_titan.missile.1st": "animation.monarch_titan.missile.1st",
+        "monarch_titan.missile_pre.1st": "animation.monarch_titan.missile_pre.1st",
+        "monarch_titan.missile_after.1st": "animation.monarch_titan.missile_after.1st",
+        "monarch_titan.missile_final_powering.1st": "animation.monarch_titan.missile_final_powering.1st",
+        "monarch_titan.missile_final.1st": "animation.monarch_titan.missile_final.1st",
+        "monarch_titan.reflash.1st": "animation.monarch_titan.reflash.1st",
+        "monarch_titan.reflash_fast.1st": "animation.monarch_titan.reflash_fast.1st",
+        // "c.monarch_titan_particle": "controller.animation.monarch_titan_particle",
+        // "c.monarch_titan_particle.1st": "controller.animation.monarch_titan_particle.1st",
+        "c.monarch_titan_weapon_back": "controller.animation.monarch_titan_weapon_back",
+        "c.monarch_titan_damage_fire": "controller.animation.monarch_titan_damage_fire",
+        "c.monarch_titan_damage_fire_final": "controller.animation.monarch_titan_damage_fire_final",
+        "monarch_titan.damage_fire_1": "animation.monarch_titan.damage_fire_1",
+        "monarch_titan.damage_fire_2": "animation.monarch_titan.damage_fire_2",
+        "monarch_titan.damage_fire_3": "animation.monarch_titan.damage_fire_3",
+        "monarch_titan.damage_fire_4": "animation.monarch_titan.damage_fire_4",
+        // 铁驭动画
+        "pilot_health_bar": "animation.pilot_health_bar",
+        "pilot_player.back_battery_1": "animation.pilot_player.back_battery_1",
+        "pilot_player.back_battery_2": "animation.pilot_player.back_battery_2",
+        "pilot_player.back_battery_3": "animation.pilot_player.back_battery_3",
+        "c.pilot_arm": "controller.animation.pilot_arm",
+        "c.pilot_leg": "controller.animation.pilot_leg",
+        "pilot_player.head_look": "animation.pilot_player.head_look",
+        "pilot_player.idle.arm": "animation.pilot_player.idle.arm",
+        "pilot_player.sneak.arm": "animation.pilot_player.sneak.arm",
+        "pilot_player.idle.leg": "animation.pilot_player.idle.leg",
+        "pilot_player.sneak.leg": "animation.pilot_player.sneak.leg",
+        "pilot_player.walk.arm": "animation.pilot_player.walk.arm",
+        "pilot_player.walk.leg": "animation.pilot_player.walk.leg",
+        "pilot_player.sneak_walk.arm": "animation.pilot_player.sneak_walk.arm",
+        "pilot_player.sneak_walk.leg": "animation.pilot_player.sneak_walk.leg",
+        "pilot_player.run.arm": "animation.pilot_player.run.arm",
+        "pilot_player.run.leg": "animation.pilot_player.run.leg",
+        "pilot_player.climb_right.arm": "animation.pilot_player.climb_right.arm",
+        "pilot_player.climb_right.leg": "animation.pilot_player.climb_right.leg",
+        "pilot_player.climb_left.arm": "animation.pilot_player.climb_left.arm",
+        "pilot_player.climb_left.leg": "animation.pilot_player.climb_left.leg",
+        "pilot_player.jump.arm": "animation.pilot_player.jump.arm",
+        "pilot_player.jump_left.leg": "animation.pilot_player.jump_left.leg",
+        "pilot_player.jump_right.leg": "animation.pilot_player.jump_right.leg",
+        "pilot_player.slide.arm": "animation.pilot_player.slide.arm",
+        "pilot_player.slide.leg": "animation.pilot_player.slide.leg",
+        "pilot_player.hide_head.1st": "animation.pilot_player.hide_head.1st",
+        "pilot_player.melee_arm_1.arm": "animation.pilot_player.melee_arm_1.arm",
+        "pilot_player.melee_arm_2.arm": "animation.pilot_player.melee_arm_2.arm",
+        "pilot_player.melee_leg_1.arm": "animation.pilot_player.melee_leg_1.arm",
+        "pilot_player.melee_leg_2.arm": "animation.pilot_player.melee_leg_2.arm",
+        "pilot_player.melee_leg_1.leg": "animation.pilot_player.melee_leg_1.leg",
+        "pilot_player.melee_leg_2.leg": "animation.pilot_player.melee_leg_2.leg",
+        "pilot_player.melee_slide.arm": "animation.pilot_player.melee_slide.arm",
+        "c.pilot_player.1st": "controller.animation.pilot_player.1st",
+        "pilot_player.idle.1st": "animation.pilot_player.idle.1st",
+        "pilot_player.run.1st": "animation.pilot_player.run.1st",
+        "pilot_player.climb_left.1st": "animation.pilot_player.climb_left.1st",
+        "pilot_player.climb_right.1st": "animation.pilot_player.climb_right.1st",
+        "pilot_player.slide.1st": "animation.pilot_player.slide.1st",
+        "pilot_player.melee_arm_1.1st": "animation.pilot_player.melee_arm_1.1st",
+        "pilot_player.melee_arm_2.1st": "animation.pilot_player.melee_arm_2.1st",
+        "pilot_player.melee_leg_1.1st": "animation.pilot_player.melee_leg_1.1st",
+        "pilot_player.melee_leg_2.1st": "animation.pilot_player.melee_leg_2.1st",
+        "pilot_player.melee_slide.1st": "animation.pilot_player.melee_slide.1st",
+        "pilot_player.weapon_idle.1st": "animation.pilot_player.weapon_idle.1st",
+        "pilot_weapon_bullet_count": "animation.pilot_weapon_bullet_count",
+        "pilot_player.rodeo_enemy_battery": "animation.pilot_player.rodeo_enemy_battery",
+        "pilot_player.rodeo_enemy_grenade": "animation.pilot_player.rodeo_enemy_grenade",
+        "pilot_player.rodeo_friend_battery": "animation.pilot_player.rodeo_friend_battery",
+        "pilot_player.rodeo_friend_idle.leg": "animation.pilot_player.rodeo_friend_idle.leg",
+        "pilot_player.rodeo_enemy_battery.1st": "animation.pilot_player.rodeo_enemy_battery.1st",
+        "pilot_player.rodeo_enemy_grenade.1st": "animation.pilot_player.rodeo_enemy_grenade.1st",
+        "pilot_player.rodeo_friend_battery.1st": "animation.pilot_player.rodeo_friend_battery.1st",
+        "pilot_player.titan_eject.1st": "animation.pilot_player.titan_eject.1st",
+        // R201
+        "c.weapon_r201.1st": "controller.animation.weapon_r201.1st",
+        "c.weapon_r201.3st": "controller.animation.weapon_r201.3st",
+        "c.weapon_r201_action.1st": "controller.animation.weapon_r201_action.1st",
+        "c.weapon_r201_action.3st": "controller.animation.weapon_r201_action.3st",
+        "weapon_r201.turn.1st": "animation.pilot_player.weapon_r201.turn.1st",
+        "weapon_r201.idle.1st": "animation.pilot_player.weapon_r201.idle.1st",
+        "weapon_r201.idle.3st": "animation.pilot_player.weapon_r201.idle.3st",
+        "weapon_r201.fire.1st": "animation.pilot_player.weapon_r201.fire.1st",
+        "weapon_r201.fire.3st": "animation.pilot_player.weapon_r201.fire.3st",
+        "weapon_r201.fire_aim.1st": "animation.pilot_player.weapon_r201.fire_aim.1st",
+        "weapon_r201.fire_aim.3st": "animation.pilot_player.weapon_r201.fire_aim.3st",
+        "weapon_r201.run.1st": "animation.pilot_player.weapon_r201.run.1st",
+        "weapon_r201.run.3st": "animation.pilot_player.weapon_r201.run.3st",
+        "weapon_r201.run_fire.1st": "animation.pilot_player.weapon_r201.run_fire.1st",
+        "weapon_r201.run_fire.3st": "animation.pilot_player.weapon_r201.run_fire.3st",
+        "weapon_r201.aim.1st": "animation.pilot_player.weapon_r201.aim.1st",
+        "weapon_r201.aim.3st": "animation.pilot_player.weapon_r201.aim.3st",
+        "weapon_r201.reload.1st": "animation.pilot_player.weapon_r201.reload.1st",
+        "weapon_r201.reload.3st": "animation.pilot_player.weapon_r201.reload.3st",
+        "weapon_r201.climb.1st": "animation.pilot_player.weapon_r201.climb.1st",
+        "weapon_r201.climb.3st": "animation.pilot_player.weapon_r201.climb.3st",
+        "weapon_r201.slide.1st": "animation.pilot_player.weapon_r201.slide.1st",
+        "weapon_r201.slide.3st": "animation.pilot_player.weapon_r201.slide.3st",
+        // charge
+        "c.weapon_charge.1st": "controller.animation.weapon_charge.1st",
+        "c.weapon_charge.3st": "controller.animation.weapon_charge.3st",
+        "c.weapon_charge_action.1st": "controller.animation.weapon_charge_action.1st",
+        "c.weapon_charge_action.3st": "controller.animation.weapon_charge_action.3st",
+        "weapon_charge.idle": "animation.pilot_player.weapon_charge.idle",
+        "weapon_charge.powering.1st": "animation.pilot_player.weapon_charge.powering.1st",
+        "weapon_charge.powering.3st": "animation.pilot_player.weapon_charge.powering.3st",
+        "weapon_charge.turn.1st": "animation.pilot_player.weapon_charge.turn.1st",
+        "weapon_charge.idle.1st": "animation.pilot_player.weapon_charge.idle.1st",
+        "weapon_charge.idle.3st": "animation.pilot_player.weapon_charge.idle.3st",
+        "weapon_charge.fire.1st": "animation.pilot_player.weapon_charge.fire.1st",
+        "weapon_charge.fire.3st": "animation.pilot_player.weapon_charge.fire.3st",
+        "weapon_charge.run.1st": "animation.pilot_player.weapon_charge.run.1st",
+        "weapon_charge.run.3st": "animation.pilot_player.weapon_charge.run.3st",
+        "weapon_charge.climb.1st": "animation.pilot_player.weapon_charge.climb.1st",
+        "weapon_charge.climb.3st": "animation.pilot_player.weapon_charge.climb.3st",
+        "weapon_charge.slide.1st": "animation.pilot_player.weapon_charge.slide.1st",
+        "weapon_charge.slide.3st": "animation.pilot_player.weapon_charge.slide.3st",
+        "weapon_charge_star.1st": "animation.pilot_player.weapon_charge_star.1st",
+        // 原版动画
+        "root": "controller.animation.player.root",
+        "base_controller": "controller.animation.player.base",
+        "hudplayer": "controller.animation.player.hudplayer",
+        "humanoid_base_pose": "animation.humanoid.base_pose",
+        "look_at_target": "controller.animation.humanoid.look_at_target",
+        "look_at_target_ui": "animation.player.look_at_target.ui",
+        "look_at_target_default": "animation.humanoid.look_at_target.default",
+        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+        "look_at_target_inverted": "animation.player.look_at_target.inverted",
+        "cape": "animation.player.cape",
+        "move.arms": "animation.player.move.arms",
+        "move.legs": "animation.player.move.legs",
+        "swimming": "animation.player.swim",
+        "swimming.legs": "animation.player.swim.legs",
+        "riding.arms": "animation.player.riding.arms",
+        "riding.legs": "animation.player.riding.legs",
+        "holding": "animation.player.holding",
+        "brandish_spear": "animation.humanoid.brandish_spear",
+        "charging": "animation.humanoid.charging",
+        "attack.positions": "animation.player.attack.positions",
+        "attack.rotations": "animation.player.attack.rotations",
+        "sneaking": "animation.player.sneaking",
+        "bob": "animation.player.bob",
+        "damage_nearby_mobs": "animation.humanoid.damage_nearby_mobs",
+        "fishing_rod": "animation.humanoid.fishing_rod",
+        "use_item_progress": "animation.humanoid.use_item_progress",
+        "skeleton_attack": "animation.skeleton.attack",
+        "sleeping": "animation.player.sleeping",
+        "first_person_base_pose": "animation.player.first_person.base_pose",
+        "first_person_empty_hand": "animation.player.first_person.empty_hand",
+        "first_person_swap_item": "animation.player.first_person.swap_item",
+        "first_person_attack_controller": "controller.animation.player.first_person_attack",
+        "first_person_attack_rotation": "animation.player.first_person.attack_rotation",
+        "first_person_vr_attack_rotation": "animation.player.first_person.vr_attack_rotation",
+        "first_person_map_controller": "controller.animation.player.first_person_map",
+        "first_person_map_hold": "animation.player.first_person.map_hold",
+        "first_person_map_hold_attack": "animation.player.first_person.map_hold_attack",
+        "first_person_map_hold_off_hand": "animation.player.first_person.map_hold_off_hand",
+        "first_person_map_hold_main_hand": "animation.player.first_person.map_hold_main_hand",
+        "first_person_crossbow_equipped": "animation.player.first_person.crossbow_equipped",
+        "third_person_crossbow_equipped": "animation.player.crossbow_equipped",
+        "third_person_bow_equipped": "animation.player.bow_equipped",
+        "crossbow_hold": "animation.player.crossbow_hold",
+        "crossbow_controller": "controller.animation.player.crossbow",
+        "shield_block_main_hand": "animation.player.shield_block_main_hand",
+        "shield_block_off_hand": "animation.player.shield_block_off_hand",
+        "blink": "controller.animation.persona.blink",
+
+        // 通用动画触发控制器
+        "not_paperdoll": "controller.animation.not_paperdoll"
+      },
+      "scripts": {
+        "scale": "0.9375",
+        "initialize": [
+          "variable.is_holding_right = 0.0;",
+          "variable.is_blinking = 0.0;",
+          "variable.last_blink_time = 0.0;",
+          "variable.hand_bob = 0.0;",
+          "v.health_last = !v.is_paperdoll && q.property('titan:titan_health');" // 白条过渡
+        ],
+        "pre_animation": [
+          "variable.helmet_layer_visible = 1.0;",
+          "variable.leg_layer_visible = 1.0;",
+          "variable.boot_layer_visible = 1.0;",
+          "variable.chest_layer_visible = 1.0;",
+          "variable.attack_body_rot_y = Math.sin(360*Math.sqrt(variable.attack_time)) * 5.0;",
+          "variable.tcos0 = (math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+          "variable.first_person_rotation_factor = math.sin((1 - variable.attack_time) * 180.0);",
+          "variable.hand_bob = query.life_time < 0.01 ? 0.0 : variable.hand_bob + ((query.is_on_ground && query.is_alive ? math.clamp(math.sqrt(math.pow(query.position_delta(0), 2.0) + math.pow(query.position_delta(2), 2.0)), 0.0, 0.1) : 0.0) - variable.hand_bob) * 0.02;",
+          "variable.map_angle = math.clamp(1 - variable.player_x_rotation / 45.1, 0.0, 1.0);",
+          "variable.item_use_normalized = query.main_hand_item_use_duration / query.main_hand_item_max_duration;",
+          "variable.random_choices = math.random(0, 100);",
+          
+          "variable.is_pilot = !v.is_paperdoll && q.is_item_name_any('slot.armor.head', 0, 'coldsink:pilot_helmet');",
+          "variable.pilot_handle_weapon = !v.is_paperdoll && ( q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_r201') || q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_charge') );",
+          "variable.weapon_value_infinite = !v.is_paperdoll && ( ( q.variant == 0 && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_charge') ) || ( (q.variant == 4 || q.variant == 6) && q.is_sheared ) );",
+
+          // 登机与处决需要同时渲染泰坦与铁驭时
+          "variable.titan_common_pilot_render = !v.is_paperdoll && ( (q.property('titan:action') > 109 && q.property('titan:action') < 180 && math.mod(q.property('titan:action'), 10) < 6) || q.property('titan:action') == 177 );",
+          "variable.pilot_no_idle = !v.is_paperdoll && ( !v.pilot_handle_weapon && ( q.is_sprinting || q.property('titan:other_action') == 3 ) || (q.property('pilot:rodeo_status') > 0 && q.property('pilot:rodeo_status') != 4) );",
+          "variable.pilot_yes_idle = !v.is_paperdoll && ( q.property('pilot:rodeo_status') == 0 || q.property('pilot:rodeo_status') == 4 );"
+        ],
+        "animate": [
+          "not_paperdoll",
+          {
+            "pilot_player.titan_eject.1st": "q.is_ignited && v.is_first_person"
+          }
+        ]
+      },
+      "render_controllers": [
+        // 泰坦第一人称驾驶舱
+        {
+          "controller.render.titan_cabin_frame": "q.variant > 0 && v.is_first_person"
+        },
+        {
+          "controller.render.titan_cabin_glass": "q.variant > 0 && v.is_first_person"
+        },
+        {
+          "controller.render.titan_cabin_danger": "q.variant > 0 && v.is_first_person && !v.is_paperdoll && q.property('titan:titan_danger')"
+        },
+        {
+          "controller.render.titan_cabin_base_normal": "q.variant > 0 && v.is_first_person"
+        },
+        // 队伍标识
+        {
+          "controller.render.team_display_blue.1st": "!v.is_paperdoll && (v.is_pilot || v.pilot_handle_weapon) && q.property('titan:team') == 1 && v.is_first_person"
+        },
+        {
+          "controller.render.team_display_red.1st": "!v.is_paperdoll && (v.is_pilot || v.pilot_handle_weapon) && q.property('titan:team') == 2 && v.is_first_person"
+        },
+        // UI（含帝王升级技能UI）
+        {
+          "controller.render.feedback_star.1st": "v.is_first_person"
+        },
+        {
+          "controller.render.core_ui.1st": "v.is_first_person && v.is_pilot"
+        },
+        {
+          "controller.render.core_ui_value.1st": "v.is_first_person && v.is_pilot"
+        },
+        {
+          "controller.render.core_ui_titan_type.1st": "v.is_first_person && v.is_pilot && q.variant > 0 && !v.is_paperdoll && !(q.variant == 7 && q.property('titan:monarch_now_level') < 3)"
+        },
+        {
+          "controller.render.skill_0_ui.1st": "v.is_first_person && v.is_pilot"
+        },
+        {
+          "controller.render.skill_0_ui_key.1st": "v.is_first_person && v.is_pilot && !v.is_paperdoll && (q.property('titan:skill_cooldown_0') == 0 || q.variant == 1 || q.variant == 5)"
+        },
+        {
+          "controller.render.skill_0_ui_titan_type.1st": "v.is_first_person && v.is_pilot && q.variant > 0 && !v.is_paperdoll && !(q.variant == 7 && ( (q.property('titan:monarch_now_level') > 0 && q.property('titan:monarch_core_one') == 3) || (q.property('titan:monarch_now_level') > 1 && q.property('titan:monarch_core_two') == 3) ))"
+        },
+        {
+          "controller.render.skill_0_ui_monarch_1.1st": "v.is_first_person && v.is_pilot && q.variant == 7 && !v.is_paperdoll && (q.property('titan:monarch_now_level') > 0 && q.property('titan:monarch_core_one') == 3) && !(q.property('titan:monarch_now_level') > 1 && q.property('titan:monarch_core_two') == 3)"
+        },
+        {
+          "controller.render.skill_0_ui_monarch_2.1st": "v.is_first_person && v.is_pilot && q.variant == 7 && !v.is_paperdoll && q.property('titan:monarch_now_level') > 1 && q.property('titan:monarch_core_two') == 3"
+        },
+        {
+          "controller.render.skill_1_ui.1st": "v.is_first_person && v.is_pilot"
+        },
+        {
+          "controller.render.skill_1_ui_key.1st": "v.is_first_person && v.is_pilot && !( q.variant == 1 && !v.is_paperdoll && q.property('titan:skill_cooldown_0') > 90 ) && (q.property('titan:skill_cooldown_1') == 0 || (q.variant == 7 && q.property('titan:monarch_now_level') > 2 && q.property('titan:monarch_core_three') == 1) )"
+        },
+        {
+          "controller.render.skill_1_ui_titan_type.1st": "v.is_first_person && v.is_pilot && q.variant > 0 && !(q.variant == 7 && !v.is_paperdoll && ( (q.property('titan:monarch_now_level') > 0 && q.property('titan:monarch_core_one') == 2) || (q.property('titan:monarch_now_level') > 2 && q.property('titan:monarch_core_three') == 1) ))"
+        },
+        {
+          "controller.render.skill_1_ui_monarch_1.1st": "v.is_first_person && v.is_pilot && q.variant == 7 && !v.is_paperdoll && (q.property('titan:monarch_now_level') > 0 && q.property('titan:monarch_core_one') == 2) && !(q.property('titan:monarch_now_level') > 2 && q.property('titan:monarch_core_three') == 1)"
+        },
+        {
+          "controller.render.skill_1_ui_monarch_2.1st": "v.is_first_person && v.is_pilot && q.variant == 7 && !v.is_paperdoll && q.property('titan:monarch_now_level') > 2 && q.property('titan:monarch_core_three') == 1"
+        },
+        {
+          "controller.render.skill_2_ui.1st": "v.is_first_person && v.is_pilot"
+        },
+        {
+          "controller.render.skill_2_ui_key.1st": "v.is_first_person && v.is_pilot && !v.is_paperdoll && q.property('titan:skill_cooldown_2') == 0 && !( q.variant == 1 && q.property('titan:skill_cooldown_0') > 130 )"
+        },
+        {
+          "controller.render.skill_2_ui_titan_type.1st": "v.is_first_person && v.is_pilot && q.variant > 0 && !(q.variant == 7 && !v.is_paperdoll && q.property('titan:monarch_now_level') > 1 && q.property('titan:monarch_core_two') == 1)"
+        },
+        {
+          "controller.render.skill_2_ui_monarch_1.1st": "v.is_first_person && v.is_pilot && q.variant == 7 && !v.is_paperdoll && q.property('titan:monarch_now_level') > 1 && q.property('titan:monarch_core_two') == 1"
+        },
+        {
+          "controller.render.skill_sp_ui.1st": "v.is_first_person && v.is_pilot && !v.is_paperdoll && (q.property('titan:skill_charge_sp') > 0 || q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_ordinary_item') || q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_powerful_item') || q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_overload_item'))"
+        },
+        {
+          "controller.render.skill_sp_ui_key.1st": "v.is_first_person && v.is_pilot && !v.is_paperdoll && (q.property('titan:skill_charge_sp') > 0 || q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_ordinary_item') || q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_powerful_item'))"
+        },
+        {
+          "controller.render.skill_sp_battery_ordinary.1st": "v.is_first_person && v.is_pilot && !v.is_paperdoll && q.variant == 0 && q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_ordinary_item')"
+        },
+        {
+          "controller.render.skill_sp_battery_powerful.1st": "v.is_first_person && v.is_pilot && !v.is_paperdoll && q.variant == 0 && q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_powerful_item')"
+        },
+        {
+          "controller.render.skill_sp_battery_overload.1st": "v.is_first_person && v.is_pilot && !v.is_paperdoll && q.variant == 0 && q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_overload_item')"
+        },
+        {
+          "controller.render.skill_sp_elesmoke.1st": "v.is_first_person && v.is_pilot && !v.is_paperdoll && q.variant > 0 && q.property('titan:skill_charge_sp') > 0 && !(q.variant == 7 && q.property('titan:monarch_now_level') > 1 && q.property('titan:monarch_core_two') == 2)"
+        },
+        {
+          "controller.render.skill_sp_elesmoke_pro.1st": "v.is_first_person && v.is_pilot && !v.is_paperdoll && q.variant == 7 && q.property('titan:skill_charge_sp') > 0 && q.property('titan:monarch_now_level') > 1 && q.property('titan:monarch_core_two') == 2"
+        },
+        {
+          "controller.render.skill_3_ui_key.1st": "v.is_first_person && v.is_pilot && !v.is_paperdoll && (q.property('titan:core_value') == 100 || (q.variant == 0 && q.property('pilot:has_titan') > 0))"
+        },
+        {
+          "controller.render.weapon_ui.1st": "v.is_first_person && (v.is_pilot || v.pilot_handle_weapon)"
+        },
+        {
+          "controller.render.weapon_ui_titan_type.1st": "v.is_first_person && q.variant > 0 && !(q.variant == 4 && q.is_sheared) && !v.is_paperdoll && !( q.variant == 7 && ((q.property('titan:monarch_now_level') > 0 && q.property('titan:monarch_core_one') == 1) || (q.property('titan:monarch_now_level') > 2 && q.property('titan:monarch_core_three') == 3)) )"
+        },
+        {
+          "controller.render.weapon_ui_ronin_melee.1st": "v.is_first_person && q.variant == 4 && q.is_sheared"
+        },
+        {
+          "controller.render.weapon_ui_monarch_arc.1st": "v.is_first_person && q.variant == 7 && !v.is_paperdoll && (q.property('titan:monarch_now_level') > 0 && q.property('titan:monarch_core_one') == 1) && !(q.property('titan:monarch_now_level') > 2 && q.property('titan:monarch_core_three') == 3)"
+        },
+        {
+          "controller.render.weapon_ui_monarch_final.1st": "v.is_first_person && q.variant == 7 && !v.is_paperdoll && !(q.property('titan:monarch_now_level') > 0 && q.property('titan:monarch_core_one') == 1) && (q.property('titan:monarch_now_level') > 2 && q.property('titan:monarch_core_three') == 3)"
+        },
+        {
+          "controller.render.weapon_ui_monarch_arc_final.1st": "v.is_first_person && q.variant == 7 && !v.is_paperdoll && (q.property('titan:monarch_now_level') > 0 && q.property('titan:monarch_core_one') == 1) && (q.property('titan:monarch_now_level') > 2 && q.property('titan:monarch_core_three') == 3)"
+        },
+        {
+          "controller.render.weapon_ui_value.1st": "v.is_first_person && (v.is_pilot || v.pilot_handle_weapon) && !v.weapon_value_infinite"
+        },
+        {
+          "controller.render.weapon_ui_infinite.1st": "v.is_first_person && (v.is_pilot || v.pilot_handle_weapon) && v.weapon_value_infinite"
+        },
+        {
+          "controller.render.energy_bar.1st": "v.is_first_person && q.variant == 1"
+        },
+        // 铁驭核心UI（召唤泰坦）
+        {
+          "controller.render.core_ui_pilot_ion.1st": "v.is_first_person && v.is_pilot && q.variant == 0 && !v.is_paperdoll && q.property('pilot:titan_type') == 1"
+        },
+        {
+          "controller.render.core_ui_pilot_tone.1st": "v.is_first_person && v.is_pilot && q.variant == 0 && !v.is_paperdoll && q.property('pilot:titan_type') == 2"
+        },
+        {
+          "controller.render.core_ui_pilot_northstar.1st": "v.is_first_person && v.is_pilot && q.variant == 0 && !v.is_paperdoll && q.property('pilot:titan_type') == 3"
+        },
+        {
+          "controller.render.core_ui_pilot_ronin.1st": "v.is_first_person && v.is_pilot && q.variant == 0 && !v.is_paperdoll && q.property('pilot:titan_type') == 4"
+        },
+        {
+          "controller.render.core_ui_pilot_scorch.1st": "v.is_first_person && v.is_pilot && q.variant == 0 && !v.is_paperdoll && q.property('pilot:titan_type') == 5"
+        },
+        {
+          "controller.render.core_ui_pilot_legion.1st": "v.is_first_person && v.is_pilot && q.variant == 0 && !v.is_paperdoll && q.property('pilot:titan_type') == 6"
+        },
+        {
+          "controller.render.core_ui_pilot_monarch.1st": "v.is_first_person && v.is_pilot && q.variant == 0 && !v.is_paperdoll && q.property('pilot:titan_type') == 7"
+        },
+        // 泰坦第一人称血条
+        {
+          "controller.render.health_bar_3.1st": "( q.variant == 3 || q.variant == 4 ) && v.is_first_person && !v.is_paperdoll && !q.property('titan:titan_danger')"
+        },
+        {
+          "controller.render.health_bar_3_danger.1st": "( q.variant == 3 || q.variant == 4 ) && v.is_first_person && !v.is_paperdoll && q.property('titan:titan_danger')"
+        },
+        {
+          "controller.render.health_bar_4.1st": "( q.variant == 1 || q.variant == 2 || (q.variant == 7 && !q.is_sheared) ) && v.is_first_person && !v.is_paperdoll && !q.property('titan:titan_danger')"
+        },
+        {
+          "controller.render.health_bar_4_danger.1st": "( q.variant == 1 || q.variant == 2 || (q.variant == 7 && !q.is_sheared) ) && v.is_first_person && !v.is_paperdoll && q.property('titan:titan_danger')"
+        },
+        {
+          "controller.render.health_bar_5.1st": "( q.variant == 5 || q.variant == 6 ) && v.is_first_person && !v.is_paperdoll && !q.property('titan:titan_danger')"
+        },
+        {
+          "controller.render.health_bar_5_danger.1st": "( q.variant == 5 || q.variant == 6 ) && v.is_first_person && !v.is_paperdoll && q.property('titan:titan_danger')"
+        },
+        {
+          "controller.render.health_bar_6.1st": "( (q.variant == 7 && q.is_sheared) ) && v.is_first_person && !v.is_paperdoll && !q.property('titan:titan_danger')"
+        },
+        {
+          "controller.render.health_bar_6_danger.1st": "( (q.variant == 7 && q.is_sheared) ) && v.is_first_person && !v.is_paperdoll && q.property('titan:titan_danger')"
+        },
+        // 泰坦第一人称护盾条
+        {
+          "controller.render.shield_bar_3.1st": "(q.variant == 3 || q.variant == 4) && !v.is_paperdoll && q.property('titan:shield_health') < 26 && v.is_first_person"
+        },
+        {
+          "controller.render.shield_bar_4.1st": "(q.variant == 1 || q.variant == 2 || (q.variant == 7 && !q.is_sheared)) && !v.is_paperdoll && q.property('titan:shield_health') < 26 && v.is_first_person"
+        },
+        {
+          "controller.render.shield_bar_5.1st": "(q.variant == 5 || q.variant == 6) && !v.is_paperdoll && q.property('titan:shield_health') < 26 && v.is_first_person"
+        },
+        {
+          "controller.render.shield_bar_6.1st": "((q.variant == 7 && q.is_sheared) && !v.is_paperdoll && q.property('titan:shield_health') < 26 && v.is_first_person)"
+        },
+        // 泰坦第一人称冲刺条
+        {
+          "controller.render.spurt_bar_1": "( q.variant == 5 || q.variant == 6 ) && v.is_first_person"
+        },
+        {
+          "controller.render.spurt_bar_2": "( q.variant == 1 || q.variant == 2 || q.variant == 7 ) && v.is_first_person"
+        },
+        {
+          "controller.render.spurt_bar_3": "( q.variant == 3 || q.variant == 4 ) && v.is_first_person && !(q.variant == 4 && q.is_sheared)"
+        },
+        {
+          "controller.render.spurt_bar_3_yellow": "v.is_first_person && q.variant == 4 && q.is_sheared"
+        },
+        // 泰坦渲染
+        {
+          "controller.render.ion_titan": "(q.variant == 1 && !v.is_first_person) || (!v.is_paperdoll && q.property('titan:action') > 109 && q.property('titan:action') < 120)"
+        },
+        {
+          "controller.render.ion_titan_light_blue": "( (q.variant == 1 && !v.is_first_person) || (!v.is_paperdoll && q.property('titan:action') > 109 && q.property('titan:action') < 120) ) && q.property('titan:team') == 1"
+        },
+        {
+          "controller.render.ion_titan_light_red": "( (q.variant == 1 && !v.is_first_person) || (!v.is_paperdoll && q.property('titan:action') > 109 && q.property('titan:action') < 120) ) && q.property('titan:team') == 2"
+        },
+        {
+          "controller.render.ion_titan.1st": "q.variant == 1 && v.is_first_person"
+        },
+        {
+          "controller.render.ion_core.1st": "q.variant == 1 && v.is_first_person && !v.is_paperdoll && q.property('titan:action') > 17 && q.property('titan:action') < 20"
+        },
+        {
+          "controller.render.ion_weapon_star.1st": "q.variant == 1 && v.is_first_person && !v.is_paperdoll && q.property('titan:action') < 5"
+        },
+        {
+          "controller.render.ion_laser_star.1st": "q.variant == 1 && v.is_first_person && !v.is_paperdoll && q.property('titan:action') > 10 && q.property('titan:action') < 14"
+        },
+        {
+          "controller.render.tone_titan": "(q.variant == 2 && !v.is_first_person) || (!v.is_paperdoll && q.property('titan:action') > 119 && q.property('titan:action') < 130)"
+        },
+        {
+          "controller.render.tone_titan_light_blue": "( (q.variant == 2 && !v.is_first_person) || (!v.is_paperdoll && q.property('titan:action') > 119 && q.property('titan:action') < 130) ) && q.property('titan:team') == 1"
+        },
+        {
+          "controller.render.tone_titan_light_red": "( (q.variant == 2 && !v.is_first_person) || (!v.is_paperdoll && q.property('titan:action') > 119 && q.property('titan:action') < 130) ) && q.property('titan:team') == 2"
+        },
+        {
+          "controller.render.tone_titan.1st": "q.variant == 2 && v.is_first_person"
+        },
+        {
+          "controller.render.tone_weapon_star.1st": "q.variant == 2 && v.is_first_person && !v.is_paperdoll && q.property('titan:action') < 5"
+        },
+        {
+          "controller.render.tone_missile_star.1st": "q.variant == 2 && v.is_first_person && !v.is_paperdoll && q.property('titan:action') > 10 && q.property('titan:action') < 14"
+        },
+        {
+          "controller.render.tone_missile_big_star.1st": "q.variant == 2 && v.is_first_person && q.is_sheared"
+        },
+        {
+          "controller.render.northstar_titan": "(q.variant == 3 && !v.is_first_person) || (!v.is_paperdoll && q.property('titan:action') > 129 && q.property('titan:action') < 140)"
+        },
+        {
+          "controller.render.northstar_titan_light_blue": "( (q.variant == 3 && !v.is_first_person) || (!v.is_paperdoll && q.property('titan:action') > 129 && q.property('titan:action') < 140) ) && q.property('titan:team') == 1"
+        },
+        {
+          "controller.render.northstar_titan_light_red": "( (q.variant == 3 && !v.is_first_person) || (!v.is_paperdoll && q.property('titan:action') > 129 && q.property('titan:action') < 140) ) && q.property('titan:team') == 2"
+        },
+        {
+          "controller.render.northstar_titan.1st": "q.variant == 3 && v.is_first_person"
+        },
+        {
+          "controller.render.northstar_weapon_star.1st": "q.variant == 3 && v.is_first_person && !v.is_paperdoll && (q.property('titan:action') < 5 || q.property('titan:action') == 11)"
+        },
+        {
+          "controller.render.northstar_missile_star.1st": "q.variant == 3 && v.is_first_person && !v.is_paperdoll && q.property('titan:action') == 12"
+        },
+        {
+          "controller.render.northstar_missile_big_star.1st": "q.variant == 3 && v.is_first_person && !v.is_paperdoll && q.property('titan:action') == 13"
+        },
+        {
+          "controller.render.ronin_titan": "(q.variant == 4 && !v.is_first_person && !q.is_saddled) || (!v.is_paperdoll && q.property('titan:action') > 139 && q.property('titan:action') < 150)"
+        },
+        {
+          "controller.render.ronin_titan_light_blue": "( (q.variant == 4 && !v.is_first_person && !q.is_saddled) || (!v.is_paperdoll && q.property('titan:action') > 139 && q.property('titan:action') < 150) ) && q.property('titan:team') == 1"
+        },
+        {
+          "controller.render.ronin_titan_light_red": "( (q.variant == 4 && !v.is_first_person && !q.is_saddled) || (!v.is_paperdoll && q.property('titan:action') > 139 && q.property('titan:action') < 150) ) && q.property('titan:team') == 2"
+        },
+        {
+          "controller.render.ronin_titan.1st": "q.variant == 4 && v.is_first_person && !v.is_paperdoll && q.property('titan:action') != 5 && !(q.property('titan:action') >= 11 && q.property('titan:action') <= 17) && !q.is_sheared"
+        },
+        {
+          "controller.render.ronin_titan_melee.1st": "q.variant == 4 && v.is_first_person && !v.is_paperdoll && (q.property('titan:action') == 5 || (q.property('titan:action') >= 11 && q.property('titan:action') <= 17) || q.is_sheared)"
+        },
+        {
+          "controller.render.ronin_gray_view": "q.variant == 4 && v.is_first_person && q.is_saddled"
+        },
+        {
+          "controller.render.ronin_weapon_star.1st": "q.variant == 4 && v.is_first_person && !v.is_paperdoll && q.property('titan:action') < 5"
+        },
+        {
+          "controller.render.scorch_titan": "(q.variant == 5 && !v.is_first_person) || (!v.is_paperdoll && q.property('titan:action') > 149 && q.property('titan:action') < 160)"
+        },
+        {
+          "controller.render.scorch_titan_light_blue": "( (q.variant == 5 && !v.is_first_person) || (!v.is_paperdoll && q.property('titan:action') > 149 && q.property('titan:action') < 160) ) && q.property('titan:team') == 1"
+        },
+        {
+          "controller.render.scorch_titan_light_red": "( (q.variant == 5 && !v.is_first_person) || (!v.is_paperdoll && q.property('titan:action') > 149 && q.property('titan:action') < 160) ) && q.property('titan:team') == 2"
+        },
+        {
+          "controller.render.scorch_titan.1st": "q.variant == 5 && v.is_first_person"
+        },
+        {
+          "controller.render.scorch_weapon_star.1st": "q.variant == 5 && v.is_first_person && !v.is_paperdoll && q.property('titan:action') < 5"
+        },
+        {
+          "controller.render.legion_titan": "(q.variant == 6 && !v.is_first_person) || (!v.is_paperdoll && q.property('titan:action') > 159 && q.property('titan:action') < 170)"
+        },
+        {
+          "controller.render.legion_titan_light_blue": "( (q.variant == 6 && !v.is_first_person) || (!v.is_paperdoll && q.property('titan:action') > 159 && q.property('titan:action') < 170) ) && q.property('titan:team') == 1"
+        },
+        {
+          "controller.render.legion_titan_light_red": "( (q.variant == 6 && !v.is_first_person) || (!v.is_paperdoll && q.property('titan:action') > 159 && q.property('titan:action') < 170) ) && q.property('titan:team') == 2"
+        },
+        {
+          "controller.render.legion_titan.1st": "q.variant == 6 && v.is_first_person"
+        },
+        {
+          "controller.render.legion_shield": "q.variant == 6 && !v.is_first_person && q.is_saddled"
+        },
+        {
+          "controller.render.legion_shield.1st": "q.variant == 6 && v.is_first_person && q.is_saddled"
+        },
+        {
+          "controller.render.legion_weapon_star.1st": "q.variant == 6 && v.is_first_person && !v.is_paperdoll && q.property('titan:powering_time') == 0 && q.property('titan:action') != 16"
+        },
+        {
+          "controller.render.legion_weapon_far_star.1st": "q.variant == 6 && v.is_first_person && !v.is_paperdoll && q.property('titan:powering_time') == 1 && !(q.property('titan:action') > 12 && q.property('titan:action') < 17)"
+        },
+        {
+          "controller.render.legion_power_far_star.1st": "q.variant == 6 && v.is_first_person && !v.is_paperdoll && q.property('titan:powering_time') == 1 && q.property('titan:action') > 12 && q.property('titan:action') < 16"
+        },
+        {
+          "controller.render.monarch_titan": "(q.variant == 7 && !v.is_first_person) || (!v.is_paperdoll && q.property('titan:action') > 169 && q.property('titan:action') < 180)"
+        },
+        {
+          "controller.render.monarch_titan_light_blue": "( (q.variant == 7 && !v.is_first_person) || (!v.is_paperdoll && q.property('titan:action') > 169 && q.property('titan:action') < 180) ) && q.property('titan:team') == 1"
+        },
+        {
+          "controller.render.monarch_titan_light_red": "( (q.variant == 7 && !v.is_first_person) || (!v.is_paperdoll && q.property('titan:action') > 169 && q.property('titan:action') < 180) ) && q.property('titan:team') == 2"
+        },
+        {
+          "controller.render.monarch_titan.1st": "q.variant == 7 && v.is_first_person"
+        },
+        {
+          "controller.render.monarch_upgrade_text.1st": "q.variant == 7 && v.is_first_person"
+        },
+        {
+          "controller.render.monarch_missile_powering.1st": "q.variant == 7 && v.is_first_person && !v.is_paperdoll && q.property('titan:action') > 22 && q.property('titan:action') < 27 && q.property('titan:monarch_now_level') == 3 && q.property('titan:monarch_core_three') == 1"
+        },
+        {
+          "controller.render.monarch_weapon_star.1st": "q.variant == 7 && v.is_first_person && !v.is_paperdoll && (q.property('titan:action') < 5 || (q.property('titan:action') > 9 && q.property('titan:action') < 15) )"
+        },
+        {
+          "controller.render.monarch_missile_star.1st": "q.variant == 7 && v.is_first_person && !v.is_paperdoll && q.property('titan:action') > 14 && q.property('titan:action') < 18"
+        },
+        {
+          "controller.render.monarch_energy_star.1st": "q.variant == 7 && v.is_first_person && !v.is_paperdoll && q.property('titan:action') > 19 && q.property('titan:action') < 23"
+        },
+        // 帝王核心图标
+        {
+          "controller.render.core_ui_monarch_11.1st": "q.variant == 7 && !v.is_paperdoll && q.property('titan:monarch_now_level') == 0 && q.property('titan:monarch_core_one') == 1"
+        },
+        {
+          "controller.render.core_ui_monarch_12.1st": "q.variant == 7 && !v.is_paperdoll && q.property('titan:monarch_now_level') == 0 && q.property('titan:monarch_core_one') == 2"
+        },
+        {
+          "controller.render.core_ui_monarch_13.1st": "q.variant == 7 && !v.is_paperdoll && q.property('titan:monarch_now_level') == 0 && q.property('titan:monarch_core_one') == 3"
+        },
+        {
+          "controller.render.core_ui_monarch_21.1st": "q.variant == 7 && !v.is_paperdoll && q.property('titan:monarch_now_level') == 1 && q.property('titan:monarch_core_two') == 1"
+        },
+        {
+          "controller.render.core_ui_monarch_22.1st": "q.variant == 7 && !v.is_paperdoll && q.property('titan:monarch_now_level') == 1 && q.property('titan:monarch_core_two') == 2"
+        },
+        {
+          "controller.render.core_ui_monarch_23.1st": "q.variant == 7 && !v.is_paperdoll && q.property('titan:monarch_now_level') == 1 && q.property('titan:monarch_core_two') == 3"
+        },
+        {
+          "controller.render.core_ui_monarch_31.1st": "q.variant == 7 && !v.is_paperdoll && q.property('titan:monarch_now_level') == 2 && q.property('titan:monarch_core_three') == 1"
+        },
+        {
+          "controller.render.core_ui_monarch_32.1st": "q.variant == 7 && !v.is_paperdoll && q.property('titan:monarch_now_level') == 2 && q.property('titan:monarch_core_three') == 2"
+        },
+        {
+          "controller.render.core_ui_monarch_33.1st": "q.variant == 7 && !v.is_paperdoll && q.property('titan:monarch_now_level') == 2 && q.property('titan:monarch_core_three') == 3"
+        },
+        // 铁驭渲染
+        {
+          "controller.render.pilot_player": "(q.variant == 0 && (v.is_pilot || v.pilot_handle_weapon)) || v.titan_common_pilot_render || q.is_ignited"
+        },
+        {
+          "controller.render.pilot_health_bar_blue": "q.variant == 0 && (v.is_pilot || v.pilot_handle_weapon) && q.property('titan:team') == 1"
+        },
+        {
+          "controller.render.pilot_health_bar_red": "q.variant == 0 && (v.is_pilot || v.pilot_handle_weapon) && q.property('titan:team') == 2"
+        },
+        // 铁驭电池
+        {
+          "controller.render.pilot_back_battery_1": "!v.is_paperdoll && v.is_pilot && ( q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_ordinary_item') || q.property('titan:action') == 177 ) && (q.property('pilot:rodeo_status') == 0 || q.property('pilot:rodeo_status') == 2) && !v.is_first_person"
+        },
+        {
+          "controller.render.pilot_back_battery_2": "!v.is_paperdoll && v.is_pilot && q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_powerful_item') && (q.property('pilot:rodeo_status') == 0 || q.property('pilot:rodeo_status') == 2) && !v.is_first_person"
+        },
+        {
+          "controller.render.pilot_back_battery_3": "!v.is_paperdoll && v.is_pilot && q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_overload_item') && !v.is_first_person"
+        },
+        {
+          "controller.render.pilot_back_battery_1_light": "!v.is_paperdoll && v.is_pilot && ( q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_ordinary_item') || q.property('titan:action') == 177 ) && (q.property('pilot:rodeo_status') == 0 || q.property('pilot:rodeo_status') == 2) && !v.is_first_person"
+        },
+        {
+          "controller.render.pilot_back_battery_2_light": "!v.is_paperdoll && v.is_pilot && q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_powerful_item') && !v.is_first_person"
+        },
+        {
+          "controller.render.pilot_back_battery_3_light": "!v.is_paperdoll && v.is_pilot && q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_overload_item') && !v.is_first_person"
+        },
+        {
+          "controller.render.pilot_hand_battery_1": "!v.is_paperdoll && q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_ordinary_item') && (q.property('pilot:rodeo_status') == 1 || q.property('pilot:rodeo_status') == 3)"
+        },
+        {
+          "controller.render.pilot_hand_battery_2": "!v.is_paperdoll && q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_powerful_item') && (q.property('pilot:rodeo_status') == 1 || q.property('pilot:rodeo_status') == 3)"
+        },
+        {
+          "controller.render.pilot_hand_battery_1_light": "!v.is_paperdoll && q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_ordinary_item') && (q.property('pilot:rodeo_status') == 1 || q.property('pilot:rodeo_status') == 3)"
+        },
+        {
+          "controller.render.pilot_hand_battery_2_light": "!v.is_paperdoll && q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_powerful_item') && (q.property('pilot:rodeo_status') == 1 || q.property('pilot:rodeo_status') == 3)"
+        },
+        {
+          "controller.render.pilot_hand_grenade": "!v.is_paperdoll && q.property('pilot:rodeo_status') == 2"
+        },
+        // R201
+        {
+          "controller.render.weapon_r201": "q.variant == 0 && !v.is_paperdoll && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_r201') && q.property('titan:other_action') != 3 && v.pilot_yes_idle"
+        },
+        {
+          "controller.render.weapon_r201_bullet_count_blue": "q.variant == 0 && !v.is_paperdoll && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_r201') && q.property('titan:weapon_value') > 15 && q.property('titan:other_action') != 3 && v.pilot_yes_idle"
+        },
+        {
+          "controller.render.weapon_r201_bullet_count_orange": "q.variant == 0 && !v.is_paperdoll && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_r201') && q.property('titan:weapon_value') < 16 && q.property('titan:weapon_value') > 5 && q.property('titan:other_action') != 3 && v.pilot_yes_idle"
+        },
+        {
+          "controller.render.weapon_r201_bullet_count_red": "q.variant == 0 && !v.is_paperdoll && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_r201') && q.property('titan:weapon_value') < 6 && q.property('titan:other_action') != 3 && v.pilot_yes_idle"
+        },
+        {
+          "controller.render.weapon_ui_r201.1st": "v.is_first_person && q.variant == 0 && !v.is_paperdoll && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_r201')"
+        },
+        {
+          "controller.render.weapon_r201_star.1st": "v.is_first_person && q.variant == 0 && !v.is_paperdoll && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_r201')"
+        },
+        // 电笔
+        {
+          "controller.render.weapon_charge": "q.variant == 0 && !v.is_paperdoll && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_charge') && q.property('titan:other_action') != 3 && v.pilot_yes_idle"
+        },
+        {
+          "controller.render.weapon_ui_charge.1st": "v.is_first_person && q.variant == 0 && !v.is_paperdoll && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_charge')"
+        },
+        {
+          "controller.render.weapon_charge_star.1st": "v.is_first_person && q.variant == 0 && !v.is_paperdoll && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_charge')"
+        },
+        // 原版渲染
+        {
+          "controller.render.player.first_person": "!v.is_pilot && !v.titan_common_pilot_render && v.is_first_person && !v.pilot_handle_weapon"
+        },
+        {
+          "controller.render.player.third_person": "!v.is_pilot && !v.titan_common_pilot_render && !v.is_first_person && !v.map_face_icon && !v.pilot_handle_weapon"
+        },
+        {
+          "controller.render.player.map": "!(q.variant > 0) && v.map_face_icon"
+        },
+        {
+          "controller.render.player.first_person_bloom": "v.is_first_person"
+        },
+        {
+          "controller.render.player.third_person_bloom": "!v.is_first_person && !v.map_face_icon"
+        }
+      ],
+      "enable_attachables": true
+    }
+  }
+}

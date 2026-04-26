@@ -1,0 +1,40 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.tone_shield",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 19,
+				"visible_bounds_height": 17,
+				"visible_bounds_offset": [0, 5.5, 0]
+			},
+			"bones": [
+				{
+					"name": "tone_shield",
+					"pivot": [0, 0, 0],
+					"locators": {
+						"tone_shield_mid": [0, 0, 0],
+						"tone_shield_right_in": {
+							"offset": [26.5, 0, -6],
+							"rotation": [0, 30, 0]
+						},
+						"tone_shield_right_out": {
+							"offset": [45, 0, -26],
+							"rotation": [0, 60, 0]
+						},
+						"tone_shield_left_in": {
+							"offset": [-26.5, 0, -6],
+							"rotation": [0, -30, 0]
+						},
+						"tone_shield_left_out": {
+							"offset": [-45, 0, -26],
+							"rotation": [0, -60, 0]
+						}
+					}
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,26 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:northstar_trap_throw_blue",
+      "animations": {
+        "throw": "animation.northstar_titan.trap_throw"
+      },
+      "scripts": {
+        "animate": [
+          "throw"
+        ]
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/titan/northstar/northstar_trap"
+      },
+      "geometry": {
+        "default": "geometry.northstar_trap"
+      },
+      "render_controllers": [ "controller.render.default" ]
+    }
+  }
+}

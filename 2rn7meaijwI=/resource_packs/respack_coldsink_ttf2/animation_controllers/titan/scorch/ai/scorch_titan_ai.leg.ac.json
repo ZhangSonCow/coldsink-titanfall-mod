@@ -1,0 +1,90 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.scorch_titan_ai.leg": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "scorch_titan.idle.leg"
+          ],
+          "transitions": [
+            {
+              "walk": "q.ground_speed > 1.0 && q.ground_speed < 8.0"
+            },
+            {
+              "flee": "q.variant == 2 && q.ground_speed > 1.0"
+            },
+            {
+              "skill": "q.property('titan:action') == 11 || q.property('titan:action') == 15"
+            }
+          ],
+          "blend_transition": 0.5
+        },
+        "walk": {
+          "animations": [
+            "scorch_titan.walk.leg"
+          ],
+          "transitions": [
+            {
+              "run": "q.ground_speed >= 8.0 && q.out_of_control"
+            },
+            {
+              "default": "q.ground_speed < 0.5"
+            },
+            {
+              "flee": "q.variant == 2 && q.ground_speed > 1.0"
+            },
+            {
+              "skill": "q.property('titan:action') == 11 || q.property('titan:action') == 15"
+            }
+          ],
+          "blend_transition": 0.5
+        },
+        "run": {
+          "animations": [
+            "scorch_titan.move.leg"
+          ],
+          "transitions": [
+            {
+              "default": "q.ground_speed < 0.5"
+            },
+            {
+              "flee": "q.variant == 2 && q.ground_speed > 1.0"
+            },
+            {
+              "skill": "q.property('titan:action') == 11 || q.property('titan:action') == 15"
+            }
+          ],
+          "blend_transition": 0.5
+        },
+        "flee": {
+          "animations": [
+            "scorch_titan.spurt.leg"
+          ],
+          "transitions": [
+            {
+              "default": "q.variant != 2"
+            },
+            {
+              "skill": "q.property('titan:action') == 11 || q.property('titan:action') == 15"
+            }
+          ],
+          "blend_transition": 0.5,
+          "on_entry": [
+            "v.flee_degree = q.body_y_rotation;",
+            "v.damagetimer = 0;"
+          ]
+        },
+        "skill": {
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "!(q.property('titan:action') == 11 || q.property('titan:action') == 15)"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

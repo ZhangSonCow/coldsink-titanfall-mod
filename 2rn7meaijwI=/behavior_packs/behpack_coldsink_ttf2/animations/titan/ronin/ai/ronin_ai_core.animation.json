@@ -1,0 +1,14 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ronin_ai_core.func": {
+      "loop": false,
+      "animation_length": 20.0,
+      "timeline": {
+        "12.0": [
+          "/event entity @s clear_titan_sheared"
+        ]
+      }
+    }
+  }
+}

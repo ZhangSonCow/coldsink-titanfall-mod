@@ -1,0 +1,410 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.monarch_action.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "fire_normal": "q.property('titan:action') == 11 && q.property('titan:weapon_value') > 0"
+            },
+            {
+              "fire_arc": "q.property('titan:action') == 12 && q.property('titan:weapon_value') > 0"
+            },
+            {
+              "fire_final": "q.property('titan:action') == 13 && q.property('titan:weapon_value') > 0"
+            },
+            {
+              "fire_arc_final": "q.property('titan:action') == 14 && q.property('titan:weapon_value') > 0"
+            },
+            {
+              "reload_arc": "q.property('titan:action') == 4 && q.property('titan:monarch_now_level') > 0 && q.property('titan:monarch_core_one') == 1"
+            },
+            {
+              "reload": "q.property('titan:action') == 4"
+            },
+            {
+              "melee": "q.property('titan:action') == 5"
+            },
+            {
+              "missile_pre": "q.property('titan:action') == 15"
+            },
+            {
+              "reflash": "q.property('titan:action') == 18"
+            },
+            {
+              "reflash_fast": "q.property('titan:action') == 19"
+            },
+            {
+              "energy_pre": "q.property('titan:action') == 20"
+            },
+            {
+              "missile_final_pre": "q.property('titan:action') == 23"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_0",
+            "/tag @s remove terminate",
+            "/event entity @s[tag=keep_fire,scores={monarch_bullet=1..},tag=!monarch_core_11,tag=!monarch_core_33] set_action_11",
+            "/event entity @s[tag=keep_fire,scores={monarch_bullet=1..},tag=monarch_core_11,tag=!monarch_core_33] set_action_12",
+            "/event entity @s[tag=keep_fire,scores={monarch_bullet=1..},tag=!monarch_core_11,tag=monarch_core_33] set_action_13",
+            "/event entity @s[tag=keep_fire,scores={monarch_bullet=1..},tag=monarch_core_11,tag=monarch_core_33] set_action_14",
+            "/event entity @s[tag=!monarch_core_21,scores={monarch_bullet=..0},tag=!keep_skill_mid,tag=!keep_skill_q,tag=!keep_skill_g] set_action_4",
+            "/event entity @s[tag=monarch_core_21,scores={monarch_bullet=..0},tag=!keep_skill_mid,tag=!keep_skill_q,tag=!keep_skill_g] set_action_4_sp",
+            "/event entity @s[tag=keep_melee] set_action_5",
+            "/event entity @s[tag=keep_skill_mid,tag=!skill_cooldown_0] set_action_20",
+            "/event entity @s[tag=keep_skill_q,tag=!monarch_core_31,tag=!skill_cooldown_1] set_action_15",
+            "/event entity @s[tag=keep_skill_q,tag=monarch_core_31,tag=!skill_cooldown_1] set_action_23",
+            "/event entity @s[tag=keep_skill_g,tag=!monarch_core_21,tag=!skill_cooldown_2] set_action_18",
+            "/event entity @s[tag=keep_skill_g,tag=monarch_core_21,tag=!skill_cooldown_2] set_action_19",
+            "/tag @s add titan_idle"
+          ],
+          "on_exit": [
+            "/tag @s remove titan_idle"
+          ]
+        },
+        "fire_normal": {
+          "animations": [
+            "monarch_fire"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 11 || (q.property('titan:weapon_value') == 0 && q.property('titan:action') == 0)"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add weapon_fire",
+            "/tag @s add titan_idle"
+          ],
+          "on_exit": [
+            "/tag @s remove weapon_fire",
+            "/tag @s remove titan_idle"
+          ]
+        },
+        "fire_arc": {
+          "animations": [
+            "monarch_fire_arc"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 12 || (q.property('titan:weapon_value') == 0 && q.property('titan:action') == 0)"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add weapon_fire",
+            "/tag @s add titan_idle"
+          ],
+          "on_exit": [
+            "/tag @s remove weapon_fire",
+            "/tag @s remove titan_idle"
+          ]
+        },
+        "fire_final": {
+          "animations": [
+            "monarch_fire_final"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 13 || (q.property('titan:weapon_value') == 0 && q.property('titan:action') == 0)"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add weapon_fire",
+            "/tag @s add titan_idle"
+          ],
+          "on_exit": [
+            "/tag @s remove weapon_fire",
+            "/tag @s remove titan_idle"
+          ]
+        },
+        "fire_arc_final": {
+          "animations": [
+            "monarch_fire_arc_final"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 14 || (q.property('titan:weapon_value') == 0 && q.property('titan:action') == 0)"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add weapon_fire",
+            "/tag @s add titan_idle"
+          ],
+          "on_exit": [
+            "/tag @s remove weapon_fire",
+            "/tag @s remove titan_idle"
+          ]
+        },
+        "reload": {
+          "animations": [
+            "monarch_reload"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 4 && !(q.property('titan:action') > 10 && q.property('titan:action') < 15 && q.property('titan:weapon_value') == 0)"
+            }
+          ],
+          "on_entry": [
+            "/tag @s[scores={monarch_bullet=..39},tag=!monarch_core_21] add monarch_reload",
+            "/execute @s[scores={monarch_bullet=..39},tag=!monarch_core_21] ~~~ playsound monarch_reload @a[tag=!monarch_reload,r=16] ~~~",
+            "/playsound monarch_reload.self @s[scores={monarch_bullet=..39},tag=!monarch_core_21]",
+            "/execute @s[scores={monarch_bullet=..39},tag=monarch_core_21] ~~~ playsound monarch_reload_fast @a[tag=!monarch_reload,r=16] ~~~",
+            "/playsound monarch_reload_fast.self @s[scores={monarch_bullet=..39},tag=monarch_core_21]",
+            "/tag @s[scores={monarch_bullet=..39}] remove monarch_reload",
+            "/tag @s add titan_idle",
+            "/tag @s add titan_reload"
+          ],
+          "on_exit": [
+            "/tag @s remove titan_idle",
+            "/execute @s[scores={monarch_bullet=..39},tag=!monarch_core_21] ~~~ stopsound @a[r=32] monarch_reload",
+            "/execute @s[scores={monarch_bullet=..39},tag=monarch_core_21] ~~~ stopsound @a[r=32] monarch_reload_fast",
+            "/stopsound @s monarch_reload.self",
+            "/stopsound @s monarch_reload_fast.self",
+            "/tag @s remove titan_reload"
+          ]
+        },
+        "reload_arc": {
+          "animations": [
+            "monarch_reload_arc"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 4 && !(q.property('titan:action') > 10 && q.property('titan:action') < 15 && q.property('titan:weapon_value') == 0)"
+            }
+          ],
+          "on_entry": [
+            "/tag @s[scores={monarch_bullet=..49}] add monarch_reload",
+            "/execute @s[scores={monarch_bullet=..49},tag=!monarch_core_21] ~~~ playsound monarch_reload @a[tag=!monarch_reload,r=16] ~~~",
+            "/playsound monarch_reload.self @s[scores={monarch_bullet=..49},tag=!monarch_core_21]",
+            "/execute @s[scores={monarch_bullet=..49},tag=monarch_core_21] ~~~ playsound monarch_reload_fast @a[tag=!monarch_reload,r=16] ~~~",
+            "/playsound monarch_reload_fast.self @s[scores={monarch_bullet=..49},tag=monarch_core_21]",
+            "/tag @s[scores={monarch_bullet=..49}] remove monarch_reload",
+            "/tag @s add titan_idle",
+            "/tag @s add titan_reload"
+          ],
+          "on_exit": [
+            "/tag @s remove titan_idle",
+            "/execute @s[scores={monarch_bullet=..49},tag=!monarch_core_21] ~~~ stopsound @a[r=32] monarch_reload",
+            "/execute @s[scores={monarch_bullet=..49},tag=monarch_core_21] ~~~ stopsound @a[r=32] monarch_reload_fast",
+            "/stopsound @s monarch_reload.self",
+            "/stopsound @s monarch_reload_fast.self",
+            "/tag @s remove titan_reload"
+          ]
+        },
+        "melee": {
+          "animations": [
+            "monarch_melee"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add titan_melee",
+            "/tag @s remove missile_final"
+          ],
+          "on_exit": [
+            "/tag @s remove titan_melee"
+          ]
+        },
+        "missile_pre": {
+          "animations": [
+            "monarch_skill_1_pre"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "missile": "q.property('titan:action') == 16"
+            }
+          ],
+          "on_entry": [
+            "/tag @s remove keep_skill_q"
+          ]
+        },
+        "missile": {
+          "animations": [
+            "monarch_skill_1"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "missile_after": "q.property('titan:action') == 17"
+            }
+          ]
+        },
+        "missile_after": {
+          "animations": [
+            "monarch_skill_1_after"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 17"
+            }
+          ],
+          "on_exit": [
+            "/event entity @s set_cooldown_1_8"
+          ]
+        },
+        "reflash": {
+          "animations": [
+            "monarch_skill_2"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 18"
+            }
+          ],
+          "on_entry": [
+            "/tag @s remove keep_skill_g"
+          ]
+        },
+        "reflash_fast": {
+          "animations": [
+            "monarch_skill_2_fast"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 19"
+            }
+          ],
+          "on_entry": [
+            "/tag @s remove keep_skill_g"
+          ]
+        },
+        "energy_pre": {
+          "animations": [
+            "monarch_skill_0_pre"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "energy": "q.property('titan:action') == 21"
+            },
+            {
+              "melee": "q.property('titan:action') == 5"
+            }
+          ]
+        },
+        "energy": {
+          "animations": [
+            "monarch_skill_0"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "energy_after": "q.property('titan:action') == 22"
+            },
+            {
+              "melee": "q.property('titan:action') == 5"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add energy_ready",
+            "/playsound monarch_skill_0_powering.self @s",
+            // 点按瞬发
+            "/event entity @s[tag=!keep_skill_mid] set_action_22"
+          ],
+          "on_exit": [
+            "/tag @s remove energy_ready",
+            "/stopsound @s monarch_skill_0_powering.self",
+            "/tag @s remove keep_skill_mid"
+          ]
+        },
+        "energy_after": {
+          "animations": [
+            "monarch_skill_0_after"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 22"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[tag=team_blue,tag=!monarch_core_23] monarch_skill_0_shoot_blue",
+            "/event entity @s[tag=team_red,tag=!monarch_core_23] monarch_skill_0_shoot_red",
+            "/event entity @s[tag=team_blue,tag=monarch_core_23] monarch_skill_0_shoot_big_blue",
+            "/event entity @s[tag=team_red,tag=monarch_core_23] monarch_skill_0_shoot_big_red",
+            "/playsound monarch_skill_0_fire @a[r=64] ~~~"
+          ],
+          "on_exit": [
+            "/event entity @s set_cooldown_0_12"
+          ]
+        },
+        "missile_final_pre": {
+          "animations": [
+            "monarch_skill_1_final_pre"
+          ],
+          "transitions": [
+            {
+              "missile_final_powering": "q.property('titan:action') == 24"
+            },
+            {
+              "melee": "q.property('titan:action') == 5"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add missile_final"
+          ]
+        },
+        "missile_final_powering": {
+          "animations": [
+            "monarch_skill_1_final_powering"
+          ],
+          "transitions": [
+            {
+              "missile_final": "q.property('titan:action') == 25"
+            },
+            {
+              "melee": "q.property('titan:action') == 5"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add missile_ready",
+            // 点按瞬发
+            "/event entity @s[tag=!keep_skill_q] set_action_25"
+          ],
+          "on_exit": [
+            "/tag @s remove missile_ready",
+            "/tag @s remove keep_skill_q"
+          ]
+        },
+        "missile_final": {
+          "animations": [
+            "monarch_skill_1_final"
+          ],
+          "transitions": [
+            {
+              "missile_final_after": "(q.property('titan:monarch_core_one') == 2 && q.property('titan:powering_time') == 0) || (q.property('titan:monarch_core_one') != 2 && q.property('titan:powering_time') < 7)"
+            }
+          ]
+        },
+        "missile_final_after": {
+          "animations": [
+            "monarch_skill_1_final_after"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 26"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_26"
+          ],
+          "on_exit": [
+            "/tag @s remove missile_final"
+          ]
+        }
+      }
+    }
+  }
+}

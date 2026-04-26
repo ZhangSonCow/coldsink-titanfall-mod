@@ -1,0 +1,191 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:ion_titan_ai",
+      "animations": {
+        "health_bar": "animation.health_bar_4",
+        "health_bar_danger": "animation.health_bar_4_danger",
+        "titan_loading_fire.particle": "animation.titan_loading_fire.particle",
+        "titan_look_rotate": "animation.titan_look_rotate",
+        "titan_eye_blue": "animation.titan_eye_blue_ion",
+        "titan_eye_red": "animation.titan_eye_red_ion",
+        "titan_weapon_back_yes": "animation.titan_weapon_back_yes",
+        "titan_weapon_back_no": "animation.titan_weapon_back_no",
+        "c.titan_damage_fire": "controller.animation.titan_damage_fire",
+        "damage_fire_1": "animation.ion_titan.damage_fire_1",
+        "damage_fire_2": "animation.ion_titan.damage_fire_2",
+        "damage_fire_3": "animation.ion_titan.damage_fire_3",
+        "damage_fire_4": "animation.ion_titan.damage_fire_4",
+
+        "titan_ai_terminate": "controller.animation.titan_ai_terminate",
+        "terminate_1": "animation.ion_titan.terminate_1",
+        "terminate_2": "animation.ion_titan.terminate_2",
+
+        "c.ion_titan_ai.arm": "controller.animation.ion_titan_ai.arm",
+        "c.ion_titan_ai.leg": "controller.animation.ion_titan_ai.leg",
+        "c.ion_titan_ai.weapon_back": "controller.animation.ion_titan_ai.weapon_back",
+        "c.ion_titan_ai.particle": "controller.animation.ion_titan_ai.particle",
+
+        "ion_titan.loading": "animation.ion_titan.loading",
+        "ion_titan.loading_fast": "animation.ion_titan.loading_fast",
+        "ion_titan.loaded": "animation.ion_titan.loaded",
+        "ion_titan.standing": "animation.ion_titan.standing",
+        "ion_titan.idle.leg": "animation.ion_titan.idle.leg",
+        "ion_titan.walk.leg": "animation.ion_titan.walk.leg",
+        "ion_titan.move.leg": "animation.ion_titan.move.leg",
+        "ion_titan.spurt.leg": "animation.ion_titan.spurt.leg",
+        "ion_titan.idle.arm": "animation.ion_titan.idle.arm",
+        "ion_titan.fire": "animation.ion_titan.fire",
+        "ion_titan.particle": "animation.ion_titan.particle",
+        "ion_titan.rotate": "animation.ion_titan.rotate",
+        "ion_titan.melee": "animation.ion_titan.melee",
+        "ion_titan.shield": "animation.ion_titan.shield",
+        "ion_titan.shield.particle": "animation.ion_titan.shield.particle",
+        "ion_titan.laser": "animation.ion_titan.laser",
+        "ion_titan.laser_after": "animation.ion_titan.laser_after_ai",
+        "ion_titan.core": "animation.ion_titan.core",
+        "ion_titan.core_particle": "animation.ion_titan.core_particle_ai"
+      },
+      "particle_effects": {
+        "titan_loading_around": "titan:titan_loading_around",
+        "titan_loading_break": "titan:titan_loading_break",
+        "titan_load_shield_blue": "titan:titan_load_shield_blue",
+        "titan_load_shield_red": "titan:titan_load_shield_red",
+        "titan_eye_blue_1": "titan:titan_eye_blue_1",
+        "titan_eye_blue_2": "titan:titan_eye_blue_2",
+        "titan_eye_red_1": "titan:titan_eye_red_1",
+        "titan_eye_red_2": "titan:titan_eye_red_2",
+        "titan_damage_fire_1": "titan:titan_damage_fire_1",
+        "titan_damage_fire_2": "titan:titan_damage_fire_2",
+        "titan_damage_fire_3": "titan:titan_damage_fire_3",
+        "titan_damage_fire_4": "titan:titan_damage_fire_4",
+        "titan_spurt_jet": "titan:titan_spurt_jet",
+
+        "ion_fire": "coldsink:ion_fire",
+        "ion_vortex_shield": "titan:ion_vortex_shield_ai",
+        "ion_laser_powering": "titan:ion_laser_powering",
+        "ion_laser": "titan:ion_laser",
+        "ion_core": "titan:ion_core",
+        "ion_reload_smoke": "titan:ion_reload_smoke"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.random_choices = math.random(0, 100);"
+        ],
+        "initialize": [
+          "v.health_last = q.max_health;" // 白条过渡
+        ],
+        "animate": [
+          "c.ion_titan_ai.particle",
+          {
+            "c.ion_titan_ai.weapon_back": "q.property('titan:action') == 0 || (q.property('titan:action') > 10 && q.property('titan:action') < 98)"
+          },
+          {
+            "titan_eye_blue": "q.property('titan:team') == 1"
+          },
+          {
+            "titan_eye_red": "q.property('titan:team') == 2"
+          },
+          {
+            "c.titan_damage_fire": "!q.is_riding"
+          },
+          {
+            "titan_look_rotate": "q.property('titan:action') == 0 || (q.property('titan:action') > 10 && q.property('titan:action') < 98)"
+          },
+          {
+            "c.ion_titan_ai.arm": "q.property('titan:action') == 0 || (q.property('titan:action') > 10 && q.property('titan:action') < 98)"
+          },
+          {
+            "c.ion_titan_ai.leg": "!q.is_riding && q.property('titan:action') == 0 || (q.property('titan:action') > 10 && q.property('titan:action') < 98)"
+          },
+          {
+            "health_bar": "q.health > 2500 && q.property('titan:show_health')"
+          },
+          {
+            "health_bar_danger": "q.health <= 2500 && q.property('titan:show_health')"
+          },
+          {
+            "ion_titan.loading": "q.property('titan:action') == 1"
+          },
+          {
+            "ion_titan.loading_fast": "q.property('titan:action') == 5"
+          },
+          {
+            "titan_loading_fire.particle": "q.property('titan:action') == 1 || q.property('titan:action') == 5"
+          },
+          {
+            "ion_titan.loaded": "q.property('titan:action') == 2"
+          },
+          {
+            "ion_titan.standing": "q.property('titan:action') == 4"
+          },
+          "titan_ai_terminate"
+        ]
+      },
+      "materials": {
+        "default": "entity_alphatest",
+        "blend": "entity_alphablend",
+        "netease_entity_metallic": "netease_entity_alphablend_metallic",
+        "netease_bloom_light_entity": "demo_bloom_entity"
+      },
+      "textures": {
+        "ion_titan": "textures/entity/titan/ion/ion_titan",
+        "ion_titan_light": "textures/entity/titan/ion/ion_titan_light",
+        "ion_titan_light_blue": "textures/entity/titan/ion/ion_titan_light_blue",
+        "ion_titan_light_red": "textures/entity/titan/ion/ion_titan_light_red",
+        "ion_titan_1": "textures/entity/titan/ion/ion_titan_1",
+        "ion_titan_2": "textures/entity/titan/ion/ion_titan_2",
+        "ion_titan_3": "textures/entity/titan/ion/ion_titan_3",
+        "ion_titan_4": "textures/entity/titan/ion/ion_titan_4",
+        "ion_titan_5": "textures/entity/titan/ion/ion_titan_5",
+        "ion_titan_6": "textures/entity/titan/ion/ion_titan_6",
+        "ion_titan_7": "textures/entity/titan/ion/ion_titan_7",
+        "ion_titan_8": "textures/entity/titan/ion/ion_titan_8",
+        "titan_load_shield_blue": "textures/entity/titan/titan_load_shield_blue",
+        "titan_load_shield_red": "textures/entity/titan/titan_load_shield_red",
+        "health_bar": "textures/entity/titan/health_bar_team",
+        "pilot_player": "textures/entity/steve"
+      },
+      "geometry": {
+        "ion_titan": "geometry.ion_titan",
+        "ion_titan_light": "geometry.ion_titan_light",
+        "health_bar_blue": "geometry.health_bar_4_blue",
+        "health_bar_danger_blue": "geometry.health_bar_4_danger_blue",
+        "health_bar_red": "geometry.health_bar_4_red",
+        "health_bar_danger_red": "geometry.health_bar_4_danger_red",
+        "pilot_player": "geometry.pilot_player"
+      },
+      "render_controllers": [
+        {
+          "controller.render.ion_titan_ai": "!q.is_riding && q.property('titan:action') != 3 && !(q.property('titan:action') > 5 && q.property('titan:action') < 10)"
+        },
+        {
+          "controller.render.ion_titan_light_blue": "!q.is_riding && q.property('titan:action') != 3 && !(q.property('titan:action') > 5 && q.property('titan:action') < 10) && q.property('titan:team') == 1"
+        },
+        {
+          "controller.render.ion_titan_light_red": "!q.is_riding && q.property('titan:action') != 3 && !(q.property('titan:action') > 5 && q.property('titan:action') < 10) && q.property('titan:team') == 2"
+        },
+        {
+          "controller.render.health_bar_blue": "q.health > 2500 && q.property('titan:team') == 1 && q.property('titan:action') != 1 && q.property('titan:show_health')"
+        },
+        {
+          "controller.render.health_bar_danger_blue": "q.health <= 2500 && q.property('titan:team') == 1 && q.property('titan:show_health')"
+        },
+        {
+          "controller.render.health_bar_red": "q.health > 2500 && q.property('titan:team') == 2 && q.property('titan:action') != 1 && q.property('titan:show_health')"
+        },
+        {
+          "controller.render.health_bar_danger_red": "q.health <= 2500 && q.property('titan:team') == 2 && q.property('titan:show_health')"
+        },
+        // 被处决时渲染铁驭
+        {
+          "controller.render.pilot_player_ai": "q.property('titan:action') == 10"
+        }
+      ],
+      "spawn_egg": {
+        "texture": "ion_titan_icon"
+      }
+    }
+  }
+}

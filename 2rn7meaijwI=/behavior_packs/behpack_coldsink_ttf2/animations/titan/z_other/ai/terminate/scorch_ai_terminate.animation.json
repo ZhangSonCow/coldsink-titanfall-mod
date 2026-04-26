@@ -1,0 +1,73 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    
+    "animation.scorch_ai_terminate_1.func": {
+      "loop": true,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/execute @s[tag=team_blue] ^^^5 tag @e[tag=team_red,family=titan,tag=titan_danger,c=1] add by_scorch_blue",
+          "/execute @s[tag=team_red] ^^^5 tag @e[tag=team_blue,family=titan,tag=titan_danger,c=1] add by_scorch_red",
+          "/execute @s[tag=team_blue] ^^^5 execute @e[tag=team_red,family=titan,tag=titan_danger,c=1] ~~~ tag @s[tag=has_rider] add dead_has_rider",
+          "/execute @s[tag=team_red] ^^^5 execute @e[tag=team_blue,family=titan,tag=titan_danger,c=1] ~~~ tag @s[tag=has_rider] add dead_has_rider",
+          "/execute @s[tag=team_blue] ^^^5 execute @e[tag=team_red,family=titan,tag=titan_danger,c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ tag @p[tag=is_titan,tag=team_red] add kill_by_scorch_1",
+          "/execute @s[tag=team_red] ^^^5 execute @e[tag=team_blue,family=titan,tag=titan_danger,c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ tag @p[tag=is_titan,tag=team_blue] add kill_by_scorch_1",
+          "/execute @s[tag=team_blue] ^^^5 execute @e[tag=team_red,family=titan,tag=titan_danger,c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ tag @p[tag=is_titan,tag=team_red] add terminate",
+          "/execute @s[tag=team_red] ^^^5 execute @e[tag=team_blue,family=titan,tag=titan_danger,c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ tag @p[tag=is_titan,tag=team_blue] add terminate",
+          "/execute @s[tag=team_blue] ^^^5 event entity @e[tag=by_scorch_blue,c=1] kill_by_scorch_1",
+          "/execute @s[tag=team_red] ^^^5 event entity @e[tag=by_scorch_red,c=1] kill_by_scorch_1",
+          "/execute @s[tag=team_blue] ^^^5 execute @e[tag=by_scorch_blue,c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ event entity @p[tag=is_titan,tag=team_red] entry_kill_by_titan",
+          "/execute @s[tag=team_red] ^^^5 execute @e[tag=by_scorch_red,c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ event entity @p[tag=is_titan,tag=team_blue] entry_kill_by_titan",
+
+          "/playsound scorch_terminate_1 @a[r=16]",
+          "/execute @s[tag=team_blue] ^^^5 execute @e[tag=by_scorch_blue,r=16,c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ camera @p[tag=kill_by_scorch_1,tag=team_red] set minecraft:free pos ^8^8^-5 facing ^^5^5",
+          "/execute @s[tag=team_red] ^^^5 execute @e[tag=by_scorch_red,r=16,c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ camera @p[tag=kill_by_scorch_1,tag=team_blue] set minecraft:free pos ^8^8^-5 facing ^^5^5"
+        ],
+        "3.0": [
+          "/execute @s[tag=team_blue] ^^^5 execute @e[tag=by_scorch_blue,r=16,c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ camera @p[tag=kill_by_scorch_1,tag=team_red] set minecraft:free ease 1.0 out_quad pos ^^4^-5 facing @s",
+          "/execute @s[tag=team_red] ^^^5 execute @e[tag=by_scorch_red,r=16,c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ camera @p[tag=kill_by_scorch_1,tag=team_blue] set minecraft:free ease 1.0 out_quad pos ^^4^-5 facing @s"
+        ],
+        "3.9": [
+          "/function titan/terminate_check_killer",
+          "/execute @e[family=titan,tag=by_scorch_blue,scores={terminate_check=0},c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ event entity @p[tag=kill_by_scorch_1,tag=team_red] exit_kill_by_titan",
+          "/execute @e[family=titan,tag=by_scorch_red,scores={terminate_check=0},c=1] ~~~ execute @s[tag=dead_has_rider] ~~~ event entity @p[tag=kill_by_scorch_1,tag=team_blue] exit_kill_by_titan",
+          "/scoreboard players operation @e[family=titan,tag=by_scorch_blue,scores={terminate_check=0},c=1] death_check = @s[tag=team_blue] titan_self",
+          "/scoreboard players operation @e[family=titan,tag=by_scorch_red,scores={terminate_check=0},c=1] death_check = @s[tag=team_red] titan_self",
+          "/execute @s[tag=team_blue] ~~~ kill @e[family=titan,tag=by_scorch_blue,scores={terminate_check=0},c=1]",
+          "/execute @s[tag=team_red] ~~~ kill @e[family=titan,tag=by_scorch_red,scores={terminate_check=0},c=1]"
+        ],
+        "4.0": [
+          "/event entity @s add_titan_ai_action"
+        ]
+      }
+    },
+    "animation.scorch_ai_terminate_1_lock.func": {
+      "loop": true,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/tp @s ~~~ ~ 0",
+          "/execute @s[tag=team_blue] ^^^5 tp @e[tag=by_scorch_blue,r=16,c=1] ^^^1 facing @s",
+          "/execute @s[tag=team_red] ^^^5 tp @e[tag=by_scorch_red,r=16,c=1] ^^^1 facing @s"
+        ]
+      }
+    },
+
+    "animation.scorch_ai_terminate_2.func": {
+      "loop": true,
+      "animation_length": 10.0,
+      "timeline": {
+        
+      }
+    },
+    "animation.scorch_ai_terminate_2_lock.func": {
+      "loop": true,
+      "animation_length": 0.1,
+      "timeline": {
+        
+      }
+    }
+
+  }
+}

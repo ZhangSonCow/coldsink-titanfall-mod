@@ -1,0 +1,243 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.legion_action.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "fire_after": "q.is_saddled && ( (q.property('titan:weapon_value') > 0 && q.property('titan:powering_time') == 0) || (q.property('titan:weapon_value') > 1 && q.property('titan:powering_time') == 1) )"
+            },
+            {
+              "reload": "q.property('titan:action') == 4"
+            },
+            {
+              "melee": "q.property('titan:action') == 5"
+            },
+            {
+              "fire_pre": "q.property('titan:action') == 11 && ( (q.property('titan:weapon_value') > 0 && q.property('titan:powering_time') == 0) || (q.property('titan:weapon_value') > 1 && q.property('titan:powering_time') == 1) )"
+            },
+            {
+              "power_pre": "q.property('titan:action') == 13"
+            },
+            {
+              "change": "q.property('titan:action') == 16"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_0",
+            "/tag @s remove terminate",
+            "/event entity @s[tag=keep_fire,scores={legion_bullet=1..},tag=!legion_range_mode] set_action_11",
+            "/event entity @s[tag=keep_fire,scores={legion_bullet=2..},tag=legion_range_mode] set_action_11",
+            "/event entity @s[scores={legion_bullet=..0},tag=!legion_range_mode,tag=!keep_skill_q,tag=!keep_skill_g] set_action_4",
+            "/event entity @s[scores={legion_bullet=..1},tag=legion_range_mode,tag=!keep_skill_q,tag=!keep_skill_g] set_action_4",
+            "/event entity @s[tag=keep_melee] set_action_5",
+            "/event entity @s[tag=keep_skill_q,tag=!skill_cooldown_1] set_action_13",
+            "/event entity @s[tag=keep_skill_g,tag=!skill_cooldown_2] set_action_16",
+            "/tag @s add titan_idle",
+            "/effect @s slowness 0 5 true",
+            "/event entity @s weapon_aim_no",
+            "/event entity @s[tag=legion_range_aim] set_action_0",
+            "/tag @s remove legion_range_aim"
+          ],
+          "on_exit": [
+            "/tag @s remove titan_idle"
+          ]
+        },
+        "fire": {
+          "animations": [
+            "legion_fire"
+          ],
+          "transitions": [
+            {
+              "fire_after": "q.property('titan:action') == 12 || ( (q.property('titan:weapon_value') == 0 && q.property('titan:powering_time') == 0) || (q.property('titan:weapon_value') < 2 && q.property('titan:powering_time') == 1) )"
+            },
+            {
+              "power": "q.property('titan:action') == 14"
+            },
+            {
+              "melee": "q.property('titan:action') == 5"
+            }
+          ],
+          "on_entry": [
+            "/tag @s[tag=legion_range_mode] add legion_range_aim",
+            "/tag @s add legion_ready",
+            "/tag @s add weapon_fire",
+            "/tag @s add titan_idle",
+            "/effect @s[tag=legion_range_mode] slowness 99999 4 true"
+          ],
+          "on_exit": [
+            "/tag @s remove legion_ready",
+            "/tag @s remove weapon_fire",
+            "/tag @s remove titan_idle"
+          ]
+        },
+        "reload": {
+          "animations": [
+            "legion_reload"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 4 && !( q.property('titan:action') == 11 && ((q.property('titan:weapon_value') == 0 && q.property('titan:powering_time') == 0) || (q.property('titan:weapon_value') < 2 && q.property('titan:powering_time') == 1)) )"
+            }
+          ],
+          "on_entry": [
+            "/tag @s[scores={legion_bullet=..99}] add legion_reload",
+            "/execute @s[scores={legion_bullet=..99}] ~~~ playsound legion_reload @a[tag=!legion_reload,r=16] ~~~",
+            "/playsound legion_reload.self @s[scores={legion_bullet=..99}]",
+            "/tag @s[scores={legion_bullet=..99}] remove legion_reload",
+            "/effect @s slowness 0 5 true",
+            "/tag @s add titan_idle",
+            "/tag @s add titan_reload"
+          ],
+          "on_exit": [
+            "/tag @s remove legion_range_aim",
+            "/tag @s remove titan_idle",
+            "/stopsound @a[r=32] legion_reload",
+            "/stopsound @s legion_reload.self",
+            "/tag @s remove titan_reload"
+          ]
+        },
+        "melee": {
+          "animations": [
+            "legion_melee"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ],
+          "on_entry": [
+            "/tag @s remove legion_range_aim"
+          ]
+        },
+        "fire_pre": {
+          "animations": [
+            "legion_fire_pre"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "fire": "q.property('titan:action') == 3 && ( (q.property('titan:weapon_value') > 0 && q.property('titan:powering_time') == 0) || (q.property('titan:weapon_value') > 1 && q.property('titan:powering_time') == 1) )"
+            },
+            {
+              "fire_after": "q.property('titan:action') == 12"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add legion_pre",
+            "/tag @s add weapon_fire"
+          ],
+          "on_exit": [
+            "/tag @s remove legion_pre",
+            "/tag @s remove weapon_fire"
+          ]
+        },
+        "fire_after": {
+          "transitions": [
+            {
+              "default": "q.is_sprinting || q.out_of_control"
+            },
+            {
+              "reload": "q.property('titan:action') == 4 || ( (q.property('titan:weapon_value') == 0 && q.property('titan:powering_time') == 0) || (q.property('titan:weapon_value') < 2 && q.property('titan:powering_time') == 1) )"
+            },
+            {
+              "fire": "q.property('titan:action') == 3 && ( (q.property('titan:weapon_value') > 0 && q.property('titan:powering_time') == 0) || (q.property('titan:weapon_value') > 1 && q.property('titan:powering_time') == 1) )"
+            },
+            {
+              "melee": "q.property('titan:action') == 5 && !q.is_saddled"
+            },
+            {
+              "power": "q.property('titan:action') == 14"
+            },
+            {
+              "change": "q.property('titan:action') == 16"
+            }
+          ],
+          "on_entry": [
+            "/tag @s[tag=legion_range_mode] add legion_range_aim",
+            "/effect @s[tag=legion_range_mode] slowness 99999 4 true",
+            "/event entity @s[tag=keep_fire,scores={legion_bullet=1..}] set_action_3",
+            "/tag @s add titan_idle",
+            "/tag @s add legion_ready"
+          ],
+          "on_exit": [
+            "/effect @s slowness 0 5 true",
+            "/tag @s remove titan_idle",
+            "/tag @s remove legion_ready"
+          ]
+        },
+        "power_pre": {
+          "animations": [
+            "legion_skill_1_pre"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "power": "q.property('titan:action') != 13"
+            }
+          ],
+          "on_entry": [
+            "/tag @s[tag=legion_range_mode] add legion_range_aim",
+            "/effect @s[tag=legion_range_mode] slowness 99999 4 true"
+          ]
+        },
+        "power": {
+          "animations": [
+            "legion_skill_1"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "power_after": "q.property('titan:action') != 14"
+            }
+          ],
+          "on_entry": [
+            "/tag @s[tag=legion_range_mode] add legion_range_aim",
+            "/effect @s[tag=legion_range_mode] slowness 99999 4 true",
+            "/playsound legion_skill_1_pre @a[r=64] ~~~",
+            "/tag @s remove keep_skill_q"
+          ]
+        },
+        "power_after": {
+          "animations": [
+            "legion_skill_1_after"
+          ],
+          "transitions": [
+            {
+              "fire_after": "q.property('titan:action') != 15"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_15"
+          ],
+          "on_exit": [
+            "/event entity @s set_cooldown_1_8"
+          ]
+        },
+        "change": {
+          "animations": [
+            "legion_skill_2"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 16"
+            }
+          ],
+          "on_exit": [
+            "/tag @s remove legion_range_aim",
+            "/event entity @s set_cooldown_2_2",
+            "/tag @s remove keep_skill_g"
+          ]
+        }
+      }
+    }
+  }
+}

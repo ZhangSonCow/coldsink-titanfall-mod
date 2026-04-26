@@ -1,0 +1,155 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:ion_get_missile_red",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "godie": {
+        "minecraft:instant_despawn": {}
+      },
+      "stay": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "event": "stay",
+            "target": "self"
+          }
+        }
+      },
+      "go": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "event": "go",
+            "target": "self"
+          }
+        }
+      }
+    },
+    "components": {
+			"minecraft:tick_world": {
+				"distance_to_players": 128,
+				"never_despawn": false,
+				"radius": 2
+			},
+      "minecraft:type_family": {
+        "family": [ "tool" ]
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:collision_box": {
+          "width": 0.5,
+          "height": 0.5
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:ageable": {
+        "duration": 5,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:health": {
+        "value": 2,
+        "max": 2,
+        "min": 1
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "stay"
+          ]
+        }
+      },
+      "back": {
+        "remove": {
+          "component_groups": [
+            "stay"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "go"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "scoreboard players operation @s titan_self = @e[tag=is_ion,tag=team_red,c=1] titan_self",
+            "tp @s ~~~ facing @e[tag=is_ion,tag=team_red,c=1]"
+          ]
+        }
+      },
+      "stay": {
+        "queue_command": {
+          "command": [
+            "tp @s ~~~",
+            "tp ^^0.5^1 facing @e[tag=ion_get_bullet,tag=team_red,rm=5,c=1]"
+          ]
+        }
+      },
+      "go": {
+        "queue_command": {
+          "command": [
+            "tp @s ^^-0.1^-5",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12,c=1] ~~~ event entity @e[type=coldsink:ion_get_missile_red,c=1] boom"
+          ]
+        }
+      },
+      "boom": {
+        "queue_command": {
+          "command": [
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12,c=1] ~~~ execute @s[tag=ronin_defend] ~~~ tag @e[type=coldsink:ion_get_missile_red,c=1] add get_1",
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12,c=1] ~~~ execute @s[tag=ronin_defend_core] ~~~ tag @e[type=coldsink:ion_get_missile_red,c=1] add get_2",
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12,c=1] ~~~ execute @s[tag=titan_hard] ~~~ tag @e[type=coldsink:ion_get_missile_red,c=1] add get_3",
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12,c=1] ~~~ execute @s[family=!shield_entity] ~~~ tag @e[type=coldsink:ion_get_missile_red,c=1] add get_core",
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12,c=1] ~~~ tag @e[type=coldsink:ion_get_missile_red,c=1] add get",
+
+            "execute @s[tag=get] ~~~ scoreboard players operation @e[tag=is_ion,tag=team_red] skill_check_0 = @s titan_self",
+            "execute @s[tag=get] ~~~ execute @e[tag=is_ion,tag=team_red] ~~~ scoreboard players operation @s skill_check_0 -= @s titan_self",
+            "execute @s[tag=get] ~~-5~ scoreboard players operation @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=8,c=1] death_check = @e[tag=is_ion,tag=team_red,scores={skill_check_0=0},c=1] titan_self",
+            
+            "execute @s[tag=get,tag=!get_1,tag=!get_2,tag=!get_3,tag=get_core] ~~~ scoreboard players add @e[tag=is_ion,tag=team_red,scores={skill_check_0=0}] titan_attack 500",
+            "execute @s[tag=get_1,tag=get_core] ~~~ scoreboard players add @e[tag=is_ion,tag=team_red,scores={skill_check_0=0}] titan_attack 150",
+            "execute @s[tag=get_2,tag=get_core] ~~~ scoreboard players add @e[tag=is_ion,tag=team_red,scores={skill_check_0=0}] titan_attack 50",
+            "execute @s[tag=get_3,tag=get_core] ~~~ scoreboard players add @e[tag=is_ion,tag=team_red,scores={skill_check_0=0}] titan_attack 400",
+            "execute @s[tag=get,tag=get_core] ~~~ event entity @e[tag=is_ion,tag=team_red,scores={skill_check_0=0}] shoot_get_core",
+
+            "execute @s[tag=get,tag=!get_1,tag=!get_2,tag=!get_3] ~~-5~ damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12,c=1] 500 suicide entity @e[tag=is_ion,tag=team_red,scores={skill_check_0=0},c=1]",
+            "execute @s[tag=get_1] ~~-5~ damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12,c=1] 150 suicide entity @e[tag=is_ion,tag=team_red,scores={skill_check_0=0},c=1]",
+            "execute @s[tag=get_2] ~~-5~ damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12,c=1] 50 suicide entity @e[tag=is_ion,tag=team_red,scores={skill_check_0=0},c=1]",
+            "execute @s[tag=get_3] ~~-5~ damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12,c=1] 400 suicide entity @e[tag=is_ion,tag=team_red,scores={skill_check_0=0},c=1]",
+
+            "event entity @s godie"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "godie"
+          ]
+        }
+      }
+    }
+  }
+}

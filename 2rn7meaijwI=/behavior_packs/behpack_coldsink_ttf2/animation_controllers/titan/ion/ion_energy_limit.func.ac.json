@@ -1,0 +1,55 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ion_energy_limit_1.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "limit": "q.property('titan:skill_cooldown_0') > 90"
+            }
+          ]
+        },
+        "limit": {
+          "transitions": [
+            {
+              "default": "q.property('titan:skill_cooldown_0') <= 110"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add ion_limit_1"
+          ],
+          "on_exit": [
+            "/tag @s remove ion_limit_1"
+          ]
+        }
+      }
+    },
+    "controller.animation.ion_energy_limit_2.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "limit": "q.property('titan:skill_cooldown_0') > 130"
+            }
+          ]
+        },
+        "limit": {
+          "transitions": [
+            {
+              "default": "q.property('titan:skill_cooldown_0') <= 70"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add ion_limit_2"
+          ],
+          "on_exit": [
+            "/tag @s remove ion_limit_2"
+          ]
+        }
+      }
+    }
+  }
+}

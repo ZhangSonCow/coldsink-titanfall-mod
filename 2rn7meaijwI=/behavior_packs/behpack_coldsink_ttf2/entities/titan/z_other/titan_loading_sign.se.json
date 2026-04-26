@@ -1,0 +1,110 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:titan_loading_sign",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "godie": {
+        "minecraft:instant_despawn": {}
+      },
+
+      "coldsink:team_blue": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "coldsink:team_red": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      }
+    },
+    "components": {
+			"minecraft:tick_world": {
+				"distance_to_players": 128,
+				"never_despawn": false,
+				"radius": 2
+			},
+      "minecraft:type_family": {
+        "family": [ "tool" ]
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:collision_box": {
+          "width": 0.0,
+          "height": 0.0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:ageable": {
+        "duration": 5,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:health": {
+        "value": 2,
+        "max": 2,
+        "min": 1
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "coldsink:team_blue"
+          ]
+        }
+      },
+      "team_blue": {
+        "add": {
+          "component_groups": [
+            "coldsink:team_blue"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "spreadplayers ~ ~ 0 1 @s"
+          ]
+        }
+      },
+      "team_red": {
+        "add": {
+          "component_groups": [
+            "coldsink:team_red"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "spreadplayers ~ ~ 0 1 @s"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "godie"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:ion_trap_red",
+      "animations": {
+        "ready": "animation.ion_titan.trap_ready",
+        "trap_line_particle": "animation.ion_titan.trap_line_particle"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "ready": "q.is_sheared"
+          },
+          {
+            "trap_line_particle": "!q.is_sheared && !q.is_ignited"
+          }
+        ]
+      },
+      "particle_effects": {
+        "ion_trap_line": "titan:ion_trap_line"
+      },
+      "materials": {
+        "default": "entity_alphatest",
+        "netease_entity_metallic": "netease_entity_alphablend_metallic",
+        "netease_bloom_light_entity": "demo_bloom_entity"
+      },
+      "textures": {
+        "default": "textures/entity/titan/ion/ion_trap",
+        "ion_trap_light_yellow": "textures/entity/titan/ion/ion_trap_light_yellow",
+        "ion_trap_light": "textures/entity/titan/ion/ion_trap_light"
+      },
+      "geometry": {
+        "default": "geometry.ion_trap",
+        "ion_trap_light": "geometry.ion_trap_light"
+      },
+      "render_controllers": [
+        "controller.render.ion_trap",
+        "controller.render.ion_trap_light"
+      ]
+    }
+  }
+}

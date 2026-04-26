@@ -1,0 +1,17 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.titan_fight_leave_patch.func": {
+      "loop": true,
+      "animation_length": 2.0,
+      "timeline": {
+        "0.0": [
+          "/ride @s[tag=titan_fight,tag=!is_titan,tag=!terminate,tag=!titan_loading_player] stop_riding"
+        ],
+        "1.0": [
+          "/execute @s[tag=titan_fight,tag=!is_titan,tag=!terminate,tag=!titan_loading_player] ~~~ function game/titan_fight_leave_patch"
+        ]
+      }
+    }
+  }
+}

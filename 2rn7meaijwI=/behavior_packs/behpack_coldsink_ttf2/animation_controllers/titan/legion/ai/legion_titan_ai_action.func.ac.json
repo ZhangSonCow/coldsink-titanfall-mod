@@ -1,0 +1,76 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.legion_titan_ai_action.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "melee": "q.property('titan:action') == 11"
+            },
+            {
+              "fire": "q.property('titan:action') == 12"
+            },
+            {
+              "power": "q.property('titan:action') == 13"
+            },
+            {
+              "change": "q.property('titan:action') == 14"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=team_blue] ~~~ event entity @e[type=coldsink:legion_rider_ai,tag=team_blue,r=8,c=1] turn_rider_state_normal",
+            "/execute @s[tag=team_red] ~~~ event entity @e[type=coldsink:legion_rider_ai,tag=team_red,r=8,c=1] turn_rider_state_normal",
+            "/event entity @s[tag=fire] set_action_12"
+          ]
+        },
+        "melee": {
+          "animations": [
+            "legion_ai_melee"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 11"
+            }
+          ]
+        },
+        "fire": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 12"
+            }
+          ]
+        },
+        "power": {
+          "animations": [
+            "legion_ai_power"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 13"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=!legion_range_mode] ~~~ playsound legion_skill_1_near @a[r=64] ~~~",
+            "/execute @s[tag=legion_range_mode] ~~~ playsound legion_skill_1_far @a[r=64] ~~~"
+          ]
+        },
+        "change": {
+          "animations": [
+            "legion_ai_change"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 14"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=!legion_range_mode] ~~~ playsound legion_skill_2_to_far @a[r=64] ~~~",
+            "/execute @s[tag=legion_range_mode] ~~~ playsound legion_skill_2_to_near @a[r=64] ~~~"
+          ]
+        }
+      }
+    }
+  }
+}

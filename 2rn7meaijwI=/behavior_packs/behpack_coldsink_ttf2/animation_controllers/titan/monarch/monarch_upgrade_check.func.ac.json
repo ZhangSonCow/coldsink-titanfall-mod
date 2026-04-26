@@ -1,0 +1,147 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.monarch_upgrade_check.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "level_11": "q.property('titan:monarch_now_level') == 1 && q.property('titan:monarch_core_one') == 1"
+            },
+            {
+              "level_12": "q.property('titan:monarch_now_level') == 1 && q.property('titan:monarch_core_one') == 2"
+            },
+            {
+              "level_13": "q.property('titan:monarch_now_level') == 1 && q.property('titan:monarch_core_one') == 3"
+            },
+            {
+              "level_21": "q.property('titan:monarch_now_level') == 2 && q.property('titan:monarch_core_two') == 1"
+            },
+            {
+              "level_22": "q.property('titan:monarch_now_level') == 2 && q.property('titan:monarch_core_two') == 2"
+            },
+            {
+              "level_23": "q.property('titan:monarch_now_level') == 2 && q.property('titan:monarch_core_two') == 3"
+            },
+            {
+              "level_31": "q.property('titan:monarch_now_level') == 3 && q.property('titan:monarch_core_three') == 1"
+            },
+            {
+              "level_32": "q.property('titan:monarch_now_level') == 3 && q.property('titan:monarch_core_three') == 2"
+            },
+            {
+              "level_33": "q.property('titan:monarch_now_level') == 3 && q.property('titan:monarch_core_three') == 3"
+            }
+          ]
+        },
+        "level_11": {
+          "transitions": [
+            {
+              "default": "q.property('titan:monarch_now_level') > 1"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add monarch_core_11",
+            "/execute @s[tag=has_rider] ~~~ tag @p[tag=is_monarch,r=8] add monarch_core_11",
+            "/execute @s[tag=has_rider] ~~~ scoreboard players add @p[tag=is_monarch,r=8] monarch_bullet 10",
+            "/execute @s[tag=has_rider] ~~~ event entity @p[tag=is_monarch,r=8] add_weapon_10"
+          ]
+        },
+        "level_12": {
+          "transitions": [
+            {
+              "default": "q.property('titan:monarch_now_level') > 1"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add monarch_core_12",
+            "/execute @s[tag=has_rider] ~~~ tag @p[tag=is_monarch,r=8] add monarch_core_12"
+          ]
+        },
+        "level_13": {
+          "transitions": [
+            {
+              "default": "q.property('titan:monarch_now_level') > 1"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add monarch_core_13",
+            "/execute @s[tag=has_rider] ~~~ tag @p[tag=is_monarch,r=8] add monarch_core_13"
+          ]
+        },
+        "level_21": {
+          "transitions": [
+            {
+              "default": "q.property('titan:monarch_now_level') > 2"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add monarch_core_21",
+            "/execute @s[tag=has_rider] ~~~ tag @p[tag=is_monarch,r=8] add monarch_core_21"
+          ]
+        },
+        "level_22": {
+          "transitions": [
+            {
+              "default": "q.property('titan:monarch_now_level') > 2"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add monarch_core_22",
+            "/execute @s[tag=has_rider] ~~~ tag @p[tag=is_monarch,r=8] add monarch_core_22"
+          ]
+        },
+        "level_23": {
+          "transitions": [
+            {
+              "default": "q.property('titan:monarch_now_level') > 2"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add monarch_core_23",
+            "/execute @s[tag=has_rider] ~~~ tag @p[tag=is_monarch,r=8] add monarch_core_23"
+          ]
+        },
+        "level_31": {
+          "transitions": [
+            {
+              "default": "q.property('titan:monarch_now_level') > 3"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add monarch_core_31",
+            "/execute @s[tag=has_rider] ~~~ tag @p[tag=is_monarch,r=8] add monarch_core_31",
+            "/execute @s[tag=has_rider] ~~~ event entity @p[tag=is_monarch,r=8] set_missile_12",
+            "/execute @s[tag=has_rider] ~~~ replaceitem entity @p[tag=is_monarch,tag=!wy_game,r=8] slot.hotbar 8 coldsink:monarch_skill_1_final 1 0 {\"item_lock\":{\"mode\":\"lock_in_slot\"}}"
+          ]
+        },
+        "level_32": {
+          "transitions": [
+            {
+              "default": "q.property('titan:monarch_now_level') > 3"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add monarch_core_32",
+            "/event entity @s be_final_titan",
+            "/event entity @s core_full_shield",
+            "/execute @s[tag=has_rider] ~~~ event entity @p[tag=is_monarch,r=8] add_titan_sheared",
+            "/execute @s[tag=has_rider] ~~~ tag @p[tag=is_monarch,r=8] add monarch_core_32"
+          ]
+        },
+        "level_33": {
+          "transitions": [
+            {
+              "default": "q.property('titan:monarch_now_level') > 3"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add monarch_core_33",
+            "/execute @s[tag=has_rider] ~~~ tag @p[tag=is_monarch,r=8] add monarch_core_33"
+          ]
+        }
+      }
+    }
+  }
+}

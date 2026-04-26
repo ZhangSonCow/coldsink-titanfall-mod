@@ -1,0 +1,348 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.monarch_upgrade_text.1st",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+				{
+					"name": "cabin",
+					"pivot": [-1.33817, 29.82855, 9.06251]
+				},
+				{
+					"name": "upgradeBox",
+					"parent": "cabin",
+					"pivot": [-8.13029, 25.7398, 9.66627],
+					"rotation": [0, -90, 0],
+					"cubes": [
+						{
+							"origin": [-8.11116, 25.5858, 8.85227],
+							"size": [-0.03826, 1.228, 1.228],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [0, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [16, 16], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						},
+						{
+							"origin": [-8.11116, 25.1258, 8.85227],
+							"size": [-0.03826, 1.228, 1.228],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [0, 4], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [16, 16], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						},
+						{
+							"origin": [-8.11116, 24.6658, 8.85227],
+							"size": [-0.03826, 1.228, 1.228],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [0, 8], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [16, 16], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "level_1_now",
+					"parent": "upgradeBox",
+					"pivot": [-8.05272, 26.79826, 14.88661],
+					"cubes": [
+						{
+							"origin": [-8.11116, 25.6158, 7.90227],
+							"size": [-0.03826, 1.228, 1.228],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [4, 12], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [16, 16], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "level_11",
+					"parent": "upgradeBox",
+					"pivot": [-8.05272, 26.79826, 14.88661],
+					"cubes": [
+						{
+							"origin": [-8.11116, 25.5858, 7.90227],
+							"size": [-0.03826, 1.228, 1.228],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [4, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [16, 16], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "level_12",
+					"parent": "upgradeBox",
+					"pivot": [-8.05272, 26.79826, 14.88661],
+					"cubes": [
+						{
+							"origin": [-8.11116, 25.5958, 7.90227],
+							"size": [-0.03826, 1.228, 1.228],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [8, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [16, 16], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "level_13",
+					"parent": "upgradeBox",
+					"pivot": [-8.05272, 26.79826, 14.88661],
+					"cubes": [
+						{
+							"origin": [-8.11116, 25.5958, 7.90227],
+							"size": [-0.03826, 1.228, 1.228],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [12, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [16, 16], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "level_2_now",
+					"parent": "upgradeBox",
+					"pivot": [-8.05272, 26.33826, 14.88661],
+					"cubes": [
+						{
+							"origin": [-8.11116, 25.1358, 7.90227],
+							"size": [-0.03826, 1.228, 1.228],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [4, 12], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [16, 16], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "level_20",
+					"parent": "upgradeBox",
+					"pivot": [-8.05272, 26.33826, 14.88661],
+					"cubes": [
+						{
+							"origin": [-8.11116, 25.1358, 7.90227],
+							"size": [-0.03826, 1.228, 1.228],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [8, 12], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [16, 16], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "level_21",
+					"parent": "upgradeBox",
+					"pivot": [-8.05272, 26.33826, 14.88661],
+					"cubes": [
+						{
+							"origin": [-8.11116, 25.1258, 7.90227],
+							"size": [-0.03826, 1.228, 1.228],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [4, 4], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [16, 16], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "level_22",
+					"parent": "upgradeBox",
+					"pivot": [-8.05272, 26.33826, 14.88661],
+					"cubes": [
+						{
+							"origin": [-8.11116, 25.1258, 7.90227],
+							"size": [-0.03826, 1.228, 1.228],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [8, 4], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [16, 16], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "level_23",
+					"parent": "upgradeBox",
+					"pivot": [-8.05272, 26.56826, 14.88661],
+					"cubes": [
+						{
+							"origin": [-8.11116, 25.1258, 7.90227],
+							"size": [-0.03826, 1.228, 1.228],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [12, 4], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [16, 16], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "level_3_now",
+					"parent": "upgradeBox",
+					"pivot": [-8.05272, 25.87826, 14.88661],
+					"cubes": [
+						{
+							"origin": [-8.11116, 24.6658, 7.90227],
+							"size": [-0.03826, 1.228, 1.228],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [4, 12], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [16, 16], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "level_30",
+					"parent": "upgradeBox",
+					"pivot": [-8.05272, 25.87826, 14.88661],
+					"cubes": [
+						{
+							"origin": [-8.11116, 24.6658, 7.90227],
+							"size": [-0.03826, 1.228, 1.228],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [8, 12], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [16, 16], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "level_31",
+					"parent": "upgradeBox",
+					"pivot": [-8.05272, 25.87826, 14.88661],
+					"cubes": [
+						{
+							"origin": [-8.11116, 24.6658, 7.90227],
+							"size": [-0.03826, 1.228, 1.228],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [4, 8], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [16, 16], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "level_32",
+					"parent": "upgradeBox",
+					"pivot": [-8.05272, 25.87826, 14.88661],
+					"cubes": [
+						{
+							"origin": [-8.11116, 24.6658, 7.90227],
+							"size": [-0.03826, 1.228, 1.228],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [8, 8], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [16, 16], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "level_33",
+					"parent": "upgradeBox",
+					"pivot": [-8.05272, 25.87826, 14.88661],
+					"cubes": [
+						{
+							"origin": [-8.11116, 24.6658, 7.90227],
+							"size": [-0.03826, 1.228, 1.228],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [12, 8], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [16, 16], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

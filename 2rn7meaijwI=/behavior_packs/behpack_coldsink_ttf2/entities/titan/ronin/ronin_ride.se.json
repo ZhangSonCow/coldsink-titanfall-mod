@@ -1,0 +1,142 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:ronin_ride",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:camel",
+      "animations": {
+        "c.move": "controller.animation.titan_ride_move.func"
+      },
+      "scripts": {
+        "animate": [
+          "c.move"
+        ]
+      }
+    },
+
+    "components": {
+      
+      "minecraft:health": {
+        "value": 1,
+        "max": 1,
+        "min": 1
+      },
+      "minecraft:collision_box": {
+        "height": 6.8,
+        "width": 2.4
+      },
+      "minecraft:physics": {},
+      "minecraft:fire_immune": {},
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:type_family": {
+        "family": [ "tool", "titan_ride" ]
+      },
+      "minecraft:can_power_jump": {},
+      "minecraft:horse.jump_strength": {
+        "value":{
+          "range_min": 0, 
+          "range_max": 0.1
+        }
+      },
+      "minecraft:navigation.walk": {
+        "can_sink": false
+      },
+      "minecraft:rideable": {
+        "seat_count": 2,
+        "family_types": [ "player", "titan" ],
+        "seats": [
+          {
+            "position": [0, 5, 0],
+            "rotate_rider_by": 60
+          },
+          {
+            "position": [0, 0, 0],
+            "rotate_rider_by": 1
+          }
+        ]
+      },
+      "minecraft:input_ground_controlled": {},
+      "minecraft:variable_max_auto_step": {
+        "base_value": 2.0625,
+        "controlled_value": 2.0625,
+        "jump_prevented_value": 2.0625
+      },
+      "minecraft:movement": {
+        "value": 0.17
+      },
+      "minecraft:ageable": {
+        "duration": 1.0,
+        "grow_up": {
+          "event": "can_die_tag",
+          "target": "self"
+        }
+      },
+      "minecraft:despawn": {
+        "filters": {
+          "all_of": [
+            {
+              "all_of": [
+                {
+                  "test": "rider_count",
+                  "operator": "<=",
+                  "value": 1
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "can_die"
+                }
+              ]
+            }
+          ]
+        }
+      }
+      
+    },
+
+    "component_groups": {
+      
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+
+    },
+
+    "events": {
+      "begin_ride": {
+        "queue_command": {
+          "command": [
+            "function titan/titan_check_belong",
+            "ride @p[tag=is_pilot,scores={titan_check=0}] start_riding @s",
+            "ride @e[type=coldsink:ronin_titan,c=1] start_riding @s"
+          ]
+        }
+      },
+      "can_die_tag": {
+        "queue_command": {
+          "command": [
+            "tag @s add can_die"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:monarch_trace_missile_red",
+      "animations": {
+        "particle_double": "animation.locator.particle_double_delay"
+      },
+      "scripts": {
+        "animate": [
+          "particle_double"
+        ]
+      },
+      "particle_effects": {
+        "particle": "titan:monarch_missile",
+        "particle_1": "titan:monarch_missile_jet"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/empty"
+      },
+      "geometry": {
+        "default": "geometry.locator"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

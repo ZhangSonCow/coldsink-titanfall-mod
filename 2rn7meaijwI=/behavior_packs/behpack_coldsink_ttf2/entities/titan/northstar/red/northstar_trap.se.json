@@ -1,0 +1,180 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:northstar_trap_red",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "die": {
+        "minecraft:instant_despawn": {}
+      },
+      "normal": {
+        "minecraft:timer": {
+          "time": 0.5,
+          "time_down_event": {
+            "event": "count",
+            "target": "self"
+          }
+        },
+        "minecraft:ageable": {
+          "duration": 30,
+          "grow_up": {
+            "event": "godie",
+            "target": "self"
+          }
+        }
+      },
+      "get_target": {
+        "minecraft:is_sheared": {},
+        "minecraft:timer": {
+          "time": 0.5,
+          "time_down_event": {
+            "event": "slow",
+            "target": "self"
+          }
+        },
+        "minecraft:ageable": {
+          "duration": 6.0,
+          "grow_up": {
+            // "event": "boom",
+            "event": "godie",
+            "target": "self"
+          }
+        }
+      },
+      "spawn_line": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "single_use": true,
+              "spawn_entity": "coldsink:northstar_trap_line_red",
+              "num_to_spawn": 1,
+              "should_leash": true
+            }
+          ]
+        }
+      }
+    },
+    "components": {
+      "minecraft:leashable": {
+				"soft_distance": 0.1,
+				"hard_distance": 1,
+				"max_distance": 32,
+				"can_be_stolen": false,
+				"on_unleash": {
+					"event": "godie",
+          "target": "self"
+				}
+			},
+      "minecraft:type_family": {
+        "family": [ "tool" ]
+      },
+      "minecraft:collision_box": {
+          "width": 0.1,
+          "height": 1.5
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:health": {
+        "value": 300,
+        "max": 300
+      },
+      "minecraft:physics": {
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "normal"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "tag @s add team_red"
+          ]
+        }
+      },
+      "count": {
+        "queue_command": {
+          "command": [
+            "execute @e[family=titan,tag=!team_red,r=12,c=1] ~~~ event entity @e[type=coldsink:northstar_trap_red,r=12] get"
+          ]
+        }
+      },
+      "get": {
+        "remove": {
+          "component_groups": [
+            "normal"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "get_target",
+            "spawn_line"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "tag @e[family=titan,tag=!team_red,r=12,c=1] add northstar_trap",
+            "execute @e[family=titan,tag=!team_red,r=12,c=1] ~~~ execute @s[tag=has_rider] ~~~ title @p[tag=is_titan,tag=!team_red,r=8] actionbar §e使用近战解除遭遇绊索"
+          ]
+        }
+      },
+      "slow": {
+        "queue_command": {
+          "command": [
+            "execute @e[family=titan,tag=!team_red,tag=northstar_trap,rm=12,c=1] ~~~ execute @s[tag=!has_rider] ~~~ tp @s @e[type=coldsink:northstar_trap_red,c=1]",
+            "execute @e[family=titan,tag=!team_red,tag=northstar_trap,rm=12,c=1] ~~~ execute @s[tag=has_rider] ~~~ tp @e[family=titan_ride,c=1] @e[type=coldsink:northstar_trap_red,c=1]"
+          ]
+        }
+      },
+      "boom": {
+        "queue_command": {
+          "command": [
+            "execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=10,tag=!ronin_defending,tag=!titan_hard] ~~~ scoreboard players add @e[type=coldsink:northstar_trap_red,c=1] titan_attack 1000",
+            "execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=10,tag=ronin_defend] ~~~ scoreboard players add @e[type=coldsink:northstar_trap_red,c=1] titan_attack 300",
+            "execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=10,tag=ronin_defend_core] ~~~ scoreboard players add @e[type=coldsink:northstar_trap_red,c=1] titan_attack 100",
+            "execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=10,tag=titan_hard] ~~~ scoreboard players add @e[type=coldsink:northstar_trap_red,c=1] titan_attack 800",
+
+            "execute @s[scores={titan_attack=1..}] ~~~ scoreboard players operation @a[tag=is_northstar,tag=team_red] skill_check_0 = @s titan_self",
+            "execute @s[scores={titan_attack=1..}] ~~~ execute @a[tag=is_northstar,tag=team_red] ~~~ scoreboard players operation @s skill_check_0 -= @s titan_self",
+            "execute @s[scores={titan_attack=1..}] ~~~ scoreboard players operation @a[tag=is_northstar,tag=team_red,scores={skill_check_0=0}] titan_attack += @s titan_attack",
+            "execute @s[scores={titan_attack=1..}] ~~~ event entity @a[tag=is_northstar,tag=team_red,scores={skill_check_0=0}] shoot_get_core",
+
+            "scoreboard players operation @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=10] death_check = @p[tag=is_northstar,tag=team_red,scores={skill_check_0=0}] titan_self",
+            "damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=10,tag=!ronin_defending,tag=!titan_hard] 1000 suicide entity @s",
+            "damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=10,tag=ronin_defend] 1000 suicide entity @s",
+            "damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=10,tag=ronin_defend_core] 1000 suicide entity @s",
+            "damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=10,tag=titan_hard] 1000 suicide entity @s",
+            "event entity @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=10,tag=ronin_defending] defend_damage_transform"
+          ]
+        }
+      },
+      "godie": {
+        "queue_command": {
+          "command": [
+            "tag @e[family=titan,tag=!team_red,tag=northstar_trap,c=1] remove northstar_trap",
+            "event entity @s real_godie"
+          ]
+        }
+      },
+      "real_godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

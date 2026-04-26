@@ -1,0 +1,49 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ronin_skill_2.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "skill": "q.is_saddled"
+            }
+          ]
+        },
+        "skill": {
+          "animations": [
+            "ronin_skill_2"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_saddled"
+            }
+          ],
+          "on_entry": [
+            "/tag @e[type=coldsink:ronin_titan,r=8,c=1] remove northstar_trap",
+            "/execute @e[type=coldsink:ronin_titan,r=8,c=1] ~~~ execute @s[scores={tone_target=1..}] ~~~ event entity @e[family=tone_target,r=5,c=1] godie",
+            "/scoreboard players reset @e[type=coldsink:ronin_titan,r=8,c=1] tone_target",
+            "/scoreboard players reset @e[type=coldsink:ronin_titan,r=8,c=1] tone_target_ai",
+            
+						"/tag @s add ronin_phase",
+            "/event entity @e[type=coldsink:ronin_titan,r=8,c=1] turn_yes_shield",
+
+            "/playsound ronin_skill_2_entry @a[r=64] ~~~",
+            "/particle titan:ronin_phase_1 ~~~",
+            "/particle titan:ronin_phase_2 ~~~",
+            "/particle titan:ronin_phase_3 ~~~"
+          ],
+          "on_exit": [
+            "/tag @s remove ronin_phase",
+            "/execute @e[type=coldsink:ronin_titan,c=1] ~~~ event entity @s[tag=!titan_shield] turn_no_shield",
+
+            "/particle titan:ronin_phase_1 ~~~",
+            "/particle titan:ronin_phase_2 ~~~",
+            "/particle titan:ronin_phase_3 ~~~"
+          ]
+        }
+      }
+    }
+  }
+}

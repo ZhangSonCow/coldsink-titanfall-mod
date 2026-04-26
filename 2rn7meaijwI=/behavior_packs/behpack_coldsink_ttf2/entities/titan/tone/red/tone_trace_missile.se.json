@@ -1,0 +1,1015 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:tone_trace_missile_red",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "animations": {
+        "c.self": "controller.animation.titan_bullet_self.func",
+        "self": "animation.tone_bullet_self.func"
+      },
+      "scripts": {
+        "animate": [ 
+          "c.self"
+        ]
+      }
+    },
+
+    "component_groups": {
+      "die": {
+        "minecraft:instant_despawn": {}
+      },
+      
+      "pre_wait": {
+        "minecraft:ageable": {
+          "duration": 0.1,
+          "grow_up": {
+            "event": "begin_trace",
+            "target": "self"
+          }
+        }
+      },
+      "being_godie": {
+        "minecraft:ageable": {
+          "duration": 4.5,
+          "grow_up": {
+            "event": "godie",
+            "target": "self"
+          }
+        }
+      },
+      "pre_godie": {
+        "minecraft:ageable": {
+          "duration": 0.5,
+          "grow_up": {
+            "event": "godie",
+            "target": "self"
+          }
+        }
+      },
+
+      "fly_1": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_1"
+          }
+        }
+      },
+      "fly_2": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_2"
+          }
+        }
+      },
+      "fly_3": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_3"
+          }
+        }
+      },
+      "fly_4": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_4"
+          }
+        }
+      },
+      "fly_5": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_5"
+          }
+        }
+      },
+      "fly_6": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_6"
+          }
+        }
+      },
+      "fly_7": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_7"
+          }
+        }
+      },
+      "fly_8": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_8"
+          }
+        }
+      },
+      "fly_9": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_9"
+          }
+        }
+      },
+      "fly_10": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_10"
+          }
+        }
+      },
+      "fly_11": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_11"
+          }
+        }
+      },
+      "fly_12": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_12"
+          }
+        }
+      },
+      "fly_13": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_13"
+          }
+        }
+      },
+      "fly_14": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_14"
+          }
+        }
+      },
+      "fly_15": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_15"
+          }
+        }
+      },
+      "fly_16": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_16"
+          }
+        }
+      },
+      "fly_17": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_17"
+          }
+        }
+      },
+      "fly_18": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_18"
+          }
+        }
+      },
+      "fly_19": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_19"
+          }
+        }
+      },
+      "fly_20": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_20"
+          }
+        }
+      },
+      "fly_21": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_21"
+          }
+        }
+      },
+      "fly_22": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_22"
+          }
+        }
+      },
+      "fly_23": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_23"
+          }
+        }
+      },
+      "fly_24": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_24"
+          }
+        }
+      },
+      "fly_25": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_25"
+          }
+        }
+      },
+      "fly_26": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_26"
+          }
+        }
+      },
+      "fly_27": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_27"
+          }
+        }
+      },
+      "fly_28": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_28"
+          }
+        }
+      },
+      "fly_29": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_29"
+          }
+        }
+      },
+      "fly_30": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_30"
+          }
+        }
+      }
+    },
+    "components": {
+			"minecraft:tick_world": {
+				"distance_to_players": 128,
+				"never_despawn": false,
+				"radius": 2
+			},
+      "minecraft:type_family": {
+        "family": [ "bullet", "tool" ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.5
+      },
+      "minecraft:physics": {},
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "pre_wait"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "tp @s ~~~ facing @e[tag=!team_red,family=titan,c=1]",
+            "tp @s ~~~ facing @e[tag=!team_red,family=titan,scores={tone_target=3..},c=1]"
+          ]
+        }
+      },
+      "begin_trace": {
+        "remove": {
+          "component_groups": [
+            "pre_wait"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "being_godie"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "event entity @s[scores={tone_trace=1}] to_fly_1",
+            "event entity @s[scores={tone_trace=2}] to_fly_2",
+            "event entity @s[scores={tone_trace=3}] to_fly_3",
+            "event entity @s[scores={tone_trace=4}] to_fly_4",
+            "event entity @s[scores={tone_trace=5}] to_fly_5",
+            "event entity @s[scores={tone_trace=6}] to_fly_6",
+            "event entity @s[scores={tone_trace=7}] to_fly_7",
+            "event entity @s[scores={tone_trace=8}] to_fly_8",
+            "event entity @s[scores={tone_trace=9}] to_fly_9",
+            "event entity @s[scores={tone_trace=10}] to_fly_10",
+            "event entity @s[scores={tone_trace=11}] to_fly_11",
+            "event entity @s[scores={tone_trace=12}] to_fly_12",
+            "event entity @s[scores={tone_trace=13}] to_fly_13",
+            "event entity @s[scores={tone_trace=14}] to_fly_14",
+            "event entity @s[scores={tone_trace=15}] to_fly_15",
+            "event entity @s[scores={tone_trace=16}] to_fly_16",
+            "event entity @s[scores={tone_trace=17}] to_fly_17",
+            "event entity @s[scores={tone_trace=18}] to_fly_18",
+            "event entity @s[scores={tone_trace=19}] to_fly_19",
+            "event entity @s[scores={tone_trace=20}] to_fly_20",
+            "event entity @s[scores={tone_trace=21}] to_fly_21",
+            "event entity @s[scores={tone_trace=22}] to_fly_22",
+            "event entity @s[scores={tone_trace=23}] to_fly_23",
+            "event entity @s[scores={tone_trace=24}] to_fly_24",
+            "event entity @s[scores={tone_trace=25}] to_fly_25",
+            "event entity @s[scores={tone_trace=26}] to_fly_26",
+            "event entity @s[scores={tone_trace=27}] to_fly_27",
+            "event entity @s[scores={tone_trace=28}] to_fly_28",
+            "event entity @s[scores={tone_trace=29}] to_fly_29",
+            "event entity @s[scores={tone_trace=30}] to_fly_30"
+          ]
+        }
+      },
+      "to_fly_1": {
+        "add": {
+          "component_groups": [
+            "fly_1"
+          ]
+        }
+      },
+      "to_fly_2": {
+        "add": {
+          "component_groups": [
+            "fly_2"
+          ]
+        }
+      },
+      "to_fly_3": {
+        "add": {
+          "component_groups": [
+            "fly_3"
+          ]
+        }
+      },
+      "to_fly_4": {
+        "add": {
+          "component_groups": [
+            "fly_4"
+          ]
+        }
+      },
+      "to_fly_5": {
+        "add": {
+          "component_groups": [
+            "fly_5"
+          ]
+        }
+      },
+      "to_fly_6": {
+        "add": {
+          "component_groups": [
+            "fly_6"
+          ]
+        }
+      },
+      "to_fly_7": {
+        "add": {
+          "component_groups": [
+            "fly_7"
+          ]
+        }
+      },
+      "to_fly_8": {
+        "add": {
+          "component_groups": [
+            "fly_8"
+          ]
+        }
+      },
+      "to_fly_9": {
+        "add": {
+          "component_groups": [
+            "fly_9"
+          ]
+        }
+      },
+      "to_fly_10": {
+        "add": {
+          "component_groups": [
+            "fly_10"
+          ]
+        }
+      },
+      "to_fly_11": {
+        "add": {
+          "component_groups": [
+            "fly_11"
+          ]
+        }
+      },
+      "to_fly_12": {
+        "add": {
+          "component_groups": [
+            "fly_12"
+          ]
+        }
+      },
+      "to_fly_13": {
+        "add": {
+          "component_groups": [
+            "fly_13"
+          ]
+        }
+      },
+      "to_fly_14": {
+        "add": {
+          "component_groups": [
+            "fly_14"
+          ]
+        }
+      },
+      "to_fly_15": {
+        "add": {
+          "component_groups": [
+            "fly_15"
+          ]
+        }
+      },
+      "to_fly_16": {
+        "add": {
+          "component_groups": [
+            "fly_16"
+          ]
+        }
+      },
+      "to_fly_17": {
+        "add": {
+          "component_groups": [
+            "fly_17"
+          ]
+        }
+      },
+      "to_fly_18": {
+        "add": {
+          "component_groups": [
+            "fly_18"
+          ]
+        }
+      },
+      "to_fly_19": {
+        "add": {
+          "component_groups": [
+            "fly_19"
+          ]
+        }
+      },
+      "to_fly_20": {
+        "add": {
+          "component_groups": [
+            "fly_20"
+          ]
+        }
+      },
+      "to_fly_21": {
+        "add": {
+          "component_groups": [
+            "fly_21"
+          ]
+        }
+      },
+      "to_fly_22": {
+        "add": {
+          "component_groups": [
+            "fly_22"
+          ]
+        }
+      },
+      "to_fly_23": {
+        "add": {
+          "component_groups": [
+            "fly_23"
+          ]
+        }
+      },
+      "to_fly_24": {
+        "add": {
+          "component_groups": [
+            "fly_24"
+          ]
+        }
+      },
+      "to_fly_25": {
+        "add": {
+          "component_groups": [
+            "fly_25"
+          ]
+        }
+      },
+      "to_fly_26": {
+        "add": {
+          "component_groups": [
+            "fly_26"
+          ]
+        }
+      },
+      "to_fly_27": {
+        "add": {
+          "component_groups": [
+            "fly_27"
+          ]
+        }
+      },
+      "to_fly_28": {
+        "add": {
+          "component_groups": [
+            "fly_28"
+          ]
+        }
+      },
+      "to_fly_29": {
+        "add": {
+          "component_groups": [
+            "fly_29"
+          ]
+        }
+      },
+      "to_fly_30": {
+        "add": {
+          "component_groups": [
+            "fly_30"
+          ]
+        }
+      },
+      "fly_1": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=1},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_2": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=2},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_3": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=3},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_4": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=4},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_5": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=5},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_6": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=6},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_7": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=7},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_8": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=8},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_9": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=9},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_10": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=10},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_11": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=11},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_12": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=12},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_13": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=13},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_14": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=14},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_15": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=15},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_16": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=16},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_17": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=17},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_18": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=18},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_19": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=19},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_20": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=20},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_21": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=21},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_22": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=22},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_23": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=23},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_24": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=24},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_25": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=25},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_26": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=26},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_27": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=27},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_28": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=28},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_29": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=29},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_30": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1 facing @e[tag=!team_red,family=titan,scores={tone_trace=30},c=1]",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~~ detect ^^0.5^1 air -1 tp @s ^^0.5^1",
+            "execute @s ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ event entity @e[type=coldsink:tone_trace_missile_red,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "shot_tar": {
+        "queue_command": {
+          "command": [
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ execute @s[family=!shield_entity] ~~~ tag @e[type=coldsink:tone_trace_missile_red,c=1] add get_core",
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_red,family=titan,r=8,c=1] ~~~ tag @e[type=coldsink:tone_trace_missile_red,c=1] add get",
+
+            "execute @s[tag=get,tag=get_core,tag=!done] ~~~ execute @e[tag=!team_red,family=player,family=!tool,r=8,tag=!ronin_defending,tag=!titan_hard] ~~~ scoreboard players add @e[type=coldsink:tone_trace_missile_red,c=1] titan_attack 700",
+            "execute @s[tag=get,tag=get_core,tag=!done] ~~~ execute @e[tag=!team_red,family=player,family=!tool,r=8,tag=ronin_defend] ~~~ scoreboard players add @e[type=coldsink:tone_trace_missile_red,c=1] titan_attack 210",
+            "execute @s[tag=get,tag=get_core,tag=!done] ~~~ execute @e[tag=!team_red,family=player,family=!tool,r=8,tag=ronin_defend_core] ~~~ scoreboard players add @e[type=coldsink:tone_trace_missile_red,c=1] titan_attack 70",
+            "execute @s[tag=get,tag=get_core,tag=!done] ~~~ execute @e[tag=!team_red,family=player,family=!tool,r=8,tag=titan_hard] ~~~ scoreboard players add @e[type=coldsink:tone_trace_missile_red,c=1] titan_attack 560",
+            
+            "execute @s[tag=get,tag=!done] ~~~ scoreboard players operation @a[tag=is_tone,tag=team_red] skill_check_1 = @s titan_self",
+            "execute @s[tag=get,tag=!done] ~~~ execute @a[tag=is_tone,tag=team_red] ~~~ scoreboard players operation @s skill_check_1 -= @s titan_self",
+            "execute @s[tag=get,tag=!done] ~~~ scoreboard players operation @a[tag=is_tone,tag=team_red,scores={skill_check_1=0}] titan_attack += @s titan_attack",
+            "execute @s[tag=get,tag=!done] ~~~ event entity @a[tag=is_tone,tag=team_red,scores={skill_check_1=0}] shoot_get_core",
+
+            "execute @s[tag=get,tag=!done] ~~~ scoreboard players operation @e[tag=!team_red,family=player,family=!tool,r=8] death_check = @p[tag=is_tone,tag=team_red,scores={skill_check_1=0}] titan_self",
+            "execute @s[tag=get,tag=!done] ~~~ damage @e[tag=!team_red,family=player,family=!tool,r=8,tag=!ronin_defending,tag=!titan_hard] 700 suicide entity @s",
+            "execute @s[tag=get,tag=!done] ~~~ damage @e[tag=!team_red,family=player,family=!tool,r=8,tag=ronin_defend] 210 suicide entity @s",
+            "execute @s[tag=get,tag=!done] ~~~ damage @e[tag=!team_red,family=player,family=!tool,r=8,tag=ronin_defend_core] 70 suicide entity @s",
+            "execute @s[tag=get,tag=!done] ~~~ damage @e[tag=!team_red,family=player,family=!tool,r=8,tag=titan_hard] 560 suicide entity @s",
+            
+            // 破盾伤害
+            "execute @s[tag=get,tag=!done] ~~-5~ damage @e[family=shield_entity,family=!titan_shield,tag=!team_red,r=8,c=1] 700 suicide entity @s",
+
+            "execute @s[tag=get,tag=!done] ~~~ particle titan:tone_missile_boom ~~~",
+            "event entity @s[tag=get,tag=!done] pre_godie",
+            "tag @s[tag=get,tag=!done] add done"
+          ]
+        }
+      },
+      "down": {
+        "queue_command": {
+          "command": [
+            "summon coldsink:ion_get_missile_blue",
+            "event entity @s real_godie"
+          ]
+        }
+      },
+      "pre_godie": {
+        "remove": {
+          "component_groups": [
+            "pre_wait",
+            "being_godie"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "pre_godie"
+          ]
+        }
+      },
+      "godie": {
+        "queue_command": {
+          "command": [
+            "execute @s[tag=!done] ~~~ particle titan:tone_missile_boom ~~~",
+            "event entity @s real_godie"
+          ]
+        }
+      },
+      "real_godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

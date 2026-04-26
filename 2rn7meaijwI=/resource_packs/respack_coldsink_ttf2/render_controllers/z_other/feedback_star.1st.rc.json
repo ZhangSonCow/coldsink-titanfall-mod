@@ -1,0 +1,16 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.feedback_star.1st": {
+      "geometry": "geometry.feedback_star.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.feedback_star" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

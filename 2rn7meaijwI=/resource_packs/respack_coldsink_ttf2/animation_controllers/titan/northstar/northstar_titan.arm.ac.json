@@ -1,0 +1,137 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.northstar_titan.arm": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "northstar_titan.idle.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "fire": "q.property('titan:action') == 3"
+            },
+            {
+              "reload": "q.property('titan:action') == 4"
+            },
+            {
+              "melee": "q.property('titan:action') == 5"
+            },
+            {
+              "powering": "q.property('titan:action') == 11"
+            },
+            {
+              "missile": "q.property('titan:action') == 12"
+            },
+            {
+              "core": "q.property('titan:action') == 13"
+            },
+            {
+              "spurt": "q.out_of_control && q.property('titan:action') == 0 && !q.is_saddled"
+            },
+            {
+              "run": "q.is_sprinting && q.property('titan:action') == 0 && !q.is_saddled"
+            }
+          ]
+        },
+        "run": {
+          "animations": [
+            "northstar_titan.move.arm"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "!q.is_sprinting || q.out_of_control || q.property('titan:action') != 0 || q.is_saddled"
+            }
+          ]
+        },
+        "spurt": {
+          "animations": [
+            "northstar_titan.idle.arm"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "!q.out_of_control || q.property('titan:action') != 0 || q.is_saddled"
+            }
+          ]
+        },
+        "fire": {
+          "animations": [
+            "northstar_titan.fire"
+          ],
+          "blend_transition": 0,
+          "transitions": [
+            {
+              "reload": "q.property('titan:action') == 4 || (q.property('titan:weapon_value') == 0 && q.property('titan:action') == 0)"
+            },
+            {
+              "default": "q.property('titan:action') != 3"
+            }
+          ]
+        },
+        "reload": {
+          "animations": [
+            "northstar_titan.reload"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 4 && !((q.property('titan:action') == 3 || q.property('titan:action') == 11) && q.property('titan:weapon_value') == 0)"
+            }
+          ]
+        },
+        "melee": {
+          "animations": [
+            "northstar_titan.melee"
+          ],
+          "blend_transition": 0.5,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 5"
+            }
+          ]
+        },
+        "powering": {
+          "animations": [
+            "northstar_titan.pre_fire",
+            "northstar_titan.rotate"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "fire": "q.property('titan:action') == 3"
+            },
+            {
+              "default": "q.property('titan:action') != 11"
+            }
+          ]
+        },
+        "missile": {
+          "animations": [
+            "northstar_titan.missile"
+          ],
+          "blend_transition": 0.5,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 12"
+            }
+          ]
+        },
+        "core": {
+          "animations": [
+            "northstar_titan.core"
+          ],
+          "blend_transition": 0.5,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 13"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

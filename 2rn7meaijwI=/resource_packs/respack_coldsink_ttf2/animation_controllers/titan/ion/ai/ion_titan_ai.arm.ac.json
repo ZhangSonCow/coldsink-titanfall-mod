@@ -1,0 +1,102 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ion_titan_ai.arm": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "ion_titan.idle.arm",
+            "ion_titan.rotate"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "melee": "q.property('titan:action') == 11"
+            },
+            {
+              "fire": "q.property('titan:action') == 12"
+            },
+            {
+              "laser": "q.property('titan:action') == 13"
+            },
+            {
+              "core": "q.property('titan:action') == 15"
+            },
+            {
+              "shield": "q.property('titan:action') == 16"
+            }
+          ]
+        },
+        "melee": {
+          "animations": [
+            "ion_titan.melee"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 11"
+            }
+          ]
+        },
+        "fire": {
+          "animations": [
+            "ion_titan.fire"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 12"
+            }
+          ]
+        },
+        "laser": {
+          "animations": [
+            "ion_titan.laser"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "laser_after": "q.property('titan:action') != 13"
+            }
+          ]
+        },
+        "laser_after": {
+          "animations": [
+            "ion_titan.laser_after"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 14"
+            }
+          ]
+        },
+        "core": {
+          "animations": [
+            "ion_titan.core",
+            "ion_titan.core_particle"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "shield": {
+          "animations": [
+            "ion_titan.shield",
+            "ion_titan.shield.particle"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 16"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

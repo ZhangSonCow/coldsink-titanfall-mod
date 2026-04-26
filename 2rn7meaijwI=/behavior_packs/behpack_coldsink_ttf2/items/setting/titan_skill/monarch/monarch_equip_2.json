@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "coldsink:monarch_equip_2",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.arrow"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "monarch_equip_2",
+      "minecraft:display_name": {
+        "value": "§e【能量盗取】 §f加快 10% 核心速率，处决时窃取一枚电池"
+      },
+      "minecraft:use_modifiers": {
+        "use_duration": 99999,
+        "movement_modifier": 1
+      },
+      "minecraft:food": {
+        "can_always_eat": true
+      },
+      "minecraft:cooldown": {
+        "category": "setting",
+        "duration": 1
+      },
+      "minecraft:hand_equipped": false
+    }
+  }
+}

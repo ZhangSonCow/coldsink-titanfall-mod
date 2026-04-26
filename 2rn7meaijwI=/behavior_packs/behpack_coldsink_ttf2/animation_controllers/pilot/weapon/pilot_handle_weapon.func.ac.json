@@ -1,0 +1,59 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.pilot_handle_weapon.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "r201": "q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_r201') && q.variant == 0 && q.is_alive"
+            },
+            {
+              "charge": "q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_charge') && q.variant == 0 && q.is_alive"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[tag=!is_titan] set_weapon_0",
+            "/tag @s remove pilot_handle_weapon"
+          ],
+          "on_exit": [
+            "/event entity @s[tag=!is_titan] set_other_action_10",
+            "/event entity @s[tag=weapon_aim] keyPressIn_Right_0",
+            "/tag @s add pilot_handle_weapon",
+
+            // 计分板初始化
+            "/execute @s[tag=!init_pilot] ~~~ function pilot/all_init",
+            "/tag @s add init_pilot",
+            // 针对未扮演过铁驭的玩家，单独拿起武器时初始化标识分数，防止无伤害
+            "/tag @s add first_weapon",
+            "/tag @s[scores={titan_self=1..}] remove first_weapon",
+            "/execute @s[tag=first_weapon] ~~~ function pilot/init"
+          ]
+        },
+        "r201": {
+          "transitions": [
+            {
+              "default": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_r201') || q.variant != 0 || !q.is_alive"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players operation @s[tag=!titan_camera] bullet_tem = @s r201_bullet",
+            "/event entity @s[tag=!titan_camera] set_weapon_1_50"
+          ],
+          "on_exit": [
+            "/stopsound @a[r=32] weapon_r201_reload",
+            "/stopsound @s weapon_r201_reload.self"
+          ]
+        },
+        "charge": {
+          "transitions": [
+            {
+              "default": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_charge') || q.variant != 0 || !q.is_alive"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

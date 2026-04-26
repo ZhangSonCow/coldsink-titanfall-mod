@@ -1,0 +1,21 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.spurt_cooldown.func": {
+      "loop": true,
+      "animation_length": 1.0,
+      "timeline": {
+        "0.0": [
+          "/event entity @s remove_spurt_1",
+          "/scoreboard players remove @s[scores={spurt_time=1..}] spurt_time 1"
+        ],
+        "0.5": [
+          "/event entity @s[tag=is_legion] remove_spurt_1",
+          "/scoreboard players remove @s[scores={spurt_time=1..},tag=is_legion] spurt_time 1",
+          "/event entity @s[tag=is_scorch] remove_spurt_1",
+          "/scoreboard players remove @s[scores={spurt_time=1..},tag=is_scorch] spurt_time 1"
+        ]
+      }
+    }
+  }
+}

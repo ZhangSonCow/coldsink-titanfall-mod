@@ -1,0 +1,42 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ion_fire.func": {
+      "loop": true,
+      "animation_length": 0.15,
+      "timeline": {
+        "0.0": [
+          "/event entity @s[tag=!weapon_aim,scores={ion_bullet=1..},tag=team_blue] ion_fire_blue",
+          "/event entity @s[tag=!weapon_aim,scores={ion_bullet=1..},tag=team_red] ion_fire_red",
+          "/event entity @s[tag=!weapon_aim,scores={ion_bullet=1..}] ion_fire",
+          
+          "/event entity @s[tag=weapon_aim,scores={ion_bullet=1..},tag=team_blue] ion_fire_divide_blue",
+          "/event entity @s[tag=weapon_aim,scores={ion_bullet=1..},tag=team_red] ion_fire_divide_red",
+          "/event entity @s[tag=weapon_aim,scores={ion_bullet=1..}] ion_fire_divide"
+        ],
+        "0.08": [
+          "/event entity @s[scores={ion_bullet=..0}] set_action_0",
+          "/event entity @s[tag=!weapon_fire] set_action_0"
+        ]
+      }
+    },
+    "animation.ion_reload.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.9": [
+          "/camerashake add @s 0.2 0.4 rotational"
+        ],
+        "2.5": [
+          "/camerashake add @s 0.3 0.5 rotational"
+        ],
+        "3.5": [
+          "/event entity @s set_action_0",
+          "/scoreboard players set @s[tag=is_titan] ion_bullet 40",
+          "/event entity @s[tag=is_titan] set_weapon_40",
+          "/replaceitem entity @s[tag=is_titan,tag=!wy_game] slot.hotbar 0 coldsink:ion_weapon"
+        ]
+      }
+    }
+  }
+}

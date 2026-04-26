@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.tone_skill_2.func": {
+      "loop": true,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.5": [
+          "/event entity @s[tag=team_blue] tone_trace_sense_blue",
+          "/event entity @s[tag=team_red] tone_trace_sense_red",
+          "/playsound tone_skill_2 @a[r=64] ~~~"
+        ],
+        "1.0": [
+          "/event entity @s set_cooldown_2_14",
+          "/event entity @s set_action_0"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.pilot_health_bar_blue": {
+      "geometry": "geometry.pilot_health_bar_blue",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.health_bar_team" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    "controller.render.pilot_health_bar_red": {
+      "geometry": "geometry.pilot_health_bar_red",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.health_bar_team" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

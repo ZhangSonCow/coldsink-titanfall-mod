@@ -1,0 +1,66 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.particle_play_ctrl.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "particle_1": "q.property('titan:particle') == 1"
+            },
+            {
+              "particle_2": "q.property('titan:particle') == 2"
+            },
+            {
+              "particle_3": "q.property('titan:particle') == 3"
+            },
+            {
+              "particle_4": "q.property('titan:particle') == 4"
+            }
+          ]
+        },
+        "particle_1": {
+          "animations": [
+            "particle_over_1"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:particle') != 1"
+            }
+          ]
+        },
+        "particle_2": {
+          "animations": [
+            "particle_over_2"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:particle') != 2"
+            }
+          ]
+        },
+        "particle_3": {
+          "animations": [
+            "particle_over_3"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:particle') != 3"
+            }
+          ]
+        },
+        "particle_4": {
+          "animations": [
+            "particle_over_4"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:particle') != 4"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

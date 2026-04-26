@@ -1,0 +1,40 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.tone_fire.func": {
+      "loop": true,
+      "animation_length": 0.6,
+      "timeline": {
+        "0.0": [
+          "/event entity @s[scores={tone_bullet=1..},tag=team_blue] tone_fire_blue",
+          "/event entity @s[scores={tone_bullet=1..},tag=team_red] tone_fire_red",
+          "/event entity @s[scores={tone_bullet=1..}] tone_fire"
+        ],
+        "0.4": [
+          "/event entity @s[scores={tone_bullet=..0}] set_action_0",
+          "/event entity @s[tag=!weapon_fire] set_action_0"
+        ]
+      }
+    },
+    "animation.tone_reload.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.1": [
+          "/camerashake add @s 0.1 0.2 rotational"
+        ],
+        "0.5": [
+          "/camerashake add @s 0.25 0.4 rotational"
+        ],
+        "2.0": [
+          "/camerashake add @s 0.35 0.3 rotational"
+        ],
+        "3.0": [
+          "/event entity @s set_action_0",
+          "/scoreboard players set @s[tag=is_titan] tone_bullet 12",
+          "/event entity @s[tag=is_titan] set_weapon_12"
+        ]
+      }
+    }
+  }
+}

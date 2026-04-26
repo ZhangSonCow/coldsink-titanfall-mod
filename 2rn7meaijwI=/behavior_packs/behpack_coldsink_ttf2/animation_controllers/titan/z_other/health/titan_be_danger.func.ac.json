@@ -1,0 +1,61 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.titan_be_danger.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "tem": "q.health <= 2500"
+            }
+          ]
+        },
+        "tem": {
+          "transitions": [
+            {
+              "danger_has_rider": "q.is_riding"
+            },
+            {
+              "danger_no_rider": "!q.is_riding"
+            }
+          ],
+          "on_entry": [
+            "/effect @s[tag=!titan_danger,tag=!scorch_core_done] instant_health 1 100 true"
+          ]
+        },
+        "danger_has_rider": {
+          "transitions": [
+            {
+              "default": "q.health > 2500"
+            }
+          ],
+          "on_entry": [
+            "/event entity @p[tag=is_titan,y=~5,r=8] titan_danger_yes",
+            "/replaceitem entity @p[tag=is_titan,tag=!wy_game,y=~5,r=8] slot.hotbar 5 coldsink:titan_eject_danger 1 0 {\"item_lock\":{\"mode\":\"lock_in_slot\"}}",
+            "/execute @s[tag=titan_danger] ~~~ execute @p[tag=is_titan,y=~5,r=8] ~~~ playsound ion_suggest_eject @s[tag=!titan_fight,tag=is_ion]",
+            "/execute @s[tag=titan_danger] ~~~ execute @p[tag=is_titan,y=~5,r=8] ~~~ playsound tone_suggest_eject @s[tag=!titan_fight,tag=is_tone]",
+            "/execute @s[tag=titan_danger] ~~~ execute @p[tag=is_titan,y=~5,r=8] ~~~ playsound northstar_suggest_eject @s[tag=!titan_fight,tag=is_northstar]",
+            "/execute @s[tag=titan_danger] ~~~ execute @p[tag=is_titan,y=~5,r=8] ~~~ playsound ronin_suggest_eject @s[tag=!titan_fight,tag=is_ronin]",
+            "/execute @s[tag=titan_danger] ~~~ execute @p[tag=is_titan,y=~5,r=8] ~~~ playsound scorch_suggest_eject @s[tag=!titan_fight,tag=is_scorch]",
+            "/execute @s[tag=titan_danger] ~~~ execute @p[tag=is_titan,y=~5,r=8] ~~~ playsound legion_suggest_eject @s[tag=!titan_fight,tag=is_legion]",
+            "/execute @s[tag=titan_danger] ~~~ execute @p[tag=is_titan,y=~5,r=8] ~~~ playsound monarch_suggest_eject @s[tag=!titan_fight,tag=is_monarch]"
+          ],
+          "on_exit": [
+            "/function titan/danger_health_damage_fix"
+          ]
+        },
+        "danger_no_rider": {
+          "transitions": [
+            {
+              "default": "q.health > 2500"
+            }
+          ],
+          "on_exit": [
+            "/function titan/danger_health_damage_fix"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.monarch_weapon_star.1st": {
+      "geometry": "geometry.monarch_weapon_star.1st",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "texture.titan_weapon_star" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    "controller.render.monarch_missile_star.1st": {
+      "geometry": "geometry.titan_missile_star.1st",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "texture.titan_weapon_star" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    "controller.render.monarch_energy_star.1st": {
+      "geometry": "geometry.circle_star.1st",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "texture.titan_weapon_star" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

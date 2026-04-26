@@ -1,0 +1,532 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.weapon_r201_bullet_count",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 6,
+				"visible_bounds_height": 5,
+				"visible_bounds_offset": [0, 0.5, 0]
+			},
+			"bones": [
+				{
+					"name": "pilotRoot",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "pilotWaist",
+					"parent": "pilotRoot",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "pilotBody1",
+					"parent": "pilotWaist",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "pilotBody2",
+					"parent": "pilotBody1",
+					"pivot": [0, 18, 0]
+				},
+				{
+					"name": "pilotHead",
+					"parent": "pilotBody2",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "pilotRightArm1",
+					"parent": "pilotBody2",
+					"pivot": [-5, 22, 0]
+				},
+				{
+					"name": "pilotRightArm2",
+					"parent": "pilotRightArm1",
+					"pivot": [-6, 18, -1]
+				},
+				{
+					"name": "weapon",
+					"parent": "pilotRightArm2",
+					"pivot": [-5.4221, 14.0847, -1.1953]
+				},
+				{
+					"name": "weapon_bullet_count",
+					"parent": "weapon",
+					"pivot": [-5.17875, 14.75688, -5.045],
+					"rotation": [90, -60, 90]
+				},
+				{
+					"name": "bullet_count_bar",
+					"parent": "weapon_bullet_count",
+					"pivot": [-5.20426, 14.61341, -4.97831],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.61909, -5.5346],
+							"size": [-0.05637, -0.0152, 0.46864],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [1.125, 0.625], "uv_size": [0, 1]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bullet_count_unit_0",
+					"parent": "weapon_bullet_count",
+					"pivot": [-4.82169, 15.45284, -5.045],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.68309, -5.25425],
+							"size": [-0.05637, 0.11664, 0.11664],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [0, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bullet_count_unit_1",
+					"parent": "weapon_bullet_count",
+					"pivot": [-4.82169, 15.45284, -5.045],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.68309, -5.25425],
+							"size": [-0.05637, 0.11664, 0.11664],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [4, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bullet_count_unit_2",
+					"parent": "weapon_bullet_count",
+					"pivot": [-4.82169, 15.45284, -5.045],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.68309, -5.25425],
+							"size": [-0.05637, 0.11664, 0.11664],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [8, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bullet_count_unit_3",
+					"parent": "weapon_bullet_count",
+					"pivot": [-4.82169, 15.45284, -5.045],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.68309, -5.25425],
+							"size": [-0.05637, 0.11664, 0.11664],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [12, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bullet_count_unit_4",
+					"parent": "weapon_bullet_count",
+					"pivot": [-4.82169, 15.45284, -5.045],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.68309, -5.25425],
+							"size": [-0.05637, 0.11664, 0.11664],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [0, 4], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bullet_count_unit_5",
+					"parent": "weapon_bullet_count",
+					"pivot": [-4.82169, 15.45284, -5.045],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.68309, -5.25425],
+							"size": [-0.05637, 0.11664, 0.11664],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [4, 4], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bullet_count_unit_6",
+					"parent": "weapon_bullet_count",
+					"pivot": [-4.82169, 15.45284, -5.045],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.68309, -5.25425],
+							"size": [-0.05637, 0.11664, 0.11664],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [8, 4], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bullet_count_unit_7",
+					"parent": "weapon_bullet_count",
+					"pivot": [-4.82169, 15.45284, -5.045],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.68309, -5.25425],
+							"size": [-0.05637, 0.11664, 0.11664],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [12, 4], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bullet_count_unit_8",
+					"parent": "weapon_bullet_count",
+					"pivot": [-4.82169, 15.45284, -5.045],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.68309, -5.25425],
+							"size": [-0.05637, 0.11664, 0.11664],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [0, 8], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bullet_count_unit_9",
+					"parent": "weapon_bullet_count",
+					"pivot": [-4.82169, 15.45284, -5.045],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.68309, -5.25425],
+							"size": [-0.05637, 0.11664, 0.11664],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [4, 8], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bullet_count_decade_0",
+					"parent": "weapon_bullet_count",
+					"pivot": [-4.82169, 15.45284, -4.9298],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.68309, -5.11346],
+							"size": [-0.05637, 0.11664, 0.11664],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [0, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bullet_count_decade_1",
+					"parent": "weapon_bullet_count",
+					"pivot": [-4.82169, 15.45284, -4.9298],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.68309, -5.11346],
+							"size": [-0.05637, 0.11664, 0.11664],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [4, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bullet_count_decade_2",
+					"parent": "weapon_bullet_count",
+					"pivot": [-4.82169, 15.45284, -4.9298],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.68309, -5.11346],
+							"size": [-0.05637, 0.11664, 0.11664],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [8, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bullet_count_decade_3",
+					"parent": "weapon_bullet_count",
+					"pivot": [-4.82169, 15.45284, -4.9298],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.68309, -5.11346],
+							"size": [-0.05637, 0.11664, 0.11664],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [12, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bullet_count_decade_4",
+					"parent": "weapon_bullet_count",
+					"pivot": [-4.82169, 15.45284, -4.9298],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.68309, -5.11346],
+							"size": [-0.05637, 0.11664, 0.11664],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [0, 4], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bullet_count_decade_5",
+					"parent": "weapon_bullet_count",
+					"pivot": [-4.82169, 15.45284, -4.9298],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.68309, -5.11346],
+							"size": [-0.05637, 0.11664, 0.11664],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [4, 4], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bullet_count_decade_6",
+					"parent": "weapon_bullet_count",
+					"pivot": [-4.82169, 15.45284, -4.9298],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.68309, -5.11346],
+							"size": [-0.05637, 0.11664, 0.11664],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [8, 4], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bullet_count_decade_7",
+					"parent": "weapon_bullet_count",
+					"pivot": [-4.82169, 15.45284, -4.9298],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.68309, -5.11346],
+							"size": [-0.05637, 0.11664, 0.11664],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [12, 4], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bullet_count_decade_8",
+					"parent": "weapon_bullet_count",
+					"pivot": [-4.82169, 15.45284, -4.9298],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.68309, -5.11346],
+							"size": [-0.05637, 0.11664, 0.11664],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [0, 8], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bullet_count_decade_9",
+					"parent": "weapon_bullet_count",
+					"pivot": [-4.82169, 15.45284, -4.9298],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.68309, -5.11346],
+							"size": [-0.05637, 0.11664, 0.11664],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [4, 8], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bullet_count_hundred_1",
+					"parent": "weapon_bullet_count",
+					"pivot": [-4.82169, 15.45284, -4.9298],
+					"cubes": [
+						{
+							"origin": [-5.17608, 14.68309, -4.97265],
+							"size": [-0.05637, 0.11664, 0.11664],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [4, 0], "uv_size": [4, 4]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "pilotLeftArm1",
+					"parent": "pilotBody2",
+					"pivot": [5, 22, 0]
+				},
+				{
+					"name": "pilotLeftArm2",
+					"parent": "pilotLeftArm1",
+					"pivot": [6, 18, -1]
+				},
+				{
+					"name": "pilotRightLeg1",
+					"parent": "pilotWaist",
+					"pivot": [-1.9, 12, 0]
+				},
+				{
+					"name": "pilotRightLeg2",
+					"parent": "pilotRightLeg1",
+					"pivot": [-2, 6, -0.5]
+				},
+				{
+					"name": "pilotLeftLeg1",
+					"parent": "pilotWaist",
+					"pivot": [1.9, 12, 0]
+				},
+				{
+					"name": "pilotLeftLeg2",
+					"parent": "pilotLeftLeg1",
+					"pivot": [2, 6, -0.5]
+				}
+			]
+		}
+	]
+}

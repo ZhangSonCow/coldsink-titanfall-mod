@@ -1,0 +1,65 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "titan:landing_1",
+			"basic_render_parameters": {
+				"material": "particles_blend",
+				"texture": "textures/particle/titan/newsmoke1"
+			}
+		},
+		"curves": {
+			"variable.alpha": {
+				"type": "linear",
+				"input": "v.particle_age",
+				"horizontal_range": "v.particle_lifetime",
+				"nodes": [1, 0.94, 0.86, 0.73, 0]
+			},
+			"variable.size": {
+				"type": "linear",
+				"input": "v.particle_age",
+				"horizontal_range": "v.particle_lifetime",
+				"nodes": [1, 1, 1, 1, 1, 1, 1, 1, 0.82]
+			}
+		},
+		"components": {
+			"minecraft:emitter_rate_instant": {
+				"num_particles": 50
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 10
+			},
+			"minecraft:emitter_shape_disc": {
+				"offset": [0, 1.5, 0],
+				"radius": 3,
+				"direction": "outwards"
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": 7
+			},
+			"minecraft:particle_initial_spin": {
+				"rotation": "math.random(0,360)",
+				"rotation_rate": "math.random(-20,20)"
+			},
+			"minecraft:particle_initial_speed": "math.random(10,50)",
+			"minecraft:particle_motion_dynamic": {
+				"linear_acceleration": [0, "v.particle_age < 1 ? 3 : -0.5", 0],
+				"linear_drag_coefficient": 5
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": ["3*(v.particle_age < 0.25 ? v.particle_age*4 : variable.size)*(0.0+variable.particle_random_4*2)", "3*(v.particle_age < 0.25 ? v.particle_age*4 : variable.size)*(0.0+variable.particle_random_4*2)"],
+				"facing_camera_mode": "rotate_xyz",
+				"uv": {
+					"texture_width": 512,
+					"texture_height": 512,
+					"uv": ["math.floor(v.particle_random_1*2)*256", "math.floor(v.particle_random_2*2)*256"],
+					"uv_size": [256, 256]
+				}
+			},
+			"minecraft:particle_appearance_lighting": {},
+			"minecraft:particle_appearance_tinting": {
+				"color": ["0.4+(variable.particle_random_3*1-0.5)*0.1", "0.35+(variable.particle_random_3*1-0.5)*0.1", "0.3+(variable.particle_random_3*1-0.5)*0.1", "Math.clamp(0.5*variable.alpha, 0, 1)"]
+			}
+		}
+	}
+}

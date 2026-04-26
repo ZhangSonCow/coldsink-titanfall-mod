@@ -1,0 +1,105 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:northstar_missile_boom_blue",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "godie": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+			"minecraft:tick_world": {
+				"distance_to_players": 128,
+				"never_despawn": false,
+				"radius": 2
+			},
+      "minecraft:type_family": {
+        "family": [ "tool" ]
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:collision_box": {
+          "width": 0.0,
+          "height": 0.0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:ageable": {
+        "duration": 4.1,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:timer": {
+        "time": 0.3,
+        "time_down_event": {
+          "event": "count",
+          "target": "self"
+        }
+      },
+      "minecraft:health": {
+        "value": 2,
+        "max": 2,
+        "min": 1
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+    "events": {
+      "count": {
+        "queue_command": {
+          "command": [
+            "execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,r=8,tag=!ronin_defending,tag=!titan_hard,family=!shield_entity] ~~~ scoreboard players add @e[type=coldsink:northstar_missile_boom_blue,c=1] titan_attack 240",
+            "execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,r=8,tag=ronin_defend,family=!shield_entity] ~~~ scoreboard players add @e[type=coldsink:northstar_missile_boom_blue,c=1] titan_attack 72",
+            "execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,r=8,tag=ronin_defend_core,family=!shield_entity] ~~~ scoreboard players add @e[type=coldsink:northstar_missile_boom_blue,c=1] titan_attack 24",
+            "execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,r=8,tag=titan_hard,family=!shield_entity] ~~~ scoreboard players add @e[type=coldsink:northstar_missile_boom_blue,c=1] titan_attack 192",
+
+            "execute @s[scores={titan_attack=1..}] ~~~ scoreboard players operation @e[tag=is_northstar,tag=team_blue] skill_check_1 = @s titan_self",
+            "execute @s[scores={titan_attack=1..}] ~~~ execute @e[tag=is_northstar,tag=team_blue] ~~~ scoreboard players operation @s skill_check_1 -= @s titan_self",
+            "execute @s[scores={titan_attack=1..}] ~~~ scoreboard players operation @e[tag=is_northstar,tag=team_blue,scores={skill_check_1=0}] titan_attack += @s titan_attack",
+            "execute @s[scores={titan_attack=1..}] ~~~ event entity @e[tag=is_northstar,tag=team_blue,scores={skill_check_1=0}] shoot_get_core",
+            "scoreboard players reset @s titan_attack",
+            
+            "scoreboard players operation @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,r=8] death_check = @e[tag=is_northstar,tag=team_blue,scores={skill_check_1=0},c=1] titan_self",
+            "damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,r=8,tag=!ronin_defending,tag=!titan_hard] 240 suicide entity @e[tag=is_northstar,tag=team_blue,scores={skill_check_1=0},c=1]",
+            "damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,r=8,tag=ronin_defend] 72 suicide entity @e[tag=is_northstar,tag=team_blue,scores={skill_check_1=0},c=1]",
+            "damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,r=8,tag=ronin_defend_core] 24 suicide entity @e[tag=is_northstar,tag=team_blue,scores={skill_check_1=0},c=1]",
+            "damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,r=8,tag=titan_hard] 192 suicide entity @e[tag=is_northstar,tag=team_blue,scores={skill_check_1=0},c=1]",
+            "event entity @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,r=8,tag=ronin_defending] defend_damage_transform",
+
+            // 北极星集束飞弹轰炸自伤
+            "execute @e[tag=is_northstar,tag=team_blue,scores={skill_check_1=0},r=8,c=1] ~~~ execute @e[type=coldsink:northstar_titan,tag=team_blue,r=8,c=1] ~~~ damage @s[tag=!titan_shield] 240 suicide entity @e[tag=is_northstar,tag=team_blue,scores={skill_check_1=0},c=1]",
+            "execute @e[tag=is_northstar,tag=team_blue,scores={skill_check_1=0},r=8,c=1] ~~~ execute @e[type=coldsink:northstar_titan,tag=team_blue,r=8,c=1] ~~~ execute @s[tag=titan_shield] ~~~ damage @e[family=titan_shield,tag=team_blue,r=8,c=1] 240 suicide entity @e[tag=is_northstar,tag=team_blue,scores={skill_check_1=0},c=1]",
+
+            "particle titan:northstar_missile_boom_1 ~~~",
+            "particle titan:northstar_missile_boom_2 ~~~"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "godie"
+          ]
+        }
+      }
+    }
+  }
+}

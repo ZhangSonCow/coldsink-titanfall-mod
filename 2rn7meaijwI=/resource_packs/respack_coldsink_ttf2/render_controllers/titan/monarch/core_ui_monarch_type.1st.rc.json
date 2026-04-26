@@ -1,0 +1,114 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+
+    "controller.render.core_ui_monarch_11.1st": {
+      "geometry": "geometry.core_ui_titan_type.1st",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "texture.monarch_core_11" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    
+    "controller.render.core_ui_monarch_12.1st": {
+      "geometry": "geometry.core_ui_titan_type.1st",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "texture.monarch_core_12" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    
+    "controller.render.core_ui_monarch_13.1st": {
+      "geometry": "geometry.core_ui_titan_type.1st",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "texture.monarch_core_13" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+
+    "controller.render.core_ui_monarch_21.1st": {
+      "geometry": "geometry.core_ui_titan_type.1st",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "texture.monarch_core_21" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    
+    "controller.render.core_ui_monarch_22.1st": {
+      "geometry": "geometry.core_ui_titan_type.1st",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "texture.monarch_core_22" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    
+    "controller.render.core_ui_monarch_23.1st": {
+      "geometry": "geometry.core_ui_titan_type.1st",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "texture.monarch_core_23" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+
+    "controller.render.core_ui_monarch_31.1st": {
+      "geometry": "geometry.core_ui_titan_type.1st",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "texture.monarch_core_31" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    
+    "controller.render.core_ui_monarch_32.1st": {
+      "geometry": "geometry.core_ui_titan_type.1st",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "texture.monarch_core_32" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    
+    "controller.render.core_ui_monarch_33.1st": {
+      "geometry": "geometry.core_ui_titan_type.1st",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "texture.monarch_core_33" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+
+  }
+}

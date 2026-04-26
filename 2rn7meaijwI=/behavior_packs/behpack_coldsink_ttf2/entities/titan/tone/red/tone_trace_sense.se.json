@@ -1,0 +1,123 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:tone_trace_sense_red",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball",
+      "animations": {
+        "c.self": "controller.animation.titan_bullet_self.func",
+        "self": "animation.tone_bullet_self.func"
+      },
+      "scripts": {
+        "animate": [ 
+          "c.self"
+        ]
+      }
+    },
+
+    "component_groups": {
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+			"minecraft:tick_world": {
+				"distance_to_players": 128,
+				"never_despawn": false,
+				"radius": 2
+			},
+      "minecraft:type_family": {
+        "family": [ "bullet", "tool" ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.5
+      },
+      "minecraft:ageable": {
+        "duration": 5,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:projectile": {
+        "anchor": 1,
+        "on_hit": {
+          // "impact_damage": {
+          //   "damage": 0,
+          //   "knockback": false,
+          //   "destroy_on_hit": true
+          // },
+          "definition_event": {
+            "affect_projectile": true,
+            "affect_shooter": false,
+            "affect_target": false,
+            "affect_splash_area": false,
+            "event_trigger": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "on_ground",
+                    "operator": "!=",
+                    "subject": "self"
+                  }
+                ]
+              },
+              "event": "shot_tar",
+              "target": "self"
+            }
+          },
+          "stick_in_ground": {
+            "shake_time": 1
+          }
+        },
+        "power": 9,
+        "gravity": 0.00,
+        "angle_offset": 0,
+        "liquid_inertia": 1,
+        "stop_on_hurt": false
+      },
+      "minecraft:physics": {},
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "events": {
+      "shot_tar": {
+        "queue_command": {
+          "command": [
+            "execute @s[tag=!get] ~~~ execute @e[tag=!team_red,family=titan,r=80,c=1] ~~~ tag @e[type=coldsink:tone_trace_sense_red,c=1] add get",
+            "execute @s[tag=get] ~~~ scoreboard players operation @a[tag=is_tone,tag=team_red] skill_check_2 = @s titan_self",
+            "execute @s[tag=get] ~~~ execute @a[tag=is_tone,tag=team_red] ~~~ scoreboard players operation @s skill_check_2 -= @s titan_self",
+
+            "execute @s[tag=get] ~~~ scoreboard players add @e[tag=!team_red,family=titan,tag=!ronin_phase,r=80] tone_target 1",
+            "execute @s[tag=get] ~~~ ride @e[tag=!team_red,family=titan,tag=!ronin_phase,r=80,scores={tone_target=1}] summon_rider coldsink:tone_target_1_red",
+            "execute @s[tag=get] ~~~ execute @e[tag=!team_red,family=titan,tag=!ronin_phase,r=80,scores={tone_target=2..}] ~~~ event entity @e[family=tone_target_red,c=1] target_up",
+
+            "execute @s[tag=get] ~~~ execute @e[tag=!team_red,family=titan,tag=!ronin_phase,r=80,scores={tone_target=1..2},c=1] ~~~ scoreboard players set @e[type=coldsink:tone_trace_sense_red,c=1] tone_bullet 1",
+            "execute @s[tag=get] ~~~ execute @e[tag=!team_red,family=titan,tag=!ronin_phase,r=80,scores={tone_target=3},c=1] ~~~ scoreboard players set @e[type=coldsink:tone_trace_sense_red,c=1] tone_bullet 2",
+            "execute @s[tag=get] ~~~ execute @s[scores={tone_bullet=1}] ~~~ playsound tone_target_pre @a[tag=is_tone,tag=team_red,scores={skill_check_2=0}]",
+            "execute @s[tag=get] ~~~ execute @s[scores={tone_bullet=2}] ~~~ playsound tone_target_lock @a[tag=is_tone,tag=team_red,scores={skill_check_2=0}]",
+
+            "particle titan:tone_sense_circle ~~~",
+            "kill @s[tag=get]"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

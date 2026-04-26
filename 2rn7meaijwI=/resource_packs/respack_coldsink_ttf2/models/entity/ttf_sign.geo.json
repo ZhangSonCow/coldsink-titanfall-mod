@@ -1,0 +1,35 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.ttf_sign",
+				"texture_width": 200,
+				"texture_height": 200,
+				"visible_bounds_width": 17,
+				"visible_bounds_height": 18,
+				"visible_bounds_offset": [0, 5, 0]
+			},
+			"bones": [
+				{
+					"name": "ttf_sign",
+					"pivot": [0, 80, 0]
+				},
+				{
+					"name": "inside_sign",
+					"parent": "ttf_sign",
+					"pivot": [-16, 20, 0],
+					"cubes": [
+						{
+							"origin": [-16, 64, 0],
+							"size": [32, 32, 0],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [200, 200]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

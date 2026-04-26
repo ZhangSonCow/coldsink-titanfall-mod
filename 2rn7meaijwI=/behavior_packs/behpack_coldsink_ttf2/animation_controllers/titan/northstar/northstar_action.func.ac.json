@@ -1,0 +1,173 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.northstar_action.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "fire": "q.property('titan:action') == 3 && q.property('titan:weapon_value') > 0"
+            },
+            {
+              "reload": "q.property('titan:action') == 4"
+            },
+            {
+              "melee": "q.property('titan:action') == 5"
+            },
+            {
+              "powering": "q.property('titan:action') == 11"
+            },
+            {
+              "missile": "q.property('titan:action') == 12"
+            },
+            {
+              "core": "q.property('titan:action') == 13"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_0",
+            "/tag @s remove terminate",
+            "/event entity @s[tag=keep_fire,scores={northstar_bullet=1..}] set_action_3",
+            "/event entity @s[tag=weapon_aim,scores={northstar_bullet=1..}] set_action_11",
+            "/event entity @s[scores={northstar_bullet=..0},tag=!keep_skill_q,tag=!keep_skill_v] set_action_4",
+            "/event entity @s[tag=keep_melee] set_action_5",
+            "/event entity @s[tag=keep_skill_q,tag=!skill_cooldown_1] set_action_12",
+            "/event entity @s[tag=keep_skill_v,scores={titan_core=100..}] set_action_13",
+            "/tag @s add titan_idle"
+          ],
+          "on_exit": [
+            "/tag @s remove titan_idle"
+          ]
+        },
+        "fire": {
+          "animations": [
+            "northstar_fire"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 3 || (q.property('titan:weapon_value') == 0 && q.property('titan:action') == 0)"
+            }
+          ],
+          "on_entry": [
+            "/playsound northstar_fire @a[r=64] ~~~",
+            "/scoreboard players remove @s[scores={northstar_bullet=1..}] northstar_bullet 1",
+            "/event entity @s remove_weapon_1",
+            "/event entity @s[tag=!power_time_full,tag=team_blue] northstar_fire_blue",
+            "/event entity @s[tag=!power_time_full,tag=team_red] northstar_fire_red"
+          ]
+        },
+        "reload": {
+          "animations": [
+            "northstar_reload"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 4 && !((q.property('titan:action') == 3 || q.property('titan:action') == 11) && q.property('titan:weapon_value') == 0)"
+            }
+          ],
+          "on_entry": [
+            "/tag @s[scores={northstar_bullet=..5}] add northstar_reload",
+            "/execute @s[scores={northstar_bullet=..5}] ~~~ playsound northstar_reload @a[tag=!northstar_reload,r=16] ~~~",
+            "/playsound northstar_reload.self @s[scores={northstar_bullet=..5}]",
+            "/tag @s[scores={northstar_bullet=..5}] remove northstar_reload",
+            "/tag @s add titan_idle",
+            "/tag @s add titan_reload"
+          ],
+          "on_exit": [
+            "/tag @s remove titan_idle",
+            "/stopsound @a[r=32] northstar_reload",
+            "/stopsound @s northstar_reload.self",
+            "/tag @s remove titan_reload"
+          ]
+        },
+        "melee": {
+          "animations": [
+            "northstar_melee"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "powering": {
+          "animations": [
+            "northstar_powering"
+          ],
+          "transitions": [
+            {
+              "fire": "q.property('titan:action') == 3"
+            },
+            {
+              "reload": "q.property('titan:action') == 4"
+            },
+            {
+              "default": "q.property('titan:action') != 11"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add weapon_aim",
+            "/tag @s add northstar_powering",
+            "/tag @s add titan_idle",
+            "/tag @s add powering_self",
+            "/playsound northstar_powering @a[tag=!powering_self,r=32] ~~~",
+            "/playsound northstar_powering.self @s",
+            "/tag @s remove powering_self"
+          ],
+          "on_exit": [
+            "/tag @s remove weapon_aim",
+            "/tag @s remove northstar_powering",
+            "/tag @s remove titan_idle",
+            "/tag @s remove power_time_full",
+            "/event entity @s set_powering_0",
+            "/stopsound @a northstar_powering",
+            "/stopsound @s northstar_powering.self"
+          ]
+        },
+        "missile": {
+          "animations": [
+            "northstar_skill_1"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 12"
+            }
+          ],
+          "on_entry": [
+            "/tag @s remove keep_skill_q"
+          ]
+        },
+        "core": {
+          "animations": [
+            "northstar_skill_3"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 13"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add core_self",
+            "/playsound northstar_core_begin @a[r=64] ~~~",
+            "/playsound northstar_core_begin.self @s",
+            "/tag @s remove core_self",
+
+            "/tag @s remove titan_core_saied",
+            "/event entity @s add_titan_sheared",
+            "/scoreboard players set @s[scores={titan_core=100..}] titan_core 0",
+            "/scoreboard players set @e[type=coldsink:northstar_titan,c=1] titan_core 0",
+            "/tag @s add in_core",
+            "/tag @s remove keep_skill_v"
+          ],
+          "on_exit": [
+            "/event entity @s clear_titan_sheared",
+            "/tag @s remove in_core",
+            "/playsound northstar_core_end @s",
+            "/tag @s remove titan_elesmoke_saied"
+          ]
+        }
+      }
+    }
+  }
+}

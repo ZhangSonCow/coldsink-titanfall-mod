@@ -1,0 +1,152 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.scorch_skill_3.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/event entity @s remove_core_10",
+          "/playsound scorch_skill_3 @a[r=64] ~~~"
+        ],
+        "0.1": [
+          "/event entity @s remove_core_10"
+        ],
+        "0.2": [
+          "/event entity @s remove_core_10"
+        ],
+        "0.3": [
+          "/event entity @s remove_core_10"
+        ],
+        "0.4": [
+          "/event entity @s remove_core_10"
+        ],
+        "0.5": [
+          "/event entity @s remove_core_10"
+        ],
+        "0.6": [
+          "/event entity @s remove_core_10"
+        ],
+        "0.7": [
+          "/event entity @s remove_core_10"
+        ],
+        "0.8": [
+          "/event entity @s remove_core_10"
+        ],
+        "0.9": [
+          "/event entity @s remove_core_10"
+        ],
+        "1.0": [
+          "/tag @s add in_core",
+          "/tag @e[type=coldsink:scorch_ride,c=1] add in_core",
+          "/effect @e[type=coldsink:scorch_ride,c=1] levitation 2 0 true",
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~-0.45~",
+          "/event entity @s set_core_0"
+        ],
+        "1.01": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~-0.45~"
+        ],
+        "1.02": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~-0.45~"
+        ],
+        "1.03": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~-0.45~"
+        ],
+        "1.04": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~-0.45~"
+        ],
+        "1.05": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~-0.45~"
+        ],
+        "1.06": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~-0.45~"
+        ],
+        "1.07": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~-0.45~"
+        ],
+        "1.08": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~-0.45~"
+        ],
+        "1.09": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~-0.45~"
+        ],
+        "1.10": [
+          "/camerashake add @s 0.5 0.5 rotational",
+
+          "/execute @s[tag=team_blue] ~~~ summon coldsink:scorch_core_blue ^^3.2^1",
+          "/execute @s[tag=team_blue] ~~~ execute @e[type=coldsink:scorch_core_blue,c=1] ~~~ tp @s ~~~ facing @e[type=coldsink:scorch_ride,tag=in_core,c=1]",
+
+          "/execute @s[tag=team_red] ~~~ summon coldsink:scorch_core_red ^^3.2^1",
+          "/execute @s[tag=team_red] ~~~ execute @e[type=coldsink:scorch_core_red,c=1] ~~~ tp @s ~~~ facing @e[type=coldsink:scorch_ride,tag=in_core,c=1]",
+
+          "/effect @e[type=coldsink:scorch_ride,c=1] levitation 0 1 true"
+        ],
+        "1.51": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~0.4~"
+        ],
+        "1.52": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~0.4~"
+        ],
+        "1.53": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~0.4~"
+        ],
+        "1.54": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~0.4~"
+        ],
+        "1.55": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~0.4~"
+        ],
+        "1.56": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~0.4~"
+        ],
+        "1.57": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~0.4~"
+        ],
+        "1.58": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~0.4~"
+        ],
+        "1.59": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~0.4~"
+        ],
+        "1.60": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~0.4~"
+        ],
+        "1.61": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~0.4~"
+        ],
+        "1.62": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~0.4~"
+        ],
+        "1.63": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~0.4~"
+        ],
+        "1.64": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~0.4~"
+        ],
+        "1.65": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~0.4~"
+        ],
+        "1.66": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~0.4~"
+        ],
+        "1.67": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~0.4~"
+        ],
+        "1.68": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~0.4~"
+        ],
+        "1.69": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~0.4~"
+        ],
+        "1.7": [
+          "/execute @e[type=coldsink:scorch_ride,tag=in_core,c=1] ~~~ tp @s ~~0.4~",
+          "/tag @s remove in_core",
+          "/tag @e[type=coldsink:scorch_ride,c=1] remove in_core"
+        ],
+        "2.1": [
+          "/event entity @s set_action_0"
+        ]
+      }
+    }
+  }
+}

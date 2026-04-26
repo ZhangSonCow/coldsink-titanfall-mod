@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.sneak_aim_ctrl.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "aim": "q.is_sneaking && q.is_on_ground && q.property('titan:action') != 55"
+            }
+          ]
+        },
+        "aim": {
+          "transitions": [
+            {
+              "default": "!(q.is_sneaking && q.is_on_ground && q.property('titan:action') != 55)"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[tag=!wy_game,tag=pilot_handle_weapon] weapon_aim_yes"
+          ],
+          "on_exit": [
+            "/event entity @s[tag=!wy_game,tag=pilot_handle_weapon] weapon_aim_no"
+          ]
+        }
+      }
+    }
+  }
+}

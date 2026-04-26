@@ -1,0 +1,59 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.shield_bar_7.1st",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "cabin",
+					"pivot": [-1.3382, 29.8285, 9.0625]
+				},
+				{
+					"name": "shield_bar_1st",
+					"parent": "cabin",
+					"pivot": [0.1, 31.075, 10.58],
+					"cubes": [
+						{
+							"origin": [-5.65, 30.825, 10.53],
+							"size": [11.5, 0.5, 0.1],
+							"uv": {
+								"north": {"uv": [0, 10.32], "uv_size": [16, 0.84]},
+								"east": {"uv": [0, 4], "uv_size": [1, 1]},
+								"south": {"uv": [0, 5.16], "uv_size": [16, 0.84]},
+								"west": {"uv": [1, 4], "uv_size": [1, 1]},
+								"up": {"uv": [0, 7.28], "uv_size": [11, 1]},
+								"down": {"uv": [0, 7.12], "uv_size": [11, -1]}
+							}
+						}
+					]
+				},
+				{
+					"name": "shield_damage",
+					"parent": "shield_bar_1st",
+					"pivot": [5.85, 31.075, 10.505],
+					"cubes": [
+						{
+							"origin": [-5.65, 30.825, 10.455],
+							"size": [11.5, 0.5, 0.1],
+							"uv": {
+								"north": {"uv": [15.28, 4], "uv_size": [0.72, 0.84]},
+								"east": {"uv": [0, 4], "uv_size": [1, 1]},
+								"south": {"uv": [2.32, 3.96], "uv_size": [0.96, 0.84]},
+								"west": {"uv": [1, 4], "uv_size": [1, 1]},
+								"up": {"uv": [10.44, 3.76], "uv_size": [0.76, 1]},
+								"down": {"uv": [12.76, 4.4], "uv_size": [0.76, -1]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

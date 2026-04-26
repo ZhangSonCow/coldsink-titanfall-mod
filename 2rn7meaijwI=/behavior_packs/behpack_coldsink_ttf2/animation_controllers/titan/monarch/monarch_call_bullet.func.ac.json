@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.monarch_call_bullet.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "tag": "q.is_alive"
+            }
+          ]
+        },
+        "tag": {
+          "animations": [
+            "monarch_call_bullet"
+          ]
+        }
+      }
+    }
+  }
+}

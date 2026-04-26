@@ -1,0 +1,87 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.titan_jump_charge.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "charge_tiantu": "q.is_jumping && (q.variant == 1 || q.variant == 2 || q.variant == 7)"
+            },
+            {
+              "charge_youxia": "q.is_jumping && (q.variant == 3 || q.variant == 4)"
+            },
+            {
+              "charge_juyao": "q.is_jumping && (q.variant == 5 || q.variant == 6)"
+            }
+          ]
+        },
+        "charge_tiantu": {
+          "transitions": [
+            {
+              "default": "!q.is_jumping"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add jump_charge_tiantu",
+            "/event entity @s[tag=!in_core,scores={spurt_time=..6}] titan_exit_suprting",
+            "/event entity @s[tag=!in_core,scores={spurt_time=..6}] titan_spurt_slide",
+            "/execute @s[tag=!in_core,scores={spurt_time=..6}] ~~~ tag @e[family=titan_ride,c=1] add jump_charge_tiantu",
+            "/execute @s[tag=!in_core,scores={spurt_time=..6}] ~~~ execute @e[family=titan_ride,c=1] ~~~ summon coldsink:jump_charge_tiantu",
+            "/playanimation @s[tag=!in_core,scores={spurt_time=..6}] animation.cabin_spurt",
+            "/tag @s[tag=!in_core,scores={spurt_time=..6}] add spurt_self",
+            "/playsound titan_spurt_tiantu.self @s[tag=spurt_self]",
+            "/execute @s[tag=spurt_self] ~~~ playsound titan_spurt_tiantu @a[tag=!spurt_self] ~~~",
+            "/tag @s remove spurt_self",
+            "/event entity @s[tag=!in_core,scores={spurt_time=..6}] add_spurt_6",
+            "/scoreboard players add @s[tag=!in_core,scores={spurt_time=..6}] spurt_time 6"
+          ]
+        },
+        "charge_youxia": {
+          "transitions": [
+            {
+              "default": "!q.is_jumping"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add jump_charge_youxia",
+            "/event entity @s[scores={spurt_time=..10}] titan_exit_suprting",
+            "/event entity @s[scores={spurt_time=..10}] titan_spurt_slide",
+            "/execute @s[scores={spurt_time=..10},tag=!ronin_phase] ~~~ tag @e[family=titan_ride,c=1] add jump_charge_youxia",
+            "/execute @s[scores={spurt_time=..10},tag=!ronin_phase] ~~~ execute @e[family=titan_ride,c=1] ~~~ summon coldsink:jump_charge_youxia",
+            "/execute @s[scores={spurt_time=..10},tag=ronin_phase] ~~~ execute @e[type=coldsink:ronin_ride,c=1] ~~~ summon coldsink:jump_charge_ronin_phase",
+            "/playanimation @s[scores={spurt_time=..10}] animation.cabin_spurt",
+            "/tag @s[scores={spurt_time=..10}] add spurt_self",
+            "/playsound titan_spurt_youxia.self @s[tag=spurt_self]",
+            "/execute @s[tag=spurt_self] ~~~ playsound titan_spurt_youxia @a[tag=!spurt_self] ~~~",
+            "/tag @s remove spurt_self",
+            "/event entity @s[scores={spurt_time=..10}] add_spurt_5",
+            "/scoreboard players add @s[scores={spurt_time=..10}] spurt_time 5"
+          ]
+        },
+        "charge_juyao": {
+          "transitions": [
+            {
+              "default": "!q.is_jumping"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add jump_charge_juyao",
+            "/event entity @s[scores={spurt_time=..0}] titan_exit_suprting",
+            "/event entity @s[scores={spurt_time=..0}] titan_spurt_slide",
+            "/execute @s[scores={spurt_time=..0}] ~~~ tag @e[family=titan_ride,c=1] add jump_charge_juyao",
+            "/execute @s[scores={spurt_time=..0}] ~~~ execute @e[family=titan_ride,c=1] ~~~ summon coldsink:jump_charge_juyao",
+            "/playanimation @s[scores={spurt_time=..0}] animation.cabin_spurt",
+            "/tag @s[scores={spurt_time=..0}] add spurt_self",
+            "/playsound titan_spurt_juyao.self @s[tag=spurt_self]",
+            "/execute @s[tag=spurt_self] ~~~ playsound titan_spurt_juyao @a[tag=!spurt_self] ~~~",
+            "/tag @s remove spurt_self",
+            "/event entity @s[scores={spurt_time=..0}] add_spurt_10",
+            "/scoreboard players add @s[scores={spurt_time=..0}] spurt_time 10"
+          ]
+        }
+      }
+    }
+  }
+}

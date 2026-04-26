@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.rodeo_ride_tool.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "pre": "q.has_rider && q.is_riding"
+            }
+          ]
+        },
+        "pre": {
+          "transitions": [
+            {
+              "despawn": "!q.has_rider || !q.is_riding"
+            }
+          ]
+        },
+        "despawn": {
+          "on_entry": [
+            "/tag @e[family=titan,r=24,c=1] remove has_rodeo",
+            "/event entity @e[tag=is_rodeo,r=24,c=1] rodeo_status_0",
+            "/execute @e[tag=is_rodeo,r=24,c=1] ~~~ tp @s ~~7.2~",
+            "/event entity @s godie"
+          ]
+        }
+      }
+    }
+  }
+}

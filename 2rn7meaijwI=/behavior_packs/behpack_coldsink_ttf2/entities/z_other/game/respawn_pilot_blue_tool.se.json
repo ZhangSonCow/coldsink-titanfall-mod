@@ -1,0 +1,101 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:respawn_pilot_blue_tool",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "components": {
+      
+      "minecraft:health": {
+        "value": 1,
+        "max": 1,
+        "min": 1
+      },
+      "minecraft:collision_box": {
+        "height": 0.1,
+        "width": 1.0
+      },
+      "minecraft:timer": {
+        "time": 0.1,
+        "time_down_event": {
+          "event": "count",
+          "target": "self"
+        }
+      },
+      "minecraft:ageable": {
+        "duration": 0.6,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:physics": {},
+      "minecraft:fire_immune": {},
+      "minecraft:type_family": {
+        "family": [ "tool" ]
+      },
+      "minecraft:navigation.walk": {
+        "can_sink": false
+      },
+      "minecraft:movement.basic": {}
+    },
+
+    "component_groups": {
+      
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "queue_command": {
+          "command": [
+            "scoreboard players operation @s map = lock_blue_num map",
+            "execute @a[tag=team_blue,tag=!no_game] ~~~ scoreboard players remove @e[type=coldsink:respawn_pilot_blue_tool] map 1",
+            "execute @e[family=titan_ai,tag=team_blue] ~~~ scoreboard players remove @e[type=coldsink:respawn_pilot_blue_tool] map 1",
+            "execute @e[family=pilot_ai,tag=team_blue] ~~~ scoreboard players remove @e[type=coldsink:respawn_pilot_blue_tool] map 1"
+          ]
+        }
+      },
+      "count": {
+        "queue_command": {
+          "command": [
+            "execute @s[scores={map=1..}] ~~~ function game/respawn/pilot_blue_map_1",
+            "scoreboard players remove @s map 1",
+            "event entity @s[scores={map=..0}] godie"
+          ]
+        }
+      },
+      "godie": {
+        "queue_command": {
+          "command": [
+            "setblock 303 -60 1303 air",
+            "event entity @s real_godie"
+          ]
+        }
+      },
+      "real_godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

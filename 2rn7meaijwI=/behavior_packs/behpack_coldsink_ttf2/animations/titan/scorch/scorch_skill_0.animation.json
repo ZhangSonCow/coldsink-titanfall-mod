@@ -1,0 +1,46 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.scorch_skill_0.func": {
+      "loop": true,
+      "animation_length": 0.2,
+      "timeline": {
+        "0.0": [
+          "/execute @s[tag=team_blue] ^^^3 scoreboard players operation @e[family=!tool,type=!item,type=!xp_orb,tag=!team_blue,r=8] death_check = @s titan_self",
+          "/execute @s[tag=team_blue] ^^^3 damage @e[family=!tool,type=!item,type=!xp_orb,tag=!team_blue,r=8] 200 suicide entity @s",
+          "/execute @s[tag=team_blue] ^^^3 execute @e[family=!tool,type=!item,type=!xp_orb,tag=!team_blue,r=8] ~~~ scoreboard players add @p[tag=is_scorch,tag=team_blue,c=1] titan_attack 200",
+          "/execute @s[tag=team_blue] ^^^3 execute @e[family=!tool,type=!item,type=!xp_orb,tag=!team_blue,r=8] ~~~ event entity @p[tag=is_scorch,tag=team_blue,c=1] shoot_get_core",
+          "/execute @s[tag=team_blue] ^^^5 execute @e[family=bullet,tag=!team_blue,r=10] ~~~ execute @s[family=arc_bullet] ~~~ event entity @p[tag=energy_shield,tag=is_scorch,tag=team_blue] add_cooldown_0_2",
+          "/execute @s[tag=team_blue] ^^^5 event entity @e[family=bullet,tag=!team_blue,r=10] godie",
+          
+          "/execute @s[tag=team_red] ^^^3 scoreboard players operation @e[family=!tool,type=!item,type=!xp_orb,tag=!team_red,r=8] death_check = @s titan_self",
+          "/execute @s[tag=team_red] ^^^3 damage @e[family=!tool,type=!item,type=!xp_orb,tag=!team_red,r=8] 200 suicide entity @s",
+          "/execute @s[tag=team_red] ^^^3 execute @e[family=!tool,type=!item,type=!xp_orb,tag=!team_red,r=8] ~~~ scoreboard players add @p[tag=is_scorch,tag=team_red,c=1] titan_attack 200",
+          "/execute @s[tag=team_red] ^^^3 execute @e[family=!tool,type=!item,type=!xp_orb,tag=!team_red,r=8] ~~~ event entity @p[tag=is_scorch,tag=team_red,c=1] shoot_get_core",
+          "/execute @s[tag=team_blue] ^^^5 execute @e[family=bullet,tag=!team_red,r=10] ~~~ execute @s[family=arc_bullet] ~~~ event entity @p[tag=energy_shield,tag=is_scorch,tag=team_red] add_cooldown_0_2",
+          "/execute @s[tag=team_red] ^^^5 event entity @e[family=bullet,tag=!team_red,r=10] godie",
+
+          "/event entity @s add_cooldown_0_2"
+        ]
+      }
+    },
+    "animation.scorch_skill_0_pre.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.3": [
+          "/event entity @s set_action_13"
+        ]
+      }
+    },
+    "animation.scorch_skill_0_after.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.1": [
+          "/event entity @s set_action_0"
+        ]
+      }
+    }
+  }
+}

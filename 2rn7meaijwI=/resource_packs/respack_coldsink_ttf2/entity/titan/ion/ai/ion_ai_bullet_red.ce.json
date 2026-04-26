@@ -1,0 +1,33 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:ion_ai_bullet_red",
+      "animations": {
+        "particle": "animation.locator.particle"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "particle": "q.variant == 0"
+          }
+        ]
+      },
+      "particle_effects": {
+        "particle": "titan:ion_bullet"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/empty"
+      },
+      "geometry": {
+        "default": "geometry.locator"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

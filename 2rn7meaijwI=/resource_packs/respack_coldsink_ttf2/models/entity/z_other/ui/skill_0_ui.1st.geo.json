@@ -1,0 +1,82 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.skill_0_ui.1st",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "skillBox",
+					"pivot": [-8.7, 23, 9.7],
+					"rotation": [0, -90, 0]
+				},
+				{
+					"name": "skill_0",
+					"parent": "skillBox",
+					"pivot": [-7.405, 21.7925, 8.44],
+					"cubes": [
+						{
+							"origin": [-8.70845, 22.0898, 6.88028],
+							"size": [-0.05055, 0.6, 0.8],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [0, 2], "uv_size": [2.5, 1.5]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [12, 0], "uv_size": [12, 2.5]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "cooldown_0",
+					"parent": "skill_0",
+					"pivot": [-8.74374, 22.06, 7.28028],
+					"cubes": [
+						{
+							"origin": [-8.71847, 22.0898, 6.88028],
+							"size": [-0.05055, 0.6, 0.8],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [0, 4], "uv_size": [2.5, 1.5]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [12, 0], "uv_size": [12, 2.5]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				},
+				{
+					"name": "over_remind_0",
+					"parent": "skill_0",
+					"pivot": [-8.74374, 14.06, 7.28028],
+					"cubes": [
+						{
+							"origin": [-8.71847, 14.0898, 6.88028],
+							"size": [-0.05055, 0.6, 0.8],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [0, 0], "uv_size": [2.5, 1.5]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [12, 0], "uv_size": [12, 2.5]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

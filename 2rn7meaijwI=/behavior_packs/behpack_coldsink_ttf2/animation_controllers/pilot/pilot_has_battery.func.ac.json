@@ -1,0 +1,48 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.pilot_has_battery.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "has_battery_good": "q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_ordinary_item') || q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_powerful_item')"
+            },
+            {
+              "has_battery_bad": "q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_overload_item')"
+            }
+          ],
+          "on_entry": [
+            "/tag @s remove has_battery_good",
+            "/tag @s remove has_battery_bad",
+            "/replaceitem @s[tag=!wy_game,tag=is_pilot] slot.hotbar 6 coldsink:no_battery 1 0 {\"item_lock\":{\"mode\":\"lock_in_slot\"}}"
+          ]
+        },
+        "has_battery_good": {
+          "transitions": [
+            {
+              "default": "!q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_ordinary_item') && !q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_powerful_item')"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add has_battery_good",
+            "/replaceitem @s[tag=!wy_game,tag=is_pilot,hasitem={item=coldsink:battery_ordinary_item,location=slot.armor.legs}] slot.hotbar 6 coldsink:battery_ordinary_item 1 0 {\"item_lock\":{\"mode\":\"lock_in_slot\"}}",
+            "/replaceitem @s[tag=!wy_game,tag=is_pilot,hasitem={item=coldsink:battery_powerfule_item,location=slot.armor.legs}] slot.hotbar 6 coldsink:battery_powerfule_item 1 0 {\"item_lock\":{\"mode\":\"lock_in_slot\"}}"
+          ]
+        },
+        "has_battery_bad": {
+          "transitions": [
+            {
+              "default": "!q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_overload_item')"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add has_battery_bad",
+            "/replaceitem @s[tag=!wy_game,tag=is_pilot] slot.hotbar 6 coldsink:battery_overload_item 1 0 {\"item_lock\":{\"mode\":\"lock_in_slot\"}}"
+          ]
+        }
+      }
+    }
+  }
+}

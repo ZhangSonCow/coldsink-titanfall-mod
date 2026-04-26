@@ -1,0 +1,112 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.legion_titan_ai.arm": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "legion_titan.idle.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "melee": "q.property('titan:action') == 11"
+            },
+            {
+              "fire": "q.property('titan:action') == 12"
+            },
+            {
+              "power": "q.property('titan:action') == 13"
+            },
+            {
+              "change": "q.property('titan:action') == 14"
+            },
+            {
+              "fire_after": "q.is_saddled"
+            }
+          ]
+        },
+        "melee": {
+          "animations": [
+            "legion_titan.melee"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 11 && !q.is_saddled"
+            },
+            {
+              "fire_after": "q.property('titan:action') != 11 && q.is_saddled"
+            }
+          ]
+        },
+        "fire": {
+          "animations": [
+            "legion_titan.fire"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 12 && !q.is_saddled"
+            },
+            {
+              "fire_after": "q.property('titan:action') != 12 && q.is_saddled"
+            }
+          ]
+        },
+        "fire_after": {
+          "animations": [
+            "legion_titan.fire_after"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "melee": "q.property('titan:action') == 11"
+            },
+            {
+              "fire": "q.property('titan:action') == 12"
+            },
+            {
+              "power": "q.property('titan:action') == 13"
+            },
+            {
+              "change": "q.property('titan:action') == 14"
+            },
+            {
+              "default": "!q.is_saddled"
+            }
+          ]
+        },
+        "power": {
+          "animations": [
+            "legion_titan.power"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 13 && !q.is_saddled"
+            },
+            {
+              "fire_after": "q.property('titan:action') != 13 && q.is_saddled"
+            }
+          ]
+        },
+        "change": {
+          "animations": [
+            "legion_titan.change"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 14 && !q.is_saddled"
+            },
+            {
+              "fire_after": "q.property('titan:action') != 14 && q.is_saddled"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

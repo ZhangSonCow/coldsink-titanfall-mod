@@ -1,0 +1,63 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.titan_ai_terminate.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "terminate_1": "q.property('titan:action') == 98"
+            },
+            {
+              "terminate_2": "q.property('titan:action') == 99"
+            },
+            {
+              "by_other_terminate": "q.property('titan:action') == 10"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[tag=!titan_shield,tag=terminate] turn_no_shield",
+            "/tag @s remove terminate"
+          ],
+          "on_exit": [
+            "/event entity @s turn_yes_shield",
+            "/tag @s add terminate"
+          ]
+        },
+        "terminate_1": {
+          "animations": [
+            "terminate_1",
+            "terminate_1_lock"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "terminate_2": {
+          "animations": [
+            "terminate_2",
+            "terminate_2_lock"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "by_other_terminate": {
+          "animations": [
+            "titan_by_terminate"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+
+    "controller.render.skill_0_ui_titan_type.1st": {
+      "arrays": {
+        "textures": {
+          "Array.skill_0": [
+            "Texture.skill_0_type_ion",
+            "Texture.skill_0_type_tone",
+            "Texture.skill_0_type_northstar",
+            "Texture.skill_0_type_ronin",
+            "Texture.skill_0_type_scorch",
+            "Texture.skill_0_type_legion",
+            "Texture.skill_0_type_monarch"
+          ]
+        }
+      },
+      "geometry": "geometry.skill_0_ui_type.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "Array.skill_0[ q.variant - 1 ]" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    
+    "controller.render.skill_0_ui_monarch_1.1st": {
+      "geometry": "geometry.skill_0_ui_type.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.monarch_core_13" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    
+    "controller.render.skill_0_ui_monarch_2.1st": {
+      "geometry": "geometry.skill_0_ui_type.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.monarch_core_23" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+
+  }
+}

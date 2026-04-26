@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.titan_player_run_slow_patch.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "no_idle_run": "q.is_sprinting && q.property('titan:action') > 2 && !(q.variant == 6 && q.property('titan:action') == 12 && !q.is_saddled)"
+            }
+          ]
+        },
+        "no_idle_run": {
+          "transitions": [
+            {
+              "default": "!(q.is_sprinting && q.property('titan:action') > 2 && !(q.variant == 6 && q.property('titan:action') == 12 && !q.is_saddled))"
+            }
+          ],
+          "on_entry": [
+            "/effect @e[family=titan_ride,r=8,c=1] slowness 99999 2 true"
+          ],
+          "on_exit": [
+            "/effect @e[family=titan_ride,r=8,c=1] slowness 0 3 true"
+          ]
+        }
+      }
+    }
+  }
+}

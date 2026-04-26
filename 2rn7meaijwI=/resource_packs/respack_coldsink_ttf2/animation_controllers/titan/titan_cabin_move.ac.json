@@ -1,0 +1,49 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.titan_cabin_move": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "walk": "q.property('titan:action') != 2 && q.is_stunned && !((q.variant == 3 || q.variant == 6) && q.is_saddled) && !q.out_of_control"
+            },
+            {
+              "run": "q.property('titan:action') < 2 && q.is_sprinting && !((q.variant == 3 || q.variant == 6) && q.is_saddled) && !q.out_of_control"
+            }
+          ]
+        },
+        "walk": {
+          "blend_transition": 0.3,
+          "animations": [
+            "cabin_walk"
+          ],
+          "transitions": [
+            {
+              "default": "(!q.is_stunned && !q.is_sprinting) || ((q.variant == 3 || q.variant == 6) && q.is_saddled) || q.out_of_control"
+            },
+            {
+              "run": "q.is_sprinting && q.property('titan:action') < 2"
+            }
+          ]
+        },
+        "run": {
+          "animations": [
+            "cabin_run"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') > 1 || !q.is_sprinting || ((q.variant == 3 || q.variant == 6) && q.is_saddled) || q.out_of_control"
+            },
+            {
+              "walk": "q.is_stunned && !q.is_sprinting"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

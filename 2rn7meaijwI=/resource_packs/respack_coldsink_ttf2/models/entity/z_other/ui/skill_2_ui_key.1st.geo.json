@@ -1,0 +1,42 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.skill_2_ui_key.1st",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "skillBox",
+					"pivot": [-6.4, 23, 9.7],
+					"rotation": [0, -90, 0]
+				},
+				{
+					"name": "skill_2",
+					"parent": "skillBox",
+					"pivot": [-5.105, 21.7925, 8.44],
+					"cubes": [
+						{
+							"origin": [-6.51847, 21.7398, 8.43],
+							"size": [-0.05055, 0.3, 0.2],
+							"inflate": 0.03,
+							"uv": {
+								"north": {"uv": [3, 33], "uv_size": [1, 2.5]},
+								"east": {"uv": [4.09375, 0], "uv_size": [3.75, 4.65625]},
+								"south": {"uv": [33, 3], "uv_size": [1, 2.5]},
+								"west": {"uv": [12, 0], "uv_size": [12, 2.5]},
+								"up": {"uv": [22, 15], "uv_size": [1, 12]},
+								"down": {"uv": [23, 27], "uv_size": [1, -12]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

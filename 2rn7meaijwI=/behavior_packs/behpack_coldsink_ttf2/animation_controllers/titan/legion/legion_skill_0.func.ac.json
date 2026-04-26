@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.legion_skill_0.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "skill": "q.is_saddled"
+            }
+          ]
+        },
+        "skill": {
+          "animations": [
+            "legion_skill_0"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_saddled"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=team_blue] ~~~ event entity @e[family=legion_titan,tag=team_blue,r=8,c=1] legion_shield_begin",
+            "/execute @s[tag=team_red] ~~~ event entity @e[family=legion_titan,tag=team_red,r=8,c=1] legion_shield_begin",
+            "/execute @s[tag=team_blue] ~~~ ride @e[type=coldsink:legion_titan,tag=team_blue,r=8,c=1] summon_rider coldsink:legion_shield_blue",
+            "/execute @s[tag=team_red] ~~~ ride @e[type=coldsink:legion_titan,tag=team_red,r=8,c=1] summon_rider coldsink:legion_shield_red",
+            "/event entity @s legion_shield_0"
+          ],
+          "on_exit": [
+            "/execute @s[tag=team_blue] ~~~ event entity @e[family=legion_titan,tag=team_blue,r=8,c=1] legion_shield_end",
+            "/execute @s[tag=team_red] ~~~ event entity @e[family=legion_titan,tag=team_red,r=8,c=1] legion_shield_end"
+          ]
+        }
+      }
+    }
+  }
+}

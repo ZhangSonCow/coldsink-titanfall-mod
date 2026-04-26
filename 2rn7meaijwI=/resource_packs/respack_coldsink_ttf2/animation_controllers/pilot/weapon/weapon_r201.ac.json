@@ -1,0 +1,404 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.weapon_r201.1st": {
+      "initial_state": "turn",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "turn": "q.property('titan:other_action') == 10 && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_r201')"
+            }
+          ]
+        },
+        "turn": {
+          "animations": [
+            "weapon_r201.turn.1st"
+          ],
+          "transitions": [
+            {
+              "idle": "q.property('titan:other_action') != 10"
+            }
+          ]
+        },
+        "idle": {
+          "animations": [
+            "weapon_r201.idle.1st",
+            "pilot_player.weapon_idle.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_r201')"
+            },
+            {
+              "reload": "q.property('titan:other_action') == 2 && q.property('titan:weapon_value') < 30"
+            },
+            {
+              "run": "q.is_sprinting && q.is_on_ground && q.property('titan:other_action') != 1"
+            },
+            {
+              "run_fire": "q.is_sprinting && q.is_on_ground && q.property('titan:other_action') == 1"
+            },
+            {
+              "climb": "q.property('titan:action') == 53 || q.property('titan:action') == 54"
+            },
+            {
+              "slide": "(q.property('titan:action') == 55 || q.is_sneaking) && !q.property('titan:weapon_aim')"
+            },
+            {
+              "aim": "q.property('titan:weapon_aim')"
+            }
+          ]
+        },
+        "run": {
+          "animations": [
+            "weapon_r201.run.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_r201')"
+            },
+            {
+              "reload": "q.property('titan:other_action') == 2 && q.property('titan:weapon_value') < 30"
+            },
+            {
+              "idle": "(!q.is_sprinting && !q.is_sneaking) || !q.is_on_ground"
+            },
+            {
+              "run_fire": "q.property('titan:other_action') == 1"
+            },
+            {
+              "climb": "q.property('titan:action') == 53 || q.property('titan:action') == 54"
+            },
+            {
+              "slide": "(q.property('titan:action') == 55 || q.is_sneaking) && !q.property('titan:weapon_aim')"
+            },
+            {
+              "aim": "q.property('titan:weapon_aim')"
+            }
+          ]
+        },
+        "run_fire": {
+          "animations": [
+            "weapon_r201.run_fire.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_r201')"
+            },
+            {
+              "reload": "q.property('titan:other_action') == 2 && q.property('titan:weapon_value') < 30"
+            },
+            {
+              "idle": "(!q.is_sprinting && !q.is_sneaking) || !q.is_on_ground"
+            },
+            {
+              "run": "q.property('titan:other_action') != 1"
+            },
+            {
+              "climb": "q.property('titan:action') == 53 || q.property('titan:action') == 54"
+            },
+            {
+              "slide": "(q.property('titan:action') == 55 || q.is_sneaking) && !q.property('titan:weapon_aim')"
+            },
+            {
+              "aim": "q.property('titan:weapon_aim')"
+            }
+          ]
+        },
+        "climb": {
+          "animations": [
+            "weapon_r201.climb.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_r201')"
+            },
+            {
+              "reload": "q.property('titan:other_action') == 2 && q.property('titan:weapon_value') < 30"
+            },
+            {
+              "idle": "q.property('titan:action') != 53 && q.property('titan:action') != 54"
+            }
+          ]
+        },
+        "slide": {
+          "animations": [
+            "weapon_r201.slide.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_r201')"
+            },
+            {
+              "reload": "q.property('titan:other_action') == 2 && q.property('titan:weapon_value') < 30"
+            },
+            {
+              "idle": "(q.property('titan:action') != 55 && !q.is_sneaking) || q.property('titan:weapon_aim')"
+            }
+          ]
+        },
+        "reload": {
+          "animations": [
+            "weapon_r201.reload.1st"
+          ],
+          "blend_transition": 0,
+          "transitions": [
+            {
+              "default": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_r201')"
+            },
+            {
+              "idle": "q.property('titan:other_action') != 2"
+            }
+          ]
+        },
+        "aim": {
+          "animations": [
+            "weapon_r201.aim.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_r201')"
+            },
+            {
+              "idle": "!q.property('titan:weapon_aim')"
+            },
+            {
+              "reload": "q.property('titan:other_action') == 2 && q.property('titan:weapon_value') < 30"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.weapon_r201_action.1st": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "fire": "q.property('titan:other_action') == 1 && !q.is_sneaking"
+            },
+            {
+              "fire_aim": "q.property('titan:other_action') == 1"
+            }
+          ]
+        },
+        "fire": {
+          "animations": [
+            "weapon_r201.fire.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:other_action') != 1"
+            },
+            {
+              "fire_aim": "q.is_sneaking"
+            }
+          ]
+        },
+        "fire_aim": {
+          "animations": [
+            "weapon_r201.fire_aim.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:other_action') != 1"
+            },
+            {
+              "fire": "!q.is_sneaking"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.weapon_r201.3st": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "weapon_r201.idle.3st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "reload": "q.property('titan:other_action') == 2 && q.property('titan:weapon_value') < 30"
+            },
+            {
+              "run": "q.is_sprinting && q.is_on_ground && q.property('titan:other_action') != 1"
+            },
+            {
+              "run_fire": "q.is_sprinting && q.is_on_ground && q.property('titan:other_action') == 1"
+            },
+            {
+              "climb": "q.property('titan:action') == 53 || q.property('titan:action') == 54"
+            },
+            {
+              "slide": "q.property('titan:action') == 55 && !q.property('titan:weapon_aim')"
+            },
+            {
+              "aim": "q.property('titan:weapon_aim')"
+            }
+          ]
+        },
+        "run": {
+          "animations": [
+            "weapon_r201.run.3st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "reload": "q.property('titan:other_action') == 2 && q.property('titan:weapon_value') < 30"
+            },
+            {
+              "default": "(!q.is_sprinting && !q.is_sneaking) || !q.is_on_ground"
+            },
+            {
+              "run_fire": "q.property('titan:other_action') == 1"
+            },
+            {
+              "climb": "q.property('titan:action') == 53 || q.property('titan:action') == 54"
+            },
+            {
+              "slide": "q.property('titan:action') == 55 && !q.property('titan:weapon_aim')"
+            },
+            {
+              "aim": "q.property('titan:weapon_aim')"
+            }
+          ]
+        },
+        "run_fire": {
+          "animations": [
+            "weapon_r201.run_fire.3st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "reload": "q.property('titan:other_action') == 2 && q.property('titan:weapon_value') < 30"
+            },
+            {
+              "default": "(!q.is_sprinting && !q.is_sneaking) || !q.is_on_ground"
+            },
+            {
+              "run": "q.property('titan:other_action') != 1"
+            },
+            {
+              "climb": "q.property('titan:action') == 53 || q.property('titan:action') == 54"
+            },
+            {
+              "slide": "q.property('titan:action') == 55 && !q.property('titan:weapon_aim')"
+            },
+            {
+              "aim": "q.property('titan:weapon_aim')"
+            }
+          ]
+        },
+        "climb": {
+          "animations": [
+            "weapon_r201.climb.3st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "reload": "q.property('titan:other_action') == 2 && q.property('titan:weapon_value') < 30"
+            },
+            {
+              "default": "q.property('titan:action') != 53 && q.property('titan:action') != 54"
+            }
+          ]
+        },
+        "slide": {
+          "animations": [
+            "weapon_r201.slide.3st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "reload": "q.property('titan:other_action') == 2 && q.property('titan:weapon_value') < 30"
+            },
+            {
+              "default": "q.property('titan:action') != 55 || q.property('titan:weapon_aim')"
+            }
+          ]
+        },
+        "reload": {
+          "animations": [
+            "weapon_r201.reload.3st"
+          ],
+          "blend_transition": 0,
+          "transitions": [
+            {
+              "default": "q.property('titan:other_action') != 2"
+            }
+          ]
+        },
+        "aim": {
+          "animations": [
+            "weapon_r201.aim.3st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "!q.property('titan:weapon_aim')"
+            },
+            {
+              "reload": "q.property('titan:other_action') == 2 && q.property('titan:weapon_value') < 30"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.weapon_r201_action.3st": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "fire": "q.property('titan:other_action') == 1 && !q.is_sneaking"
+            },
+            {
+              "fire_aim": "q.property('titan:other_action') == 1"
+            }
+          ]
+        },
+        "fire": {
+          "animations": [
+            "weapon_r201.fire.3st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:other_action') != 1"
+            },
+            {
+              "fire_aim": "q.is_sneaking"
+            }
+          ]
+        },
+        "fire_aim": {
+          "animations": [
+            "weapon_r201.fire_aim.3st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:other_action') != 1"
+            },
+            {
+              "fire": "!q.is_sneaking"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

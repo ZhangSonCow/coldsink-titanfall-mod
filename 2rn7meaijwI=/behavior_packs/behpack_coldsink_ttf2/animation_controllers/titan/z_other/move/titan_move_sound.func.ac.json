@@ -1,0 +1,116 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.titan_move_sound.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "walk_tiantu": "q.property('titan:action') != 2 && q.is_stunned && (q.variant == 1 || q.variant == 2 || q.variant == 7)"
+            },
+            {
+              "run_tiantu": "q.property('titan:action') < 2 && !q.is_using_item && q.is_sprinting && (q.variant == 1 || q.variant == 2 || q.variant == 7)"
+            },
+            {
+              "walk_youxia": "q.property('titan:action') != 2 && q.is_stunned && (q.variant == 3 || q.variant == 4) && !(q.variant == 3 && q.is_saddled)"
+            },
+            {
+              "run_youxia": "q.property('titan:action') < 2 && !q.is_using_item && q.is_sprinting && (q.variant == 3 || q.variant == 4) && !(q.variant == 3 && q.is_saddled)"
+            },
+            {
+              "walk_juyao": "q.property('titan:action') != 2 && q.is_stunned && (q.variant == 5 || q.variant == 6)"
+            },
+            {
+              "run_juyao": "q.property('titan:action') < 2 && !q.is_using_item && q.is_sprinting && (q.variant == 5 || q.variant == 6)"
+            }
+          ]
+        },
+        "walk_tiantu": {
+          "animations": [
+            "titan_walk_sound_tiantu",
+            "titan_walk_damage_tiantu"
+          ],
+          "transitions": [
+            {
+              "run_tiantu": "q.is_sprinting && q.property('titan:action') < 2"
+            },
+            {
+              "default": "!q.is_stunned && !q.is_sprinting"
+            }
+          ]
+        },
+        "run_tiantu": {
+          "animations": [
+            "titan_run_sound_tiantu",
+            "titan_run_damage_tiantu"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_sprinting || q.is_using_item"
+            },
+            {
+              "walk_tiantu": "q.is_stunned && !q.is_sprinting"
+            }
+          ]
+        },
+        "walk_youxia": {
+          "animations": [
+            "titan_walk_sound_youxia",
+            "titan_walk_damage_youxia"
+          ],
+          "transitions": [
+            {
+              "run_youxia": "(q.is_sprinting && q.property('titan:action') < 2) || (q.variant == 3 && q.is_saddled)"
+            },
+            {
+              "default": "!q.is_stunned && !q.is_sprinting"
+            }
+          ]
+        },
+        "run_youxia": {
+          "animations": [
+            "titan_run_sound_youxia",
+            "titan_run_damage_youxia"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') > 1 || !q.is_sprinting || q.is_using_item || (q.variant == 3 && q.is_saddled)"
+            },
+            {
+              "walk_youxia": "q.is_stunned && !q.is_sprinting"
+            }
+          ]
+        },
+        "walk_juyao": {
+          "animations": [
+            "titan_walk_sound_juyao",
+            "titan_walk_damage_juyao"
+          ],
+          "transitions": [
+            {
+              "run_juyao": "q.is_sprinting && q.property('titan:action') < 2"
+            },
+            {
+              "default": "!q.is_stunned && !q.is_sprinting"
+            }
+          ]
+        },
+        "run_juyao": {
+          "animations": [
+            "titan_run_sound_juyao",
+            "titan_run_damage_juyao"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') > 1 || !q.is_sprinting || q.is_using_item"
+            },
+            {
+              "walk_juyao": "q.is_stunned && !q.is_sprinting"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

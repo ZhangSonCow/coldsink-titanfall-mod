@@ -1,0 +1,45 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:northstar_ai_bullet_red",
+      "animations": {
+        "particle_4": "animation.locator.particle_4",
+        "particle_double": "animation.locator.particle_double",
+        "particle_double_1": "animation.locator.particle_double_1"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "particle_4": "q.variant < 3"
+          },
+          {
+            "particle_double": "q.variant == 3"
+          },
+          {
+            "particle_double_1": "q.variant == 4"
+          }
+        ]
+      },
+      "particle_effects": {
+        "particle_4": "titan:northstar_bullet",
+        "particle": "titan:northstar_missile",
+        "particle_1": "titan:northstar_missile_jet",
+        "particle_2": "titan:northstar_core",
+        "particle_3": "titan:northstar_core_jet"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/empty"
+      },
+      "geometry": {
+        "default": "geometry.locator"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

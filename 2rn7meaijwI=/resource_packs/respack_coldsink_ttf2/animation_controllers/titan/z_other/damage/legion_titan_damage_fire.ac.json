@@ -1,0 +1,66 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.legion_titan_damage_fire": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "fire_1": "q.property('titan:titan_health') / 50 >= 0.25 && q.property('titan:titan_health') / 50 < 0.5 && !q.property('titan:titan_danger')"
+            },
+            {
+              "fire_2": "q.property('titan:titan_health') / 50 >= 0.5 && q.property('titan:titan_health') / 50 < 0.75 && !q.property('titan:titan_danger')"
+            },
+            {
+              "fire_3": "q.property('titan:titan_health') / 50 >= 0.75 && !q.property('titan:titan_danger')"
+            },
+            {
+              "fire_4": "q.property('titan:titan_danger')"
+            }
+          ]
+        },
+        "fire_1": {
+          "animations": [
+            "legion_titan.damage_fire_1"
+          ],
+          "transitions": [
+            {
+              "default": "!( q.property('titan:titan_health') / 50 >= 0.25 && q.property('titan:titan_health') / 50 < 0.5 && !q.property('titan:titan_danger') )"
+            }
+          ]
+        },
+        "fire_2": {
+          "animations": [
+            "legion_titan.damage_fire_2"
+          ],
+          "transitions": [
+            {
+              "default": "!( q.property('titan:titan_health') / 50 >= 0.5 && q.property('titan:titan_health') / 50 < 0.75 && !q.property('titan:titan_danger') )"
+            }
+          ]
+        },
+        "fire_3": {
+          "animations": [
+            "legion_titan.damage_fire_3"
+          ],
+          "transitions": [
+            {
+              "default": "!( q.property('titan:titan_health') / 50 >= 0.75 && !q.property('titan:titan_danger') )"
+            }
+          ]
+        },
+        "fire_4": {
+          "animations": [
+            "legion_titan.damage_fire_4"
+          ],
+          "transitions": [
+            {
+              "default": "!q.property('titan:titan_danger')"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:crafting_items_catalog": {
+    "categories": [
+      {
+        "category_name": "equipment",
+        "groups": [
+          {
+            "group_identifier": {
+              "name": "coldsink:pilot_weapon",
+              "icon": "coldsink:weapon_r201"
+            },
+            "items": [
+              "coldsink:weapon_r201",
+              "coldsink:weapon_charge"
+            ]
+          }
+        ]
+      },
+      {
+        "category_name": "equipment",
+        "groups": [
+          {
+            "group_identifier": {
+              "name": "coldsink:call_titan_item",
+              "icon": "coldsink:ion_call_item_test"
+            },
+            "items": [
+              "coldsink:ion_call_item_test",
+              "coldsink:tone_call_item_test",
+              "coldsink:northstar_call_item_test",
+              "coldsink:ronin_call_item_test",
+              "coldsink:scorch_call_item_test",
+              "coldsink:legion_call_item_test",
+              "coldsink:monarch_call_item_test"
+            ]
+          }
+        ]
+     }
+    ]
+  }
+}

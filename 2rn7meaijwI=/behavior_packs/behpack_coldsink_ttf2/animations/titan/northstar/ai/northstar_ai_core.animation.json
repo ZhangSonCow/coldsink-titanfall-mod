@@ -1,0 +1,43 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.northstar_ai_core.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/execute @s[tag=!northstar_fly] ~~~ effect @s levitation 1 36 true"
+        ],
+        "1.0": [
+          "/effect @s levitation 1 0 true",
+          "/effect @s speed 3 8 true"
+        ],
+        "2.0": [
+          "/effect @s slow_falling 1 0 true",
+          "/ride @s summon_rider coldsink:northstar_rider_ai_core"
+        ],
+        "2.1": [
+          "/effect @s slow_falling 0 1 true",
+          "/effect @s levitation 1 0 true"
+        ],
+        "3.1": [
+          "/effect @s slow_falling 1 0 true"
+        ],
+        "3.2": [
+          "/effect @s slow_falling 0 1 true",
+          "/effect @s levitation 1 0 true"
+        ],
+        "4.2": [
+          "/effect @s slow_falling 1 0 true"
+        ],
+        "4.3": [
+          "/effect @s slow_falling 0 1 true",
+          "/effect @s levitation 1 0 true"
+        ],
+        "5.915": [
+          "/event entity @s set_action_0"
+        ]
+      }
+    }
+  }
+}

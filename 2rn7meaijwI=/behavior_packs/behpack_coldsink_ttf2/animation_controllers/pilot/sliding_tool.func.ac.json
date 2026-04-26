@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.sliding_tool.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "sliding_tool": "q.is_alive"
+            }
+          ]
+        },
+        "sliding_tool": {
+          "animations": [
+            "sliding_tool",
+            "sliding_tool_down"
+          ]
+        }
+      }
+    }
+  }
+}

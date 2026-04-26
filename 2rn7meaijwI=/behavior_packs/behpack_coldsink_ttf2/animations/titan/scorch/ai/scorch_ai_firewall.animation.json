@@ -1,0 +1,27 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.scorch_ai_firewall.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/effect @s slowness 1 10 true"
+        ],
+        "0.5": [
+          "/tag @s add scorch_firewall",
+          "/execute @s[tag=team_blue] ~~~ summon coldsink:scorch_firewall_tool_blue ^^3.2^2.4",
+          "/execute @s[tag=team_red] ~~~ summon coldsink:scorch_firewall_tool_red ^^3.2^2.4",
+          "/execute @s[tag=team_blue] ~~~ execute @e[type=coldsink:scorch_firewall_tool_blue,c=1] ~~~ tp @s ~~~ facing @e[family=scorch_titan,tag=scorch_firewall]",
+          "/execute @s[tag=team_red] ~~~ execute @e[type=coldsink:scorch_firewall_tool_red,c=1] ~~~ tp @s ~~~ facing @e[family=scorch_titan,tag=scorch_firewall]",
+          "/playsound scorch_skill_1 @a[r=64] ~~~",
+          "/tag @s remove scorch_firewall"
+        ],
+        "1.0": [
+          "/event entity @s set_action_0",
+          "/event entity @e[type=coldsink:scorch_rider_ai,r=8,c=1] turn_titan_state_normal"
+        ]
+      }
+    }
+  }
+}

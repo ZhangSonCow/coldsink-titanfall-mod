@@ -1,0 +1,123 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:call_northstar_range_blue",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball",
+      "animations": {
+        "c.self": "controller.animation.pilot_bullet_self.func",
+        "self": "animation.call_northstar_self.func"
+      },
+      "scripts": {
+        "animate": [ 
+          "c.self"
+        ]
+      }
+    },
+
+    "component_groups": {
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+			"minecraft:tick_world": {
+				"distance_to_players": 128,
+				"never_despawn": false,
+				"radius": 2
+			},
+      "minecraft:type_family": {
+        "family": [ "tool", "bullet", "call_titan_bullet" ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.5
+      },
+      "minecraft:ageable": {
+        "duration": 3,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:projectile": {
+        "anchor": 1,
+        "on_hit": {
+          "impact_damage": {
+            "knockback": false,
+            "destroy_on_hit": false
+          },
+          "definition_event": {
+            "affect_projectile": true,
+            "affect_shooter": false,
+            "affect_target": false,
+            "affect_splash_area": false,
+            "event_trigger": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "on_ground",
+                    "operator": "!=",
+                    "subject": "self"
+                  }
+                ]
+              },
+              "event": "call_titan",
+              "target": "self"
+            }
+          },
+          "stick_in_ground": {
+            "shake_time": 1
+          }
+        },
+        "power": 12,
+        "gravity": 0.00,
+        "angle_offset": 0,
+        "liquid_inertia": 1,
+        "stop_on_hurt": true
+      },
+      "minecraft:physics": {},
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "events": {
+      "call_titan": {
+        "queue_command": {
+          "command": [
+            "event entity @s[tag=!done] spawn_titan",
+            "tag @s add done"
+          ]
+        }
+      },
+      "spawn_titan": {
+        "queue_command": {
+          "command": [
+            "summon coldsink:titan_loading_sign ~~~ team_blue",
+            "summon coldsink:northstar_titan ~~200~",
+            "tag @e[type=coldsink:northstar_titan,y=~200,r=8,c=1] add call_by_player",
+            "scoreboard players operation @e[type=coldsink:northstar_titan,y=~200,r=8,c=1] titan_self = @s titan_self",
+            "scoreboard players operation @e[type=coldsink:northstar_titan,y=~200,r=8,c=1] northstar_skin = @s northstar_skin",
+            "event entity @e[type=coldsink:northstar_titan,y=~200,r=8,c=1] set_action_1",
+            "event entity @e[type=coldsink:northstar_titan,y=~200,r=8,c=1] team_blue",
+            "event entity @s godie"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

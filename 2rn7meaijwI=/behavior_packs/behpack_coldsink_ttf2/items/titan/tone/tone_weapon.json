@@ -1,0 +1,27 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "coldsink:tone_weapon",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.arrow"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "tone_weapon",
+      "minecraft:display_name": {
+        "value": "§7=< 40MM追踪机炮 >=§f"
+      },
+      "minecraft:use_modifiers": {
+        "use_duration": 99999,
+        "movement_modifier": 1
+      },
+      "minecraft:food": {
+        "can_always_eat": true
+      },
+      "minecraft:hand_equipped": false
+    }
+  }
+}

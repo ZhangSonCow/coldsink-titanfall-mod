@@ -1,0 +1,67 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.is_pilot.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "is_pilot": "q.is_item_name_any('slot.armor.head', 0, 'coldsink:pilot_helmet')"
+            }
+          ]
+        },
+        "is_pilot": {
+          "animations": [
+            "spurt_cooldown"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_item_name_any('slot.armor.head', 0, 'coldsink:pilot_helmet')"
+            }
+          ],
+          "on_entry": [
+            "/ride @s stop_riding",
+            "/tag @s remove legion_range_mode",
+            "/event entity @s[tag=!is_titan] drive_titan_no",
+            "/event entity @s entry_is_pilot",
+            "/event entity @s rodeo_status_0",
+            "/execute @s[tag=!is_titan] ~~~ function pilot/get_all_item",
+            "/tag @s add is_pilot",
+            "/execute @s[tag=!init_pilot] ~~~ function pilot/all_init",
+            "/tag @s add init_pilot",
+            // 铁驭初始化
+            "/function pilot/init",
+            // 借用浪人90%免伤标签
+            "/tag @s add ronin_defend_core",
+            // 复查是否已拥有泰坦
+            "/function pilot/check_has_titan",
+            // 刷新显示UI核心值
+            "/execute @s[tag=!titan_fight] ~~~ function pilot/flash_titan_health_core"
+          ],
+          "on_exit": [
+            "/event entity @s exit_is_pilot",
+            "/event entity @s over_slip_wall",
+            "/ride @s[tag=is_titan] stop_riding",
+            "/event entity @s drive_titan_no",
+            "/replaceitem entity @s[tag=!is_titan,tag=!wy_game] slot.hotbar 0 air",
+            "/replaceitem entity @s[tag=!is_titan,tag=!wy_game] slot.hotbar 1 air",
+            "/replaceitem entity @s[tag=!is_titan,tag=!wy_game] slot.hotbar 2 air",
+            "/replaceitem entity @s[tag=!is_titan,tag=!wy_game] slot.hotbar 3 air",
+            "/replaceitem entity @s[tag=!is_titan,tag=!wy_game] slot.hotbar 4 air",
+            "/replaceitem entity @s[tag=!is_titan,tag=!wy_game] slot.hotbar 5 air",
+            "/replaceitem entity @s[tag=!is_titan,tag=!wy_game] slot.hotbar 6 air",
+            "/replaceitem entity @s[tag=!is_titan,tag=!wy_game] slot.hotbar 7 air",
+            "/replaceitem entity @s[tag=!is_titan,tag=!wy_game] slot.hotbar 8 air",
+            "/effect @s clear",
+            "/tag @s remove is_pilot",
+            "/tag @s remove is_titan",
+            "/tag @s remove is_sliding",
+            "/tag @s remove ronin_defend_core",
+            "/tag @s remove pilot_core_saied"
+          ]
+        }
+      }
+    }
+  }
+}

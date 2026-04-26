@@ -1,0 +1,168 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:scorch_trap_red",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "godie": {
+        "minecraft:instant_despawn": {}
+      },
+      "normal_family": {
+        "minecraft:type_family": {
+          "family": [
+            "tool",
+            "scorch_trap",
+            "scorch_trap_stand"
+          ]
+        }
+      },
+      "fired_family": {
+        "minecraft:type_family": {
+          "family": [
+            "tool",
+            "scorch_trap"
+          ]
+        }
+      },
+      "fire_boom": {
+        "minecraft:ageable": {
+          "duration": 5,
+          "grow_up": {
+            "event": "godie",
+            "target": "self"
+          }
+        },
+        "minecraft:timer": {
+          "time": 0.5,
+          "time_down_event": {
+            "event": "count_fire",
+            "target": "self"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:nameable": {},
+      "minecraft:collision_box": {
+        "width": 1.2,
+        "height": 1.2
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:ageable": {
+        "duration": 13,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:timer": {
+        "time": 0.5,
+        "time_down_event": {
+          "event": "count_pre",
+          "target": "self"
+        }
+      },
+      "minecraft:health": {
+        "value": 2,
+        "max": 2,
+        "min": 1
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "normal_family"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "playsound scorch_trap_spawn @a[r=64] ~~~",
+            "tag @s add team_red"
+          ]
+        }
+      },
+      "be_fire_boom": {
+        "add": {
+          "component_groups": [
+            "fire_boom",
+            "fired_family"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "normal_family"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "tag @s add done",
+            "effect @s invisibility 15 0 true"
+          ]
+        }
+      },
+      "count_pre": {
+        "queue_command": {
+          "command": [
+            "particle titan:scorch_trap_smoke ~~0.5~",
+            "playsound scorch_trap_smoke @a[r=64] ~~~"
+          ]
+        }
+      },
+      "count_fire": {
+        "queue_command": {
+          "command": [
+            "execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12,tag=!ronin_defending,tag=!titan_hard,family=!shield_entity] ~~~ scoreboard players add @e[type=coldsink:scorch_trap_red,tag=done,c=1] titan_attack 400",
+            "execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12,tag=ronin_defend,family=!shield_entity] ~~~ scoreboard players add @e[type=coldsink:scorch_trap_red,tag=done,c=1] titan_attack 120",
+            "execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12,tag=ronin_defend_core,family=!shield_entity] ~~~ scoreboard players add @e[type=coldsink:scorch_trap_red,tag=done,c=1] titan_attack 40",
+            "execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12,tag=titan_hard,family=!shield_entity] ~~~ scoreboard players add @e[type=coldsink:scorch_trap_red,tag=done,c=1] titan_attack 320",
+            "execute @s[scores={titan_attack=1..}] ~~~ scoreboard players operation @e[tag=is_scorch] skill_check_2 = @s titan_self",
+            "execute @s[scores={titan_attack=1..}] ~~~ execute @e[tag=is_scorch] ~~~ scoreboard players operation @s skill_check_2 -= @s titan_self",
+            "execute @s[scores={titan_attack=1..}] ~~~ scoreboard players operation @e[tag=is_scorch,scores={skill_check_2=0}] titan_attack += @s titan_attack",
+            "execute @s[scores={titan_attack=1..}] ~~~ event entity @e[tag=is_scorch,scores={skill_check_2=0}] shoot_get_core",
+            "scoreboard players reset @s titan_attack",
+            
+            "scoreboard players operation @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12] death_check = @e[tag=is_scorch,tag=team_red,scores={skill_check_2=0},c=1] titan_self",
+            "damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12,tag=!ronin_defending,tag=!titan_hard] 400 suicide entity @e[tag=is_scorch,tag=team_red,scores={skill_check_2=0},c=1]",
+            "damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12,tag=ronin_defend] 120 suicide entity @e[tag=is_scorch,tag=team_red,scores={skill_check_2=0},c=1]",
+            "damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12,tag=ronin_defend] 40 suicide entity @e[tag=is_scorch,tag=team_red,scores={skill_check_2=0},c=1]",
+            "damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=12,tag=ronin_defend] 320 suicide entity @e[tag=is_scorch,tag=team_red,scores={skill_check_2=0},c=1]",
+            // 玩家自动烈焰陷阱燃烧自伤
+            "execute @e[tag=is_scorch,tag=team_red,scores={skill_check_2=0},r=12,c=1] ~~~ execute @e[family=scorch_titan,tag=team_red,r=12,c=1] ~~~ damage @s[tag=!titan_shield] 400 suicide entity @e[tag=is_scorch,tag=team_red,scores={skill_check_2=0},c=1]",
+            "execute @e[tag=is_scorch,tag=team_red,scores={skill_check_2=0},r=12,c=1] ~~~ execute @e[family=scorch_titan,tag=team_red,r=12,c=1] ~~~ execute @s[tag=titan_shield] ~~~ damage @e[family=titan_shield,tag=team_red,r=2,c=1] 400 suicide entity @e[tag=is_scorch,tag=team_red,scores={skill_check_2=0},c=1]",
+
+            "event entity @e[type=coldsink:scorch_trap_red,tag=!done,r=12] be_fire_boom",
+            "particle titan:scorch_trap_fire_1 ~~~",
+            "particle titan:scorch_trap_fire_2 ~~~",
+            "particle titan:scorch_trap_fire_3 ~~~",
+            "particle titan:scorch_trap_fire_4 ~~~"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "godie"
+          ]
+        }
+      }
+    }
+  }
+}

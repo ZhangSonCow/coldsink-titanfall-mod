@@ -1,0 +1,1064 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.titan_weapon_back_yes": {
+			"loop": true,
+			"animation_length": 15,
+			"bones": {
+				"weapon": {
+					"scale": 0
+				},
+				"swordBack": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.titan_weapon_back_no": {
+			"loop": true,
+			"animation_length": 15,
+			"bones": {
+				"weaponBack": {
+					"scale": 0
+				},
+				"sword": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.titan_loading_fire.particle": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 5.5,
+			"bones": {
+				"bb_main": {
+					"position": {
+						"0.0": [0, 3239, 1256],
+						"3.4167": [0, 3239, 0],
+						"3.6667": [-0.02, 3081.04, 0.2],
+						"4.0": [-0.04, 2484.08, 0.37],
+						"4.25": [-0.07, 1630.11, 0.61],
+						"4.75": [-0.08, 35.05, -10.32],
+						"4.8333": [-0.08, 3.71, -9.31],
+						"5.0": [-0.08657, 7.01688, 0.71917],
+						"5.1667": [-0.65164, 19.44808, 5.57471],
+						"5.25": [-0.73794, 21.49909, 6.30803],
+						"5.5": [0, 6, 0]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"0.0833": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"0.1667": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"0.25": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"0.3333": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"0.4167": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"0.5": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"0.5833": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"0.6667": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"0.75": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"0.8333": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"0.9167": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"1.0": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"1.0833": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"1.1667": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"1.25": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"1.3333": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"1.4167": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"1.5": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"1.5833": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"1.6667": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"1.75": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"1.8333": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"1.9167": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"2.0": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"2.0833": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"2.1667": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"2.25": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"2.3333": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"2.4167": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"2.5": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"2.5833": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"2.6667": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"2.75": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"2.8333": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"2.9167": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"3.0": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"3.0833": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"3.1667": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"3.25": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"3.3333": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"3.4167": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"3.5": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"3.5833": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"3.6667": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"3.75": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"3.8333": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"3.9167": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"4.0": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"4.0833": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"4.1667": {
+					"effect": "titan_loading_around",
+					"locator": "titan_locator"
+				},
+				"4.25": [
+					{
+						"effect": "titan_loading_break",
+						"locator": "titan_locator"
+					},
+					{
+						"effect": "titan_loading_around",
+						"locator": "titan_locator"
+					}
+				]
+			}
+		},
+		"animation.titan_look_rotate": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"body3": {
+					"rotation": ["math.clamp(q.target_x_rotation * 0.5, -60, 60)", 0, 0]
+				},
+				"body2": {
+					"rotation": [0, "math.clamp(q.target_y_rotation * 0.5, -60, 60)", 0]
+				}
+			}
+		},
+		"animation.health_bar_3": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"health_bar": {
+					"rotation": ["-q.camera_rotation(0)", "q.camera_rotation(1)+180-q.body_y_rotation", 0],
+					"scale": "query.distance_from_camera > 10 ? (0.12*64*query.camera_distance_range_lerp(0,64)) : 0"
+				},
+				"damage": {
+					"scale": ["1-((q.health/q.max_health-0.25)/0.75)", 1, 1]
+				},
+				"transition": {
+					"scale": ["(v.health_last-q.health)/(q.max_health*0.75)/(1-(((q.health/q.max_health)-0.25)/0.75))", 1, 1]
+				}
+			},
+			"timeline": {
+				"0.0": "v.health_last = ( (v.health_last - q.health)*0.8 + q.health ) ;"
+			}
+		},
+		"animation.health_bar_3_danger": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"health_bar": {
+					"rotation": ["-q.camera_rotation(0)", "q.camera_rotation(1)+180-q.body_y_rotation", 0],
+					"scale": "query.distance_from_camera > 10 ? (0.12*64*query.camera_distance_range_lerp(0,64)): 0"
+				},
+				"damage": {
+					"scale": ["1-(4*q.health/q.max_health)", 1, 1]
+				},
+				"transition": {
+					"scale": ["(v.health_last-q.health)/(q.max_health/4)/(1-(4*(q.health/q.max_health)))", 1, 1]
+				}
+			},
+			"timeline": {
+				"0.0": "v.health_last = ( (v.health_last - q.health)*0.8 + q.health ) ;"
+			}
+		},
+		"animation.health_bar_4": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"health_bar": {
+					"rotation": ["-q.camera_rotation(0)", "q.camera_rotation(1)+180-q.body_y_rotation", 0],
+					"scale": "query.distance_from_camera > 10 ? (0.12*64*query.camera_distance_range_lerp(0,64)): 0"
+				},
+				"damage": {
+					"scale": ["1-((q.health/q.max_health-0.2)/0.8)", 1, 1]
+				},
+				"transition": {
+					"scale": ["(v.health_last-q.health)/(q.max_health*0.8)/(1-(((q.health/q.max_health)-0.2)/0.8))", 1, 1]
+				}
+			},
+			"timeline": {
+				"0.0": "v.health_last = ( (v.health_last - q.health)*0.8 + q.health ) ;"
+			}
+		},
+		"animation.health_bar_4_danger": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"health_bar": {
+					"rotation": ["-q.camera_rotation(0)", "q.camera_rotation(1)+180-q.body_y_rotation", 0],
+					"scale": "query.distance_from_camera > 10 ? (0.12*64*query.camera_distance_range_lerp(0,64)): 0"
+				},
+				"damage": {
+					"scale": ["1-(5*q.health/q.max_health)", 1, 1]
+				},
+				"transition": {
+					"scale": ["(v.health_last-q.health)/(q.max_health/5)/(1-(5*(q.health/q.max_health)))", 1, 1]
+				}
+			},
+			"timeline": {
+				"0.0": "v.health_last = ( (v.health_last - q.health)*0.8 + q.health ) ;"
+			}
+		},
+		"animation.health_bar_5": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"health_bar": {
+					"rotation": ["-q.camera_rotation(0)", "q.camera_rotation(1)+180-q.body_y_rotation", 0],
+					"scale": "query.distance_from_camera > 10 ? (0.12*64*query.camera_distance_range_lerp(0,64)): 0"
+				},
+				"damage": {
+					"scale": ["1-((q.health/q.max_health-0.167)/0.833)", 1, 1]
+				},
+				"transition": {
+					"scale": ["(v.health_last-q.health)/(q.max_health*0.833)/(1-(((q.health/q.max_health)-0.167)/0.833))", 1, 1]
+				}
+			},
+			"timeline": {
+				"0.0": "v.health_last = ( (v.health_last - q.health)*0.8 + q.health ) ;"
+			}
+		},
+		"animation.health_bar_5_danger": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"health_bar": {
+					"rotation": ["-q.camera_rotation(0)", "q.camera_rotation(1)+180-q.body_y_rotation", 0],
+					"scale": "query.distance_from_camera > 10 ? (0.12*64*query.camera_distance_range_lerp(0,64)): 0"
+				},
+				"damage": {
+					"scale": ["1-(6*q.health/q.max_health)", 1, 1]
+				},
+				"transition": {
+					"scale": ["(v.health_last-q.health)/(q.max_health/6)/(1-(6*(q.health/q.max_health)))", 1, 1]
+				}
+			},
+			"timeline": {
+				"0.0": "v.health_last = ( (v.health_last - q.health)*0.8 + q.health ) ;"
+			}
+		},
+		"animation.health_bar_6": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"health_bar": {
+					"rotation": ["-q.camera_rotation(0)", "q.camera_rotation(1)+180-q.body_y_rotation", 0],
+					"scale": "query.distance_from_camera > 10 ? (0.12*64*query.camera_distance_range_lerp(0,64)): 0"
+				},
+				"damage": {
+					"scale": ["1-((q.health/q.max_health-0.142)/0.858)", 1, 1]
+				},
+				"transition": {
+					"scale": ["(v.health_last-q.health)/(q.max_health*0.858)/(1-(((q.health/q.max_health)-0.142)/0.858))", 1, 1]
+				}
+			},
+			"timeline": {
+				"0.0": "v.health_last = ( (v.health_last - q.health)*0.8 + q.health ) ;"
+			}
+		},
+		"animation.health_bar_6_danger": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"health_bar": {
+					"rotation": ["-q.camera_rotation(0)", "q.camera_rotation(1)+180-q.body_y_rotation", 0],
+					"scale": "query.distance_from_camera > 10 ? (0.12*64*query.camera_distance_range_lerp(0,64)): 0"
+				},
+				"damage": {
+					"scale": ["1-(7*q.health/q.max_health)", 1, 1]
+				},
+				"transition": {
+					"scale": ["(v.health_last-q.health)/(q.max_health/7)/(1-(7*(q.health/q.max_health)))", 1, 1]
+				}
+			},
+			"timeline": {
+				"0.0": "v.health_last = ( (v.health_last - q.health)*0.8 + q.health ) ;"
+			}
+		},
+		"animation.health_bar_7": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"health_bar": {
+					"rotation": ["-q.camera_rotation(0)", "q.camera_rotation(1)+180-q.body_y_rotation", 0],
+					"scale": "query.distance_from_camera > 10 ? (0.12*64*query.camera_distance_range_lerp(0,64)): 0"
+				},
+				"damage": {
+					"scale": ["1-((q.health/q.max_health-0.125)/0.875)", 1, 1]
+				},
+				"transition": {
+					"scale": ["(v.health_last-q.health)/(q.max_health*0.875)/(1-(((q.health/q.max_health)-0.125)/0.875))", 1, 1]
+				}
+			},
+			"timeline": {
+				"0.0": "v.health_last = ( (v.health_last - q.health)*0.8 + q.health ) ;"
+			}
+		},
+		"animation.health_bar_7_danger": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"health_bar": {
+					"rotation": ["-q.camera_rotation(0)", "q.camera_rotation(1)+180-q.body_y_rotation", 0],
+					"scale": "query.distance_from_camera > 10 ? (0.12*64*query.camera_distance_range_lerp(0,64)): 0"
+				},
+				"damage": {
+					"scale": ["1-(8*q.health/q.max_health)", 1, 1]
+				},
+				"transition": {
+					"scale": ["(v.health_last-q.health)/(q.max_health/8)/(1-(8*(q.health/q.max_health)))", 1, 1]
+				}
+			},
+			"timeline": {
+				"0.0": "v.health_last = ( (v.health_last - q.health)*0.8 + q.health ) ;"
+			}
+		},
+		"animation.titan_shield_bar": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"damage": {
+					"scale": ["1-(q.health/q.max_health)", 1, 1]
+				},
+				"shield_bar": {
+					"rotation": ["-q.camera_rotation(0)", "q.camera_rotation(1)+180-q.body_y_rotation", 0],
+					"scale": "query.distance_from_camera > 10 ? (0.12*64*query.camera_distance_range_lerp(0,64)) : 0"
+				}
+			}
+		},
+		"animation.titan_load_shield_blue": {
+			"animation_length": 15,
+			"particle_effects": {
+				"0.0": {
+					"effect": "titan_load_shield_blue",
+					"locator": "titan_locator"
+				}
+			}
+		},
+		"animation.titan_load_shield_red": {
+			"animation_length": 15,
+			"particle_effects": {
+				"0.0": {
+					"effect": "titan_load_shield_red",
+					"locator": "titan_locator"
+				}
+			}
+		},
+		"animation.cabin_radar": {
+			"loop": true,
+			"animation_length": 5,
+			"bones": {
+				"radarRotate": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"5.0": {
+							"post": [0, 360, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			}
+		},
+		"animation.cabin_walk": {
+			"loop": true,
+			"animation_length": 0.8,
+			"bones": {
+				"cabin": {
+					"position": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.3": {
+							"post": [0, 0.3, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [0, -0.3, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.8": [0, 0, 0]
+					}
+				},
+				"titan_1st": {
+					"position": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.3": {
+							"post": [0, 0.5, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [0, -0.5, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.8": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.cabin_run": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
+				"cabin": {
+					"position": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2": {
+							"post": [0, 0.25, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.3": {
+							"post": [0, -0.25, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.titan_health_bar_3.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"damage": {
+					"scale": ["q.property('titan:titan_health') / 76", 1, 1]
+				},
+				"transition": {
+					"rotation": [0, -180, 0],
+					"position": [0, 0, -0.1],
+					"scale": ["(v.health_last-q.property('titan:titan_health'))/76/(q.property('titan:titan_health') / 76)", 1, 1]
+				}
+			},
+			"timeline": {
+				"0.0": "v.health_last = ( (v.health_last - q.property('titan:titan_health'))*0.8 + q.property('titan:titan_health') );"
+			}
+		},
+		"animation.titan_health_bar_4.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"damage": {
+					"scale": ["q.property('titan:titan_health') / 101", 1, 1]
+				},
+				"transition": {
+					"rotation": [0, -180, 0],
+					"position": [0, 0, -0.1],
+					"scale": ["(v.health_last-q.property('titan:titan_health'))/101/(q.property('titan:titan_health') / 101)", 1, 1]
+				}
+			},
+			"timeline": {
+				"0.0": "v.health_last = ( (v.health_last - q.property('titan:titan_health'))*0.8 + q.property('titan:titan_health') );"
+			}
+		},
+		"animation.titan_health_bar_5.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"damage": {
+					"scale": ["q.property('titan:titan_health') / 126", 1, 1]
+				},
+				"transition": {
+					"rotation": [0, -180, 0],
+					"position": [0, 0, -0.1],
+					"scale": ["(v.health_last-q.property('titan:titan_health'))/126/(q.property('titan:titan_health') / 126)", 1, 1]
+				}
+			},
+			"timeline": {
+				"0.0": "v.health_last = ( (v.health_last - q.property('titan:titan_health'))*0.8 + q.property('titan:titan_health') );"
+			}
+		},
+		"animation.titan_health_bar_6.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"damage": {
+					"scale": ["q.property('titan:titan_health') / 151", 1, 1]
+				},
+				"transition": {
+					"rotation": [0, -180, 0],
+					"position": [0, 0, -0.1],
+					"scale": ["(v.health_last-q.property('titan:titan_health'))/151/(q.property('titan:titan_health') / 151)", 1, 1]
+				}
+			},
+			"timeline": {
+				"0.0": "v.health_last = ( (v.health_last - q.property('titan:titan_health'))*0.8 + q.property('titan:titan_health') );"
+			}
+		},
+		"animation.titan_health_bar_7.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"damage": {
+					"scale": ["q.property('titan:titan_health') / 176", 1, 1]
+				},
+				"transition": {
+					"rotation": [0, -180, 0],
+					"position": [0, 0, -0.1],
+					"scale": ["(v.health_last-q.property('titan:titan_health'))/176/(q.property('titan:titan_health') / 176)", 1, 1]
+				}
+			},
+			"timeline": {
+				"0.0": "v.health_last = ( (v.health_last - q.property('titan:titan_health'))*0.8 + q.property('titan:titan_health') );"
+			}
+		},
+		"animation.titan_health_bar_danger.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"damage": {
+					"scale": ["q.property('titan:titan_health') / 26", 1, 1]
+				},
+				"transition": {
+					"rotation": [0, -180, 0],
+					"position": [0, 0, -0.1],
+					"scale": ["(v.health_last-q.property('titan:titan_health'))/26/(q.property('titan:titan_health') / 26)", 1, 1]
+				}
+			},
+			"timeline": {
+				"0.0": "v.health_last = ( (v.health_last - q.property('titan:titan_health'))*0.8 + q.property('titan:titan_health') );"
+			}
+		},
+		"animation.titan_postion_tiantu.fix": {
+			"loop": true,
+			"bones": {
+				"titan": {
+					"position": [0, -74, 0]
+				}
+			}
+		},
+		"animation.titan_postion_youxia.fix": {
+			"loop": true,
+			"bones": {
+				"titan": {
+					"position": [0, -74, 0]
+				}
+			}
+		},
+		"animation.titan_postion_juyao.fix": {
+			"loop": true,
+			"bones": {
+				"titan": {
+					"position": [0, -74, 0]
+				}
+			}
+		},
+		"animation.pilot_drive_postion.fix": {
+			"loop": true,
+			"bones": {
+				"pilotRoot": {
+					"position": [0, -74, 0]
+				}
+			}
+		},
+		"animation.titan_shield_bar.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"shield_damage": {
+					"scale": ["q.property('titan:shield_health') / 26", 1, 1]
+				}
+			}
+		},
+		"animation.titan_cabin_core.1st": {
+			"loop": true,
+			"animation_length": 3,
+			"bones": {
+				"particle_cabin": {
+					"position": [0, 0, -3]
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "cabin_core_1",
+					"locator": "locator_cabin"
+				}
+			}
+		},
+		"animation.titan_cabin_shield.1st": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 1,
+			"particle_effects": {
+				"0.0": {
+					"effect": "cabin_shield_1",
+					"locator": "locator_cabin"
+				}
+			}
+		},
+		"animation.titan_cabin_battery.1st": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 1,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "cabin_battery_1",
+						"locator": "locator_cabin"
+					},
+					{
+						"effect": "cabin_battery_2",
+						"locator": "locator_cabin"
+					}
+				]
+			}
+		},
+		"animation.titan_cabin_battery_delay.1st": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 1.5,
+			"particle_effects": {
+				"0.5": [
+					{
+						"effect": "cabin_battery_1",
+						"locator": "locator_cabin"
+					},
+					{
+						"effect": "cabin_battery_2",
+						"locator": "locator_cabin"
+					}
+				]
+			}
+		},
+		"animation.titan_cabin_core_once.1st": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 1.5,
+			"bones": {
+				"particle_cabin": {
+					"position": [0, 0, -3]
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "cabin_core_2",
+					"locator": "locator_cabin"
+				}
+			}
+		},
+		"animation.titan_aim_zoom.1st": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"titan_1st": {
+					"position": [3, -3, -5]
+				},
+				"locator_fire_1st": {
+					"position": [-8, 3, 5]
+				}
+			}
+		},
+		"animation.titan_cabin.open_glass": {
+			"animation_length": 2,
+			"bones": {
+				"glass_4": {
+					"position": {
+						"0.0": [0, -12, 0],
+						"1.25": [0, -12, 0],
+						"1.5": [0, 0, 0]
+					}
+				},
+				"glass_2": {
+					"position": {
+						"0.0": [0, -18, 0],
+						"0.6667": [0, -18, 0],
+						"0.9167": [0, -6, 0]
+					},
+					"scale": {
+						"0.9167": [1, 1, 1],
+						"1.0": [0, 0, 0]
+					}
+				},
+				"glass_1": {
+					"position": {
+						"0.0": [12, 0, 0],
+						"0.5": [12, 0, 0],
+						"0.75": [0, 0, 0]
+					}
+				},
+				"glass_3": {
+					"position": {
+						"0.0": [-12, 0, 0],
+						"0.8333": [-12, 0, 0],
+						"1.0833": [0, 0, 0]
+					}
+				},
+				"glass_5": {
+					"position": {
+						"0.0": [0, 8, 0],
+						"1.5": [0, 8, 0],
+						"1.75": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.cabin_spurt": {
+			"animation_length": 0.7,
+			"bones": {
+				"cabin": {
+					"position": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1": {
+							"post": [0, 0, 1],
+							"lerp_mode": "catmullrom"
+						},
+						"0.3": {
+							"post": [0, 0, 1],
+							"lerp_mode": "catmullrom"
+						},
+						"0.6": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.7": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.cabin_core_begin_shake": {
+			"animation_length": 0.5,
+			"bones": {
+				"cabin": {
+					"position": ["Math.random(-0.8, 0.8)", "Math.random(-0.8, 0.8)", "Math.random(-0.8, 0.8)"]
+				}
+			}
+		},
+		"animation.titan_aim_zoom_legion.1st": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"titan_1st": {
+					"position": [5, -5, -12]
+				},
+				"locator_fire_1st": {
+					"position": [0, 0, -12]
+				}
+			}
+		},
+		"animation.titan_zoom_in_ui": {
+			"loop": true,
+			"bones": {
+				"titan": {
+					"position": [0, 72, 0],
+					"scale": 0.3
+				}
+			}
+		},
+		"animation.titan_eye_blue_ion": {
+			"loop": true,
+			"animation_length": 3,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "titan_eye_blue_2",
+						"locator": "ion_eye"
+					},
+					{
+						"effect": "titan_eye_blue_1",
+						"locator": "ion_eye"
+					}
+				]
+			}
+		},
+		"animation.titan_eye_red_ion": {
+			"loop": true,
+			"animation_length": 3,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "titan_eye_red_2",
+						"locator": "ion_eye"
+					},
+					{
+						"effect": "titan_eye_red_1",
+						"locator": "ion_eye"
+					}
+				]
+			}
+		},
+		"animation.titan_eye_blue_tone": {
+			"loop": true,
+			"animation_length": 3,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "titan_eye_blue_2",
+						"locator": "tone_eye"
+					},
+					{
+						"effect": "titan_eye_blue_1",
+						"locator": "tone_eye"
+					}
+				]
+			}
+		},
+		"animation.titan_eye_red_tone": {
+			"loop": true,
+			"animation_length": 3,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "titan_eye_red_2",
+						"locator": "tone_eye"
+					},
+					{
+						"effect": "titan_eye_red_1",
+						"locator": "tone_eye"
+					}
+				]
+			}
+		},
+		"animation.titan_eye_blue_northstar": {
+			"loop": true,
+			"animation_length": 3,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "titan_eye_blue_2",
+						"locator": "northstar_eye"
+					},
+					{
+						"effect": "titan_eye_blue_1",
+						"locator": "northstar_eye"
+					}
+				]
+			}
+		},
+		"animation.titan_eye_red_northstar": {
+			"loop": true,
+			"animation_length": 3,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "titan_eye_red_2",
+						"locator": "northstar_eye"
+					},
+					{
+						"effect": "titan_eye_red_1",
+						"locator": "northstar_eye"
+					}
+				]
+			}
+		},
+		"animation.titan_eye_blue_ronin": {
+			"loop": true,
+			"animation_length": 3,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "titan_eye_blue_2",
+						"locator": "ronin_eye"
+					},
+					{
+						"effect": "titan_eye_blue_1",
+						"locator": "ronin_eye"
+					}
+				]
+			}
+		},
+		"animation.titan_eye_red_ronin": {
+			"loop": true,
+			"animation_length": 3,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "titan_eye_red_2",
+						"locator": "ronin_eye"
+					},
+					{
+						"effect": "titan_eye_red_1",
+						"locator": "ronin_eye"
+					}
+				]
+			}
+		},
+		"animation.titan_eye_blue_monarch": {
+			"loop": true,
+			"animation_length": 3,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "titan_eye_blue_2",
+						"locator": "monarch_eye"
+					},
+					{
+						"effect": "titan_eye_blue_1",
+						"locator": "monarch_eye"
+					}
+				]
+			}
+		},
+		"animation.titan_eye_red_monarch": {
+			"loop": true,
+			"animation_length": 3,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "titan_eye_red_2",
+						"locator": "monarch_eye"
+					},
+					{
+						"effect": "titan_eye_red_1",
+						"locator": "monarch_eye"
+					}
+				]
+			}
+		}
+	}
+}

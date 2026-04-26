@@ -1,0 +1,44 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.rodeo_enemy_grenade": {
+      "loop": false,
+      "animation_length": 8.1,
+      "timeline": {
+        "0.0": [
+          "/title @s[type=player] actionbar §c训牛敌方泰坦-扔手雷",
+          "/execute @s[tag=team_blue] ~~-7~ tag @e[family=titan,family=!tool,tag=team_red,c=1] add has_rodeo",
+          "/execute @s[tag=team_red] ~~-7~ tag @e[family=titan,family=!tool,tag=team_blue,c=1] add has_rodeo",
+          "/execute @s[tag=team_blue] ~~-7~ execute @e[family=titan,family=!tool,tag=team_red,c=1] ~~~ execute @s[tag=has_rider] ~~~ tellraw @p[tag=is_titan,tag=team_red] {\"rawtext\":[{\"text\":\"§c正遭敌方铁驭 §f\"},{\"selector\":\"@e[family=pilot,tag=is_rodeo,tag=team_red,r=8,c=1]\"},{\"rawtext\":[{\"text\":\"§c 训牛术！\"}]}",
+          "/execute @s[tag=team_red] ~~-7~ execute @e[family=titan,family=!tool,tag=team_blue,c=1] ~~~ execute @s[tag=has_rider] ~~~ tellraw @p[tag=is_titan,tag=team_blue] {\"rawtext\":[{\"text\":\"§c正遭敌方铁驭 §f\"},{\"selector\":\"@e[family=pilot,tag=is_rodeo,tag=team_blue,r=8,c=1]\"},{\"rawtext\":[{\"text\":\"§c 训牛术！\"}]}"
+        ],
+        "5.0": [
+          "/tag @s add rodeo_self",
+
+          "/execute @s[tag=team_blue] ~~-7~ execute @e[family=titan,tag=team_red,c=1] ~~~ execute @s[tag=titan_danger] ~~~ scoreboard players add @p[tag=rodeo_self,tag=!has_titan] pilot_attack 100",
+          "/execute @s[tag=team_blue] ~~-7~ execute @e[family=titan,tag=team_red,c=1] ~~~ execute @s[tag=!titan_danger] ~~~ scoreboard players add @p[tag=rodeo_self,tag=!has_titan] pilot_attack 50",
+          "/event entity @s[tag=!has_titan] pilot_shoot_get_core",
+          
+          "/execute @s[tag=team_blue] ~~-7~ scoreboard players operation @e[family=titan,tag=team_red,c=1] death_check = @s titan_self",
+          "/execute @s[tag=team_blue] ~~-7~ tag @e[family=titan,tag=team_red,c=1] remove has_rodeo",
+          "/execute @s[tag=team_blue] ~~-7~ execute @e[family=titan,tag=team_red,c=1] ~~~ execute @s[tag=titan_shield] ~~~ kill @e[family=titan_shield,r=8,tag=team_red,c=1]",
+          "/execute @s[tag=team_blue] ~~-7~ execute @e[family=titan,tag=team_red,c=1] ~~~ damage @s[tag=titan_danger] 2500 suicide entity @p[tag=rodeo_self]",
+          "/execute @s[tag=team_blue] ~~-7~ execute @e[family=titan,tag=team_red,c=1] ~~~ damage @s[tag=!titan_danger] 1250 suicide entity @p[tag=rodeo_self]",
+
+          "/execute @s[tag=team_red] ~~-7~ scoreboard players operation @e[family=titan,tag=team_blue,c=1] death_check = @s titan_self",
+          "/execute @s[tag=team_red] ~~-7~ tag @e[family=titan,tag=team_blue,c=1] remove has_rodeo",
+          "/execute @s[tag=team_red] ~~-7~ execute @e[family=titan,tag=team_blue,c=1] ~~~ execute @s[tag=titan_shield] ~~~ kill @e[family=titan_shield,r=8,tag=team_blue,c=1]",
+          "/execute @s[tag=team_red] ~~-7~ execute @e[family=titan,tag=team_blue,c=1] ~~~ damage @s[tag=titan_danger] 2500 suicide entity @p[tag=rodeo_self]",
+          "/execute @s[tag=team_red] ~~-7~ execute @e[family=titan,tag=team_blue,c=1] ~~~ damage @s[tag=!titan_danger] 1250 suicide entity @p[tag=rodeo_self]",
+          
+          "/tag @s remove rodeo_self",
+
+          "/playsound pilot_grenade_boom @a[r=64] ~~~",
+          "/particle pilot:pilot_grenade_boom ~~-3~",
+          "/event entity @s rodeo_status_0",
+          "/ride @s stop_riding"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.scorch_trap_count.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ready": "q.property('titan:skill_cooldown_2') <= 15"
+            }
+          ]
+        },
+        "ready": {
+          "animations": [
+            "cooldown_count_0"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:skill_cooldown_2') > 15"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add scorch_trap",
+            "/event entity @s skill_cooldown_2_no"
+          ],
+          "on_exit": [
+            "/tag @s remove scorch_trap",
+            "/event entity @s skill_cooldown_2_yes"
+          ]
+        }
+      }
+    }
+  }
+}

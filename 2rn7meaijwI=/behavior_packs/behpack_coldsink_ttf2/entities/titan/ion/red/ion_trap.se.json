@@ -1,0 +1,317 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:ion_trap_red",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "titan:line_range": {
+          "type": "int",
+          "range": [ 0, 30 ],
+          "default": 0,
+          "client_sync": true
+        },
+        "titan:line_height": {
+          "type": "int",
+          "range": [ -10, 10 ],
+          "default": 0,
+          "client_sync": true
+        }
+      }
+    },
+    "component_groups": {
+      "godie": {
+        "minecraft:instant_despawn": {}
+      },
+      "before": {
+        "minecraft:is_sheared": {},
+        "minecraft:ageable": {
+          "duration": 1,
+          "grow_up": {
+            "event": "be_ready",
+            "target": "self"
+          }
+        }
+      },
+      "ready": {
+        "minecraft:ageable": {
+          "duration": 12,
+          "grow_up": {
+            "event": "godie",
+            "target": "self"
+          }
+        },
+        "minecraft:timer": {
+          "time": 0.5,
+          "time_down_event": {
+            "event": "count",
+            "target": "self"
+          }
+        }
+      },
+      "is_main_trap": {
+        "minecraft:is_ignited": {}
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tool" ]
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:collision_box": {
+          "width": 0.0,
+          "height": 0.5
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 0.1,
+            "height": 1.8,
+            "pivot": [ 0, 0, 0 ]
+          }
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:health": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "before"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "event entity @s init"
+          ]
+        }
+      },
+      "spawn_main": {
+        "add": {
+          "component_groups": [
+            "before"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "tag @s add main",
+            "event entity @s init"
+          ]
+        }
+      },
+      "init": {
+        "queue_command": {
+          "command": [
+            "tag @s add team_red",
+            "event entity @s[tag=!main] facing_main"
+          ]
+        }
+      },
+      "get_range": {
+        "add": {
+          "component_groups": [
+            "is_main_trap"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=12] facing_main",
+            // 计算水平距离差
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=8,rm=7] line_range_8",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=9,rm=8] line_range_9",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=10,rm=9] line_range_10",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=11,rm=10] line_range_11",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=12,rm=11] line_range_12",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=13,rm=12] line_range_13",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=14,rm=13] line_range_14",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=15,rm=14] line_range_15",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=16,rm=15] line_range_16",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=17,rm=16] line_range_17",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=18,rm=17] line_range_18",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=19,rm=18] line_range_19",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=20,rm=19] line_range_20",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=21,rm=20] line_range_21",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=22,rm=21] line_range_22",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=23,rm=22] line_range_23",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=24,rm=23] line_range_24",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=25,rm=24] line_range_25",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=26,rm=25] line_range_26",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=27,rm=26] line_range_27",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=28,rm=27] line_range_28",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=29,rm=28] line_range_29",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,r=30,rm=29] line_range_30",
+            // 计算垂直距离差
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,y=~-2,dy=1,x=~-25,dx=50,z=~-25,dz=50] line_height_1_up",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,y=~-3,dy=1,x=~-25,dx=50,z=~-25,dz=50] line_height_2_up",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,y=~-4,dy=1,x=~-25,dx=50,z=~-25,dz=50] line_height_3_up",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,y=~-5,dy=1,x=~-25,dx=50,z=~-25,dz=50] line_height_4_up",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,y=~-6,dy=1,x=~-25,dx=50,z=~-25,dz=50] line_height_5_up",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,y=~-7,dy=1,x=~-25,dx=50,z=~-25,dz=50] line_height_6_up",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,y=~-8,dy=1,x=~-25,dx=50,z=~-25,dz=50] line_height_7_up",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,y=~-9,dy=1,x=~-25,dx=50,z=~-25,dz=50] line_height_8_up",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,y=~-10,dy=1,x=~-25,dx=50,z=~-25,dz=50] line_height_9_up",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,y=~-11,dy=1,x=~-25,dx=50,z=~-25,dz=50] line_height_10_up",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,y=~2,dy=-1,x=~-25,dx=50,z=~-25,dz=50] line_height_1_down",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,y=~3,dy=-1,x=~-25,dx=50,z=~-25,dz=50] line_height_2_down",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,y=~4,dy=-1,x=~-25,dx=50,z=~-25,dz=50] line_height_3_down",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,y=~5,dy=-1,x=~-25,dx=50,z=~-25,dz=50] line_height_4_down",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,y=~6,dy=-1,x=~-25,dx=50,z=~-25,dz=50] line_height_5_down",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,y=~7,dy=-1,x=~-25,dx=50,z=~-25,dz=50] line_height_6_down",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,y=~8,dy=-1,x=~-25,dx=50,z=~-25,dz=50] line_height_7_down",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,y=~9,dy=-1,x=~-25,dx=50,z=~-25,dz=50] line_height_8_down",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,y=~10,dy=-1,x=~-25,dx=50,z=~-25,dz=50] line_height_9_down",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!main,y=~11,dy=-1,x=~-25,dx=50,z=~-25,dz=50] line_height_10_down"
+          ]
+        }
+      },
+      // 模拟水平距离差
+      "line_range_8":{"set_property":{"titan:line_range": 8}},
+      "line_range_9":{"set_property":{"titan:line_range": 9}},
+      "line_range_10":{"set_property":{"titan:line_range": 10}},
+      "line_range_11":{"set_property":{"titan:line_range": 11}},
+      "line_range_12":{"set_property":{"titan:line_range": 12}},
+      "line_range_13":{"set_property":{"titan:line_range": 13}},
+      "line_range_14":{"set_property":{"titan:line_range": 14}},
+      "line_range_15":{"set_property":{"titan:line_range": 15}},
+      "line_range_16":{"set_property":{"titan:line_range": 16}},
+      "line_range_17":{"set_property":{"titan:line_range": 17}},
+      "line_range_18":{"set_property":{"titan:line_range": 18}},
+      "line_range_19":{"set_property":{"titan:line_range": 19}},
+      "line_range_20":{"set_property":{"titan:line_range": 20}},
+      "line_range_21":{"set_property":{"titan:line_range": 21}},
+      "line_range_22":{"set_property":{"titan:line_range": 22}},
+      "line_range_23":{"set_property":{"titan:line_range": 23}},
+      "line_range_24":{"set_property":{"titan:line_range": 24}},
+      "line_range_25":{"set_property":{"titan:line_range": 25}},
+      "line_range_26":{"set_property":{"titan:line_range": 26}},
+      "line_range_27":{"set_property":{"titan:line_range": 27}},
+      "line_range_28":{"set_property":{"titan:line_range": 28}},
+      "line_range_29":{"set_property":{"titan:line_range": 29}},
+      "line_range_30":{"set_property":{"titan:line_range": 30}},
+      // 模拟垂直距离差
+      "line_height_1_up":{"set_property":{"titan:line_height": 1}},
+      "line_height_2_up":{"set_property":{"titan:line_height": 2}},
+      "line_height_3_up":{"set_property":{"titan:line_height": 3}},
+      "line_height_4_up":{"set_property":{"titan:line_height": 4}},
+      "line_height_5_up":{"set_property":{"titan:line_height": 5}},
+      "line_height_6_up":{"set_property":{"titan:line_height": 6}},
+      "line_height_7_up":{"set_property":{"titan:line_height": 7}},
+      "line_height_8_up":{"set_property":{"titan:line_height": 8}},
+      "line_height_9_up":{"set_property":{"titan:line_height": 9}},
+      "line_height_10_up":{"set_property":{"titan:line_height": 10}},
+      "line_height_1_down":{"set_property":{"titan:line_height": -1}},
+      "line_height_2_down":{"set_property":{"titan:line_height": -2}},
+      "line_height_3_down":{"set_property":{"titan:line_height": -3}},
+      "line_height_4_down":{"set_property":{"titan:line_height": -4}},
+      "line_height_5_down":{"set_property":{"titan:line_height": -5}},
+      "line_height_6_down":{"set_property":{"titan:line_height": -6}},
+      "line_height_7_down":{"set_property":{"titan:line_height": -7}},
+      "line_height_8_down":{"set_property":{"titan:line_height": -8}},
+      "line_height_9_down":{"set_property":{"titan:line_height": -9}},
+      "line_height_10_down":{"set_property":{"titan:line_height": -10}},
+      "be_ready": {
+        "remove": {
+          "component_groups": [
+            "before"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "ready"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "event entity @s[tag=!main] facing_main",
+            "event entity @s[tag=main] get_range"
+          ]
+        }
+      },
+      // 邻节点对准主节点
+      "facing_main": {
+        "queue_command": {
+          "command": [
+            "scoreboard players operation @e[type=coldsink:ion_trap_red,tag=main] bullet_check = @s ion_trap",
+            "execute @e[type=coldsink:ion_trap_red,tag=main] ~~~ scoreboard players operation @s bullet_check -= @s ion_trap",
+            "tp @s[tag=!main] ~~~ facing @e[type=coldsink:ion_trap_red,tag=main,scores={bullet_check=0},c=1]"
+          ]
+        }
+      },
+      "count": {
+        "queue_command": {
+          "command": [
+            "execute @s[tag=main] ~~~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,family=!shield_entity,r=6] ~~~ event entity @e[type=coldsink:ion_trap_red,r=6,c=1] boom",
+            "execute @s[tag=!main] ^^^3 execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,family=!shield_entity,r=6] ~~~ event entity @e[type=coldsink:ion_trap_red,r=6,c=1] boom"
+          ]
+        }
+      },
+      "boom": {
+        "queue_command": {
+          "command": [
+            "execute @s[tag=main] ~~~ tag @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=6] add ion_trap_boom",
+            "execute @s[tag=!main] ^^^3 tag @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=6] add ion_trap_boom",
+
+            "execute @s[tag=!done] ~~~ execute @e[tag=ion_trap_boom,tag=!ronin_defending,tag=!titan_hard,family=!shield_entity] ~~~ scoreboard players add @e[type=coldsink:ion_trap_red,c=1] titan_attack 1000",
+            "execute @s[tag=!done] ~~~ execute @e[tag=ion_trap_boom,tag=ronin_defend,family=!shield_entity] ~~~ scoreboard players add @e[type=coldsink:ion_trap_red,c=1] titan_attack 300",
+            "execute @s[tag=!done] ~~~ execute @e[tag=ion_trap_boom,tag=ronin_defend_core,family=!shield_entity] ~~~ scoreboard players add @e[type=coldsink:ion_trap_red,c=1] titan_attack 100",
+            "execute @s[tag=!done] ~~~ execute @e[tag=ion_trap_boom,tag=titan_hard,family=!shield_entity] ~~~ scoreboard players add @e[type=coldsink:ion_trap_red,c=1] titan_attack 800",
+
+            "execute @s[scores={titan_attack=1..},tag=!done] ~~~ scoreboard players operation @e[tag=is_ion,tag=team_red] skill_check_2 = @s titan_self",
+            "execute @s[scores={titan_attack=1..},tag=!done] ~~~ execute @e[tag=is_ion,tag=team_red] ~~~ scoreboard players operation @s skill_check_2 -= @s titan_self",
+            "execute @s[scores={titan_attack=1..},tag=!done] ~~~ scoreboard players operation @e[tag=is_ion,tag=team_red,scores={skill_check_2=0}] titan_attack += @s titan_attack",
+            "execute @s[scores={titan_attack=1..},tag=!done] ~~~ event entity @e[tag=is_ion,tag=team_red,scores={skill_check_2=0}] shoot_get_core",
+
+            "execute @s[scores={titan_attack=1..},tag=!done] ~~~ scoreboard players operation @e[tag=!team_red,tag=ion_trap_boom] death_check = @e[tag=is_ion,tag=team_red,scores={skill_check_2=0},c=1] titan_self",
+            "execute @s[tag=!done] ~~~ damage @e[tag=!team_red,tag=ion_trap_boom,tag=!ronin_defending,tag=!titan_hard] 1000 suicide entity @e[tag=is_ion,tag=team_red,scores={skill_check_2=0},c=1]",
+            "execute @s[tag=!done] ~~~ damage @e[tag=!team_red,tag=ion_trap_boom,tag=ronin_defend] 300 suicide entity @e[tag=is_ion,tag=team_red,scores={skill_check_2=0},c=1]",
+            "execute @s[tag=!done] ~~~ damage @e[tag=!team_red,tag=ion_trap_boom,tag=ronin_defend_core] 100 suicide entity @e[tag=is_ion,tag=team_red,scores={skill_check_2=0},c=1]",
+            "execute @s[tag=!done] ~~~ damage @e[tag=!team_red,tag=ion_trap_boom,tag=titan_hard] 800 suicide entity @e[tag=is_ion,tag=team_red,scores={skill_check_2=0},c=1]",
+
+            "tag @s add done",
+
+            "tag @e[tag=ion_trap_boom] remove ion_trap_boom",
+
+            // 牵连爆炸
+            "tag @s add boom_self",
+            "scoreboard players operation @e[type=coldsink:ion_trap_red,tag=!boom_self] bullet_check = @s ion_trap",
+            "execute @e[type=coldsink:ion_trap_red,tag=!boom_self] ~~~ scoreboard players operation @s bullet_check -= @s ion_trap",
+            "event entity @e[type=coldsink:ion_trap_red,tag=!boom_self,scores={bullet_check=0}] boom",
+
+            "particle titan:ion_trap_boom_1 ~~~",
+            "particle titan:ion_trap_boom_2 ~~~",
+
+            "event entity @s godie"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "godie"
+          ]
+        }
+      }
+    }
+  }
+}

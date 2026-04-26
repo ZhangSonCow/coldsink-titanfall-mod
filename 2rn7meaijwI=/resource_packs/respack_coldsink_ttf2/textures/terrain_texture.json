@@ -1,0 +1,14 @@
+{
+  "resource_pack_name": "coldsink",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "black_hiden_block": {
+      "textures": "textures/blocks/black_hiden_block"
+    },
+    "white_light_block": {
+      "textures": "textures/blocks/white_light_block"
+    }
+  }
+}

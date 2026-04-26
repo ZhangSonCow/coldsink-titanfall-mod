@@ -1,0 +1,16 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.core_ui_pilot_ion.1st": {
+      "geometry": "geometry.core_ui_titan_type.1st",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "Texture.call_ion_icon" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

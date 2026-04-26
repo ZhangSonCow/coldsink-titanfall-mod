@@ -1,0 +1,118 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.pilot_ai_action.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "pilot_ai_slide_trigger"
+          ],
+          "transitions": [
+            {
+              "no_ground": "!q.is_on_ground"
+            },
+            {
+              "sliding": "q.property('titan:action') == 5"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_0"
+          ]
+        },
+        "no_ground": {
+          "animations": [ 
+            "pilot_ai_two_jump",
+            "pilot_ai_check_slip_wall"
+          ],
+          "transitions": [
+            {
+              "default": "q.is_on_ground"
+            },
+            {
+              "two_jump": "q.property('titan:action') == 2"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_1",
+            "/execute @s[tag=!sliding_jump_self] ~~~ playsound pilot_jump_one @a[r=32] ~~~",
+            "/execute @s[tag=sliding_jump_self] ~~~ summon coldsink:sliding_jump_tool_ai ^^^-1"
+          ]
+        },
+        "two_jump": {
+          "animations": [
+            "pilot_ai_check_slip_wall",
+            "pilot_ai_rodeo_trigger"
+          ],
+          "transitions": [
+            {
+              "default": "q.is_on_ground"
+            },
+            {
+              "slip_wall": "q.property('titan:action') == 3 || q.property('titan:action') == 4"
+            }
+          ],
+          "on_entry": [
+            "/playsound pilot_jump_two @a[r=32] ~~~",
+            "/tag @s add two_jump_self",
+            "/scoreboard players random @s random_score 1 2",
+            "/execute @s[scores={random_score=1}] ~~~ summon coldsink:two_jump_tool_ai ^1^^",
+            "/execute @s[scores={random_score=2}] ~~~ summon coldsink:two_jump_tool_ai ^-1^^"
+          ]
+        },
+        "slip_wall": {
+          "animations": [
+            "pilot_ai_slip_wall"
+          ],
+          "transitions": [
+            {
+              "default": "q.is_on_ground"
+            },
+            {
+              "leave_wall_jump": "q.property('titan:action') != 3 && q.property('titan:action') != 4"
+            }
+          ]
+        },
+        "leave_wall_jump": {
+          "animations": [
+            "pilot_ai_two_jump",
+            "pilot_ai_check_slip_wall"
+          ],
+          "transitions": [
+            {
+              "default": "q.is_on_ground"
+            },
+            {
+              "two_jump": "q.property('titan:action') == 2"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add leave_wall_self",
+            "/summon coldsink:leave_wall_tool_ai"
+          ]
+        },
+        "sliding": {
+          "animations": [
+            "pilot_ai_slide_over"
+          ],
+          "transitions": [
+            {
+              "no_ground": "q.property('titan:action') != 5 && !q.is_riding"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add is_sliding",
+            "/tag @s add begin_slide_self",
+            "/tp @s ~~~ ~ 0",
+            "/summon coldsink:sliding_ride_tool_ai ^^0.1^0.3",
+            "/tp @s ~~~ facing @e[type=coldsink:sliding_ride_tool_ai,c=1]"
+          ],
+          "on_exit": [
+            "/tag @s remove is_sliding",
+            "/tag @s add sliding_jump_self"
+          ]
+        }
+      }
+    }
+  }
+}

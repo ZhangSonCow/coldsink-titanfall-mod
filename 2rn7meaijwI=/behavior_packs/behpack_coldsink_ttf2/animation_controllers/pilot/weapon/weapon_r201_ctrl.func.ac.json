@@ -1,0 +1,46 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.weapon_r201_ctrl.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "fire": "q.is_using_item && q.property('titan:other_action') == 0"
+            },
+            {
+              "reload": "v.attack_time && q.property('titan:other_action') == 0"
+            }
+          ]
+        },
+        "fire": {
+          "transitions": [
+            {
+              "reload": "q.property('titan:other_action') == 2"
+            },
+            {
+              "default": "!q.is_using_item"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[tag=!wy_game] set_other_action_1"
+          ],
+          "on_exit": [
+            "/event entity @s[tag=!wy_game] set_other_action_0"
+          ]
+        },
+        "reload": {
+          "transitions": [
+            {
+              "default": "q.property('titan:other_action') != 2"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[scores={r201_bullet=..29},tag=!wy_game,tag=!pilot_melee] set_other_action_2"
+          ]
+        }
+      }
+    }
+  }
+}

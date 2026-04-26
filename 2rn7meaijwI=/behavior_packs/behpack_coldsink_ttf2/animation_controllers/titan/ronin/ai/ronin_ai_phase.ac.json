@@ -1,0 +1,57 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ronin_ai_phase.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "ronin_ai_phase_trigger"
+          ],
+          "transitions": [
+            {
+              "skill": "q.is_saddled"
+            }
+          ]
+        },
+        "skill": {
+          "animations": [
+            "ronin_ai_phase"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_saddled"
+            }
+          ],
+          "on_entry": [
+            "/event entity @e[type=coldsink:ronin_rider_ai,r=8,c=1] turn_rider_state_phase",
+
+            "/effect @s invisibility 2 0 true",
+            "/tag @s remove northstar_trap",
+            "/execute @s ~~~ execute @s[scores={tone_target=1..}] ~~~ event entity @e[family=tone_target,r=5,c=1] godie",
+            "/scoreboard players reset @s tone_target",
+            "/scoreboard players reset @s tone_target_ai",
+            
+						"/tag @s add ronin_phase",
+            "/event entity @s turn_yes_shield",
+
+            "/playsound ronin_skill_2_entry @a[r=64] ~~~",
+            "/particle titan:ronin_phase_1 ~~~",
+            "/particle titan:ronin_phase_2 ~~~",
+            "/particle titan:ronin_phase_3 ~~~"
+          ],
+          "on_exit": [
+            "/event entity @e[type=coldsink:ronin_rider_ai,r=8,c=1] turn_rider_state_normal",
+            
+            "/tag @s remove ronin_phase",
+            "/event entity @s[tag=!titan_shield] turn_no_shield",
+
+            "/particle titan:ronin_phase_1 ~~~",
+            "/particle titan:ronin_phase_2 ~~~",
+            "/particle titan:ronin_phase_3 ~~~"
+          ]
+        }
+      }
+    }
+  }
+}

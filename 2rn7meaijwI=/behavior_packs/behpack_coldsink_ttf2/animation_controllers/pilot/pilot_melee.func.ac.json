@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.pilot_melee.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "melee": "q.property('titan:other_action') == 3 && !q.is_tamed && q.property('pilot:rodeo_status') == 0"
+            }
+          ]
+        },
+        "melee": {
+          "animations": [
+            "pilot_melee"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:other_action') != 3"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add pilot_melee"
+          ],
+          "on_exit": [
+            "/event entity @s[tag=keep_melee] set_other_action_3",
+            "/event entity @s[tag=keep_fire] set_other_action_1",
+            "/tag @s remove pilot_melee"
+          ]
+        }
+      }
+    }
+  }
+}

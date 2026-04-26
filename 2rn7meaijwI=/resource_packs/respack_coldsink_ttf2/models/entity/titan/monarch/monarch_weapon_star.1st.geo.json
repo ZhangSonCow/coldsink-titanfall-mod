@@ -1,0 +1,101 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.monarch_weapon_star.1st",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 8,
+				"visible_bounds_height": 10,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+				{
+					"name": "titan_star_1st",
+					"pivot": [-0.055, 27.55, 9]
+				},
+				{
+					"name": "titan_star_1",
+					"parent": "titan_star_1st",
+					"pivot": [-0.06, 27.93, 9],
+					"cubes": [
+						{
+							"origin": [-0.04, 27.87, 9],
+							"size": [0.04, 0.23, 0],
+							"inflate": 0.015,
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [0.1, 0.7]},
+								"east": {"uv": [0, 0], "uv_size": [0, 0.7]},
+								"south": {"uv": [0, 0], "uv_size": [0.1, 0.7]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0.7]},
+								"up": {"uv": [0.1, 0], "uv_size": [-0.1, 0]},
+								"down": {"uv": [0.1, 0], "uv_size": [-0.1, 0]}
+							}
+						}
+					]
+				},
+				{
+					"name": "titan_star_2",
+					"parent": "titan_star_1st",
+					"pivot": [-0.06, 27.13, 9],
+					"cubes": [
+						{
+							"origin": [-0.04, 26.99, 9],
+							"size": [0.04, 0.23, 0],
+							"inflate": 0.015,
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [0.1, 0.7]},
+								"east": {"uv": [0, 0], "uv_size": [0, 0.7]},
+								"south": {"uv": [0, 0], "uv_size": [0.1, 0.7]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0.7]},
+								"up": {"uv": [0.1, 0], "uv_size": [-0.1, 0]},
+								"down": {"uv": [0.1, 0], "uv_size": [-0.1, 0]}
+							}
+						}
+					]
+				},
+				{
+					"name": "titan_star_3",
+					"parent": "titan_star_1st",
+					"pivot": [-0.48, 27.55, 9],
+					"cubes": [
+						{
+							"origin": [-0.58, 27.53, 9],
+							"size": [0.23, 0.04, 0],
+							"inflate": 0.015,
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [0.7, 0.1]},
+								"east": {"uv": [0, 0], "uv_size": [0, 0.1]},
+								"south": {"uv": [0, 0], "uv_size": [0.7, 0.1]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0.1]},
+								"up": {"uv": [0.7, 0], "uv_size": [-0.7, 0]},
+								"down": {"uv": [0.7, 0], "uv_size": [-0.7, 0]}
+							}
+						}
+					]
+				},
+				{
+					"name": "titan_star_4",
+					"parent": "titan_star_1st",
+					"pivot": [0.32, 27.55, 9],
+					"cubes": [
+						{
+							"origin": [0.3, 27.53, 9],
+							"size": [0.23, 0.04, 0],
+							"inflate": 0.015,
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [0.7, 0.1]},
+								"east": {"uv": [0, 0], "uv_size": [0, 0.1]},
+								"south": {"uv": [0, 0], "uv_size": [0.7, 0.1]},
+								"west": {"uv": [0, 0], "uv_size": [0, 0.1]},
+								"up": {"uv": [0.7, 0], "uv_size": [-0.7, 0]},
+								"down": {"uv": [0.7, 0], "uv_size": [-0.7, 0]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

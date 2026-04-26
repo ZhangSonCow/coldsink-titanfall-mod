@@ -1,0 +1,18 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.titan_standing.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "1.5": [
+          "/tag @s remove titan_staic",
+          "/event entity @s set_action_0",
+          "/event entity @s turn_no_shield",
+          "/event entity @s add_titan_ai_action",
+          "/execute @s[tag=get_battery] ~~~ function titan/get_battery_ordinary"
+        ]
+      }
+    }
+  }
+}

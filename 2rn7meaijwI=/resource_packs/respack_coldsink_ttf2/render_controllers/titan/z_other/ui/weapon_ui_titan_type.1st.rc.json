@@ -1,0 +1,29 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.weapon_ui_titan_type.1st": {
+      "arrays": {
+        "textures": {
+          "Array.weapon": [
+            "Texture.weapon_titan_type_ion",
+            "Texture.weapon_titan_type_tone",
+            "Texture.weapon_titan_type_northstar",
+            "Texture.weapon_titan_type_ronin",
+            "Texture.weapon_titan_type_scorch",
+            "Texture.weapon_titan_type_legion",
+            "Texture.weapon_titan_type_monarch"
+          ]
+        }
+      },
+      "geometry": "geometry.weapon_ui_titan_type.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "Array.weapon[ q.variant - 1 ]" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

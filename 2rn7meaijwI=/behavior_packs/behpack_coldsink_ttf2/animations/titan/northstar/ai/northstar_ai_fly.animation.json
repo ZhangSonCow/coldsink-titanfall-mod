@@ -1,0 +1,61 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.northstar_ai_fly_trigger.func": {
+      "loop": false,
+      "animation_length": 20.0,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players random @s northstar_power 1 5"
+        ],
+        "6.0": [
+          "/event entity @s[scores={northstar_power=1}] add_titan_saddled"
+        ],
+        "7.5": [
+          "/event entity @s[scores={northstar_power=2}] add_titan_saddled"
+        ],
+        "9.0": [
+          "/event entity @s[scores={northstar_power=3}] add_titan_saddled"
+        ],
+        "10.5": [
+          "/event entity @s[scores={northstar_power=4}] add_titan_saddled"
+        ],
+        "12.0": [
+          "/event entity @s add_titan_saddled"
+        ]
+      }
+    },
+    "animation.northstar_ai_fly.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/effect @s[tag=!in_core] levitation 1 36 true",
+          "/playsound northstar_skill_2 @a[r=64] ~~~"
+        ],
+        "0.5": [
+          "/effect @s levitation 0 37 true",
+          "/effect @s levitation 1 0 true",
+          "/effect @s speed 3 8 true"
+        ],
+        "1.5": [
+          "/effect @s slow_falling 1 0 true"
+        ],
+        "1.6": [
+          "/effect @s slow_falling 0 1 true",
+          "/effect @s levitation 1 0 true"
+        ],
+        "2.6": [
+          "/effect @s slow_falling 1 0 true"
+        ],
+        "2.7": [
+          "/effect @s slow_falling 0 1 true",
+          "/effect @s levitation 1 0 true"
+        ],
+        "4.7": [
+          "/event entity @s clear_titan_saddled"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+
+    "controller.render.skill_sp_battery_ordinary.1st": {
+      "geometry": "geometry.skill_sp_ui_type.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.skill_sp_battery_ordinary" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    
+    "controller.render.skill_sp_battery_powerful.1st": {
+      "geometry": "geometry.skill_sp_ui_type.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.skill_sp_battery_powerful" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    
+    "controller.render.skill_sp_battery_overload.1st": {
+      "geometry": "geometry.skill_sp_ui_type.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.skill_sp_battery_overload" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

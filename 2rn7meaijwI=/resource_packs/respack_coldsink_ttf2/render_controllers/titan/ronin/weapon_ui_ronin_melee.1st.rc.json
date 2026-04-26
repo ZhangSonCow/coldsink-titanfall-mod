@@ -1,0 +1,16 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.weapon_ui_ronin_melee.1st": {
+      "geometry": "geometry.weapon_ui_titan_type.1st",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.weapon_titan_type_ronin_melee" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

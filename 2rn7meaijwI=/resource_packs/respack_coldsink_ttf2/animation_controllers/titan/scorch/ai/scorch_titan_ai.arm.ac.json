@@ -1,0 +1,89 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.scorch_titan_ai.arm": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "scorch_titan.idle.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "melee": "q.property('titan:action') == 11"
+            },
+            {
+              "fire": "q.property('titan:action') == 12"
+            },
+            {
+              "firewall": "q.property('titan:action') == 13"
+            },
+            {
+              "core": "q.property('titan:action') == 14"
+            },
+            {
+              "shield": "q.property('titan:action') == 15"
+            }
+          ]
+        },
+        "melee": {
+          "animations": [
+            "scorch_titan.melee"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 11"
+            }
+          ]
+        },
+        "fire": {
+          "animations": [
+            "scorch_titan.fire"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 12"
+            }
+          ]
+        },
+        "firewall": {
+          "animations": [
+            "scorch_titan.firewall"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 13"
+            }
+          ]
+        },
+        "core": {
+          "animations": [
+            "scorch_titan.core"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "shield": {
+          "animations": [
+            "scorch_titan.shield",
+            "scorch_titan.shield.particle"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 15"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

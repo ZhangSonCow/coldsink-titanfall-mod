@@ -1,0 +1,232 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.spurt_bar_1": {
+			"loop": true,
+			"bones": {
+				"spurt_yes_1": {
+					"scale": "q.property('titan:spurt_time') < 1 ? 1 : 0"
+				},
+				"spurt_down_1": {
+					"scale": ["q.property('titan:spurt_time') < 1 ? 0 : Math.max(0, (10 - q.property('titan:spurt_time')) / 10)", 1, 1]
+				}
+			}
+		},
+		"animation.spurt_bar_1_light_1": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.5,
+			"bones": {
+				"spurt_light_1": {
+					"position": {
+						"0.0": [0, 0, 10],
+						"0.5": {
+							"pre": [0, 0, 10],
+							"post": [0, 0, 0]
+						}
+					},
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.0417": [1, 18, 1],
+						"0.5": [1, 1, 1]
+					}
+				}
+			}
+		},
+		"animation.spurt_bar_2": {
+			"loop": true,
+			"bones": {
+				"spurt_yes_1": {
+					"scale": "q.property('titan:spurt_time') < 1 ? 1 : 0"
+				},
+				"spurt_down_1": {
+					"scale": ["q.property('titan:spurt_time') < 1 ? 0 : Math.max(0, (6 - q.property('titan:spurt_time')) / 6)", 1, 1]
+				},
+				"spurt_yes_2": {
+					"scale": "q.property('titan:spurt_time') < 7 ? 1 : 0"
+				},
+				"spurt_down_2": {
+					"scale": ["q.property('titan:spurt_time') < 7 ? 0 : Math.max(0, (12 - q.property('titan:spurt_time')) / 6)", 1, 1]
+				}
+			}
+		},
+		"animation.spurt_bar_2_light_1": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.5,
+			"bones": {
+				"spurt_light_1": {
+					"position": {
+						"0.0": [0, 0, 10],
+						"0.5": {
+							"pre": [0, 0, 10],
+							"post": [0, 0, 0]
+						}
+					},
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.0417": [1, 18, 1],
+						"0.5": [1, 1, 1]
+					}
+				},
+				"spurt_light_2": {
+					"position": {
+						"0.0": [0, 0, 10],
+						"0.5": {
+							"pre": [0, 0, 10],
+							"post": [0, 0, 0]
+						}
+					},
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.0417": [1, 18, 1],
+						"0.5": [1, 1, 1]
+					}
+				}
+			}
+		},
+		"animation.spurt_bar_2_light_2": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.5,
+			"bones": {
+				"spurt_light_2": {
+					"position": {
+						"0.0": [0, 0, 10],
+						"0.5": {
+							"pre": [0, 0, 10],
+							"post": [0, 0, 0]
+						}
+					},
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.0417": [1, 18, 1],
+						"0.5": [1, 1, 1]
+					}
+				}
+			}
+		},
+		"animation.spurt_bar_3": {
+			"loop": true,
+			"bones": {
+				"spurt_yes_1": {
+					"scale": "q.property('titan:spurt_time') < 1 ? 1 : 0"
+				},
+				"spurt_yes_2": {
+					"scale": "q.property('titan:spurt_time') < 6 ? 1 : 0"
+				},
+				"spurt_yes_3": {
+					"scale": "q.property('titan:spurt_time') < 11 ? 1 : 0"
+				},
+				"spurt_down_1": {
+					"scale": ["q.property('titan:spurt_time') < 1 ? 0 : Math.max(0, (5 - q.property('titan:spurt_time')) / 5)", 1, 1]
+				},
+				"spurt_down_2": {
+					"scale": ["q.property('titan:spurt_time') < 6 ? 0 : Math.max(0, (10 - q.property('titan:spurt_time')) / 5)", 1, 1]
+				},
+				"spurt_down_3": {
+					"scale": ["q.property('titan:spurt_time') < 11 ? 0 : Math.max(0, (15 - q.property('titan:spurt_time')) / 5)", 1, 1]
+				}
+			}
+		},
+		"animation.spurt_bar_3_light_1": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.5,
+			"bones": {
+				"spurt_light_1": {
+					"position": {
+						"0.0": [0, 0, 10],
+						"0.5": {
+							"pre": [0, 0, 10],
+							"post": [0, 0, 0]
+						}
+					},
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.0417": [1, 18, 1],
+						"0.5": [1, 1, 1]
+					}
+				},
+				"spurt_light_2": {
+					"position": {
+						"0.0": [0, 0, 10],
+						"0.5": {
+							"pre": [0, 0, 10],
+							"post": [0, 0, 0]
+						}
+					},
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.0417": [1, 18, 1],
+						"0.5": [1, 1, 1]
+					}
+				},
+				"spurt_light_3": {
+					"position": {
+						"0.0": [0, 0, 10],
+						"0.5": {
+							"pre": [0, 0, 10],
+							"post": [0, 0, 0]
+						}
+					},
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.0417": [1, 18, 1],
+						"0.5": [1, 1, 1]
+					}
+				}
+			}
+		},
+		"animation.spurt_bar_3_light_2": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.5,
+			"bones": {
+				"spurt_light_2": {
+					"position": {
+						"0.0": [0, 0, 10],
+						"0.5": {
+							"pre": [0, 0, 10],
+							"post": [0, 0, 0]
+						}
+					},
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.0417": [1, 18, 1],
+						"0.5": [1, 1, 1]
+					}
+				},
+				"spurt_light_3": {
+					"position": {
+						"0.0": [0, 0, 10],
+						"0.5": {
+							"pre": [0, 0, 10],
+							"post": [0, 0, 0]
+						}
+					},
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.0417": [1, 18, 1],
+						"0.5": [1, 1, 1]
+					}
+				}
+			}
+		},
+		"animation.spurt_bar_3_light_3": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.5,
+			"bones": {
+				"spurt_light_3": {
+					"position": {
+						"0.0": [0, 0, 10],
+						"0.5": {
+							"pre": [0, 0, 10],
+							"post": [0, 0, 0]
+						}
+					},
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.0417": [1, 18, 1],
+						"0.5": [1, 1, 1]
+					}
+				}
+			}
+		}
+	}
+}

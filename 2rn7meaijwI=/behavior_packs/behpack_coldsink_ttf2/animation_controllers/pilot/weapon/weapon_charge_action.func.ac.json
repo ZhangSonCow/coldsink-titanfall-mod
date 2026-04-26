@@ -1,0 +1,76 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.weapon_charge_action.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "weapon_charge_idle"
+          ],
+          "transitions": [
+            {
+              "powering": "q.property('titan:other_action') == 1"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[tag=keep_fire] set_other_action_1",
+            "/tag @s add weapon_fire",
+            "/tag @s add pilot_idle"
+          ],
+          "on_exit": [
+            "/tag @s remove weapon_fire",
+            "/tag @s remove pilot_idle"
+          ]
+        },
+        "powering": {
+          "animations": [
+            "weapon_charge_powering"
+          ],
+          "transitions": [
+            {
+              "fire": "q.property('titan:other_action') == 2"
+            },
+            {
+              "default": "q.property('titan:other_action') != 1"
+            }
+          ],
+          "on_entry": [
+            "/effect @s slowness 1 0 true",
+            "/tag @s add charge_self",
+            "/playsound weapon_charge_powering @a[tag=!charge_self,r=32] ~~~",
+            "/playsound weapon_charge_powering.self @s",
+            "/tag @s remove charge_self",
+            "/tag @s add weapon_fire"
+          ],
+          "on_exit": [
+            "/effect @s slowness 0 1 true",
+            "/stopsound @s weapon_charge_powering.self",
+            "/stopsound @a[r=32] weapon_charge_powering",
+            "/tag @s remove weapon_fire"
+          ]
+        },
+        "fire": {
+          "animations": [
+            "weapon_charge_fire"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:other_action') != 2"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add charge_self",
+            "/playsound weapon_charge_fire @a[tag=!charge_self,r=64] ~~~",
+            "/playsound weapon_charge_fire.self @s",
+            "/tag @s remove charge_self",
+            "/tag @s add charge_fire"
+          ],
+          "on_exit": [
+            "/tag @s remove charge_fire"
+          ]
+        }
+      }
+    }
+  }
+}

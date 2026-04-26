@@ -1,0 +1,21 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.titan_cabin_danger": {
+      "geometry": "geometry.titan_cabin_danger",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "texture.titan_cabin_danger" ],
+      "is_hurt_color": {},
+      "overlay_color": {
+        "r": 1,
+        "g": 0,
+        "b": 0,
+        "a": "( ( 0.5 + 0.5 * Math.sin(query.life_time * 1080) ) > 0.5 ? 1 : 0 ) * 0.5"
+      }
+    }
+  }
+}

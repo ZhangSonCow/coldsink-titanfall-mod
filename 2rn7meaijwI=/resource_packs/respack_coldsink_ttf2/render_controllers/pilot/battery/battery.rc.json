@@ -1,0 +1,69 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.battery_ordinary": {
+      "geometry": "geometry.battery",
+      "materials": [
+        {
+          "*": "material.netease_entity_metallic"
+        }
+      ],
+      "textures": [ "texture.battery_ordinary" ],
+      "is_hurt_color": {}
+    },
+    "controller.render.battery_powerful": {
+      "geometry": "geometry.battery",
+      "materials": [
+        {
+          "*": "material.netease_entity_metallic"
+        }
+      ],
+      "textures": [ "texture.battery_powerful" ],
+      "is_hurt_color": {}
+    },
+    "controller.render.battery_overload": {
+      "geometry": "geometry.battery",
+      "materials": [
+        {
+          "*": "material.netease_entity_metallic"
+        }
+      ],
+      "textures": [ "texture.battery_overload" ],
+      "is_hurt_color": {}
+    },
+
+    "controller.render.battery_ordinary_light": {
+      "geometry": "geometry.battery_light",
+      "materials": [
+        {
+          "*": "material.netease_bloom_light_entity"
+        }
+      ],
+      "textures": [ "texture.battery_ordinary", "texture.battery_light" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    "controller.render.battery_powerful_light": {
+      "geometry": "geometry.battery_light",
+      "materials": [
+        {
+          "*": "material.netease_bloom_light_entity"
+        }
+      ],
+      "textures": [ "texture.battery_powerful", "texture.battery_light" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    "controller.render.battery_overload_light": {
+      "geometry": "geometry.battery_light",
+      "materials": [
+        {
+          "*": "material.netease_bloom_light_entity"
+        }
+      ],
+      "textures": [ "texture.battery_overload", "texture.battery_light" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

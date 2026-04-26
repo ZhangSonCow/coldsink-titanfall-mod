@@ -1,0 +1,75 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.weapon_r201_action.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "fire": "q.property('titan:other_action') == 1"
+            },
+            {
+              "reload": "q.property('titan:other_action') == 2 && q.property('titan:weapon_value') < 30"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[tag=keep_fire,scores={r201_bullet=1..}] set_other_action_1",
+            "/event entity @s[scores={r201_bullet=..0},tag=!keep_melee] set_other_action_2",
+            "/tag @s remove keep_melee",
+            "/tag @s add weapon_fire",
+            "/tag @s add pilot_idle"
+          ],
+          "on_exit": [
+            "/tag @s remove weapon_fire",
+            "/tag @s remove pilot_idle"
+          ]
+        },
+        "fire": {
+          "animations": [
+            "weapon_r201_fire"
+          ],
+          "transitions": [
+            {
+              "reload": "q.property('titan:other_action') == 2 && q.property('titan:weapon_value') < 30"
+            },
+            {
+              "default": "q.property('titan:other_action') != 1"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[scores={r201_bullet=..0}] set_other_action_2",
+            "/tag @s add weapon_fire"
+          ],
+          "on_exit": [
+            "/tag @s remove weapon_fire"
+          ]
+        },
+        "reload": {
+          "animations": [
+            "weapon_r201_reload"
+          ],
+          "transitions": [
+            {
+              "melee": "q.property('titan:other_action') == 3"
+            },
+            {
+              "default": "q.property('titan:other_action') != 2"
+            }
+          ],
+          "on_exit": [
+            "/stopsound @a[r=32] weapon_r201_reload",
+            "/stopsound @s weapon_r201_reload.self"
+          ]
+        },
+        "melee": {
+          "transitions": [
+            {
+              "default": "q.property('titan:other_action') != 3"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

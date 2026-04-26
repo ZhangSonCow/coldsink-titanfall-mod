@@ -1,0 +1,38 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ronin_melee.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players random @s random_score 1 3",
+          "/event entity @s[scores={random_score=1}] ronin_melee_1",
+          "/event entity @s[scores={random_score=2}] ronin_melee_2",
+          "/event entity @s[scores={random_score=3}] ronin_melee_3",
+          "/execute @s[scores={random_score=1}] ~~~ playsound ronin_sword @a[r=64] ~~~ 3 0.8 3",
+          "/execute @s[scores={random_score=2}] ~~~ playsound ronin_sword @a[r=64] ~~~ 3 1 3",
+          "/execute @s[scores={random_score=3}] ~~~ playsound ronin_sword @a[r=64] ~~~ 3 1.2 3"
+        ],
+        "0.3": [
+          "/execute @s[tag=team_blue,tag=!in_core] ^^^5 event entity @e[tag=!team_blue,family=titan,r=8] remove_knockback_resistance",
+          "/execute @s[tag=team_red,tag=!in_core] ^^^5 event entity @e[tag=!team_red,family=titan,r=8] remove_knockback_resistance"
+        ],
+        "0.4": [
+          "/execute @s[tag=team_blue,tag=!in_core] ~~~ summon coldsink:titan_blue_melee_roar ^^^5",
+          "/execute @s[tag=team_red,tag=!in_core] ~~~ summon coldsink:titan_red_melee_roar ^^^5"
+        ],
+        "0.55": [
+          "/event entity @s[tag=team_blue,tag=!ronin_phase] ronin_melee_damage_blue",
+          "/event entity @s[tag=team_red,tag=!ronin_phase] ronin_melee_damage_red"
+        ],
+        "1.0": [
+          "/event entity @s[tag=!in_core,tag=!terminate] set_action_0"
+        ],
+        "1.25": [
+          "/event entity @s[tag=!terminate] set_action_0"
+        ]
+      }
+    }
+  }
+}

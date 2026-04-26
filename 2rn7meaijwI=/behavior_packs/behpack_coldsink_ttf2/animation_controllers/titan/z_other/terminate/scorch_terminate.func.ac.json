@@ -1,0 +1,65 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.scorch_terminate.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "terminate_1": "q.property('titan:action') == 156"
+            },
+            {
+              "terminate_2": "q.property('titan:action') == 157"
+            },
+            {
+              "by_other_terminate": "q.property('titan:action') == 158"
+            }
+          ],
+          "on_exit": [
+            "/event entity @s titan_terminate_begin"
+          ]
+        },
+        "terminate_1": {
+          "animations": [
+            "scorch_terminate_1",
+            "scorch_terminate_1_lock"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ],
+          "on_exit": [
+            "/event entity @s titan_terminate_end"
+          ]
+        },
+        "terminate_2": {
+          "animations": [
+            "scorch_terminate_2",
+            "scorch_terminate_2_lock"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ],
+          "on_exit": [
+            "/event entity @s titan_terminate_end"
+          ]
+        },
+        "by_other_terminate": {
+          "animations": [ "titan_by_terminate" ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ],
+          "on_exit": [
+            "/event entity @s titan_terminate_end"
+          ]
+        }
+      }
+    }
+  }
+}

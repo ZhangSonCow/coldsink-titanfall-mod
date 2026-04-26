@@ -1,0 +1,165 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:tone_bullet_blue",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball",
+      "animations": {
+        "c.self": "controller.animation.throw_on_ground.func",
+        "self": "animation.tone_bullet_self.func"
+      },
+      "scripts": {
+        "animate": [ 
+          "c.self"
+        ]
+      }
+    },
+
+    "component_groups": {
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+			"minecraft:tick_world": {
+				"distance_to_players": 128,
+				"never_despawn": false,
+				"radius": 2
+			},
+      "minecraft:type_family": {
+        "family": [ "tool", "bullet" ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.5
+      },
+      "minecraft:ageable": {
+        "duration": 4,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:projectile": {
+        "anchor": 1,
+        "on_hit": {
+          "impact_damage": {
+            "damage": 0,
+            "knockback": false,
+            "destroy_on_hit": false
+          },
+          "definition_event": {
+            "affect_projectile": true,
+            "affect_shooter": false,
+            "affect_target": false,
+            "affect_splash_area": false,
+            "event_trigger": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "on_ground",
+                    "operator": "!=",
+                    "subject": "self"
+                  }
+                ]
+              },
+              "event": "shot_tar",
+              "target": "self"
+            }
+          },
+          "stick_in_ground": {
+            "shake_time": 1
+          }
+        },
+        "power": 9,
+        "gravity": 0.00,
+        "angle_offset": 0,
+        "liquid_inertia": 1,
+        "stop_on_hurt": false
+      },
+      "minecraft:physics": {},
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "events": {
+      "shot_tar": {
+        "queue_command": {
+          "command": [
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=12,c=1] ~~~ execute @s[tag=ronin_defend] ~~~ tag @e[type=coldsink:tone_bullet_blue,c=1] add get_1",
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=12,c=1] ~~~ execute @s[tag=ronin_defend_core] ~~~ tag @e[type=coldsink:tone_bullet_blue,c=1] add get_2",
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=12,c=1] ~~~ execute @s[tag=titan_hard] ~~~ tag @e[type=coldsink:tone_bullet_blue,c=1] add get_3",
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=12,c=1] ~~~ execute @s[family=!shield_entity] ~~~ tag @e[type=coldsink:tone_bullet_blue,c=1] add get_core",
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=12,c=1] ~~~ tag @e[type=coldsink:tone_bullet_blue,c=1] add get",
+
+            "execute @s[tag=get,tag=!get_1,tag=!get_2,tag=!get_3,tag=get_core] ~~~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] ~~~ scoreboard players add @e[type=coldsink:tone_bullet_blue,c=1] titan_attack 130",
+            "execute @s[tag=get_1,tag=get_core] ~~~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] ~~~ scoreboard players add @e[type=coldsink:tone_bullet_blue,c=1] titan_attack 39",
+            "execute @s[tag=get_2,tag=get_core] ~~~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] ~~~ scoreboard players add @e[type=coldsink:tone_bullet_blue,c=1] titan_attack 13",
+            "execute @s[tag=get_3,tag=get_core] ~~~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] ~~~ scoreboard players add @e[type=coldsink:tone_bullet_blue,c=1] titan_attack 104",
+            "execute @s[tag=get,tag=get_core] ~~~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=12,tag=!ronin_defending,tag=!titan_hard] ~~~ scoreboard players add @e[type=coldsink:tone_bullet_blue,c=1] titan_attack 200",
+            "execute @s[tag=get,tag=get_core] ~~~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=12,tag=ronin_defend] ~~~ scoreboard players add @e[type=coldsink:tone_bullet_blue,c=1] titan_attack 60",
+            "execute @s[tag=get,tag=get_core] ~~~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=12,tag=ronin_defend_core] ~~~ scoreboard players add @e[type=coldsink:tone_bullet_blue,c=1] titan_attack 20",
+            "execute @s[tag=get,tag=get_core] ~~~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=12,tag=titan_hard] ~~~ scoreboard players add @e[type=coldsink:tone_bullet_blue,c=1] titan_attack 160",
+
+            "execute @s[tag=get] ~~~ scoreboard players operation @a[tag=is_tone,tag=team_blue] bullet_check = @s titan_self",
+            "execute @s[tag=get] ~~~ execute @a[tag=is_tone,tag=team_blue] ~~~ scoreboard players operation @s bullet_check -= @s titan_self",
+            "execute @s[tag=get] ~~~ scoreboard players operation @a[tag=is_tone,tag=team_blue,scores={bullet_check=0}] titan_attack += @s titan_attack",
+            "execute @s[tag=get] ~~~ event entity @a[tag=is_tone,tag=team_blue,scores={bullet_check=0}] shoot_get_core",
+
+            "execute @s[tag=get] ~~-5~ scoreboard players operation @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=12] death_check = @p[tag=is_tone,tag=team_blue,scores={bullet_check=0}] titan_self",
+            "execute @s[tag=get,tag=!get_1,tag=!get_2,tag=!get_3] ~~-5~ damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] 130 suicide entity @s",
+            "execute @s[tag=get_1] ~~-5~ damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] 39 suicide entity @s",
+            "execute @s[tag=get_2] ~~-5~ damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] 13 suicide entity @s",
+            "execute @s[tag=get_3] ~~-5~ damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] 104 suicide entity @s",
+            "damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=12,tag=!ronin_defending,tag=!titan_hard] 200 suicide entity @s",
+            "damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=12,tag=ronin_defend] 60 suicide entity @s",
+            "damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=12,tag=ronin_defend_core] 20 suicide entity @s",
+            "damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=12,tag=titan_hard] 160 suicide entity @s",
+            "event entity @e[tag=!team_blue,type=coldsink:ronin_titan,r=12] defend_damage_transform",
+
+            "execute @s[tag=get] ~~~ scoreboard players add @e[tag=!team_blue,family=titan,tag=!ronin_phase,r=12] tone_target 1",
+            "execute @s[tag=get] ~~~ ride @e[tag=!team_blue,family=titan,tag=!ronin_phase,r=12,scores={tone_target=1}] summon_rider coldsink:tone_target_1_blue",
+            "execute @s[tag=get] ~~~ execute @e[tag=!team_blue,family=titan,tag=!ronin_phase,r=12,scores={tone_target=2..}] ~~~ event entity @e[family=tone_target_blue,c=1] target_up",
+            
+            "execute @e[tag=!team_blue,family=titan,tag=!ronin_phase,r=12,scores={tone_target=1..2},c=1] ~~~ scoreboard players set @e[type=coldsink:tone_bullet_blue,c=1] tone_bullet 1",
+            "execute @e[tag=!team_blue,family=titan,tag=!ronin_phase,r=12,scores={tone_target=3},c=1] ~~~ scoreboard players set @e[type=coldsink:tone_bullet_blue,c=1] tone_bullet 2",
+            "execute @s[tag=get,scores={tone_bullet=1}] ~~~ playsound tone_target_pre @a[tag=is_tone,tag=team_blue,scores={bullet_check=0}]",
+            "execute @s[tag=get,scores={tone_bullet=2}] ~~~ playsound tone_target_lock @a[tag=is_tone,tag=team_blue,scores={bullet_check=0}]",
+            
+            "execute @s[tag=get] ~~~ particle titan:tone_bullet_boom ~~~",
+            "kill @s[tag=get]"
+          ]
+        }
+      },
+      "beOnGround": {
+        "queue_command": {
+          "command": [
+            "particle titan:tone_bullet_boom ~~~"
+          ]
+        }
+      },
+      "down": {
+        "queue_command": {
+          "command": [
+            "summon coldsink:ion_get_bullet_red",
+            "event entity @s godie"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

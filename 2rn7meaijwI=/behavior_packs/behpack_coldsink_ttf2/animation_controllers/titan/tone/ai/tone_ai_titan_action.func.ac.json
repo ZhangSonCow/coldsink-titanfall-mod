@@ -1,0 +1,132 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.tone_titan_ai_action.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "melee": "q.property('titan:action') == 11"
+            },
+            {
+              "fire": "q.property('titan:action') == 12"
+            },
+            {
+              "missile_check": "q.property('titan:action') == 13"
+            },
+            {
+              "sense": "q.property('titan:action') == 15"
+            },
+            {
+              "core": "q.property('titan:action') == 16"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=team_blue] ~~~ event entity @e[type=coldsink:tone_rider_ai,tag=team_blue,r=8,c=1] turn_rider_state_normal",
+            "/execute @s[tag=team_red] ~~~ event entity @e[type=coldsink:tone_rider_ai,tag=team_red,r=8,c=1] turn_rider_state_normal"
+          ]
+        },
+        "melee": {
+          "animations": [
+            "tone_ai_melee"
+          ],
+          "transitions": [
+            {
+              "core": "q.property('titan:action') == 16"
+            },
+            {
+              "default": "q.property('titan:action') != 11"
+            }
+          ]
+        },
+        "fire": {
+          "transitions": [
+            {
+              "core": "q.property('titan:action') == 16"
+            },
+            {
+              "default": "q.property('titan:action') != 12"
+            }
+          ]
+        },
+        "missile_check": {
+          "animations": [
+            "tone_ai_missile_check"
+          ],
+          "transitions": [
+            {
+              "core": "q.property('titan:action') == 16"
+            },
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "missile": "q.property('titan:action') != 13"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add trace_missile_self",
+            "/scoreboard players set @s tone_missile 0",
+            "/execute @s[tag=team_blue] ~~~ execute @e[tag=!trace_missile_self,scores={tone_target_ai=3..},tag=!team_blue,r=80] ~~~ scoreboard players add @e[family=tone_titan,tag=trace_missile_self,tag=team_blue,c=1] tone_missile 1",
+            "/execute @s[tag=team_red] ~~~ execute @e[tag=!trace_missile_self,scores={tone_target_ai=3..},tag=!team_red,r=80] ~~~ scoreboard players add @e[family=tone_titan,tag=trace_missile_self,tag=team_red,c=1] tone_missile 1",
+            "/event entity @s[scores={tone_missile=0}] set_action_0",
+            "/scoreboard players operation @s[scores={tone_missile=1..}] tone_missile_st = @s tone_missile",
+            "/scoreboard players operation @s[scores={tone_missile=1..}] tone_trace_self = count tone_trace_ai",
+            "/tag @e[tag=trace_missile_self] remove trace_missile_self"
+          ]
+        },
+        "missile": {
+          "animations": [
+            "tone_ai_missile"
+          ],
+          "transitions": [
+            {
+              "core": "q.property('titan:action') == 16"
+            },
+            {
+              "default": "q.property('titan:action') != 14"
+            }
+          ],
+          "on_entry": [
+            "/event entity @e[type=coldsink:tone_rider_ai,r=8,c=1] turn_rider_state_missile"
+          ]
+        },
+        "sense": {
+          "animations": [
+            "tone_ai_sense"
+          ],
+          "transitions": [
+            {
+              "core": "q.property('titan:action') == 16"
+            },
+            {
+              "default": "q.property('titan:action') != 15"
+            }
+          ]
+        },
+        "core": {
+          "animations": [
+            "tone_ai_core"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ],
+          "on_entry": [
+            "/playsound tone_core_begin @a[r=64] ~~~",
+            "/playsound tone_skill_3 @a[r=64] ~~~",
+            "/tag @s add in_core",
+            "/ride @e[type=coldsink:tone_rider_ai,r=8,c=1] stop_riding"
+          ],
+          "on_exit": [
+            "/tag @s remove in_core",
+            "/ride @e[type=coldsink:tone_rider_ai_core,r=8,c=1] stop_riding",
+            "/ride @s summon_rider coldsink:tone_rider_ai"
+          ]
+        }
+      }
+    }
+  }
+}

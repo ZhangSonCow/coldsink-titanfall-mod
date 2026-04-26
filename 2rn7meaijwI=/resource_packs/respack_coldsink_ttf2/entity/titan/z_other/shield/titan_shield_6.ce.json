@@ -1,0 +1,28 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:titan_shield_6",
+      "animations": {
+        "health": "animation.titan_shield_bar"
+      },
+      "scripts": {
+        "animate": [
+          "health"
+        ]
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/titan/health_bar.1st"
+      },
+      "geometry": {
+        "default": "geometry.shield_bar_6_ai"
+      },
+      "render_controllers": [
+        "controller.render.default_light"
+      ]
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.titan_knockback_resistance.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "spurt": "!q.is_stunned"
+            }
+          ]
+        },
+        "spurt": {
+          "animations": [
+            "titan_knockback_resistance"
+          ],
+          "transitions": [
+            {
+              "default": "q.is_stunned"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

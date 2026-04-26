@@ -1,0 +1,59 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "titan:monarch_energy_area",
+			"basic_render_parameters": {
+				"material": "particles_add",
+				"texture": "textures/particle/waao"
+			}
+		},
+		"curves": {
+			"variable.size1": {
+				"type": "catmull_rom",
+				"input": "v.particle_age",
+				"horizontal_range": "v.particle_lifetime",
+				"nodes": [0, 1.51, 17.95, 4.5]
+			}
+		},
+		"components": {
+			"minecraft:emitter_rate_instant": {
+				"num_particles": 2
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 5
+			},
+			"minecraft:emitter_shape_point": {
+				"offset": [0, 0.1, 0]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": 0.3
+			},
+			"minecraft:particle_initial_spin": {
+				"rotation": "math.random(0, 360)"
+			},
+			"minecraft:particle_initial_speed": 0,
+			"minecraft:particle_motion_dynamic": {},
+			"minecraft:particle_appearance_billboard": {
+				"size": ["variable.size1*1", "variable.size1*1"],
+				"facing_camera_mode": "emitter_transform_xz",
+				"uv": {
+					"texture_width": 256,
+					"texture_height": 256,
+					"uv": [0, 0],
+					"uv_size": [256, 256]
+				}
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": {
+					"interpolant": "v.particle_age / v.particle_lifetime",
+					"gradient": {
+						"0.0": "#AB1EF3FF",
+						"0.32": "#7535C9FF",
+						"1.0": "#007AF5FF"
+					}
+				}
+			}
+		}
+	}
+}

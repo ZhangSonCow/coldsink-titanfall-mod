@@ -1,0 +1,201 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:titan_shield_5",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "animations": {
+        "c.health": "controller.animation.titan_shield.func"
+      },
+      "scripts": {
+        "animate": [
+          "c.health"
+        ]
+      }
+    },
+
+    "components": {
+      
+      "minecraft:health": {
+        "value": 2500,
+        "max": 2500
+      },
+      "minecraft:collision_box": {
+        "height": 6.8,
+        "width": 0
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 1.5,
+            "height": 4,
+            "pivot": [ 0, 2, 2 ]
+          },
+          {
+            "width": 1.5,
+            "height": 4,
+            "pivot": [ 0, 2, -2 ]
+          },
+          {
+            "width": 3.5,
+            "height": 4,
+            "pivot": [ 0, 6, 0 ]
+          },
+          {
+            "width": 1.5,
+            "height": 3,
+            "pivot": [ 0, 5, 3 ]
+          },
+          {
+            "width": 1.5,
+            "height": 3,
+            "pivot": [ 0, 5, -3 ]
+          }
+        ]
+      },
+      "minecraft:physics": {},
+      "minecraft:fire_immune": {},
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          // 防友伤
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "value": "team_blue"
+                  },
+                  {
+                    "test": "has_tag",
+                    "subject": "other",
+                    "value": "team_blue"
+                  }
+                ]
+              }
+            },
+            "cause": "all",
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "value": "team_red"
+                  },
+                  {
+                    "test": "has_tag",
+                    "subject": "other",
+                    "value": "team_red"
+                  }
+                ]
+              }
+            },
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:type_family": {
+        "family": [ "player", "titan_shield", "shield_entity" ]
+      },
+      "minecraft:navigation.walk": {
+        "can_sink": false
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:despawn": {
+        "filters": {
+          "all_of": [
+            {
+              "all_of": [
+                {
+                  "test": "is_riding",
+                  "subject": "self",
+                  "operator": "!="
+                }
+              ]
+            }
+          ]
+        }
+      }
+      
+    },
+
+    "component_groups": {
+      
+      "die": {
+        "minecraft:instant_despawn": {}
+      },
+
+      "flash_titan_shield": {
+        "minecraft:is_ignited": {},
+        "minecraft:ageable": {
+          "duration": 0.1,
+          "grow_up": {
+            "event": "flash_titan_shield_done",
+            "target": "self"
+          }
+        }
+      },
+
+      "shield_upgrade": {
+        "minecraft:transformation": {
+          "into": "coldsink:titan_shield_7"
+        }
+      }
+
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "queue_command": {
+          "command": [
+						"execute @e[family=titan,r=8,c=1] ~~~ execute @s[tag=team_blue] ~~~ tag @e[type=coldsink:titan_shield_5,r=8,c=1] add team_blue",
+						"execute @e[family=titan,r=8,c=1] ~~~ execute @s[tag=team_red] ~~~ tag @e[type=coldsink:titan_shield_5,r=8,c=1] add team_red",
+            "event entity @e[family=titan,r=8,c=1] turn_yes_shield",
+            "tag @e[family=titan,r=8,c=1] add titan_shield",
+            "particle titan:titan_shield_spawn ~~5~"
+          ]
+        }
+      },
+      "flash_titan_shield": {
+        "add": {
+          "component_groups": [
+            "flash_titan_shield"
+          ]
+        }
+      },
+      "flash_titan_shield_done": {
+        "remove": {
+          "component_groups": [
+            "flash_titan_shield"
+          ]
+        }
+      },
+      // 帝王升级-高级机种 护盾同步升级
+      "transform_shield_upgrade": {
+        "add": {
+          "component_groups": [
+            "shield_upgrade"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

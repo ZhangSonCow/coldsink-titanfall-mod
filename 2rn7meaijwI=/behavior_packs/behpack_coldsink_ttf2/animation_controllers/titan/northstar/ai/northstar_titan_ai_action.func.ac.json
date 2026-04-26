@@ -1,0 +1,97 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.northstar_titan_ai_action.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "melee": "q.property('titan:action') == 11"
+            },
+            {
+              "powering": "q.property('titan:action') == 12"
+            },
+            {
+              "missile": "q.property('titan:action') == 14"
+            },
+            {
+              "core": "q.property('titan:action') == 15"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=team_blue] ~~~ event entity @e[type=coldsink:northstar_rider_ai,tag=team_blue,r=8,c=1] turn_rider_state_normal",
+            "/execute @s[tag=team_red] ~~~ event entity @e[type=coldsink:northstar_rider_ai,tag=team_red,r=8,c=1] turn_rider_state_normal"
+          ]
+        },
+        "melee": {
+          "animations": [
+            "northstar_ai_melee"
+          ],
+          "transitions": [
+            {
+              "core": "q.property('titan:action') == 15"
+            },
+            {
+              "default": "q.property('titan:action') != 11"
+            }
+          ]
+        },
+        "powering": {
+          "transitions": [
+            {
+              "core": "q.property('titan:action') == 15"
+            },
+            {
+              "fired": "q.property('titan:action') != 12"
+            }
+          ]
+        },
+        "fired": {
+          "transitions": [
+            {
+              "core": "q.property('titan:action') == 15"
+            },
+            {
+              "default": "q.property('titan:action') != 13"
+            }
+          ]
+        },
+        "missile": {
+          "animations": [
+            "northstar_ai_missile"
+          ],
+          "transitions": [
+            {
+              "core": "q.property('titan:action') == 15"
+            },
+            {
+              "default": "q.property('titan:action') != 14"
+            }
+          ]
+        },
+        "core": {
+          "animations": [
+            "northstar_ai_core"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ],
+          "on_entry": [
+            "/playsound northstar_core_begin @a[r=64] ~~~",
+            "/playsound northstar_skill_3 @a[r=64] ~~~",
+            "/tag @s add in_core",
+            "/ride @e[type=coldsink:northstar_rider_ai,r=8,c=1] stop_riding"
+          ],
+          "on_exit": [
+            "/tag @s remove in_core",
+            "/ride @e[type=coldsink:northstar_rider_ai_core,r=8,c=1] stop_riding",
+            "/ride @s summon_rider coldsink:northstar_rider_ai"
+          ]
+        }
+      }
+    }
+  }
+}

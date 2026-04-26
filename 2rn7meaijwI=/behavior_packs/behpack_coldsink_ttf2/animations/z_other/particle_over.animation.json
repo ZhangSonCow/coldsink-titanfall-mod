@@ -1,0 +1,46 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+
+    "animation.particle_over_1.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "1.0": [
+          "/event entity @s set_particle_0"
+        ]
+      }
+    },
+
+    "animation.particle_over_2.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "1.0": [
+          "/event entity @s set_particle_0"
+        ]
+      }
+    },
+
+    "animation.particle_over_3.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "1.5": [
+          "/event entity @s set_particle_0"
+        ]
+      }
+    },
+
+    "animation.particle_over_4.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "1.5": [
+          "/event entity @s set_particle_0"
+        ]
+      }
+    }
+
+  }
+}

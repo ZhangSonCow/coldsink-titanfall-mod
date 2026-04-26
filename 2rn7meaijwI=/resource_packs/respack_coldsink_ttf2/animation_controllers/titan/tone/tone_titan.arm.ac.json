@@ -1,0 +1,183 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.tone_titan.arm": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "tone_titan.idle.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "fire": "q.property('titan:action') == 3"
+            },
+            {
+              "reload": "q.property('titan:action') == 4"
+            },
+            {
+              "melee": "q.property('titan:action') == 5"
+            },
+            {
+              "missile_pre": "q.property('titan:action') == 11"
+            },
+            {
+              "sense": "q.property('titan:action') == 14"
+            },
+            {
+              "core_pre": "q.property('titan:action') == 15"
+            },
+            {
+              "spurt": "q.out_of_control && q.property('titan:action') == 0"
+            },
+            {
+              "run": "q.is_sprinting && q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "run": {
+          "animations": [
+            "tone_titan.move.arm"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "!q.is_sprinting || q.out_of_control || q.property('titan:action') != 0"
+            }
+          ]
+        },
+        "spurt": {
+          "animations": [
+            "tone_titan.idle.arm"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "!q.out_of_control || q.property('titan:action') != 0"
+            }
+          ]
+        },
+        "fire": {
+          "animations": [
+            "tone_titan.fire"
+          ],
+          "blend_transition": 0.2,
+          "transitions": [
+            {
+              "reload": "q.property('titan:action') == 4 || (q.property('titan:weapon_value') == 0 && q.property('titan:action') == 0)"
+            },
+            {
+              "default": "q.property('titan:action') != 3"
+            }
+          ]
+        },
+        "reload": {
+          "animations": [
+            "tone_titan.reload"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 4 && !(q.property('titan:action') == 3 && q.property('titan:weapon_value') == 0)"
+            }
+          ]
+        },
+        "melee": {
+          "animations": [
+            "tone_titan.melee"
+          ],
+          "blend_transition": 0.5,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 5"
+            }
+          ]
+        },
+        "missile_pre": {
+          "animations": [
+            "tone_titan.missile_pre"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "missile": "q.property('titan:action') == 12"
+            },
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "missile": {
+          "animations": [
+            "tone_titan.missile"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "missile_after": "q.property('titan:action') == 13"
+            },
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "missile_after": {
+          "animations": [
+            "tone_titan.missile_after"
+          ],
+          "blend_transition": 0.5,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 13"
+            }
+          ]
+        },
+        "sense": {
+          "animations": [
+            "tone_titan.sense"
+          ],
+          "blend_transition": 0.5,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 14"
+            }
+          ]
+        },
+        "core_pre": {
+          "animations": [
+            "tone_titan.core_pre"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "core": "q.property('titan:action') != 15"
+            }
+          ]
+        },
+        "core": {
+          "animations": [
+            "tone_titan.core"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "core_after": "q.property('titan:action') != 16"
+            }
+          ]
+        },
+        "core_after": {
+          "animations": [
+            "tone_titan.core_after"
+          ],
+          "blend_transition": 0.5,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 17"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

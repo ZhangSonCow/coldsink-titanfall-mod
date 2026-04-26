@@ -1,0 +1,78 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.health_bar_4_danger.1st",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+				{
+					"name": "cabin",
+					"pivot": [-1.3382, 29.8285, 9.0625]
+				},
+				{
+					"name": "health_bar_1st",
+					"parent": "cabin",
+					"pivot": [0, 30.65, 10.48],
+					"cubes": [
+						{
+							"origin": [-3, 30.65, 10.43],
+							"size": [6, 0.375, 0.1],
+							"uv": {
+								"north": {"uv": [0, 8.32], "uv_size": [12.8, 0.84]},
+								"east": {"uv": [0, 4], "uv_size": [1, 1]},
+								"south": {"uv": [0, 5.16], "uv_size": [11, 0.84]},
+								"west": {"uv": [1, 4], "uv_size": [1, 1]},
+								"up": {"uv": [0, 7.28], "uv_size": [11, 1]},
+								"down": {"uv": [0, 7.12], "uv_size": [11, -1]}
+							}
+						}
+					]
+				},
+				{
+					"name": "damage",
+					"parent": "health_bar_1st",
+					"pivot": [3, 30.8375, 10.405],
+					"cubes": [
+						{
+							"origin": [-3, 30.65, 10.355],
+							"size": [6, 0.375, 0.1],
+							"uv": {
+								"north": {"uv": [15.28, 4], "uv_size": [0.72, 0.84]},
+								"east": {"uv": [0, 4], "uv_size": [1, 1]},
+								"south": {"uv": [2.32, 3.96], "uv_size": [0.96, 0.84]},
+								"west": {"uv": [1, 4], "uv_size": [1, 1]},
+								"up": {"uv": [10.44, 3.76], "uv_size": [0.76, 1]},
+								"down": {"uv": [12.76, 4.4], "uv_size": [0.76, -1]}
+							}
+						}
+					]
+				},
+				{
+					"name": "transition",
+					"parent": "damage",
+					"pivot": [-3, 30.8375, 10.205],
+					"cubes": [
+						{
+							"origin": [-3, 30.575, 10.255],
+							"size": [6, 0.28, 0.1],
+							"uv": {
+								"north": {"uv": [15.28, 5.28], "uv_size": [0.72, 0.84]},
+								"east": {"uv": [4.24, 4], "uv_size": [1, 1]},
+								"south": {"uv": [7.76, 4.2], "uv_size": [0.96, 0.84]},
+								"west": {"uv": [6.12, 4.24], "uv_size": [1, 1]},
+								"up": {"uv": [10.2, 4.56], "uv_size": [0.76, 1]},
+								"down": {"uv": [12.44, 6], "uv_size": [0.76, -1]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

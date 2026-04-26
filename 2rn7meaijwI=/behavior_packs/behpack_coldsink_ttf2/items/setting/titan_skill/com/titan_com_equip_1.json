@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "coldsink:titan_com_equip_1",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.arrow"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "titan_com_equip_1",
+      "minecraft:display_name": {
+        "value": "§6=< 攻击晶片 >= §f改善自动泰坦精准度并会使用攻击、辅助技能"
+      },
+      "minecraft:use_modifiers": {
+        "use_duration": 99999,
+        "movement_modifier": 1
+      },
+      "minecraft:food": {
+        "can_always_eat": true
+      },
+      "minecraft:cooldown": {
+        "category": "setting",
+        "duration": 1
+      },
+      "minecraft:hand_equipped": false
+    }
+  }
+}

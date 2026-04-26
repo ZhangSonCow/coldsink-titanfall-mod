@@ -1,0 +1,382 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.monarch_missile_powering.1st",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "missilePowering",
+					"pivot": [-2.6, 25.6, 9.7],
+					"rotation": [0, -90, 0]
+				},
+				{
+					"name": "waitMissile_1",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.92281, 10.67877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.68681, 10.63277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [3.375, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "waitMissile_2",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.92281, 10.29877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.68681, 10.25277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [3.375, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "waitMissile_3",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.92281, 9.91877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.68681, 9.87277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [3.375, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "waitMissile_4",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.92281, 9.53877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.68681, 9.49277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [3.375, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "waitMissile_5",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.92281, 9.15877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.68681, 9.11277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [3.375, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "waitMissile_6",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.92281, 8.77877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.68681, 8.73277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [3.375, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "waitMissile_7",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.35281, 10.67877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.11681, 10.63277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [3.375, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "waitMissile_8",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.35281, 10.29877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.11681, 10.25277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [3.375, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "waitMissile_9",
+					"parent": "missilePowering",
+					"pivot": [-2.64156, 25.35281, 9.91877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.11681, 9.87277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [3.375, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "waitMissile_10",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.35281, 9.53877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.11681, 9.49277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [3.375, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "waitMissile_11",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.35281, 9.15877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.11681, 9.11277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [3.375, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "waitMissile_12",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.35281, 8.77877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.11681, 8.73277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [3.375, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "readyMissile_1",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.92281, 10.67877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.68681, 10.63277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [8.75, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "readyMissile_2",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.92281, 10.29877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.68681, 10.25277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [8.75, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "readyMissile_3",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.92281, 9.91877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.68681, 9.87277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [8.75, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "readyMissile_4",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.92281, 9.53877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.68681, 9.49277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [8.75, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "readyMissile_5",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.92281, 9.15877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.68681, 9.11277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [8.75, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "readyMissile_6",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.92281, 8.77877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.68681, 8.73277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [8.75, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "readyMissile_7",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.35281, 10.67877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.11681, 10.63277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [8.75, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "readyMissile_8",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.35281, 10.29877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.11681, 10.25277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [8.75, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "readyMissile_9",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.35281, 9.91877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.11681, 9.87277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [8.75, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "readyMissile_10",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.35281, 9.53877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.11681, 9.49277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [8.75, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "readyMissile_11",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.35281, 9.15877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.11681, 9.11277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [8.75, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				},
+				{
+					"name": "readyMissile_12",
+					"parent": "missilePowering",
+					"pivot": [-2.64155, 25.35281, 8.77877],
+					"cubes": [
+						{
+							"origin": [-2.61605, 25.11681, 8.73277],
+							"size": [-0.05102, 0.472, 0.092],
+							"inflate": 0.03,
+							"uv": {
+								"east": {"uv": [8.75, 1.875], "uv_size": [3.75, 11.875]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

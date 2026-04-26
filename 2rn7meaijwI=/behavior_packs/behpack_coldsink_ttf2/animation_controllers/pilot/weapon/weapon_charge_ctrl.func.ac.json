@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.weapon_charge_ctrl.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "powering": "q.is_using_item && q.property('titan:other_action') == 0"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[tag=!charge_fire,tag=!wy_game] set_other_action_0"
+          ]
+        },
+        "powering": {
+          "transitions": [
+            {
+              "default": "!q.is_using_item"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s[tag=!wy_game,tag=!pilot_melee] set_other_action_1"
+          ]
+        }
+      }
+    }
+  }
+}

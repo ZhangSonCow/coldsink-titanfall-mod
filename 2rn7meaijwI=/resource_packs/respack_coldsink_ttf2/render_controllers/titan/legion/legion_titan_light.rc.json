@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.legion_titan_light_blue": {
+      "geometry": "geometry.legion_titan_light",
+      "materials": [
+        {
+          "*": "material.netease_bloom_light_entity"
+        }
+      ],
+      "textures": [ "texture.legion_titan_light_blue", "texture.legion_titan_light" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    "controller.render.legion_titan_light_red": {
+      "geometry": "geometry.legion_titan_light",
+      "materials": [
+        {
+          "*": "material.netease_bloom_light_entity"
+        }
+      ],
+      "textures": [ "texture.legion_titan_light_red", "texture.legion_titan_light" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

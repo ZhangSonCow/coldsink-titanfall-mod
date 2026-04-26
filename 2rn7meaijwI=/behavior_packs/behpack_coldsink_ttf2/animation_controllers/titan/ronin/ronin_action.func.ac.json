@@ -1,0 +1,237 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ronin_action.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "fire": "q.property('titan:action') == 3 && q.property('titan:weapon_value') > 0"
+            },
+            {
+              "reload": "q.property('titan:action') == 4"
+            },
+            {
+              "melee": "q.property('titan:action') == 5"
+            },
+            {
+              "arc_pre": "q.property('titan:action') == 11"
+            },
+            {
+              "defend_pre": "q.property('titan:action') == 14"
+            },
+            {
+              "core_pre": "q.property('titan:action') == 17"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_0",
+            "/tag @s remove terminate",
+            "/event entity @s[tag=keep_fire,scores={ronin_bullet=1..},tag=!in_core] set_action_3",
+            "/event entity @s[scores={ronin_bullet=..0},tag=!keep_skill_mid,tag=!keep_skill_q,tag=!keep_skill_v,tag=!in_core] set_action_4",
+            "/event entity @s[tag=keep_fire,tag=in_core] set_action_5",
+            "/event entity @s[tag=keep_melee] set_action_5",
+            "/event entity @s[tag=keep_skill_mid,tag=!skill_cooldown_0] set_action_14",
+            "/event entity @s[tag=keep_skill_q,tag=!skill_cooldown_1] set_action_11",
+            "/event entity @s[tag=keep_skill_v,scores={titan_core=100..}] set_action_17",
+            "/tag @s add titan_idle"
+          ],
+          "on_exit": [
+            "/tag @s remove titan_idle"
+          ]
+        },
+        "fire": {
+          "animations": [
+            "ronin_fire"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 3 || (q.property('titan:weapon_value') == 0 && q.property('titan:action') == 0)"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add weapon_fire",
+            "/tag @s add titan_idle"
+          ],
+          "on_exit": [
+            "/tag @s remove weapon_fire",
+            "/tag @s remove titan_idle"
+          ]
+        },
+        "reload": {
+          "animations": [
+            "ronin_reload"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 4 && !(q.property('titan:action') == 3 && q.property('titan:weapon_value') == 0)"
+            }
+          ],
+          "on_entry": [
+            "/tag @s[scores={ronin_bullet=..3}] add ronin_reload",
+            "/execute @s[scores={ronin_bullet=..3}] ~~~ playsound ronin_reload @a[tag=!ronin_reload,r=16] ~~~",
+            "/playsound ronin_reload.self @s[scores={ronin_bullet=..3}]",
+            "/tag @s[scores={ronin_bullet=..3}] remove ronin_reload",
+            "/tag @s add titan_idle",
+            "/tag @s add titan_reload"
+          ],
+          "on_exit": [
+            "/tag @s remove titan_idle",
+            "/stopsound @a[r=32] ronin_reload",
+            "/stopsound @s ronin_reload.self",
+            "/tag @s remove titan_reload"
+          ]
+        },
+        "melee": {
+          "animations": [
+            "ronin_melee"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add titan_melee"
+          ],
+          "on_exit": [
+            "/tag @s remove titan_melee",
+            "/event entity @s ronin_melee_0"
+          ]
+        },
+        "arc_pre": {
+          "animations": [
+            "ronin_skill_1_pre"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "arc": "q.property('titan:action') == 12"
+            }
+          ]
+        },
+        "arc": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "arc_after": "q.property('titan:action') == 13"
+            },
+            {
+              "melee": "q.property('titan:action') == 5"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add arc_ready",
+            // 点按瞬发
+            "/event entity @s[tag=!keep_skill_q] set_action_13"
+          ],
+          "on_exit": [
+            "/tag @s remove arc_ready",
+            "/tag @s remove keep_skill_q"
+          ]
+        },
+        "arc_after": {
+          "animations": [
+            "ronin_skill_1_after"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 13"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=!ronin_phase] ~~~ playsound ronin_skill_1 @a[r=64] ~~~",
+            "/playsound ronin_skill_1 @s[tag=ronin_phase]",
+            "/event entity @s set_cooldown_1_10",
+            "/execute @s[tag=!in_core,tag=team_blue,tag=!ronin_phase] ~~~ summon coldsink:ronin_arc_blue ^^3.2^2.4",
+            "/execute @s[tag=in_core,tag=team_blue,tag=!ronin_phase] ~~~ summon coldsink:ronin_arc_core_blue ^^3.2^2.4",
+            "/execute @s[tag=!in_core,tag=team_red,tag=!ronin_phase] ~~~ summon coldsink:ronin_arc_red ^^3.2^2.4",
+            "/execute @s[tag=in_core,tag=team_red,tag=!ronin_phase] ~~~ summon coldsink:ronin_arc_core_red ^^3.2^2.4"
+          ]
+        },
+        "defend_pre": {
+          "animations": [
+            "ronin_skill_0_pre"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "defend": "q.property('titan:action') == 15"
+            }
+          ]
+        },
+        "defend": {
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            },
+            {
+              "defend_after": "q.property('titan:action') == 16"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add defend_ready",
+            "/tag @s add ronin_defend",
+            "/execute @s[tag=!in_core] ~~~ event entity @e[type=coldsink:ronin_titan,c=1] entry_sword_defend",
+            "/execute @s[tag=in_core] ~~~ event entity @e[type=coldsink:ronin_titan,c=1] entry_sword_defend_core",
+            "/scoreboard players set @s ronin_defend 1",
+            // 点按瞬发
+            "/event entity @s[tag=!keep_skill_mid] set_action_16"
+          ],
+          "on_exit": [
+            "/tag @s remove defend_ready",
+            "/tag @s remove ronin_defend",
+            "/event entity @e[type=coldsink:ronin_titan,c=1] exit_sword_defend",
+            "/event entity @s ronin_defend_0",
+            "/tag @s remove keep_skill_mid"
+          ]
+        },
+        "defend_after": {
+          "animations": [
+            "ronin_skill_0_after"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 16"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_16"
+          ]
+        },
+        "core_pre": {
+          "animations": [
+            "ronin_skill_3_pre"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 17"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add core_self",
+            "/playsound ronin_core_begin @a[r=64] ~~~",
+            "/playsound ronin_core_begin.self @s",
+            "/tag @s remove core_self",
+
+            "/event entity @s add_titan_sheared"
+          ],
+          "on_exit": [
+            "/tag @s remove titan_core_saied",
+            "/tag @s add in_core",
+            "/scoreboard players set @e[type=coldsink:ronin_titan,c=1] titan_core 0",
+            "/camerashake add @s 2 0.8 positional",
+            "/playanimation @s animation.cabin_core_begin_shake"
+          ]
+        }
+      }
+    }
+  }
+}

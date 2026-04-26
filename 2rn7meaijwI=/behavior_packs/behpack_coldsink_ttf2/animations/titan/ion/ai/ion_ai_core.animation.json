@@ -1,0 +1,17 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ion_ai_core.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "1.0": [
+          "/ride @s summon_rider coldsink:ion_rider_ai_core"
+        ],
+        "6.0": [
+          "/event entity @s set_action_0"
+        ]
+      }
+    }
+  }
+}

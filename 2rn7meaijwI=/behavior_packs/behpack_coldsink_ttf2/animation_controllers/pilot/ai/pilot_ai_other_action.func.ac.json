@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.pilot_ai_other_action.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "fire": "q.property('titan:other_action') == 1"
+            },
+            {
+              "melee": "q.property('titan:other_action') == 3"
+            }
+          ],
+          "on_entry": [
+            "/execute @s[tag=team_blue] ~~~ event entity @e[type=coldsink:pilot_rider_ai,tag=team_blue,r=8,c=1] turn_rider_state_normal",
+            "/execute @s[tag=team_red] ~~~ event entity @e[type=coldsink:pilot_rider_ai,tag=team_red,r=8,c=1] turn_rider_state_normal"
+          ]
+        },
+        "fire": {
+          "transitions": [
+            {
+              "default": "q.property('titan:other_action') != 1"
+            }
+          ]
+        },
+        "melee": {
+          "transitions": [
+            {
+              "default": "q.property('titan:other_action') != 3"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

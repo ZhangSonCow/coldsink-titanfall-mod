@@ -1,0 +1,66 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.particle_play": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "particle_1": "q.property('titan:particle') == 1"
+            },
+            {
+              "particle_2": "q.property('titan:particle') == 2"
+            },
+            {
+              "particle_3": "q.property('titan:particle') == 3"
+            },
+            {
+              "particle_4": "q.property('titan:particle') == 4"
+            }
+          ]
+        },
+        "particle_1": {
+          "animations": [
+            "titan_cabin_shield.1st"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:particle') != 1"
+            }
+          ]
+        },
+        "particle_2": {
+          "animations": [
+            "titan_cabin_battery.1st"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:particle') != 2"
+            }
+          ]
+        },
+        "particle_3": {
+          "animations": [
+            "titan_cabin_battery_delay.1st"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:particle') != 3"
+            }
+          ]
+        },
+        "particle_4": {
+          "animations": [
+            "titan_cabin_core_once.1st"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:particle') != 4"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

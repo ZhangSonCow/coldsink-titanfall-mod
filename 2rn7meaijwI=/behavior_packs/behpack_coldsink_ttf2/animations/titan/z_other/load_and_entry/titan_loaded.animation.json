@@ -1,0 +1,19 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.titan_loaded.func": {
+      "loop": false,
+      "animation_length": 20.0,
+      "timeline": {
+        // 人机泰坦AI提前起身
+        "3.0": [
+          "/event entity @s[family=titan_ai] set_action_4"
+        ],
+        // 自然起身
+        "15.0": [
+          "/event entity @s set_action_4"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,163 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:monarch_energy_big_red",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball",
+      "animations": {
+        "c.self": "controller.animation.titan_bullet_self.func",
+        "self": "animation.monarch_bullet_self.func"
+      },
+      "scripts": {
+        "animate": [ 
+          "c.self"
+        ]
+      }
+    },
+
+    "component_groups": {
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+			"minecraft:tick_world": {
+				"distance_to_players": 128,
+				"never_despawn": false,
+				"radius": 2
+			},
+      "minecraft:type_family": {
+        "family": [ "tool", "bullet", "energy_laser" ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.5
+      },
+      "minecraft:ageable": {
+        "duration": 3,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:projectile": {
+        "anchor": 1,
+        "on_hit": {
+          "impact_damage": {
+            "damage": 0,
+            "knockback": false,
+            "destroy_on_hit": false
+          },
+          "definition_event": {
+            "affect_projectile": true,
+            "affect_shooter": false,
+            "affect_target": false,
+            "affect_splash_area": false,
+            "event_trigger": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "on_ground",
+                    "operator": "!=",
+                    "subject": "self"
+                  }
+                ]
+              },
+              "event": "shot_tar",
+              "target": "self"
+            }
+          },
+          "stick_in_ground": {
+            "shake_time": 1
+          }
+        },
+        "power": 9,
+        "gravity": 0.00,
+        "angle_offset": 0,
+        "liquid_inertia": 1,
+        "stop_on_hurt": false
+      },
+      "minecraft:physics": {},
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "events": {
+      "shot_tar": {
+        "queue_command": {
+          "command": [
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=18,c=1] ~~~ execute @s[tag=ronin_defend] ~~~ tag @e[type=coldsink:monarch_energy_big_red,c=1] add get_1",
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=18,c=1] ~~~ execute @s[tag=ronin_defend_core] ~~~ tag @e[type=coldsink:monarch_energy_big_red,c=1] add get_2",
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=18,c=1] ~~~ execute @s[tag=titan_hard] ~~~ tag @e[type=coldsink:monarch_energy_big_red,c=1] add get_3",
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=18,c=1] ~~~ execute @s[family=!shield_entity] ~~~ tag @e[type=coldsink:monarch_energy_big_red,c=1] add get_core",
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=18,c=1] ~~~ tag @e[type=coldsink:monarch_energy_big_red,c=1] add get",
+            
+            // 能量转换
+            "execute @s[tag=transform] ~~~ scoreboard players operation @a[tag=is_monarch,tag=team_red] bullet_check = @s titan_self",
+            "execute @s[tag=transform] ~~~ execute @a[tag=is_monarch,tag=team_red] ~~~ scoreboard players operation @s bullet_check -= @s titan_self",
+            "execute @s[tag=transform] ~~~ execute @a[tag=is_monarch,tag=team_red,scores={bullet_check=0}] ~~~ tag @e[type=coldsink:monarch_titan,tag=team_red,r=8,c=1] add energy_big_self",
+            "execute @s[tag=!get,tag=transform] ~~-5~ execute @e[tag=team_red,family=titan,tag=!energy_big_self,r=18,c=1] ~~~ tag @e[type=coldsink:monarch_energy_big_red,c=1] add get_heal",
+            "execute @s[tag=get_heal] ~~~ title @a[tag=is_monarch,tag=team_red,scores={bullet_check=0}] actionbar §a为友军提供防护罩",
+            "execute @s[tag=transform] ~~~ execute @s ~~-5~ event entity @e[tag=team_red,tag=!energy_big_self,family=titan,r=18] energy_shoot_shield",
+            "execute @s[tag=transform] ~~~ execute @s ~~-5~ execute @e[tag=team_red,tag=!energy_big_self,family=titan,r=18] ~~~ execute @s[tag=has_rider] ~~~ event entity @p[tag=is_titan,tag=team_red,r=8] set_particle_1",
+            "execute @s[tag=transform] ~~~ tag @e[type=coldsink:monarch_titan] remove energy_big_self",
+            "execute @s[tag=get_heal] ~~~ particle titan:monarch_energy_hit ~~1~",
+            "execute @s[tag=get_heal] ~~~ particle titan:monarch_energy_area ~~1~",
+            "kill @s[tag=get_heal]",
+
+            "execute @s[tag=get,tag=get_core] ~~~ scoreboard players operation @a[tag=is_monarch,tag=team_red] bullet_check = @s titan_self",
+            "execute @s[tag=get,tag=get_core] ~~~ execute @a[tag=is_monarch,tag=team_red] ~~~ scoreboard players operation @s bullet_check -= @s titan_self",
+            "execute @s[tag=get,tag=get_core] ~~~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=18] ~~~ execute @a[tag=is_monarch,tag=team_red,scores={bullet_check=0}] ~~~ scoreboard players add @e[type=coldsink:monarch_titan,tag=team_red,r=8,c=1] energy_mutil 1",
+            "execute @s[tag=get,tag=get_core] ~~~ execute @a[tag=is_monarch,tag=team_red,scores={bullet_check=0}] ~~~ event entity @e[family=monarch_titan,tag=team_red,scores={energy_mutil=1},r=8,c=1] energy_shoot_shield",
+            "execute @s[tag=get,tag=get_core] ~~~ execute @a[tag=is_monarch,tag=team_red,scores={bullet_check=0}] ~~~ event entity @e[family=monarch_titan,tag=team_red,scores={energy_mutil=2},r=8,c=1] energy_shoot_shield_2",
+            "execute @s[tag=get,tag=get_core] ~~~ execute @a[tag=is_monarch,tag=team_red,scores={bullet_check=0}] ~~~ event entity @e[family=monarch_titan,tag=team_red,scores={energy_mutil=3..},r=8,c=1] energy_shoot_shield_3",
+            "execute @s[tag=get,tag=get_core] ~~~ event entity @a[tag=is_monarch,tag=team_red,scores={bullet_check=0}] set_particle_1",
+
+            "execute @s[tag=get,tag=get_core] ~~~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,tag=!ronin_defend,tag=!ronin_defend_core,tag=!titan_hard,r=18] ~~~ scoreboard players add @a[tag=is_monarch,tag=team_red,scores={bullet_check=0}] titan_attack 100",
+            "execute @s[tag=get_1,tag=get_core] ~~~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,tag=ronin_defend,r=18] ~~~ scoreboard players add @a[tag=is_monarch,tag=team_red,scores={bullet_check=0}] titan_attack 30",
+            "execute @s[tag=get_2,tag=get_core] ~~~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,tag=ronin_defend_core,r=18] ~~~ scoreboard players add @a[tag=is_monarch,tag=team_red,scores={bullet_check=0}] titan_attack 10",
+            "execute @s[tag=get_3,tag=get_core] ~~~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,tag=titan_hard,r=18] ~~~ scoreboard players add @a[tag=is_monarch,tag=team_red,scores={bullet_check=0}] titan_attack 80",
+            "execute @s[tag=get,tag=get_core] ~~~ event entity @a[tag=is_monarch,tag=team_red,scores={bullet_check=0}] shoot_get_core",
+
+            "execute @s[tag=get] ~~-5~ scoreboard players operation @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=18] death_check = @p[tag=is_monarch,tag=team_red,scores={bullet_check=0}] titan_self",
+            "execute @s[tag=get,tag=!get_1,tag=!get_2,tag=!get_3] ~~-5~ damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=18] 100 suicide entity @s",
+            "execute @s[tag=get_1] ~~-5~ damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=18] 30 suicide entity @s",
+            "execute @s[tag=get_2] ~~-5~ damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=18] 10 suicide entity @s",
+            "execute @s[tag=get_3] ~~-5~ damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=18] 80 suicide entity @s",
+            "execute @s[tag=get] ~~-5~ event entity @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=18] defend_damage_transform",
+            "execute @s[tag=get] ~~-5~ effect @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=18] slowness 2 2",
+            "execute @s[tag=get] ~~-5~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=18] ~~~ execute @s[tag=has_rider] ~~~ effect @p[tag=!team_red] nausea 4 10 true",
+            "execute @s[tag=get] ~~-5~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=18] ~~~ execute @s[tag=has_rider] ~~~ camerashake add @p[tag=!team_red,tag=!wy_game] 0.24 2 rotational",
+
+            "execute @s[tag=get] ~~~ particle titan:monarch_energy_hit ~~1~",
+            "execute @s[tag=get] ~~~ particle titan:monarch_energy_area ~~1~",
+            "kill @s[tag=get]"
+          ]
+        }
+      },
+      "godie": {
+        "queue_command": {
+          "command": [
+            "particle titan:monarch_energy_hit ~~1~",
+            "particle titan:monarch_energy_area ~~1~",
+            "event entity @s real_godie"
+          ]
+        }
+      },
+      "real_godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

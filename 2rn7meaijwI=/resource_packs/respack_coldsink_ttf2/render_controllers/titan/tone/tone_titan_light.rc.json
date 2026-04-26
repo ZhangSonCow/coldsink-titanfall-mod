@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.tone_titan_light_blue": {
+      "geometry": "geometry.tone_titan_light",
+      "materials": [
+        {
+          "*": "material.netease_bloom_light_entity"
+        }
+      ],
+      "textures": [ "texture.tone_titan_light_blue", "texture.tone_titan_light" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    "controller.render.tone_titan_light_red": {
+      "geometry": "geometry.tone_titan_light",
+      "materials": [
+        {
+          "*": "material.netease_bloom_light_entity"
+        }
+      ],
+      "textures": [ "texture.tone_titan_light_red", "texture.tone_titan_light" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

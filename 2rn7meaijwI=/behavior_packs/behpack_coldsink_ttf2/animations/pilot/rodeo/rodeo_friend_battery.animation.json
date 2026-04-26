@@ -1,0 +1,47 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.rodeo_friend_battery": {
+      "loop": false,
+      "animation_length": 8.1,
+      "timeline": {
+        "0.0": [
+          "/title @s[type=player] actionbar §a训牛友方泰坦-给予电池",
+          "/execute @s[tag=team_blue] ~~-7~ tag @e[family=titan,family=!tool,tag=team_blue,c=1] add has_rodeo",
+          "/execute @s[tag=team_red] ~~-7~ tag @e[family=titan,family=!tool,tag=team_red,c=1] add has_rodeo",
+          "/execute @s[tag=team_blue] ~~-7~ execute @e[family=titan,family=!tool,tag=team_blue,c=1] ~~~ execute @s[tag=has_rider] ~~~ tellraw @p[tag=is_titan,tag=team_blue] {\"rawtext\":[{\"text\":\"§a友方铁驭 §f\"},{\"selector\":\"@e[family=pilot,tag=is_rodeo,tag=team_blue,r=8,c=1]\"},{\"rawtext\":[{\"text\":\"§a 正在给予电池\"}]}",
+          "/execute @s[tag=team_red] ~~-7~ execute @e[family=titan,family=!tool,tag=team_red,c=1] ~~~ execute @s[tag=has_rider] ~~~ tellraw @p[tag=is_titan,tag=team_red] {\"rawtext\":[{\"text\":\"§a友方铁驭 §f\"},{\"selector\":\"@e[family=pilot,tag=is_rodeo,tag=team_red,r=8,c=1]\"},{\"rawtext\":[{\"text\":\"§a 正在给予电池\"}]}"
+        ],
+        "5.0": [
+          "/execute @s[tag=team_blue,hasitem={item=coldsink:battery_ordinary_item,location=slot.armor.legs}] ~~-7~ execute @e[family=titan,tag=team_blue,c=1] ~~~ function titan/get_battery_ordinary",
+          "/execute @s[tag=team_blue,hasitem={item=coldsink:battery_powerful_item,location=slot.armor.legs}] ~~-7~ execute @e[family=titan,tag=team_blue,c=1] ~~~ function titan/get_battery_powerful",
+          "/execute @s[tag=team_blue,tag=has_battery_good] ~~~ execute @e[family=titan,tag=team_blue,c=1] ~~~ execute @s[tag=has_rider] ~~~ scoreboard players add @p[tag=team_blue,tag=is_titan,r=8] titan_attack 4000",
+          "/execute @s[tag=team_blue,tag=has_battery_good] ~~~ execute @e[family=titan,tag=team_blue,c=1] ~~~ execute @s[tag=has_rider] ~~~ event entity @p[tag=team_blue,tag=is_titan,r=8] shoot_get_core",
+          "/execute @s[tag=team_blue,tag=has_battery_good] ~~~ execute @e[family=titan,tag=team_blue,c=1] ~~~ execute @s[tag=has_rider] ~~~ event entity @p[tag=team_blue,tag=is_titan,r=8] titan_shield_0",
+          "/execute @s[tag=team_blue,tag=has_battery_good] ~~~ execute @e[family=titan,tag=team_blue,c=1] ~~~ execute @s[tag=has_rider] ~~~ event entity @p[tag=team_blue,tag=is_titan,r=8] set_particle_2",
+          "/execute @s[tag=team_blue,tag=has_battery_good] ~~~ execute @e[family=titan,tag=team_blue,c=1] ~~~ scoreboard players add @s[tag=!has_rider] titan_core 20",
+
+          "/execute @s[tag=team_red,hasitem={item=coldsink:battery_ordinary_item,location=slot.armor.legs}] ~~-7~ execute @e[family=titan,tag=team_red,c=1] ~~~ function titan/get_battery_ordinary",
+          "/execute @s[tag=team_red,hasitem={item=coldsink:battery_powerful_item,location=slot.armor.legs}] ~~-7~ execute @e[family=titan,tag=team_red,c=1] ~~~ function titan/get_battery_powerful",
+          "/execute @s[tag=team_red,tag=has_battery_good] ~~~ execute @e[family=titan,tag=team_red,c=1] ~~~ execute @s[tag=has_rider] ~~~ scoreboard players add @p[tag=team_red,tag=is_titan,r=8] titan_attack 4000",
+          "/execute @s[tag=team_red,tag=has_battery_good] ~~~ execute @e[family=titan,tag=team_red,c=1] ~~~ execute @s[tag=has_rider] ~~~ event entity @p[tag=team_red,tag=is_titan,r=8] shoot_get_core",
+          "/execute @s[tag=team_red,tag=has_battery_good] ~~~ execute @e[family=titan,tag=team_red,c=1] ~~~ execute @s[tag=has_rider] ~~~ event entity @p[tag=team_red,tag=is_titan,r=8] titan_shield_0",
+          "/execute @s[tag=team_red,tag=has_battery_good] ~~~ execute @e[family=titan,tag=team_red,c=1] ~~~ execute @s[tag=has_rider] ~~~ event entity @p[tag=team_red,tag=is_titan,r=8] set_particle_2",
+          "/execute @s[tag=team_red,tag=has_battery_good] ~~~ execute @e[family=titan,tag=team_red,c=1] ~~~ scoreboard players add @s[tag=!has_rider] titan_core 20",
+          
+          "/scoreboard players add @s[tag=!has_titan] pilot_core 10",
+          "/event entity @s[tag=!has_titan] add_core_10",
+          "/tag @s[tag=!has_titan] add core_title",
+
+          "/clear @s coldsink:battery_ordinary_item",
+          "/clear @s coldsink:battery_powerful_item",
+          "/replaceitem entity @s[tag=!wy_game] slot.hotbar 6 coldsink:no_battery 1 0 {\"item_lock\":{\"mode\":\"lock_in_slot\"}}",
+          "/event entity @s[type=coldsink:pilot_ai] has_battery_0",
+
+          "/playsound rodeo_friend_battery @a[r=64] ~~~",
+          "/event entity @s rodeo_status_4"
+        ]
+      }
+    }
+  }
+}

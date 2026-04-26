@@ -1,0 +1,113 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:rodeo_ride_tool_ronin",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "animations": {
+        "rodeo": "controller.animation.rodeo_ride_tool.func"
+      },
+      "scripts": {
+        "animate": [
+          "rodeo"
+        ]
+      }
+    },
+
+    "components": {
+      
+      "minecraft:health": {
+        "value": 1,
+        "max": 1,
+        "min": 1
+      },
+      "minecraft:collision_box": {
+        "height": 0.1,
+        "width": 0
+      },
+      "minecraft:physics": {},
+      "minecraft:fire_immune": {},
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:type_family": {
+        "family": [ "tool", "rodeo_ride_tool" ]
+      },
+      "minecraft:navigation.walk": {
+        "can_sink": false
+      },
+      "minecraft:rideable": {
+        "seat_count": 1,
+        "family_types": [ "player" ],
+        "seats": [
+          {
+            "position": [0.6, 6.8, -0.8],
+            "rotate_rider_by": 30
+          }
+        ]
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:ageable": {
+        "duration": 1.0,
+        "grow_up": {
+          "event": "can_die_tag",
+          "target": "self"
+        }
+      },
+      "minecraft:despawn": {
+        "filters": {
+          "all_of": [
+            {
+              "all_of": [
+                {
+                  "test": "rider_count",
+                  "operator": "=",
+                  "value": 0
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "can_die"
+                }
+              ]
+            }
+          ]
+        }
+      }
+      
+    },
+
+    "component_groups": {
+      
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+
+    },
+
+    "events": {
+      "can_die_tag": {
+        "queue_command": {
+          "command": [
+            "tag @s add can_die"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

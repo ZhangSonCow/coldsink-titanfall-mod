@@ -1,0 +1,152 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.call_ion_self.func": {
+      "loop": false,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players operation @s titan_self = @p titan_self",
+          "/scoreboard players operation @s ion_skin = @p ion_skin",
+          "/scoreboard players operation @s titan_player = @p titan_player",
+          "/tag @s[scores={titan_player=1}] add titan_player_0",
+          "/tag @s[scores={titan_player=2}] add titan_player_1",
+          "/tag @s[scores={titan_player=3}] add titan_player_2",
+          "/tag @s[scores={titan_player=4}] add titan_player_3",
+          "/tag @s[scores={titan_player=5}] add titan_player_4",
+          "/tag @s[scores={titan_player=6}] add titan_player_5",
+          "/tag @s[scores={titan_player=7}] add titan_player_6",
+          "/tag @s[scores={titan_player=8}] add titan_player_7",
+          "/tag @s[scores={titan_player=9}] add titan_player_8",
+          "/tag @s[scores={titan_player=10}] add titan_player_9"
+        ]
+      }
+    },
+    "animation.call_tone_self.func": {
+      "loop": false,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players operation @s titan_self = @p titan_self",
+          "/scoreboard players operation @s tone_skin = @p tone_skin",
+          "/scoreboard players operation @s titan_player = @p titan_player",
+          "/tag @s[scores={titan_player=1}] add titan_player_0",
+          "/tag @s[scores={titan_player=2}] add titan_player_1",
+          "/tag @s[scores={titan_player=3}] add titan_player_2",
+          "/tag @s[scores={titan_player=4}] add titan_player_3",
+          "/tag @s[scores={titan_player=5}] add titan_player_4",
+          "/tag @s[scores={titan_player=6}] add titan_player_5",
+          "/tag @s[scores={titan_player=7}] add titan_player_6",
+          "/tag @s[scores={titan_player=8}] add titan_player_7",
+          "/tag @s[scores={titan_player=9}] add titan_player_8",
+          "/tag @s[scores={titan_player=10}] add titan_player_9"
+        ]
+      }
+    },
+    "animation.call_northstar_self.func": {
+      "loop": false,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players operation @s titan_self = @p titan_self",
+          "/scoreboard players operation @s northstar_skin = @p northstar_skin",
+          "/scoreboard players operation @s titan_player = @p titan_player",
+          "/tag @s[scores={titan_player=1}] add titan_player_0",
+          "/tag @s[scores={titan_player=2}] add titan_player_1",
+          "/tag @s[scores={titan_player=3}] add titan_player_2",
+          "/tag @s[scores={titan_player=4}] add titan_player_3",
+          "/tag @s[scores={titan_player=5}] add titan_player_4",
+          "/tag @s[scores={titan_player=6}] add titan_player_5",
+          "/tag @s[scores={titan_player=7}] add titan_player_6",
+          "/tag @s[scores={titan_player=8}] add titan_player_7",
+          "/tag @s[scores={titan_player=9}] add titan_player_8",
+          "/tag @s[scores={titan_player=10}] add titan_player_9"
+        ]
+      }
+    },
+    "animation.call_ronin_self.func": {
+      "loop": false,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players operation @s titan_self = @p titan_self",
+          "/scoreboard players operation @s ronin_skin = @p ronin_skin",
+          "/scoreboard players operation @s titan_player = @p titan_player",
+          "/tag @s[scores={titan_player=1}] add titan_player_0",
+          "/tag @s[scores={titan_player=2}] add titan_player_1",
+          "/tag @s[scores={titan_player=3}] add titan_player_2",
+          "/tag @s[scores={titan_player=4}] add titan_player_3",
+          "/tag @s[scores={titan_player=5}] add titan_player_4",
+          "/tag @s[scores={titan_player=6}] add titan_player_5",
+          "/tag @s[scores={titan_player=7}] add titan_player_6",
+          "/tag @s[scores={titan_player=8}] add titan_player_7",
+          "/tag @s[scores={titan_player=9}] add titan_player_8",
+          "/tag @s[scores={titan_player=10}] add titan_player_9"
+        ]
+      }
+    },
+    "animation.call_scorch_self.func": {
+      "loop": false,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players operation @s titan_self = @p titan_self",
+          "/scoreboard players operation @s scorch_skin = @p scorch_skin",
+          "/scoreboard players operation @s titan_player = @p titan_player",
+          "/tag @s[scores={titan_player=1}] add titan_player_0",
+          "/tag @s[scores={titan_player=2}] add titan_player_1",
+          "/tag @s[scores={titan_player=3}] add titan_player_2",
+          "/tag @s[scores={titan_player=4}] add titan_player_3",
+          "/tag @s[scores={titan_player=5}] add titan_player_4",
+          "/tag @s[scores={titan_player=6}] add titan_player_5",
+          "/tag @s[scores={titan_player=7}] add titan_player_6",
+          "/tag @s[scores={titan_player=8}] add titan_player_7",
+          "/tag @s[scores={titan_player=9}] add titan_player_8",
+          "/tag @s[scores={titan_player=10}] add titan_player_9"
+        ]
+      }
+    },
+    "animation.call_legion_self.func": {
+      "loop": false,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players operation @s titan_self = @p titan_self",
+          "/scoreboard players operation @s legion_skin = @p legion_skin",
+          "/scoreboard players operation @s titan_player = @p titan_player",
+          "/tag @s[scores={titan_player=1}] add titan_player_0",
+          "/tag @s[scores={titan_player=2}] add titan_player_1",
+          "/tag @s[scores={titan_player=3}] add titan_player_2",
+          "/tag @s[scores={titan_player=4}] add titan_player_3",
+          "/tag @s[scores={titan_player=5}] add titan_player_4",
+          "/tag @s[scores={titan_player=6}] add titan_player_5",
+          "/tag @s[scores={titan_player=7}] add titan_player_6",
+          "/tag @s[scores={titan_player=8}] add titan_player_7",
+          "/tag @s[scores={titan_player=9}] add titan_player_8",
+          "/tag @s[scores={titan_player=10}] add titan_player_9"
+        ]
+      }
+    },
+    "animation.call_monarch_self.func": {
+      "loop": false,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players operation @s titan_self = @p titan_self",
+          "/scoreboard players operation @s monarch_skin = @p monarch_skin",
+          "/scoreboard players operation @s titan_player = @p titan_player",
+          "/tag @s[scores={titan_player=1}] add titan_player_0",
+          "/tag @s[scores={titan_player=2}] add titan_player_1",
+          "/tag @s[scores={titan_player=3}] add titan_player_2",
+          "/tag @s[scores={titan_player=4}] add titan_player_3",
+          "/tag @s[scores={titan_player=5}] add titan_player_4",
+          "/tag @s[scores={titan_player=6}] add titan_player_5",
+          "/tag @s[scores={titan_player=7}] add titan_player_6",
+          "/tag @s[scores={titan_player=8}] add titan_player_7",
+          "/tag @s[scores={titan_player=9}] add titan_player_8",
+          "/tag @s[scores={titan_player=10}] add titan_player_9"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:tone_shield_blue",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "animations": {
+        "c.death_to_godie": "controller.animation.death_to_godie.func"
+      },
+      "scripts": {
+        "animate": [
+          "c.death_to_godie"
+        ]
+      }
+    },
+    "component_groups": {
+      "godie": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+			"minecraft:tick_world": {
+				"distance_to_players": 128,
+				"never_despawn": false,
+				"radius": 2
+			},
+      "minecraft:type_family": {
+        "family": [ "shield_entity", "particle_shield" ]
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:collision_box": {
+        "height": 10,
+        "width": 0.1
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 3,
+            "height": 8,
+            "pivot": [ 0, 0, 0 ]
+          },
+          {
+            "width": 3,
+            "height": 8,
+            "pivot": [ 0, 0, 3 ]
+          },
+          {
+            "width": 3,
+            "height": 8,
+            "pivot": [ 0, 0, -3 ]
+          }
+        ]
+      },
+      "minecraft:ageable": {
+        "duration": 7,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:timer": {
+        "time": 0.1,
+        "time_down_event": {
+          "event": "count",
+          "target": "self"
+        }
+      },
+      "minecraft:health": {
+        "value": 4000,
+        "max": 4000
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "queue_command": {
+          "command": [
+            "tag @s add team_blue",
+            "tp @s ~~~ facing @e[type=coldsink:tone_titan,tag=team_blue,c=1]",
+            "tp @s ^^^-5",
+            "playsound tone_skill_0 @a[r=64] ~~~"
+          ]
+        }
+      },
+      "count": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ~~-1~ air -1 tp @s ~~-1~"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "godie"
+          ]
+        }
+      }
+    }
+  }
+}

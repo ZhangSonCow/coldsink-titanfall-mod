@@ -1,0 +1,186 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.titan_loading_ctrl.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "loading": "q.property('titan:action') == 1"
+            },
+            {
+              "loading_fast": "q.property('titan:action') == 5 && !q.property('titan:loading_player')"
+            },
+            {
+              "loaded": "q.property('titan:action') == 2"
+            },
+            {
+              "standing": "q.property('titan:action') == 4"
+            },
+            {
+              "entry_loaded_titan": "q.property('titan:action') == 3"
+            },
+            {
+              "entry_stand_front": "q.property('titan:action') == 6"
+            },
+            {
+              "entry_stand_back": "q.property('titan:action') == 7"
+            },
+            {
+              "entry_stand_top": "q.property('titan:action') == 8"
+            },
+            {
+              "exit_cabin": "q.property('titan:action') == 9"
+            }
+          ],
+          "on_entry": [
+            "/tag @s remove is_entrying",
+            "/event entity @s[tag=!titan_shield] turn_no_shield"
+          ],
+          "on_exit": [
+            "/tag @s add is_entrying",
+            "/event entity @s turn_yes_shield"
+          ]
+        },
+        "loading": {
+          "animations": [
+            "loading"
+          ],
+          "transitions": [
+            {
+              "loaded": "q.property('titan:action') == 2"
+            },
+            {
+              "default": "q.property('titan:action') != 1"
+            }
+          ]
+        },
+        "loading_fast": {
+          "animations": [
+            "loading_fast"
+          ],
+          "transitions": [
+            {
+              "standing": "q.property('titan:action') == 4"
+            },
+            {
+              "default": "q.property('titan:action') != 5"
+            }
+          ]
+        },
+        "loaded": {
+          "animations": [
+            "loaded",
+            "load_shield"
+          ],
+          "transitions": [
+            {
+              "entry_loaded_titan": "q.property('titan:action') == 3"
+            },
+            {
+              "standing": "q.property('titan:action') == 4"
+            },
+            {
+              "default": "q.property('titan:action') != 2"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add titan_loaded"
+          ],
+          "on_exit": [
+            "/tag @s remove titan_loaded",
+            "/tag @s remove titan_staic"
+          ]
+        },
+        "entry_loaded_titan": {
+          "animations": [
+            "entry_loaded_titan",
+            "load_shield"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 3"
+            }
+          ]
+        },
+        "standing": {
+          "animations": [
+            "standing",
+            "load_shield"
+          ],
+          "transitions": [
+            {
+              "entry_stand_front": "q.property('titan:action') == 6"
+            },
+            {
+              "entry_stand_back": "q.property('titan:action') == 7"
+            },
+            {
+              "entry_stand_top": "q.property('titan:action') == 8"
+            },
+            {
+              "default": "q.property('titan:action') != 4"
+            }
+          ]
+        },
+        "entry_stand_front": {
+          "animations": [
+            "entry_stand_front"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 6"
+            }
+          ]
+        },
+        "entry_stand_back": {
+          "animations": [
+            "entry_stand_back"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 7"
+            }
+          ]
+        },
+        "entry_stand_top": {
+          "animations": [
+            "entry_stand_top"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 8"
+            }
+          ]
+        },
+        "exit_cabin": {
+          "animations": [
+            "exit_cabin"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 9"
+            }
+          ],
+          "on_exit": [
+            "/tp @s ~~~ ~ 0",
+            "/tag @p add exit_tp",
+            "/execute @p[tag=exit_tp] ~~~ tp @s ~~~ ~ 0",
+            "/execute @p[tag=exit_tp] ~~~ detect ^^^0.5 air -1 tp @s ^^^0.5",
+            "/execute @p[tag=exit_tp] ~~~ detect ^^^0.5 air -1 tp @s ^^^0.5",
+            "/execute @p[tag=exit_tp] ~~~ detect ^^^0.5 air -1 tp @s ^^^0.5",
+            "/execute @p[tag=exit_tp] ~~~ detect ^^^0.5 air -1 tp @s ^^^0.5",
+            "/execute @p[tag=exit_tp] ~~~ detect ^^^0.5 air -1 tp @s ^^^0.5",
+            "/execute @p[tag=exit_tp] ~~~ detect ^^^0.5 air -1 tp @s ^^^0.5",
+            "/execute @p[tag=exit_tp] ~~~ detect ^^^0.5 air -1 tp @s ^^^0.5",
+            "/execute @p[tag=exit_tp] ~~~ detect ^^^0.5 air -1 tp @s ^^^0.5",
+            "/execute @p[tag=exit_tp] ~~~ detect ^^^0.5 air -1 tp @s ^^^0.5",
+            "/execute @p[tag=exit_tp] ~~~ detect ^^^0.5 air -1 tp @s ^^^0.5",
+            "/tag @p[tag=exit_tp] remove exit_tp"
+          ]
+        }
+      }
+    }
+  }
+}

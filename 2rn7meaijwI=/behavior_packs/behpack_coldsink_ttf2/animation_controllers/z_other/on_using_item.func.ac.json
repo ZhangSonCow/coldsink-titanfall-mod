@@ -1,0 +1,946 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.on_using_item.func": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        // 电池
+                        {"battery_ordinary": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:battery_ordinary_item')"},   
+                        {"battery_powerful": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:battery_powerful_item')"},   
+                        {"battery_overload": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:battery_overload_item')"},
+                        // 铁驭行为
+                        {"pilot_entry_titan": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:pilot_entry_titan')"},
+                        {"pilot_melee": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:pilot_melee')"},
+                        {"change_titan_follow": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:change_titan_follow')"},
+                        // 泰坦行为
+                        {"elect_smoke": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:elect_smoke')"},
+                        {"titan_eject": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:titan_eject')"},
+                        {"titan_eject_danger": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:titan_eject_danger')"},
+                        // 召唤泰坦
+                        {"ion_call_item": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ion_call_item')"},
+                        {"tone_call_item": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:tone_call_item')"},
+                        {"northstar_call_item": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:northstar_call_item')"},
+                        {"ronin_call_item": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_call_item')"},
+                        {"scorch_call_item": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:scorch_call_item')"},
+                        {"legion_call_item": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_call_item')"},
+                        {"monarch_call_item": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_call_item')"},
+                        {"ion_call_item_test": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ion_call_item_test')"},
+                        {"tone_call_item_test": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:tone_call_item_test')"},
+                        {"northstar_call_item_test": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:northstar_call_item_test')"},
+                        {"ronin_call_item_test": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_call_item_test')"},
+                        {"scorch_call_item_test": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:scorch_call_item_test')"},
+                        {"legion_call_item_test": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_call_item_test')"},
+                        {"monarch_call_item_test": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_call_item_test')"},
+                        // 设置（一级页面）
+                        {"setting_init": "q.is_using_item && ( q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:pilot_setting') || q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:titan_setting') )"},
+                        {"setting_exit": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:setting_exit')"},
+                        {"choose_titan_type": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_titan_type')"},
+                        {"choose_titan_skill": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_titan_skill')"},
+                        {"choose_titan_upgrade": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_titan_upgrade')"},
+                        {"choose_titan_skin": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_titan_skin')"},
+                        {"choose_pilot_type": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_pilot_type')"},
+                        {"choose_pilot_weapon": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_pilot_weapon')"},
+                        {"choose_pilot_skill": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_pilot_skill')"},
+                        {"choose_team": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_team')"},
+                        // 设置-队伍选择（二级页面）
+                        {"confirm_team_blue": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:confirm_team_blue')"},
+                        {"confirm_team_red": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:confirm_team_red')"},
+                        // 设置-泰坦类别选择（二级页面）
+                        {"confirm_ion_titan": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:confirm_ion_titan')"},
+                        {"confirm_tone_titan": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:confirm_tone_titan')"},
+                        {"confirm_northstar_titan": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:confirm_northstar_titan')"},
+                        {"confirm_ronin_titan": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:confirm_ronin_titan')"},
+                        {"confirm_scorch_titan": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:confirm_scorch_titan')"},
+                        {"confirm_legion_titan": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:confirm_legion_titan')"},
+                        {"confirm_monarch_titan": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:confirm_monarch_titan')"},
+                        // 设置-泰坦技能选择（二级页面）
+                        {"choose_ion_skill": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_ion_skill')"},
+                        {"choose_tone_skill": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_tone_skill')"},
+                        {"choose_northstar_skill": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_northstar_skill')"},
+                        {"choose_ronin_skill": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_ronin_skill')"},
+                        {"choose_scorch_skill": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_scorch_skill')"},
+                        {"choose_legion_skill": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_legion_skill')"},
+                        {"choose_monarch_skill": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_monarch_skill')"},
+                        // 设置-泰坦技能选择-通用装备（三级页面）
+                        {"titan_com_equip_1": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:titan_com_equip_1')"},
+                        {"titan_com_equip_2": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:titan_com_equip_2')"},
+                        {"titan_com_equip_3": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:titan_com_equip_3')"},
+                        {"titan_com_equip_4": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:titan_com_equip_4')"},
+                        {"titan_com_equip_5": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:titan_com_equip_5')"},
+                        {"titan_com_equip_6": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:titan_com_equip_6')"},
+                        // 设置-泰坦技能选择-离子装备（三级页面）
+                        {"ion_equip_1": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ion_equip_1')"},
+                        {"ion_equip_2": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ion_equip_2')"},
+                        {"ion_equip_3": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ion_equip_3')"},
+                        {"ion_equip_4": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ion_equip_4')"},
+                        {"ion_equip_5": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ion_equip_5')"},
+                        // 设置-泰坦技能选择-强力装备（三级页面）
+                        {"tone_equip_1": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:tone_equip_1')"},
+                        {"tone_equip_2": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:tone_equip_2')"},
+                        {"tone_equip_3": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:tone_equip_3')"},
+                        {"tone_equip_4": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:tone_equip_4')"},
+                        {"tone_equip_5": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:tone_equip_5')"},
+                        // 设置-泰坦技能选择-北极星装备（三级页面）
+                        {"northstar_equip_1": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:northstar_equip_1')"},
+                        {"northstar_equip_2": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:northstar_equip_2')"},
+                        {"northstar_equip_3": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:northstar_equip_3')"},
+                        {"northstar_equip_4": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:northstar_equip_4')"},
+                        {"northstar_equip_5": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:northstar_equip_5')"},
+                        // 设置-泰坦技能选择-浪人装备（三级页面）
+                        {"ronin_equip_1": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_equip_1')"},
+                        {"ronin_equip_2": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_equip_2')"},
+                        {"ronin_equip_3": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_equip_3')"},
+                        {"ronin_equip_4": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_equip_4')"},
+                        {"ronin_equip_5": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_equip_5')"},
+                        // 设置-泰坦技能选择-烈焰装备（三级页面）
+                        {"scorch_equip_1": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:scorch_equip_1')"},
+                        {"scorch_equip_2": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:scorch_equip_2')"},
+                        {"scorch_equip_3": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:scorch_equip_3')"},
+                        {"scorch_equip_4": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:scorch_equip_4')"},
+                        {"scorch_equip_5": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:scorch_equip_5')"},
+                        // 设置-泰坦技能选择-军团装备（三级页面）
+                        {"legion_equip_1": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_equip_1')"},
+                        {"legion_equip_2": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_equip_2')"},
+                        {"legion_equip_3": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_equip_3')"},
+                        {"legion_equip_4": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_equip_4')"},
+                        {"legion_equip_5": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_equip_5')"},
+                        // 设置-泰坦技能选择-帝王装备（三级页面）
+                        {"monarch_equip_1": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_equip_1')"},
+                        {"monarch_equip_2": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_equip_2')"},
+                        {"monarch_equip_3": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_equip_3')"},
+                        {"monarch_equip_4": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_equip_4')"},
+                        {"monarch_core_11": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_core_11')"},
+                        {"monarch_core_12": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_core_12')"},
+                        {"monarch_core_13": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_core_13')"},
+                        {"monarch_core_21": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_core_21')"},
+                        {"monarch_core_22": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_core_22')"},
+                        {"monarch_core_23": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_core_23')"},
+                        {"monarch_core_31": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_core_31')"},
+                        {"monarch_core_32": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_core_32')"},
+                        {"monarch_core_33": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_core_33')"},
+                        {"confirm_monarch_core_11": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:confirm_monarch_core_11')"},
+                        {"confirm_monarch_core_12": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:confirm_monarch_core_12')"},
+                        {"confirm_monarch_core_13": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:confirm_monarch_core_13')"},
+                        {"confirm_monarch_core_21": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:confirm_monarch_core_21')"},
+                        {"confirm_monarch_core_22": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:confirm_monarch_core_22')"},
+                        {"confirm_monarch_core_23": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:confirm_monarch_core_23')"},
+                        {"confirm_monarch_core_31": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:confirm_monarch_core_31')"},
+                        {"confirm_monarch_core_32": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:confirm_monarch_core_32')"},
+                        {"confirm_monarch_core_33": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:confirm_monarch_core_33')"},
+                        // 设置-泰坦皮肤选择（二级页面）
+                        {"choose_ion_skin": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_ion_skin')"},
+                        {"choose_tone_skin": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_tone_skin')"},
+                        {"choose_northstar_skin": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_northstar_skin')"},
+                        {"choose_ronin_skin": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_ronin_skin')"},
+                        {"choose_scorch_skin": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_scorch_skin')"},
+                        {"choose_legion_skin": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_legion_skin')"},
+                        {"choose_monarch_skin": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:choose_monarch_skin')"},
+                        // 设置-泰坦皮肤选择-离子皮肤（三级页面）
+                        {"ion_skin_0": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ion_skin_0')"},
+                        {"ion_skin_1": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ion_skin_1')"},
+                        {"ion_skin_2": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ion_skin_2')"},
+                        {"ion_skin_3": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ion_skin_3')"},
+                        {"ion_skin_4": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ion_skin_4')"},
+                        {"ion_skin_5": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ion_skin_5')"},
+                        {"ion_skin_6": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ion_skin_6')"},
+                        {"ion_skin_7": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ion_skin_7')"},
+                        {"ion_skin_8": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ion_skin_8')"},
+                        // 设置-泰坦皮肤选择-强力皮肤（三级页面）
+                        {"tone_skin_0": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:tone_skin_0')"},
+                        {"tone_skin_1": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:tone_skin_1')"},
+                        {"tone_skin_2": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:tone_skin_2')"},
+                        {"tone_skin_3": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:tone_skin_3')"},
+                        {"tone_skin_4": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:tone_skin_4')"},
+                        {"tone_skin_5": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:tone_skin_5')"},
+                        {"tone_skin_6": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:tone_skin_6')"},
+                        {"tone_skin_7": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:tone_skin_7')"},
+                        {"tone_skin_8": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:tone_skin_8')"},
+                        // 设置-泰坦皮肤选择-北极星皮肤（三级页面）
+                        {"northstar_skin_0": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:northstar_skin_0')"},
+                        {"northstar_skin_1": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:northstar_skin_1')"},
+                        {"northstar_skin_2": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:northstar_skin_2')"},
+                        {"northstar_skin_3": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:northstar_skin_3')"},
+                        {"northstar_skin_4": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:northstar_skin_4')"},
+                        {"northstar_skin_5": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:northstar_skin_5')"},
+                        {"northstar_skin_6": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:northstar_skin_6')"},
+                        {"northstar_skin_7": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:northstar_skin_7')"},
+                        {"northstar_skin_8": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:northstar_skin_8')"},
+                        // 设置-泰坦皮肤选择-浪人皮肤（三级页面）
+                        {"ronin_skin_0": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_skin_0')"},
+                        {"ronin_skin_1": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_skin_1')"},
+                        {"ronin_skin_2": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_skin_2')"},
+                        {"ronin_skin_3": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_skin_3')"},
+                        {"ronin_skin_4": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_skin_4')"},
+                        {"ronin_skin_5": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_skin_5')"},
+                        {"ronin_skin_6": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_skin_6')"},
+                        {"ronin_skin_7": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_skin_7')"},
+                        {"ronin_skin_8": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:ronin_skin_8')"},
+                        // 设置-泰坦皮肤选择-烈焰皮肤（三级页面）
+                        {"scorch_skin_0": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:scorch_skin_0')"},
+                        {"scorch_skin_1": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:scorch_skin_1')"},
+                        {"scorch_skin_2": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:scorch_skin_2')"},
+                        {"scorch_skin_3": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:scorch_skin_3')"},
+                        {"scorch_skin_4": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:scorch_skin_4')"},
+                        {"scorch_skin_5": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:scorch_skin_5')"},
+                        {"scorch_skin_6": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:scorch_skin_6')"},
+                        {"scorch_skin_7": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:scorch_skin_7')"},
+                        {"scorch_skin_8": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:scorch_skin_8')"},
+                        // 设置-泰坦皮肤选择-军团皮肤（三级页面）
+                        {"legion_skin_0": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_skin_0')"},
+                        {"legion_skin_1": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_skin_1')"},
+                        {"legion_skin_2": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_skin_2')"},
+                        {"legion_skin_3": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_skin_3')"},
+                        {"legion_skin_4": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_skin_4')"},
+                        {"legion_skin_5": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_skin_5')"},
+                        {"legion_skin_6": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_skin_6')"},
+                        {"legion_skin_7": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_skin_7')"},
+                        {"legion_skin_8": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:legion_skin_8')"},
+                        // 设置-泰坦皮肤选择-帝王皮肤（三级页面）
+                        {"monarch_skin_0": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_skin_0')"},
+                        {"monarch_skin_1": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_skin_1')"},
+                        {"monarch_skin_2": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_skin_2')"},
+                        {"monarch_skin_3": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_skin_3')"},
+                        {"monarch_skin_4": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_skin_4')"},
+                        {"monarch_skin_5": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_skin_5')"},
+                        {"monarch_skin_6": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_skin_6')"},
+                        {"monarch_skin_7": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_skin_7')"},
+                        {"monarch_skin_8": "q.is_using_item && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:monarch_skin_8')"}
+                    ]
+                },
+                // 电池
+                "battery_ordinary": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/pilot/battery_ordinary"]
+                },
+                "battery_powerful": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/pilot/battery_powerful"]
+                },
+                "battery_overload": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/pilot/battery_overload"]
+                },
+                // 铁驭行为
+                "pilot_entry_titan": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/event entity @s[tag=!titan_camera,tag=!terminate] pilot_check_titan"]
+                },
+                "pilot_melee": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/event entity @s set_other_action_3"]
+                },
+                "change_titan_follow": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/pilot/change_titan_follow"]
+                },
+                // 泰坦行为
+                "elect_smoke": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/titan/elect_smoke"]
+                },
+                "titan_eject": {
+                    "animations": [ "item_titan_eject" ],
+                    "transitions": [{"default": "!q.is_using_item"}]
+                },
+                "titan_eject_danger": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/event entity @s titan_eject_check"]
+                },
+                // 召唤泰坦
+                "ion_call_item": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/execute @s[tag=!exit_cabin] ~~~ function titan/ion/call_titan"]
+                },
+                "tone_call_item": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/execute @s[tag=!exit_cabin] ~~~ function titan/tone/call_titan"]
+                },
+                "northstar_call_item": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/execute @s[tag=!exit_cabin] ~~~ function titan/northstar/call_titan"]
+                },
+                "ronin_call_item": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/execute @s[tag=!exit_cabin] ~~~ function titan/ronin/call_titan"]
+                },
+                "scorch_call_item": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/execute @s[tag=!exit_cabin] ~~~ function titan/scorch/call_titan"]
+                },
+                "legion_call_item": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/execute @s[tag=!exit_cabin] ~~~ function titan/legion/call_titan"]
+                },
+                "monarch_call_item": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/execute @s[tag=!exit_cabin] ~~~ function titan/monarch/call_titan"]
+                },
+                "ion_call_item_test": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/event entity @s[tag=!exit_cabin] call_titan_ion", "/clear @s coldsink:ion_call_item_test"]
+                },
+                "tone_call_item_test": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/event entity @s[tag=!exit_cabin] call_titan_tone", "/clear @s coldsink:tone_call_item_test"]
+                },
+                "northstar_call_item_test": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/event entity @s[tag=!exit_cabin] call_titan_northstar", "/clear @s coldsink:northstar_call_item_test"]
+                },
+                "ronin_call_item_test": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/event entity @s[tag=!exit_cabin] call_titan_ronin", "/clear @s coldsink:ronin_call_item_test"]
+                },
+                "scorch_call_item_test": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/event entity @s[tag=!exit_cabin] call_titan_scorch", "/clear @s coldsink:scorch_call_item_test"]
+                },
+                "legion_call_item_test": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/event entity @s[tag=!exit_cabin] call_titan_legion", "/clear @s coldsink:legion_call_item_test"]
+                },
+                "monarch_call_item_test": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/event entity @s[tag=!exit_cabin] call_titan_monarch", "/clear @s coldsink:monarch_call_item_test"]
+                },
+                // 设置（一级页面）
+                "setting_init": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/execute @s[tag=!wy_game] ~~~ function item/setting/init"]
+                },
+                "setting_exit": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/exit"]
+                },
+                "choose_titan_type": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/choose_titan_type"]
+                },
+                "choose_titan_skill": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/choose_titan_skill"]
+                },
+                "choose_titan_upgrade": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/choose_titan_upgrade"]
+                },
+                "choose_titan_skin": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/choose_titan_skin"]
+                },
+                "choose_pilot_type": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/choose_pilot_type"]
+                },
+                "choose_pilot_weapon": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/choose_pilot_weapon"]
+                },
+                "choose_pilot_skill": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/choose_pilot_skill"]
+                },
+                "choose_team": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/choose_team"]
+                },
+                // 设置-队伍选择（二级页面）
+                "confirm_team_blue": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/team/confirm_team_blue"]
+                },
+                "confirm_team_red": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/team/confirm_team_red"]
+                },
+                // 设置-泰坦类别选择（二级页面）
+                "confirm_ion_titan": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_type/confirm_ion_titan"]
+                },
+                "confirm_tone_titan": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_type/confirm_tone_titan"]
+                },
+                "confirm_northstar_titan": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_type/confirm_northstar_titan"]
+                },
+                "confirm_ronin_titan": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_type/confirm_ronin_titan"]
+                },
+                "confirm_scorch_titan": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_type/confirm_scorch_titan"]
+                },
+                "confirm_legion_titan": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_type/confirm_legion_titan"]
+                },
+                "confirm_monarch_titan": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_type/confirm_monarch_titan"]
+                },
+                // 设置-泰坦技能选择（二级页面）
+                "choose_ion_skill": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/choose_ion_skill"]
+                },
+                "choose_tone_skill": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/choose_tone_skill"]
+                },
+                "choose_northstar_skill": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/choose_northstar_skill"]
+                },
+                "choose_ronin_skill": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/choose_ronin_skill"]
+                },
+                "choose_scorch_skill": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/choose_scorch_skill"]
+                },
+                "choose_legion_skill": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/choose_legion_skill"]
+                },
+                "choose_monarch_skill": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/choose_monarch_skill"]
+                },
+                // 设置-泰坦技能选择-通用装备（三级页面）
+                "titan_com_equip_1": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/com/titan_com_equip_1"]
+                },
+                "titan_com_equip_2": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/com/titan_com_equip_2"]
+                },
+                "titan_com_equip_3": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/com/titan_com_equip_3"]
+                },
+                "titan_com_equip_4": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/com/titan_com_equip_4"]
+                },
+                "titan_com_equip_5": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/com/titan_com_equip_5"]
+                },
+                "titan_com_equip_6": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/com/titan_com_equip_6"]
+                },
+                // 设置-泰坦技能选择-离子装备（三级页面）
+                "ion_equip_1": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/ion/ion_equip_1"]
+                },
+                "ion_equip_2": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/ion/ion_equip_2"]
+                },
+                "ion_equip_3": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/ion/ion_equip_3"]
+                },
+                "ion_equip_4": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/ion/ion_equip_4"]
+                },
+                "ion_equip_5": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/ion/ion_equip_5"]
+                },
+                // 设置-泰坦技能选择-强力装备（三级页面）
+                "tone_equip_1": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/tone/tone_equip_1"]
+                },
+                "tone_equip_2": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/tone/tone_equip_2"]
+                },
+                "tone_equip_3": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/tone/tone_equip_3"]
+                },
+                "tone_equip_4": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/tone/tone_equip_4"]
+                },
+                "tone_equip_5": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/tone/tone_equip_5"]
+                },
+                // 设置-泰坦技能选择-北极星装备（三级页面）
+                "northstar_equip_1": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/northstar/northstar_equip_1"]
+                },
+                "northstar_equip_2": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/northstar/northstar_equip_2"]
+                },
+                "northstar_equip_3": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/northstar/northstar_equip_3"]
+                },
+                "northstar_equip_4": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/northstar/northstar_equip_4"]
+                },
+                "northstar_equip_5": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/northstar/northstar_equip_5"]
+                },
+                // 设置-泰坦技能选择-浪人装备（三级页面）
+                "ronin_equip_1": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/ronin/ronin_equip_1"]
+                },
+                "ronin_equip_2": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/ronin/ronin_equip_2"]
+                },
+                "ronin_equip_3": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/ronin/ronin_equip_3"]
+                },
+                "ronin_equip_4": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/ronin/ronin_equip_4"]
+                },
+                "ronin_equip_5": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/ronin/ronin_equip_5"]
+                },
+                // 设置-泰坦技能选择-烈焰装备（三级页面）
+                "scorch_equip_1": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/scorch/scorch_equip_1"]
+                },
+                "scorch_equip_2": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/scorch/scorch_equip_2"]
+                },
+                "scorch_equip_3": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/scorch/scorch_equip_3"]
+                },
+                "scorch_equip_4": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/scorch/scorch_equip_4"]
+                },
+                "scorch_equip_5": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/scorch/scorch_equip_5"]
+                },
+                // 设置-泰坦技能选择-军团装备（三级页面）
+                "legion_equip_1": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/legion/legion_equip_1"]
+                },
+                "legion_equip_2": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/legion/legion_equip_2"]
+                },
+                "legion_equip_3": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/legion/legion_equip_3"]
+                },
+                "legion_equip_4": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/legion/legion_equip_4"]
+                },
+                "legion_equip_5": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/legion/legion_equip_5"]
+                },
+                // 设置-泰坦技能选择-帝王装备（三级页面）
+                "monarch_equip_1": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_equip_1"]
+                },
+                "monarch_equip_2": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_equip_2"]
+                },
+                "monarch_equip_3": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_equip_3"]
+                },
+                "monarch_equip_4": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_equip_4"]
+                },
+                "monarch_core_11": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_core/11"]
+                },
+                "monarch_core_12": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_core/12"]
+                },
+                "monarch_core_13": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_core/13"]
+                },
+                "monarch_core_21": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_core/21"]
+                },
+                "monarch_core_22": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_core/22"]
+                },
+                "monarch_core_23": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_core/23"]
+                },
+                "monarch_core_31": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_core/31"]
+                },
+                "monarch_core_32": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_core/32"]
+                },
+                "monarch_core_33": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_core/33"]
+                },
+                "confirm_monarch_core_11": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_core/confirm_1/11"]
+                },
+                "confirm_monarch_core_12": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_core/confirm_1/12"]
+                },
+                "confirm_monarch_core_13": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_core/confirm_1/13"]
+                },
+                "confirm_monarch_core_21": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_core/confirm_2/21"]
+                },
+                "confirm_monarch_core_22": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_core/confirm_2/22"]
+                },
+                "confirm_monarch_core_23": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_core/confirm_2/23"]
+                },
+                "confirm_monarch_core_31": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_core/confirm_3/31"]
+                },
+                "confirm_monarch_core_32": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_core/confirm_3/32"]
+                },
+                "confirm_monarch_core_33": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skill/monarch/monarch_core/confirm_3/33"]
+                },
+                // 设置-泰坦皮肤选择（二级页面）
+                "choose_ion_skin": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/choose_ion_skin"]
+                },
+                "choose_tone_skin": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/choose_tone_skin"]
+                },
+                "choose_northstar_skin": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/choose_northstar_skin"]
+                },
+                "choose_ronin_skin": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/choose_ronin_skin"]
+                },
+                "choose_scorch_skin": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/choose_scorch_skin"]
+                },
+                "choose_legion_skin": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/choose_legion_skin"]
+                },
+                "choose_monarch_skin": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/choose_monarch_skin"]
+                },
+                // 设置-泰坦皮肤选择-离子皮肤（三级页面）
+                "ion_skin_0": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/ion/ion_skin_0"]
+                },
+                "ion_skin_1": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/ion/ion_skin_1"]
+                },
+                "ion_skin_2": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/ion/ion_skin_2"]
+                },
+                "ion_skin_3": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/ion/ion_skin_3"]
+                },
+                "ion_skin_4": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/ion/ion_skin_4"]
+                },
+                "ion_skin_5": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/ion/ion_skin_5"]
+                },
+                "ion_skin_6": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/ion/ion_skin_6"]
+                },
+                "ion_skin_7": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/ion/ion_skin_7"]
+                },
+                "ion_skin_8": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/ion/ion_skin_8"]
+                },
+                // 设置-泰坦皮肤选择-强力皮肤（三级页面）
+                "tone_skin_0": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/tone/tone_skin_0"]
+                },
+                "tone_skin_1": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/tone/tone_skin_1"]
+                },
+                "tone_skin_2": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/tone/tone_skin_2"]
+                },
+                "tone_skin_3": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/tone/tone_skin_3"]
+                },
+                "tone_skin_4": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/tone/tone_skin_4"]
+                },
+                "tone_skin_5": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/tone/tone_skin_5"]
+                },
+                "tone_skin_6": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/tone/tone_skin_6"]
+                },
+                "tone_skin_7": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/tone/tone_skin_7"]
+                },
+                "tone_skin_8": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/tone/tone_skin_8"]
+                },
+                // 设置-泰坦皮肤选择-北极星皮肤（三级页面）
+                "northstar_skin_0": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/northstar/northstar_skin_0"]
+                },
+                "northstar_skin_1": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/northstar/northstar_skin_1"]
+                },
+                "northstar_skin_2": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/northstar/northstar_skin_2"]
+                },
+                "northstar_skin_3": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/northstar/northstar_skin_3"]
+                },
+                "northstar_skin_4": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/northstar/northstar_skin_4"]
+                },
+                "northstar_skin_5": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/northstar/northstar_skin_5"]
+                },
+                "northstar_skin_6": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/northstar/northstar_skin_6"]
+                },
+                "northstar_skin_7": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/northstar/northstar_skin_7"]
+                },
+                "northstar_skin_8": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/northstar/northstar_skin_8"]
+                },
+                // 设置-泰坦皮肤选择-浪人皮肤（三级页面）
+                "ronin_skin_0": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/ronin/ronin_skin_0"]
+                },
+                "ronin_skin_1": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/ronin/ronin_skin_1"]
+                },
+                "ronin_skin_2": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/ronin/ronin_skin_2"]
+                },
+                "ronin_skin_3": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/ronin/ronin_skin_3"]
+                },
+                "ronin_skin_4": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/ronin/ronin_skin_4"]
+                },
+                "ronin_skin_5": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/ronin/ronin_skin_5"]
+                },
+                "ronin_skin_6": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/ronin/ronin_skin_6"]
+                },
+                "ronin_skin_7": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/ronin/ronin_skin_7"]
+                },
+                "ronin_skin_8": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/ronin/ronin_skin_8"]
+                },
+                // 设置-泰坦皮肤选择-烈焰皮肤（三级页面）
+                "scorch_skin_0": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/scorch/scorch_skin_0"]
+                },
+                "scorch_skin_1": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/scorch/scorch_skin_1"]
+                },
+                "scorch_skin_2": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/scorch/scorch_skin_2"]
+                },
+                "scorch_skin_3": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/scorch/scorch_skin_3"]
+                },
+                "scorch_skin_4": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/scorch/scorch_skin_4"]
+                },
+                "scorch_skin_5": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/scorch/scorch_skin_5"]
+                },
+                "scorch_skin_6": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/scorch/scorch_skin_6"]
+                },
+                "scorch_skin_7": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/scorch/scorch_skin_7"]
+                },
+                "scorch_skin_8": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/scorch/scorch_skin_8"]
+                },
+                // 设置-泰坦皮肤选择-军团皮肤（三级页面）
+                "legion_skin_0": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/legion/legion_skin_0"]
+                },
+                "legion_skin_1": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/legion/legion_skin_1"]
+                },
+                "legion_skin_2": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/legion/legion_skin_2"]
+                },
+                "legion_skin_3": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/legion/legion_skin_3"]
+                },
+                "legion_skin_4": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/legion/legion_skin_4"]
+                },
+                "legion_skin_5": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/legion/legion_skin_5"]
+                },
+                "legion_skin_6": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/legion/legion_skin_6"]
+                },
+                "legion_skin_7": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/legion/legion_skin_7"]
+                },
+                "legion_skin_8": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/legion/legion_skin_8"]
+                },
+                // 设置-泰坦皮肤选择-帝王皮肤（三级页面）
+                "monarch_skin_0": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/monarch/monarch_skin_0"]
+                },
+                "monarch_skin_1": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/monarch/monarch_skin_1"]
+                },
+                "monarch_skin_2": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/monarch/monarch_skin_2"]
+                },
+                "monarch_skin_3": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/monarch/monarch_skin_3"]
+                },
+                "monarch_skin_4": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/monarch/monarch_skin_4"]
+                },
+                "monarch_skin_5": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/monarch/monarch_skin_5"]
+                },
+                "monarch_skin_6": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/monarch/monarch_skin_6"]
+                },
+                "monarch_skin_7": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/monarch/monarch_skin_7"]
+                },
+                "monarch_skin_8": {
+                    "transitions": [{"default": "!q.is_using_item"}],
+                    "on_entry": ["/function item/setting/titan_skin/monarch/monarch_skin_8"]
+                }
+            }
+        }
+    }
+}

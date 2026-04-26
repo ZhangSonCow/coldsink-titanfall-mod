@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.titan_bullet_self.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "tag": "q.is_alive"
+            }
+          ]
+        },
+        "tag": {
+          "animations": [
+            "self"
+          ],
+          "transitions": [
+            {
+              "down": "q.is_on_ground"
+            }
+          ]
+        },
+        "down": {
+          "on_entry": [
+            "/event entity @s[family=!ground] godie"
+          ]
+        }
+      }
+    }
+  }
+}

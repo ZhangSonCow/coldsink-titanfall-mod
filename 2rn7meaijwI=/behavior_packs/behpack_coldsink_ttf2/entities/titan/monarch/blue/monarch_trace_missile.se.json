@@ -1,0 +1,251 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:monarch_trace_missile_blue",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      // "runtime_identifier": "minecraft:arrow",
+      "animations": {
+        "c.self": "controller.animation.titan_bullet_self.func",
+        "self": "animation.monarch_bullet_self.func"
+      },
+      "scripts": {
+        "animate": [ 
+          "c.self"
+        ]
+      }
+    },
+
+    "component_groups": {
+      "die": {
+        "minecraft:instant_despawn": {}
+      },
+      "fly_1": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_1"
+          }
+        },
+        "minecraft:ageable": {
+          "duration": 1.0,
+          "grow_up": {
+            "event": "be_fly_2",
+            "target": "self"
+          }
+        }
+      },
+      "fly_2": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_2"
+          }
+        },
+        "minecraft:ageable": {
+          "duration": 2,
+          "grow_up": {
+            "event": "be_fly_3",
+            "target": "self"
+          }
+        }
+      },
+      "fly_3": {
+        "minecraft:timer": {
+          "time": 0.1,
+          "time_down_event": {
+            "target": "self",
+            "event": "fly_3"
+          }
+        },
+        "minecraft:ageable": {
+          "duration": 3,
+          "grow_up": {
+            "event": "godie",
+            "target": "self"
+          }
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tool", "bullet", "ground" ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.5
+      },
+      // "minecraft:projectile": {
+      //   "anchor": 1,
+      //   "on_hit": {
+      //     // "impact_damage": {
+      //     //   "damage": 0,
+      //     //   "knockback": false,
+      //     //   "destroy_on_hit": true
+      //     // },
+      //     "definition_event": {
+      //       "affect_projectile": true,
+      //       "affect_shooter": false,
+      //       "affect_target": false,
+      //       "affect_splash_area": false,
+      //       "event_trigger": {
+      //         "filters": {
+      //           "all_of": [
+      //             {
+      //               "test": "on_ground",
+      //               "operator": "!=",
+      //               "subject": "self"
+      //             }
+      //           ]
+      //         },
+      //         "event": "shot_tar",
+      //         "target": "self"
+      //       }
+      //     },
+      //     "stick_in_ground": {
+      //       "shake_time": 1
+      //     }
+      //   },
+      //   "power": 7,
+      //   "gravity": 0.00,
+      //   "angle_offset": 0,
+      //   "liquid_inertia": 1,
+      //   "stop_on_hurt": false
+      // },
+      "minecraft:physics": {},
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "fly_1"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "tp @s ~~~ facing @e[tag=is_monarch,tag=team_blue,c=1]"
+          ]
+        }
+      },
+      "be_fly_2": {
+        "remove": {
+          "component_groups": [
+            "fly_1"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "fly_2"
+          ]
+        }
+      },
+      "be_fly_3": {
+        "remove": {
+          "component_groups": [
+            "fly_2"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "fly_3"
+          ]
+        }
+      },
+      "fly_1": {
+        "queue_command": {
+          "command": [
+            "execute @s ~~~ detect ^^0.1^-1.6 air -1 tp @s ^^0.1^-1.6",
+            "execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] ~~5~ event entity @e[type=coldsink:monarch_trace_missile_blue,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_2": {
+        "queue_command": {
+          "command": [
+            "execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=32,c=1] ~~~ tag @e[type=coldsink:monarch_trace_missile_blue,r=32] add get_target",
+            "tp @s[tag=get_target] ~~~ facing @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=32,c=1]",
+            "execute @s[tag=get_target] ~~~ detect ^^0.3^1.6 air -1 tp @s ^^0.3^1.6",
+            "execute @s[tag=!get_target] ~~~ detect ^^0.1^-1.6 air -1 tp @s ^^0.1^-1.6",
+            "execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] ~~5~ event entity @e[type=coldsink:monarch_trace_missile_blue,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "fly_3": {
+        "queue_command": {
+          "command": [
+            "execute @s[tag=get_target] ~~~ detect ^^0.1^1.6 air -1 tp @s ^^0.1^1.6",
+            "execute @s[tag=!get_target] ~~~ detect ^^0.1^-1.6 air -1 tp @s ^^0.1^-1.6",
+            "execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] ~~5~ event entity @e[type=coldsink:monarch_trace_missile_blue,r=8,c=1] shot_tar"
+          ]
+        }
+      },
+      "shot_tar": {
+        "queue_command": {
+          "command": [
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] ~~~ execute @s[tag=ronin_defend] ~~~ tag @e[type=coldsink:monarch_trace_missile_blue,c=1] add get_1",
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] ~~~ execute @s[tag=ronin_defend_core] ~~~ tag @e[type=coldsink:monarch_trace_missile_blue,c=1] add get_2",
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] ~~~ execute @s[tag=titan_hard] ~~~ tag @e[type=coldsink:monarch_trace_missile_blue,c=1] add get_3",
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] ~~~ execute @s[family=!shield_entity] ~~~ tag @e[type=coldsink:monarch_trace_missile_blue,c=1] add get_core",
+            "execute @s[tag=!get] ~~-5~ execute @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] ~~~ tag @e[type=coldsink:monarch_trace_missile_blue,c=1] add get",
+
+            "execute @s[tag=get,tag=!done] ~~~ scoreboard players operation @e[tag=is_monarch,tag=team_blue] bullet_check = @s titan_self",
+            "execute @s[tag=get,tag=!done] ~~~ execute @e[tag=is_monarch,tag=team_blue] ~~~ scoreboard players operation @s bullet_check -= @s titan_self",
+            "execute @s[tag=get,tag=!get_1,tag=!get_2,tag=!get_3,tag=get_core,tag=!done] ~~~ scoreboard players add @e[tag=is_monarch,tag=team_blue,scores={bullet_check=0}] titan_attack 580",
+            "execute @s[tag=get_1,tag=get_core,tag=!done] ~~~ scoreboard players add @e[tag=is_monarch,tag=team_blue,scores={bullet_check=0}] titan_attack 174",
+            "execute @s[tag=get_2,tag=get_core,tag=!done] ~~~ scoreboard players add @e[tag=is_monarch,tag=team_blue,scores={bullet_check=0}] titan_attack 58",
+            "execute @s[tag=get_3,tag=get_core,tag=!done] ~~~ scoreboard players add @e[tag=is_monarch,tag=team_blue,scores={bullet_check=0}] titan_attack 464",
+            "execute @s[tag=get,tag=get_core,tag=!done] ~~~ event entity @e[tag=is_monarch,tag=team_blue,scores={bullet_check=0}] shoot_get_core",
+
+            "execute @s[tag=get,tag=!done] ~~-5~ scoreboard players operation @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] death_check = @e[tag=is_monarch,tag=team_blue,scores={bullet_check=0},c=1] titan_self",
+            "execute @s[tag=get,tag=!get_1,tag=!get_2,tag=!get_3,tag=!done] ~~-5~ damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] 580 suicide entity @e[tag=is_monarch,tag=team_blue,scores={bullet_check=0},c=1]",
+            "execute @s[tag=get_1,tag=!done] ~~-5~ damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] 174 suicide entity @e[tag=is_monarch,tag=team_blue,scores={bullet_check=0},c=1]",
+            "execute @s[tag=get_2,tag=!done] ~~-5~ damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] 58 suicide entity @e[tag=is_monarch,tag=team_blue,scores={bullet_check=0},c=1]",
+            "execute @s[tag=get_3,tag=!done] ~~-5~ damage @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] 464 suicide entity @e[tag=is_monarch,tag=team_blue,scores={bullet_check=0},c=1]",
+            "execute @s[tag=get,tag=!done] ~~-5~ event entity @e[tag=!team_blue,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] defend_damage_transform",
+
+            // 破盾伤害
+            "execute @s[tag=get] ~~-5~ damage @e[family=shield_entity,family=!titan_shield,tag=!team_blue,r=8,c=1] 580 suicide entity @s",
+
+            "event entity @s[tag=get] godie",
+            "tag @s[tag=get,tag=!done] add done"
+          ]
+        }
+      },
+      "down": {
+        "queue_command": {
+          "command": [
+            "summon coldsink:ion_get_missile_red",
+            "event entity @s real_godie"
+          ]
+        }
+      },
+      "godie": {
+        "queue_command": {
+          "command": [
+            "particle titan:monarch_missile_boom ~~~",
+            "event entity @s real_godie"
+          ]
+        }
+      },
+      "real_godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

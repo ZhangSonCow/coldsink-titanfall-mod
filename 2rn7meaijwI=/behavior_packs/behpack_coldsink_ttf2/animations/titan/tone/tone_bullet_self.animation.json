@@ -1,0 +1,14 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.tone_bullet_self.func": {
+      "loop": false,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players operation @s titan_self = @e[family=tone_titan,c=1] titan_self"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,928 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.feedback_star.1st.zoom": {
+			"animation_length": 0.3333,
+			"bones": {
+				"feedback_star_1st": {
+					"position": {
+						"0.0": [0, 0, 16],
+						"0.25": [0, 0, 16],
+						"0.2917": {
+							"pre": [0, 0, 16],
+							"post": [0, 0, 0]
+						},
+						"0.3333": [0, 0, 0]
+					}
+				},
+				"feedback_star_1st_1": {
+					"position": {
+						"0.125": [0, 0, 0],
+						"0.1667": [0.1, -0.1, 0],
+						"0.25": [0, 0, 0]
+					}
+				},
+				"feedback_star_1st_2": {
+					"position": {
+						"0.125": [0, 0, 0],
+						"0.1667": [-0.1, -0.1, 0],
+						"0.25": [0, 0, 0]
+					}
+				},
+				"feedback_star_1st_3": {
+					"position": {
+						"0.125": [0, 0, 0],
+						"0.1667": [0.1, 0.1, 0],
+						"0.25": [0, 0, 0]
+					}
+				},
+				"feedback_star_1st_4": {
+					"position": {
+						"0.125": [0, 0, 0],
+						"0.1667": [-0.1, 0.1, 0],
+						"0.25": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.pilot_ui_fixed.1st": {
+			"loop": true,
+			"animation_length": 0.0417,
+			"bones": {
+				"skillBox": {
+					"position": [0, 2, 0]
+				},
+				"coreBox": {
+					"position": [0, 1, 0]
+				},
+				"skill_3": {
+					"position": [0, -1, 0]
+				}
+			}
+		},
+		"animation.core_ui.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"coreFill_10": {
+					"scale": "q.property('titan:core_value') >= 10 ? 1 : 0"
+				},
+				"coreFill_20": {
+					"scale": "q.property('titan:core_value') >= 20 ? 1 : 0"
+				},
+				"coreFill_30": {
+					"scale": "q.property('titan:core_value') >= 30 ? 1 : 0"
+				},
+				"coreFill_40": {
+					"scale": "q.property('titan:core_value') >= 40 ? 1 : 0"
+				},
+				"coreFill_50": {
+					"scale": "q.property('titan:core_value') >= 50 ? 1 : 0"
+				},
+				"coreFill_60": {
+					"scale": "q.property('titan:core_value') >= 60 ? 1 : 0"
+				},
+				"coreFill_70": {
+					"scale": "q.property('titan:core_value') >= 70 ? 1 : 0"
+				},
+				"coreFill_80": {
+					"scale": "q.property('titan:core_value') >= 80 ? 1 : 0"
+				},
+				"coreFill_90": {
+					"scale": "q.property('titan:core_value') >= 90 ? 1 : 0"
+				},
+				"coreFill_100": {
+					"scale": "q.property('titan:core_value') >= 100 ? 1 : 0"
+				},
+				"coreBox": {
+					"position": [0, -1, 0]
+				}
+			}
+		},
+		"animation.core_ui_value.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"normal": {
+					"position": [0, 0, "q.property('titan:core_value') < 10 ? 0.1 : 0"],
+					"scale": "(q.property('titan:core_value') > 0 && q.property('titan:core_value') < 100) ? 1 : 0"
+				},
+				"empty": {
+					"scale": "q.property('titan:core_value') == 0 ? 1 : 0"
+				},
+				"full": {
+					"scale": "q.property('titan:core_value') == 100 ? 1 : 0"
+				},
+				"core_unit_0": {
+					"scale": "math.mod(q.property('titan:core_value'), 10) == 0 ? 1 : 0"
+				},
+				"core_unit_1": {
+					"scale": "math.mod(q.property('titan:core_value'), 10) == 1 ? 1 : 0"
+				},
+				"core_unit_2": {
+					"scale": "math.mod(q.property('titan:core_value'), 10) == 2 ? 1 : 0"
+				},
+				"core_unit_3": {
+					"scale": "math.mod(q.property('titan:core_value'), 10) == 3 ? 1 : 0"
+				},
+				"core_unit_4": {
+					"scale": "math.mod(q.property('titan:core_value'), 10) == 4 ? 1 : 0"
+				},
+				"core_unit_5": {
+					"scale": "math.mod(q.property('titan:core_value'), 10) == 5 ? 1 : 0"
+				},
+				"core_unit_6": {
+					"scale": "math.mod(q.property('titan:core_value'), 10) == 6 ? 1 : 0"
+				},
+				"core_unit_7": {
+					"scale": "math.mod(q.property('titan:core_value'), 10) == 7 ? 1 : 0"
+				},
+				"core_unit_8": {
+					"scale": "math.mod(q.property('titan:core_value'), 10) == 8 ? 1 : 0"
+				},
+				"core_unit_9": {
+					"scale": "math.mod(q.property('titan:core_value'), 10) == 9 ? 1 : 0"
+				},
+				"core_decade_1": {
+					"scale": "math.floor(q.property('titan:core_value') / 10) == 1 ? 1 : 0"
+				},
+				"core_decade_2": {
+					"scale": "math.floor(q.property('titan:core_value') / 10) == 2 ? 1 : 0"
+				},
+				"core_decade_3": {
+					"scale": "math.floor(q.property('titan:core_value') / 10) == 3 ? 1 : 0"
+				},
+				"core_decade_4": {
+					"scale": "math.floor(q.property('titan:core_value') / 10) == 4 ? 1 : 0"
+				},
+				"core_decade_5": {
+					"scale": "math.floor(q.property('titan:core_value') / 10) == 5 ? 1 : 0"
+				},
+				"core_decade_6": {
+					"scale": "math.floor(q.property('titan:core_value') / 10) == 6 ? 1 : 0"
+				},
+				"core_decade_7": {
+					"scale": "math.floor(q.property('titan:core_value') / 10) == 7 ? 1 : 0"
+				},
+				"core_decade_8": {
+					"scale": "math.floor(q.property('titan:core_value') / 10) == 8 ? 1 : 0"
+				},
+				"core_decade_9": {
+					"scale": "math.floor(q.property('titan:core_value') / 10) == 9 ? 1 : 0"
+				}
+			}
+		},
+		"animation.weapon_ui_value.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"weapon_unit_0": {
+					"scale": "math.mod(q.property('titan:weapon_value'), 10) == 0 ? 1 : 0"
+				},
+				"weapon_unit_1": {
+					"scale": "math.mod(q.property('titan:weapon_value'), 10) == 1 ? 1 : 0"
+				},
+				"weapon_unit_2": {
+					"scale": "math.mod(q.property('titan:weapon_value'), 10) == 2 ? 1 : 0"
+				},
+				"weapon_unit_3": {
+					"scale": "math.mod(q.property('titan:weapon_value'), 10) == 3 ? 1 : 0"
+				},
+				"weapon_unit_4": {
+					"scale": "math.mod(q.property('titan:weapon_value'), 10) == 4 ? 1 : 0"
+				},
+				"weapon_unit_5": {
+					"scale": "math.mod(q.property('titan:weapon_value'), 10) == 5 ? 1 : 0"
+				},
+				"weapon_unit_6": {
+					"scale": "math.mod(q.property('titan:weapon_value'), 10) == 6 ? 1 : 0"
+				},
+				"weapon_unit_7": {
+					"scale": "math.mod(q.property('titan:weapon_value'), 10) == 7 ? 1 : 0"
+				},
+				"weapon_unit_8": {
+					"scale": "math.mod(q.property('titan:weapon_value'), 10) == 8 ? 1 : 0"
+				},
+				"weapon_unit_9": {
+					"scale": "math.mod(q.property('titan:weapon_value'), 10) == 9 ? 1 : 0"
+				},
+				"weapon_decade_0": {
+					"scale": "q.property('titan:weapon_value') > 99 && q.property('titan:weapon_value') < 110 ? 1 : 0"
+				},
+				"weapon_decade_1": {
+					"scale": "math.floor(q.property('titan:weapon_value') / 10) == 1 ? 1 : 0"
+				},
+				"weapon_decade_2": {
+					"scale": "math.floor(q.property('titan:weapon_value') / 10) == 2 ? 1 : 0"
+				},
+				"weapon_decade_3": {
+					"scale": "math.floor(q.property('titan:weapon_value') / 10) == 3 ? 1 : 0"
+				},
+				"weapon_decade_4": {
+					"scale": "math.floor(q.property('titan:weapon_value') / 10) == 4 ? 1 : 0"
+				},
+				"weapon_decade_5": {
+					"scale": "math.floor(q.property('titan:weapon_value') / 10) == 5 ? 1 : 0"
+				},
+				"weapon_decade_6": {
+					"scale": "math.floor(q.property('titan:weapon_value') / 10) == 6 ? 1 : 0"
+				},
+				"weapon_decade_7": {
+					"scale": "math.floor(q.property('titan:weapon_value') / 10) == 7 ? 1 : 0"
+				},
+				"weapon_decade_8": {
+					"scale": "math.floor(q.property('titan:weapon_value') / 10) == 8 ? 1 : 0"
+				},
+				"weapon_decade_9": {
+					"scale": "math.floor(q.property('titan:weapon_value') / 10) == 9 ? 1 : 0"
+				},
+				"weapon_hundred_1": {
+					"scale": "q.property('titan:weapon_value') > 99 ? 1 : 0"
+				}
+			}
+		},
+		"animation.skill_0_cooldown_12.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"cooldown_0": {
+					"scale": [1, "q.property('titan:skill_cooldown_0') / 12", 1]
+				}
+			}
+		},
+		"animation.skill_0_cooldown_14.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"cooldown_0": {
+					"scale": [1, "q.property('titan:skill_cooldown_0') / 14", 1]
+				}
+			}
+		},
+		"animation.skill_0_cooldown_20.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"cooldown_0": {
+					"scale": [1, "q.property('titan:skill_cooldown_0') / 20", 1]
+				}
+			}
+		},
+		"animation.skill_0_cooldown_40.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"cooldown_0": {
+					"scale": [1, "q.property('titan:skill_cooldown_0') / 40", 1]
+				}
+			}
+		},
+		"animation.skill_0_cooldown_200.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"cooldown_0": {
+					"scale": [1, "q.property('titan:skill_cooldown_0') / 200", 1]
+				}
+			}
+		},
+		"animation.skill_1_cooldown_2.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"cooldown_1": {
+					"scale": [1, "q.property('titan:skill_cooldown_1') / 2", 1]
+				}
+			}
+		},
+		"animation.skill_1_cooldown_8.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"cooldown_1": {
+					"scale": [1, "q.property('titan:skill_cooldown_1') / 8", 1]
+				}
+			}
+		},
+		"animation.skill_1_cooldown_10.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"cooldown_1": {
+					"scale": [1, "q.property('titan:skill_cooldown_1') / 10", 1]
+				}
+			}
+		},
+		"animation.skill_1_cooldown_36.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"cooldown_1": {
+					"scale": [1, "q.property('titan:skill_cooldown_1') / 36", 1]
+				}
+			}
+		},
+		"animation.skill_2_cooldown_2.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"cooldown_2": {
+					"scale": [1, "q.property('titan:skill_cooldown_2') / 2", 1]
+				}
+			}
+		},
+		"animation.skill_2_cooldown_10.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"cooldown_2": {
+					"scale": [1, "q.property('titan:skill_cooldown_2') / 10", 1]
+				}
+			}
+		},
+		"animation.skill_2_cooldown_12.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"cooldown_2": {
+					"scale": [1, "q.property('titan:skill_cooldown_2') / 12", 1]
+				}
+			}
+		},
+		"animation.skill_2_cooldown_14.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"cooldown_2": {
+					"scale": [1, "q.property('titan:skill_cooldown_2') / 14", 1]
+				}
+			}
+		},
+		"animation.skill_2_cooldown_17.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"cooldown_2": {
+					"scale": [1, "q.property('titan:skill_cooldown_2') / 17", 1]
+				}
+			}
+		},
+		"animation.skill_2_cooldown_30.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"cooldown_2": {
+					"scale": [1, "q.property('titan:skill_cooldown_2') / 30", 1]
+				}
+			}
+		},
+		"animation.cooldown_0_over.1st": {
+			"animation_length": 0.8125,
+			"bones": {
+				"cooldown_0": {
+					"scale": 0
+				},
+				"over_remind_0": {
+					"position": {
+						"0.0": [0, 8, 0],
+						"0.4375": {
+							"pre": [0, 8, 0],
+							"post": [0, 0, 0]
+						},
+						"0.5": {
+							"pre": [0, 0, 0],
+							"post": [0, 8, 0]
+						},
+						"0.75": {
+							"pre": [0, 8, 0],
+							"post": [0, 0, 0]
+						},
+						"0.8125": {
+							"pre": [0, 0, 0],
+							"post": [0, 8, 0]
+						}
+					},
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.125": [1, 8, 1],
+						"0.25": [1, 8, 1],
+						"0.4375": [1, 1, 1]
+					}
+				}
+			}
+		},
+		"animation.cooldown_1_over.1st": {
+			"animation_length": 0.8125,
+			"bones": {
+				"cooldown_1": {
+					"scale": 0
+				},
+				"over_remind_1": {
+					"position": {
+						"0.0": [0, 8, 0],
+						"0.4375": {
+							"pre": [0, 8, 0],
+							"post": [0, 0, 0]
+						},
+						"0.5": {
+							"pre": [0, 0, 0],
+							"post": [0, 8, 0]
+						},
+						"0.75": {
+							"pre": [0, 8, 0],
+							"post": [0, 0, 0]
+						},
+						"0.8125": {
+							"pre": [0, 0, 0],
+							"post": [0, 8, 0]
+						}
+					},
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.125": [1, 8, 1],
+						"0.25": [1, 8, 1],
+						"0.4375": [1, 1, 1]
+					}
+				}
+			}
+		},
+		"animation.cooldown_2_over.1st": {
+			"animation_length": 0.8125,
+			"bones": {
+				"cooldown_2": {
+					"scale": 0
+				},
+				"over_remind_2": {
+					"position": {
+						"0.0": [0, 8, 0],
+						"0.4375": {
+							"pre": [0, 8, 0],
+							"post": [0, 0, 0]
+						},
+						"0.5": {
+							"pre": [0, 0, 0],
+							"post": [0, 8, 0]
+						},
+						"0.75": {
+							"pre": [0, 8, 0],
+							"post": [0, 0, 0]
+						},
+						"0.8125": {
+							"pre": [0, 0, 0],
+							"post": [0, 8, 0]
+						}
+					},
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.125": [1, 8, 1],
+						"0.25": [1, 8, 1],
+						"0.4375": [1, 1, 1]
+					}
+				}
+			}
+		},
+		"animation.skill_charge_sp.1st": {
+			"loop": true,
+			"bones": {
+				"charge_sp_2": {
+					"position": [0, "q.property('titan:skill_charge_sp') == 2 ? 8 : 0", 0]
+				},
+				"charge_sp_3": {
+					"position": [0, "q.property('titan:skill_charge_sp') == 3 ? 8 : 0", 0]
+				},
+				"charge_sp_4": {
+					"position": [0, "q.property('titan:skill_charge_sp') == 4 ? 8 : 0", 0]
+				},
+				"charge_sp_5": {
+					"position": [0, "q.property('titan:skill_charge_sp') == 5 ? 8 : 0", 0]
+				}
+			}
+		},
+		"animation.energy_bar.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"energy_fill": {
+					"scale": [1, "(200 - q.property('titan:skill_cooldown_0')) / 200", 1]
+				}
+			}
+		},
+		"animation.monarch_upgrade_text.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"level_1_now": {
+					"scale": "q.property('titan:monarch_now_level') == 0 ? 1 : 0"
+				},
+				"level_11": {
+					"scale": "(q.property('titan:monarch_now_level') > 0 && q.property('titan:monarch_core_one') == 1) ? 1 : 0"
+				},
+				"level_12": {
+					"scale": "(q.property('titan:monarch_now_level') > 0 && q.property('titan:monarch_core_one') == 2) ? 1 : 0"
+				},
+				"level_13": {
+					"scale": "(q.property('titan:monarch_now_level') > 0 && q.property('titan:monarch_core_one') == 3) ? 1 : 0"
+				},
+				"level_2_now": {
+					"scale": "q.property('titan:monarch_now_level') == 1 ? 1 : 0"
+				},
+				"level_20": {
+					"scale": "q.property('titan:monarch_now_level') < 1 ? 1 : 0"
+				},
+				"level_21": {
+					"scale": "(q.property('titan:monarch_now_level') > 1 && q.property('titan:monarch_core_two') == 1) ? 1 : 0"
+				},
+				"level_22": {
+					"scale": "(q.property('titan:monarch_now_level') > 1 && q.property('titan:monarch_core_two') == 2) ? 1 : 0"
+				},
+				"level_23": {
+					"scale": "(q.property('titan:monarch_now_level') > 1 && q.property('titan:monarch_core_two') == 3) ? 1 : 0"
+				},
+				"level_3_now": {
+					"scale": "q.property('titan:monarch_now_level') == 2 ? 1 : 0"
+				},
+				"level_30": {
+					"scale": "q.property('titan:monarch_now_level') < 2 ? 1 : 0"
+				},
+				"level_31": {
+					"scale": "(q.property('titan:monarch_now_level') > 2 && q.property('titan:monarch_core_three') == 1) ? 1 : 0"
+				},
+				"level_32": {
+					"scale": "(q.property('titan:monarch_now_level') > 2 && q.property('titan:monarch_core_three') == 2) ? 1 : 0"
+				},
+				"level_33": {
+					"scale": "(q.property('titan:monarch_now_level') > 2 && q.property('titan:monarch_core_three') == 3) ? 1 : 0"
+				}
+			}
+		},
+		"animation.monarch_missile_powering.1st": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"readyMissile_1": {
+					"scale": "(q.property('titan:missile_number') > 0 && q.property('titan:powering_time') > 0 && q.property('titan:monarch_core_one') == 2) ? 1 : 0"
+				},
+				"readyMissile_2": {
+					"scale": "(q.property('titan:missile_number') > 1 && q.property('titan:powering_time') > 1 && q.property('titan:monarch_core_one') == 2) ? 1 : 0"
+				},
+				"readyMissile_3": {
+					"scale": "(q.property('titan:missile_number') > 2 && q.property('titan:powering_time') > 2 && q.property('titan:monarch_core_one') == 2) ? 1 : 0"
+				},
+				"readyMissile_4": {
+					"scale": "(q.property('titan:missile_number') > 3 && q.property('titan:powering_time') > 3 && q.property('titan:monarch_core_one') == 2) ? 1 : 0"
+				},
+				"readyMissile_5": {
+					"scale": "(q.property('titan:missile_number') > 4 && q.property('titan:powering_time') > 4 && q.property('titan:monarch_core_one') == 2) ? 1 : 0"
+				},
+				"readyMissile_6": {
+					"scale": "(q.property('titan:missile_number') > 5 && q.property('titan:powering_time') > 5 && q.property('titan:monarch_core_one') == 2) ? 1 : 0"
+				},
+				"readyMissile_7": {
+					"scale": "(q.property('titan:missile_number') > 6 && q.property('titan:powering_time') > 6) ? 1 : 0"
+				},
+				"readyMissile_8": {
+					"scale": "(q.property('titan:missile_number') > 7 && q.property('titan:powering_time') > 7) ? 1 : 0"
+				},
+				"readyMissile_9": {
+					"scale": "(q.property('titan:missile_number') > 8 && q.property('titan:powering_time') > 8) ? 1 : 0"
+				},
+				"readyMissile_10": {
+					"scale": "(q.property('titan:missile_number') > 9 && q.property('titan:powering_time') > 9) ? 1 : 0"
+				},
+				"readyMissile_11": {
+					"scale": "(q.property('titan:missile_number') > 10 && q.property('titan:powering_time') > 10) ? 1 : 0"
+				},
+				"readyMissile_12": {
+					"scale": "(q.property('titan:missile_number') > 11 && q.property('titan:powering_time') > 11) ? 1 : 0"
+				},
+				"waitMissile_1": {
+					"scale": "(q.property('titan:missile_number') > 0 && q.property('titan:powering_time') < 1 && q.property('titan:monarch_core_one') == 2) ? 1 : 0"
+				},
+				"waitMissile_2": {
+					"scale": "(q.property('titan:missile_number') > 1 && q.property('titan:powering_time') < 2 && q.property('titan:monarch_core_one') == 2) ? 1 : 0"
+				},
+				"waitMissile_3": {
+					"scale": "(q.property('titan:missile_number') > 2 && q.property('titan:powering_time') < 3 && q.property('titan:monarch_core_one') == 2) ? 1 : 0"
+				},
+				"waitMissile_4": {
+					"scale": "(q.property('titan:missile_number') > 3 && q.property('titan:powering_time') < 4 && q.property('titan:monarch_core_one') == 2) ? 1 : 0"
+				},
+				"waitMissile_5": {
+					"scale": "(q.property('titan:missile_number') > 4 && q.property('titan:powering_time') < 5 && q.property('titan:monarch_core_one') == 2) ? 1 : 0"
+				},
+				"waitMissile_6": {
+					"scale": "(q.property('titan:missile_number') > 5 && q.property('titan:powering_time') < 6 && q.property('titan:monarch_core_one') == 2) ? 1 : 0"
+				},
+				"waitMissile_7": {
+					"scale": "(q.property('titan:missile_number') > 6 && q.property('titan:powering_time') < 7) ? 1 : 0"
+				},
+				"waitMissile_8": {
+					"scale": "(q.property('titan:missile_number') > 7 && q.property('titan:powering_time') < 8) ? 1 : 0"
+				},
+				"waitMissile_9": {
+					"scale": "(q.property('titan:missile_number') > 8 && q.property('titan:powering_time') < 9) ? 1 : 0"
+				},
+				"waitMissile_10": {
+					"scale": "(q.property('titan:missile_number') > 9 && q.property('titan:powering_time') < 10) ? 1 : 0"
+				},
+				"waitMissile_11": {
+					"scale": "(q.property('titan:missile_number') > 10 && q.property('titan:powering_time') < 11) ? 1 : 0"
+				},
+				"waitMissile_12": {
+					"scale": "(q.property('titan:missile_number') > 11 && q.property('titan:powering_time') < 12) ? 1 : 0"
+				},
+				"missilePowering": {
+					"position": [0, "q.property('titan:monarch_core_one') != 2 ? 0.3 : 0", 0]
+				}
+			}
+		},
+		"animation.cooldown_sp_over.1st": {
+			"loop": true,
+			"animation_length": 1.5,
+			"bones": {
+				"cooldown_sp": {
+					"position": {
+						"0.0": [0, 8, 0],
+						"1.4": [0, 8, 0],
+						"1.5": {
+							"pre": [0, 8, 0],
+							"post": [0, 0, 0]
+						}
+					},
+					"scale": {
+						"0.0": [1, 0, 1],
+						"1.4": [1, 1, 1],
+						"1.5": [1, 1, 1]
+					}
+				}
+			}
+		},
+		"animation.ion_weapon_star.zoom": {
+			"loop": true,
+			"bones": {
+				"titan_star_1": {
+					"position": [-0.5, 0, 0]
+				},
+				"titan_star_2": {
+					"position": [0.5, 0, 0]
+				},
+				"titan_star_3": {
+					"position": [0.5, 0, 0]
+				},
+				"titan_star_4": {
+					"position": [-0.5, 0, 0]
+				}
+			}
+		},
+		"animation.tone_weapon_star.zoom": {
+			"loop": true,
+			"bones": {
+				"titan_star_1": {
+					"position": [0.15, -0.15, 0]
+				},
+				"titan_star_2": {
+					"position": [-0.15, -0.15, 0]
+				},
+				"titan_star_3": {
+					"position": [-0.15, 0.15, 0]
+				},
+				"titan_star_4": {
+					"position": [0.15, 0.15, 0]
+				}
+			}
+		},
+		"animation.northstar_weapon_star.zoom": {
+			"loop": true,
+			"bones": {
+				"titan_star_1": {
+					"position": [0.45, 0, 0]
+				},
+				"titan_star_2": {
+					"position": [-0.45, 0, 0]
+				},
+				"titan_star_3": {
+					"position": [0, 0.3, 0]
+				},
+				"power_left_1": {
+					"scale": "q.property('titan:powering_time') > 0 ? 1 : 0"
+				},
+				"power_left_2": {
+					"scale": "q.property('titan:powering_time') > 1 ? 1 : 0"
+				},
+				"power_left_3": {
+					"scale": "q.property('titan:powering_time') > 2 ? 1 : 0"
+				},
+				"power_left_4": {
+					"scale": "q.property('titan:powering_time') > 3 ? 1 : 0"
+				},
+				"power_left_5": {
+					"scale": "q.property('titan:powering_time') > 4 ? 1 : 0"
+				},
+				"power_left_6": {
+					"scale": "q.property('titan:powering_time') > 5 ? 1 : 0"
+				},
+				"power_right_1": {
+					"scale": "q.property('titan:powering_time') > 0 ? 1 : 0"
+				},
+				"power_right_2": {
+					"scale": "q.property('titan:powering_time') > 1 ? 1 : 0"
+				},
+				"power_right_3": {
+					"scale": "q.property('titan:powering_time') > 2 ? 1 : 0"
+				},
+				"power_right_4": {
+					"scale": "q.property('titan:powering_time') > 3 ? 1 : 0"
+				},
+				"power_right_5": {
+					"scale": "q.property('titan:powering_time') > 4 ? 1 : 0"
+				},
+				"power_right_6": {
+					"scale": "q.property('titan:powering_time') > 5 ? 1 : 0"
+				},
+				"power_bottom_1": {
+					"scale": "q.property('titan:powering_time') > 0 ? 1 : 0"
+				},
+				"power_bottom_2": {
+					"scale": "q.property('titan:powering_time') > 1 ? 1 : 0"
+				},
+				"power_bottom_5": {
+					"scale": "q.property('titan:powering_time') > 4 ? 1 : 0"
+				},
+				"power_bottom_4": {
+					"scale": "q.property('titan:powering_time') > 3 ? 1 : 0"
+				},
+				"power_bottom_3": {
+					"scale": "q.property('titan:powering_time') > 2 ? 1 : 0"
+				},
+				"power_bottom_6": {
+					"scale": "q.property('titan:powering_time') > 5 ? 1 : 0"
+				}
+			}
+		},
+		"animation.northstar_weapon_star.staic": {
+			"loop": true,
+			"bones": {
+				"power_left_1": {
+					"scale": 0
+				},
+				"power_left_2": {
+					"scale": 0
+				},
+				"power_left_3": {
+					"scale": 0
+				},
+				"power_left_4": {
+					"scale": 0
+				},
+				"power_left_5": {
+					"scale": 0
+				},
+				"power_left_6": {
+					"scale": 0
+				},
+				"power_right_1": {
+					"scale": 0
+				},
+				"power_right_2": {
+					"scale": 0
+				},
+				"power_right_3": {
+					"scale": 0
+				},
+				"power_right_4": {
+					"scale": 0
+				},
+				"power_right_5": {
+					"scale": 0
+				},
+				"power_right_6": {
+					"scale": 0
+				},
+				"power_bottom_1": {
+					"scale": 0
+				},
+				"power_bottom_2": {
+					"scale": 0
+				},
+				"power_bottom_5": {
+					"scale": 0
+				},
+				"power_bottom_4": {
+					"scale": 0
+				},
+				"power_bottom_3": {
+					"scale": 0
+				},
+				"power_bottom_6": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.scorch_weapon_star.zoom": {
+			"loop": true,
+			"bones": {
+				"titan_star_1": {
+					"position": [0.25, -0.25, 0],
+					"scale": 0.1
+				},
+				"titan_star_2": {
+					"position": [-0.25, -0.25, 0],
+					"scale": 0.1
+				},
+				"titan_star_3": {
+					"position": [-0.25, 0.25, 0],
+					"scale": 0.1
+				},
+				"titan_star_4": {
+					"position": [0.25, 0.25, 0],
+					"scale": 0.1
+				},
+				"titan_star_1st": {
+					"rotation": [0, 0, 45],
+					"scale": 2.5
+				}
+			}
+		},
+		"animation.legion_weapon_star.zoom": {
+			"loop": true,
+			"bones": {
+				"titan_star_1": {
+					"position": [-1, 1, 0]
+				},
+				"titan_star_2": {
+					"position": [1, 1, 0]
+				},
+				"titan_star_3": {
+					"position": [1, -1, 0]
+				},
+				"titan_star_4": {
+					"position": [-1, -1, 0]
+				}
+			}
+		},
+		"animation.legion_weapon_far_star.zoom": {
+			"loop": true,
+			"bones": {
+				"titan_star_1": {
+					"position": [0, -0.2, 0]
+				},
+				"titan_star_2": {
+					"position": [0, 0.2, 0]
+				},
+				"titan_star_3": {
+					"position": [0.2, 0, 0]
+				},
+				"titan_star_4": {
+					"position": [-0.2, 0, 0]
+				}
+			}
+		},
+		"animation.legion_weapon_far_star.zoom_pre": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.7917,
+			"bones": {
+				"titan_star_1": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.7917": [0, -0.2, 0]
+					}
+				},
+				"titan_star_2": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.7917": [0, 0.2, 0]
+					}
+				},
+				"titan_star_3": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.7917": [0.2, 0, 0]
+					}
+				},
+				"titan_star_4": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.7917": [-0.2, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.monarch_weapon_star.zoom": {
+			"loop": true,
+			"bones": {
+				"titan_star_1": {
+					"position": [0, -0.2, 0]
+				},
+				"titan_star_2": {
+					"position": [0, 0.2, 0]
+				},
+				"titan_star_3": {
+					"position": [0.2, 0, 0]
+				},
+				"titan_star_4": {
+					"position": [-0.2, 0, 0]
+				}
+			}
+		}
+	}
+}

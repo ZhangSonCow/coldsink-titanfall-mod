@@ -1,0 +1,64 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.monarch_ai_missile_final.func": {
+      "loop": true,
+      "animation_length": 0.15,
+      "timeline": {
+        "0.0": [
+          "/execute @s[tag=team_blue] ~~~ summon coldsink:monarch_trace_missile_blue ^-1.6^6.4^3.2",
+          "/execute @s[tag=team_red] ~~~ summon coldsink:monarch_trace_missile_red ^-1.6^6.4^3.2",
+          "/playsound monarch_skill_1_final @a[r=64] ~~~",
+          "/scoreboard players remove @s missile_count 1",
+          "/event entity @s[scores={missile_count=..0}] set_action_0"
+        ]
+      }
+    },
+    "animation.monarch_ai_missile_final_powering.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players random @s[tag=!monarch_core_12] missile_count 1 6",
+          "/scoreboard players random @s[tag=monarch_core_12] missile_count 1 12"
+        ],
+        "0.15": [
+          "/event entity @s[scores={missile_count=1}] set_action_22"
+        ],
+        "0.3": [
+          "/event entity @s[scores={missile_count=2}] set_action_22"
+        ],
+        "0.45": [
+          "/event entity @s[scores={missile_count=3}] set_action_22"
+        ],
+        "0.6": [
+          "/event entity @s[scores={missile_count=4}] set_action_22"
+        ],
+        "0.75": [
+          "/event entity @s[scores={missile_count=5}] set_action_22"
+        ],
+        "0.9": [
+          "/event entity @s[scores={missile_count=6}] set_action_22"
+        ],
+        "1.05": [
+          "/event entity @s[scores={missile_count=7}] set_action_22"
+        ],
+        "1.2": [
+          "/event entity @s[scores={missile_count=8}] set_action_22"
+        ],
+        "1.35": [
+          "/event entity @s[scores={missile_count=9}] set_action_22"
+        ],
+        "1.5": [
+          "/event entity @s[scores={missile_count=10}] set_action_22"
+        ],
+        "1.65": [
+          "/event entity @s[scores={missile_count=11}] set_action_22"
+        ],
+        "1.8": [
+          "/event entity @s set_action_22"
+        ]
+      }
+    }
+  }
+}

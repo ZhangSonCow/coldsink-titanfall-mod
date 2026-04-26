@@ -1,0 +1,96 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.monarch_skill_1_final_cooldown.func": {
+      "loop": true,
+      "animation_length": 1.0,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players add @s[tag=monarch_core_31,tag=!missile_final] missile_count 1",
+          "/event entity @s[tag=monarch_core_31,scores={missile_count=3..}] add_missile_1",
+          "/scoreboard players reset @s[tag=monarch_core_31,scores={missile_count=3..}] missile_count",
+          "/event entity @s[tag=monarch_core_12,tag=monarch_core_31,tag=!missile_final] remove_cooldown_1_1",
+          "/event entity @s[tag=!monarch_core_12,tag=monarch_core_31,tag=!missile_final] remove_cooldown_1_2"
+        ]
+      }
+    },
+    "animation.monarch_skill_1_final.func": {
+      "loop": true,
+      "animation_length": 0.15,
+      "timeline": {
+        "0.0": [
+          "/camerashake add @s 0.1 0.15 rotational",
+          "/execute @s[tag=team_blue] ~~~ summon coldsink:monarch_trace_missile_blue ^-1.6^2.4^3.2",
+          "/execute @s[tag=team_red] ~~~ summon coldsink:monarch_trace_missile_red ^-1.6^2.4^3.2",
+          "/event entity @s remove_missile_1",
+          "/event entity @s remove_powering_1",
+          "/playsound monarch_skill_1_final @a[r=64] ~~~",
+
+          "/event entity @s[tag=monarch_core_12] add_cooldown_1_3",
+          "/event entity @s[tag=!monarch_core_12] add_cooldown_1_6"
+        ]
+      }
+    },
+    "animation.monarch_skill_1_final_powering.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/event entity @s[tag=monarch_core_12] set_powering_1",
+          "/event entity @s[tag=!monarch_core_12] set_powering_7"
+        ],
+        "0.5": [
+          "/event entity @s add_powering_1"
+        ],
+        "1.0": [
+          "/event entity @s add_powering_1"
+        ],
+        "1.5": [
+          "/event entity @s add_powering_1"
+        ],
+        "2.0": [
+          "/event entity @s add_powering_1"
+        ],
+        "2.5": [
+          "/event entity @s add_powering_1"
+        ],
+        "3.0": [
+          "/event entity @s add_powering_1"
+        ],
+        "3.5": [
+          "/event entity @s add_powering_1"
+        ],
+        "4.0": [
+          "/event entity @s add_powering_1"
+        ],
+        "4.5": [
+          "/event entity @s add_powering_1"
+        ],
+        "5.0": [
+          "/event entity @s add_powering_1"
+        ],
+        "5.5": [
+          "/event entity @s add_powering_1"
+        ]
+      }
+    },
+    "animation.monarch_skill_1_final_pre.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.25": [
+          "/event entity @s set_action_24"
+        ]
+      }
+    },
+    "animation.monarch_skill_1_final_after.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.5": [
+          "/event entity @s set_action_0"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:ion_titan_ai_summon_red",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "components": {
+      
+      "minecraft:health": {
+        "value": 1,
+        "max": 1,
+        "min": 1
+      },
+      "minecraft:collision_box": {
+        "height": 1.0,
+        "width": 3.2
+      },
+      "minecraft:ageable": {
+        "duration": 0.1,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:physics": {},
+      "minecraft:fire_immune": {},
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:type_family": {
+        "family": [ "tool", "summon_titan_ai" ]
+      },
+      "minecraft:navigation.walk": {
+        "can_sink": false
+      },
+      "minecraft:movement.basic": {}
+      
+    },
+
+    "component_groups": {
+      
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "queue_command": {
+          "command": [
+            "summon coldsink:titan_loading_sign ~~~ team_red",
+            "summon coldsink:ion_titan_ai ~~200~",
+            "execute @e[type=coldsink:ion_titan_ai,y=~200,r=8,c=1] ~~~ tp @s ~~~ facing @p",
+            "event entity @e[type=coldsink:ion_titan_ai,y=~200,r=8,c=1] team_red",
+            "execute @s[tag=!loading_fast] ~~~ event entity @e[type=coldsink:ion_titan_ai,y=~200,r=8,c=1] set_action_1",
+            "execute @s[tag=loading_fast] ~~~ event entity @e[type=coldsink:ion_titan_ai,y=~200,r=8,c=1] set_action_5",
+            "execute @s[tag=get_battery] ~~~ tag @e[type=coldsink:ion_titan_ai,y=~200,r=8,c=1] add get_battery",
+            "event entity @s godie"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

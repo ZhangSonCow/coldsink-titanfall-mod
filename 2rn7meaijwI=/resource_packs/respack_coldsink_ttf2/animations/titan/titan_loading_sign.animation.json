@@ -1,0 +1,192 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.titan_auto_spawner.new": {
+			"loop": true
+		},
+		"animation.titan_auto_spawner.rotate1": {
+			"loop": true,
+			"animation_length": 2.4167,
+			"bones": {
+				"circle1_2": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"2.4167": [0, -720, 0]
+					}
+				},
+				"spawner_arrow": {
+					"rotation": [0, "q.rotation_to_camera(1)+180-q.body_y_rotation - v.rotate_random", 0]
+				},
+				"titan_new_ronin_spawner": {
+					"rotation": [0, "v.rotate_random", 0]
+				},
+				"arrow_line": {
+					"position": [0, "-q.camera_distance_range_lerp(0,64)*256", 0],
+					"scale": [1, "q.camera_distance_range_lerp(0,64)*10", 1]
+				},
+				"circle1_3": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"2.4167": [0, 360, 0]
+					}
+				},
+				"bordar": {
+					"rotation": ["q.camera_rotation(0)", 0, 0]
+				}
+			}
+		},
+		"animation.titan_auto_spawner.rotate2": {
+			"loop": true,
+			"animation_length": 1.675,
+			"bones": {
+				"circle1": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, -12.5],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1167": {
+							"post": [-12.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.275": {
+							"post": [0, 0, 12.5],
+							"lerp_mode": "catmullrom"
+						},
+						"0.3917": {
+							"post": [12.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5583": {
+							"post": [0, 0, -12.5],
+							"lerp_mode": "catmullrom"
+						},
+						"0.6667": {
+							"post": [-12.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.8333": {
+							"post": [0, 0, 12.5],
+							"lerp_mode": "catmullrom"
+						},
+						"0.95": {
+							"post": [12.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.1167": {
+							"post": [0, 0, -12.5],
+							"lerp_mode": "catmullrom"
+						},
+						"1.225": {
+							"post": [-12.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.3917": {
+							"post": [0, 0, 12.5],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5083": {
+							"post": [12.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.675": {
+							"post": [0, 0, -12.5],
+							"lerp_mode": "catmullrom"
+						},
+						"1.7833": {
+							"post": [-12.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					},
+					"position": [0, 5, 0]
+				}
+			}
+		},
+		"animation.titan_auto_spawner.rotate3": {
+			"loop": true,
+			"animation_length": 1.675,
+			"bones": {
+				"circle2": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 12.5],
+							"lerp_mode": "catmullrom"
+						},
+						"0.1": {
+							"post": [12.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.275": {
+							"post": [0, 0, -12.5],
+							"lerp_mode": "catmullrom"
+						},
+						"0.3833": {
+							"post": [-12.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5583": {
+							"post": [0, 0, 12.5],
+							"lerp_mode": "catmullrom"
+						},
+						"0.6583": {
+							"post": [12.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.8333": {
+							"post": [0, 0, -12.5],
+							"lerp_mode": "catmullrom"
+						},
+						"0.9333": {
+							"post": [-12.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.1083": {
+							"post": [0, 0, 12.5],
+							"lerp_mode": "catmullrom"
+						},
+						"1.2167": {
+							"post": [12.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.3833": {
+							"post": [0, 0, -12.5],
+							"lerp_mode": "catmullrom"
+						},
+						"1.4917": {
+							"post": [-12.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"1.6667": {
+							"post": [0, 0, 12.5],
+							"lerp_mode": "catmullrom"
+						},
+						"1.7667": {
+							"post": [12.5, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					},
+					"position": [0, 14.5, 0]
+				}
+			}
+		},
+		"animation.titan_auto_spawner.rotate4": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 4.5833,
+			"bones": {
+				"titan_new_ronin_spawner": {
+					"scale": {
+						"0.0": [0, 0, 0],
+						"0.0417": [0.06, 0.06, 0.06],
+						"0.0833": [0.2, 0.2, 0.2],
+						"0.1667": [0.8, 0.8, 0.8],
+						"0.2083": [0.94, 0.94, 0.94],
+						"0.25": [1, 1, 1],
+						"4.4583": [1, 1, 1],
+						"4.5": [0.8, 0.8, 0.8],
+						"4.5417": [0.06, 0.06, 0.06]
+					}
+				}
+			}
+		}
+	}
+}

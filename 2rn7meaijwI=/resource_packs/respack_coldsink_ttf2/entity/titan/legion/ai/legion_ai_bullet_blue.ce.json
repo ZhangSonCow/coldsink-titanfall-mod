@@ -1,0 +1,43 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:legion_ai_bullet_blue",
+      "animations": {
+        "particle": "animation.locator.particle",
+        "particle_1": "animation.locator.particle_1",
+        "particle_2": "animation.locator.particle_2"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "particle": "q.variant == 0 || q.variant == 2"
+          },
+          {
+            "particle_1": "q.variant == 1 || q.variant == 3"
+          },
+          {
+            "particle_2": "q.variant == 4"
+          }
+        ]
+      },
+      "particle_effects": {
+        "particle": "titan:legion_bullet_near",
+        "particle_1": "titan:legion_bullet_far",
+        "particle_2": "titan:legion_bullet_core"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/empty"
+      },
+      "geometry": {
+        "default": "geometry.locator"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

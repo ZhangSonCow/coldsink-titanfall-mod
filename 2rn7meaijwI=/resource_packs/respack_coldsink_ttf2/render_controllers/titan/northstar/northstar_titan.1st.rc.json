@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.northstar_titan.1st": {
+      "arrays": {
+        "textures": {
+          "Array.skin": [
+            "Texture.northstar_titan",
+            "Texture.northstar_titan_1",
+            "Texture.northstar_titan_2",
+            "Texture.northstar_titan_3",
+            "Texture.northstar_titan_4",
+            "Texture.northstar_titan_5",
+            "Texture.northstar_titan_6",
+            "Texture.northstar_titan_7",
+            "Texture.northstar_titan_8"
+          ]
+        }
+      },
+      "geometry": "geometry.northstar_titan.1st",
+      "materials": [
+        {
+          "*": "material.netease_entity_metallic"
+        }
+      ],
+      "textures": [ "Array.skin[ query.skin_id ]" ],
+      "is_hurt_color": {}
+    }
+  }
+}

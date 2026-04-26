@@ -1,0 +1,88 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.tone_titan_ai.arm": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "tone_titan.idle.arm"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "melee": "q.property('titan:action') == 11"
+            },
+            {
+              "fire": "q.property('titan:action') == 12"
+            },
+            {
+              "missile": "q.property('titan:action') == 14"
+            },
+            {
+              "sense": "q.property('titan:action') == 15"
+            },
+            {
+              "core": "q.property('titan:action') == 16"
+            }
+          ]
+        },
+        "melee": {
+          "animations": [
+            "tone_titan.melee"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 11"
+            }
+          ]
+        },
+        "fire": {
+          "animations": [
+            "tone_titan.fire"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 12"
+            }
+          ]
+        },
+        "missile": {
+          "animations": [
+            "tone_titan.missile"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 14"
+            }
+          ]
+        },
+        "sense": {
+          "animations": [
+            "tone_titan.sense"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 15"
+            }
+          ]
+        },
+        "core": {
+          "animations": [
+            "tone_titan.core"
+          ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 16"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

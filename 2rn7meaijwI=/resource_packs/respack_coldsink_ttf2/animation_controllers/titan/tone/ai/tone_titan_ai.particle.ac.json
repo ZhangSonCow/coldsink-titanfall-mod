@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.tone_titan_ai.particle": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "particle": "q.property('titan:action') == 12"
+            }
+          ]
+        },
+        "particle": {
+          "animations": [
+            "tone_titan.particle"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 12"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

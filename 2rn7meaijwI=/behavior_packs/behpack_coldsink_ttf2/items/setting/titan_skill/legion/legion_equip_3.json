@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "coldsink:legion_equip_3",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.arrow"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "legion_equip_3",
+      "minecraft:display_name": {
+        "value": "§7【堡垒】 §f强化枪盾可抵挡的伤害量"
+      },
+      "minecraft:use_modifiers": {
+        "use_duration": 99999,
+        "movement_modifier": 1
+      },
+      "minecraft:food": {
+        "can_always_eat": true
+      },
+      "minecraft:cooldown": {
+        "category": "setting",
+        "duration": 1
+      },
+      "minecraft:hand_equipped": false
+    }
+  }
+}

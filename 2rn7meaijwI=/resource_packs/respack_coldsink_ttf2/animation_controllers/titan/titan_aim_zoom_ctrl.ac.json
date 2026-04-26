@@ -1,0 +1,43 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.titan_aim_zoom_ctrl": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "aim": "(q.variant != 6 && q.property('titan:weapon_aim') && q.property('titan:action') < 4) || (q.variant == 3 && q.property('titan:action') == 11) || (q.variant == 7 && q.property('titan:weapon_aim') && q.property('titan:action') > 10 && q.property('titan:action') < 15)"
+            },
+            {
+              "aim_legion": "q.variant == 6 && q.property('titan:powering_time') == 1 && (q.property('titan:weapon_aim') || q.property('titan:action') == 3 || (q.property('titan:action') >= 12 && q.property('titan:action') <= 15) )"
+            }
+          ]
+        },
+        "aim": {
+          "animations": [
+            "titan_aim_zoom.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "!( q.variant != 6 && (q.property('titan:weapon_aim') && q.property('titan:action') < 4) || (q.variant == 3 && q.property('titan:action') == 11) || (q.variant == 7 && q.property('titan:weapon_aim') && q.property('titan:action') > 10 && q.property('titan:action') < 15) )"
+            }
+          ]
+        },
+        "aim_legion": {
+          "animations": [
+            "titan_aim_zoom_legion.1st"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "!( q.variant == 6 && q.property('titan:powering_time') == 1 && (q.property('titan:weapon_aim') || q.property('titan:action') == 3 || (q.property('titan:action') >= 12 && q.property('titan:action') <= 15)) )"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

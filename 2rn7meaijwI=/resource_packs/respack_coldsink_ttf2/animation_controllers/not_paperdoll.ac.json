@@ -1,0 +1,417 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.not_paperdoll": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "not_paperdoll": "!v.is_paperdoll"
+            }
+          ]
+        },
+        "not_paperdoll": {
+          "animations": [
+            "root",
+            {
+              "titan_zoom_in_ui": "q.is_in_ui"
+            },
+            "skill_0_cooldown",
+            "skill_1_cooldown",
+            "skill_2_cooldown",
+            {
+              "cooldown_sp_over.1st": "q.property('titan:skill_charge_sp') == 6"
+            },
+            {
+              "titan_look_rotate": "q.variant > 0 && q.property('titan:action') < 100"
+            },
+            {
+              "cabin_radar": "q.variant > 0 && v.is_first_person"
+            },
+            // 泰坦眼睛光效
+            {
+              "titan_eye_blue_ion": "q.variant == 1 && !v.is_first_person && q.property('titan:team') == 1"
+            },
+            {
+              "titan_eye_red_ion": "q.variant == 1 && !v.is_first_person && q.property('titan:team') == 2"
+            },
+            {
+              "titan_eye_blue_tone": "q.variant == 2 && !v.is_first_person && q.property('titan:team') == 1"
+            },
+            {
+              "titan_eye_red_tone": "q.variant == 2 && !v.is_first_person && q.property('titan:team') == 2"
+            },
+            {
+              "titan_eye_blue_northstar": "q.variant == 3 && !v.is_first_person && q.property('titan:team') == 1"
+            },
+            {
+              "titan_eye_red_northstar": "q.variant == 3 && !v.is_first_person && q.property('titan:team') == 2"
+            },
+            {
+              "titan_eye_blue_ronin": "q.variant == 4 && !v.is_first_person && q.property('titan:team') == 1"
+            },
+            {
+              "titan_eye_red_ronin": "q.variant == 4 && !v.is_first_person && q.property('titan:team') == 2"
+            },
+            {
+              "titan_eye_blue_monarch": "q.variant == 7 && !v.is_first_person && q.property('titan:team') == 1"
+            },
+            {
+              "titan_eye_red_monarch": "q.variant == 7 && !v.is_first_person && q.property('titan:team') == 2"
+            },
+            // 其它
+            {
+              "c.cabin_move": "q.variant > 0 && v.is_first_person"
+            },
+            {
+              "c.titan_type.1st": "v.is_first_person"
+            },
+            {
+              "titan_cabin_core.1st": "v.is_first_person && q.variant > 0 && q.is_sheared && q.variant != 7"
+            },
+            {
+              "c.particle_play": "v.is_first_person"
+            },
+            {
+              "c.titan_aim_zoom_ctrl": "q.variant > 0 && v.is_first_person"
+            },
+            {
+              "titan_health_bar_3.1st": "(q.variant == 3 || q.variant == 4) && v.is_first_person && !q.property('titan:titan_danger')"
+            },
+            {
+              "titan_health_bar_4.1st": "(q.variant == 1 || q.variant == 2 || (q.variant == 7 && !q.is_sheared)) && v.is_first_person && !q.property('titan:titan_danger')"
+            },
+            {
+              "titan_health_bar_5.1st": "(q.variant == 5 || q.variant == 6) && v.is_first_person && !q.property('titan:titan_danger')"
+            },
+            {
+              "titan_health_bar_6.1st": "q.variant == 7 && q.is_sheared && v.is_first_person && !q.property('titan:titan_danger')"
+            },
+            {
+              "titan_health_bar_danger.1st": "q.variant > 0 && v.is_first_person && q.property('titan:titan_danger')"
+            },
+            {
+              "titan_shield_bar.1st": "q.variant > 0 && q.property('titan:shield_health') < 26 && v.is_first_person"
+            },
+            {
+              "spurt_bar_1": "(q.variant == 5 || q.variant == 6) && v.is_first_person"
+            },
+            {
+              "spurt_bar_2": "(q.variant == 1 || q.variant == 2 || q.variant == 7) && v.is_first_person"
+            },
+            {
+              "spurt_bar_3": "(q.variant == 3 || q.variant == 4) && v.is_first_person"
+            },
+            {
+              "c.spurt_1_cooldown": "(q.variant == 5 || q.variant == 6) && v.is_first_person"
+            },
+            {
+              "c.spurt_2_cooldown": "(q.variant == 1 || q.variant == 2 || q.variant == 7) && v.is_first_person"
+            },
+            {
+              "c.spurt_3_cooldown": "(q.variant == 3 || q.variant == 4) && v.is_first_person"
+            },
+            {
+              "titan_postion_tiantu.fix": "(q.variant == 1 || q.variant == 2 || q.variant == 7) && !v.is_first_person"
+            },
+            {
+              "titan_postion_youxia.fix": "(q.variant == 3 || q.variant == 4) && !v.is_first_person"
+            },
+            {
+              "titan_postion_juyao.fix": "(q.variant == 5 || q.variant == 6) && !v.is_first_person"
+            },
+            {
+              "pilot_drive_postion.fix": "q.property('titan:action') == 177 && !v.is_first_person"
+            },
+            "c.entry_ion_cabin",
+            {
+              "c.ion_titan_weapon_mode": "q.variant == 1"
+            },
+            {
+              "c.ion_titan.arm": "q.variant == 1 && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "c.ion_titan.leg": "q.variant == 1 && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "c.ion_titan_1st": "q.variant == 1 && v.is_first_person"
+            },
+            {
+              "c.ion_titan_particle": "q.variant == 1 && !v.is_first_person"
+            },
+            {
+              "c.ion_titan_particle.1st": "q.variant == 1 && v.is_first_person"
+            },
+            {
+              "c.ion_terminate": "q.variant == 1"
+            },
+            {
+              "c.ion_titan_weapon_back": "q.variant == 1 && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "c.ion_titan_damage_fire": "q.variant == 1 && !v.is_first_person && !(q.variant == 4 && q.is_saddled)"
+            },
+            "c.entry_tone_cabin",
+            {
+              "c.tone_titan.arm": "q.variant == 2 && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "c.tone_titan.leg": "q.variant == 2 && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "c.tone_titan_1st": "q.variant == 2 && v.is_first_person"
+            },
+            {
+              "c.tone_titan_particle": "q.variant == 2 && !v.is_first_person"
+            },
+            {
+              "c.tone_titan_particle.1st": "q.variant == 2 && v.is_first_person"
+            },
+            {
+              "c.tone_star_ctrl": "q.variant == 2 && v.is_first_person"
+            },
+            {
+              "c.tone_terminate": "q.variant == 2"
+            },
+            {
+              "c.tone_titan_weapon_back": "q.variant == 2 && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "c.tone_titan_damage_fire": "q.variant == 2 && !v.is_first_person"
+            },
+            "c.entry_northstar_cabin",
+            {
+              "c.northstar_titan.arm": "q.variant == 3 && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "c.northstar_titan.leg": "q.variant == 3 && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "c.northstar_titan_1st": "q.variant == 3 && v.is_first_person"
+            },
+            {
+              "c.northstar_titan_particle": "q.variant == 3 && !v.is_first_person"
+            },
+            {
+              "c.northstar_titan_particle.1st": "q.variant == 3 && v.is_first_person"
+            },
+            {
+              "c.northstar_star_ctrl": "q.variant == 3 && v.is_first_person"
+            },
+            {
+              "c.northstar_terminate": "q.variant == 3"
+            },
+            {
+              "c.northstar_titan_weapon_back": "q.variant == 3 && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "c.northstar_titan_damage_fire": "q.variant == 3 && !v.is_first_person"
+            },
+            "c.entry_ronin_cabin",
+            {
+              "c.ronin_titan.arm": "q.variant == 4 && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "c.ronin_titan.leg": "q.variant == 4 && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "c.ronin_titan_1st": "q.variant == 4 && v.is_first_person"
+            },
+            {
+              "c.ronin_titan_particle": "q.variant == 4 && !v.is_first_person"
+            },
+            {
+              "c.ronin_titan_particle.1st": "q.variant == 4 && v.is_first_person"
+            },
+            {
+              "c.ronin_titan.sword_arc.particle": "q.variant == 4 && !v.is_first_person"
+            },
+            {
+              "c.ronin_titan.sword_arc.particle.1st": "q.variant == 4 && v.is_first_person"
+            },
+            {
+              "c.ronin_terminate": "q.variant == 4"
+            },
+            {
+              "c.ronin_titan_weapon_back": "q.variant == 4 && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "c.ronin_titan_damage_fire": "q.variant == 4 && !v.is_first_person"
+            },
+            "c.entry_scorch_cabin",
+            {
+              "c.scorch_titan.arm": "q.variant == 5 && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "c.scorch_titan.leg": "q.variant == 5 && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "c.scorch_titan_1st": "q.variant == 5 && v.is_first_person"
+            },
+            {
+              "c.scorch_titan_particle": "q.variant == 5 && !v.is_first_person"
+            },
+            {
+              "c.scorch_titan_particle.1st": "q.variant == 5 && v.is_first_person"
+            },
+            {
+              "c.scorch_star_ctrl": "q.variant == 5 && v.is_first_person"
+            },
+            {
+              "c.scorch_terminate": "q.variant == 5"
+            },
+            {
+              "c.scorch_titan_weapon_back": "q.variant == 5 && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "c.scorch_titan_damage_fire": "q.variant == 5 && !v.is_first_person"
+            },
+            "c.entry_legion_cabin",
+            {
+              "c.legion_titan.arm": "q.variant == 6 && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "c.legion_titan.leg": "q.variant == 6 && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "c.legion_titan_1st": "q.variant == 6 && v.is_first_person"
+            },
+            {
+              "c.legion_titan.shield": "q.variant == 6 && !v.is_first_person"
+            },
+            {
+              "c.legion_titan.shield.1st": "q.variant == 6 && v.is_first_person"
+            },
+            {
+              "c.legion_titan_particle": "q.variant == 6 && !v.is_first_person"
+            },
+            {
+              "c.legion_titan_particle.1st": "q.variant == 6 && v.is_first_person"
+            },
+            {
+              "c.legion_star_ctrl": "q.variant == 6 && v.is_first_person"
+            },
+            {
+              "c.legion_terminate": "q.variant == 6"
+            },
+            {
+              "c.legion_titan_weapon_back": "q.variant == 6 && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "c.legion_titan_damage_fire": "q.variant == 6 && !v.is_first_person"
+            },
+            "c.entry_monarch_cabin",
+            {
+              "c.monarch_titan.arm": "q.variant == 7 && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "c.monarch_titan.leg": "q.variant == 7 && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "c.monarch_titan_1st": "q.variant == 7 && v.is_first_person"
+            },
+            {
+              "monarch_upgrade_text.1st": "q.variant == 7 && v.is_first_person"
+            },
+            {
+              "monarch_missile_powering.1st": "q.variant == 7 && v.is_first_person && q.property('titan:action') > 22 && q.property('titan:action') < 27"
+            },
+            {
+              "c.monarch_star_ctrl": "q.variant == 7 && v.is_first_person"
+            },
+            {
+              "c.monarch_terminate": "q.variant == 7"
+            },
+            {
+              "c.monarch_titan_weapon_back": "q.variant == 7 && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "c.monarch_titan_damage_fire": "q.variant == 1 && !v.is_first_person && !q.is_sheared"
+            },
+            {
+              "c.monarch_titan_damage_fire_final": "q.variant == 1 && !v.is_first_person && q.is_sheared"
+            },
+            {
+              "pilot_ui_fixed.1st": "q.variant == 0 && (v.is_pilot || v.pilot_handle_weapon) && v.is_first_person"
+            },
+            {
+              "core_ui.1st": "v.is_first_person"
+            },
+            {
+              "core_ui_value.1st": "v.is_first_person"
+            },
+            {
+              "weapon_ui_value.1st": "v.is_first_person"
+            },
+            {
+              "skill_charge_sp.1st": "q.property('titan:skill_charge_sp') > 0"
+            },
+            // 铁驭
+            {
+              "pilot_health_bar": "q.variant == 0 && (v.is_pilot || v.pilot_handle_weapon) && !v.is_first_person"
+            },
+            {
+              "pilot_player.back_battery_1": "q.variant == 0 && (q.is_moving || !q.is_on_ground) && v.is_pilot && q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_ordinary_item') && (q.property('pilot:rodeo_status') == 0 || q.property('pilot:rodeo_status') == 2) && !v.is_first_person"
+            },
+            {
+              "pilot_player.back_battery_2": "q.variant == 0 && (q.is_moving || !q.is_on_ground) && v.is_pilot && q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_powerful_item') && (q.property('pilot:rodeo_status') == 0 || q.property('pilot:rodeo_status') == 2) && !v.is_first_person"
+            },
+            {
+              "pilot_player.back_battery_3": "q.variant == 0 && (q.is_moving || !q.is_on_ground) && v.is_pilot && q.is_item_name_any('slot.armor.legs', 0, 'coldsink:battery_overload_item') && (q.property('pilot:rodeo_status') == 0 || q.property('pilot:rodeo_status') == 2) && !v.is_first_person"
+            },
+            {
+              "c.pilot_arm": "q.variant == 0 && v.is_pilot && !v.is_first_person && (!v.pilot_handle_weapon || q.property('titan:other_action') == 3)"
+            },
+            {
+              "c.pilot_leg": "q.variant == 0 && (v.is_pilot || v.pilot_handle_weapon) && !v.is_first_person"
+            },
+            {
+              "c.pilot_player.1st": "q.variant == 0 && v.is_pilot && v.is_first_person"
+            },
+            {
+              "pilot_player.hide_head.1st": "q.variant == 0 && (v.is_pilot || v.pilot_handle_weapon) && v.is_first_person"
+            },
+            {
+              "pilot_player.head_look": "q.variant == 0 && (v.is_pilot || v.pilot_handle_weapon) && !v.is_first_person && q.property('titan:action') < 100"
+            },
+            {
+              "pilot_weapon_bullet_count": "q.variant == 0 && v.pilot_handle_weapon"
+            },
+            {
+              "c.weapon_r201.1st": "q.variant == 0 && v.is_first_person && !v.pilot_no_idle && q.property('titan:other_action') != 3"
+            },
+            {
+              "c.weapon_r201.3st": "q.variant == 0 && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_r201') && !v.is_first_person && !v.pilot_no_idle && q.property('titan:other_action') != 3"
+            },
+            {
+              "c.weapon_r201_action.1st": "q.variant == 0 && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_r201') && v.is_first_person && !v.pilot_no_idle"
+            },
+            {
+              "c.weapon_r201_action.3st": "q.variant == 0 && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_r201') && !v.is_first_person && !v.pilot_no_idle"
+            },
+            {
+              "c.weapon_charge.1st": "q.variant == 0 && v.is_first_person && !v.pilot_no_idle && q.property('titan:other_action') != 3"
+            },
+            {
+              "c.weapon_charge.3st": "q.variant == 0 && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_charge') && !v.is_first_person && !v.pilot_no_idle && q.property('titan:other_action') != 3"
+            },
+            {
+              "c.weapon_charge_action.1st": "q.variant == 0 && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_charge') && v.is_first_person && !v.pilot_no_idle"
+            },
+            {
+              "c.weapon_charge_action.3st": "q.variant == 0 && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_charge') && !v.is_first_person && !v.pilot_no_idle"
+            },
+            {
+              "weapon_charge_star.1st": "q.variant == 0 && q.is_item_name_any('slot.weapon.mainhand', 0, 'coldsink:weapon_charge') && v.is_first_person"
+            }
+          ],
+          "transitions": [
+            {
+              "default": "v.is_paperdoll"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

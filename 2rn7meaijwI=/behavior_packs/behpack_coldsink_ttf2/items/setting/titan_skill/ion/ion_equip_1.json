@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "coldsink:ion_equip_1",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.arrow"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "ion_equip_1",
+      "minecraft:display_name": {
+        "value": "§b【缠结能量】 §f分裂枪默认形态下命中将回复能量"
+      },
+      "minecraft:use_modifiers": {
+        "use_duration": 99999,
+        "movement_modifier": 1
+      },
+      "minecraft:food": {
+        "can_always_eat": true
+      },
+      "minecraft:cooldown": {
+        "category": "setting",
+        "duration": 1
+      },
+      "minecraft:hand_equipped": false
+    }
+  }
+}

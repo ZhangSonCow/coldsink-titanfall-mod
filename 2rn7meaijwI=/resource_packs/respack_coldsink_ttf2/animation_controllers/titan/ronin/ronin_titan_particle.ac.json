@@ -1,0 +1,93 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ronin_titan_particle": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "particle": "q.property('titan:action') == 3 && q.property('titan:weapon_value') > 0"
+            }
+          ]
+        },
+        "particle": {
+          "animations": [
+            "ronin_titan.particle"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 3 || q.property('titan:weapon_value') == 0"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.ronin_titan_particle.1st": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "particle": "q.property('titan:action') == 3 && q.property('titan:weapon_value') > 0"
+            }
+          ]
+        },
+        "particle": {
+          "animations": [
+            "ronin_titan.particle.1st"
+          ],
+          "transitions": [
+            {
+              "default": "q.property('titan:action') != 3 || q.property('titan:weapon_value') == 0"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.ronin_titan.sword_arc.particle": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "particle": "q.is_sheared && !q.is_sprinting"
+            }
+          ]
+        },
+        "particle": {
+          "animations": [
+            "ronin_titan.sword_arc.particle"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_sheared || q.is_sprinting"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.ronin_titan.sword_arc.particle.1st": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "particle": "q.is_sheared && !q.is_sprinting"
+            }
+          ]
+        },
+        "particle": {
+          "animations": [
+            "ronin_titan.sword_arc.particle.1st"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_sheared || q.is_sprinting"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

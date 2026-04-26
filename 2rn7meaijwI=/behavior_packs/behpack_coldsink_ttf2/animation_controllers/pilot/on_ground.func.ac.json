@@ -1,0 +1,102 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.on_ground.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "jump": "!q.is_on_ground"
+            },
+            {
+              "sliding_pre": "q.is_sprinting"
+            }
+          ],
+          "on_entry": [
+            "/tag @s[tag=sliding_jump] add sliding_jump_self",
+            "/execute @s[tag=sliding_jump] ~~~ summon coldsink:sliding_jump_tool ^^^-5"
+          ]
+        },
+        "jump": {
+          "animations": [
+            "check_slip_wall"
+          ],
+          "transitions": [
+            {
+              "sliding": "q.is_sneaking && q.is_on_ground"
+            },
+            {
+              "default": "!q.is_sneaking && q.is_on_ground"
+            }
+          ],
+          "on_entry": [
+            "/tag @s remove is_slip_wall",
+            "/event entity @s[scores={slip_bool=0}] over_slip_wall"
+          ],
+          "on_exit": [
+            "/tag @s remove pre_jump",
+            "/tag @s remove jump_over",
+            "/tag @s remove sliding_jump",
+            "/event entity @s[tag=!titan_camera] set_action_0"
+          ]
+        },
+        "sliding_pre": {
+          "transitions": [
+            {
+              "default": "!q.is_sprinting && q.is_on_ground && !q.is_sneaking"
+            },
+            {
+              "jump": "!q.is_on_ground"
+            },
+            {
+              "sliding": "q.is_sneaking"
+            }
+          ]
+        },
+        "sliding": {
+          "transitions": [
+            {
+              "sliding_jump": "q.is_jumping"
+            },
+            {
+              "sliding_riding": "q.is_riding"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add begin_slide_self",
+            "/summon coldsink:sliding_ride_tool ^^0.1^0.3",
+            "/tag @s add is_sliding"
+          ]
+        },
+        "sliding_riding": {
+          "transitions": [
+            {
+              "sliding_jump": "q.is_jumping"
+            },
+            {
+              "default": "!q.is_riding"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s set_action_55"
+          ],
+          "on_exit": [
+            "/event entity @s stop_sneak_after_slide",
+            "/event entity @s set_action_0"
+          ]
+        },
+        "sliding_jump": {
+          "transitions": [
+            {
+              "default": "!q.is_riding"
+            }
+          ],
+          "on_exit": [
+            "/tag @s add sliding_jump"
+          ]
+        }
+      }
+    }
+  }
+}

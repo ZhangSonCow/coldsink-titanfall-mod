@@ -1,0 +1,273 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.pilot_ai_melee.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.3": [
+          "/tag @s add pilot_melee_self",
+          "/execute @s[tag=team_blue,tag=!dead] ^^3^ scoreboard players operation @e[tag=!team_blue,family=!titan,family=!tool,type=!item,type=!xp_orb,r=5] death_check = @s titan_self",
+          "/execute @s[tag=team_red,tag=!dead] ^^3^ scoreboard players operation @e[tag=!team_red,family=!titan,family=!tool,type=!item,type=!xp_orb,r=5] death_check = @s titan_self",
+          "/execute @s[tag=team_blue,tag=!dead] ^^3^ execute @e[tag=!team_blue,family=!titan,family=!tool,type=!item,type=!xp_orb,r=5] ~~~ scoreboard players add @p[tag=pilot_melee_self] pilot_attack 20",
+          "/execute @s[tag=team_red,tag=!dead] ^^3^ execute @e[tag=!team_red,family=!titan,family=!tool,type=!item,type=!xp_orb,r=5] ~~~ scoreboard players add @p[tag=pilot_melee_self] pilot_attack 20",
+          "/execute @s[tag=team_blue,tag=!dead] ^^3^ execute @e[tag=!team_blue,family=!titan,family=!tool,type=!item,type=!xp_orb,r=5,c=1] ~~~ event entity @p[tag=pilot_melee_self] shoot_get_core",
+          "/execute @s[tag=team_red,tag=!dead] ^^3^ execute @e[tag=!team_red,family=!titan,family=!tool,type=!item,type=!xp_orb,r=5,c=1] ~~~ event entity @p[tag=pilot_melee_self] shoot_get_core",
+          "/tag @s remove pilot_melee_self",
+
+          "/execute @s[tag=team_blue,tag=!dead] ^^3^ damage @e[tag=!team_blue,family=!titan,family=!tool,type=!item,type=!xp_orb,r=5] 20 suicide entity @s",
+          "/execute @s[tag=team_red,tag=!dead] ^^3^ damage @e[tag=!team_red,family=!titan,family=!tool,type=!item,type=!xp_orb,r=5] 20 suicide entity @s"
+        ],
+        "0.75": [
+          "/event entity @s set_other_action_0"
+        ]
+      }
+    },
+    "animation.pilot_ai_timer_core.func": {
+      "loop": true,
+      "animation_length": 2.0,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players add @s[scores={pilot_core=..99},tag=can_call_titan] pilot_core 1",
+          "/event entity @s[scores={pilot_core=100..},tag=can_call_titan] call_titan_random"
+        ]
+      }
+    },
+    "animation.pilot_ai_two_jump.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.5": [
+          "/scoreboard players random @s random_score 1 10",
+          "/event entity @s[scores={random_score=1..7}] set_action_2"
+        ]
+      }
+    },
+    "animation.pilot_ai_check_slip_wall.func": {
+      "loop": true,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players set @s slip_bool 1",
+          "/execute @s ~~~ detect ^1^^ air 0 execute @s ~~~ detect ^-1^^ air 0 scoreboard players set @s slip_bool 0",
+          "/execute @s ~~~ detect ^1^1^ air 0 execute @s ~~~ detect ^-1^1^ air 0 scoreboard players set @s slip_bool 0",
+          "/execute @s ~~~ detect ~~~ water -1 scoreboard players set @s slip_bool 0",
+          "/execute @s[scores={slip_bool=1},tag=!is_slip_wall] ~~~ detect ^-1^^ air 0 event entity @s set_action_3",
+          "/execute @s[scores={slip_bool=1},tag=!is_slip_wall] ~~~ detect ^1^^ air 0 event entity @s set_action_4",
+          "/tag @s[scores={slip_bool=1}] add is_slip_wall",
+          "/event entity @s[scores={slip_bool=0},tag=is_slip_wall] set_action_0",
+          "/tag @s[scores={slip_bool=0}] remove is_slip_wall"
+        ]
+      }
+    },
+    "animation.pilot_ai_slip_wall.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/effect @s slow_falling 1 0 true",
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "0.1": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "0.2": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "0.3": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "0.4": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "0.5": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "0.6": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "0.7": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "1": [
+          "/effect @s slow_falling 1 0 true",
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "0.9": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "1.0": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "1.1": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "1.2": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "1.3": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "1.4": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "1.5": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "1.6": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "1.7": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "1.8": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "1.9": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "2.0": [
+          "/effect @s slow_falling 1 0 true",
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "2.1": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "2.2": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "2.3": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "2.4": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "2.5": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "2.6": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "2.7": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "2.8": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "2.9": [
+          "/summon coldsink:slip_wall_tool_ai ^^^-1"
+        ],
+        "3.0": [
+          "/event entity @s set_action_0"
+        ]
+      }
+    },
+    "animation.pilot_ai_leave_wall.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players random @s action_random 1 3"
+        ],
+        "1.0": [
+          "/event entity @s[scores={action_random=1}] set_action_0",
+          "/tag @s[scores={action_random=1}] remove is_slip_wall"
+        ],
+        "2.0": [
+          "/event entity @s[scores={action_random=2}] set_action_0",
+          "/tag @s[scores={action_random=2}] remove is_slip_wall"
+        ],
+        "3.0": [
+          "/event entity @s[scores={action_random=3}] set_action_0",
+          "/tag @s[scores={action_random=3}] remove is_slip_wall"
+        ]
+      }
+    },
+    "animation.pilot_ai_slide_trigger.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players random @s action_random 1 5"
+        ],
+        "2.0": [
+          "/event entity @s[scores={action_random=1}] set_action_5"
+        ],
+        "3.5": [
+          "/event entity @s[scores={action_random=2}] set_action_5"
+        ],
+        "5": [
+          "/event entity @s[scores={action_random=3}] set_action_5"
+        ],
+        "6.5": [
+          "/event entity @s[scores={action_random=4}] set_action_5"
+        ],
+        "8.0": [
+          "/event entity @s set_action_5"
+        ]
+      }
+    },
+    "animation.pilot_ai_slide_over.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players random @s action_random 1 5"
+        ],
+        "1.0": [
+          "/event entity @s[scores={action_random=1}] set_action_0",
+          "/ride @s[scores={action_random=1}] stop_riding"
+        ],
+        "2.0": [
+          "/event entity @s[scores={action_random=2}] set_action_0",
+          "/ride @s[scores={action_random=2}] stop_riding"
+        ],
+        "3.0": [
+          "/event entity @s[scores={action_random=3}] set_action_0",
+          "/ride @s[scores={action_random=3}] stop_riding"
+        ],
+        "4.0": [
+          "/event entity @s[scores={action_random=4}] set_action_0",
+          "/ride @s[scores={action_random=4}] stop_riding"
+        ],
+        "5.0": [
+          "/event entity @s set_action_0",
+          "/ride @s stop_riding"
+        ]
+      }
+    },
+    "animation.pilot_ai_rodeo_trigger.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.5": [
+          "/event entity @s[tag=!pilot_rodeo] check_rodeo_titan"
+        ]
+      }
+    },
+    "animation.pilot_ai_rodeo_idle_leave.func": {
+      "loop": false,
+      "animation_length": 20.0,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players random @s[type=coldsink:pilot_ai] action_random 1 5"
+        ],
+        "1.0": [
+          "/ride @s[type=coldsink:pilot_ai,scores={action_random=1}] stop_riding"
+        ],
+        "3.0": [
+          "/ride @s[type=coldsink:pilot_ai,scores={action_random=2}] stop_riding"
+        ],
+        "5.0": [
+          "/ride @s[type=coldsink:pilot_ai,scores={action_random=3}] stop_riding"
+        ],
+        "8.0": [
+          "/ride @s[type=coldsink:pilot_ai,scores={action_random=4}] stop_riding"
+        ],
+        "12.0": [
+          "/ride @s[type=coldsink:pilot_ai] stop_riding"
+        ]
+      }
+    }
+  }
+}

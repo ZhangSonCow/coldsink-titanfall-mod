@@ -1,0 +1,49 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.legion_titan.shield": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "shield": "q.is_saddled"
+            }
+          ]
+        },
+        "shield": {
+          "animations": [
+            "legion_titan.shield_spawn"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_saddled"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.legion_titan.shield.1st": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "shield": "q.is_saddled"
+            }
+          ]
+        },
+        "shield": {
+          "animations": [
+            "legion_titan.shield_spawn.1st"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_saddled"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ion_skill_0.func": {
+      "loop": true,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/execute @s ^^^5 execute @e[family=bullet,family=!empty_bullet,r=12] ~~~ tag @p[tag=energy_shield] add ion_get_bullet",
+          "/execute @s ^^^5 execute @e[family=bullet,r=12] ~~~ execute @s[family=arc_bullet] ~~~ event entity @p[tag=energy_shield,tag=is_ion] add_cooldown_0_12",
+          "/execute @s ^^^5 event entity @e[family=bullet,r=12] down"
+        ]
+      }
+    },
+    "animation.ion_skill_0_timer.func": {
+      "loop": true,
+      "animation_length": 0.5,
+      "timeline": {
+        "0.0": [
+          "/event entity @s add_cooldown_0_12"
+        ]
+      }
+    },
+    "animation.ion_skill_0_pre.func": {
+      "loop": true,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.1": [
+          "/event entity @s set_action_15"
+        ]
+      }
+    },
+    "animation.ion_skill_0_after.func": {
+      "loop": true,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.25": [
+          "/event entity @s set_action_0"
+        ]
+      }
+    },
+    "animation.ion_skill_0_back.func": {
+      "loop": true,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.63": [
+          "/event entity @s set_action_0"
+        ]
+      }
+    }
+  }
+}

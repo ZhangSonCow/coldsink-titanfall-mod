@@ -1,0 +1,14 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ion_energy.func": {
+      "loop": true,
+      "animation_length": 0.5,
+      "timeline": {
+        "0.0": [
+          "/event entity @s[tag=!energy_shield] remove_cooldown_0_8"
+        ]
+      }
+    }
+  }
+}

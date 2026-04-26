@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.legion_ai_shield.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "skill": "q.is_saddled"
+            }
+          ]
+        },
+        "skill": {
+          "animations": [
+            "legion_ai_shield"
+          ],
+          "transitions": [
+            {
+              "default": "!q.is_saddled"
+            }
+          ],
+          "on_entry": [
+            "/event entity @s legion_shield_begin",
+            "/ride @s[tag=team_blue] summon_rider coldsink:legion_shield_blue",
+            "/ride @s[tag=team_red] summon_rider coldsink:legion_shield_red"
+          ],
+          "on_exit": [
+            "/event entity @s legion_shield_end"
+          ]
+        }
+      }
+    }
+  }
+}

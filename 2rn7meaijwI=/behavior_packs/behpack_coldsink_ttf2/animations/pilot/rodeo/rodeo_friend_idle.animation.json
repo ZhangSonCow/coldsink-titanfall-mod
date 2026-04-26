@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.rodeo_friend_idle": {
+      "loop": false,
+      "animation_length": 8.1,
+      "timeline": {
+        "0.0": [
+          "/title @s[type=player,tag=!core_title] actionbar §b训牛友方泰坦-搭便车",
+          "/title @s[type=player,tag=core_title] actionbar §a给予电池 §f+10%",
+          "/tag @s remove core_title",
+          "/execute @s[tag=team_blue] ~~-7~ tag @e[family=titan,family=!tool,tag=team_blue,c=1] add has_rodeo",
+          "/execute @s[tag=team_red] ~~-7~ tag @e[family=titan,family=!tool,tag=team_red,c=1] add has_rodeo",
+          "/execute @s[tag=team_blue] ~~-7~ execute @e[family=titan,family=!tool,tag=team_blue,c=1] ~~~ execute @s[tag=has_rider] ~~~ tellraw @p[tag=is_titan,tag=team_blue] {\"rawtext\":[{\"text\":\"§b让友方铁驭 §f\"},{\"selector\":\"@e[family=pilot,tag=is_rodeo,tag=team_blue,r=8,c=1]\"},{\"rawtext\":[{\"text\":\"§b 搭便车\"}]}",
+          "/execute @s[tag=team_red] ~~-7~ execute @e[family=titan,family=!tool,tag=team_red,c=1] ~~~ execute @s[tag=has_rider] ~~~ tellraw @p[tag=is_titan,tag=team_red] {\"rawtext\":[{\"text\":\"§b让友方铁驭 §f\"},{\"selector\":\"@e[family=pilot,tag=is_rodeo,tag=team_red,r=8,c=1]\"},{\"rawtext\":[{\"text\":\"§b 搭便车\"}]}"
+        ]
+      }
+    }
+  }
+}

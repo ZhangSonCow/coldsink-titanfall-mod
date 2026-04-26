@@ -1,0 +1,195 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:ronin_titan_ai",
+      "animations": {
+        "health_bar": "animation.health_bar_3",
+        "health_bar_danger": "animation.health_bar_3_danger",
+        "titan_loading_fire.particle": "animation.titan_loading_fire.particle",
+        "titan_look_rotate": "animation.titan_look_rotate",
+        "titan_eye_blue": "animation.titan_eye_blue_ronin",
+        "titan_eye_red": "animation.titan_eye_red_ronin",
+        "titan_weapon_back_yes": "animation.titan_weapon_back_yes",
+        "titan_weapon_back_no": "animation.titan_weapon_back_no",
+        "c.titan_damage_fire": "controller.animation.titan_damage_fire",
+        "damage_fire_1": "animation.ronin_titan.damage_fire_1",
+        "damage_fire_2": "animation.ronin_titan.damage_fire_2",
+        "damage_fire_3": "animation.ronin_titan.damage_fire_3",
+        "damage_fire_4": "animation.ronin_titan.damage_fire_4",
+
+        "titan_ai_terminate": "controller.animation.titan_ai_terminate",
+        "terminate_1": "animation.ronin_titan.terminate_1",
+        "terminate_2": "animation.ronin_titan.terminate_2",
+
+        "c.ronin_titan_ai.arm": "controller.animation.ronin_titan_ai.arm",
+        "c.ronin_titan_ai.leg": "controller.animation.ronin_titan_ai.leg",
+        "c.ronin_titan_ai.weapon_back": "controller.animation.ronin_titan_ai.weapon_back",
+        "c.ronin_titan_ai.particle": "controller.animation.ronin_titan_ai.particle",
+
+        "ronin_titan.loading": "animation.ronin_titan.loading",
+        "ronin_titan.loading_fast": "animation.ronin_titan.loading_fast",
+        "ronin_titan.loaded": "animation.ronin_titan.loaded",
+        "ronin_titan.standing": "animation.ronin_titan.standing",
+        "ronin_titan.idle.leg": "animation.ronin_titan.idle.leg",
+        "ronin_titan.walk.leg": "animation.ronin_titan.walk.leg",
+        "ronin_titan.move.leg": "animation.ronin_titan.move.leg",
+        "ronin_titan.spurt.leg": "animation.ronin_titan.spurt.leg",
+        "ronin_titan.idle.arm": "animation.ronin_titan.idle.arm",
+        "ronin_titan.idle_sword.arm": "animation.ronin_titan.idle_sword.arm",
+        "ronin_titan.fire": "animation.ronin_titan.fire_ai",
+        "ronin_titan.particle": "animation.ronin_titan.particle",
+        "ronin_titan.melee": "animation.ronin_titan.melee",
+        "ronin_titan.melee_core_1": "animation.ronin_titan.melee_core_1",
+        "ronin_titan.melee_core_2": "animation.ronin_titan.melee_core_2",
+        "ronin_titan.melee_core_3": "animation.ronin_titan.melee_core_3",
+        "ronin_titan.defend_1": "animation.ronin_titan.defend_1",
+        "ronin_titan.defend_2": "animation.ronin_titan.defend_2",
+        "ronin_titan.defend_3": "animation.ronin_titan.defend_3",
+        "ronin_titan.arc": "animation.ronin_titan.arc",
+        "ronin_titan.arc_after": "animation.ronin_titan.arc_after",
+        "ronin_titan.arc_core": "animation.ronin_titan.arc_core",
+        "ronin_titan.arc_core_after": "animation.ronin_titan.arc_core_after"
+      },
+      "particle_effects": {
+        "titan_loading_around": "titan:titan_loading_around",
+        "titan_loading_break": "titan:titan_loading_break",
+        "titan_load_shield_blue": "titan:titan_load_shield_blue",
+        "titan_load_shield_red": "titan:titan_load_shield_red",
+        "titan_eye_blue_1": "titan:titan_eye_blue_1",
+        "titan_eye_blue_2": "titan:titan_eye_blue_2",
+        "titan_eye_red_1": "titan:titan_eye_red_1",
+        "titan_eye_red_2": "titan:titan_eye_red_2",
+        "titan_damage_fire_1": "titan:titan_damage_fire_1",
+        "titan_damage_fire_2": "titan:titan_damage_fire_2",
+        "titan_damage_fire_3": "titan:titan_damage_fire_3",
+        "titan_damage_fire_4": "titan:titan_damage_fire_4",
+        "titan_spurt_jet": "titan:titan_spurt_jet",
+
+        "ronin_fire": "coldsink:ronin_fire",
+        "ronin_sword_in": "titan:ronin_sword_in",
+        "ronin_sword_out": "titan:ronin_sword_out",
+        "ronin_sword_core_in": "titan:ronin_sword_core_in",
+        "ronin_sword_core_out": "titan:ronin_sword_core_out",
+        "ronin_sword_arc": "titan:ronin_sword_arc"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.random_choices = math.random(0, 100);"
+        ],
+        "initialize": [
+          "v.health_last = q.max_health;" // 白条过渡
+        ],
+        "animate": [
+          "c.ronin_titan_ai.particle",
+          {
+            "c.ronin_titan_ai.weapon_back": "q.property('titan:action') == 0 || (q.property('titan:action') > 10 && q.property('titan:action') < 98)"
+          },
+          {
+            "titan_eye_blue": "q.property('titan:team') == 1 && !q.is_saddled"
+          },
+          {
+            "titan_eye_red": "q.property('titan:team') == 2 && !q.is_saddled"
+          },
+          {
+            "c.titan_damage_fire": "!q.is_riding && !q.is_saddled"
+          },
+          {
+            "titan_look_rotate": "q.property('titan:action') == 0 || (q.property('titan:action') > 10 && q.property('titan:action') < 98)"
+          },
+          {
+            "c.ronin_titan_ai.arm": "q.property('titan:action') == 0 || (q.property('titan:action') > 10 && q.property('titan:action') < 98)"
+          },
+          {
+            "c.ronin_titan_ai.leg": "!q.is_riding && q.property('titan:action') == 0 || (q.property('titan:action') > 10 && q.property('titan:action') < 98)"
+          },
+          {
+            "health_bar": "q.health > 2500 && q.property('titan:show_health')"
+          },
+          {
+            "health_bar_danger": "q.health <= 2500 && q.property('titan:show_health')"
+          },
+          {
+            "ronin_titan.loading": "q.property('titan:action') == 1"
+          },
+          {
+            "ronin_titan.loading_fast": "q.property('titan:action') == 5"
+          },
+          {
+            "titan_loading_fire.particle": "q.property('titan:action') == 1 || q.property('titan:action') == 5"
+          },
+          {
+            "ronin_titan.loaded": "q.property('titan:action') == 2"
+          },
+          {
+            "ronin_titan.standing": "q.property('titan:action') == 4"
+          },
+          "titan_ai_terminate"
+        ]
+      },
+      "materials": {
+        "default": "entity_alphatest",
+        "blend": "entity_alphablend",
+        "netease_entity_metallic": "netease_entity_alphablend_metallic",
+        "netease_bloom_light_entity": "demo_bloom_entity"
+      },
+      "textures": {
+        "ronin_titan": "textures/entity/titan/ronin/ronin_titan",
+        "ronin_titan_light": "textures/entity/titan/ronin/ronin_titan_light",
+        "ronin_titan_light_blue": "textures/entity/titan/ronin/ronin_titan_light_blue",
+        "ronin_titan_light_red": "textures/entity/titan/ronin/ronin_titan_light_red",
+        "ronin_titan_1": "textures/entity/titan/ronin/ronin_titan_1",
+        "ronin_titan_2": "textures/entity/titan/ronin/ronin_titan_2",
+        "ronin_titan_3": "textures/entity/titan/ronin/ronin_titan_3",
+        "ronin_titan_4": "textures/entity/titan/ronin/ronin_titan_4",
+        "ronin_titan_5": "textures/entity/titan/ronin/ronin_titan_5",
+        "ronin_titan_6": "textures/entity/titan/ronin/ronin_titan_6",
+        "ronin_titan_7": "textures/entity/titan/ronin/ronin_titan_7",
+        "ronin_titan_8": "textures/entity/titan/ronin/ronin_titan_8",
+        "titan_load_shield_blue": "textures/entity/titan/titan_load_shield_blue",
+        "titan_load_shield_red": "textures/entity/titan/titan_load_shield_red",
+        "health_bar": "textures/entity/titan/health_bar_team",
+        "pilot_player": "textures/entity/steve"
+      },
+      "geometry": {
+        "ronin_titan": "geometry.ronin_titan",
+        "ronin_titan_light": "geometry.ronin_titan_light",
+        "health_bar_blue": "geometry.health_bar_3_blue",
+        "health_bar_danger_blue": "geometry.health_bar_3_danger_blue",
+        "health_bar_red": "geometry.health_bar_3_red",
+        "health_bar_danger_red": "geometry.health_bar_3_danger_red",
+        "pilot_player": "geometry.pilot_player"
+      },
+      "render_controllers": [
+        {
+          "controller.render.ronin_titan_ai": "!q.is_riding && q.property('titan:action') != 3 && !(q.property('titan:action') > 5 && q.property('titan:action') < 10)"
+        },
+        {
+          "controller.render.ronin_titan_light_blue": "!q.is_riding && q.property('titan:action') != 3 && !(q.property('titan:action') > 5 && q.property('titan:action') < 10) && q.property('titan:team') == 1"
+        },
+        {
+          "controller.render.ronin_titan_light_red": "!q.is_riding && q.property('titan:action') != 3 && !(q.property('titan:action') > 5 && q.property('titan:action') < 10) && q.property('titan:team') == 2"
+        },
+        {
+          "controller.render.health_bar_blue": "q.health > 2500 && q.property('titan:team') == 1 && q.property('titan:action') != 1 && q.property('titan:show_health')"
+        },
+        {
+          "controller.render.health_bar_danger_blue": "q.health <= 2500 && q.property('titan:team') == 1 && q.property('titan:show_health')"
+        },
+        {
+          "controller.render.health_bar_red": "q.health > 2500 && q.property('titan:team') == 2 && q.property('titan:action') != 1 && q.property('titan:show_health')"
+        },
+        {
+          "controller.render.health_bar_danger_red": "q.health <= 2500 && q.property('titan:team') == 2 && q.property('titan:show_health')"
+        },
+        // 被处决时渲染铁驭
+        {
+          "controller.render.pilot_player_ai": "q.property('titan:action') == 10"
+        }
+      ],
+      "spawn_egg": {
+        "texture": "ronin_titan_icon"
+      }
+    }
+  }
+}

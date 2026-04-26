@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.weapon_aim_ctrl.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "aim": "q.property('titan:weapon_aim') && !q.is_sprinting && ( q.property('titan:action') < 3 || (q.variant == 3 && q.property('titan:action') == 11) || (q.variant == 7 && q.property('titan:action') > 10 && q.property('titan:action') < 15) )"
+            }
+          ]
+        },
+        "aim": {
+          "transitions": [
+            {
+              "default": "!( q.property('titan:weapon_aim') && !q.is_sprinting && ( q.property('titan:action') < 3 || (q.variant == 3 && q.property('titan:action') == 11) || (q.variant == 7 && q.property('titan:action') > 10 && q.property('titan:action') < 15) ) )"
+            }
+          ],
+          "on_entry": [
+            "/effect @s slowness 99999 4 true",
+            "/tag @s add weapon_aim"
+          ],
+          "on_exit": [
+            "/effect @s[tag=!legion_range_aim] slowness 0 5 true",
+            "/tag @s remove weapon_aim"
+          ]
+        }
+      }
+    }
+  }
+}

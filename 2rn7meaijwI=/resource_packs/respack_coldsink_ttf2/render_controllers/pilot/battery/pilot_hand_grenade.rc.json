@@ -1,0 +1,15 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.pilot_hand_grenade": {
+      "geometry": "geometry.pilot_hand_grenade",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.pilot_hand_grenade" ],
+      "is_hurt_color": {}
+    }
+  }
+}

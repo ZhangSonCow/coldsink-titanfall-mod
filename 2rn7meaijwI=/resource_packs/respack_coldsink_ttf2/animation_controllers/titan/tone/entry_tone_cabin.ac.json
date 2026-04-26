@@ -1,0 +1,102 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.entry_tone_cabin": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "entry_loaded": "q.property('titan:action') == 120"
+            },
+            {
+              "entry_front": "q.property('titan:action') == 122"
+            },
+            {
+              "entry_back": "q.property('titan:action') == 123"
+            },
+            {
+              "entry_top": "q.property('titan:action') == 124"
+            },
+            {
+              "exit_cabin": "q.property('titan:action') == 125"
+            }
+          ]
+        },
+        "entry_loaded": {
+          "animations": [
+            "tone_titan.loaded",
+            "tone_titan.pilot_entry_loaded"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "standing": "q.property('titan:action') == 121"
+            }
+          ]
+        },
+        "standing": {
+          "animations": [
+            "tone_titan.standing",
+            "tone_titan.pilot_entry_standing"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "entry_front": {
+          "animations": [
+            "tone_titan.entry_stand_front",
+            "tone_titan.pilot_entry_front"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "entry_back": {
+          "animations": [
+            "tone_titan.entry_stand_back",
+            "tone_titan.pilot_entry_back"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "entry_top": {
+          "animations": [
+            "tone_titan.entry_stand_top",
+            "tone_titan.pilot_entry_top"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        },
+        "exit_cabin": {
+          "animations": [
+            "tone_titan.exit_cabin",
+            "tone_titan.pilot_exit_cabin"
+          ],
+          "blend_transition": 0.1,
+          "transitions": [
+            {
+              "default": "q.property('titan:action') == 0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

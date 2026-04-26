@@ -1,0 +1,118 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    // 圆顶降落
+    "animation.titan_loading.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/event entity @s flash_titan_skin",
+          "/event entity @s turn_yes_shield",
+          "/event entity @s[family=titan_ai] remove_titan_ai_action",
+          "/playsound titan_falling @a[y=~-200,r=24]",
+          "/tag @s add titan_falling",
+          "/tag @s add titan_staic",
+          "/tp @s ~~-199~",
+          "/execute @s[tag=call_by_player] ~~~ function titan/get_titan_player_tag"
+        ],
+        "4.5": [
+          "/execute @s[tag=team_blue] ~~~ scoreboard players operation @e[tag=!team_blue,r=5] death_check = @s titan_self",
+          "/execute @s[tag=team_red] ~~~ scoreboard players operation @e[tag=!team_red,r=5] death_check = @s titan_self",
+          "/execute @s[tag=team_blue] ~~~ kill @e[tag=!team_blue,r=5]",
+          "/execute @s[tag=team_red] ~~~ kill @e[tag=!team_red,r=5]",
+          "/particle titan:landing_all ~~~",
+          "/event entity @a[r=16] titan_loaded_shake"
+        ],
+        "5.0": [
+          "/playanimation @s[tag=team_blue] animation.titan_load_shield_blue",
+          "/playanimation @s[tag=team_red] animation.titan_load_shield_red"
+        ],
+        "5.5": [
+          "/event entity @s set_action_2",
+          "/tag @s remove titan_falling"
+        ]
+      }
+    },
+    // 曲速降落
+    "animation.titan_loading_fast.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/event entity @s flash_titan_skin",
+          "/event entity @s turn_yes_shield",
+          "/event entity @s[family=titan_ai] remove_titan_ai_action",
+          "/playsound titan_falling_fast @a[y=~-200,r=24]",
+          "/tag @s add titan_falling",
+          "/tag @s add titan_staic",
+          "/tp @s ~~-199~",
+          "/execute @s[tag=call_by_player] ~~~ function titan/get_titan_player_tag"
+        ],
+        "2.08": [
+          "/execute @s[tag=team_blue] ~~~ scoreboard players operation @e[tag=!team_blue,r=5] death_check = @s titan_self",
+          "/execute @s[tag=team_red] ~~~ scoreboard players operation @e[tag=!team_red,r=5] death_check = @s titan_self",
+          "/execute @s[tag=team_blue] ~~~ kill @e[tag=!team_blue,r=5]",
+          "/execute @s[tag=team_red] ~~~ kill @e[tag=!team_red,r=5]",
+          "/particle titan:landing_all ~~~",
+          "/event entity @a[r=16] titan_loaded_shake"
+        ],
+        "3.5": [
+          "/event entity @s set_action_4",
+          "/tag @s remove titan_falling"
+        ]
+      }
+    },
+    // 泰坦争斗降落
+    "animation.loading_fast_player.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/function titan/titan_check_belong",
+          "/event entity @s get_titan_skin",
+          "/event entity @s turn_yes_shield",
+          "/playsound titan_falling_fast @a[r=24]",
+          "/playsound titan_falling_fast @p[tag=is_pilot,scores={titan_check=0}]",
+          "/tag @s add titan_falling",
+          "/tag @s add titan_staic",
+          "/tp @s ~~~ ~ 0",
+          "/event entity @s set_action_5",
+          "/camera @p[tag=is_pilot,scores={titan_check=0}] set minecraft:free pos ^^80^-8 facing ^^-5^8",
+          "/camera @p[tag=is_pilot,scores={titan_check=0}] set minecraft:free ease 2.5 in_expo pos ^^5^-12 facing ^^1^-8",
+          "/effect @p[tag=is_pilot,scores={titan_check=0}] invisibility 4 0 true",
+          "/tag @p[tag=is_pilot,scores={titan_check=0}] add titan_loading_player"
+        ],
+        "2.08": [
+          "/particle titan:landing_all ~~~",
+          "/event entity @a[r=16,tag=!is_titan] titan_loaded_shake",
+          "/event entity @s set_action_4"
+        ],
+        "2.5": [
+          "/function titan/titan_check_belong",
+          "/camera @p[tag=is_pilot,scores={titan_check=0}] set minecraft:free ease 1 out_quad pos ~~5~ facing ~~5~"
+        ],
+        "3.0": [
+          "/function titan/titan_check_belong",
+          "/camera @p[tag=is_pilot,scores={titan_check=0}] fade time 0.25 0.5 0.25 color 0 0 0"
+        ],
+        "3.5": [
+          "/function titan/titan_check_belong",
+          "/event entity @p[tag=is_pilot,scores={titan_check=0}] player_hurt_no",
+          "/tag @s remove titan_falling",
+          "/tag @s remove titan_staic",
+          "/camera @p[tag=is_pilot,scores={titan_check=0}] clear",
+          "/inputpermission set @p[tag=is_pilot,scores={titan_check=0}] camera enabled",
+          "/inputpermission set @p[tag=is_pilot,scores={titan_check=0}] movement enabled",
+          "/event entity @s summon_ride_tool",
+          "/event entity @s set_action_0",
+          "/event entity @s turn_no_shield",
+          "/event entity @s loading_player_false",
+          "/effect @p[tag=is_pilot,scores={titan_check=0}] invisibility 0 1 true",
+          "/tag @p[tag=is_pilot,scores={titan_check=0}] remove titan_loading_player",
+          "/playanimation @p[tag=is_pilot,scores={titan_check=0}] animation.titan_cabin.open_glass"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:battery_powerful",
+      "animations": {
+        "particle": "animation.locator.particle"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "particle": "!q.is_on_ground"
+          }
+        ]
+      },
+      "particle_effects": {
+        "particle": "pilot:battery_powerful_jet"
+      },
+      "materials": {
+        "default": "entity_alphatest",
+        "netease_entity_metallic": "netease_entity_alphablend_metallic",
+        "netease_bloom_light_entity": "demo_bloom_entity"
+      },
+      "textures": {
+        "battery_powerful": "textures/entity/z_other/battery/battery_powerful",
+        "battery_light": "textures/entity/z_other/battery/battery_light"
+      },
+      "geometry": {
+        "battery": "geometry.battery",
+        "battery_light": "geometry.battery_light"
+      },
+      "render_controllers": [
+        "controller.render.battery_powerful",
+        "controller.render.battery_powerful_light"
+      ],
+      "spawn_egg": {
+        "texture": "battery_powerful"
+      }
+    }
+  }
+}

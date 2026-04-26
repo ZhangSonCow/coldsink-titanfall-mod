@@ -1,0 +1,36 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.check_titan_follow.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "over_titan_follow"
+          ],
+          "transitions": [
+            {
+              "follow": "q.variant == 0 && q.property('pilot:has_titan') == 1"
+            }
+          ]
+        },
+        "follow": {
+          "animations": [
+            "check_titan_follow"
+          ],
+          "transitions": [
+            {
+              "default": "q.variant > 0 || q.property('pilot:has_titan') != 1"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add titan_follow"
+          ],
+          "on_exit": [
+            "/tag @s remove titan_follow"
+          ]
+        }
+      }
+    }
+  }
+}

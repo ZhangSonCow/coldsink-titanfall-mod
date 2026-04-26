@@ -1,0 +1,26 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.monarch_bullet_self.func": {
+      "loop": false,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players operation @s titan_self = @e[family=monarch_titan,c=1] titan_self",
+          "/execute @s[family=energy_laser] ~~~ execute @e[family=monarch_titan,c=1] ~~~ execute @s[tag=monarch_core_13] ~~~ tag @e[family=energy_laser,c=1] add transform"
+        ]
+      }
+    },
+    "animation.monarch_call_bullet.func": {
+      "loop": false,
+      "animation_length": 0.1,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players operation @s monarch_core_1 = @p[tag=is_pilot] monarch_core_1",
+          "/scoreboard players operation @s monarch_core_2 = @p[tag=is_pilot] monarch_core_2",
+          "/scoreboard players operation @s monarch_core_3 = @p[tag=is_pilot] monarch_core_3"
+        ]
+      }
+    }
+  }
+}

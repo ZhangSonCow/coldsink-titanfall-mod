@@ -1,0 +1,103 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:ion_trap_throw_red",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      // "runtime_identifier": "minecraft:arrow",
+      "animations": {
+        "c.self": "controller.animation.titan_bullet_self.func",
+        "self": "animation.ion_bullet_self.func"
+      },
+      "scripts": {
+        "animate": [ 
+          "c.self"
+        ]
+      }
+    },
+
+    "component_groups": {
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tool" ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.5
+      },
+      "minecraft:ageable": {
+        "duration": 5,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:timer": {
+        "time": 0.1,
+        "time_down_event": {
+          "target": "self",
+          "event": "throw"
+        }
+      },
+      "minecraft:physics": {},
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 32,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "queue_command": {
+          "command": [
+            "tp @s ~~~ facing @e[tag=is_ion,tag=team_red,c=1]"
+          ]
+        }
+      },
+      "spawn_main": {
+        "queue_command": {
+          "command": [
+            "tp @s ~~~ facing @e[tag=is_ion,tag=team_red,c=1]",
+            "tag @s add main"
+          ]
+        }
+      },
+      "throw": {
+        "queue_command": {
+          "command": [
+            "scoreboard players set @s slip_bool 0",
+						"execute @s ~~~ detect ^^-1^-1.8 air -1 scoreboard players set @s slip_bool 1",
+            "tp @s[scores={slip_bool=1}] ^^-1^-1.8",
+            "event entity @s[scores={slip_bool=0}] godie"
+          ]
+        }
+      },
+      "godie": {
+        "queue_command": {
+          "command": [
+            "execute @s[tag=main] ~~~ summon coldsink:ion_trap_red ~~~ spawn_main",
+            "execute @s[tag=!main] ~~~ summon coldsink:ion_trap_red ~~~",
+            "scoreboard players operation @e[type=coldsink:ion_trap_red,c=1] titan_self = @s titan_self",
+            "scoreboard players operation @e[type=coldsink:ion_trap_red,c=1] ion_trap = @s ion_trap",
+            "event entity @s real_godie"
+          ]
+        }
+      },
+      "real_godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

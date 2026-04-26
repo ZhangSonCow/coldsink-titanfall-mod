@@ -1,0 +1,75 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.pilot_ai_death.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "alive": "q.is_alive"
+            }
+          ]
+        },
+        "alive": {
+          "animations": [
+            "pilot_ai_timer_core"
+          ],
+          "transitions": [
+            {
+              "default": "(q.health <= 0 || !q.is_alive) && q.property('pilot:has_battery') == 0"
+            },
+            {
+              "battery_1": "(q.health <= 0 || !q.is_alive) && q.property('pilot:has_battery') == 1"
+            },
+            {
+              "battery_2": "(q.health <= 0 || !q.is_alive) && q.property('pilot:has_battery') == 2"
+            },
+            {
+              "battery_3": "(q.health <= 0 || !q.is_alive) && q.property('pilot:has_battery') == 3"
+            }
+          ],
+          "on_exit": [
+            "/tag @s add dead",
+
+            "/scoreboard players operation @e[tag=team_blue] death_check = @s[tag=team_red] death_check",
+            "/scoreboard players operation @e[tag=team_red] death_check = @s[tag=team_blue] death_check",
+            "/execute @s[tag=team_blue] ~~~ execute @e[tag=team_red] ~~~ scoreboard players operation @s death_check -= @s titan_self",
+            "/execute @s[tag=team_red] ~~~ execute @e[tag=team_blue] ~~~ scoreboard players operation @s death_check -= @s titan_self",
+
+            "/execute @e[scores={death_check=0},family=player,c=1] ~~~ execute @s[tag=call_by_player] ~~~ tag @p[tag=is_titan,y=8,c=1] add is_killer",
+            "/execute @e[scores={death_check=0},family=player,c=1] ~~~ tag @s[tag=!call_by_player] add is_killer",
+            "/execute @s[tag=team_blue] ~~~ tellraw @a {\"rawtext\":[{\"text\":\"§l§c\"},{\"selector\":\"@e[tag=is_killer,tag=team_red,c=1]\"},{\"text\":\" §f[消灭] §b\"},{\"selector\":\"@s\"}]}",
+            "/execute @s[tag=team_red] ~~~ tellraw @a {\"rawtext\":[{\"text\":\"§l§b\"},{\"selector\":\"@e[tag=is_killer,tag=team_blue,c=1]\"},{\"text\":\" §f[消灭] §c\"},{\"selector\":\"@s\"}]}",
+            "/execute @s[tag=team_blue] ~~~ event entity @e[tag=is_killer,tag=team_red,c=1] kill_other_pilot",
+            "/execute @s[tag=team_red] ~~~ event entity @e[tag=is_killer,tag=team_blue,c=1] kill_other_pilot",
+            "/tag @e remove is_killer",
+
+            // 若为地图使用，则铁驭玩家死亡后触发加分命令、记录泰坦值继承给复活的铁驭AI
+            "/execute @s[tag=team_blue] ~~~ execute @p[tag=maper,tag=!no_game] ~~~ setblock 303 -60 1321 redstone_block",
+            "/execute @s[tag=team_red] ~~~ execute @p[tag=maper,tag=!no_game] ~~~ setblock 305 -60 1321 redstone_block",
+            "/execute @s[tag=team_blue,tag=can_call_titan] ~~~ execute @p[tag=maper,tag=!no_game] ~~~ scoreboard players operation pilot_core_blue map = @s pilot_core",
+            "/execute @s[tag=team_red,tag=can_call_titan] ~~~ execute @p[tag=maper,tag=!no_game] ~~~ scoreboard players operation pilot_core_red map = @s pilot_core",
+
+            "/event entity @s godie"
+          ]
+        },
+        "battery_1": {
+          "on_entry": [
+            "/summon coldsink:battery_ordinary"
+          ]
+        },
+        "battery_2": {
+          "on_entry": [
+            "/summon coldsink:battery_powerful"
+          ]
+        },
+        "battery_3": {
+          "on_entry": [
+            "/summon coldsink:battery_overload"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.legion_ai_shield.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "6.0": [
+          "/event entity @s clear_titan_saddled"
+        ]
+      }
+    }
+  }
+}

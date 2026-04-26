@@ -1,0 +1,26 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ronin_skill_3.func": {
+      "loop": true,
+      "animation_length": 0.12,
+      "timeline": {
+        "0.0": [
+          "/scoreboard players remove @s titan_core 1",
+          "/event entity @s remove_core_1",
+          "/event entity @s[scores={titan_core=..0}] set_core_0",
+          "/event entity @s[scores={titan_core=..0}] clear_titan_sheared"
+        ]
+      }
+    },
+    "animation.ronin_skill_3_pre.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.8": [
+          "/event entity @s set_action_0"
+        ]
+      }
+    }
+  }
+}

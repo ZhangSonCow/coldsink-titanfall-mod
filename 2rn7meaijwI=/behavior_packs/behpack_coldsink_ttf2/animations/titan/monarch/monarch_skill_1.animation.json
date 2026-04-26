@@ -1,0 +1,109 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.monarch_skill_1.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/camerashake add @s 0.1 0.6 rotational"
+        ],
+        "0.1": [
+          "/playsound monarch_skill_1 @a[r=64] ~~~",
+          "/event entity @s[tag=!monarch_core_31,tag=team_blue] monarch_missile_blue",
+          "/event entity @s[tag=!monarch_core_31,tag=team_red] monarch_missile_red",
+          "/execute @s[tag=monarch_core_31,tag=team_blue] ~~~ summon coldsink:monarch_trace_missile_blue ^^^2.4",
+          "/execute @s[tag=monarch_core_31,tag=team_red] ~~~ summon coldsink:monarch_trace_missile_red ^^^2.4"
+        ],
+        "0.2": [
+          "/event entity @s[tag=!monarch_core_31,tag=team_blue] monarch_missile_blue",
+          "/event entity @s[tag=!monarch_core_31,tag=team_red] monarch_missile_red",
+          "/execute @s[tag=monarch_core_31,tag=team_blue] ~~~ summon coldsink:monarch_trace_missile_blue ^^^2.4",
+          "/execute @s[tag=monarch_core_31,tag=team_red] ~~~ summon coldsink:monarch_trace_missile_red ^^^2.4"
+        ],
+        "0.3": [
+          "/event entity @s[tag=!monarch_core_31,tag=team_blue] monarch_missile_blue",
+          "/event entity @s[tag=!monarch_core_31,tag=team_red] monarch_missile_red",
+          "/execute @s[tag=monarch_core_31,tag=team_blue] ~~~ summon coldsink:monarch_trace_missile_blue ^^^2.4",
+          "/execute @s[tag=monarch_core_31,tag=team_red] ~~~ summon coldsink:monarch_trace_missile_red ^^^2.4"
+        ],
+        "0.4": [
+          "/event entity @s[tag=!monarch_core_31,tag=team_blue] monarch_missile_blue",
+          "/event entity @s[tag=!monarch_core_31,tag=team_red] monarch_missile_red",
+          "/execute @s[tag=monarch_core_31,tag=team_blue] ~~~ summon coldsink:monarch_trace_missile_blue ^^^2.4",
+          "/execute @s[tag=monarch_core_31,tag=team_red] ~~~ summon coldsink:monarch_trace_missile_red ^^^2.4"
+        ],
+        "0.5": [
+          "/event entity @s[tag=!monarch_core_31,tag=team_blue] monarch_missile_blue",
+          "/event entity @s[tag=!monarch_core_31,tag=team_red] monarch_missile_red",
+          "/execute @s[tag=monarch_core_31,tag=team_blue] ~~~ summon coldsink:monarch_trace_missile_blue ^^^2.4",
+          "/execute @s[tag=monarch_core_31,tag=team_red] ~~~ summon coldsink:monarch_trace_missile_red ^^^2.4"
+        ],
+        "0.6": [
+          "/event entity @s[tag=!monarch_core_31,tag=team_blue] monarch_missile_blue",
+          "/event entity @s[tag=!monarch_core_31,tag=team_red] monarch_missile_red",
+          "/execute @s[tag=monarch_core_31,tag=team_blue] ~~~ summon coldsink:monarch_trace_missile_blue ^^^2.4",
+          "/execute @s[tag=monarch_core_31,tag=team_red] ~~~ summon coldsink:monarch_trace_missile_red ^^^2.4",
+          "/camerashake add @s[tag=monarch_core_12] 0.1 0.6 rotational",
+          "/event entity @s[tag=!monarch_core_12] set_action_17"
+        ],
+        "0.7": [
+          "/playsound monarch_skill_1 @a[r=64] ~~~",
+          "/event entity @s[tag=monarch_core_12,tag=!monarch_core_31,tag=team_blue] monarch_missile_blue",
+          "/event entity @s[tag=monarch_core_12,tag=!monarch_core_31,tag=team_red] monarch_missile_red",
+          "/execute @s[tag=monarch_core_31,tag=team_blue] ~~~ summon coldsink:monarch_trace_missile_blue ^^^2.4",
+          "/execute @s[tag=monarch_core_31,tag=team_red] ~~~ summon coldsink:monarch_trace_missile_red ^^^2.4"
+        ],
+        "0.8": [
+          "/event entity @s[tag=monarch_core_12,tag=!monarch_core_31,tag=team_blue] monarch_missile_blue",
+          "/event entity @s[tag=monarch_core_12,tag=!monarch_core_31,tag=team_red] monarch_missile_red",
+          "/execute @s[tag=monarch_core_31,tag=team_blue] ~~~ summon coldsink:monarch_trace_missile_blue ^^^2.4",
+          "/execute @s[tag=monarch_core_31,tag=team_red] ~~~ summon coldsink:monarch_trace_missile_red ^^^2.4"
+        ],
+        "0.9": [
+          "/event entity @s[tag=monarch_core_12,tag=!monarch_core_31,tag=team_blue] monarch_missile_blue",
+          "/event entity @s[tag=monarch_core_12,tag=!monarch_core_31,tag=team_red] monarch_missile_red",
+          "/execute @s[tag=monarch_core_31,tag=team_blue] ~~~ summon coldsink:monarch_trace_missile_blue ^^^2.4",
+          "/execute @s[tag=monarch_core_31,tag=team_red] ~~~ summon coldsink:monarch_trace_missile_red ^^^2.4"
+        ],
+        "1.0": [
+          "/event entity @s[tag=monarch_core_12,tag=!monarch_core_31,tag=team_blue] monarch_missile_blue",
+          "/event entity @s[tag=monarch_core_12,tag=!monarch_core_31,tag=team_red] monarch_missile_red",
+          "/execute @s[tag=monarch_core_31,tag=team_blue] ~~~ summon coldsink:monarch_trace_missile_blue ^^^2.4",
+          "/execute @s[tag=monarch_core_31,tag=team_red] ~~~ summon coldsink:monarch_trace_missile_red ^^^2.4"
+        ],
+        "1.1": [
+          "/event entity @s[tag=monarch_core_12,tag=!monarch_core_31,tag=team_blue] monarch_missile_blue",
+          "/event entity @s[tag=monarch_core_12,tag=!monarch_core_31,tag=team_red] monarch_missile_red",
+          "/execute @s[tag=monarch_core_31,tag=team_blue] ~~~ summon coldsink:monarch_trace_missile_blue ^^^2.4",
+          "/execute @s[tag=monarch_core_31,tag=team_red] ~~~ summon coldsink:monarch_trace_missile_red ^^^2.4"
+        ],
+        "1.2": [
+          "/event entity @s[tag=monarch_core_12,tag=!monarch_core_31,tag=team_blue] monarch_missile_blue",
+          "/event entity @s[tag=monarch_core_12,tag=!monarch_core_31,tag=team_red] monarch_missile_red",
+          "/execute @s[tag=monarch_core_31,tag=team_blue] ~~~ summon coldsink:monarch_trace_missile_blue ^^^2.4",
+          "/execute @s[tag=monarch_core_31,tag=team_red] ~~~ summon coldsink:monarch_trace_missile_red ^^^2.4",
+          "/event entity @s set_action_17"
+        ]
+      }
+    },
+    "animation.monarch_skill_1_pre.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.25": [
+          "/event entity @s set_action_16"
+        ]
+      }
+    },
+    "animation.monarch_skill_1_after.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.5": [
+          "/event entity @s set_action_0"
+        ]
+      }
+    }
+  }
+}

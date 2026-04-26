@@ -1,0 +1,43 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.model_leash",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root0",
+					"pivot": [0.5, -5, 0]
+				},
+				{
+					"name": "waist0",
+					"parent": "root0",
+					"pivot": [0.625, 9, 0],
+					"cubes": [
+						{
+							"origin": [-5, 0, -5],
+							"size": [10, 10, 10],
+							"uv": {}
+						}
+					],
+					"locators": {
+						"belly": {
+							"offset": [0, 0, 0],
+							"rotation": [180, 0, 0]
+						},
+						"lead": {
+							"offset": [0, 10, 0],
+							"rotation": [-180, 0, 0]
+						}
+					}
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,28 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "coldsink:ion_trap_throw_red",
+      "animations": {
+        "fly": "animation.ion_titan.trap_throw"
+      },
+      "scripts": {
+        "animate": [
+          "fly"
+        ]
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/titan/ion/ion_trap"
+      },
+      "geometry": {
+        "default": "geometry.ion_trap"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

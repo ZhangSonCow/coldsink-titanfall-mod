@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.titan_load_shield_blue": {
+      "geometry": "geometry.titan_load_shield",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "texture.titan_load_shield_blue" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    },
+    "controller.render.titan_load_shield_red": {
+      "geometry": "geometry.titan_load_shield",
+      "materials": [
+        {
+          "*": "material.blend"
+        }
+      ],
+      "textures": [ "texture.titan_load_shield_red" ],
+      "is_hurt_color": {},
+      "ignore_lighting": true
+    }
+  }
+}

@@ -1,0 +1,130 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "coldsink:weapon_charge_bullet_red",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball",
+      "animations": {
+        "c.self": "controller.animation.pilot_bullet_self.func",
+        "self": "animation.pilot_bullet_self.func"
+      },
+      "scripts": {
+        "animate": [ 
+          "c.self"
+        ]
+      }
+    },
+
+    "component_groups": {
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+			"minecraft:tick_world": {
+				"distance_to_players": 128,
+				"never_despawn": false,
+				"radius": 2
+			},
+      "minecraft:type_family": {
+        "family": [ "tool", "bullet", "empty_bullet", "anti_titan" ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.5
+      },
+      "minecraft:ageable": {
+        "duration": 3,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      },
+      "minecraft:projectile": {
+        "anchor": 1,
+        "on_hit": {
+          "impact_damage": {
+            "damage": 400,
+            "knockback": false,
+            "destroy_on_hit": false
+          },
+          "definition_event": {
+            "affect_projectile": true,
+            "affect_shooter": false,
+            "affect_target": false,
+            "affect_splash_area": false,
+            "event_trigger": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "on_ground",
+                    "operator": "!=",
+                    "subject": "self"
+                  }
+                ]
+              },
+              "event": "shot_tar",
+              "target": "self"
+            }
+          },
+          "stick_in_ground": {
+            "shake_time": 1
+          }
+        },
+        "power": 9,
+        "gravity": 0.00,
+        "angle_offset": 0,
+        "liquid_inertia": 1,
+        "stop_on_hurt": false
+      },
+      "minecraft:physics": {},
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "events": {
+      "shot_tar": {
+        "queue_command": {
+          "command": [
+            "execute @s[tag=!get] ~~-3~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=8,c=1] ~~~ execute @s[tag=ronin_defend] ~~~ tag @e[type=coldsink:weapon_charge_bullet_red,c=1] add get_1",
+            "execute @s[tag=!get] ~~-3~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=8,c=1] ~~~ execute @s[tag=ronin_defend_core] ~~~ tag @e[type=coldsink:weapon_charge_bullet_red,c=1] add get_2",
+            "execute @s[tag=!get] ~~-3~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=8,c=1] ~~~ execute @s[tag=titan_hard] ~~~ tag @e[type=coldsink:weapon_charge_bullet_red,c=1] add get_3",
+            "execute @s[tag=!get] ~~-3~ execute @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,tag=!energy_shield,r=8,c=1] ~~~ tag @e[type=coldsink:weapon_charge_bullet_red,c=1] add get",
+
+            "execute @s[tag=get] ~~~ scoreboard players operation @a[hasitem={item=coldsink:weapon_charge},tag=team_red,tag=!has_titan] bullet_check = @s titan_self",
+            "execute @s[tag=get] ~~~ execute @a[hasitem={item=coldsink:weapon_charge},tag=team_red,tag=!has_titan] ~~~ scoreboard players operation @s bullet_check -= @s titan_self",
+            "execute @s[tag=get,tag=!get_1,tag=!get_2,tag=!get_3] ~~~ scoreboard players add @a[hasitem={item=coldsink:weapon_charge},tag=team_red,tag=!has_titan,scores={bullet_check=0}] pilot_attack 80",
+            "execute @s[tag=get_1] ~~~ scoreboard players add @a[hasitem={item=coldsink:weapon_charge},tag=team_red,tag=!has_titan,scores={bullet_check=0}] pilot_attack 24",
+            "execute @s[tag=get_2] ~~~ scoreboard players add @a[hasitem={item=coldsink:weapon_charge},tag=team_red,tag=!has_titan,scores={bullet_check=0}] pilot_attack 8",
+            "execute @s[tag=get_3] ~~~ scoreboard players add @a[hasitem={item=coldsink:weapon_charge},tag=team_red,tag=!has_titan,scores={bullet_check=0}] pilot_attack 64",
+            "execute @s[tag=get] ~~~ event entity @a[hasitem={item=coldsink:weapon_charge},tag=team_red,tag=!has_titan,scores={bullet_check=0}] pilot_shoot_get_core",
+
+            "execute @s[tag=get] ~~-3~ scoreboard players operation @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=8,c=1] death_check = @p[hasitem={item=coldsink:weapon_charge},tag=team_red,scores={bullet_check=0}] titan_self",
+            "execute @s[tag=get,tag=!get_1,tag=!get_2,tag=!get_3] ~~-3~ damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=8,c=1] 800 suicide entity @s",
+            "execute @s[tag=get_1] ~~-3~ damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=8,c=1] 240 suicide entity @s",
+            "execute @s[tag=get_2] ~~-3~ damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=8,c=1] 80 suicide entity @s",
+            "execute @s[tag=get_3] ~~-3~ damage @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=8,c=1] 640 suicide entity @s",
+            "execute @s[tag=get] ~~-3~ event entity @e[tag=!team_red,family=!tool,type=!item,type=!xp_orb,r=8,c=1] defend_damage_transform",
+
+            "particle pilot:weapon_charge_hit ~~1~",
+            "kill @s[tag=get]"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

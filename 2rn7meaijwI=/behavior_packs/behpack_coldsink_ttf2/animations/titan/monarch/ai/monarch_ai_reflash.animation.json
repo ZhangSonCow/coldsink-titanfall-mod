@@ -1,0 +1,47 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.monarch_ai_reflash.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/playsound monarch_skill_2 @a[r=64] ~~~",
+          "/event entity @s add_titan_saddled"
+        ],
+        "1.17": [
+          "/event entity @s check_titan_ai_can_spurt",
+          "/tag @s add can_reflash",
+          "/event entity @s set_action_0"
+        ]
+      }
+    },
+    "animation.monarch_ai_reflash_fast.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "0.0": [
+          "/playsound monarch_skill_2_fast @a[r=64] ~~~",
+          "/event entity @s add_titan_saddled"
+        ],
+        "0.58": [
+          "/event entity @s check_titan_ai_can_spurt",
+          "/tag @s add can_reflash",
+          "/event entity @s set_action_0"
+        ]
+      }
+    },
+    "animation.monarch_ai_reflash_cooldown.func": {
+      "loop": false,
+      "animation_length": 20.0,
+      "timeline": {
+        "10.0": [
+          "/event entity @s[tag=monarch_core_21] clear_titan_saddled"
+        ],
+        "12.0": [
+          "/event entity @s clear_titan_saddled"
+        ]
+      }
+    }
+  }
+}

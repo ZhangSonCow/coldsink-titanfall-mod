@@ -1,0 +1,23 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ion_ai_laser.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "3.0": [
+          "/event entity @s set_action_14"
+        ]
+      }
+    },
+    "animation.ion_ai_laser_after.func": {
+      "loop": false,
+      "animation_length": 10.0,
+      "timeline": {
+        "1.0": [
+          "/event entity @s set_action_0"
+        ]
+      }
+    }
+  }
+}

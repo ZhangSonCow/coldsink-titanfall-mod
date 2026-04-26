@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.death_to_godie.func": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "death": "!q.is_alive || q.health <= 0"
+            }
+          ]
+        },
+        "death": {
+          "on_entry": [
+            "/event entity @s godie"
+          ]
+        }
+      }
+    }
+  }
+}

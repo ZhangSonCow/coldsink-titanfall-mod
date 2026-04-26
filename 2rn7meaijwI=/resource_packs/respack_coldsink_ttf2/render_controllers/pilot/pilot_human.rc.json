@@ -1,0 +1,15 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.pilot_human": {
+      "geometry": "geometry.pilot_human",
+      "materials": [
+        {
+          "*": "material.default"
+        }
+      ],
+      "textures": [ "texture.pilot_human" ],
+      "is_hurt_color": {}
+    }
+  }
+}
